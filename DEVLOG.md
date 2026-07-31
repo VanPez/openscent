@@ -48,3 +48,16 @@ gas optimisation (changes per-tag mint economics, hence affordable ontology size
 via MolNFT vectors vs Morgan fingerprints in Solidity.
 
 **Next:** the 20-patent hand-run. Nothing gets built before it.
+
+---
+
+## 2026-07-31 (late) — Hand-run 01: two patents, retrieval works, targeting was wrong
+
+Smoke test, n=2, deliberately spanning extremes. Written up in `reports/handrun-01-findings.md`.
+
+- **Retrieval is free and unblocked.** Google Patents serves full text as plain text, no API key. ~96 KB per patent. (The USPTO bulk API still needs a key — Ivan's to register, since it requires an account.)
+- **US3929677A (IFF 1975, Iso E Super family)** — rich odour text, *"PERFUME PROPERTIES Fruity, woody, pineapple-like"*, but two real problems: OCR noise on the old scan (`fruityamber`, `iso mer`, one passage garbled outright), and odour attributed to **isomer mixtures and GC peaks** rather than single structures. Some rows from old compound patents will be legitimately unresolvable — a chemistry judgement, not a parsing bug.
+- **US11332693B2 (2022, woody-ambery composition)** — pristine text, but a *formulation* patent, so no novel structures. **Unexpected finding:** it names commercial captives with their IUPAC name *and* an odour description inline — KARANAL® with full nomenclature and *"dry, radiant, woody ambery"*, *"unusual characteristic dry, mineral effect… sharp, radiant, burning"*. That is a directly linkable triple, in clean text, for exactly the captives no free source describes.
+- **The design doc dismissed A61Q 13/00 formulation patents as "mostly mixtures". That was wrong** — they may be the better vein for captives, because they must describe what they substitute for.
+- **Untested and load-bearing:** post-2001 C11B 9/00 *compound* patents — clean text *and* novel structures. The plan assumes this cell works; nobody has checked it.
+- **Decide before writing the verifier:** the text-normalisation rule for OCR'd sources (whitespace, hyphenation) must be deterministic and versioned, applied identically to source and span, or the verbatim audit trail breaks.
