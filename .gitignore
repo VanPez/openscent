@@ -1,0 +1,11 @@
+# Raw source documents — large, and re-retrievable from USPTO / archive.org.
+# Provenance lives in the extracted rows (source id + offsets), not in these files.
+corpus/raw/
+corpus/staging/
+
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
