@@ -140,10 +140,21 @@ def fetch(ids: list[str]) -> None:
 # reports/handrun-03-calibration.md. Tighten it here, then re-run `extract`;
 # no re-fetching required.
 
-ODOUR  = re.compile(r"\b(odou?rs?|smells?|fragrance notes?|olfactive)\b", re.I)
+# v2 — bare "note(s)" and "character" added as odour head nouns. v1 missed the
+# KARANAL captive sentence ("...woody ambery notes that it brings...") because it
+# only matched the bigram "fragrance note". Cost: more candidates to filter.
+ODOUR  = re.compile(r"\b(odou?rs?|smells?|olfactive|notes?|characters?|nuances?)\b", re.I)
+# Descriptor-only headings carry no odour word and no verb: "PERFUME PROPERTIES
+# Fruity, woody, pineapple-like." Accepted via a separate path (see decide()).
+HEADING = re.compile(r"\b(perfume|odou?r|organoleptic)\s+(propert|characteristic)", re.I)
 DESCR  = re.compile(r"\b(has|have|having|possess(?:es|ing)?|exhibit(?:s|ing)?|"
                     r"is described as|described with|imparts?|reminiscent|"
-                    r"characteri[sz]ed as|shows?|display(?:s|ing)?)\b", re.I)
+                    r"characteri[sz]ed as|shows?|display(?:s|ing)?|"
+                    # v2: commercial-register verbs. Formulation patents describe
+                    # captives as "valued for"/"prized for" rather than "has" —
+                    # missed the KARANAL sentence (t07), which is the captive case
+                    # this whole source type exists to capture.
+                    r"valued for|prized for|known for|appreciated for|noted for)\b", re.I)
 NAMED  = re.compile(r"\b(example\s+\d+|compound\s+\d+|[a-z]+(?:ol|al|one|ate|ene|ol|"
                     r"phenol|aldehyde|acetate|lactone|oxide)\b|\d+-\([a-z])", re.I)
 EXCLUDE = [
@@ -157,6 +168,13 @@ EXCLUDE = [
     (re.compile(r"\b\d+(\.\d+)?\s*(wt\.?\s*%|weight percent|ppm)", re.I), "proportion claim"),
     (re.compile(r"\bcomprises?\b.*\b(alcohol|compound|ingredient)s?\b.*\bodou?r", re.I), "composition claim"),
     (re.compile(r"\b(distill|chromatograph|yield of|purified|filtrate|reflux)\b", re.I), "synthesis prose"),
+    # --- v2 additions, each from a scored false positive in testset.jsonl ---
+    (re.compile(r"selected from the group consisting of", re.I),   "claim enumeration (d14)"),
+    (re.compile(r"\bpreferably\b.{0,40}\bhaving\b|\bmay (also )?(impart|modify|enhance)\b", re.I),
+                                                                   "hypothetical/preferential (d13,d14)"),
+    (re.compile(r"i\.?e\.?,?\s+odou?r,?\s+propert|\bodou?r\s+properties\b", re.I),
+                                                                   "odour-as-category, no descriptor (d12)"),
+    (re.compile(r"\bby combining\b", re.I),                        "hypothetical combination (d13)"),
 ]
 SENT = re.compile(r"(?<=[.;])\s+(?=[A-Z0-9(])")
 
