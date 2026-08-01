@@ -94,8 +94,16 @@ def search_window(cpc: str, lo: int, hi: int) -> list[str]:
               file=sys.stderr)
     return ids
 
-def search_all(cpc: str, start: int = 1960, end: int = 2027, step: int = 3) -> list[str]:
-    """Walk the whole class in date windows, so no single query hits the cap."""
+    # Default start is 2001, not 1960, and that is a deliberate ordering choice.
+    # Pre-2001 patents are OCR-damaged scans whose odour claims attach to isomer
+    # mixtures and GC peaks rather than single structures (handrun-01) — low yield,
+    # high effort. Post-2001 text is pristine. Harvest the valuable half first; the
+    # archaeology can be a second pass with START=1960 if it ever earns its place.
+
+def search_all(cpc: str, start: int | None = None, end: int = 2027, step: int = 3) -> list[str]:
+    """Walk the class in date windows, so no single query hits the 1000 cap."""
+    if start is None:
+        start = int(os.environ.get("OPENSCENT_START_YEAR", 2001))
     out = []
     for lo in range(start, end, step):
         hi = min(lo + step, end)
