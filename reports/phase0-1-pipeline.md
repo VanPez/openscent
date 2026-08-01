@@ -93,7 +93,9 @@ evidence survives.
     "ref": "US Patent 4,482,465, col. 6 ln. 12",
     "licence": "public-domain-usgov|public-domain-expired|CC0",
     "retrieved": "2026-08-01",
-    "url": "https://data.uspto.gov/..."
+    "url": "https://data.uspto.gov/...",
+    "quotes_source": null,
+    "copyright_notice_present": false
   },
   "extraction": { "method": "llm-span", "extractor_version": "0.1.0", "verified_verbatim": true }
 }
@@ -109,6 +111,65 @@ Non-obvious choices, and why:
   the table evolves.
 - **No confidence score.** A score invites "probably fine" rows. Either the span is verbatim and the
   mapping is in the table, or the row doesn't exist.
+- **`quotes_source`** (added 2026-08-01, from hand-run 02). Patents describe other people's compounds and
+  cite the literature they got the description from — one of our test-set sentences quotes *Common Fragrance
+  and Flavor Materials*, Wiley-VCH. The patent text is public domain and a short factual odour description
+  isn't copyrightable, so the row is usable either way. But the honest provenance is *"US20080064625A1,
+  quoting [ref]"*, not *"US20080064625A1"*. The field makes the chain visible rather than laundering it.
+- **`copyright_notice_present`** (added 2026-08-01). USPTO rules let an applicant place a copyright notice
+  on portions of a specification. It is rare, but it exists, and "US patents are public domain" is a
+  generalisation rather than a guarantee. Scan for the notice; don't assume its absence.
+
+---
+
+## 2a. The on-chain consequence — these descriptors are mintable, the old ones were not
+
+Recorded 2026-08-01, because it reverses a decision taken the same week and the reasoning must not be
+lost to memory.
+
+The sister project **stripped `note`, `family` and `descriptors` out of the MolNFT mint** (see
+`../aroma-index/generators/build_mint.py`). The reason was **never licensing.** It was provenance: those
+descriptors were written by a language model with no traceable source, 37 of 95 have no independent
+corroboration and never will (`../aroma-index/reports/descriptor-crosscheck.md`), and an unverifiable
+claim baked into an immutable token is permanently unverifiable.
+
+Patent-extracted descriptors invert every term of that objection:
+
+| | `rows2.json` descriptors | patent-extracted |
+|---|---|---|
+| origin | a language model's training data | a named US patent |
+| verifiable by a stranger | no | yes — document ID + char offset + verbatim span |
+| licence | facts, but untraceable | US patent text, no copyright |
+| what fails if challenged | the claim, silently | one row, visibly |
+
+So they are not merely *permitted* on-chain — they are **better mint material than most of what is
+already on the token**, because each claim can carry its own receipt.
+
+**Design rule: do not reinstate `descriptors`.** That field stays dead; its problem was structural, not
+cosmetic, and reviving the name would blur the distinction this whole project exists to draw. What goes
+on-token is a new pair of fields that cannot be separated from their evidence:
+
+```json
+"odor_terms":    ["woody", "ambery", "dry"],
+"odor_evidence": { "source": "US11332693B2", "offset": [18422, 18454],
+                   "span": "valued for the dry, radiant, woody ambery notes",
+                   "quotes_source": null }
+```
+
+The distinction is the point. A token carrying `descriptors: ["woody"]` asserts *"this molecule smells
+woody"* — a claim with no backing, permanent. A token carrying the pair above asserts *"US11332693B2 says
+this smells woody, and here is the sentence"* — a claim that is true regardless of whether the underlying
+perception is, and that a stranger can check in thirty seconds. The second survives scrutiny forever; the
+first is a liability the moment anyone asks where it came from.
+
+**This is also the answer to the 37.** The molecules with no free descriptor are the modern captives —
+Iso E Super, Hedione, Norlimbanol, Cashmeran, the musks. They lack free descriptors *because* they are
+recent commercial materials, which is precisely why they were patented. The gap the licence scan could
+not close is the gap patents are best at filling.
+
+**Not yet actionable.** This is a capability the corpus unlocks. Nothing here should delay the pilot mint,
+which ships without descriptors as decided. Preconditions, in order: the 2,588-patent fetch; the linkage
+stage (OPSIN); a held-out accuracy measurement; and a copyright-notice scan across the fetched set.
 
 ---
 

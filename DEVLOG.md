@@ -150,3 +150,66 @@ without needing his reply. Sister project's response: a separate, honestly-named
 3. Scale the harvest to 500–1,000 patents — the real prerequisite for Phase 0, a time cost rather than an
    unsolved problem.
 4. Then draft the 60–100 tag ontology and the `surface form → tag` mapping table.
+
+---
+
+## 2026-08-01 (later) — Test set, and the mint decision reverses
+
+### The extraction filter is now measured rather than argued about
+
+`pipeline/testset.jsonl` — 29 real sentences from 12 named patents, each labelled with a reason.
+`pipeline/score.py` imports `harvest.py` dynamically and mirrors its accept path, so the thing being
+scored is the thing that runs. Write-up in `pipeline/TESTSET.md`.
+
+| version | precision | recall | F1 |
+|---|---|---|---|
+| v1 | 0.73 | 0.73 | 0.73 |
+| v2 | 1.00 | 0.82 | 0.90 |
+| v2 + `valued for` | 1.00 | 1.00 | 1.00 |
+
+**The 1.00/1.00 is overfitting and is not a quality claim.** Every v2 rule was written while looking at
+these 29 sentences and edited until they passed; a perfect score became inevitable the moment I started
+fixing disagreements. Worse, the set has a structural recall blind spot — **every sentence in it was
+surfaced by an earlier version of the filter**, so it cannot contain a case the filter has always missed.
+Recall against it is an upper bound on optimism. The honest fix is a held-out set of ~50 sentences from
+patents never used for tuning, scored once — blocked on the fetch.
+
+What the exercise genuinely bought: two real gaps found by measurement rather than intuition (bare
+`note(s)` as an odour head noun, which had been silently missing the KARANAL captive case — exactly what
+the formulation-patent source exists to capture; and commercial-register verbs like *valued for* /
+*prized for*, which patents use about established materials), plus four exclusions each traceable to a
+scored false positive.
+
+**One of my labels was wrong, not the filter.** `t11` — *"This feedstock itself possesses an odour…"* —
+was labelled keep; the filter rejected it for having no compound name and was right, since "feedstock"
+can never resolve to a structure. Relabelled keep→drop and recorded in TESTSET.md rather than quietly
+changed. The failure mode in this kind of work is bending the filter until it agrees with the labels;
+the only defence is writing down which one you moved.
+
+### Patent-sourced descriptors are mintable — and the old ones still aren't
+
+Ivan's question: if the descriptors come from public-domain patents, can they go on the token after all?
+**Yes**, and it resolves a tension left open this morning. Full reasoning in
+`reports/phase0-1-pipeline.md` §2a.
+
+The mint strip was **never a licensing decision** — it was provenance. The `rows2.json` descriptors are
+model-generated with no traceable source and 37 of 95 have no corroboration and never will. Patent-extracted
+descriptors invert every term: named source document, char offset, verbatim span, checkable by a stranger.
+
+**`descriptors` stays dead.** Reviving the name would blur the exact distinction the project exists to
+draw. The replacement is `odor_terms` + `odor_evidence`, which cannot be separated from each other. The
+difference is what the token asserts: *"this smells woody"* (unbacked, permanent) versus *"US11332693B2
+says this smells woody, here is the sentence"* (checkable in thirty seconds, true regardless of whether
+the perception is). No other on-chain molecular record carries a public-domain citation per perceptual claim.
+
+It is also the answer to the 37 — captives lack free descriptors *because* they are recent commercial
+materials, which is why they were patented.
+
+**Two caveats recorded as schema fields, not as good intentions:** `quotes_source` (patents quote
+copyrighted literature — one test-set sentence quotes Wiley-VCH; the row is usable, but the provenance
+chain must be visible rather than laundered) and `copyright_notice_present` (USPTO rules permit a
+copyright notice on portions of a specification — rare, but "US patents are public domain" is a
+generalisation, so scan rather than assume).
+
+**Not actionable yet, and the pilot mint should not wait for it.** Preconditions in order: the
+2,588-patent fetch → linkage via OPSIN → held-out accuracy → copyright-notice scan.
