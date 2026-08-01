@@ -61,3 +61,92 @@ Smoke test, n=2, deliberately spanning extremes. Written up in `reports/handrun-
 - **The design doc dismissed A61Q 13/00 formulation patents as "mostly mixtures". That was wrong** — they may be the better vein for captives, because they must describe what they substitute for.
 - **Untested and load-bearing:** post-2001 C11B 9/00 *compound* patents — clean text *and* novel structures. The plan assumes this cell works; nobody has checked it.
 - **Decide before writing the verifier:** the text-normalisation rule for OCR'd sources (whitespace, hyphenation) must be deterministic and versioned, applied identically to source and span, or the verbatim audit trail breaks.
+
+---
+
+## 2026-08-01 — Hand-runs 02–04: yield measured, vocabulary harvested, two blockers dissolved
+
+Three runs in one morning. Reports in `reports/handrun-01-findings.md` (02 appended) and
+`handrun-03-calibration.md`, `handrun-04-vocabulary.md`.
+
+### The USPTO API key turned out to be unnecessary
+
+USPTO's Open Data Portal wanted an account, MFA, and then pushed into **ID.me identity verification** —
+passport plus a video call, 31-minute queue. For a patent *search* key. Abandoned it, because
+**Google Patents exposes an undocumented JSON search endpoint** that answers the same query:
+
+```
+patents.google.com/xhr/query?url=<urlencoded>   e.g. cpc=C11B9/00&country=US&after=priority:20010101
+```
+
+No key, no account, no identity check. Combined with the full-text pages, **the entire Phase 1 pipeline
+runs credential-free.** Also avoids handing a third party a passport scan, which matters given the
+pseudonymity decision.
+
+Pool sizes measured: **C11B 9/00 US all years — 5,660**; +`odor` since 2010 — 2,088; A61Q 13/00 US since
+2010 — 1,976; exact phrase `"odour of"` — 243.
+
+Caveats: undocumented endpoint, may change or rate-limit, Google's terms discourage heavy automation —
+cache, stay moderate. And **always filter `country=US`**: unfiltered queries return JP/CN/EP documents,
+which do not carry the US no-copyright status the whole licence claim rests on.
+
+### Hand-run 02 — the load-bearing cell works, but yields less than assumed
+
+US9109187B2 (Firmenich 2015, oud odorants). Modern text is pristine — the pre/post-2001 split is real.
+Genuine rows exist: *"3-(n-propyl)phenol … has a leather-like, phenolic and ink-like odor"*. Two new
+problems though:
+
+- **Problem 3 — claim-language noise.** ~14 odour mentions, ~2 descriptive. The rest is legal boilerplate.
+  Distinguishing descriptive from definitional use is harder than finding odour words, and is where an
+  LLM earns its place (locating, never generating).
+- **Problem 4 — patents describe *other people's* compounds, citing literature.** Good news: established
+  molecules are covered too, not just novel ones. Caveat: the description may originate in a copyrighted
+  paper the patent quotes. Add `quotes_source` to the schema so it's visible rather than laundered.
+
+### Hand-run 03 — first real yield number
+
+25 sampled patents → 13,758 sentences → 663 containing odour vocabulary → 21 passing a v0 filter →
+**~5 genuinely usable. ≈0.2 clean assertions per patent**, well below the 1–3 guessed from hand-picked
+patents. Precision is the review cost; **recall sets yield and the v0 filter is strict, so 0.2 is a floor.**
+
+False positives are now nameable and mostly cheap to fix: *odour value* intensity metrics, malodour test
+protocols (*Sweat/Toilet/Cooking Odour Test*), definitional boilerplate, composition claims, synthesis prose.
+
+Conservative projection: 5,660 × 0.2 ≈ 1,100 assertions → **400–700 distinct molecules** after duplication,
+plus formulation patents for captives, plus the 218 already sourced → a **600–1,000 molecule** corpus.
+Not Leffingwell's 3,500 — but the largest anyone can use commercially, which is the point.
+
+### Hand-run 04 — Phase 0 started from real text, and the tier question closed
+
+60 patents, 4.64 M characters, 0 failures. Harvested every word preceding an odour-head noun.
+**1,035 distinct terms; only 14 occur ≥30 times.** Raw output in `ontology/harvested-terms-v0.tsv`.
+
+- The vocabulary is recognisably perfumery: floral · muguet · green · fruity · spicy · fatty · woody ·
+  fresh · citrus · sweet · musk · ambery · tobacco · aldehydic — plus **radiant** and **transparent**,
+  working perfumer's words that nobody would invent from first principles. Validates the method.
+- **Mike's Phase 0 target (60–100 tags at ≥30 molecules each) needs 500–1,000 patents, not 60.** Concrete
+  scale requirement the plan never quantified. Feasible, but Phase 0 cannot complete on a small corpus.
+- **Malodour contamination is large and now measured**: toilet 25, sweat 23, mask 22, cooking 16, urine 11,
+  faecal 12. A61Q 13/00 includes deodorants — patents describing smells they intend to destroy. Exclude
+  those subclasses *at query time* or the ontology fills with bad smells.
+- Hedonic terms rank absurdly high (*unpleasant* 127, *pleasant* 72) and are not descriptors. Separate axis.
+
+**The tier question, settled negatively.** `base` 89, `top` 80, `middle` 53, `heart` 32 ranked high, raising
+a real possibility: if patents assert *"compound X is a top note"*, tiers become citable rather than
+judgement. Tested across all 60 patents: **0 direct per-compound tier assertions.** The only two hits were
+generic (*"heart note such as floral characters"*). Patents use tier language for accord architecture,
+never to classify a molecule.
+
+So tiers are **not sourceable and not computable** — second independent line of evidence after the fitted
+rule reproducing the curated 99 at 56% leave-one-out. This answers one of the three open questions to Mike
+without needing his reply. Sister project's response: a separate, honestly-named `volatility_band`
+(declared MW convention, 67% agreement with the curated tier) — see `../aroma-index/data/VOLATILITY_BAND.md`.
+
+### Next
+
+1. Extend the stop list; exclude deodorant/malodour subclasses at query time; re-harvest.
+2. Tune the extraction filter (`odour value` / `odour test` exclusions; loosen the compound-name test to
+   recover recall) and measure against a hand-labelled set.
+3. Scale the harvest to 500–1,000 patents — the real prerequisite for Phase 0, a time cost rather than an
+   unsolved problem.
+4. Then draft the 60–100 tag ontology and the `surface form → tag` mapping table.
