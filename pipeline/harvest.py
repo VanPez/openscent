@@ -24,13 +24,20 @@ genuinely large pulls (no key needed for those either).
 US ONLY. Non-US patents do not carry the US no-copyright status the licence claim rests on.
 """
 from __future__ import annotations
-import json, re, sys, time, urllib.parse, urllib.request, pathlib, random
+import json, os, re, sys, time, urllib.parse, urllib.request, pathlib, random
 
-ROOT   = pathlib.Path(__file__).resolve().parent.parent
+# Works both inside the repo (openscent/pipeline/harvest.py) and dropped anywhere on its
+# own — e.g. a headless box. If it isn't sitting in a pipeline/ dir it makes ./openscent/
+# beside itself. Override with OPENSCENT_ROOT=/some/path.
+_here  = pathlib.Path(__file__).resolve().parent
+ROOT   = pathlib.Path(os.environ.get("OPENSCENT_ROOT",
+             _here.parent if _here.name == "pipeline" else _here / "openscent"))
 RAW    = ROOT / "corpus" / "raw"
 OUT    = ROOT / "corpus" / "extracted"
 DELAY  = (2.0, 4.0)          # seconds between fetches, randomised
 UA     = "OpenScent/0.1 (research corpus; contact via github.com/VanPez)"
+
+# stdlib only — nothing to pip install, which is the point for a headless box.
 
 QUERIES = [
     # (label, query string) — country=US enforced in every one.
@@ -160,5 +167,19 @@ if __name__ == "__main__":
         fetch(allids)
     elif cmd == "extract":
         extract()
+    elif cmd == "status":
+        idf = ROOT / "corpus" / "patent-ids.json"
+        known = len(json.loads(idf.read_text())) if idf.exists() else 0
+        cached = len(list(RAW.glob("*.txt"))) if RAW.exists() else 0
+        mb = sum(f.stat().st_size for f in RAW.glob("*.txt"))/1e6 if RAW.exists() else 0
+        left = max(0, known - cached)
+        eta  = left * sum(DELAY)/2 / 3600
+        print(f"root      {ROOT}")
+        print(f"known ids {known}")
+        print(f"cached    {cached}  ({mb:.0f} MB)")
+        print(f"remaining {left}   ~{eta:.1f} h at the current delay")
+        cf = OUT / "candidates.json"
+        if cf.exists():
+            print(f"candidates {len(json.loads(cf.read_text()))} (from last extract run)")
     else:
         print(__doc__)
