@@ -1,6 +1,36 @@
 # OpenScent — work log
 
-Newest first. Times UTC.
+**Entries are OLDEST FIRST — scroll to the bottom for the latest.** Times UTC.
+
+---
+
+## RESUME HERE — state as of 2026-08-01
+
+**One blocker, and it is not technical.** The 2,588-patent fetch has never run. Everything downstream
+waits on it. `corpus/patent-ids.json` holds the IDs and is deliberately not gitignored — discovery is
+rate-limited and cannot casually be re-run.
+
+```bash
+scp ~/Documents/GenesisL1/openscent/corpus/patent-ids.json $OPENSCENT_HOST:/opt/openscent/corpus/
+ssh $OPENSCENT_HOST
+screen -S openscent bash -c 'python3 /opt/harvest.py fetch 2>&1 | tee /opt/openscent-fetch.log'
+```
+~2.5 h unattended. Ctrl+C kills the screen session as well as the process — reopen a new one to restart.
+
+**Infrastructure constraint, learned the hard way:** Google Patents refuses Umbrel's IP outright and
+refuses Hetzner for `/xhr/query` (though Hetzner serves patent *pages* fine). Search runs only from the
+Mac; the bulk fetch runs on Hetzner. Do not spoof the User-Agent to get around a 503 — a project whose
+entire selling point is clean provenance cannot have circumvention in its collection history.
+
+**Read before touching the filter:** `pipeline/TESTSET.md`. The 1.00/1.00 score is overfitting, not
+accuracy, and the set has a structural recall blind spot. Score `pipeline/score.py` before and after any
+change to `ODOUR` / `DESCR` / `NAMED` / `HEADING` / `EXCLUDE` in `harvest.py`.
+
+**Then, in order:** linkage via OPSIN → held-out accuracy on patents never used for tuning →
+copyright-notice scan → only then is `odor_terms` mintable (`reports/phase0-1-pipeline.md` §2a).
+
+**Sister project** `../aroma-index/` ships its pilot mint *without* descriptors and should not wait for
+any of this. Its own open items are at the top of `../aroma-index/DEVLOG.md`.
 
 ---
 
