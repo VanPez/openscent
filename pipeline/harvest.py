@@ -39,36 +39,70 @@ UA     = "OpenScent/0.1 (research corpus; contact via github.com/VanPez)"
 
 # stdlib only — nothing to pip install, which is the point for a headless box.
 
-QUERIES = [
-    # (label, query string) — country=US enforced in every one.
-    ("compounds",   "cpc=C11B9/00&country=US&after=priority:20010101"),
-    ("compounds_old","cpc=C11B9/00&country=US&before=priority:20010101"),
-    ("formulations","cpc=A61Q13/00&country=US&after=priority:20050101"),
-]
+# CPC classes to walk. country=US is enforced inside search_window() — non-US patents do
+# not carry the US no-copyright status the licence claim depends on.
+#   C11B 9/00  essential oils; perfumes — the odorant compounds themselves
+#   A61Q 13/00 perfume formulations — weaker per-patent, but the best source for captives
+CLASSES = ["C11B9/00", "A61Q13/00"]
 
-def _get(url: str) -> str:
-    req = urllib.request.Request(url, headers={"User-Agent": UA})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return r.read().decode("utf-8", "replace")
+def _get(url: str, tries: int = 4) -> str:
+    """Retry with backoff. Google returns transient 503s under sustained querying;
+    the first version treated one as fatal for the whole query and silently dropped
+    the remaining pages."""
+    for attempt in range(tries):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": UA})
+            with urllib.request.urlopen(req, timeout=30) as r:
+                return r.read().decode("utf-8", "replace")
+        except Exception as e:
+            if attempt == tries - 1:
+                raise
+            wait = (2 ** attempt) * 5 + random.uniform(0, 3)
+            print(f"    retry {attempt+1}/{tries-1} in {wait:.0f}s ({e})", file=sys.stderr)
+            time.sleep(wait)
+    raise RuntimeError("unreachable")
 
 # ---------------------------------------------------------------- discovery
+#
+# Google Patents caps a result set at ~1,000 (10 pages x 100). A single query can
+# therefore never enumerate the 5,660-patent C11B 9/00 US pool — the first run came
+# back with exactly 998 and looked complete. The pool must be sliced into windows
+# that each stay under the cap; date is the natural axis.
 
-def search(query: str, pages: int = 10) -> list[str]:
-    ids = []
-    for p in range(pages):
+PAGE_CAP = 10
+
+def search_window(cpc: str, lo: int, hi: int) -> list[str]:
+    q = f"cpc={cpc}&country=US&after=priority:{lo}0101&before=priority:{hi}0101"
+    ids, capped = [], False
+    for p in range(PAGE_CAP):
         url = ("https://patents.google.com/xhr/query?url="
-               + urllib.parse.quote(f"{query}&num=100&page={p}"))
+               + urllib.parse.quote(f"{q}&num=100&page={p}"))
         try:
             j = json.loads(_get(url))
         except Exception as e:
-            print(f"  ! search page {p} failed: {e}", file=sys.stderr); break
+            print(f"    ! {cpc} {lo}-{hi} page {p} gave up: {e}", file=sys.stderr)
+            break
         cl = (j.get("results") or {}).get("cluster") or [{}]
         hits = cl[0].get("result") or []
         if not hits: break
         ids += [h["patent"]["publication_number"] for h in hits
                 if h.get("patent", {}).get("publication_number")]
+        if p == PAGE_CAP - 1: capped = True
         time.sleep(random.uniform(*DELAY))
+    if capped:
+        print(f"    ! {cpc} {lo}-{hi} hit the 1000 cap — window too wide, results lost",
+              file=sys.stderr)
     return ids
+
+def search_all(cpc: str, start: int = 1960, end: int = 2027, step: int = 3) -> list[str]:
+    """Walk the whole class in date windows, so no single query hits the cap."""
+    out = []
+    for lo in range(start, end, step):
+        hi = min(lo + step, end)
+        got = search_window(cpc, lo, hi)
+        if got: print(f"  {cpc} {lo}-{hi}: {len(got)}")
+        out += got
+    return out
 
 # ---------------------------------------------------------------- fetching
 
@@ -155,15 +189,21 @@ def extract() -> None:
 if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else "help"
     if cmd == "fetch":
-        allids = []
-        for label, q in QUERIES:
-            print(f"searching {label} …")
-            got = search(q)
-            print(f"  {len(got)} ids")
-            allids += got
-        allids = sorted(set(allids))
-        (ROOT / "corpus" / "patent-ids.json").write_text(json.dumps(allids, indent=1))
-        print(f"{len(allids)} distinct US patents\n")
+        (ROOT / "corpus").mkdir(parents=True, exist_ok=True)   # was created too late; crashed the first run
+        idfile = ROOT / "corpus" / "patent-ids.json"
+        if idfile.exists():
+            allids = json.loads(idfile.read_text())
+            print(f"reusing {len(allids)} ids from {idfile.name} "
+                  f"(delete it to re-run discovery)\n")
+        else:
+            allids = []
+            for cpc in CLASSES:
+                print(f"searching {cpc} in {3}-year windows …")
+                allids += search_all(cpc)
+                idfile.write_text(json.dumps(sorted(set(allids)), indent=1))  # save as we go
+            allids = sorted(set(allids))
+            idfile.write_text(json.dumps(allids, indent=1))
+            print(f"\n{len(allids)} distinct US patents\n")
         fetch(allids)
     elif cmd == "extract":
         extract()
