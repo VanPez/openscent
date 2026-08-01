@@ -1,6 +1,8 @@
 # Raw source documents — large, and re-retrievable from USPTO / archive.org.
 # Provenance lives in the extracted rows (source id + offsets), not in these files.
 corpus/raw/
+# NB patent-ids.json is NOT ignored — it is the expensive, fragile artifact
+# (discovery is rate-limited and cannot be casually re-run). It stays in git.
 corpus/staging/
 
 .DS_Store
