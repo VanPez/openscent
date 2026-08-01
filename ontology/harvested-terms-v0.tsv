@@ -1,0 +1,104 @@
+# Raw term frequencies harvested from 60 US patents (C11B 9/00 + A61Q 13/00), 4.64M chars.
+# Method: words immediately preceding an odour-head noun (odour|note|character|aroma|nuance),
+#         minus a generic English/patent stop list. NOT hand-supplied — corpus-derived.
+# Retrieved 2026-08-01. 1,035 distinct terms; only 14 occur >=30 times at this corpus size.
+#
+# This is RAW. It is not the ontology. Classification below is a first human pass and is
+# what Phase 0 refines. Categories:
+#   D  = plausible odour descriptor        -> ontology candidate
+#   H  = hedonic (pleasant/unpleasant)     -> not a descriptor, may be a separate axis
+#   T  = note-tier / positional vocabulary -> see handrun-04: NOT per-compound assertable
+#   M  = malodour context (deodorant patents) -> signals a document to exclude
+#   X  = noise; stop-list needs extending
+#
+# term            n     class
+floral	171	D
+unpleasant	127	H
+odour	109	X
+base	89	T
+top	80	T
+pleasant	72	H
+muguet	62	D
+green	54	D
+middle	53	T
+olfactory	52	X
+profile	41	X
+fruity	38	D
+modifying	33	X
+heart	32	T
+spicy	29	D
+imparting	29	X
+overall	27	X
+fatty	27	D
+embodiment	25	X
+toilet	25	M
+olfactive	24	X
+possess	24	X
+desirable	24	H
+sweat	23	M
+having	22	X
+woody	22	D
+mask	22	M
+accord	21	X
+provide	21	X
+characteristic	21	X
+fresh	21	D
+smoke	21	D
+citrus	21	D
+shows	19	X
+perceived	18	X
+similar	17	X
+dominate	17	X
+sweet	16	D
+enhancing	16	X
+cooking	16	M
+complex	16	X
+positive	16	H
+blossom-type	15	D
+against	15	X
+intensity	15	X
+radiant	15	D
+technical	15	X
+musk	14	D
+aromatic	14	D
+head	14	T
+intense	14	X
+way	14	X
+ambery	14	D
+bottom	13	T
+found	13	X
+generate	13	X
+character	13	X
+maintains	13	X
+overwhelmingly	13	X
+tobacco	13	D
+interesting	13	H
+notes	12	X
+exhibit	12	X
+substantive	12	X
+long-lasting	12	X
+body	12	X
+dominant	12	X
+test	12	M
+faecal	12	D
+masking	12	M
+figure	12	X
+volatile	11	X
+slight	11	X
+urine	11	M
+acid	11	D
+transparent	11	D
+citrus-like	11	D
+impart	10	X
+strength	10	X
+ether	10	D
+volatility	10	X
+fish	10	D
+responsible	10	X
+powerful	10	X
+flowery	10	D
+aldehydic	9	D
+musky	9	D
+grading	9	X
+scale	9	X
+score	9	X
