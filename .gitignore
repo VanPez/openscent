@@ -11,3 +11,18 @@ __pycache__/
 .venv/
 venv/
 .ipynb_checkpoints/
+
+# --- secrets & host details: pre-emptive, nothing matches today ---
+# This repo is intended to become public when the corpus ships CC0, and git history
+# is permanent. Keep anything that would need scrubbing out from the first commit.
+config.json
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+.env
+.env.*
+secrets.*
+# Held-out labelling: the KEY must never be committed before labelling is done,
+# and the labelled set is evidence — commit that deliberately, not by accident.
+pipeline/heldout-key.json
