@@ -61,15 +61,9 @@ EXCLUDE_PATENTS = {
 
 
 def decide(s: str) -> tuple[bool, str]:
-    """Mirror harvest.extract()'s accept path — and score.py's. Keep all three in step."""
-    if not (25 < len(s) < 320):        return False, "length"
-    for rx, lbl in H.EXCLUDE:
-        if rx.search(s):               return False, lbl
-    if H.HEADING.search(s):            return True,  "kept (heading)"
-    if not H.ODOUR.search(s):          return False, "no odour word"
-    if not H.DESCR.search(s):          return False, "no description verb"
-    if not H.named(s):                 return False, "no compound/example name"
-    return True, "kept"
+    """Delegates to harvest.decide(). See the note in score.py — a private copy of
+    this logic drifted once already and made the strata wrong."""
+    return H.decide(s)
 
 
 def sample() -> None:

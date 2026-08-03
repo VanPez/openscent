@@ -251,6 +251,38 @@ def norm(s: str) -> str:
 
 NORM_VERSION = "norm/1"
 
+
+def decide(s: str) -> tuple[bool, str]:
+    """THE accept path. Single implementation, three callers.
+
+    This existed in triplicate — once here (inside extract), once in score.py, once in
+    heldout.py — and they drifted, which is the entirely predictable outcome. The
+    HEADING rule was written into the two scorers and never into extract(), so:
+
+      - the test set rewarded accepting "PERFUME PROPERTIES Fruity, woody, pineapple-like"
+        (hand-run 01's find, and the reason the rule exists),
+      - the production extractor rejected it,
+      - and score.py's docstring claimed to mirror extract() while measuring something
+        extract() does not do.
+
+    Caught only because the held-out sampler reported 3,424 accepted where extract had
+    reported 3,191. Reconciling two numbers that should have matched is what found it;
+    reading the code had not.
+
+    Returns (accepted, reason) — the reason string is used for stats and for the
+    disagreement reports, so keep the labels stable.
+    """
+    if not (25 < len(s) < 320):        return False, "length"
+    for rx, lbl in EXCLUDE:
+        if rx.search(s):               return False, lbl
+    # Descriptor-only heading: no odour noun, no verb, just a list.
+    # "PERFUME PROPERTIES Fruity, woody, pineapple-like."
+    if HEADING.search(s):              return True,  "kept (heading)"
+    if not ODOUR.search(s):            return False, "no odour word"
+    if not DESCR.search(s):            return False, "no description verb"
+    if not named(s):                   return False, "no compound/example name"
+    return True, "kept"
+
 def extract() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     rows, stats = [], dict(docs=0, sents=0, odour=0, excluded=0, kept=0)
@@ -259,11 +291,15 @@ def extract() -> None:
         stats["docs"] += 1
         for s in SENT.split(text):
             stats["sents"] += 1
-            if not (25 < len(s) < 320) or not ODOUR.search(s): continue
-            stats["odour"] += 1
-            why = next((lbl for rx, lbl in EXCLUDE if rx.search(s)), None)
-            if why: stats["excluded"] += 1; continue
-            if not DESCR.search(s) or not named(s): continue
+            if 25 < len(s) < 320 and ODOUR.search(s): stats["odour"] += 1
+            ok, why = decide(s)
+            if not ok:
+                # everything that isn't one of the four structural misses is an
+                # EXCLUDE rule firing, and those are the interesting rejections
+                if why not in ("length", "no odour word", "no description verb",
+                               "no compound/example name"):
+                    stats["excluded"] += 1
+                continue
             span = norm(s)
             assert span in text, f"REJECT {f.stem}: span not verbatim in source"
             stats["kept"] += 1

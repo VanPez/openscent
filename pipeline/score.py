@@ -20,17 +20,12 @@ spec = importlib.util.spec_from_file_location("harvest", ROOT / "pipeline" / "ha
 H = importlib.util.module_from_spec(spec); spec.loader.exec_module(H)
 
 def decide(s: str) -> tuple[bool, str]:
-    """Mirror the accept path in harvest.extract() for a single sentence."""
-    if not (25 < len(s) < 320):        return False, "length"
-    for rx, lbl in H.EXCLUDE:
-        if rx.search(s):               return False, lbl
-    # Heading path: "PERFUME PROPERTIES Fruity, woody, pineapple-like." — a real
-    # descriptor list with no odour noun and no verb. Accepted on the heading alone.
-    if H.HEADING.search(s):            return True, "kept (heading)"
-    if not H.ODOUR.search(s):          return False, "no odour word"
-    if not H.DESCR.search(s):          return False, "no description verb"
-    if not H.named(s):                 return False, "no compound/example name"
-    return True, "kept"
+    """Delegates to harvest.decide() — the single accept path.
+
+    This function used to be its own copy of that logic and it drifted: it grew a
+    HEADING rule that harvest.extract() never had, so this scorer measured a filter
+    that did not exist. Do not reintroduce a local copy."""
+    return H.decide(s)
 
 rows = [json.loads(l) for l in open(ROOT/"pipeline"/"testset.jsonl") if l.strip()
         and not l.lstrip().startswith('{"_comment"')]
