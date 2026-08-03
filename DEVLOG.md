@@ -533,6 +533,86 @@ stages away (held-out accuracy → OPSIN linkage → ontology). He spent the wee
 CoinGecko/CMC submissions, the bridge and spam. Joe's read, which matches the evidence: don't wait on
 Mike, show him something finished.
 
+---
+
+## 2026-08-03 — **precision 0.16.** The first honest number, and it is not the one we were quoting
+
+### The result
+
+50 sentences from patents never used for tuning, drawn blind, labelled by Ivan without sight of the
+filter's answers, scored once.
+
+```
+precision 0.16    recall 1.00    F1 0.28      <- HELD OUT
+
+accept stratum 25: kept  4, dropped 21
+reject stratum 25: kept  0                     <- no detected misses
+```
+
+**Against 1.00/1.00 on the tuning set.** That gap is the entire value of the exercise, and it is the
+number to quote from here on. Everything scored against `testset.jsonl` was measuring memorisation.
+
+**Recall 1.00 is weaker evidence than it looks.** It means zero misses in 25 sentences sampled from the
+31,409 the filter rejected. A true keep-rate of 1% among rejects would produce an expected 0.25 hits in a
+sample that size, so this is "no evidence of misses", not proof of none. Precision is the solid number
+here; recall is a floor with wide error bars.
+
+### It does not break the plan — it prices it
+
+Hand-run 03 projected ~24% of candidates would survive human review. Measured: **16%**. Same order.
+Applied to 4,068 candidates that is **~650 usable assertions**, inside the original 600–1,000 molecule
+projection. Precision was always specified as the *review cost*, not a correctness claim.
+
+What changed is that the cost is now measured rather than assumed: **to obtain ~650 rows a human reads
+4,068 sentences.** That is the real finding, and it makes the case for one round of tightening before
+anyone starts reviewing.
+
+### Two failure modes, both diagnosable from the 21 false positives
+
+**1. Claim language dominates — 15 of 21.** Definitional patent prose that mentions odour without
+describing any particular molecule's smell. The EXCLUDE list catches some of these shapes and evidently
+not enough. This is hand-run 02's "Problem 3" reappearing at scale.
+
+**2. The HEADING path cannot produce a valid row, and the reason is structural — not a tuning issue.**
+Four false positives arrived via `kept (heading)`, including the two cases the rule exists to catch:
+
+```
+"Odor characteristics: scallion, pickle."
+"Odor characteristics: pickle, oshinko."
+```
+
+Both correctly dropped, because **a descriptor-only heading by definition names no molecule.** Under
+sentence-level scope the rule can never yield a row; it can only work with a context window reaching the
+preceding line. So this morning's discovery that extract() had been silently missing the heading path was
+real, but fixing it added ~877 rows that are, on this evidence, mostly waste. The bug was worth finding;
+the rule it restored is not worth keeping in its current form.
+
+Note the irony: `t10` was relabelled yesterday precisely because anaphora is out of scope. The heading
+path is the same problem wearing a different hat, and it survived because the test set rewarded it.
+
+### The four keeps — what a row actually looks like
+
+```
+"Menthone has a typical strong minty smell and flavour ... isomenthone is minty, cam..."
+"In particular, 6-(2-ethoxyethyl)-1,3,4-trimethylcyclohex-1-ene is used to impart a fruity note..."
+"In particular, 3-methoxy-2,3-dimethyl-pentane is used to impart an ethereal, sweet, mouldy, hay..."
+"However, in addition to its too high volatility, l-menthol has several other drawbacks..."
+```
+
+Named structure, explicit descriptor, one sentence, no context required.
+
+### This set is now spent
+
+Per the rule written into `heldout.py` and TESTSET.md: changing a filter rule because of what this set
+revealed **burns the set**. A fresh 50 must be drawn and labelled again.
+
+Plan is **one consolidated round, not iterative tuning** — kill or context-window the heading path,
+extend the claim-language exclusions from the 15 worked examples, then re-draw and label once. Recall
+1.00 says there is slack to spend on tightening. Two labelling sessions, not five.
+
+`pipeline/label.html` exists now — a blind, single-file labelling UI, keyboard-driven. It turned a
+40-minute JSON-editing chore into something repeatable, which is what makes a second round affordable.
+
 FEMA is used as a *selection layer only*: the number joins on CID to give `fema_listed` (renamed from
 `food_grade`, which overclaimed — a FEMA number is an industry GRAS designation, not a safety
 certification, and acetone is FEMA 3326). The flag is **asymmetric**: presence suggests an aroma

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenScent — held-out labelling</title>
+<!--
+  Blind labelling tool for pipeline/heldout-unlabelled.jsonl.
+
+  What      one sentence at a time, keep/drop, exports valid heldout-labelled.jsonl
+  Input     the UNLABELLED file only. It contains no filter decisions, so nothing here
+            can leak them. Do not open heldout-key.json until every row is labelled.
+  Storage   none. Progress lives in memory only — deliberately, so there is no hidden
+            state to disagree with the file. Export whenever you want to stop; the page
+            can re-load a partially labelled file and carry on.
+  Offline   single file, system fonts, no network. Open it with File > Open in a browser.
+-->
+<style>
+  :root{
+    --paper:#f5f7f9; --card:#fff; --ink:#07111d; --mut:#687383; --faint:#718196;
+    --line:#dce4ee; --line-strong:rgba(29,52,78,.3);
+    --blue:#245cff; --blue-pale:#eef3ff; --amber:#9a6a14; --amber-pale:#fdf6e9;
+    --teal:#0f8f7f; --red:#bc4b47;
+    --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+    --shadow:0 18px 50px rgba(28,60,98,.067);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 var(--sans);
+       -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:26px 28px 64px}
+  .lab{display:flex;align-items:center;gap:10px;color:var(--mut);font-family:var(--mono);
+       font-size:11px;text-transform:uppercase;letter-spacing:.14em}
+  .dash{width:18px;height:2px;background:var(--blue)}
+  h1{font-size:30px;letter-spacing:-.02em;margin:10px 0 6px;font-weight:700}
+  .sub{color:var(--mut);max-width:82ch;margin-bottom:20px}
+  .badge{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+         padding:5px 10px;border:1px solid var(--line-strong);color:var(--mut);background:#fff}
+  .note{background:var(--amber-pale);border:1px solid rgba(154,106,20,.35);padding:12px 16px;
+        font-size:13.5px;color:#5b4310;margin-bottom:22px}
+  .note b{color:#3d2d09}
+  .card{background:#fff;border:1px solid var(--line-strong);box-shadow:var(--shadow);
+        border-top:3px solid var(--blue);margin-bottom:20px}
+  .card-head{display:flex;align-items:center;gap:12px;padding:12px 18px;
+             border-bottom:1px solid var(--line);background:var(--blue-pale);flex-wrap:wrap}
+  .card-head .id{font-family:var(--mono);font-size:12px;font-weight:600}
+  .card-head .src{font-family:var(--mono);font-size:11px;color:var(--mut)}
+  .card-head .count{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--mut)}
+  .sentence{padding:30px 26px;font-size:19px;line-height:1.6}
+  .bar{height:3px;background:var(--line)}
+  .bar > i{display:block;height:3px;background:var(--blue);width:0;transition:width .2s}
+  .actions{display:flex;gap:10px;padding:16px 18px;border-top:1px solid var(--line);flex-wrap:wrap;
+           align-items:center}
+  button{font:600 13px var(--sans);padding:11px 20px;border:1px solid var(--line-strong);
+         background:#fff;color:var(--ink);cursor:pointer;border-radius:0}
+  button:hover{background:#f5f8fc}
+  button.keep{background:var(--teal);border-color:var(--teal);color:#fff}
+  button.drop{background:var(--red);border-color:var(--red);color:#fff}
+  button.keep:hover{filter:brightness(1.08)} button.drop:hover{filter:brightness(1.08)}
+  button.ghost{color:var(--mut)}
+  button:disabled{opacity:.4;cursor:default}
+  kbd{font-family:var(--mono);font-size:10px;border:1px solid rgba(255,255,255,.5);
+      padding:1px 5px;margin-left:7px;opacity:.85}
+  button.ghost kbd{border-color:var(--line-strong)}
+  .why{display:flex;gap:8px;padding:0 18px 16px;flex-wrap:wrap;align-items:center}
+  .why input{flex:1;min-width:240px;font:13px var(--sans);padding:9px 12px;
+             border:1px solid var(--line-strong);border-radius:0;outline:none}
+  .why input:focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-pale)}
+  .chip{font:500 11px var(--mono);padding:5px 9px;border:1px solid var(--line-strong);
+        background:#fff;color:var(--mut);cursor:pointer}
+  .chip:hover{border-color:var(--blue);color:var(--blue)}
+  .crit{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line-strong);
+        background:#fff;margin-bottom:22px;box-shadow:var(--shadow)}
+  .crit > div{padding:14px 18px}
+  .crit > div + div{border-left:1px solid var(--line)}
+  .crit h3{margin:0 0 6px;font:600 12px var(--mono);text-transform:uppercase;letter-spacing:.1em}
+  .crit.k h3{color:var(--teal)} .crit p{margin:0;font-size:13.5px;color:#42506a}
+  .done{background:#fff;border:1px solid var(--line-strong);box-shadow:var(--shadow);
+        border-top:3px solid var(--teal);padding:26px}
+  .tally{display:flex;gap:26px;margin:14px 0 20px;font-family:var(--mono);font-size:13px}
+  .foot{color:var(--mut);font-size:12.5px;margin-top:26px;line-height:1.8;
+        border-top:1px solid var(--line);padding-top:16px}
+  .hide{display:none}
+  input[type=file]{font:13px var(--sans)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="lab"><span class="dash"></span> OpenScent · held-out evaluation</div>
+  <h1>Label 50 sentences, blind</h1>
+  <p class="sub">This is the only honest accuracy measurement the filter will get. Judge each sentence on
+  its own merits — the filter's answers are in <code>heldout-key.json</code> and must stay unopened until
+  you have finished.</p>
+
+  <div class="note"><b>Score once, then stop.</b> If a filter rule is later changed because of what this
+  set reveals, the set is burned and a new one has to be drawn. That is a DEVLOG entry, not a quiet
+  re-score.</div>
+
+  <div class="crit k">
+    <div>
+      <h3>Keep</h3>
+      <p>The sentence describes a smell <b>and</b> names a molecule that could be resolved to a
+      structure. Both halves are required.<br>
+      <i>"3-(n-propyl)phenol has a leather-like, phenolic and ink-like odor."</i></p>
+    </div>
+    <div>
+      <h3>Drop</h3>
+      <p>Anything else — no real descriptor, no resolvable molecule, a test protocol, a claim, a
+      malodour, or a smell attached to a mixture.<br>
+      <i>"This feedstock itself possesses an odour in the direction of grapefruit."</i> — lovely, but a
+      feedstock is never one structure.</p>
+    </div>
+  </div>
+
+  <div id="loader" class="card" style="border-top-color:var(--mut)">
+    <div class="card-head" style="background:#f5f8fc"><span class="id">Load a file</span></div>
+    <div style="padding:20px 18px">
+      <p style="margin:0 0 12px;font-size:13.5px;color:#42506a">Choose
+        <code>pipeline/heldout-unlabelled.jsonl</code> — or a partially labelled file to carry on
+        where you left off.</p>
+      <input type="file" id="file" accept=".jsonl,.json,.txt">
+      <p id="loaderr" style="color:var(--red);font-size:13px;margin:12px 0 0"></p>
+    </div>
+  </div>
+
+  <div id="app" class="hide">
+    <div class="card">
+      <div class="card-head">
+        <span class="id" id="rid">h01</span>
+        <span class="src" id="rsrc">US0000000B2</span>
+        <span class="count" id="rcount">1 / 50</span>
+      </div>
+      <div class="bar"><i id="bar"></i></div>
+      <div class="sentence" id="rtext"></div>
+      <div class="why">
+        <input id="rwhy" placeholder="why (optional, but useful when you disagree with the filter)">
+        <span class="chip" data-w="no compound name">no compound name</span>
+        <span class="chip" data-w="not descriptive">not descriptive</span>
+        <span class="chip" data-w="test protocol / metric">test protocol</span>
+        <span class="chip" data-w="malodour">malodour</span>
+        <span class="chip" data-w="claim language">claim language</span>
+        <span class="chip" data-w="mixture, not a structure">mixture</span>
+        <span class="chip" data-w="clean assertion">clean assertion</span>
+      </div>
+      <div class="actions">
+        <button class="keep" id="bkeep">Keep<kbd>K</kbd></button>
+        <button class="drop" id="bdrop">Drop<kbd>D</kbd></button>
+        <button class="ghost" id="bback">Back<kbd>←</kbd></button>
+        <button class="ghost" id="bexport" style="margin-left:auto">Export progress</button>
+      </div>
+    </div>
+    <div class="tally">
+      <span>kept <b id="tk">0</b></span>
+      <span>dropped <b id="td">0</b></span>
+      <span>remaining <b id="tr">50</b></span>
+    </div>
+  </div>
+
+  <div id="done" class="done hide">
+    <div class="lab"><span class="dash"></span> All labelled</div>
+    <h1 style="font-size:24px">Export, then score once</h1>
+    <div class="tally">
+      <span>kept <b id="dk">0</b></span>
+      <span>dropped <b id="dd">0</b></span>
+    </div>
+    <p style="font-size:13.5px;color:#42506a;max-width:80ch">Save the file as
+      <code>pipeline/heldout-labelled.jsonl</code>, then run:</p>
+    <pre style="font:12.5px var(--mono);background:#f5f8fc;border:1px solid var(--line);padding:12px 14px;overflow:auto">python3 pipeline/heldout.py score</pre>
+    <div class="actions" style="border:0;padding-left:0">
+      <button class="keep" id="bexport2">Download heldout-labelled.jsonl</button>
+      <button class="ghost" id="bredo">Review from the start</button>
+    </div>
+  </div>
+
+  <div class="foot">
+    Nothing is stored — progress lives in memory. Use <b>Export progress</b> before closing, and reload
+    that file to continue. This page never sees <code>heldout-key.json</code>.
+  </div>
+</div>
+
+<script>
+(function(){
+  var rows = [], i = 0;
+
+  function $(id){ return document.getElementById(id); }
+
+  $('file').addEventListener('change', function(e){
+    var f = e.target.files[0]; if(!f) return;
+    var fr = new FileReader();
+    fr.onload = function(){
+      try {
+        rows = fr.result.split('\n')
+          .map(function(l){ return l.trim(); })
+          .filter(function(l){ return l && l.indexOf('{"_comment"') !== 0; })
+          .map(function(l){ return JSON.parse(l); });
+        if(!rows.length) throw new Error('no rows found');
+        if(!('text' in rows[0]) || !('id' in rows[0])) throw new Error('missing id/text fields');
+        rows.forEach(function(r){ if(r.label !== 'keep' && r.label !== 'drop') r.label = ''; });
+        // resume at the first unlabelled row
+        i = rows.findIndex(function(r){ return !r.label; });
+        if(i < 0) i = rows.length;
+        $('loader').classList.add('hide');
+        render();
+      } catch(err){
+        $('loaderr').textContent = 'Could not read that file: ' + err.message;
+      }
+    };
+    fr.readAsText(f);
+  });
+
+  function counts(){
+    var k=0,d=0,n=0;
+    rows.forEach(function(r){ if(r.label==='keep')k++; else if(r.label==='drop')d++; else n++; });
+    return {k:k,d:d,n:n};
+  }
+
+  function render(){
+    var c = counts();
+    $('tk').textContent=c.k; $('td').textContent=c.d; $('tr').textContent=c.n;
+    if(i >= rows.length){
+      $('app').classList.add('hide'); $('done').classList.remove('hide');
+      $('dk').textContent=c.k; $('dd').textContent=c.d;
+      return;
+    }
+    $('done').classList.add('hide'); $('app').classList.remove('hide');
+    var r = rows[i];
+    $('rid').textContent = r.id;
+    $('rsrc').textContent = r.src || '';
+    $('rcount').textContent = (i+1) + ' / ' + rows.length;
+    $('rtext').textContent = r.text;
+    $('rwhy').value = r.why || '';
+    $('bar').style.width = ((i / rows.length) * 100) + '%';
+    $('bback').disabled = i === 0;
+  }
+
+  function label(v){
+    if(i >= rows.length) return;
+    rows[i].label = v;
+    rows[i].why = $('rwhy').value.trim();
+    i++;
+    render();
+  }
+
+  $('bkeep').onclick = function(){ label('keep'); };
+  $('bdrop').onclick = function(){ label('drop'); };
+  $('bback').onclick = function(){ if(i>0){ i--; render(); } };
+  $('bredo').onclick = function(){ i=0; render(); };
+
+  [].forEach.call(document.querySelectorAll('.chip'), function(ch){
+    ch.onclick = function(){
+      var cur = $('rwhy').value.trim();
+      var w = ch.getAttribute('data-w');
+      $('rwhy').value = cur ? (cur + '; ' + w) : w;
+      $('rwhy').focus();
+    };
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(document.activeElement === $('rwhy')){
+      if(e.key === 'Enter') $('rwhy').blur();
+      return;
+    }
+    if(e.key === 'k' || e.key === 'K') label('keep');
+    else if(e.key === 'd' || e.key === 'D') label('drop');
+    else if(e.key === 'ArrowLeft' && i>0){ i--; render(); }
+  });
+
+  function exportFile(){
+    var head = '{"_comment": "Labelled held-out set. Score ONCE with pipeline/heldout.py score. '
+             + 'Do not tune any filter rule against these labels."}';
+    var body = rows.map(function(r){
+      return JSON.stringify({id:r.id, src:r.src, text:r.text, label:r.label, why:r.why||''});
+    }).join('\n');
+    var blob = new Blob([head + '\n' + body + '\n'], {type:'application/json'});
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'heldout-labelled.jsonl';
+    a.click();
+    setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
+  }
+  $('bexport').onclick = exportFile;
+  $('bexport2').onclick = exportFile;
+})();
+</script>
+</body>
+</html>

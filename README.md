@@ -44,23 +44,28 @@ See `reports/phase0-1-pipeline.md` for the full design and the provenance schema
 
 ---
 
-## Where it actually stands (2026-08-02)
+## Where it actually stands (2026-08-03)
 
 **Patent corpus collected.** 2,588 US patents (CPC C11B 9/00 + A61Q 13/00, priority 2001+), fetched
 clean: zero failures, zero short-document rejects, 173 MB. Extraction over 992,396 sentences yields
-**3,191 candidate assertions** across 1,027 patents.
+**4,068 candidate assertions** across ~1,100 patents.
 
 **Second source built.** PubChem's `Odor` annotations — 2,358 records → **1,453 usable CIDs**. Its value
 is that PubChem returns the compound ID directly, so the patent pipeline's most dangerous failure (an
 accurate odour description bound to the *wrong* molecule) cannot occur there. See
 `reports/pubchem-source.md`.
 
-**The accuracy number does not exist yet, and that is the current blocker.** The extraction filter scores
-1.00/1.00 on `pipeline/testset.jsonl`, and that figure is worthless: every rule was written while looking
-at those 29 sentences, and when the filter disagreed with a label, the label moved. `pipeline/TESTSET.md`
-says so directly. `pipeline/heldout.py` draws a blind, stratified set from patents never used for tuning —
-including sentences the filter *rejected*, so recall can be measured rather than assumed. Until that is
-labelled and scored once, every downstream number is provisional.
+**Measured accuracy: precision 0.16, recall 1.00.** 50 sentences from patents never used for tuning,
+drawn blind, labelled by hand, scored once (`pipeline/heldout.py`). The same filter scores 1.00/1.00 on
+its own tuning set — that figure is memorisation and should never be quoted. Recall is a floor rather than
+an estimate: 25 rejected sentences were sampled and none should have been kept, which is consistent with
+few misses but does not prove it.
+
+**What 0.16 means in practice.** The filter is a deliberately wide sieve; precision is the *review cost*,
+not a correctness claim. ~650 of the 4,068 candidates are expected to survive human review — inside the
+original 600–1,000 molecule projection — but a human reads 4,068 sentences to get there. Two failure modes
+account for it: definitional claim language (15 of 21 false positives) and descriptor-only headings, which
+structurally cannot name a molecule and so can never yield a row at sentence scope.
 
 **Then, in order:** ontology derivation over the full corpus → OPSIN name→structure linkage →
 copyright-notice scan → tagging.

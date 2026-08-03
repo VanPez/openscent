@@ -2,6 +2,22 @@
 
 `pipeline/testset.jsonl` · 29 labelled sentences · scored by `pipeline/score.py`
 
+## ⛔ The real number is 0.16, and it is not on this page
+
+**2026-08-03.** A held-out set — 50 sentences from patents never used for tuning, labelled blind, scored
+once — returned **precision 0.16, recall 1.00, F1 0.28**.
+
+| | this tuning set | held out |
+|---|---|---|
+| precision | 1.00 | **0.16** |
+| recall | 1.00 | 1.00 (floor; 25 rejects sampled, 0 misses found) |
+
+**Quote 0.16.** Everything below describes what this file is good for, and it is not accuracy. The gap
+between the two columns is the entire reason the held-out set exists. See `heldout.py`, and the
+2026-08-03 DEVLOG entry for the failure analysis.
+
+---
+
 ## ⚠️ Read this before quoting any score
 
 The v2 filter scores **precision 1.00, recall 1.00** on this set.
