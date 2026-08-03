@@ -4,18 +4,61 @@
 
 ---
 
-## RESUME HERE — state as of 2026-08-01
+## RESUME HERE — state as of 2026-08-01 (evening)
 
-**One blocker, and it is not technical.** The 2,588-patent fetch has never run. Everything downstream
-waits on it. `corpus/patent-ids.json` holds the IDs and is deliberately not gitignored — discovery is
-rate-limited and cannot casually be re-run.
+**The corpus is IN.** 2,588 patents cached on Hetzner (`/opt/openscent/corpus/raw/`, 173 MB, zero
+failures). `extract` with the v3 filter gives **3,191 candidates** across 1,027 patents;
+`corpus/extracted/candidates.json` is on the Mac.
+
+> `$OPENSCENT_HOST` is the harvest box (`user@ip`). Set it in your shell — it is deliberately not
+> committed, so this repo can go public unchanged:
+> ```bash
+> export OPENSCENT_HOST=user@your.host.ip
+> ```
+
+**One thing to do next, and it needs your hands, not the machine's:** label the held-out set. This is the
+first honest accuracy number the project will have — everything else is measured against data the filter
+was tuned on.
 
 ```bash
-scp ~/Documents/GenesisL1/openscent/corpus/patent-ids.json $OPENSCENT_HOST:/opt/openscent/corpus/
+# 1. Mac — ship the sampler
+scp ~/Documents/GenesisL1/openscent/pipeline/heldout.py $OPENSCENT_HOST:/opt/
+
+# 2. Hetzner — draw the sample (needs corpus/raw, so it must run there)
 ssh $OPENSCENT_HOST
-screen -S openscent bash -c 'python3 /opt/harvest.py fetch 2>&1 | tee /opt/openscent-fetch.log'
+python3 /opt/heldout.py sample
+
+# 3. Mac — pull both files back
+scp $OPENSCENT_HOST:/opt/openscent/pipeline/heldout-{unlabelled.jsonl,key.json} \
+    ~/Documents/GenesisL1/openscent/pipeline/
+
+# 4. Label heldout-unlabelled.jsonl by hand: set "label" to keep or drop, say why.
+#    Save it as heldout-labelled.jsonl. DO NOT open heldout-key.json first.
+#    keep = describes a smell AND names a molecule resolvable to a structure.
+
+# 5. Score, once:
+python3 pipeline/heldout.py score
 ```
-~2.5 h unattended. Ctrl+C kills the screen session as well as the process — reopen a new one to restart.
+
+**Do not tune anything on the result.** If a rule changes because of what this set reveals, the set is
+burned and a new one must be drawn — as a DEVLOG entry, not a quiet re-score.
+
+**Then:** ontology re-harvest over the full 2,588 (Phase 0 was blocked on corpus size — 60 patents gave
+1,035 terms but only 14 occurring ≥30 times; it needed 500–1,000 and now has 2,588, so Mike's
+"60–100 tags at ≥30 molecules each" target is finally testable) → OPSIN linkage → copyright-notice scan
+→ only then is `odor_terms` mintable (`reports/phase0-1-pipeline.md` §2a).
+
+**Not chasing Mike on gas/NFT questions** — they only bind once minting is close, which is several stages
+away. See the 2026-08-02 entry.
+
+**Do not run discovery again.** `corpus/patent-ids.json` (2,588 ids) must be present on the server at
+`/opt/openscent/corpus/` before `fetch` runs; if it is missing, harvest.py silently falls back to
+`/xhr/query` discovery, which Google refuses from Hetzner — that caused the 503 storm. *Known footgun:
+`fetch` should refuse to run discovery unless asked explicitly. Not fixed yet.*
+
+**Second source, independent of all the above:** `pipeline/pubchem.py`, run from the Mac. 1,453 usable
+CIDs, linkage free (PubChem returns the CID), 39 rows flagged for expression review. See
+`reports/pubchem-source.md`. Parry/Piesse checked and dropped — 27 of 30 already covered.
 
 **Infrastructure constraint, learned the hard way:** Google Patents refuses Umbrel's IP outright and
 refuses Hetzner for `/xhr/query` (though Hetzner serves patent *pages* fine). Search runs only from the
@@ -243,3 +286,271 @@ generalisation, so scan rather than assume).
 
 **Not actionable yet, and the pilot mint should not wait for it.** Preconditions in order: the
 2,588-patent fetch → linkage via OPSIN → held-out accuracy → copyright-notice scan.
+
+---
+
+## 2026-08-01 (evening) — The fetch finally launched, and PubChem turns out to be weaker than the scan said
+
+### The fetch: three failures, none of them the code
+
+Wasted an afternoon on an operational sequence, worth recording because each failure was avoidable:
+
+1. **Pasting a multi-line block containing `ssh` into one terminal.** Everything after the `ssh` line was
+   consumed by the remote shell, so commands intended for the Mac ran on Hetzner and vice versa.
+2. **The `scp` of `patent-ids.json` had silently failed** (target directory didn't exist). harvest.py's
+   fallback is to run *discovery* — which hits `/xhr/query`, the one endpoint Google refuses from
+   Hetzner. Result: a 503 storm, a partially-written `patent-ids.json` on the server (which a later run
+   would have silently reused), and a temporary throttle that reached the Mac too.
+3. **`screen` looked frozen.** It wasn't — Python block-buffers stdout into a pipe, so `| tee` swallowed
+   ~8 KB of progress. `python3 -u` fixes it. Diagnosis was `ls corpus/raw | wc -l` twice, 15 s apart.
+
+**Design lesson, not just an ops lesson:** a fallback that quietly does something expensive and blockable
+when an input is missing is a footgun. `fetch` should refuse to run discovery unless asked explicitly.
+Not changed yet — noted so it doesn't get rediscovered.
+
+Cooling off for an hour, re-verifying with a two-request smoke test, and launching in a fresh screen
+worked. ~3 s/patent, no failures in the first several hundred.
+
+### PubChem: linkage solved, licence weaker than advertised
+
+Built `pipeline/pubchem.py` while the fetch ran — deliberately a different host and endpoint so it cannot
+interfere. Two PUG View headings, no key: `Odor` and `FEMA Number`. Write-up in `reports/pubchem-source.md`.
+
+**Fetch matched the scan exactly: 2,358 odour annotations.** Endpoint has not drifted.
+
+```
+rows 3135 → excluded 903 (odourless / thresholds / placeholders)
+          → dropped   150 (more than one CID — refused rather than guessed)
+          → kept     2082  across 1453 distinct CIDs
+```
+
+**What it fixes: linkage, completely.** PubChem returns `LinkedRecords.CID`, so the patent pipeline's
+worst failure mode — "Example 3" resolving to the wrong structure, yielding an accurate description bound
+to the wrong molecule — cannot occur. No OPSIN stage for this source.
+
+**What it does not fix, and this is the finding.** The licence scan marks the `Odor` heading ✅ public
+domain because 2,356 of 2,358 annotations come from HSDB, an NLM work. That is true of the *database* and
+not of the *sentences*. HSDB summarises prior literature, and the very first record cites
+**The Merck Index (Merck & Co., 1996)** — a copyrighted book behind a PD wrapper. Same `quotes_source`
+problem as hand-run 02, different door.
+
+Every row now carries `references`, `quotes_source`, `reference_may_be_copyrighted` (heuristic publisher
+match) and `reference_flag_hits` (which strings matched, so the call is checkable). Then:
+
+1,148 kept rows (55%) cite a possibly-copyrighted work, mostly Merck Index / Budavari.
+
+**I then over-corrected, and Ivan called it.** My first take treated a flagged citation as disqualifying
+and put the usable set at 83 food-grade molecules. Ivan pushed back — *does a Merck cite really make it
+unusable?* — and the data says no. Copyright protects **expression, not facts**; flagged spans run to a
+**median of 3 words** and 87% are ≤5. "Fragrant and penetrating odor" is a short phrase stating a fact,
+with no protectable expression in it. HSDB citing Merck is scientific attribution, not reproduction.
+*Cites a copyrighted work* ≠ *copies protected expression*, and conflating them would have thrown away
+1,148 good rows.
+
+**The real discriminator is span length, because length brings creativity.** The tail is where it bites:
+
+```
+20w  BENZYL ACETATE — "Powerful but thin, sweet floral fresh, fresh and light, fruity odor
+     reminiscent of Jasmin, Gardenia, Muguet, Lily and other flowers"   [Merck Index p.189]
+```
+
+That is authored prose in Arctander's register, not a fact statement. So rows now carry `word_count` and
+`expression_risk`, set to `review` only where a flagged citation meets a span over 10 words:
+
+```
+kept rows            2082   (1453 CIDs)
+expression_risk low  2043
+needs hand review      39   (27 FEMA-listed)
+FEMA-listed rows      521   ( 277 CIDs)
+```
+
+**39 rows to read, not 1,148 to discard.** Usable set is 1,453 CIDs / 277 FEMA-listed — an order of
+magnitude better than my first number. Second time this project has caught me being conservative in a way
+that destroys data; the discipline of writing down *which* thing moved (per TESTSET.md) is what surfaced it.
+
+**Patents remain the main event.** PubChem's value is (a) cross-checking patent rows for the same CID and
+(b) common molecules nobody patents. It does nothing for the 37 captives.
+
+### Parry / Piesse: checked, dropped, and the reason is redundancy not licensing
+
+Ivan asked whether the pre-1929 perfumery literature was worth mining, then answered his own question —
+*wouldn't it already be on PubChem?* It is. Of 30 classic Parry-era synthetics, **27 already have a
+PubChem odour row**, and the misses are naming artefacts (HELIOTROPIN = PIPERONAL, which is present).
+Parry wrote about exactly the compounds that are now century-old commodities — the population a
+toxicology database covers thoroughly. Appendix in `reports/pubchem-source.md`.
+
+Licensing was never the obstacle: archive.org serves Parry vol. 1 (1918) as
+`possible-copyright-status: NOT_IN_COPYRIGHT`, 1.6 MB of plain text, no key. Two other strikes: **24% of
+words at OCR confidence ≤30** (archive.org publishes the histogram — worse than the pre-2000 patent scans
+handrun-01 already struggled with), and linkage *regresses*, since Piesse describes materials that never
+resolve to a CID and Parry's period names need a hand-written synonym table.
+
+Revisit only if Phase 0 turns out vocabulary-starved — 1918 prose is richer per sentence than HSDB, so it
+is a source of *terms*, never of coverage.
+
+### And I was too harsh on PubChem's vocabulary
+
+The Parry check incidentally disproved my own "toxicological, not perfumery" line. Sampled from the
+FEMA-listed rows: *"Sweet rose odor"*, *"Heliotrope odor"*, *"Odor similar to that of bergamot oil and
+French lavender"*, *"warm, woody, floral … with balsamic and sweet tone"*. That is perfumery register.
+The complaint is true of the corpus as a whole — nickel carbonyl and dioxane are in there — and false of
+the aroma subset, which is the part anyone would use. `fema_listed` separates the two cleanly, which is
+the argument for having built the join. Corrected in the report rather than left standing.
+
+**Second time today a claim of mine survived only until it was measured** (the other being the Merck
+citation). Both were conservative errors, and conservative errors in this project destroy data rather
+than compromise it — which makes them feel safe and cost more than they look.
+
+---
+
+## 2026-08-01 (night) — Corpus landed; the compound-name gate turned out to be measuring nothing
+
+### The fetch completed clean
+
+**2,588 of 2,588, 173 MB, zero failures, zero too-short rejects.** Better than the hand-runs predicted.
+~67 KB per patent against handrun-01's ~96 KB estimate — post-2001 text is tighter than the 1975 scan.
+
+First `extract` on the full corpus: 992,396 sentences → 27,308 containing odour vocabulary → 2,973
+excluded → **3,379 candidates**.
+
+### `NAMED` was broken in both directions and neither the test set nor I could see it
+
+I first called 3,379 "6.7× the projection". **That comparison was wrong** — it measured *candidates*
+against a projection of *usable rows*. Corrected: handrun-03's v0 produced 0.84 candidates/patent of
+which ~24% were usable (0.20/patent). v3 now gives 1.23 candidates/patent → **~765 usable at the same
+survival rate**, which sits inside the original 600–1,000 molecule projection. Nothing was broken. The
+24% survival is itself an assumption resting on five hand-read sentences, and is the next thing to
+measure rather than trust.
+
+But checking the number surfaced something real. The most common token satisfying "this sentence names a
+compound" across the 3,379 candidates:
+
+```
+floral 624 · natural 278 · material 250 · chemical 134 · herbal 111 · animal 41
+(genuine: acetate 94 · lilial 65 · propanal 51 · menthol 48 · damascone 42)
+```
+
+**The gate that proves a molecule is named was being satisfied by the words that describe the smell.**
+`[a-z]+al\b` matches *floral* exactly as well as *lilial*.
+
+And it failed the other way at the same time: `[a-z]+ol\b` misses the plural *alkoxynonenols*; `-yne` was
+absent, so *1,3-undecadien-5-yne* never matched. Several rows were accepted **for the wrong reason** —
+right answer, broken reasoning — which is worse than a wrong answer because it looks fine.
+
+**v3** replaces it with four independent signals (explicit `Example N` / `Formula (I)`, systematic-name
+locants, ®/™ trade names, chemical suffixes minus a published stoplist). One bug in my own v3, found by
+inspecting what it newly rejected rather than by reasoning: patents write *"compounds of Formula (I)"*
+with parentheses, and my rule demanded a bare numeral — it missed every parenthesised reference. That fix
+alone recovered 164 rows.
+
+Full-corpus re-run: **3,191 candidates.** Net movement small, but ~987 out and ~799 in — roughly a
+quarter of the set changed identity. No re-fetching; this is exactly what the fetch/extract split bought.
+
+### t10 relabelled, and the score is now actively misleading
+
+v3 dropped test-set recall to 0.90 on `t10`: *"In the latter case, the material was described as having
+an aldehydic, flowery-lily of the valley, fatty type of odour."*
+
+Same principle as `t11` (a row needs a resolvable molecule), different cause. `t11`'s "feedstock" can
+**never** resolve. `t10`'s "the material" **probably can** — from a sentence the filter cannot see. So it
+is not a regex question but a **scope** question: is the unit of extraction a sentence, or a sentence plus
+context? Labelling it *keep* asserts the filter should do anaphora resolution, which is a feature.
+
+**Relabelled keep → drop**, cost measured: of the 987 sentences v3 rejects, **85 (9%) look anaphoric**.
+That is the recall forfeited, and it is recoverable later — the patents are cached, so a context window
+costs no re-fetching.
+
+Score returns to 1.00/1.00, **and that is now worse than meaningless**: I moved a label until the set
+agreed with the filter. A test set you relabel on disagreement will always agree with you eventually.
+Written into TESTSET.md next to the number rather than left for someone to discover.
+
+### Held-out set: built, and two honesty problems with it stated up front
+
+`pipeline/heldout.py`. Two rules it enforces mechanically:
+
+1. **It samples rejected sentences too.** A set drawn only from `candidates.json` cannot contain a
+   sentence the filter has always missed — the exact flaw in the current test set. Stratified 25/25
+   across accept/reject, reweighted by true stratum sizes at scoring time (only ~12% of odour-bearing
+   sentences are accepted, so a uniform 50 would carry ~6 accepted rows and say nothing about precision).
+2. **Blind labelling.** `sample` writes sentences with no decision attached and the filter's answers to a
+   separate key file. Fixed seed, so the draw cannot be quietly re-rolled.
+
+**Known contamination, recorded rather than hidden:** handrun-03 sampled 25 patents and handrun-04 sampled
+60, and **neither list was written down**. Those runs produced the EXCLUDE rules and stop lists, so up to
+~85 unidentifiable patents may survive the exclusion list. Weaker contamination than the test set's
+(aggregate statistics, not per-sentence tuning) but real, and it qualifies any number this set produces.
+**Lesson for future runs: record the sampled IDs.**
+
+If a rule is later changed because of what this set reveals, the set is burned and a new one must be drawn.
+That has to be a DEVLOG entry, not a quiet re-score.
+
+---
+
+## 2026-08-02 — Read the main GenesisL1 chat back to 30 Jul. Nothing blocks us; several things clarify.
+
+Context gathering, not project work. Recorded so it isn't re-derived, and because two items correct
+things written elsewhere in this repo.
+
+**MolNFTs are transferable — settled by evidence rather than by assertion.** Joe had suggested they are
+one-address / not built for exchange, which would have reopened the whole NC-licence question. The chat
+closes it: yesterday's poll reads *"to distribute **transferrable** molnft to community… 2. Send Molnft
+pdbbank to community members. This will be just an **ownership transfer**"* (8 of 9 voted for that).
+The entire thread presumes transferability. **`../aroma-index/reports/license-scan.md` stands unchanged**
+and NC sources stay ruled out. Ivan's call to keep assuming Mike's original statement was correct.
+
+Worth noting the distinction that made this moot for us anyway: even if the tokens were non-transferable,
+NC data still could not enter a **CC0** corpus. CC0 promises downstream users no restrictions; NC imposes
+them. The tradeability question only ever affected aroma-index's display layer, never the corpus licence.
+
+**GL1F is not a model — correction to `../GLOSSARY.md`, now fixed.** Mike: *"GL1F is not a model, it is a
+studio with runtime, 4 clients and canonical format identical for each client."* A `.gl1f` holds weights
+plus a features register; deploy on-chain or run locally. Determinism is claimed as absolute, with one
+known client bug making rare models diverge from the EVM runtime, to be fixed alongside a GL1F paper Mike
+is writing. **He has his own paper in flight** — ours should not collide with it.
+
+**A dataset NFT service is coming, and it is the intended home for this corpus.** *"Provenance score is
+absolute as long as you use dataset from upcoming dataset NFT service. Verifiable dataset as input and
+training data towards model whose output is byte to byte identical via any execution path."* No date.
+This is Mike's Phase 2, so we may not need to build corpus publication ourselves.
+
+**DOI issuance is planned but blocked upstream.** Joe asked about the legal backbone for assigning DOIs;
+Mike: *"this is for us to issue doi and this is planned but first should solve software task and to solve
+it we need ipfs sidecar first."* **Zenodo remains our route**, as the build plan already assumed. No
+change for us.
+
+**One genuine risk, raised by Joe and unanswered:** publishing on L1 first may compromise later journal
+publication, since results normally cannot be published twice. Most journals accept preprints, some do
+not. Cheap to check now, expensive after the fact. Parked, not dismissed.
+
+**Precedent and possible funding.** `app.molnft.org` has already minted PDB and AlphaFold structures, so
+this class of dataset is not novel to the chain. ~99k L1 of unspent mint budget was returned to the
+community pool this week, alongside ~$3k/week in Base LP fees. A governance proposal is therefore an
+available route if this ever needs funding.
+
+**Deliberately NOT chasing Mike.** The two open asks — the 8-byte node read gas optimisation and the
+MolNFT-vectors-vs-Morgan-fingerprints commitment — only bind once minting is close, and we are several
+stages away (held-out accuracy → OPSIN linkage → ontology). He spent the week on the explorer,
+CoinGecko/CMC submissions, the bridge and spam. Joe's read, which matches the evidence: don't wait on
+Mike, show him something finished.
+
+FEMA is used as a *selection layer only*: the number joins on CID to give `fema_listed` (renamed from
+`food_grade`, which overclaimed — a FEMA number is an industry GRAS designation, not a safety
+certification, and acetone is FEMA 3326). The flag is **asymmetric**: presence suggests an aroma
+molecule, absence implies nothing, since fragrance-only materials like Iso E Super and the musks are
+never FEMA-listed. Metadata for ranking review effort, never a filter. It separates
+perfumery-relevant rows from toxicological noise. FEMA's own library prose is proprietary and is never
+fetched. 2,394 CIDs carry a FEMA number.
+
+### The verbatim assert earned its keep
+
+`extract` crashed on ANID 1392 (NICKEL CARBONYL, *`LIKE "BRICK DUST"`*). The data was fine — **the check
+was wrong**: it compared a JSON-*decoded* string against JSON-*encoded* file text, so any value containing
+a quote, backslash or newline failed while being perfectly verbatim. 3 of 3,135 strings affected. Fixed by
+re-encoding before comparison; 0 fail now.
+
+More useful: chasing it exposed a **real** hole. The extractor was calling `.strip()` before storing,
+which would silently make stored text differ from source in the one field that must be exact. Removed.
+As it happens 0 strings had surrounding whitespace, so nothing was corrupted — luck, not design.
+
+This is the second time a hard assert has caught something a review pass would have waved through. The
+pattern holds: **enforce, don't intend.**
