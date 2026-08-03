@@ -29,7 +29,7 @@ def decide(s: str) -> tuple[bool, str]:
     if H.HEADING.search(s):            return True, "kept (heading)"
     if not H.ODOUR.search(s):          return False, "no odour word"
     if not H.DESCR.search(s):          return False, "no description verb"
-    if not H.NAMED.search(s):          return False, "no compound/example name"
+    if not H.named(s):                 return False, "no compound/example name"
     return True, "kept"
 
 rows = [json.loads(l) for l in open(ROOT/"pipeline"/"testset.jsonl") if l.strip()

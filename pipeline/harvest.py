@@ -155,8 +155,74 @@ DESCR  = re.compile(r"\b(has|have|having|possess(?:es|ing)?|exhibit(?:s|ing)?|"
                     # missed the KARANAL sentence (t07), which is the captive case
                     # this whole source type exists to capture.
                     r"valued for|prized for|known for|appreciated for|noted for)\b", re.I)
-NAMED  = re.compile(r"\b(example\s+\d+|compound\s+\d+|[a-z]+(?:ol|al|one|ate|ene|ol|"
-                    r"phenol|aldehyde|acetate|lactone|oxide)\b|\d+-\([a-z])", re.I)
+# --- NAMED, v3. The v2 rule was broken in both directions at once. ---------------
+#
+# Measured over the 3,379 candidates from the full 2,588-patent run, the single most
+# common token satisfying "this sentence names a compound" was **floral** (624×),
+# followed by natural 278, material 250, chemical 134, herbal 111, animal 41. The gate
+# meant to prove a molecule is named was being satisfied by the words that describe the
+# smell — `[a-z]+al\b` matches "floral" exactly as well as "lilial".
+#
+# Simultaneously it MISSED real names: `[a-z]+ol\b` fails on the plural "alkoxynonenols",
+# and "-yne" was not in the suffix list at all, so "1,3-undecadien-5-yne" did not match.
+# Several rows were accepted for the wrong reason — right answer, broken reasoning.
+#
+# v3 accepts on any of four independent signals, and the stoplist is a human-written
+# table in the same spirit as odor_terms.tsv: published, arguable, and known to be
+# incomplete rather than pretending to be exhaustive.
+
+# Parentheses are not optional in practice: patents write "the compounds of Formula (I)"
+# far more often than "Formula I". The first draft of this rule required whitespace then a
+# bare numeral and silently missed every parenthesised reference — caught by checking what
+# v3 newly rejected, not by reasoning about it. The trailing \b matters: without it,
+# "[IVX]+" happily matches the "i" of "compound in the composition".
+NAMED_EXPLICIT = re.compile(r"\b(example|compound|formula|structure)s?\s*\(?\s*(\d+|[IVX]+)\b",
+                            re.I)
+
+# Systematic-nomenclature punctuation: locants, stereo prefixes. Very high precision —
+# ordinary English does not contain "8-alkoxy-4,8-dimethylnon-1-ene".
+NAMED_LOCANT = re.compile(r"\d\s*[,-]\s*\d|\b\d+-\(|\b\d+-[a-z]{3,}|\([EZRS][,)]|"
+                          r"\b(alpha|beta|gamma|delta|cis|trans|ortho|meta|para)-", re.I)
+
+# Registered trade names — the captive case (KARANAL®, ISO E SUPER™). The symbol is
+# required: bare capitals match patent section headings and country codes.
+NAMED_TRADE = re.compile(r"\b[A-Z][A-Za-z0-9\- ]{2,}\s*[®™]")
+
+# Chemical suffixes, now including plurals and -yne/-ane, which v2 omitted.
+NAMED_SUFFIX = re.compile(r"\b[a-z][a-z0-9\-]{2,}(?:ols?|als?|ones?|ates?|enes?|ynes?|"
+                          r"anes?|oates?|phenols?|aldehydes?|acetates?|lactones?|"
+                          r"oxides?|ketones?|esters?|ethers?)\b", re.I)
+
+# Common English words that end in a chemical suffix, plus — the reason this list exists
+# — odour DESCRIPTORS that do. Every entry was observed in the real candidate set or is a
+# near neighbour of one. Incomplete by construction; add to it when a false accept shows up.
+NAMED_STOP = frozenset("""
+floral herbal animal vegetal oriental mineral
+material materials natural chemical chemicals essential additional general functional
+conventional optional commercial industrial final total typical normal original personal
+principal potential traditional internal external overall individual technical identical
+several special local central medical physical practical critical vertical spherical
+numerical theoretical universal ideal real oval level novel panel equal usual visual actual
+one none done alone gone bone tone tones stone zone zones phone undertone overtone
+gene scene hygiene serene obscene convene intervene
+state rate date late gate create generate separate indicate evaluate demonstrate
+incorporate operate concentrate formulate relate estimate appropriate approximate moderate
+immediate adequate accurate candidate intermediate ultimate alternate private corporate
+climate certificate delicate duplicate update validate associate initiate facilitate
+communicate dedicate illustrate particulate legitimate
+""".split())
+
+def named(s: str) -> bool:
+    """Does this sentence plausibly name a resolvable compound?
+
+    Four independent signals; any one suffices. Kept as a function rather than a bare
+    regex because the suffix test needs a stoplist, and score.py mirrors this path."""
+    if NAMED_EXPLICIT.search(s) or NAMED_LOCANT.search(s) or NAMED_TRADE.search(s):
+        return True
+    return any(m.group(0).lower() not in NAMED_STOP for m in NAMED_SUFFIX.finditer(s))
+
+# Retained so older callers and the test harness keep working; `named()` is the gate.
+NAMED = NAMED_SUFFIX
 EXCLUDE = [
     (re.compile(r"\bodou?r value\b", re.I),                     "odour-value metric"),
     (re.compile(r"\bodou?r (test|panel|grading|scale|score)\b", re.I), "test protocol"),
@@ -197,7 +263,7 @@ def extract() -> None:
             stats["odour"] += 1
             why = next((lbl for rx, lbl in EXCLUDE if rx.search(s)), None)
             if why: stats["excluded"] += 1; continue
-            if not DESCR.search(s) or not NAMED.search(s): continue
+            if not DESCR.search(s) or not named(s): continue
             span = norm(s)
             assert span in text, f"REJECT {f.stem}: span not verbatim in source"
             stats["kept"] += 1
