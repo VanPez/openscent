@@ -25,4 +25,6 @@ id_ed25519*
 secrets.*
 # Held-out labelling: the KEY must never be committed before labelling is done,
 # and the labelled set is evidence — commit that deliberately, not by accident.
+# The CURRENT round's key must never be committed before labelling is done.
+# Completed rounds are renamed round<N>-* and ARE committed — they are the evidence.
 pipeline/heldout-key.json

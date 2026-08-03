@@ -1,0 +1,209 @@
+{
+ "seed": 20260801,
+ "strata_sizes": {
+  "accept": 3424,
+  "reject": 31409
+ },
+ "sampled": {
+  "h16": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h21": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h29": {
+   "stratum": "reject",
+   "filter_said": "no description verb"
+  },
+  "h30": {
+   "stratum": "reject",
+   "filter_said": "no description verb"
+  },
+  "h44": {
+   "stratum": "reject",
+   "filter_said": "no compound/example name"
+  },
+  "h39": {
+   "stratum": "reject",
+   "filter_said": "no description verb"
+  },
+  "h22": {
+   "stratum": "accept",
+   "filter_said": "kept (heading)"
+  },
+  "h33": {
+   "stratum": "reject",
+   "filter_said": "no compound/example name"
+  },
+  "h37": {
+   "stratum": "reject",
+   "filter_said": "no compound/example name"
+  },
+  "h19": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h13": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h42": {
+   "stratum": "reject",
+   "filter_said": "length"
+  },
+  "h08": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h26": {
+   "stratum": "reject",
+   "filter_said": "no description verb"
+  },
+  "h27": {
+   "stratum": "reject",
+   "filter_said": "no description verb"
+  },
+  "h47": {
+   "stratum": "reject",
+   "filter_said": "no description verb"
+  },
+  "h17": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h10": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h24": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h36": {
+   "stratum": "reject",
+   "filter_said": "length"
+  },
+  "h46": {
+   "stratum": "reject",
+   "filter_said": "no description verb"
+  },
+  "h12": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h14": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h34": {
+   "stratum": "reject",
+   "filter_said": "no description verb"
+  },
+  "h35": {
+   "stratum": "reject",
+   "filter_said": "no description verb"
+  },
+  "h40": {
+   "stratum": "reject",
+   "filter_said": "no description verb"
+  },
+  "h09": {
+   "stratum": "accept",
+   "filter_said": "kept (heading)"
+  },
+  "h04": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h49": {
+   "stratum": "reject",
+   "filter_said": "no description verb"
+  },
+  "h02": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h41": {
+   "stratum": "reject",
+   "filter_said": "no description verb"
+  },
+  "h06": {
+   "stratum": "accept",
+   "filter_said": "kept (heading)"
+  },
+  "h15": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h38": {
+   "stratum": "reject",
+   "filter_said": "length"
+  },
+  "h45": {
+   "stratum": "reject",
+   "filter_said": "length"
+  },
+  "h50": {
+   "stratum": "reject",
+   "filter_said": "malodour context"
+  },
+  "h03": {
+   "stratum": "accept",
+   "filter_said": "kept (heading)"
+  },
+  "h48": {
+   "stratum": "reject",
+   "filter_said": "no description verb"
+  },
+  "h43": {
+   "stratum": "reject",
+   "filter_said": "no description verb"
+  },
+  "h07": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h20": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h28": {
+   "stratum": "reject",
+   "filter_said": "no compound/example name"
+  },
+  "h25": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h31": {
+   "stratum": "reject",
+   "filter_said": "claim language"
+  },
+  "h23": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h01": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h18": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h32": {
+   "stratum": "reject",
+   "filter_said": "length"
+  },
+  "h05": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h11": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  }
+ }
+}
