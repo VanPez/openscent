@@ -176,6 +176,12 @@ DESCR  = re.compile(r"\b(has|have|having|possess(?:es|ing)?|exhibit(?:s|ing)?|"
 # bare numeral and silently missed every parenthesised reference — caught by checking what
 # v3 newly rejected, not by reasoning about it. The trailing \b matters: without it,
 # "[IVX]+" happily matches the "i" of "compound in the composition".
+# RETIRED 2026-08-03 — see decide()/named(). "Example 3", "compound (I.4)", "formula (I)"
+# are POINTERS, not names: the structure is defined elsewhere in the document. At
+# sentence scope they are the same failure as "the material" (t10) and "this feedstock"
+# (t11), and the held-out round showed them producing unusable rows (h05 h17). Kept only
+# so the reasoning is visible; nothing calls it. Restore it the day extraction gains a
+# context window, at which point it becomes the *right* rule rather than the wrong one.
 NAMED_EXPLICIT = re.compile(r"\b(example|compound|formula|structure)s?\s*\(?\s*(\d+|[IVX]+)\b",
                             re.I)
 
@@ -217,7 +223,9 @@ def named(s: str) -> bool:
 
     Four independent signals; any one suffices. Kept as a function rather than a bare
     regex because the suffix test needs a stoplist, and score.py mirrors this path."""
-    if NAMED_EXPLICIT.search(s) or NAMED_LOCANT.search(s) or NAMED_TRADE.search(s):
+    # NAMED_EXPLICIT deliberately absent — see the note on it above. A pointer to a
+    # structure defined elsewhere cannot be resolved from one sentence.
+    if NAMED_LOCANT.search(s) or NAMED_TRADE.search(s):
         return True
     return any(m.group(0).lower() not in NAMED_STOP for m in NAMED_SUFFIX.finditer(s))
 
@@ -241,6 +249,42 @@ EXCLUDE = [
     (re.compile(r"i\.?e\.?,?\s+odou?r,?\s+propert|\bodou?r\s+properties\b", re.I),
                                                                    "odour-as-category, no descriptor (d12)"),
     (re.compile(r"\bby combining\b", re.I),                        "hypothetical combination (d13)"),
+
+    # ---- v4: derived from the 21 held-out false positives, 2026-08-03 -------------
+    # That set is SPENT. These rules were written from its failure categories, so the
+    # next held-out draw is the only thing that can say whether they work. Nothing
+    # here was iterated against those 50 sentences — one pass, then re-measure.
+
+    # 1. Negation. "do not have an odor note of lily of the valley", "no inherent
+    #    odour", "no longer perceptible". A statement that something does NOT smell
+    #    is true and unusable: there is no descriptor to attach. (h07 h17 h22 h23)
+    (re.compile(r"\b(no|not|hardly|never|scarcely|barely)\b[^.]{0,45}"
+                r"\b(odou?r|smell|aroma|note)s?\b", re.I),         "negation / absence of odour"),
+    (re.compile(r"\b(devoid of|free from|lacks?|lacking)\b[^.]{0,30}"
+                r"\b(odou?r|smell|aroma)", re.I),                  "negation / absence of odour"),
+
+    # 2. Comparison and intensity. "significantly higher odor intensity", "a more
+    #    intense odor than", "changed significantly in odour". Magnitude and change,
+    #    not character — the same error class as `odour value`. (h04 h18 h20 h21)
+    (re.compile(r"\b(more|less|higher|lower|greater|stronger|weaker|better|worse)\b"
+                r"[^.]{0,25}\b(odou?r|smell|aroma|intensit)", re.I), "comparative / intensity"),
+    (re.compile(r"\bodou?r\s+(intensity|quality|adhesion|performance|impression)\b", re.I),
+                                                                   "odour-as-property"),
+    (re.compile(r"\b(olfactive|olfactory)\s+performance\b", re.I),  "quality word, not descriptor"),
+    (re.compile(r"\bchang(?:e|es|ed|ing)\b[^.]{0,25}\b(odou?r|note|smell)", re.I),
+                                                                   "change over time, not a descriptor"),
+
+    # 3. Prior-art framing. "Patent Document 2 discloses", "described in patent
+    #    document U.S.", "1967, 3356 describes the use of". The sentence reports what
+    #    another document says; the subject is usually a cited compound and the claim
+    #    is second-hand. RISKIEST RULE HERE — `disclose` is common patent English and
+    #    this may cost real rows. Watch it in the next held-out round. (h07 h13 h22)
+    (re.compile(r"\bpatent document\b|\bdisclos(?:e|es|ed|ure)\b|\bdescribed in\b", re.I),
+                                                                   "prior-art citation"),
+
+    # 4. Definitional meta-text. "Note that the 'fragrance composition' is a
+    #    composition that ...". Defines a term rather than describing a smell. (h08)
+    (re.compile(r"\bnote that\b|\bis a composition that\b", re.I),  "definitional meta-text"),
 ]
 SENT = re.compile(r"(?<=[.;])\s+(?=[A-Z0-9(])")
 
@@ -275,9 +319,13 @@ def decide(s: str) -> tuple[bool, str]:
     if not (25 < len(s) < 320):        return False, "length"
     for rx, lbl in EXCLUDE:
         if rx.search(s):               return False, lbl
-    # Descriptor-only heading: no odour noun, no verb, just a list.
-    # "PERFUME PROPERTIES Fruity, woody, pineapple-like."
-    if HEADING.search(s):              return True,  "kept (heading)"
+    # HEADING path REMOVED 2026-08-03. It was built for "PERFUME PROPERTIES Fruity,
+    # woody, pineapple-like" — and a descriptor-only heading, by definition, names no
+    # molecule, so at sentence scope it can never yield a row. The held-out round
+    # confirmed it: "Odor characteristics: scallion, pickle." is exactly the target
+    # case and is correctly a drop. The regex also matched ordinary prose ("in addition
+    # to its excellent odour characteristics..."), accepting it with no verb and no
+    # name. Recover these with a context window, not with this rule.
     if not ODOUR.search(s):            return False, "no odour word"
     if not DESCR.search(s):            return False, "no description verb"
     if not named(s):                   return False, "no compound/example name"

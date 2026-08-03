@@ -38,7 +38,10 @@ ROOT  = pathlib.Path(os.environ.get("OPENSCENT_ROOT",
             _here.parent if _here.name == "pipeline" else _here / "openscent"))
 RAW   = ROOT / "corpus" / "raw"
 OUT   = ROOT / "pipeline"
-SEED  = 20260801          # fixed, so the draw is reproducible and cannot be re-rolled
+# Fixed per round, so a draw is reproducible and cannot be quietly re-rolled when the
+# result is unwelcome. A NEW round needs a NEW seed — otherwise it re-draws the same
+# sentences and measures nothing. Round 1 (2026-08-03, precision 0.16) used 20260801.
+SEED  = int(os.environ.get("OPENSCENT_SEED", 20260804))
 N_PER_STRATUM = 25        # 50 sentences total — enough to be informative, small enough to label
 
 spec = importlib.util.spec_from_file_location("harvest", _here / "harvest.py")
@@ -105,6 +108,7 @@ def sample() -> None:
                                  "label": "", "why": ""}, ensure_ascii=False) + "\n")
     key.write_text(json.dumps({
         "seed": SEED,
+        "drawn": __import__("datetime").date.today().isoformat(),
         "strata_sizes": {"accept": len(accepted), "reject": len(rejected)},
         "sampled": {r["id"]: {"stratum": r["_stratum"], "filter_said": r["_why"]} for r in rows},
     }, indent=1), encoding="utf-8")
