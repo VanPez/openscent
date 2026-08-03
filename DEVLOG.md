@@ -16,32 +16,12 @@ failures). `extract` with the v3 filter gives **3,191 candidates** across 1,027 
 > export OPENSCENT_HOST=user@your.host.ip
 > ```
 
-**One thing to do next, and it needs your hands, not the machine's:** label the held-out set. This is the
-first honest accuracy number the project will have — everything else is measured against data the filter
-was tuned on.
+**Next: finish the candidate review.** Open `pipeline/review.html` in a browser, load a previously
+exported `rows.jsonl` to resume (or `corpus/extracted/candidates.json` to start). A / R / S / left-arrow.
+**Export before closing the tab — nothing is stored.**
 
-```bash
-# 1. Mac — ship the sampler
-scp ~/Documents/GenesisL1/openscent/pipeline/heldout.py $OPENSCENT_HOST:/opt/
-
-# 2. Hetzner — draw the sample (needs corpus/raw, so it must run there)
-ssh $OPENSCENT_HOST
-python3 /opt/heldout.py sample
-
-# 3. Mac — pull both files back
-scp $OPENSCENT_HOST:/opt/openscent/pipeline/heldout-{unlabelled.jsonl,key.json} \
-    ~/Documents/GenesisL1/openscent/pipeline/
-
-# 4. Label heldout-unlabelled.jsonl by hand: set "label" to keep or drop, say why.
-#    Save it as heldout-labelled.jsonl. DO NOT open heldout-key.json first.
-#    keep = describes a smell AND names a molecule resolvable to a structure.
-
-# 5. Score, once:
-python3 pipeline/heldout.py score
-```
-
-**Do not tune anything on the result.** If a rule changes because of what this set reveals, the set is
-burned and a new one must be drawn — as a DEVLOG entry, not a quiet re-score.
+2,205 candidates. Reviewing all of them gives exact precision *and* builds the corpus; two rounds of
+50-sentence sampling could do neither (see the 2026-08-03 evening entry).
 
 **Then:** ontology re-harvest over the full 2,588 (Phase 0 was blocked on corpus size — 60 patents gave
 1,035 terms but only 14 occurring ≥30 times; it needed 500–1,000 and now has 2,588, so Mike's
@@ -634,3 +614,67 @@ As it happens 0 strings had surrounding whitespace, so nothing was corrupted —
 
 This is the second time a hard assert has caught something a review pass would have waved through. The
 pattern holds: **enforce, don't intend.**
+
+---
+
+## 2026-08-03 (evening) — Round 2: 0.20 / 0.25. The measurement, not the filter, is the problem
+
+```
+round 1 (v3)   precision 0.16   recall 1.00   accept 25: kept 4   reject 25: 0 misses
+round 2 (v4)   precision 0.20   recall 0.25   accept 25: kept 5   reject 25: 1 miss
+```
+
+**Neither difference is real.** Precision moved by one sentence out of 25; Wilson 95% intervals are
+[0.06, 0.35] and [0.09, 0.39], almost entirely overlapping. Recall looks catastrophic and is worse than
+meaningless — it is driven by a single sentence in a stratum weighted 1,306x against the accept stratum's
+87x:
+
+```
+0 misses in 25 rejects -> recall 1.00
+1 miss                 -> recall 0.25
+2 misses               -> recall 0.14
+```
+
+Two rounds of the same filter family produced opposite-looking recall because one sentence fell
+differently. **That is a design fault in the evaluation, and it is mine.** 25 samples from 32,657 rejects
+with rare positives was never going to estimate recall. It should have been obvious when the stratum
+weights were written down.
+
+So v4 is neither vindicated nor refuted. 80 minutes of labelling bought failure-mode diagnosis — which was
+worth having — and no usable score.
+
+### The one hard finding: the 320-character cap is throwing away real rows
+
+`h44`, rejected on **length**, 667 characters, and correctly labelled keep:
+
+> "Dimethylester (Product of Example II.1): Time elapsed Odor impression <1 min. gob odor, fruity
+> (banana) 10 min. gob-sulfurous odor, fruity (banana) 1 h gob odor, fruity (banana) 24 h fruity
+> (banana) Diethylester (Product of Exa..."
+
+Patent odour *tables* run long and are dense with exactly the assertions we want. The cap was set to keep
+sentence-splitting sane, and it is silently discarding the highest-density source in the corpus. Not fixed
+yet — deliberately, since it changes the review pool mid-review.
+
+### Decision: stop sampling, review everything
+
+The full review of 2,205 candidates gives **exact** precision with no sampling error, and produces the
+corpus rather than another estimate. Sampled evaluation has told us what it can.
+
+Recall stays unmeasured. Measuring it needs a different design — sampling *near-miss* rejects rather than
+uniform ones, e.g. sentences that pass every test but one. Worth doing after the review, not before.
+
+### `pipeline/review.html`
+
+Single-file review UI, same shape as label.html. Loads candidates.json, approve/reject/skip, and on
+approval captures molecule + descriptors **selected out of the sentence**. The rule is enforced rather
+than trusted: the molecule field refuses to save text that is not a verbatim substring, and descriptors
+can only be words present in the sentence. Rejections are kept in the export — they are the precision
+measurement.
+
+Descriptor highlighting uses 96 terms: the 26 class-D terms hand-run 04 harvested from the corpus, plus
+conventional perfumery words. Only 1,312 of 2,205 candidates contain one, which is itself a signal about
+how thin the ontology vocabulary still is.
+
+**Noted while reviewing, not acted on:** `C 1-4 alkyl` (a substituent *range* in a Markush claim) trips
+NAMED_LOCANT, which reads `\d-\d` as systematic nomenclature. Only ~6% of the queue looks Markush, so it
+is not worth pre-filtering, but it is a real defect in the rule.

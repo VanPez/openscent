@@ -1,0 +1,210 @@
+{
+ "seed": 20260804,
+ "drawn": "2026-08-03",
+ "strata_sizes": {
+  "accept": 2176,
+  "reject": 32657
+ },
+ "sampled": {
+  "h27": {
+   "stratum": "reject",
+   "filter_said": "no compound/example name"
+  },
+  "h44": {
+   "stratum": "reject",
+   "filter_said": "length"
+  },
+  "h21": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h50": {
+   "stratum": "reject",
+   "filter_said": "no description verb"
+  },
+  "h15": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h36": {
+   "stratum": "reject",
+   "filter_said": "no compound/example name"
+  },
+  "h02": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h41": {
+   "stratum": "reject",
+   "filter_said": "length"
+  },
+  "h18": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h46": {
+   "stratum": "reject",
+   "filter_said": "no description verb"
+  },
+  "h01": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h10": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h26": {
+   "stratum": "reject",
+   "filter_said": "no description verb"
+  },
+  "h25": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h48": {
+   "stratum": "reject",
+   "filter_said": "length"
+  },
+  "h34": {
+   "stratum": "reject",
+   "filter_said": "no compound/example name"
+  },
+  "h31": {
+   "stratum": "reject",
+   "filter_said": "length"
+  },
+  "h13": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h43": {
+   "stratum": "reject",
+   "filter_said": "length"
+  },
+  "h30": {
+   "stratum": "reject",
+   "filter_said": "odour-as-property"
+  },
+  "h42": {
+   "stratum": "reject",
+   "filter_said": "no compound/example name"
+  },
+  "h40": {
+   "stratum": "reject",
+   "filter_said": "no description verb"
+  },
+  "h28": {
+   "stratum": "reject",
+   "filter_said": "negation / absence of odour"
+  },
+  "h49": {
+   "stratum": "reject",
+   "filter_said": "no description verb"
+  },
+  "h09": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h47": {
+   "stratum": "reject",
+   "filter_said": "odour-as-property"
+  },
+  "h22": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h11": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h06": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h17": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h37": {
+   "stratum": "reject",
+   "filter_said": "definitional"
+  },
+  "h03": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h20": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h33": {
+   "stratum": "reject",
+   "filter_said": "claim language"
+  },
+  "h05": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h16": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h35": {
+   "stratum": "reject",
+   "filter_said": "no description verb"
+  },
+  "h45": {
+   "stratum": "reject",
+   "filter_said": "no description verb"
+  },
+  "h12": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h23": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h29": {
+   "stratum": "reject",
+   "filter_said": "length"
+  },
+  "h24": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h04": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h19": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h07": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h39": {
+   "stratum": "reject",
+   "filter_said": "length"
+  },
+  "h38": {
+   "stratum": "reject",
+   "filter_said": "length"
+  },
+  "h08": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h14": {
+   "stratum": "accept",
+   "filter_said": "kept"
+  },
+  "h32": {
+   "stratum": "reject",
+   "filter_said": "odour-as-property"
+  }
+ }
+}
