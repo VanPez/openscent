@@ -53,6 +53,16 @@ PRE  = re.compile(r"\b((?:[a-z][a-z-]{2,}[,\s]+){1,4})" + HEAD + r"\b", re.I)
 # "odour of X, Y and Z" / "notes of X" — the other common shape.
 POST = re.compile(HEAD + r"\s+(?:of|like|reminiscent of|recalling)\s+\b([a-z][a-z,\s-]{3,60})", re.I)
 
+# Extended 2026-08-05, written FROM the >=30 output of the full 2,588-patent run —
+# not from memory. Every entry was observed ranking above a real descriptor. Two passes
+# took the >=30 count 592 -> 436 and the unjudged share 512 -> 379.
+#
+# Intensity and quality modifiers are stopped deliberately: "strong floral" says how much,
+# "floral" says what. Only the second carries perceptual information.
+#
+# NB these notes live OUTSIDE the string. A "#" line inside a triple-quoted block is not a
+# comment, it is data — the first version of this edit silently added `real`, `ontology`,
+# `words`, `how`, `what` and `much` to the stop list from its own explanatory prose.
 STOP = set("""
 the a an and or of to in for with without at on by from as is are was were be been being
 this that these those it its their his her our your my which who whom whose what when where
@@ -73,13 +83,6 @@ perfume perfumes perfumery fragrance fragrances flavour flavor flavours flavors
 material materials substance substances ingredient ingredients agent agents
 its it's has have does not non nor no yes may can
 
-# --- extended 2026-08-05, written FROM the >=30 output of the full 2,588-patent run ---
-# Not from memory: every entry below was observed ranking above real descriptors. Two
-# passes took the >=30 count from 592 to 436 and the unjudged share from 512 to 379.
-#
-# Intensity and quality modifiers are stopped DELIBERATELY. "strong floral" tells you how
-# much; "floral" tells you what. Only the second is a descriptor, and conflating them is
-# how an ontology fills up with words that carry no perceptual information.
 odor odors odour odours aroma aromas scent scents smell smells smelling odorant odorants
 note notes accords organoleptic olfactory olfactive retronasal sensory perceptible perceived
 desired desirable improved improve improving enhance enhanced enhancing modify modifying
