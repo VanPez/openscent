@@ -105,20 +105,35 @@ perfuming perfume perfumes perfumed fragrance fragrances fragranced flavour flav
 flavours flavors substantivity diffusive diffusion
 """.split())
 
-def harvest(texts) -> collections.Counter:
+def harvest(texts):
+    """Returns (term_freq, doc_freq).
+
+    DOCUMENT frequency is the number that matters and the first version did not have it.
+    A term repeated 124 times inside one patent scored identically to a term appearing
+    once in 124 patents — and patents contain long odour tables that repeat vocabulary,
+    so the first case is common. `woodland` and `spruce` both scored ~124 while appearing
+    in ZERO candidate sentences, which is what exposed it.
+
+    Mike's Phase 0 criterion is molecules per tag. Documents is the closest available
+    proxy before linkage exists; occurrences is not a proxy for anything.
+    """
     c = collections.Counter()
+    d = collections.Counter()
     for t in texts:
+        seen = set()
         for m in PRE.finditer(t):
             for w in re.split(r"[,\s]+", m.group(1)):
                 w = w.strip("-").lower()
                 if len(w) > 2 and w not in STOP and not w.isdigit():
-                    c[w] += 1
+                    c[w] += 1; seen.add(w)
         for m in POST.finditer(t):
             for w in re.split(r"[,\s]+|\band\b", m.group(1)):
                 w = (w or "").strip("- ").lower()
                 if len(w) > 2 and w not in STOP and not w.isdigit():
-                    c[w] += 1
-    return c
+                    c[w] += 1; seen.add(w)
+        for w in seen:
+            d[w] += 1
+    return c, d
 
 def prior_classes() -> dict:
     """Carry over the human judgements already made in hand-run 04."""
@@ -147,26 +162,31 @@ def main() -> int:
         texts = (r["sentence"] for r in rows)
         label = f"{len(rows)} candidate sentences"
 
-    counts = harvest(texts)
+    counts, docs = harvest(texts)
     prior = prior_classes()
     ONT.mkdir(parents=True, exist_ok=True)
     dest = ONT / f"harvested-terms-{scope}.tsv"
 
     ge30 = [t for t, n in counts.items() if n >= 30]
+    gedoc = [t for t, n in docs.items() if n >= 30]
     with dest.open("w", encoding="utf-8") as fh:
         fh.write(f"# Odour vocabulary harvested from {label}.\n")
         fh.write("# Method: words immediately preceding an odour head noun, minus a generic\n")
         fh.write("#         English/patent stop list. Corpus-derived, NOT hand-supplied.\n")
-        fh.write(f"# {len(counts)} distinct terms; {len(ge30)} occur >=30 times.\n")
+        fh.write(f"# {len(counts)} distinct terms; {len(ge30)} occur >=30 times;"
+                 f" {len(gedoc)} appear in >=30 DOCUMENTS.\n")
+        fh.write("# docs is the column that matters: occurrences are inflated by odour\n")
+        fh.write("# tables that repeat vocabulary inside a single patent.\n")
         fh.write("# class: D descriptor · H hedonic · T tier · M malodour · X noise · (empty = unjudged)\n")
         fh.write("# Classes for terms seen in hand-run 04 are carried over. New terms are BLANK\n")
-        fh.write("# on purpose — judging them is human work.\n#\n# term\tn\tclass\n")
+        fh.write("# on purpose — judging them is human work.\n#\n# term\tn\tdocs\tclass\n")
         for t, n in counts.most_common():
-            fh.write(f"{t}\t{n}\t{prior.get(t,'')}\n")
+            fh.write(f"{t}\t{n}\t{docs[t]}\t{prior.get(t,'')}\n")
 
     print(f"scope     {scope} ({label})")
     print(f"distinct  {len(counts)}")
-    print(f">=30      {len(ge30)}     <- Phase 0 needs 60-100 tags at >=30 molecules each")
+    print(f">=30 occ  {len(ge30)}")
+    print(f">=30 DOCS {len(gedoc)}     <- the meaningful one; Phase 0 wants 60-100 tags")
     print(f"carried   {sum(1 for t in counts if t in prior)} terms already judged in hand-run 04")
     print(f"unjudged  {sum(1 for t in counts if t not in prior)}")
     print(f"-> {dest}")
