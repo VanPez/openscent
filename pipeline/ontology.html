@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenScent — ontology pass</title>
+<!--
+  Phase 0. Classify the harvested vocabulary into the tag ontology.
+
+  Input    ontology/harvested-terms-corpus-clean.tsv   (term, count, class)
+           corpus/extracted/candidates.json            (OPTIONAL — gives example sentences)
+  Output   the same TSV with the class column filled in.
+
+  Unlike the sentence review, at-a-glance is FINE here. This is vocabulary judgement, not
+  evidence collection: seeing 30 terms at once helps you be consistent, and consistency is
+  the whole point of an ontology. Nothing here is blind and nothing needs to be.
+
+  Classes, from hand-run 04:
+    D  descriptor      the thing an ontology tag is made of        -> keep
+    H  hedonic         pleasant/unpleasant. A separate axis         -> not a tag
+    T  tier            top/heart/base. NOT per-compound assertable  -> not a tag
+    M  malodour        deodorant-patent vocabulary                  -> excludes a document
+    X  noise           stop list should have caught it              -> feeds the stop list
+
+  Storage: none. Export before closing; reload the export to resume.
+-->
+<style>
+  :root{
+    --paper:#f5f7f9; --card:#fff; --ink:#07111d; --mut:#687383; --faint:#718196;
+    --line:#dce4ee; --line-strong:rgba(29,52,78,.3);
+    --blue:#245cff; --blue-pale:#eef3ff; --amber:#9a6a14; --amber-pale:#fdf6e9;
+    --teal:#0f8f7f; --red:#bc4b47; --violet:#6b46c1;
+    --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+    --shadow:0 18px 50px rgba(28,60,98,.067);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 var(--sans);
+       -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1500px;margin:0 auto;padding:22px 28px 64px}
+  .lab{display:flex;align-items:center;gap:10px;color:var(--mut);font-family:var(--mono);
+       font-size:11px;text-transform:uppercase;letter-spacing:.14em}
+  .dash{width:18px;height:2px;background:var(--blue)}
+  h1{font-size:27px;letter-spacing:-.02em;margin:9px 0 6px;font-weight:700}
+  .sub{color:var(--mut);max-width:90ch;margin-bottom:16px;font-size:14px}
+  .legend{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line-strong);
+          background:#fff;box-shadow:var(--shadow);margin-bottom:16px}
+  .legend > div{padding:11px 14px}
+  .legend > div + div{border-left:1px solid var(--line)}
+  .legend b{font:600 12px var(--mono);letter-spacing:.06em;display:block;margin-bottom:3px}
+  .legend p{margin:0;font-size:12.5px;color:#42506a}
+  .bar-d b{color:var(--teal)} .bar-h b{color:var(--violet)} .bar-t b{color:var(--blue)}
+  .bar-m b{color:var(--amber)} .bar-x b{color:var(--mut)}
+  .toolbar{display:flex;gap:14px;align-items:center;flex-wrap:wrap;background:#fff;
+           border:1px solid var(--line-strong);box-shadow:var(--shadow);padding:12px 16px;
+           margin-bottom:16px;position:sticky;top:0;z-index:5}
+  .toolbar label{font:600 10px var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mut)}
+  input[type=number],input[type=text]{font:13px var(--mono);padding:7px 10px;
+       border:1px solid var(--line-strong);border-radius:0;outline:none;background:#fff}
+  input:focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-pale)}
+  .tally{margin-left:auto;font-family:var(--mono);font-size:12px;color:var(--mut);
+         display:flex;gap:16px;flex-wrap:wrap}
+  .tally b{color:var(--ink)}
+  button{font:600 12px var(--sans);padding:8px 14px;border:1px solid var(--line-strong);
+         background:#fff;color:var(--ink);cursor:pointer;border-radius:0}
+  button:hover{background:#f5f8fc}
+  button.go{background:var(--teal);border-color:var(--teal);color:#fff}
+  table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line-strong);
+        box-shadow:var(--shadow);table-layout:fixed}
+  col.c-term{width:22%} col.c-n{width:7%} col.c-cls{width:30%} col.c-ex{width:41%}
+  th{font:500 10px var(--mono);text-transform:uppercase;letter-spacing:.09em;color:var(--mut);
+     text-align:left;padding:9px 14px;border-bottom:1px solid var(--line)}
+  td{padding:7px 14px;font-size:14px;vertical-align:middle;border-top:1px solid var(--line)}
+  tr.row:hover{background:#f5f8fc}
+  tr.row.sel{background:var(--blue-pale);outline:2px solid var(--blue);outline-offset:-2px}
+  td.term{font-weight:600}
+  td.n{font-family:var(--mono);font-size:12.5px;color:var(--mut);text-align:right}
+  td.ex{font-size:12.5px;color:#42506a;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  td.ex mark{background:rgba(36,92,255,.15);padding:0 2px}
+  .cls{display:flex;gap:4px}
+  .cls span{font:600 11px var(--mono);padding:4px 9px;border:1px solid var(--line-strong);
+            cursor:pointer;color:var(--mut);background:#fff;user-select:none}
+  .cls span:hover{border-color:var(--ink);color:var(--ink)}
+  .cls span.on{color:#fff}
+  .cls span.on[data-c=D]{background:var(--teal);border-color:var(--teal)}
+  .cls span.on[data-c=H]{background:var(--violet);border-color:var(--violet)}
+  .cls span.on[data-c=T]{background:var(--blue);border-color:var(--blue)}
+  .cls span.on[data-c=M]{background:var(--amber);border-color:var(--amber)}
+  .cls span.on[data-c=X]{background:var(--mut);border-color:var(--mut)}
+  .foot{color:var(--mut);font-size:12.5px;margin-top:22px;line-height:1.8;
+        border-top:1px solid var(--line);padding-top:14px}
+  .hide{display:none}
+  .card{background:#fff;border:1px solid var(--line-strong);box-shadow:var(--shadow);
+        border-top:3px solid var(--mut);padding:18px;margin-bottom:16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="lab"><span class="dash"></span> OpenScent · Phase 0</div>
+  <h1>Judge the vocabulary</h1>
+  <p class="sub">The corpus produced these terms; deciding which are <b>descriptors</b> is the ontology.
+  Target is 60–100 tags. Keyboard: <b>D H T M X</b> classifies the selected row and advances,
+  <b>↑ ↓</b> move, <b>⌫</b> clears.</p>
+
+  <div class="legend">
+    <div class="bar-d"><b>D — descriptor</b><p>Says what it smells <i>like</i>. Ontology material.</p></div>
+    <div class="bar-h"><b>H — hedonic</b><p>Pleasant / unpleasant. A judgement, not a smell.</p></div>
+    <div class="bar-t"><b>T — tier</b><p>top / heart / base. Not per-compound assertable.</p></div>
+    <div class="bar-m"><b>M — malodour</b><p>Deodorant vocabulary. Flags the document.</p></div>
+    <div class="bar-x"><b>X — noise</b><p>Should have been stopped. Feeds the stop list.</p></div>
+  </div>
+
+  <div id="loader" class="card">
+    <p style="margin:0 0 10px;font-size:13.5px;color:#42506a">
+      Load <code>ontology/harvested-terms-corpus-clean.tsv</code> — or a partially classified
+      export to carry on.</p>
+    <input type="file" id="ftsv" accept=".tsv,.txt">
+    <p style="margin:14px 0 8px;font-size:13.5px;color:#42506a">
+      Optional: <code>corpus/extracted/candidates.json</code> — gives an example sentence per term,
+      which matters for the ambiguous ones (<code>foot</code>, <code>white</code>, <code>clean</code>).</p>
+    <input type="file" id="fjson" accept=".json">
+    <p id="err" style="color:var(--red);font-size:13px;margin:12px 0 0"></p>
+  </div>
+
+  <div id="app" class="hide">
+    <div class="toolbar">
+      <label for="minn">min count</label>
+      <input type="number" id="minn" value="30" min="1" style="width:80px">
+      <label for="q">filter</label>
+      <input type="text" id="q" placeholder="substring…" style="width:150px">
+      <label><input type="checkbox" id="onlyun" checked> unjudged only</label>
+      <span class="tally" id="tally"></span>
+      <button class="go" id="bexport">Export TSV</button>
+    </div>
+    <table>
+      <colgroup><col class="c-term"><col class="c-n"><col class="c-cls"><col class="c-ex"></colgroup>
+      <thead><tr><th>Term</th><th style="text-align:right">n</th><th>Class</th><th>Example from the corpus</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+
+  <div class="foot">
+    Nothing is stored. Export before closing and reload the export to resume. The exported file is the
+    same TSV with the class column filled in — drop it back into <code>ontology/</code>.
+  </div>
+</div>
+
+<script>
+(function(){
+  var terms = [], examples = {}, sel = 0, header = [];
+
+  function $(id){ return document.getElementById(id); }
+  function esc(s){ return (s||'').replace(/[&<>]/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c]; }); }
+
+  $('ftsv').addEventListener('change', function(e){
+    var f = e.target.files[0]; if(!f) return;
+    var fr = new FileReader();
+    fr.onload = function(){
+      try{
+        header = []; terms = [];
+        fr.result.split('\n').forEach(function(l){
+          if(!l.trim()) return;
+          if(l[0] === '#'){ header.push(l); return; }
+          var p = l.split('\t');
+          if(p.length >= 2) terms.push({t:p[0], n:parseInt(p[1],10)||0, c:(p[2]||'').trim()});
+        });
+        if(!terms.length) throw new Error('no rows');
+        $('loader').classList.add('hide'); $('app').classList.remove('hide');
+        render();
+      }catch(err){ $('err').textContent = 'Could not read that file: ' + err.message; }
+    };
+    fr.readAsText(f);
+  });
+
+  $('fjson').addEventListener('change', function(e){
+    var f = e.target.files[0]; if(!f) return;
+    var fr = new FileReader();
+    fr.onload = function(){
+      try{
+        var rows = JSON.parse(fr.result);
+        // one short example per term — first sentence containing it. Cheap index.
+        rows.forEach(function(r){
+          var s = r.sentence, low = s.toLowerCase();
+          terms.forEach(function(o){
+            if(examples[o.t]) return;
+            var i = low.indexOf(o.t.toLowerCase());
+            if(i < 0) return;
+            var a = Math.max(0, i-40), b = Math.min(s.length, i+o.t.length+50);
+            examples[o.t] = (a>0?'…':'') + s.slice(a,b) + (b<s.length?'…':'');
+          });
+        });
+        render();
+      }catch(err){ $('err').textContent = 'Could not read candidates.json: ' + err.message; }
+    };
+    fr.readAsText(f);
+  });
+
+  function visible(){
+    var min = parseInt($('minn').value,10) || 0;
+    var q = $('q').value.trim().toLowerCase();
+    var un = $('onlyun').checked;
+    return terms.filter(function(o){
+      return o.n >= min && (!q || o.t.indexOf(q) >= 0) && (!un || !o.c);
+    });
+  }
+
+  function render(){
+    var v = visible();
+    if(sel >= v.length) sel = Math.max(0, v.length-1);
+    var counts = {D:0,H:0,T:0,M:0,X:0,'':0};
+    terms.forEach(function(o){ counts[o.c] = (counts[o.c]||0)+1; });
+    $('tally').innerHTML =
+      'showing <b>'+v.length+'</b>' +
+      ' · D <b>'+counts.D+'</b> · H <b>'+counts.H+'</b> · T <b>'+counts.T+'</b>' +
+      ' · M <b>'+counts.M+'</b> · X <b>'+counts.X+'</b> · unjudged <b>'+counts['']+'</b>';
+
+    var html = '';
+    v.forEach(function(o,i){
+      var ex = examples[o.t];
+      if(ex){
+        var re = new RegExp('('+o.t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig');
+        ex = esc(ex).replace(re,'<mark>$1</mark>');
+      }
+      html += '<tr class="row'+(i===sel?' sel':'')+'" data-i="'+i+'">'
+           +  '<td class="term">'+esc(o.t)+'</td>'
+           +  '<td class="n">'+o.n+'</td>'
+           +  '<td><div class="cls">'
+           +    ['D','H','T','M','X'].map(function(c){
+                  return '<span data-c="'+c+'" class="'+(o.c===c?'on':'')+'">'+c+'</span>'; }).join('')
+           +  '</div></td>'
+           +  '<td class="ex">'+(ex||'')+'</td></tr>';
+    });
+    $('rows').innerHTML = html;
+
+    [].forEach.call($('rows').querySelectorAll('tr.row'), function(tr){
+      var i = +tr.getAttribute('data-i');
+      tr.onclick = function(){ sel = i; render(); };
+      [].forEach.call(tr.querySelectorAll('.cls span'), function(sp){
+        sp.onclick = function(ev){
+          ev.stopPropagation();
+          var o = visible()[i], c = sp.getAttribute('data-c');
+          o.c = (o.c === c) ? '' : c;
+          sel = i; render();
+        };
+      });
+    });
+    var s = $('rows').querySelector('tr.sel');
+    if(s && s.scrollIntoView) s.scrollIntoView({block:'nearest'});
+  }
+
+  function classify(c){
+    var v = visible(); if(!v.length) return;
+    v[sel].c = c;
+    // with "unjudged only" on, the row vanishes and the next slides into place
+    if(!$('onlyun').checked) sel = Math.min(sel+1, v.length-1);
+    render();
+  }
+
+  document.addEventListener('keydown', function(e){
+    if(/^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName)) return;
+    var k = e.key.toUpperCase();
+    if('DHTMX'.indexOf(k) >= 0 && k.length === 1){ e.preventDefault(); classify(k); }
+    else if(e.key === 'ArrowDown'){ e.preventDefault(); sel = Math.min(sel+1, visible().length-1); render(); }
+    else if(e.key === 'ArrowUp'){ e.preventDefault(); sel = Math.max(sel-1, 0); render(); }
+    else if(e.key === 'Backspace'){ e.preventDefault(); classify(''); }
+  });
+
+  ['minn','q','onlyun'].forEach(function(id){
+    $(id).addEventListener('input', function(){ sel = 0; render(); });
+  });
+
+  $('bexport').onclick = function(){
+    var body = terms.map(function(o){ return o.t+'\t'+o.n+'\t'+o.c; }).join('\n');
+    var blob = new Blob([header.join('\n')+'\n'+body+'\n'], {type:'text/tab-separated-values'});
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'harvested-terms-classified.tsv';
+    a.click();
+    setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
+  };
+})();
+</script>
+</body>
+</html>
