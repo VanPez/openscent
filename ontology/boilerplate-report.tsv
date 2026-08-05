@@ -1,0 +1,397 @@
+# Share of a term's DOCUMENTS carrying one identical context window.
+# >=0.50 drop · >=0.25 inspect · <0.25 independently attested.
+# contexts = distinct context windows = EFFECTIVE independent support.
+# term	class	vocab_docs	docs	contexts	ratio	top_context
+woodland	D	124	124	7	0.871	rnation-like. other pleasant scents include herbal and woodland scents derived from pine, spruce and other forest smel
+forest	D	127	162	102	0.741	nd woodland scents derived from pine, spruce and other forest smells. fragrances may also be derived from various oi
+concise	X	32	44	18	0.682	smelling the substance, in the example thus a nice and concise apple odor, then this substance has particularly advan
+tart	X	39	47	31	0.596	uld be termed “nice”. however, the odor of a typically tart apple can also be concise. if both reactions arise upo
+rose-like	D	36	168	260	0.506	raspberry; musk, flower scents such as lavender-like, rose-like, iris-like, carnation-like. other pleasant scents incl
+hay		21	216	228	0.505	lilac, lily, magnolia, mimosa, narcissus, freshly-cut hay, orange blossom, orchid, reseda, sweet pea, trefle, tu
+ripe	D	41	69	89	0.493	he odor is reminiscent, for example, of a sweet, fully ripe apple, the odor would be termed “nice”. however, the o
+pear		26	277	374	0.383	imited to fruits such as almond, apple, cherry, grape, pear, pineapple, orange, strawberry, raspberry; musk, flowe
+pineapple		29	298	394	0.356	to fruits such as almond, apple, cherry, grape, pear, pineapple, orange, strawberry, raspberry; musk, flower scents su
+freshly		24	312	340	0.349	th, jasmine, lilac, lily, magnolia, mimosa, narcissus, freshly-cut hay, orange blossom, orchid, reseda, sweet pea, tr
+watery	D	54	213	441	0.343	etate; other ingredients (e.g. amber, powdery spicy or watery): dodecahydro-3a,6,6,9a-tetramethyl-naphtho[2,1-b]fura
+combinable		29	61	62	0.311	pleasant odor are sought. furthermore, they should be combinable with other aroma chemicals, allowing the creation of n
+spontaneously	X	37	117	95	0.308	ic. for example, a substance can have an odor which is spontaneously reminiscent of that of an “apple”: the odor would then
+spruce	D	124	360	156	0.300	include herbal and woodland scents derived from pine, spruce and other forest smells. fragrances may also be derive
+lily	D	37	413	761	0.295	rn, heliotrope, honeysuckle, hyacinth, jasmine, lilac, lily, magnolia, mimosa, narcissus, freshly-cut hay, orange
+nice	H	69	143	148	0.252	vely perceived, pleasant sensory impression. however, “nice” does not have to be synonymous with “sweet”. “nice” c
+blossom		28	436	360	0.250	, magnolia, mimosa, narcissus, freshly-cut hay, orange blossom, orchid, reseda, sweet pea, trefle, tuberose, vanilla,
+changes		22	1013	1237	0.244	obvious to those skilled in the art that various other changes and modifications can be made without departing from t
+fruits	D	38	483	815	0.242	ed. suitable fragrances include but are not limited to fruits such as almond, apple, cherry, grape, pear, pineapple,
+garbage		23	116	100	0.241	ng, stock yard and meat processings, sewage treatment, garbage bags, or garbage disposal, or in product odor control
+aldehydic	D	69	287	994	0.240	ch are commonly used in perfume formulations, such as: aldehydic ingredients: decanal, dodecanal, 2-methyl-undecanal, 1
+apple	D	92	514	1194	0.235	include but are not limited to fruits such as almond, apple, cherry, grape, pear, pineapple, orange, strawberry, r
+odiferous		25	97	202	0.227	roperties, i.e. the compounds should have advantageous odiferous (olfactory) or gustatory properties. furthermore, arom
+positively	H	37	424	391	0.226	odern perfumery, i.e. fine or functional perfumery, to positively impart or modify the odor of a consumer product into w
+fragr	X	52	18	27	0.222	material is disclosed in calandra et al., flavour and fragr. j. (2015), 30, p 121-130. perfumery raw materials inc
+origin		21	920	5344	0.217	ffins such as those known under the trademark isopar® (origin: exxon chemical) or glycol ethers and glycol ether est
+positive	X	37	881	1570	0.210	lled in the art as being able to impart or modify in a positive or pleasant way the odor of a composition, and not jus
+anisic		20	378	450	0.201	2,1-b]furan and any of its stereoisomers, heliotropin, anisic aldehyde, eugenol, cinnamic aldehyde, clove oil, 3-(1,
+herbal	D	203	497	1047	0.197	is-like, carnation-like. other pleasant scents include herbal and woodland scents derived from pine, spruce and othe
+anticorrosives	X	35	53	22	0.189	, liquefiers, dyes, color-protection agents, pigments, anticorrosives, polyols, surfactants, electrolytes, organic solvents
+maintains	X	30	140	205	0.186	ther substances. an aroma chemical with high stability maintains its aroma profile over a long period in time, preferab
+color		24	986	2906	0.186	apable of imparting additional added benefit such as a color, a particular light resistance, chemical stability, et
+tools	X	78	165	123	0.182	various compounds of the invention, creating thus new tools for his work. for the sake of clarity, it is also unde
+balsamic	D	56	237	352	0.177	iro[5.5]undec-8-en-1-one, menthol and/or alpha-pinene; balsamic ingredients: coumarin, ethylvanillin and/or vanillin;
+distinctive		28	96	103	0.177	chloride), kalpariane (biotech marine), dc upregulex (distinctive cosmetic ingredients, inci: water, butylene glycol, ph
+powdery	D	76	416	964	0.175	d/or isobornyl acetate; other ingredients (e.g. amber, powdery spicy or watery): dodecahydro-3a,6,6,9a-tetramethyl-na
+perfumers		20	383	483	0.172	he fragrance industry to provide new chemicals to give perfumers and other persons the ability to create new fragrances
+amber	D	51	429	1009	0.170	-one and/or isobornyl acetate; other ingredients (e.g. amber, powdery spicy or watery): dodecahydro-3a,6,6,9a-tetra
+leather	D	30	213	304	0.169	oor, bath, sanitary or a window-cleaning) detergent; a leather care product; a car care product, such as a polish, a
+imp		21	12	122	0.167	ing ingredients that strongly support relaxing moods; ‘imp’ comprising ingredients that strongly support invigora
+pleasant	H	839	1119	1586	0.165	art as being able to impart or modify in a positive or pleasant way the odor of a composition, and not just as having
+case		29	1628	5558	0.162	warrant a more detailed description here, which in any case would not be exhaustive, the skilled person being able
+spicy	D	146	455	1075	0.160	bornyl acetate; other ingredients (e.g. amber, powdery spicy or watery): dodecahydro-3a,6,6,9a-tetramethyl-naphtho[
+pepper		20	497	659	0.155	oil; parsley seed oil; petitgrain oil; peppermint oil; pepper oil; pimento oil; pine oil; pennyroyal oil; rose absol
+jasmine	D	38	792	775	0.154	gardenia, hawthorn, heliotrope, honeysuckle, hyacinth, jasmine, lilac, lily, magnolia, mimosa, narcissus, freshly-cut
+aforementioned	X	32	748	1596	0.154	to the invention can be incorporated into the various aforementioned articles or compositions vary within a wide range of v
+otherwise	X	41	1598	2540	0.153	to the exact numerical values recited. instead, unless otherwise specified, each such dimension is intended to mean bot
+extending	X	39	186	321	0.151	release agents, fabric refreshing agents and freshness extending agents, chlorine bleach odor control agents, dye fixat
+predict		21	116	119	0.147	parameter approach proposed by charles hansen used to predict polymer solubility and was developed around the basis
+pleasing	H	96	187	249	0.144	tures of different fragrances which together produce a pleasing fragrance note. essential oils of relatively low volat
+stability	X	43	1358	5188	0.143	ch as a color, a particular light resistance, chemical stability, etc. a detailed description of the nature and type of
+flower	D	163	613	1012	0.140	pear, pineapple, orange, strawberry, raspberry; musk, flower scents such as lavender-like, rose-like, iris-like, ca
+booster		27	231	447	0.139	detergent, a fabric softener, a liquid or solid scent booster, a fabric refresher, an ironing water, a paper, a blea
+peppermint		24	796	1110	0.136	uch as essential oils, or from plant materials such as peppermint, spearmint and the like. a list of suitable fragrances
+underarm	M	38	217	239	0.134	r lotions, deodorants and antiperspirants such as e.g. underarm sprays, roll-ons, deodorant sticks and deodorant cream
+chemicals	X	50	1408	2827	0.134	s such as the book by s. arctander, perfume and flavor chemicals, 1969, montclair, n.j., usa, or its more recent versio
+perspiration	M	84	227	231	0.132	ges in malodor counteracting applications such as body perspiration, environmental odor such as mold and mildew, bathroom,
+violet	D	44	707	1023	0.132	m; tonka absolute; tuberose absolute; vanilla extract; violet leaf absolute; verbena oil; vetiver oil; juniper berry
+intended	X	52	1790	3357	0.131	the spirit and scope of the invention. it is therefore intended to cover in the appended claims all such changes and m
+rooty		20	46	108	0.130	note and/or a woody note and/or a dusty note and/or a rooty note and/or a lemon note odiferous impression to a sur
+determines		29	161	150	0.130	when odor is noticed. the average across all panelists determines the odor threshold concentration of the perfuming comp
+pfw		29	54	54	0.130	raspberry ketone, benzophenone, tonalid (trade name of pfw, 6-acetyl-1,1,2,4,4,7-hexamethyl tetrahydronaphthalene
+cooking		22	109	239	0.128	, dry blending, stirring, mixing, heating, baking, and cooking. the orally-deliverable matrix material can be selecte
+foot	M	31	469	444	0.126	after-sun creams and lotions, hand creams and lotions, foot creams and lotions, depilatory creams and lotions, aft
+musk	D	244	835	2920	0.126	grape, pear, pineapple, orange, strawberry, raspberry; musk, flower scents such as lavender-like, rose-like, iris-
+lingering		20	40	107	0.125	odors present immediately after the use of the toilet; lingering toilet odors; stale urine odor; and, moldy or musty od
+them	X	30	1422	2170	0.124	be exhaustive, the skilled person being able to select them on the basis of his general knowledge and according to
+vanilla	D	44	590	1282	0.124	e oil; tolu balsam; tonka absolute; tuberose absolute; vanilla extract; violet leaf absolute; verbena oil; vetiver oi
+overcome	X	38	272	231	0.121	sprays, or clothes storage areas or in dry cleaning to overcome residual solvent notes on clothes, bathroom accessorie
+sweet	D	251	893	2642	0.120	ssus, freshly-cut hay, orange blossom, orchid, reseda, sweet pea, trefle, tuberose, vanilla, violet, wallflower, an
+strip	X	30	196	429	0.112	be determined by applying the aroma chemical to a test strip, and by subsequent olfactory evaluation of the odor im
+urine		27	116	425	0.112	ly, many trans-compounds are shown to share pronounced urine-perspiration-type odor, while the corresponding cis-co
+dusty		23	54	116	0.111	note and/or a nutty note and/or a woody note and/or a dusty note and/or a rooty note and/or a lemon note odiferous
+prior		25	1624	4478	0.110	itation of any document is not an admission that it is prior art with respect to any invention disclosed or claimed
+modulating	X	32	211	391	0.109	rther, normally not unpleasant taste sensations, taste-modulating substances (for example inositol phosphate, nucleotide
+muguet	D	62	333	880	0.108	; geraniol ((e)-3,7-dimethylocta-2,6-dien-1-ol); super muguet™ ((e)-6-ethyl-3-methyloct-6-en-1-ol); linalool (3,7-di
+refreshing		23	262	522	0.107	, stain resistance agents, soil release agents, fabric refreshing agents and freshness extending agents, chlorine bleach
+cedar		22	470	589	0.106	oil; cassia oil; cassia absolute; castoreum absolute; cedar leaf oil; cedar wood oil; cistus oil; citronella oil;
+neutral		23	839	1245	0.105	carrier” we mean here a material which is practically neutral from a perfumery point of view, i.e. that does not sig
+effect	X	58	1911	8404	0.104	tended use or application and the desired organoleptic effect. in general terms, these perfuming co-ingredients belo
+grapefruit	D	49	597	1089	0.104	eedle oil; galbanum oil; galbanum resin; geranium oil; grapefruit oil; guaiacwood oil; gurjun balsam; gurjun balsam oil;
+unexpected		26	271	375	0.103	to provide superior ingredient performance and possess unexpected advantages in malodor counteracting applications such
+precise		27	341	300	0.103	2 seconds, the sampled volume is calculated. since the precise concentration at the detector at any point in time is
+art	X	50	2424	9643	0.102	described, it would be obvious to those skilled in the art that various other changes and modifications can be ma
+synergistic	X	31	197	478	0.102	ty of providing better sensory profiles as a result of synergistic effects with other aroma chemicals, a higher stability
+brought	X	39	356	553	0.101	perfumer. niceness generally refers to a spontaneously brought about, positively perceived, pleasant sensory impressi
+entitled		22	188	217	0.101	lations as disclosed in ip.com number: ipcom000258614d entitled new aroma chemicals pages 6 to 46, table 1 to table d1
+plant		21	1178	11160	0.100	ved from various oils, such as essential oils, or from plant materials such as peppermint, spearmint and the like.
+describe		23	599	631	0.100	well as 1990, vol. 41, page 91. such articles already describe the various parameters affecting the preparation of su
+nutty	D	31	70	179	0.100	een and/or a sweet note and/or a rubbery note and/or a nutty note and/or a woody note and/or a dusty note and/or a
+chlorine	D	32	247	343	0.097	bric refreshing agents and freshness extending agents, chlorine bleach odor control agents, dye fixatives, dye transfe
+flowery	D	66	134	565	0.097	e odorless or at the most possess weak and undefinable flowery or woody odor. however, some other trans- and cis-tert
+preparations		24	806	2644	0.097	g compositions, window cleaners and the like. in these preparations, the compounds of the present invention can be used al
+detectable	X	30	207	286	0.097	of it, or, preferably, is not present at analytically detectable levels. it is meant to include compositions whereby th
+substantive	X	35	147	246	0.095	eric dyes selected from the group consisting of fabric-substantive colorants sold under the name of liquitint® (milliken,
+combination	X	33	1954	8070	0.095	isclosed or claimed herein or that it alone, or in any combination with any other reference or references, teaches, sugge
+base	T	274	1649	9282	0.092	nd type of the perfuming co-ingredients present in the base do not warrant a more detailed description here, which
+flowers		24	341	1114	0.091	hetic fragrances. natural fragrances are extracts from flowers, stems and leaves, fruits, fruit peels, roots, woods,
+search		21	176	261	0.091	y properties such as odor and also taste, the targeted search for substances with certain sensory properties such as
+diverse		20	211	198	0.090	isfy the multitude of properties desired for extremely diverse areas of application. these include, firstly, the sens
+popular		24	124	119	0.089	peppermint, spearmint and the like. other familiar and popular smells can also be employed such as baby powder, popco
+already	X	41	687	1017	0.087	683, as well as 1990, vol. 41, page 91. such articles already describe the various parameters affecting the preparat
+sweat	M	46	265	698	0.087	ng agents, irritation-alleviating agents, astringents, sweat-inhibiting agents, antiseptics, anti-statics, binders,
+offensive	X	37	81	130	0.086	tion of malodor, i.e. of an odor that is unpleasant or offensive to the human nose by counteracting and/or masking malo
+synthetic	X	79	1779	4881	0.086	and said perfuming co-ingredients can be of natural or synthetic origin. many of these co-ingredients are in any case l
+bleach	X	32	656	928	0.085	r, a fabric refresher, an ironing water, a paper, or a bleach; a body-care product, such as a hair care product (e.g
+berry		25	399	339	0.085	huja oil, thyme oil, verbena oil, vetiver oil, juniper berry oil, wormwood oil, wintergreen oil, ylang-ylang oil, h
+denotes		20	248	775	0.085	erally felt as pleasant. thus a “fragrance” or “scent” denotes an aroma chemical, which predominately induces a pleas
+smoke	D	37	122	376	0.082	f malodor models: the sweat, mold/mildew, bathroom and smoke malodor models were prepared based on applicants&#39;
+orange	D	44	1332	2797	0.082	c, lily, magnolia, mimosa, narcissus, freshly-cut hay, orange blossom, orchid, reseda, sweet pea, trefle, tuberose,
+regarding		27	349	737	0.080	ad when triggered. a key requirement from the industry regarding these systems is to survive suspension in challenging
+lavender	D	37	1066	1300	0.080	ge, strawberry, raspberry; musk, flower scents such as lavender-like, rose-like, iris-like, carnation-like. other plea
+noticeable	X	35	328	423	0.079	tes to make a fragrance formulation more desirable and noticeable, and add the perception of value. the odor qualities f
+marine	D	43	215	470	0.079	te, glycerin, magnesium chloride), kalpariane (biotech marine), dc upregulex (distinctive cosmetic ingredients, inci
+patchouli	D	34	924	1262	0.079	som absolute; orange oil; origanum oil; palmarosa oil; patchouli oil; perilla oil; peru balsam oil; parsley leaf oil; p
+malodor	M	65	406	3951	0.079	ct that is organoleptically effective to abate a given malodor while reducing the combined intensity of the odor leve
+how		27	614	662	0.078	t use in the art and a person skilled in the art knows how to reach the desired effect. however by way of non-lim
+bloom	X	34	167	520	0.078	ueous conditions. upon exposure to moisture, a perfume bloom may be triggered. benefits at other moments of truth m
+antiperspirant		24	709	1896	0.078	preparation (e.g. a vanishing cream or a deodorant or antiperspirant), or a skin-care product (e.g. a perfumed soap, shower
+impression		26	466	2121	0.077	brought about, positively perceived, pleasant sensory impression. however, “nice” does not have to be synonymous with “
+extremely	X	43	456	589	0.077	ble to satisfy the multitude of properties desired for extremely diverse areas of application. these include, firstly,
+comprise		21	1741	12416	0.076	ncapsulating materials. examples of such materials may comprise wall-forming and plasticizing materials, such as mono,
+suppress		24	158	255	0.076	or moments of perfume release. such polymers may also suppress the neat product odor and provide a bloom and/or longe
+undesired	H	30	211	303	0.076	d that antioxidants are able to inhibit or prevent the undesired changes in the compositions to be protected caused by
+adding	X	34	1430	3988	0.076	ition or of a perfumed article, which method comprises adding to said composition or article an effective amount of
+optionally		25	1589	7509	0.076	of a perfumery carrier and a perfumery base; and iii) optionally at least one perfumery adjuvant. by “perfumery carrier
+primary	X	35	968	2655	0.075	s and 2 to 6 hydroxyl groups, vegetable oils, branched primary alcohols, substituted cyclohexanes, linear and branche
+perceivable		25	133	269	0.075	antially non-odorous” also includes materials that are perceivable only by a minority of people or those materials deemed
+floral	D	431	888	5665	0.074	1-p-menthen-8-yl acetate and/or 1,4(8)-p-menthadiene; floral ingredients: methyl dihydrojasmonate, linalool, citron
+absorb	X	40	296	340	0.074	table odour absorbers are substances which are able to absorb and largely retain odour-forming compounds. they lower
+lemon	D	57	973	2093	0.074	leaf oil; cedar wood oil; cistus oil; citronella oil; lemon oil; copaiba balsam; copaiba balsam oil; coriander oil
+achieve	X	48	1045	1565	0.074	ay of example, since the experienced perfumer may also achieve effects or may create novel accords with lower or high
+end		25	1254	4128	0.073	ntion would be involved as a starting, intermediate or end-product could not be considered as a perfuming composi
+whether		26	698	988	0.073	intended for textile, dish or hard-surface treatment, whether they are intended for domestic or industrial use. othe
+water	X	31	2423	47987	0.073	than those previously specified, can be also ethanol, water/ethanol mixtures, limonene or other terpenes, isoparaf
+animalic	D	34	111	298	0.072	ited to one or more aldehydic compound(s), one or more animalic compound(s), one or more balsamic compound(s), one or
+masking	H	83	336	1101	0.071	styrax or certain abietic acid derivatives. the odour masking agents are fragrances or perfume oils, which, in addit
+properties	X	38	1893	7436	0.071	.e. that does not significantly alter the organoleptic properties of perfuming ingredients. said carrier may be a liquid
+waxy		29	282	560	0.071	ted release of the scent, for which purpose preferably waxy synthetic substances such as e.g. polyvinyl alcohol ar
+wood	D	39	791	1300	0.070	; galbanum resin; geranium oil; grapefruit oil; guaiac wood oil; gurjun balsam; gurjun balsam oil; helichrysum abs
+interesting	H	89	293	358	0.068	s to a composition, thereby contributing to a rich and interesting sensory profile, especially an olfactory profile of th
+applying	X	30	718	1284	0.068	ioned components of a perfuming composition, simply by applying the standard knowledge of the art as well as by trial
+harsh		24	118	180	0.068	niques to preserve actives, such as benefit agents, in harsh environments and to release them at the desired time,
+accord		23	370	2116	0.068	rials assist in beautifying and enhancing the finished accord as well as improving the performance of the other mate
+intensive	X	37	222	255	0.068	icularly in top notes brings about a considerably more intensive and more complex perception although the ether itself,
+technical		29	1117	1529	0.067	description technical field the present invention relates to the field of pe
+deodorants	M	46	955	1029	0.067	, coloring, dyeing, conditioning, shampooing, styling; deodorants and antiperspirants; personal cleansing; cosmetics; sk
+pigments	X	45	736	1684	0.067	gents, such as bht), coloring agents (e.g. dyes and/or pigments), preservatives (e.g. antibacterial or antimicrobial o
+retain	X	59	347	448	0.066	rs are substances which are able to absorb and largely retain odour-forming compounds. they lower the partial pressu
+extract		20	1140	10209	0.066	olu balsam; tonka absolute; tuberose absolute; vanilla extract; violet leaf absolute; verbena oil; vetiver oil; junip
+neat		26	428	1533	0.065	with an embodiment of applicants&#39; composition, in neat form or diluted in a liquor, for example, a wash liquo
+little	X	34	535	641	0.065	or manganese cations, an auxiliary metal cation having little or no bleach catalytic activity, such as zinc or alumi
+toilet		27	664	840	0.065	and sanitary cleaners, scouring milk, solid and liquid toilet cleaners, powder and foam carpet cleaners, waxes and p
+sandalwood	D	79	680	1464	0.065	l; rosemary oil; dalmatian sage oil; spanish sage oil; sandalwood oil; celery seed oil; spike-lavender oil; star anise o
+acetate		28	1995	23490	0.065	lthiohexyl acetate; 3-mercaptohexanol; 3-mercaptohexyl acetate; 3-mercaptohexyl butyrate; 3-acetylthiohexyl acetate;
+effects	X	39	1193	2555	0.065	ample, since the experienced perfumer may also achieve effects or may create novel accords with lower or higher conce
+musk-like		21	31	135	0.065	-cyclohexadec-8-en-1-one (according to the invention): musk-like, erogenous, cosmetic, balsamic scent and floral aspect
+deliver	X	32	651	850	0.065	t” it is meant a consumer product which is expected to deliver at least a pleasant perfuming effect to the surface to
+affect		29	532	605	0.064	ease as well as articles (other than food) intended to affect the structure or any function of the body of man or ot
+fruit	D	80	723	2534	0.064	absolute, geranium oil, tree moss absolute, basil oil, fruit oils, such as bergamot oil and mandarine oil, myrtle o
+bacteria		22	425	1062	0.064	dors. body odors are formed through the action of skin bacteria on apocrine perspiration which results in the formatio
+freshness	D	46	441	851	0.063	nts, soil release agents, fabric refreshing agents and freshness extending agents, chlorine bleach odor control agents,
+musty	D	37	79	267	0.063	ingering toilet odors; stale urine odor; and, moldy or musty odors that often originate in damp areas of the bathro
+medium		26	1075	3949	0.063	ng directly from a chemical synthesis, e.g. a reaction medium without an adequate purification, in which the compoun
+give	X	50	1044	2794	0.063	in the fragrance industry to provide new chemicals to give perfumers and other persons the ability to create new
+tropical		24	143	207	0.063	intended olfactory note (e.g., a hedonically pleasing “tropical” note) to a human in close proximity to the fragrance
+superior		25	389	722	0.062	esent invention are also surprisingly found to provide superior ingredient performance and possess unexpected advantag
+leaves		22	506	1287	0.061	atural fragrances are extracts from flowers, stems and leaves, fruits, fruit peels, roots, woods, herbs and grasses,
+active	X	37	1665	16297	0.061	omponent or composition levels are in reference to the active portion of that component or composition, and are excl
+determine		27	752	1481	0.061	s section of the present application should be used to determine the respective values of the parameters of applicants&
+moderate		25	311	866	0.061	odor strength of 0 to 10, where 0=none, 1=very weak, 5=moderate, 10=extremely strong; and (ii) level of complexity, wh
+rose	D	113	1151	2654	0.061	,5,9-trimethyl-13-oxabicyclo[10.1.0]trideca-4,8-diene; rose oxide; 2-(2,4-dimethyl-3-cyclohexen-1-yl)-5-methyl-5-(
+group	X	30	2110	35291	0.061	d above; ii) at least one ingredient selected from the group consisting of a perfumery carrier and a perfumery base
+important	X	45	1030	1525	0.060	tioned above, more than one compound of formula (i) is important as it enables the perfumer to prepare accords, perfume
+identical		21	555	1333	0.059	ch—for the same test panel—brings about a reproducibly identical reminder of something specific. for example, a substan
+character	X	46	795	2059	0.059	raising the fragrance formulation to a more desirable character. the term “enhancing” is understood to mean making the
+fruity	D	375	790	4512	0.058	l isobutyrate and/or mixture of methylionones isomers; fruity ingredients: gamma-undecalactone, 2,2,5-trimethyl-5-pe
+ethyl		23	2044	24493	0.058	henyl ether; beta-naphthyl methyl ether; beta-naphthyl ethyl ether; beta-naphthyl isobutyl ether; 1,4-dimethoxybenz
+mask	H	171	468	734	0.058	positions (deodorants and antiperspirants) counteract, mask or eliminate body odors. body odors are formed through
+corresponding	X	34	1406	4532	0.058	tion, as well as optionally additional benefit agents, corresponding to the desired consumer product, e.g. a detergent or a
+lime		23	660	895	0.058	er absolute; lavender oil; lemongrass oil; lovage oil; lime oil distilled; lime oil pressed; linalool oil; litsea
+rich	X	38	352	757	0.057	mpressions to a composition, thereby contributing to a rich and interesting sensory profile, especially an olfacto
+mint	D	33	442	2187	0.057	s, thymol, thyme oil, eugenol, oil of cloves, menthol, mint oil, farnesol, phenoxyethanol, glycerol monocaprate, g
+peach		21	248	584	0.056	ids, palm kernel acid, palm kernelamidopropyl betaine, peach kernel oil glycereth-8 esters, peanut acid, peg-10 cas
+prolonged		22	356	522	0.056	extile) as well as evaluation of the dry textile after prolonged storage. the term “stability” describes the behavior o
+application	X	36	2259	11991	0.056	n, including any cross referenced or related patent or application and any patent application or patent to which this app
+resulting	X	41	1662	5659	0.055	ake of clarity, it is also understood that any mixture resulting directly from a chemical synthesis, e.g. a reaction me
+geranium		24	795	762	0.055	s, e.g. castoreum, costus root oil, oak moss absolute, geranium oil, tree moss absolute, basil oil, fruit oils, such a
+preparation		27	1735	10909	0.055	pplicable in current perfumery products, including the preparation of perfumes and colognes, the perfuming of personal ca
+called	X	30	1003	1693	0.055	ste-form all-purpose washing agents, especially the so-called heavy-duty liquid types; liquid fine-fabric detergents
+heart	T	60	146	312	0.055	mposed: highly volatile head note, moderately volatile heart note and sparingly volatile base note. (i) the head no
+eucalyptus	D	31	803	960	0.055	absolute; oak moss absolute; elemi oil; tarragon oil; eucalyptus citriodora oil; eucalyptus oil; fennel oil; pine needl
+care		20	1809	12285	0.055	on of perfumes and colognes, the perfuming of personal care products such as soaps, shower gels, and hair care pro
+rounded		22	128	198	0.055	substrates is cut into nine 43 mm×43 mm squares (with rounded edges) using a cutting die and a samco sb20 cutting ma
+lactonic		24	55	151	0.055	1]octan-2-one (structure vi) possesses strong coconut, lactonic, woody, minty, jasmine cis like, anisic, and tuberose
+mixed	X	32	1766	6600	0.054	base when the compounds according to the invention are mixed with perfuming co-ingredients, solvents or additives c
+panel		22	608	1565	0.054	ought about sensory impression which—for the same test panel—brings about a reproducibly identical reminder of some
+somewhat		23	224	407	0.054	such ions to the enzymes. (calcium ions are generally somewhat more effective than magnesium ions and are preferred h
+aquatic		20	56	168	0.054	s, spicy perfumes, oriental perfumes, marine perfumes, aquatic notes, chypre perfumes, woody perfumes, ferns and mixt
+provided		26	1931	9038	0.053	n, edited by w. a. poucher, 1959. among the fragrances provided in this treatise are acacia, cassie, chypre, cyclamen,
+since	X	53	1316	2422	0.053	owever, these values are given only by way of example, since the experienced perfumer may also achieve effects or m
+cleaning	X	38	1322	4640	0.053	ons. the present invention can also be used to perfume cleaning agents, such as, but not limited to detergents, dishwa
+fresheners	X	43	738	769	0.053	els, and hair care products, fabric care products, air fresheners, and cosmetic preparations. the present invention can
+exhibiting		28	190	282	0.053	ve substances” refers to substances or aroma chemicals exhibiting intense odor impressions. intense odor impressions are
+composed	X	33	654	1241	0.052	ybrid, namely organic-inorganic such as a hybrid shell composed of at least two types of inorganic particles that are
+evaluating		20	135	186	0.052	ptical light transmission, can be used as guides, when evaluating microemulsion phases. additionally, perfume analysis i
+undesirable	M	67	425	616	0.052	ions in their content, purity etc. to circumvent these undesirable factors, it is therefore of great interest to create s
+hydrophobic	X	34	835	5594	0.051	enes, or isoparaffins. preferably, the solvent is very hydrophobic and highly sterically hindered, like for example abaly
+herbaceous	D	50	136	325	0.051	compound(s), one or more green compound(s) one or more herbaceous compound(s) one or more marine compound(s), one or mor
+citrus-like		26	39	87	0.051	or profile: sweet, fruity, in the pineapple direction, citrus-like 3-methylbut-2-enyl 2-cyclopent-2-en-1-ylacetate (compo
+citrus	D	185	878	4316	0.051	ingredients: coumarin, ethylvanillin and/or vanillin; citrus ingredients: dihydromyrcenol, citral, orange oil, lina
+volatility		22	566	1022	0.051	the carrier is a substantially odorless liquid of low volatility. in several applications, a composition of the inventi
+feel		21	332	943	0.051	viding improved conditioning benefits such as slippery feel during the application to wet hair, softness and moist
+panelists	X	43	411	1724	0.051	tion time when odor is noticed. the average across all panelists determines the odor threshold concentration of the per
+tea		23	753	2263	0.050	ar anise oil; styrax oil; tagetes oil; fir needle oil; tea tree oil; turpentine oil; thyme oil; tolubalsam; tonka
+honey		20	179	250	0.050	etate marketed by basf under the trade name trilon m); honey; sugar derivatives such as o-octanoyl-6-d-maltose and
+powders	X	35	808	1391	0.050	zers, covering agents, polish, shine agents, polymers, powders, proteins, refatting agents, exfoliating agents, silic
+quickly		23	448	514	0.049	ired, in which the odor is to be conveyed particularly quickly and intensively, for example in deodorants, air freshe
+dominant	X	32	102	135	0.049	epresents not detectable and 3 represents it being the dominant character. the results of the panel test are then aver
+effective		24	1496	3729	0.049	e.g. a detergent or an air freshener, and an olfactive effective amount of at least one invention&#39;s compound. the n
+environmental	X	38	558	900	0.048	counteracting applications such as body perspiration, environmental odor such as mold and mildew, bathroom, and etc. the c
+cationic	X	31	992	6195	0.048	ally in the presence of a polymeric stabilizer or of a cationic copolymer. resins may be produced by the polycondensat
+add		22	744	2391	0.048	agrance formulation more desirable and noticeable, and add the perception of value. the odor qualities found in t
+fact		21	726	837	0.048	yed in perfumery industry. said compositions, which in fact can be advantageously employed as perfuming ingredient
+fully	X	40	706	1094	0.048	ause the odor is reminiscent, for example, of a sweet, fully ripe apple, the odor would be termed “nice”. however,
+need		23	1577	2632	0.048	rials. background of the invention there is an ongoing need in the fragrance industry to provide new chemicals to
+eliminating		22	170	346	0.047	vide such chemical or biological means for reducing or eliminating body odor. although the concentration will vary depend
+decrease		26	491	918	0.047	a substance that serves to repel or attract pests, to decrease, inhibit or promote their growth, development or their
+defined		26	1713	7319	0.047	g ingredient, at least one invention&#39;s compound as defined above; ii) at least one ingredient selected from the g
+lacking		24	129	166	0.047	4 hrs after application as compared to controls, e.g., lacking any of the disclosed non-odorous fragrance modulators
+retention	X	38	538	1546	0.046	. a panelist sniffs the gc effluent and identifies the retention time when odor is noticed. the average across all pane
+activity	X	48	757	3328	0.046	a transition metal cation of defined bleach catalytic activity, such as copper, iron, titanium, ruthenium, tungsten,
+head	T	43	368	1037	0.046	nical mixtures thereof such as, for example, so-called head-fractionated fatty acid. esterquats of which the acyl
+coffee		20	369	1475	0.046	ages, preferably selected from the group consisting of coffee, tea, wine, beverages containing wine, beer, beverages
+alcohol		20	2120	19768	0.046	3-(3-methylphenyl)propanol; 1,1-dimethyl-2-phenylethyl alcohol; 1,1-dimethyl-3-phenylpropanol; 1-ethyl-1-methyl-3-phe
+bad	M	52	110	223	0.045	tablets, used to remove dirt, including dust, stains, bad smells and clutter on surfaces or other types of house
+creamy	D	44	154	376	0.045	y, floral, rose, muguet, fruity, apple, berry, citrus, creamy, woody, balsamic, amber, musk just to name a few, acco
+special	X	46	420	614	0.045	compositions and compositions for scent dispensers. of special interest are aroma chemicals, which can impart one or
+threshold		21	467	1503	0.045	centration of the perfuming compound. to determine the threshold concentration, solutions are delivered to the sniff po
+non-ionic		26	518	1412	0.044	system essentially consisting of one or more than one non-ionic surfactant, wherein the surfactant system has a mean h
+hand	X	33	1240	2533	0.044	eavy-duty liquid types; liquid fine-fabric detergents; hand dishwashing agents or light duty dishwashing agents, e
+based		20	2171	16207	0.044	eight, or even more, of the compounds of the invention based on the weight of the composition into which they are i
+commercial	X	35	883	1797	0.044	m in which it is sold, and not intended for subsequent commercial manufacture or modification. such products include but
+appealing	H	31	91	132	0.044	. for example, certain fragrance compositions can have appealing odors but can have limited intensity and high percepti
+process		25	1852	15690	0.044	co., hamburg, 1996. the encapsulation is a well-known process to a person skilled in the art, and may be performed,
+washing	X	32	1167	4378	0.044	ning detergents; liquid, gel or paste-form all-purpose washing agents, especially the so-called heavy-duty liquid typ
+unpleasant	H	316	529	1353	0.043	weeteners, for example saccharin, taste correctors for unpleasant taste sensations, taste correctors for further, normal
+elegant		23	70	87	0.043	activating, airy-heavy, plain-rich, natural-unnatural, elegant-unrefined, soft-strong, pleasant-unpleasant, warm-cool
+soft	D	44	752	1403	0.043	y antiperspirant, clear emulsion stick antiperspirant, soft solid antiperspirant, emulsion roll-on antiperspirant,
+apricot		21	188	265	0.043	nana-like scent, and isoamyl isobutyrate gives a sweet apricot- and pineapple-like scent. additionally, patent docume
+giving		20	308	469	0.042	ne until the hydroxyethylcellulose is entirely swollen giving a limpid gel. part b is slowly poured into part a, whi
+woody	D	318	716	3321	0.042	methyl-1′-cyclohexyl)ethoxycarbonyl]methyl propanoate; woody ingredients: 1-[(1rs,6sr)-2,2,6-trimethylcyclohexyl]-3
+camphoraceous	D	31	72	193	0.042	emperatures, but also can be solid such as the various camphoraceous perfumes known in the art. a wide variety of chemicals
+green	D	363	1148	5705	0.041	]acetate and/or diethyl 1,4-cyclohexane dicarboxylate; green ingredients: 2-methyl-3-hexanone (e)-oxime, 2,4-dimeth
+side		25	881	2889	0.041	rm part of the main polymer chain or can be borne by a side substituent directly connected thereto. the weight ave
+encapsulated		25	761	5878	0.041	anidine); a colloidal stabilizer or emulsifier; and an encapsulated perfume. however, the use of an amine can be omitted.
+menthol		26	991	4405	0.040	e, 2,2,7/8,9/10-tetramethylspiro[5.5]undec-8-en-1-one, menthol and/or alpha-pinene; balsamic ingredients: coumarin, e
+determining		24	426	749	0.040	median size. the broadness index can be calculated by determining the particle size at which 95% of the cumulative parti
+performance		24	1130	4189	0.040	uitable techniques include chromatography such as high performance liquid chromatography, referred to as hplc, and partic
+lilial		20	707	1111	0.040	xyacetaldehyde, cyclamen aldehyde, hydroxycitronellal, lilial and bourgeonal, the ketones include, for example, the
+wet	D	34	662	1511	0.039	tory evaluation of the textile directly after washing (wet textile) as well as evaluation of the dry textile afte
+metallic	D	46	359	899	0.039	examples of antiperspirant actives include astringent metallic salts, like the inorganic and organic salts of aluminu
+hereinabove	X	38	310	847	0.039	r or higher concentrations. the compounds as described hereinabove may be employed in a consumer product base simply by d
+increasing		26	880	1612	0.039	substance for use by people to supplement the diet by increasing the total dietary intake, a concentrate, metabolite, c
+formulations		20	1216	4948	0.038	ming co-ingredients which are commonly used in perfume formulations, such as: aldehydic ingredients: decanal, dodecanal, 2
+red		20	610	2186	0.038	tobleach particle 0.1 0.1 0.2 0.1 0.2 0.1 0.2 blue and red carbonate speckles 1.8 1.8 1.8 1.8 1.8 1.8 1.8 ethoxyl
+oily		29	404	1463	0.037	nated rapeseed fatty acid; polyglycerol esters (pges), oily sugar derivatives, and wax emulsions and a mixture of
+assess		20	189	259	0.037	ts. non-limiting examples of phenotypic traits used to assess vigor include yield in biomass per plant, growth rate,
+dry	D	92	1434	5644	0.037	, substrate-laden products such as dryer added sheets, dry and wetted wipes and pads, nonwoven substrates, and sp
+animal	D	62	872	1980	0.037	ducts such as dog and hen house effluents and domestic animal and pet care products such as deodorants, shampoo or c
+standard	X	32	1337	3418	0.037	nts of a perfuming composition, simply by applying the standard knowledge of the art as well as by trial and error met
+rosy	D	58	137	420	0.036	ts for providing (a) hair or (b) textile fibers with a rosy odor note. the fragrances to be used according to the
+pungent	D	45	110	329	0.036	rpv1 or a trpv3 modulator, a substance that produces a pungent taste or a warmth or heat sensation on the skin or muc
+fatty	D	82	1377	11732	0.036	ylaminoethyl hydroxyethyl carboxymethyl glycinate. the fatty acid amide derivative known under the ctfa name of coc
+rate	X	36	1350	5331	0.036	either to stabilize the composition, or to control the rate of evaporation of the compositions or of some ingredie
+generally	X	42	1819	5472	0.036	for perfumery. thus, unpurified reaction mixtures are generally excluded from the present invention unless otherwise s
+molecules		25	1031	3579	0.036	the extensive range of natural products, and synthetic molecules currently available, such as essential oils, alcohols,
+raw	X	41	1101	7650	0.035	fically, mention may be made of: extracts from natural raw materials such as essential oils, concretes, absolutes
+responsible	X	56	255	299	0.035	ore can be a direct contributor to formation of phases responsible for its activity coefficient (as noted above), and the
+particles	X	41	980	11581	0.035	brid shell composed of at least two types of inorganic particles that are cross-linked, or yet a shell resulting from t
+profile	X	40	758	2995	0.034	aroma chemical with high stability maintains its aroma profile over a long period in time, preferably in a large vari
+against	X	39	792	1816	0.034	teriostatic properties. typically these substances act against gram-positive bacteria such as, for example, 4-hydroxy
+consistent		23	325	435	0.034	nd/or the specification can mean “one,” but it is also consistent with the meaning of “one or more,” “at least one,” a p
+background	X	55	1956	1889	0.034	e of the new chemical entities as fragrance materials. background of the invention there is an ongoing need in the fragr
+scale		25	932	2077	0.033	leaning agents, or animal litter material and in large scale closed air systems such as auditoria, and subways and
+released		24	812	2464	0.033	in a number of ways. for example, the fragrance may be released as a result of simple hydrolysis, or by a shift in an
+quite	X	33	335	438	0.033	e leaves of the rosaceae family, sub-family rosoideae, quite particularly extracts of blackberry leaf (preferably a
+acid	D	35	2163	57142	0.033	rdihydroguaiaretic acid, trihydroxybutyrophenone, uric acid and derivatives thereof, mannose and derivatives there
+leathery		20	61	150	0.033	, chrysanthema, grassy, aldehydic, lily of the valley, leathery, terpenic, and/or natural note. since 2-(2,4,5-trimeth
+treated		25	983	3903	0.033	comprise most any fabric capable of being laundered or treated in normal consumer use conditions. liquors that may co
+substantially	X	36	954	3611	0.032	or gel. in a wick-type air freshener, the carrier is a substantially odorless liquid of low volatility. in several applicat
+aspects	X	34	925	5900	0.032	products are provided herein to illustrate the various aspects of the present invention. however, they do not intend
+juicy		29	93	246	0.032	0 total 100.00 the above fragrance formula has fruity, juicy, sweet, natural berries, pineapple, aldehydic, creamy
+test	X	92	1277	9117	0.032	rstood that the test methods that are disclosed in the test methods section of the present application should be u
+average		25	1130	5947	0.032	ide substituent directly connected thereto. the weight average (mw) molecular weight of the cationic polymer is prefe
+powder		27	1352	7821	0.032	ners, scouring milk, solid and liquid toilet cleaners, powder and foam carpet cleaners, waxes and polishes such as f
+formulation		28	1483	9873	0.032	phrase “improving, enhancing or modifying a fragrance formulation” is understood to mean raising the fragrance formulati
+interest	X	36	602	1016	0.032	ions and compositions for scent dispensers. of special interest are aroma chemicals, which can impart one or more dist
+causing		23	417	655	0.031	ion of the present invention may be applied to without causing any undue adverse effect. for example, this can includ
+kitchen		23	193	399	0.031	type of malodor present in a residential or commercial kitchen including, but not limited to: kitchen garbage odors t
+oriental		25	98	173	0.031	oral perfumes, musks, fruity perfumes, spicy perfumes, oriental perfumes, marine perfumes, aquatic notes, chypre perfu
+contain	X	41	1710	6771	0.030	erionic surfactants are surface-active compounds which contain at least one quaternary ammonium group and at least on
+expert		20	232	564	0.030	ds c1-c22 in wo2014/139952 (unilever). 21 available as expert gel ® eg56. 22 available as kolliphor ® el. 23 disclos
+impact		27	698	1471	0.030	% of a perfume oil comprising at least 15 wt % of high impact perfume raw materials having a log t&lt;−4, and 0-75 w
+multiple		28	769	1587	0.030	emulsion, an “oil-in-water” (o/w) type emulsion or as multiple emulsions, for example of the water-in-oil-in-water (w
+clearly	X	35	636	825	0.030	e order unless otherwise indicated herein or otherwise clearly contradicted by context. the use of any and all exampl
+result		20	1642	4045	0.030	ferences in the chemical structure of the molecule can result in significant differences in the odor, notes and char
+rather		24	672	871	0.030	ability, or configuration of the invention in any way. rather, the foregoing detailed description will provide those
+applied		29	1715	5448	0.030	ng application of creams, lotions, and other topically applied products for consumer use; and shaving products, produ
+clean	D	61	573	1202	0.030	selected from the group consisting of deo pump spray, clean hair-conditioner, face wash gel, foam bath concentrate
+middle	T	156	338	1076	0.030	and those between (ki of 1100-1400) can be considered middle perfume notes which generally favor neither bloom nor
+exhibits		21	373	775	0.029	thyl dihydrojasmonate), which as a pure substance only exhibits a light floral jasmin-note, reinforces diffusion, fres
+found	X	37	2001	5968	0.029	its entirety. another source of suitable fragrances is found in perfumes, cosmetics and soaps , second edition, edi
+aromatic	D	80	1432	5382	0.029	ecanal, 10-undecenal, octanal, nonanal and/or nonenal; aromatic-herbal ingredients: eucalyptus oil, camphor, eucalypto
+form		23	2256	18773	0.029	of incorporation thereof, will depend on the physical form of the composition and the nature of the operation for
+relatively	X	35	959	2160	0.029	e problems faced by the perfumery industry lies in the relatively rapid loss of olfactive benefit provided by odoriferou
+ambery	D	42	103	349	0.029	r odour characters, such as for example, musky, woody, ambery, warm and sweet, which overpower and dominate the frag
+thereby	X	42	1067	2933	0.029	the present invention have a number of chiral centers, thereby providing numerous isomers of the claimed compounds. i
+warm	D	48	415	839	0.029	ment (from ika). after mixing, the mixture is put in a warm water bath at 60° c. for ±12 hours. a homogenous, visc
+additionally		20	1078	2172	0.029	of example less than 5% or less than 2% by weight, but additionally include compounds such as acetaldehyde (in particular,
+because	X	75	1190	2369	0.029	ely of “apples”. if this apple odor were very pleasant because the odor is reminiscent, for example, of a sweet, full
+coconut		28	572	1301	0.028	bran, avocado, almond, olive, sesame, persic, castor, coconut, and mink oils. synthetic triglycerides can also be em
+evaluate	X	40	292	447	0.027	lucose and nh 4 + measurements were done externally to evaluate availability of the c- and n-sources in the culture. u
+together	X	34	1443	3585	0.027	ination of perfuming ingredients with substances which together improve, enhance or modify the delivery of the perfumi
+score		21	263	1395	0.027	assess the fragrance character in one of 2 ways: i) a score on a scale of 0 to 3 for the dominance of particular c
+generate		29	416	821	0.026	nsumer care products, as well as in fine perfumery, to generate pleasant odours or to mask unpleasant odours. an excel
+indeed		23	416	587	0.026	any particular preferred embodiments described herein. indeed, many modifications and variations of the disclosed su
+user	X	31	606	2937	0.026	g a freshness feeling and may serve as a signal to the user that the product may still be working or that the prod
+fragrant	H	54	342	1470	0.026	l” refers to one or more of the following ingredients: fragrant essential oils; aroma compounds; pro-perfumes; materia
+detected		21	458	1156	0.026	vity be used. materials with high odor-activity can be detected by sensory receptors at low concentrations in air, thu
+advantageous		25	970	2162	0.026	00). luminol may also be present as a luminescent dye. advantageous coloured pigments are for example titanium dioxide, mi
+difference		20	621	1434	0.026	, danish technical press (copenhagen, 1967). euclidean difference in solubility parameter between a fragrance and a solv
+determined		26	1407	4345	0.026	ationic charge density of the cationic polymers may be determined by the kjeldahl method as described in the us pharmaco
+usually		22	1064	2033	0.025	will be seen that the composition of the invention is usually one in which the malodor counteractant is present toge
+sufficient		20	1083	2670	0.025	diol (m pdiol) mono ethanol amine 1.0 0.5 0 0 0 0 naoh sufficient to ph 8 ph 8 ph 8 ph 8 ph 8 ph 8 provide formulation p
+valuable		24	242	374	0.025	hat in the already well-studied field a fragrance with valuable, interesting and complex olfactory properties could be
+few		24	609	811	0.025	mixed but defined odors rather than a single note or a few easily identifiable notes. high levels of complexity a
+obtain		26	1220	3979	0.025	ctant agent present is the ordinary dosage required to obtain the desired result. such dosage is known to the skille
+tobacco	D	56	211	1055	0.024	as around the bath or shower. non-limiting examples of tobacco odor include the odor generated during smoking of ciga
+easily		24	890	1462	0.024	and additives and perfume to be used in each case can easily be determined by the person skilled in the art by simp
+whereas		22	637	940	0.024	e is referred to as the core, internal phase, or fill, whereas the wall is sometimes called a shell, coating, or memb
+valley	X	70	216	685	0.023	most valuable perfuming ingredients with a lily of the valley and watery connotation, has been limited due to variou
+solution		29	2120	24955	0.023	ntrations of from about 500 ppm to about 15,000 ppm in solution. when the wash solvent is water, the water temperature
+minty	D	54	133	352	0.023	nic note. l-menthol has a unique refreshing flavour, a minty smell and a potent cooling effect on skin and mucous m
+top	T	319	977	3909	0.023	mpounds due to their volatility, particularly that of “top-notes”. in order to tailor the release rates of volati
+possesses	X	30	311	478	0.023	r-controlled micromanipulation instrument system which possesses lenses and cameras able to image the delivery capsules
+basic		22	668	1586	0.022	less than 50%, and most preferably less than 20%. the basic requirement for the polymer is that it be miscible or
+exhibit	X	50	642	1243	0.022	eferably 1:2 to 1:2.6, which dissolve with a delay and exhibit multiple wash cycle properties. the delay in dissoluti
+concentration		27	1611	10478	0.022	s, the sampled volume is calculated. since the precise concentration at the detector at any point in time is known, the mas
+structural		20	568	1281	0.021	xample, be a food lipid. food lipids typically contain structural units with pronounced hydrophobicity. the majority of
+earthy	D	73	191	653	0.021	in the present invention comprise, for example, woody/earthy bases containing exotic materials such as sandalwood o
+attractive	H	51	192	253	0.021	the solubility parameter is defined as the sum of all attractive forces radiating out of a molecule. the total van der
+cases		20	821	1678	0.021	esses. the effect of the antioxidants consists in most cases in them acting as free-radical scavengers for the free
+round		23	389	1012	0.021	ther centrifugation, isolation and re-suspension. each round of centrifugation occurs in tubes of 1.5 to 50 ml in v
+enhances		28	195	306	0.021	booster effect of a substance means that the substance enhances and intensifies in aroma chemical formulations (such a
+itself		28	829	1057	0.021	discussed above can be the compound, polymer, or agent itself as shown above, or its salt, precursor, hydrate, or so
+make		20	1269	2297	0.020	thout departing from the spirit and scope thereof, can make various changes and modifications of the invention to
+completely		29	783	1403	0.020	is mixed and heated to 88° c. until the all solids are completely melted. the emulsion is then also heated to 88° c. and
+associated	X	55	858	2022	0.020	e functionality, which may be used to provide benefits associated with amine-assisted delivery (aad) and/or polymer-assi
+dried	X	31	1475	6500	0.020	also applicable. in particular the slurry may be spray-dried preferably in the presence of a polymeric carrier mate
+small	X	47	1428	3086	0.020	e products. those with skill in the art appreciate how small differences in chemical structures can result in unexp
+strength	X	56	678	2219	0.019	, as described in: zhang, z. et al. (1999) “mechanical strength of single microcapsules determined by a novel microman
+specifically		27	1422	3601	0.019	d flavor materials, 4th ed., wiley-vch, weinheim 2001. specifically, mention may be made of: extracts from natural raw mat
+white	X	53	801	2158	0.019	ows: 1. parafin wax 10-20% 2. hydrocarbon wax 5-10% 3. white petrolatum 10-15% 4. acetylated lanolin alcohol 2-4% 5
+often	X	34	1061	1801	0.018	ns. fragrances of natural origin are mostly expensive, often limited in their available amount and, on account of f
+aspect	X	31	1415	10783	0.018	e situs may be optionally washed and/or rinsed. in one aspect, a situs is optionally washed and/or rinsed, contacted
+bottom	T	90	743	3081	0.017	lightly squeegee once down the hair switch from top to bottom between fingers after rinsing to remove excess water.
+final		21	1101	2951	0.017	, e.g. to impart its typical note. understood that the final hedonic effect may depend on the precise dosage and on
+fresh	D	321	987	3761	0.017	preferably selected from the group consisting of ham, fresh or raw sausage preparations, and seasoned or marinated
+target		23	524	2954	0.017	elp delivery of the particulate antimicrobial agent to target regions, such as, for example, hair follicles and undu
+hydrogen		20	1344	7796	0.017	ociation can be through physical interactions, such as hydrogen bonding, ionic interactions, hydrophobic interactions,
+musky	D	76	186	625	0.016	part particular odour characters, such as for example, musky, woody, ambery, warm and sweet, which overpower and do
+through	X	34	1811	8849	0.016	roving, enhancing or modifying a fragrance formulation through the addition of an olfactory acceptable amount of the
+single	X	52	1440	3809	0.016	ination with amine compounds. in yet another aspect, a single molecule may comprise an amine moiety and one or more
+particularly	X	118	2133	14000	0.016	known under the ctfa name of cocamidopropyl betaine is particularly preferred. ampholytic surfactants are also suitable, p
+results		26	1701	8144	0.016	action of skin bacteria on apocrine perspiration which results in the formation of unpleasant-smelling degradation pr
+tested		22	786	2195	0.015	olution containing 1 to 10 wt. % of the compound to be tested in triethyl citrate. after evaporation of the solvent
+weaker		25	134	187	0.015	e 3 by-products (compounds ii, iii and iv) indicates a weaker odour than that from (−)-ambrox. in fact, the epi-ambr
+out		21	1759	7360	0.015	cification concludes with claims particularly pointing out and distinctly claiming the invention, it is believed
+experience		23	353	712	0.014	act of fragrance formulations and enrich the sensorial experience. profragrances, such as the compounds of the present i
+table		22	1750	23960	0.014	on&#39;s compounds, one may cite the following ones in table 1: table 1 invention&#39;s compounds and their odor pr
+quality	X	34	765	1933	0.013	useful in the present invention may be any acceptable quality of ethanol, compatible and safe for the specific inten
+increased	X	45	1134	2678	0.012	dding ingredients such as starch. the benefit includes increased perfume retention during product storage, especially u
+possible		27	1585	4869	0.011	the present invention, as many variations thereof are possible without departing from the spirit and scope of the inv
+compared	X	31	1437	4676	0.011	erceived by an observer or user thereof, over time, as compared to the same perception in the absence of the modulator
+reduced	X	30	1313	4286	0.011	nstable in aqueous-based products and may even provide reduced benefit (versus free perfume control) when in-product
+hours		27	1602	9276	0.009	ly or there may be time intervals of seconds, minutes, hours, days, weeks, months or even years between such steps,
+comparative		24	759	6792	0.009	ce of perfume in the headspace over the composition or comparative composition using the perfume headspace abundance duri
+before	X	37	1345	4084	0.009	from basf (put at 60° c. in warm water bath for 1 hour before mixing). mixing is achieved by mixing for five minutes
+shows		24	990	4693	0.007	the art from the following detailed description, which shows and describes illustrative embodiments of the disclosu
+modifi	X	34	0	0	0.000	
+modifie		28	0	0	0.000	
+buildin		27	0	0	0.000	

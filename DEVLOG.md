@@ -4,11 +4,27 @@
 
 ---
 
-## RESUME HERE — state as of 2026-08-01 (evening)
+## RESUME HERE — state as of 2026-08-05
 
 **The corpus is IN.** 2,588 patents cached on Hetzner (`/opt/openscent/corpus/raw/`, 173 MB, zero
 failures). `extract` with the v3 filter gives **3,191 candidates** across 1,027 patents;
 `corpus/extracted/candidates.json` is on the Mac.
+
+**Phase 0 vocabulary is classified but NOT settled.** 68 class-D terms at ≥30 docs → **49 distinct
+concepts**: minus 15 morphological duplicates (`musk`/`musky`, `rose`/`rosy`/`rose-like`, …), minus
+`muguet`=`lily`, minus `forest`/`woodland`/`spruce` — which turned out to be **one patent boilerplate
+paragraph copied across 124 patents**. Well below Mike's floor of 60. See the 2026-08-05 entry; document
+frequency does not defeat cross-document boilerplate, which is what `pipeline/boilerplate.py` now measures.
+
+**Immediate next, in this order:**
+1. Second ontology pass over the **20–29 doc band** (183 terms, visibly rich) → ~75–85 concepts.
+   `boilerplate.py 20` has already been run, so the band is pre-vetted: `hay` (0.50) and `blossom`
+   (0.25) are flagged before they are judged.
+2. Inspect the three surviving D's the scan flagged — `ripe` 0.49, `watery` 0.34, `lily` 0.30 — from the
+   `top_context` column of `ontology/boilerplate-report.tsv` (on Hetzner).
+3. Then the candidate review below.
+
+`odor_terms.tsv`'s `tag` column stays **blank** until the tag list is settled.
 
 > `$OPENSCENT_HOST` is the harvest box (`user@ip`). Set it in your shell — it is deliberately not
 > committed, so this repo can go public unchanged:
@@ -678,3 +694,166 @@ how thin the ontology vocabulary still is.
 **Noted while reviewing, not acted on:** `C 1-4 alkyl` (a substituent *range* in a Markush claim) trips
 NAMED_LOCANT, which reads `\d-\d` as systematic nomenclature. Only ~6% of the queue looks Markush, so it
 is not worth pre-filtering, but it is a real defect in the rule.
+
+---
+
+## 2026-08-05 — Phase 0 vocabulary classified: 68 D's, and three of them were one sentence
+
+### The pass
+
+`vocab.py` over the full 2,588 patents, then `pipeline/ontology.html` — a keyboard-driven D/H/T/M/X
+classifier over the 210 terms at ≥30 documents. Ivan did the whole pass. Result:
+
+| class | n | |
+|---|---|---|
+| D descriptor | **68** | ontology candidates |
+| X noise | 116 | stop-list material |
+| H hedonic | 12 | pleasant/unpleasant — a separate axis, not a tag |
+| M malodour | 8 | flags a document for exclusion |
+| T tier | 6 | top/heart/base — not per-compound assertable |
+
+68 looks like a hit against Mike's "60–100 tags". It is not, for two independent reasons.
+
+### Reason 1: morphology. 68 → 52 distinct concepts
+
+Eleven families are one concept spelled several ways, and a tag list that contains both `musk` and
+`musky` is not a 68-tag ontology:
+
+```
+floral   ← floral(431) flower(163) flowery(66)      rose     ← rose(113) rosy(58) rose-like(36)
+fruity   ← fruity(375) fruit(80) fruits(38)          animalic ← animal(62) animalic(34)
+fresh    ← fresh(321) freshness(46)                  mint     ← mint(33) minty(54)
+woody    ← woody(318) wood(39)                       amber    ← amber(51) ambery(42)
+musk     ← musk(244) musky(76)                       herbal   ← herbal(203) herbaceous(50)
+```
+
+Plus **`muguet` (62 docs) is French for lily-of-the-valley** — same concept as `lily` (37) and the
+multiword form already recorded in `odor_terms.tsv`. Recorded here because it is exactly the kind of
+equivalence that gets silently un-merged in three weeks by someone who does not speak French.
+
+68 − 15 morphological − 1 muguet = **52 distinct concepts.** Below Mike's floor of 60.
+
+### Reason 2: document frequency does not defeat patent boilerplate
+
+`forest` 127 docs, `woodland` 124, `spruce` 124 — three terms landing within three documents of each
+other, and **`woodland` and `spruce` appear in zero candidate sentences.** That asymmetry is only
+explicable one way, and grepping the raw corpus confirmed it. One stock paragraph:
+
+> "other pleasant scents include herbal and woodland scents derived from pine, spruce and other
+> forest smells"
+
+**120 of `woodland`'s 125 occurrences are that sentence.** 96%. The ~124 document count for all three
+terms *is the number of patents carrying that one copied paragraph.* `spruce`'s remaining contexts are
+no better — "spruce needle oil" in an ingredient list, "needles and branches (spruce, fir, pine)" in a
+botanical enumeration. Neither asserts that anything smells like spruce.
+
+**`forest`, `woodland` and `spruce` are dropped.** Not merged into a single coniferous tag — dropped.
+One sentence photocopied 124 times is one observation, and a tag needs independent attestation.
+
+`herbal` (203 docs) and `pine` sit in that same paragraph, so the contamination is certainly not
+limited to three terms.
+
+#### This is the second time the same mistake has been made one level up
+
+Occurrence counts were replaced by **document** counts on 2026-08-04 because a term repeated 124 times
+inside one patent is one observation. That reasoning was right and the fix was incomplete: it defeats
+repetition *within* a document and does nothing against the same sentence copied *across* documents,
+which is precisely what patent drafting does. The correct unit was never "document" — it is
+**independent attestation**, and neither counter measures it.
+
+Caught by eye, from a coincidence in three numbers, not by any check in the pipeline. So:
+
+### `pipeline/boilerplate.py`
+
+For every term, the share of its **documents** that carry one identical context window:
+
+```
+boilerplate ratio = documents sharing the most common context / documents containing the term
+```
+
+Documents on both sides, so intra-document repetition cannot masquerade as agreement between patents.
+`≥0.50` drop · `0.25–0.50` inspect · `<0.25` independently attested. The report also carries
+**contexts** — distinct context windows — which is the honest support count for a term.
+
+Known limit, stated so nobody over-trusts the output: contexts are matched exactly after whitespace
+collapsing, so boilerplate that drifts between patents splits across buckets. **Every ratio it prints
+is a floor.**
+
+Run at ≥20 docs so it covers the 68 D's *and* the next classification band — the terms get vetted
+before they are judged rather than after.
+
+### Multiword forms recorded
+
+`odor_terms.tsv` gained a hand-written multiword section, since `vocab.py` harvests unigrams and
+destroys every multiword descriptor at harvest time (`lily of the valley` → a stray `valley` with
+`lily` orphaned elsewhere). An n-gram heuristic was tried and produced worse output than the unigram
+version — "used to produce" and "for instance to impart" outranked real terms — so multiwords are
+recorded by hand, verified against the corpus. Familiar phrases with zero occurrences here
+(`black pepper`, `new mown hay`, `sea breeze`) are listed as **checked and not added**: writing them
+down would be supplying vocabulary from memory rather than extracting it, which is the one thing this
+project does not do.
+
+### Where the tags actually come from
+
+The 20–29 doc band holds 183 unjudged terms and is visibly rich: `juicy pineapple waxy oily coconut
+blossom pear menthol berry oriental lactonic peppermint geranium tropical dusty lime tea honey peach
+apricot leathery rooty anisic coffee pepper aquatic hay cedar`. A second pass there should add 25–30
+D's for ~75–85 concepts post-merge — in range, honestly.
+
+**Order matters: boilerplate scan first, then classify.** Judging 183 terms and then discovering a
+tenth of them were one paragraph would waste the pass, which is the mistake that was just made at
+≥30 docs.
+
+### Standing
+
+- 52 concepts confirmed at ≥30 docs, minus whatever the boilerplate scan takes out
+- Tag list is **not** settled, so the `tag` column in `odor_terms.tsv` stays blank
+- Candidate review (2,205 sentences) still the critical path to exact precision
+
+### Boilerplate scan, run same day — 6 drops out of 393
+
+```
+term        cls  docs  ctxs  ratio        term        cls  docs  ctxs  ratio
+woodland     D    124     7   0.87        ripe         D     69    89   0.49
+forest       D    162   102   0.74        watery       D    213   441   0.34
+concise      X     44    18   0.68        spruce       D    360   156   0.30
+tart         X     47    31   0.60        lily         D    413   761   0.30
+rose-like    D    168   260   0.51        nice         H    143   148   0.25
+hay          -    216   228   0.50        blossom      -    436   360   0.25
+```
+
+DROP 6 at ≥0.50 · INSPECT 11 at 0.25–0.50 · of the 68 D's: 3 drop, 4 inspect.
+
+**The contamination was contained.** The fear was that a stock paragraph had quietly propped up a large
+share of the vocabulary; 393 terms scanned, 6 flagged. `rose-like` (0.51) merges into `rose` regardless,
+so nothing is lost there.
+
+#### The two `docs` columns are NOT the same measurement — read this before comparing them
+
+`vocab.py` counts documents where a term **immediately precedes an odour head noun**. `boilerplate.py`
+counts documents containing the term **anywhere**. So:
+
+| term | vocab docs | boilerplate docs |
+|---|---|---|
+| `lily` | 37 | 413 |
+| `spruce` | 124 | 360 |
+
+The wider denominator **deflates every ratio**, because incidental mentions dilute the boilerplate share.
+This is a second, independent reason the numbers are a floor — the first being exact context matching.
+
+**`spruce` is dropped despite reading only 0.30.** Its 360 documents are mostly ingredient lists
+("spruce needle oil", "needles and branches (spruce, fir, pine)"), which are not descriptor uses at all.
+The 124 documents `vocab.py` actually saw are the boilerplate paragraph, essentially all of them. Read
+through the correct denominator the ratio is near 1.0. *A number that is right about the wrong
+population is not evidence* — the manual grep is what decides here, and it is unambiguous.
+
+Whether the two counters should be reconciled is left open deliberately. Matching boilerplate.py's window
+to vocab.py's head-noun rule would make the ratios directly comparable and would also make the scan blind
+to boilerplate that sits outside that window. Not obviously the right trade; revisit with a real case.
+
+#### Standing after the scan
+
+- **Dropped:** `forest`, `woodland`, `spruce` → **49 distinct concepts** at ≥30 docs
+- **Inspect from `boilerplate-report.tsv`'s `top_context` column:** `ripe` 0.49, `watery` 0.34, `lily` 0.30
+- `hay` (0.50) and `blossom` (0.25) sit in the 20–29 band and are pre-flagged for the second pass —
+  which is what running the scan at ≥20 was for

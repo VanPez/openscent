@@ -67,7 +67,7 @@
   button.go{background:var(--teal);border-color:var(--teal);color:#fff}
   table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line-strong);
         box-shadow:var(--shadow);table-layout:fixed}
-  col.c-term{width:22%} col.c-n{width:7%} col.c-cls{width:30%} col.c-ex{width:41%}
+  col.c-term{width:20%} col.c-n{width:7%} col.c-d{width:8%} col.c-cls{width:27%} col.c-ex{width:38%}
   th{font:500 10px var(--mono);text-transform:uppercase;letter-spacing:.09em;color:var(--mut);
      text-align:left;padding:9px 14px;border-bottom:1px solid var(--line)}
   td{padding:7px 14px;font-size:14px;vertical-align:middle;border-top:1px solid var(--line)}
@@ -99,7 +99,7 @@
   <div class="lab"><span class="dash"></span> OpenScent · Phase 0</div>
   <h1>Judge the vocabulary</h1>
   <p class="sub">The corpus produced these terms; deciding which are <b>descriptors</b> is the ontology.
-  Target is 60–100 tags. Keyboard: <b>D H T M X</b> classifies the selected row and advances,
+  Target is 60&#8211;100 tags. Mark <b>D</b> generously &#8212; whether a descriptor has enough molecules behind it to become a <i>tag</i> is decided afterwards, from the <b>docs</b> column. Keyboard: <b>D H T M X</b> classifies the selected row and advances,
   <b>↑ ↓</b> move, <b>⌫</b> clears.</p>
 
   <div class="legend">
@@ -124,7 +124,7 @@
 
   <div id="app" class="hide">
     <div class="toolbar">
-      <label for="minn">min count</label>
+      <label for="minn">min docs</label>
       <input type="number" id="minn" value="30" min="1" style="width:80px">
       <label for="q">filter</label>
       <input type="text" id="q" placeholder="substring…" style="width:150px">
@@ -133,8 +133,8 @@
       <button class="go" id="bexport">Export TSV</button>
     </div>
     <table>
-      <colgroup><col class="c-term"><col class="c-n"><col class="c-cls"><col class="c-ex"></colgroup>
-      <thead><tr><th>Term</th><th style="text-align:right">n</th><th>Class</th><th>Example from the corpus</th></tr></thead>
+      <colgroup><col class="c-term"><col class="c-n"><col class="c-d"><col class="c-cls"><col class="c-ex"></colgroup>
+      <thead><tr><th>Term</th><th style="text-align:right">occ</th><th style="text-align:right" title="patents it appears in">docs</th><th>Class</th><th>Example from the corpus</th></tr></thead>
       <tbody id="rows"></tbody>
     </table>
   </div>
@@ -163,7 +163,8 @@
           if(!l.trim()) return;
           if(l[0] === '#'){ header.push(l); return; }
           var p = l.split('\t');
-          if(p.length >= 2) terms.push({t:p[0], n:parseInt(p[1],10)||0, c:(p[2]||'').trim()});
+          if(p.length >= 4)      terms.push({t:p[0], n:+p[1]||0, d:+p[2]||0, c:(p[3]||'').trim()});
+          else if(p.length >= 2) terms.push({t:p[0], n:+p[1]||0, d:0, c:(p[2]||'').trim()});
         });
         if(!terms.length) throw new Error('no rows');
         $('loader').classList.add('hide'); $('app').classList.remove('hide');
@@ -201,7 +202,7 @@
     var q = $('q').value.trim().toLowerCase();
     var un = $('onlyun').checked;
     return terms.filter(function(o){
-      return o.n >= min && (!q || o.t.indexOf(q) >= 0) && (!un || !o.c);
+      return ((o.d || o.n) >= min) && (!q || o.t.indexOf(q) >= 0) && (!un || !o.c);
     });
   }
 
@@ -225,6 +226,7 @@
       html += '<tr class="row'+(i===sel?' sel':'')+'" data-i="'+i+'">'
            +  '<td class="term">'+esc(o.t)+'</td>'
            +  '<td class="n">'+o.n+'</td>'
+           +  '<td class="n" style="font-weight:600">'+(o.d||'')+'</td>'
            +  '<td><div class="cls">'
            +    ['D','H','T','M','X'].map(function(c){
                   return '<span data-c="'+c+'" class="'+(o.c===c?'on':'')+'">'+c+'</span>'; }).join('')
@@ -271,7 +273,7 @@
   });
 
   $('bexport').onclick = function(){
-    var body = terms.map(function(o){ return o.t+'\t'+o.n+'\t'+o.c; }).join('\n');
+    var body = terms.map(function(o){ return o.t+'\t'+o.n+'\t'+(o.d||0)+'\t'+o.c; }).join('\n');
     var blob = new Blob([header.join('\n')+'\n'+body+'\n'], {type:'text/tab-separated-values'});
     var a = document.createElement('a');
     a.href = URL.createObjectURL(blob);

@@ -1,3 +1,47 @@
 # surface_form	tag
 # human-written. the ONLY place span text becomes a tag.
 # every line is auditable: a reader checks the quote against this table.
+#
+# --- MULTIWORD SURFACE FORMS -------------------------------------------------
+# Recorded 2026-08-05 during the Phase 0 vocabulary pass.
+#
+# WHY THIS SECTION EXISTS: vocab.py harvests single words, so every multiword
+# descriptor is destroyed at harvest time. "lily of the valley" becomes a stray
+# `valley` (353 occ) with `lily` (190) orphaned elsewhere. An n-gram heuristic was
+# tried and produced worse output than the unigram version — "used to produce" and
+# "for instance to impart" outranked real terms — so multiword forms are recorded
+# BY HAND here instead. That is what this table is for: the one place a human, not
+# a model, decides what a span means.
+#
+# COUNTS ARE FROM THE CORPUS, not from memory. Every form below was verified to
+# occur in corpus/extracted/candidates.json before being written down. Familiar
+# phrases that do not occur are not listed, however obvious they seem.
+#
+# TAGS ARE DELIBERATELY BLANK. The tag vocabulary does not exist yet — it is the
+# output of the D/H/T/M/X pass now in progress. Filling this column before the tag
+# list is settled would be building the ontology from the wrong end.
+#
+# surface_form	tag	# occurrences in candidates.json
+lily of the valley		# 92
+lily-of-the-valley		# 4
+lily-of-the-valley-like		# 1
+lily of valley		# 1 — variant/typo, kept because it is real text in a real patent
+dried fruit		# 9
+cedarwood		# 11 — one word more often than two in this corpus
+cedar wood		# 5
+orange blossom		# 2
+apple blossom		# 1
+green tea		# 1
+bitter almond		# 1
+#
+# --- SAME CONCEPT, DIFFERENT LANGUAGE ----------------------------------------
+# muguet is French for lily-of-the-valley and is used untranslated throughout the
+# perfumery literature. It is a SEPARATE surface form of the SAME tag, and it will
+# be silently un-merged by anyone who does not speak French, so it is written down.
+# Verified: 369 occurrences in 62 documents — more frequent than `lily` (190/37).
+muguet		# 369 — same tag as `lily of the valley`
+#
+# Checked and NOT added, because they have 0 occurrences here:
+#   black pepper · new mown hay · sea breeze · freshly cut grass
+# All standard perfumery phrases. This corpus does not contain them, and adding
+# them would be supplying vocabulary rather than extracting it.

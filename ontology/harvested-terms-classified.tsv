@@ -9,285 +9,285 @@
 # on purpose — judging them is human work.
 #
 # term	n	docs	class
-pleasant	1811	839	
-floral	1805	431	
-fruity	1367	375	
-green	1214	363	
-unpleasant	1202	316	
-woody	1183	318	
-top	1172	319	
-fresh	947	321	
-sweet	793	251	
-base	749	274	
-musk	636	244	
-citrus	578	185	
-middle	495	156	
-herbal	383	203	
-muguet	369	62	
-spicy	366	146	
-rose	365	113	
-valley	353	70	
-sandalwood	283	79	
-aromatic	252	80	
-foot	251	31	
-flowery	243	66	
-apple	242	92	
-mask	240	171	
-bottom	221	90	
-bad	218	52	
-musky	218	76	
-powdery	216	76	
-particularly	198	118	
-fruit	196	80	
-fatty	195	82	
-lily	190	37	
-rose-like	179	36	
-flower	177	163	
-masking	176	83	
-metallic	165	46	
-heart	164	60	
-earthy	163	73	
-amber	160	51	
-dry	158	92	
-tobacco	149	56	
-minty	143	54	
-vanilla	140	44	
-aldehydic	139	69	
-test	138	92	
-sweat	135	46	
-interesting	134	89	
-watery	132	54	
-grapefruit	131	49	
-pleasing	128	96	
-forest	128	127	
-woodland	124	124	
-spruce	124	124	
-head	122	43	
-clean	120	61	
-balsamic	119	56	
-profile	117	40	
-rosy	116	58	
-animalic	116	34	
-offensive	114	37	
-lemon	110	57	
+pleasant	1811	839	H
+floral	1805	431	D
+fruity	1367	375	D
+green	1214	363	D
+unpleasant	1202	316	H
+woody	1183	318	D
+top	1172	319	T
+fresh	947	321	D
+sweet	793	251	D
+base	749	274	T
+musk	636	244	D
+citrus	578	185	D
+middle	495	156	T
+herbal	383	203	D
+muguet	369	62	D
+spicy	366	146	D
+rose	365	113	D
+valley	353	70	X
+sandalwood	283	79	D
+aromatic	252	80	D
+foot	251	31	M
+flowery	243	66	D
+apple	242	92	D
+mask	240	171	H
+bottom	221	90	T
+bad	218	52	M
+musky	218	76	D
+powdery	216	76	D
+particularly	198	118	X
+fruit	196	80	D
+fatty	195	82	D
+lily	190	37	D
+rose-like	179	36	D
+flower	177	163	D
+masking	176	83	H
+metallic	165	46	D
+heart	164	60	T
+earthy	163	73	D
+amber	160	51	D
+dry	158	92	D
+tobacco	149	56	D
+minty	143	54	D
+vanilla	140	44	D
+aldehydic	139	69	D
+test	138	92	X
+sweat	135	46	M
+interesting	134	89	H
+watery	132	54	D
+grapefruit	131	49	D
+pleasing	128	96	H
+forest	128	127	D
+woodland	124	124	D
+spruce	124	124	D
+head	122	43	T
+clean	120	61	D
+balsamic	119	56	D
+profile	117	40	X
+rosy	116	58	D
+animalic	116	34	D
+offensive	114	37	X
+lemon	110	57	D
 accord	109	23	
-malodor	109	65	
-marine	109	43	
+malodor	109	65	M
+marine	109	43	D
 technical	109	29	
-leather	108	30	
-soft	107	44	
-perspiration	106	84	
+leather	108	30	D
+soft	107	44	D
+perspiration	106	84	M
 tone	106	16	
-synthetic	105	79	
-ambery	104	42	
-animal	101	62	
-undesirable	101	67	
+synthetic	105	79	X
+ambery	104	42	D
+animal	101	62	D
+undesirable	101	67	M
 musk-like	100	21	
-patchouli	100	34	
-white	99	53	
-warm	99	48	
-rich	99	38	
-violet	95	44	
-musty	95	37	
+patchouli	100	34	D
+white	99	53	X
+warm	99	48	D
+rich	99	38	X
+violet	95	44	D
+musty	95	37	D
 mint-like	95	11	
 urine	94	27	
-acid	92	35	
-responsible	90	56	
-herbaceous	87	50	
+acid	92	35	D
+responsible	90	56	X
+herbaceous	87	50	D
 toilet	87	27	
-because	83	75	
-fragrant	83	54	
-camphoraceous	82	31	
-creamy	81	44	
-strength	80	56	
-tools	78	78	
-dried	75	31	
-nice	74	69	
-chlorine	73	32	
-associated	73	55	
+because	83	75	X
+fragrant	83	54	H
+camphoraceous	82	31	D
+creamy	81	44	D
+strength	80	56	X
+tools	78	78	X
+dried	75	31	X
+nice	74	69	H
+chlorine	73	32	D
+associated	73	55	X
 lingering	72	20	
-eucalyptus	71	31	
-smoke	71	37	
-exhibit	70	50	
+eucalyptus	71	31	D
+smoke	71	37	D
+exhibit	70	50	X
 galbanum	70	17	
-resulting	70	41	
+resulting	70	41	X
 shows	70	24	
-underarm	70	38	
+underarm	70	38	M
 leathery	70	20	
 dusty	69	23	
-single	68	52	
-nutty	68	31	
+single	68	52	X
+nutty	68	31	D
 gourmand	68	16	
 formulated	68	10	
-generally	67	42	
+generally	67	42	X
 odoriferous	67	19	
-thereby	67	42	
-jasmine	67	38	
-aspects	67	34	
-wood	67	39	
+thereby	67	42	X
+jasmine	67	38	D
+aspects	67	34	X
+wood	67	39	D
 apparatus	67	8	
 neat	66	26	
 strawberry	66	19	
-cleaning	66	38	
-effect	66	58	
+cleaning	66	38	X
+effect	66	58	X
 combinable	66	29	
 juicy	66	29	
-substantive	65	35	
-attractive	65	51	
-properties	65	38	
-orange	64	44	
+substantive	65	35	X
+attractive	65	51	H
+properties	65	38	X
+orange	64	44	D
 average	64	25	
-retain	64	59	
-pungent	64	45	
+retain	64	59	X
+pungent	64	45	D
 graph	64	11	
-intended	63	52	
-since	63	53	
+intended	63	52	X
+since	63	53	X
 target	63	23	
-concise	63	32	
+concise	63	32	X
 ambergris	62	18	
 hay	62	21	
-give	61	50	
-rate	61	36	
-character	61	46	
+give	61	50	X
+rate	61	36	X
+character	61	46	X
 exemplary	61	12	
 flowers	61	24	
-mint	61	33	
+mint	61	33	D
 subject	61	12	
-fresheners	60	43	
+fresheners	60	43	X
 pineapple	60	29	
 waxy	60	29	
-evaluate	59	40	
-primary	59	35	
-art	59	50	
-against	59	39	
+evaluate	59	40	X
+primary	59	35	X
+art	59	50	X
+against	59	39	X
 pre-rub	59	4	
-background	59	55	
+background	59	55	X
 spearmint	58	18	
 citrus-like	58	26	
 favorable	58	17	
-panelists	57	43	
+panelists	57	43	X
 optionally	57	25	
-positive	57	37	
-particles	57	41	
-freshness	57	46	
+positive	57	37	X
+particles	57	41	X
+freshness	57	46	D
 solution	57	29	
-increased	57	45	
+increased	57	45	X
 volatility	56	22	
 peach	56	21	
 lactonic	56	24	
-corresponding	56	34	
+corresponding	56	34	X
 somewhat	56	23	
-fruits	55	38	
-chemicals	55	50	
-aforementioned	54	32	
-undesired	54	30	
+fruits	55	38	D
+chemicals	55	50	X
+aforementioned	54	32	X
+undesired	54	30	H
 sandalwood-like	54	12	
 odiferous	54	25	
 impression	54	26	
 grass	54	10	
-quality	54	34	
+quality	54	34	X
 rooty	54	20	
 red	54	20	
 coumarin	53	19	
 plurality	53	15	
 kitchen	53	23	
-compared	53	31	
-dominant	53	32	
+compared	53	31	X
+dominant	53	32	X
 alcohol	53	20	
 pear-like	53	9	
 ammonia	53	15	
 ozonic	52	15	
-intensive	52	37	
-extending	52	39	
-fragr	52	52	
+intensive	52	37	X
+extending	52	39	X
+fragr	52	52	X
 case	52	29	
-relatively	52	35	
+relatively	52	35	X
 pear	52	26	
 variable	52	4	
 coumarinic	52	5	
 blending	52	17	
 peppermint	51	24	
 green-like	51	9	
-deodorants	51	46	
-achieve	51	48	
-contain	51	41	
+deodorants	51	46	M
+achieve	51	48	X
+contain	51	41	X
 coconut	51	28	
-small	50	47	
+small	50	47	X
 vanillin	50	19	
-user	50	31	
+user	50	31	X
 need	50	23	
 color	50	24	
 unusual	50	12	
 valuable	49	24	
-substantially	49	36	
-important	49	45	
-special	49	46	
+substantially	49	36	X
+important	49	45	X
+special	49	46	X
 cedar	49	22	
 reproducing	49	9	
-stability	49	43	
-raw	48	41	
-wet	48	34	
+stability	49	43	X
+raw	48	41	X
+wet	48	34	D
 medium	48	26	
-activity	48	48	
+activity	48	48	X
 released	48	24	
-through	48	34	
+through	48	34	X
 harsh	47	24	
 preparation	47	27	
-combination	47	33	
+combination	47	33	X
 acetate	47	28	
 oily	47	29	
 anisic	47	20	
 generate	46	29	
-extremely	46	43	
+extremely	46	43	X
 cooking	46	22	
 deodorant	46	18	
 geranium	46	24	
-reduced	46	30	
+reduced	46	30	X
 concentration	46	27	
 enhances	46	28	
 malodour	46	17	
-lavender	46	37	
-together	46	34	
+lavender	46	37	D
+together	46	34	X
 table	46	22	
 evaluating	46	20	
 insect	46	5	
 softeners	46	17	
-pigments	45	45	
-ripe	45	41	
+pigments	45	45	X
+ripe	45	41	D
 pet	45	18	
-bleach	45	32	
-otherwise	45	41	
-water	45	31	
-washing	45	32	
-adding	45	34	
-already	45	41	
+bleach	45	32	X
+otherwise	45	41	X
+water	45	31	X
+washing	45	32	X
+adding	45	34	X
+already	45	41	X
 applied	45	29	
 celery	45	10	
 iris	44	14	
 rancid	44	19	
 specifically	44	27	
-modulating	44	32	
-found	44	37	
+modulating	44	32	X
+found	44	37	X
 coffee	44	20	
-standard	44	32	
-appealing	44	31	
+standard	44	32	X
+appealing	44	31	H
 basic	44	22	
 phenolic	44	18	
-before	43	37	
-aspect	43	31	
+before	43	37	X
+aspect	43	31	X
 bergamot	43	14	
-environmental	43	38	
+environmental	43	38	X
 lime	43	23	
 berry	43	25	
 comparative	43	24	
-noticeable	42	35	
-absorb	42	40	
-fully	42	40	
-effects	42	39	
+noticeable	42	35	X
+absorb	42	40	X
+fully	42	40	X
+effects	42	39	X
 amine	42	17	
 end	42	25	
 care	42	20	
-mixed	42	32	
+mixed	42	32	X
 side	42	25	
 odd	42	2	
 oud	42	2	
@@ -296,11 +296,11 @@ normal	41	7
 score	41	21	
 process	41	25	
 tea	41	23	
-clearly	40	35	
-often	40	34	
+clearly	40	35	X
+often	40	34	X
 honey	40	20	
-retention	40	38	
-overcome	40	38	
+retention	40	38	X
+overcome	40	38	X
 blossom	40	28	
 results	40	26	
 cover	40	17	
@@ -309,38 +309,38 @@ fecal	40	15
 reproduce	40	18	
 deteriorated	40	5	
 burnt-sweet	40	1	
-brought	39	39	
-tart	39	39	
+brought	39	39	X
+tart	39	39	X
 threshold	39	21	
 multiple	39	28	
 damascone	39	15	
-active	39	37	
+active	39	37	X
 neutral	39	23	
 make	39	20	
-hydrophobic	39	34	
+hydrophobic	39	34	X
 roasting	39	3	
 abnormal	39	2	
-little	38	34	
-hereinabove	38	38	
-application	38	36	
+little	38	34	X
+hereinabove	38	38	X
+application	38	36	X
 origin	38	21	
 greenish	38	5	
 mean	38	19	
 booster	38	27	
-possesses	37	30	
-positively	37	37	
-spontaneously	37	37	
+possesses	37	30	X
+positively	37	37	H
+spontaneously	37	37	X
 melon	37	17	
-interest	37	36	
-synergistic	37	31	
+interest	37	36	X
+synergistic	37	31	X
 module	37	2	
 alluring	37	2	
 greasy	36	17	
-powders	36	35	
+powders	36	35	X
 oriental	36	25	
 floral-like	36	15	
-commercial	36	35	
-quite	36	33	
+commercial	36	35	X
+quite	36	33	X
 citrusy	36	17	
 menthol	36	26	
 feces	36	9	
@@ -348,35 +348,35 @@ rhubarb	36	15
 prolonged	36	22	
 conventional	36	19	
 linear	36	7	
-group	36	30	
+group	36	30	X
 radiant	36	14	
 gorgeous	36	3	
 determined	36	26	
 leaves	35	22	
-anticorrosives	35	35	
+anticorrosives	35	35	X
 determine	35	27	
 panel	35	22	
-bloom	35	34	
+bloom	35	34	X
 orris	35	17	
-deliver	35	32	
+deliver	35	32	X
 showed	35	18	
 whether	35	26	
 increasing	35	26	
 disclosure	35	14	
-hand	35	33	
+hand	35	33	X
 confirmed	35	10	
 milk	35	10	
 performance	34	24	
 encapsulated	34	25	
-called	34	30	
+called	34	30	X
 gassy	34	6	
 jasmine-like	34	17	
 fruit-like	34	17	
-composed	34	33	
+composed	34	33	X
 plant	34	21	
 hay-like	34	6	
 feel	34	21	
-modifi	34	34	
+modifi	34	34	X
 delicate	34	18	
 pine	34	11	
 exhibiting	34	28	
@@ -393,18 +393,18 @@ bathroom	33	15
 scale	33	25	
 elegant	33	23	
 impact	33	27	
-applying	33	30	
+applying	33	30	X
 detect	33	19	
 malodorous	33	12	
 vetiver	33	13	
 hours	33	27	
-strip	33	30	
+strip	33	30	X
 contrasting	33	4	
 odorous	33	17	
 person	33	14	
 pfw	32	29	
 treated	32	25	
-detectable	32	30	
+detectable	32	30	X
 hedonic	32	19	
 tropical	32	24	
 transparent	32	16	
@@ -415,9 +415,9 @@ preferable	32	12
 balsam	32	3	
 ambrette	31	13	
 weaker	31	25	
-them	31	30	
+them	31	30	X
 detected	31	21	
-cationic	31	31	
+cationic	31	31	X
 determines	31	29	
 cleansing	31	13	
 coconut-like	31	14	
@@ -435,7 +435,7 @@ moderate	30	25
 plastic	30	12	
 fresher	30	19	
 how	30	27	
-maintains	30	30	
+maintains	30	30	X
 regarding	30	27	
 advantageous	30	25	
 polymer	30	11	
