@@ -1174,3 +1174,9 @@ molecule and report it?*
 - `corpus/rows/review.jsonl` — 100 decided of 1,870; 82 approvals, 90 molecule mentions
 - Precision ~0.2 whole-filter, 0.82 on the productive subset — both figures, clearly labelled
 - **Blocked on a decision:** corpus size vs tag bar vs shipping 14 tags
+
+**Mike's reply, 2026-08-05 19:28 (Telegram):** *"Amazing, please share that db via GenesisL1! When
+ready."* No pushback on the corpus expansion — treated as agreed. Recorded because it commits us to
+an on-chain publication route for the dataset itself, not only the MolNFT mint, and that only exists
+as a chat message. Terms unspecified: which chain artifact, what format, and whether "the db" means
+the rows, the ontology, or both. Worth pinning down before it is assumed either way.
