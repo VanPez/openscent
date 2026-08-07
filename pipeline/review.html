@@ -95,7 +95,7 @@
   <p class="sub">Approve a sentence only if it states what a <b>specific, resolvable molecule</b> smells
   like. On approval, pick the molecule and the descriptor words <b>out of the sentence</b> — click the
   highlights. Blue is a possible compound name, green a possible descriptor; both are only suggestions,
-  and you can select any text in the sentence instead.</p>
+  and you can select any text in the sentence instead &mdash; you will then be asked whether it is the molecule or a descriptor.</p>
 
   <div class="note"><b>Extract, never generate.</b> The molecule field is checked against the sentence and
   will refuse to save anything that isn't in it verbatim. Descriptors can only be words that occur in the
@@ -121,10 +121,25 @@
       </div>
       <div class="bar"><i id="bar"></i></div>
       <div class="sentence" id="rtext"></div>
+      <div id="selbar" class="hide"
+           style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:10px 26px;
+                  background:var(--amber-pale);border-top:1px solid rgba(154,106,20,.3);
+                  border-bottom:1px solid rgba(154,106,20,.3)">
+        <span id="selq" style="font-size:13px;color:#5c451a"></span>
+        <button id="selmol" style="padding:5px 12px;font-size:12px">Molecule<kbd>M</kbd></button>
+        <button id="seldesc" style="padding:5px 12px;font-size:12px">Descriptor<kbd>D</kbd></button>
+        <button id="selcancel" class="ghost" style="padding:5px 12px;font-size:12px">Cancel<kbd>Esc</kbd></button>
+      </div>
       <div class="fields">
         <div>
-          <label class="fld" for="rmol">Molecule — verbatim from the sentence</label>
-          <input type="text" id="rmol" placeholder="click a blue highlight, or select text">
+          <label class="fld" for="rmol">Molecules &mdash; verbatim from the sentence</label>
+          <div class="picked" id="rmolchips"></div>
+          <div style="display:flex;gap:6px">
+            <input type="text" id="rmol" placeholder="click blue highlights, or select text">
+            <button id="rmoladd" style="padding:9px 14px;font-size:12px;white-space:nowrap">Add</button>
+          </div>
+          <div class="hint">One row is written per molecule, each with the same descriptors.
+            Click a chip to remove it.</div>
           <div class="warn" id="molwarn"></div>
         </div>
         <div>
@@ -162,7 +177,15 @@
 <script>
 (function(){
   var VOCAB = ["acid", "aldehydic", "almond", "amber", "ambery", "animalic", "anise", "aniseed", "apple", "aquatic", "aromatic", "balsamic", "banana", "berry", "blossom-type", "burnt", "buttery", "camphor", "camphoraceous", "caramel", "cedarwood", "cheesy", "cinnamon", "citrus", "citrus-like", "clove", "coconut", "creamy", "diffusive", "dry", "earthy", "ether", "ethereal", "faecal", "fatty", "fish", "floral", "flowery", "fresh", "fruity", "gardenia", "grassy", "green", "herbal", "honey", "jasmin", "jasmine", "leafy", "leather", "leathery", "lemon", "lilac", "lily", "liquorice", "marine", "medicinal", "metallic", "mint", "minty", "mossy", "muguet", "musk", "musky", "nutty", "orange", "ozonic", "patchouli", "peach", "pear", "phenolic", "pine", "pineapple", "powdery", "radiant", "resinous", "roasted", "rose", "rosy", "sandalwood", "smoke", "smoky", "spicy", "sulfurous", "sweet", "tenacious", "terpenic", "tobacco", "transparent", "tropical", "vanilla", "vetiver", "violet", "watery", "waxy", "winey", "woody"];
-  var rows = [], i = 0, t0 = Date.now(), sel = {mol:'', desc:[]};
+  var rows = [], i = 0, t0 = Date.now(), sel = {mols:[], desc:[]};
+
+  // MULTIPLE MOLECULES PER SENTENCE. 65% of productive candidates name more than one
+  // compound, and "Octanal and cis-4-decenal are aldehydes that have a fruit-like citrus
+  // odor" asserts the SAME description of BOTH. The page used to hold one molecule, so
+  // every coordinated pair silently lost a compound — and coordinated pairs are exactly
+  // where patents compare related structures, i.e. the most informative sentences.
+  // One sentence now yields one row PER MOLECULE, each carrying the same descriptors and
+  // the same quote.
 
   // ---- PRODUCTIVE-FIRST ORDERING -------------------------------------------------
   // Only 497 of the 2,205 candidates contain BOTH a name-like span and a descriptor;
@@ -228,7 +251,7 @@
     sp.forEach(function(s){
       html += esc(t.slice(p, s.a));
       var w = t.slice(s.a, s.b);
-      var on = (s.k === 'cmp' && w === sel.mol) || (s.k === 'dsc' && sel.desc.indexOf(w) >= 0);
+      var on = (s.k === 'cmp' && sel.mols.indexOf(w) >= 0) || (s.k === 'dsc' && sel.desc.indexOf(w) >= 0);
       html += '<mark class="' + s.k + (on ? ' on' : '') + '" data-w="' + esc(w) + '">' + esc(w) + '</mark>';
       p = s.b;
     });
@@ -237,7 +260,11 @@
     [].forEach.call($('rtext').querySelectorAll('mark'), function(el){
       el.onclick = function(){
         var w = el.getAttribute('data-w');
-        if(el.classList.contains('cmp')){ sel.mol = (sel.mol === w ? '' : w); $('rmol').value = sel.mol; }
+        if(el.classList.contains('cmp')){
+          var k2 = sel.mols.indexOf(w);
+          if(k2 >= 0) sel.mols.splice(k2,1); else sel.mols.push(w);
+          molchips();
+        }
         else { var k = sel.desc.indexOf(w); if(k >= 0) sel.desc.splice(k,1); else sel.desc.push(w); }
         paint(); chips(); validate();
       };
@@ -254,27 +281,87 @@
     });
   }
 
-  // the enforcement, not a warning: a molecule that is not in the sentence cannot be saved
-  function validate(){
-    var v = $('rmol').value.trim();
-    var ok = !v || rows[i].sentence.toLowerCase().indexOf(v.toLowerCase()) >= 0;
-    $('rmol').classList.toggle('bad', !ok);
-    $('molwarn').textContent = ok ? '' : 'not present in the sentence — extract, never generate';
-    $('bok').disabled = !ok || !v;
-    return ok;
+  function molchips(){
+    $('rmolchips').innerHTML = '';
+    sel.mols.forEach(function(w, n){
+      var s2 = document.createElement('span');
+      s2.className = 'tag'; s2.style.background = 'rgba(36,92,255,.10)';
+      s2.style.borderColor = 'rgba(36,92,255,.4)'; s2.style.color = '#12306e';
+      s2.textContent = w;
+      s2.onclick = function(){ sel.mols.splice(n,1); molchips(); paint(); validate(); };
+      $('rmolchips').appendChild(s2);
+    });
+    validate(); paint();
   }
 
-  $('rmol').addEventListener('input', function(){ sel.mol = $('rmol').value.trim(); validate(); paint(); });
+  // the enforcement, not a warning: a molecule that is not in the sentence cannot be saved
+  function validate(){
+    var bad = sel.mols.filter(function(m){
+      return rows[i].sentence.toLowerCase().indexOf(m.toLowerCase()) < 0; });
+    $('molwarn').textContent = bad.length
+      ? bad.join(', ') + ' — not present in the sentence. Extract, never generate.' : '';
+    $('bok').disabled = bad.length > 0 || !sel.mols.length;
+    return bad.length === 0 && sel.mols.length > 0;
+  }
 
-  // free text selection inside the sentence: shift-click assigns to descriptors
-  $('rtext').addEventListener('mouseup', function(e){
+  // manual entry, for names the highlighter split or missed
+  $('rmoladd').onclick = function(){
+    var v = $('rmol').value.trim();
+    if(!v) return;
+    if(rows[i].sentence.indexOf(v) < 0){
+      $('molwarn').textContent = v + ' — not present in the sentence. Extract, never generate.';
+      return;
+    }
+    if(sel.mols.indexOf(v) < 0) sel.mols.push(v);
+    $('rmol').value = ''; molchips();
+  };
+  $('rmol').addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ e.preventDefault(); $('rmoladd').onclick(); } });
+
+  // ---- free text selection inside the sentence ----------------------------------
+  // WAS shift-click for descriptors. That could never work: the browser uses shift to
+  // EXTEND a selection, so shift-clicking a word you have just dragged re-selects
+  // instead of assigning it. Every free selection therefore landed in `molecule`,
+  // which meant only the pre-highlighted vocabulary could ever become a descriptor —
+  // exactly backwards, since the highlights are meant to be suggestions and the
+  // sentence is meant to be the authority.
+  //
+  // Now: select text, then say what it is. No modifier keys, nothing to remember.
+  var pending = '';
+  function askWhat(s){
+    pending = s;
+    $('selq').innerHTML = 'Selected <b>' + esc(s) + '</b> &mdash; assign as:';
+    $('selbar').classList.remove('hide');
+  }
+  function assign(kind){
+    if(!pending) return;
+    // EXTRACT, NEVER GENERATE — enforced for DESCRIPTORS too, not just the molecule.
+    // A stale `pending` left over from a previous sentence (seen in the wild after a
+    // cached page load) would otherwise write a span the sentence never contained.
+    // The rule is not "the UI usually gets this right", it is "a non-verbatim span
+    // cannot be stored". Checked here so it holds however the value arrived.
+    var sent = (rows[i] && rows[i].sentence) || '';
+    if(sent.indexOf(pending) < 0){
+      $('selq').innerHTML = '<b style="color:var(--red)">' + esc(pending) +
+        '</b> is not in this sentence — refused. (Stale selection? Reload the page.)';
+      pending = '';
+      return;
+    }
+    if(kind === 'mol'){ if(sel.mols.indexOf(pending) < 0) sel.mols.push(pending); molchips(); }
+    else if(sel.desc.indexOf(pending) < 0){ sel.desc.push(pending); }
+    pending = '';
+    $('selbar').classList.add('hide');
+    paint(); chips(); validate();
+  }
+  $('rtext').addEventListener('mouseup', function(){
     var s = (window.getSelection().toString() || '').trim();
     if(!s) return;
-    if(e.shiftKey){ if(sel.desc.indexOf(s) < 0) sel.desc.push(s); }
-    else { sel.mol = s; $('rmol').value = s; }
     window.getSelection().removeAllRanges();
-    paint(); chips(); validate();
+    askWhat(s);
   });
+  $('selmol').onclick  = function(){ assign('mol'); };
+  $('seldesc').onclick = function(){ assign('desc'); };
+  $('selcancel').onclick = function(){ pending=''; $('selbar').classList.add('hide'); };
 
   function counts(){
     var a=0,r=0,s=0,n=0;
@@ -285,6 +372,7 @@
   }
 
   function render(){
+    pending = ''; if($('selbar')) $('selbar').classList.add('hide');
     var c = counts();
     $('ta').textContent=c.a; $('tr').textContent=c.r; $('ts').textContent=c.s; $('tn').textContent=c.n;
     var done = c.a + c.r + c.s;
@@ -305,8 +393,11 @@
     $('tprod').textContent = '(' + pleft + ' left)';
     $('rcount').textContent = (i+1) + ' / ' + rows.length;
     $('bar').style.width = ((i / rows.length) * 100) + '%';
-    sel = {mol: r.molecule || '', desc: (r.descriptors || []).slice()};
-    $('rmol').value = sel.mol;
+    // BACK-COMPAT: rows exported before multi-molecule support carry `molecule` (a
+    // string). Read either shape so an in-progress export still resumes.
+    sel = {mols: (r.molecules || (r.molecule ? [r.molecule] : [])).slice(),
+           desc: (r.descriptors || []).slice()};
+    $('rmol').value = ''; molchips();
     paint(); chips(); validate();
     $('bback').disabled = i === 0;
   }
@@ -315,7 +406,8 @@
     if(i >= rows.length) return;
     if(d === 'approve' && !validate()) return;
     rows[i].decision = d;
-    rows[i].molecule = d === 'approve' ? sel.mol : '';
+    rows[i].molecules = d === 'approve' ? sel.mols.slice() : [];
+    rows[i].molecule = rows[i].molecules[0] || '';   // kept for older readers
     rows[i].descriptors = d === 'approve' ? sel.desc.slice() : [];
     i++; render();
   }
@@ -336,6 +428,13 @@
 
   document.addEventListener('keydown', function(e){
     if(document.activeElement === $('rmol')){ if(e.key === 'Enter') $('rmol').blur(); return; }
+    // While a selection is pending, M/D/Esc resolve it. Checked BEFORE the A/R/S
+    // bindings so a pending selection can never be lost to an accidental approve.
+    if(pending){
+      if(e.key==='m'||e.key==='M'){ e.preventDefault(); assign('mol'); return; }
+      if(e.key==='d'||e.key==='D'){ e.preventDefault(); assign('desc'); return; }
+      if(e.key==='Escape'){ e.preventDefault(); pending=''; $('selbar').classList.add('hide'); return; }
+    }
     if(e.key==='a'||e.key==='A') decide('approve');
     else if(e.key==='r'||e.key==='R') decide('reject');
     else if(e.key==='s'||e.key==='S') decide('skip');
@@ -351,7 +450,7 @@
         if(txt[0] === '['){                       // candidates.json
           rows = JSON.parse(txt).map(function(c){
             return {source_id:c.source_id, sentence:c.sentence, char_offset:c.char_offset,
-                    decision:'', molecule:'', descriptors:[]};
+                    decision:'', molecules:[], molecule:'', descriptors:[]};
           });
         } else {                                  // a previous rows.jsonl
           rows = txt.split('\n').filter(function(l){
@@ -376,11 +475,14 @@
 
   $('bexport').onclick = function(){
     var head = '{"_comment": "OpenScent review output. decision=approve rows are corpus rows: '
-             + 'molecule and descriptors are verbatim substrings of sentence. reject/skip rows are '
+             + 'every entry in molecules[] and descriptors[] is a verbatim substring of sentence. '+ 'One sentence naming several compounds yields one corpus row PER MOLECULE. '+ '`molecule` repeats molecules[0] for older readers. reject/skip rows are '
              + 'kept deliberately — they are the precision measurement."}';
     var body = rows.map(function(r){
       return JSON.stringify({source_id:r.source_id, char_offset:r.char_offset, sentence:r.sentence,
-                             decision:r.decision, molecule:r.molecule||'',
+                             decision:r.decision,
+                             molecules:r.molecules || (r.molecule ? [r.molecule] : []),
+                             molecule:r.molecule||'',
+                             queue_order:r.queue_order,
                              descriptors:r.descriptors||[], reviewer:'vanpe',
                              extractor:'review/v1'});
     }).join('\n');
