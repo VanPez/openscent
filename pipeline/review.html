@@ -324,7 +324,12 @@
     }
     if(sel.mols.indexOf(v) < 0) sel.mols.push(v);
     $('rmol').value = ''; molchips();
-    $('collwarn').classList.toggle('hide', !COLLECTIVE.test(rows[i].sentence));
+    var fired = CUES.filter(function(c){ return c[0].test(rows[i].sentence); });
+    $('collwarn').classList.toggle('hide', fired.length === 0);
+    $('collwarn').innerHTML = fired.map(function(c){
+      var parts = c[1].split(' — ');
+      return '<b>' + parts[0] + '</b> &mdash; ' + parts.slice(1).join(' — ');
+    }).join('<br>');
   };
   $('rmol').addEventListener('keydown', function(e){
     if(e.key === 'Enter'){ e.preventDefault(); $('rmoladd').onclick(); } });
@@ -382,6 +387,21 @@
     return {a:a,r:r,s:s,n:n};
   }
 
+  // CAUTION CUES. Warnings, never auto-rejects — each cue has legitimate exceptions, and
+  // auto-rejecting would both lose real rows and corrupt the precision measurement.
+  // 106 of the 497 productive candidates carry at least one; the other 391 are clean.
+  var CUES = [
+    [/\b(mixture|blend|combination|admixture|together with|in combination)\b/i,
+     'MIXTURE — if the odour belongs to the blend it says nothing about either component. ' +
+     'But "X, and mixtures thereof, exhibit…" describes X in its own right and is fine.'],
+    [/\b(said|the compound of example|of example \d|formula \(?[IVX]+\)?|present compound|thereof)\b/i,
+     'ANAPHORA — "said ingredient", "the compound of Example 3" are POINTERS, not names. ' +
+     'If the thing being described is not named in this sentence, there is no row.'],
+    [/\b(different from|in contrast|unlike|whereas|compared (?:to|with)|rather than|instead of|as opposed to)\b/i,
+     'CONTRAST — a molecule may be named only to say it smells DIFFERENT. Check that the ' +
+     'descriptors belong to the molecule you are about to record, not to the thing it is ' +
+     'being contrasted with. ("whereas" can also introduce a second molecule — then Split.)']
+  ];
   var COLLECTIVE = /\b(mixture|blend|combination|admixture|together with|in combination)\b/i;
 
   function render(){
@@ -413,7 +433,12 @@
     sel = {mols: (r.molecules || (r.molecule ? [r.molecule] : [])).slice(),
            desc: (r.descriptors || []).slice()};
     $('rmol').value = ''; molchips();
-    $('collwarn').classList.toggle('hide', !COLLECTIVE.test(rows[i].sentence));
+    var fired = CUES.filter(function(c){ return c[0].test(rows[i].sentence); });
+    $('collwarn').classList.toggle('hide', fired.length === 0);
+    $('collwarn').innerHTML = fired.map(function(c){
+      var parts = c[1].split(' — ');
+      return '<b>' + parts[0] + '</b> &mdash; ' + parts.slice(1).join(' — ');
+    }).join('<br>');
     paint(); chips(); validate();
     $('bback').disabled = i === 0;
   }
