@@ -1082,3 +1082,95 @@ judgement calls are anaphora, not chemistry.
 - `ontology/odor_terms.tsv` — 67 tags, uniqueness asserted
 - Next: candidate review, productive-first — the only source of tag depth
 - Still unmeasured: filter precision
+
+---
+
+## 2026-08-05 (night) — First 100 reviewed. Precision confirmed; tag depth is the problem.
+
+### The held-out measurement holds up — two independent methods agree
+
+```
+precision WITHIN the productive subset    0.82   (80 approve / 97 approve+reject)
+implied whole-filter precision            0.21 - 0.24
+held-out rounds 1 and 2 measured          0.16 and 0.20
+```
+
+**0.82 is not the filter's precision and must never be quoted as such.** It is precision on a
+subset selected to contain both a name-like span and a descriptor — 413 of 1,870. Back it out
+across the whole queue and it lands on the held-out number.
+
+That agreement matters more than either number alone. Round 2 was written off as inconclusive
+(design fault: 25 samples from 32,657 rejects). Direct review of 100 sentences, an entirely
+different method with no sampling at all, reproduces it. The filter's precision is ~0.2 and
+that is now established rather than estimated.
+
+### Tag depth: 14 of 67, against a target of 60-100
+
+Union of both sources, patents linearly projected from 98 reviews to all 413 productive:
+
+```
+pungent 192   fruity 123   mint   49   green 42   acid    32
+sweet   182   floral 112   fresh  46   musk  41   powdery 32
+aromatic 144  lily    78   citrus 45   rose  37
+```
+
+**The projection is optimistic.** It assumes new molecules keep arriving at the current rate,
+but molecules recur across sentences, so the curve flattens. 14 is a ceiling, not an estimate.
+
+### What is actually short — say this precisely
+
+**Not the ontology.** 67 concepts, each with >=20 documents and >=30 independent attestations,
+is a well-evidenced vocabulary and it is done.
+
+**Molecules.** 2,588 patents yield ~400 usable rows. 400 molecules spread over 67 tags averages
+6 each. No amount of further vocabulary work changes that; the corpus is the binding constraint,
+and it is the first time that has been demonstrated with numbers rather than assumed.
+
+Three options, Mike's call as much as ours:
+
+1. **More patents.** The 2,588 came from one CPC query (C11B 9/00 + A61Q 13/00). Broadening
+   classes or date range is the only lever that ADDS molecules rather than redistributing them.
+   Roughly 5-10x the corpus for 60 tags: 15-25k patents. The pipeline handles it already — this
+   is fetch time, not new engineering.
+2. **Lower the bar.** 30 molecules per tag is Mike's number, not a law. At 10, ~35 tags qualify
+   today.
+3. **Ship 14 good tags.** Small, but a real CC0 dataset with per-row provenance, and nothing
+   comparable exists free.
+
+### 59 descriptor spans have no tag — the free-text capture earning its place
+
+`agrumic` · `ambrette` · `crysantheme` · `tobacco leaf` · `white floral` · `lactonic` ·
+`eucalyptus leaf` · `watermelon` · `moldy` · `nutmeg` · `cinnamon` · `almond` · `rosemary`
+
+Real perfumery vocabulary the harvester structurally could not see, because `vocab.py` only
+takes words sitting before an odour head noun. `hesperidia` — standard trade jargon for the
+citrus family — has 0 documents and 0 attestations in the harvest and was found by hand in the
+second review session. Evidence the ontology can grow later, once there are molecules to
+support it.
+
+### Review mechanics, from using it on 100 sentences
+
+Six design faults found in the first ~20 and fixed as they appeared. Recording them because
+every one would have been far more expensive to discover at sentence 400:
+
+| fault | consequence if unfixed |
+|---|---|
+| descriptors shared across molecules | enantiomer pairs mislabelled both ways |
+| verbatim check on molecule only | fabricated descriptor spans |
+| collective assertions unmarked | mixture properties attributed to components |
+| queue not deduplicated | 335 redundant reviews, 13 identical rows per assertion |
+| negated descriptors highlighted | records the OPPOSITE of the source |
+| Split named ambiguously | used for the wrong case in practice |
+
+The reject reasons cluster into four kinds, all of which look approvable at speed. A molecule
+can be named as: a **reference point** ("different from the note imparted by Lilial"), a
+**structural neighbour** ("substances with structures similar to"), a **scaffold** ("compounds
+having a sandalwood odour are distinguished by a X basic structure"), or a **reagent** ("easy to
+prepare starting from fenchone"). The test that catches all four: *did someone smell this exact
+molecule and report it?*
+
+### Standing
+
+- `corpus/rows/review.jsonl` — 100 decided of 1,870; 82 approvals, 90 molecule mentions
+- Precision ~0.2 whole-filter, 0.82 on the productive subset — both figures, clearly labelled
+- **Blocked on a decision:** corpus size vs tag bar vs shipping 14 tags
