@@ -21,27 +21,126 @@
 # output of the D/H/T/M/X pass now in progress. Filling this column before the tag
 # list is settled would be building the ontology from the wrong end.
 #
-# surface_form	tag	# occurrences in candidates.json
-lily of the valley		# 92
-lily-of-the-valley		# 4
-lily-of-the-valley-like		# 1
-lily of valley		# 1 — variant/typo, kept because it is real text in a real patent
-dried fruit		# 9
-cedarwood		# 11 — one word more often than two in this corpus
-cedar wood		# 5
-orange blossom		# 2
-apple blossom		# 1
-green tea		# 1
-bitter almond		# 1
 #
-# --- SAME CONCEPT, DIFFERENT LANGUAGE ----------------------------------------
-# muguet is French for lily-of-the-valley and is used untranslated throughout the
-# perfumery literature. It is a SEPARATE surface form of the SAME tag, and it will
-# be silently un-merged by anyone who does not speak French, so it is written down.
-# Verified: 369 occurrences in 62 documents — more frequent than `lily` (190/37).
-muguet		# 369 — same tag as `lily of the valley`
+# =============================================================================
+# THE TAG COLUMN — seeded 2026-08-05 from the Phase 0 vocabulary pass.
 #
-# Checked and NOT added, because they have 0 occurrences here:
-#   black pepper · new mown hay · sea breeze · freshly cut grass
-# All standard perfumery phrases. This corpus does not contain them, and adding
-# them would be supplying vocabulary rather than extracting it.
+# 67 tags. Every one is a class-D term from
+#   ontology/harvested-terms-round2-classified.tsv,
+# admitted by docs>=20 AND attestations>=30. Nothing here was supplied from memory
+# or from GoodScents/Leffingwell vocabulary; if a familiar perfumery word is
+# missing, it is missing because this corpus does not attest it.
+#
+# Several SURFACE FORMS map to ONE tag. Morphological variants (musk/musky/
+# musk-like) and the French `muguet` are the same perceptual concept, and a list
+# containing both `musk` and `musky` would not be an ontology.
+#
+# ONE SURFACE FORM MAPS TO EXACTLY ONE TAG. The first generated version had
+# `apple blossom` under both `apple` and `floral`, which would have made the table
+# ambiguous at the only point where ambiguity is fatal. A blossom is a flower.
+# This invariant is asserted below, not just intended.
+#
+# Numbers are docs/attestations for that surface form. An attestation is a DISTINCT
+# SENTENCE; a sentence copied into 100 patents counts once.
+#
+# surface_form	tag	# docs/attestations
+acid	acid	# 35/67
+aldehydic	aldehydic	# 69/108
+amber	amber	# 51/131
+ambery	amber	# 42/90
+animalic	animalic	# 34/93
+animal	animalic	# 62/86
+anisic	anisic	# 20/30
+apple	apple	# 92/84
+aromatic	aromatic	# 80/195
+balsamic	balsamic	# 56/102
+berry	berry	# 25/42
+camphoraceous	camphoraceous	# 31/75
+cedar	cedar	# 22/38
+cedarwood	cedar	# multiword, hand-recorded
+cedar wood	cedar	# multiword, hand-recorded
+chlorine	chlorine	# 32/40
+citrus	citrus	# 185/439
+citrus-like	citrus	# 26/56
+clean	clean	# 61/99
+coconut	coconut	# 28/41
+coffee	coffee	# 20/40
+creamy	creamy	# 44/77
+dry	dry	# 92/125
+earthy	earthy	# 73/137
+rooty	earthy	# 20/39
+eucalyptus	eucalyptus	# 31/57
+fatty	fatty	# 82/156
+floral	floral	# 431/1331
+flowery	floral	# 66/148
+flower	floral	# 163/61
+flowers	floral	# 24/42
+orange blossom	floral	# multiword, hand-recorded
+apple blossom	floral	# multiword, hand-recorded
+fresh	fresh	# 321/722
+freshness	fresh	# 46/47
+refreshing	fresh	# 23/30
+fruity	fruity	# 375/1060
+fruit	fruity	# 80/161
+fruits	fruity	# 38/43
+dried fruit	fruity	# multiword, hand-recorded
+geranium	geranium	# 24/42
+grapefruit	grapefruit	# 49/114
+green	green	# 363/936
+hay	hay	# 21/45
+herbal	herbal	# 203/212
+herbaceous	herbal	# 50/75
+honey	honey	# 20/34
+jasmine	jasmine	# 38/54
+juicy	juicy	# 29/46
+lavender	lavender	# 37/39
+leather	leather	# 30/73
+leathery	leather	# 20/58
+lemon	lemon	# 57/89
+muguet	lily	# 62/242
+lily	lily	# 37/113
+lily of the valley	lily	# multiword, hand-recorded
+lily-of-the-valley	lily	# multiword, hand-recorded
+lily-of-the-valley-like	lily	# multiword, hand-recorded
+lily of valley	lily	# multiword, hand-recorded
+lime	lime	# 23/37
+marine	marine	# 43/89
+metallic	metallic	# 46/126
+minty	mint	# 54/115
+mint	mint	# 33/45
+menthol	mint	# 26/35
+peppermint	mint	# 24/34
+musk	musk	# 244/391
+musky	musk	# 76/182
+musk-like	musk	# 21/61
+musty	musty	# 37/82
+neutral	neutral	# 23/34
+nutty	nutty	# 31/43
+bitter almond	nutty	# multiword, hand-recorded
+oily	oily	# 29/40
+orange	orange	# 44/53
+oriental	oriental	# 25/30
+patchouli	patchouli	# 34/90
+peach	peach	# 21/38
+pear	pear	# 26/48
+pineapple	pineapple	# 29/50
+powdery	powdery	# 76/176
+dusty	powdery	# 23/53
+pungent	pungent	# 45/56
+rose	rose	# 113/278
+rosy	rose	# 58/109
+rose-like	rose	# 36/107
+sandalwood	sandalwood	# 79/205
+smoke	smoke	# 37/49
+soft	soft	# 44/95
+spicy	spicy	# 146/276
+sweet	sweet	# 251/579
+tobacco	tobacco	# 56/117
+vanilla	vanilla	# 44/103
+violet	violet	# 44/72
+warm	warm	# 48/81
+watery	watery	# 54/114
+waxy	waxy	# 29/56
+wet	wet	# 34/44
+woody	woody	# 318/907
+wood	woody	# 39/60

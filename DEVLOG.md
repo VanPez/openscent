@@ -975,3 +975,110 @@ that way to him.
 - Tag list is settled enough to seed the `tag` column in `odor_terms.tsv` — the thing that was
   deliberately deferred on 2026-08-05 morning
 - Still unmeasured: filter precision (the 2,205-sentence review) and molecules per tag (linkage)
+
+---
+
+## 2026-08-05 (night) — First corpus rows. From PubChem, and they prove the patents are needed.
+
+### The tag column is filled — `ontology/odor_terms.tsv`
+
+**67 tags, 100 surface forms.** Every tag is a class-D term admitted by `docs>=20 AND
+attestations>=30`. Nothing was supplied from memory: if a familiar perfumery word is absent,
+it is absent because this corpus does not attest it. Morphological variants and `muguet` map
+onto their family head, so the table has `musk` but not also `musky`.
+
+**One surface form maps to exactly one tag, and this is now asserted at generation time.** The
+first generated version had `apple blossom` under both `apple` and `floral` — ambiguity at the
+one point in the pipeline where ambiguity is fatal, since this table is the only place span
+text becomes a tag. A blossom is a flower. The generator now crashes rather than emit a
+duplicate.
+
+### Linkage smoke-tested before committing to the review
+
+OPSIN on 300 name-like spans pulled from the candidates:
+
+```
+resolved                                   219  (73% raw)
+  failed because the PROBE regex clipped brackets  57   <- my artifact, not OPSIN
+  genuine OPSIN misses                             24
+adjusted, on well-formed names                          90%
+```
+
+The 24 real misses are all trivial/trade names — `1-menthol`, `1,8-cineol`, `6-damascone`,
+`2-methylisoborneol`, `2-ethylfenchol`, `9-nordrimanol`. Not systematic nomenclature, so OPSIN
+cannot parse them by design. **PubChem name lookup resolves exactly this class**, and
+`pubchem.py` already does it. So linkage is two-stage: OPSIN, then PubChem fallback.
+
+Worth doing this BEFORE the review rather than after: the review's whole output is
+(name, descriptors) pairs, and if names did not resolve the hours would have bought nothing.
+
+### `pipeline/rows_pubchem.py` — 1,024 rows, 653 molecules
+
+Linkage is free here: PubChem returns the CID, so there is no name-resolution step and no way
+to bind an accurate description to the wrong structure — the failure mode identified on
+2026-07-31 as the one that yields a valid-looking bad row.
+
+Every emitted span is re-checked against the stored quote before the row is written. Rows carry
+`molecule_cid`, `tag`, `span`, `span_offset`, the full `quote`, source, and licence URL, so a
+reader can verify any assertion against PubChem directly.
+
+**81 rows flagged `needs_review`** for negation. The cue list deliberately goes beyond "not" and
+"no" to `faint`, `slight`, `practically`, `almost`: *"practically odorless"* attached to a tag
+is a positive assertion of something false, which is worse than a missing row. Flagged, not
+dropped — a human decides.
+
+**99 rows are repeat (cid, tag) assertions from different HSDB records.** Keep them. That is
+independent corroboration, not duplication, and deduplicating would discard a confidence signal.
+
+### What this source is — say it this way in the paper
+
+**2,080 of the 2,082 records are HSDB.** This is ONE database with free linkage, not a diverse
+second source. Its register is a safety datasheet, not perfumery:
+
+```
+188 pungent   153 sweet   140 aromatic   85 fruity   40 floral   32 acid
+```
+
+Thirteen tags never occur here at all: `aldehydic cedar clean coffee eucalyptus juicy leather
+marine metallic oriental patchouli tobacco watery`. It covers molecules the patent corpus never
+discusses, which is why it is worth having — **complementary evidence, not corroboration.**
+
+### The finding that settles the plan
+
+**Only 6 tags reach 30 distinct molecules from PubChem. Median across tags: 5.**
+
+PubChem alone gets nowhere near 60-100 tags at 30 molecules each. It delivers breadth of
+molecules — 653 with unimpeachable linkage — and almost no depth per tag. **The depth has to
+come from the patents.** The 2,205-sentence review is therefore not optional, and this is the
+first time that has been demonstrated rather than assumed.
+
+Note also which statistic this turns on: rows-per-tag said 7 tags cleared the bar, molecules-per-
+tag says 6, because the same CID recurs across HSDB records. Mike's criterion is molecules.
+Report molecules.
+
+### Sizing the review honestly
+
+```
+2,205  sentences
+  497  contain BOTH a name-like span and a tag word  <- the only ones that can make rows
+   39  of those are anaphoric (Example 3 / formula (I)) and get rejected anyway
+1,708  are one-keystroke rejects
+```
+
+Two goals are tangled in the review and should be separated: **building the corpus** needs only
+the 497; **measuring filter precision** needs all 2,205, because precision is by definition the
+fraction of everything the filter accepted that was good, and skipping the boring ones would
+inflate it. Doing the 497 first gets real rows in one sitting; the rejects are a separate
+mechanical pass.
+
+**No chemistry is required to review** — recorded because it was a reasonable worry. The task is
+text selection: does this sentence attach a smell to a specific named thing, and if so, drag the
+name and click the descriptors. Structure resolution is OPSIN's job afterwards, at 90%. The
+judgement calls are anaphora, not chemistry.
+
+### Standing
+
+- `corpus/rows/pubchem-rows.jsonl` — 1,024 rows, 653 molecules, 54 of 67 tags used
+- `ontology/odor_terms.tsv` — 67 tags, uniqueness asserted
+- Next: candidate review, productive-first — the only source of tag depth
+- Still unmeasured: filter precision

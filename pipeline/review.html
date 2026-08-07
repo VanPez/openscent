@@ -147,6 +147,9 @@
       <span>skipped <b id="ts">0</b></span>
       <span>remaining <b id="tn">0</b></span>
       <span id="rate" style="color:var(--mut)"></span>
+      <span style="margin-left:auto">
+        <label style="cursor:pointer"><input type="checkbox" id="bprod" checked>
+        productive first <b id="tprod"></b></label></span>
     </div>
   </div>
 
@@ -160,6 +163,28 @@
 (function(){
   var VOCAB = ["acid", "aldehydic", "almond", "amber", "ambery", "animalic", "anise", "aniseed", "apple", "aquatic", "aromatic", "balsamic", "banana", "berry", "blossom-type", "burnt", "buttery", "camphor", "camphoraceous", "caramel", "cedarwood", "cheesy", "cinnamon", "citrus", "citrus-like", "clove", "coconut", "creamy", "diffusive", "dry", "earthy", "ether", "ethereal", "faecal", "fatty", "fish", "floral", "flowery", "fresh", "fruity", "gardenia", "grassy", "green", "herbal", "honey", "jasmin", "jasmine", "leafy", "leather", "leathery", "lemon", "lilac", "lily", "liquorice", "marine", "medicinal", "metallic", "mint", "minty", "mossy", "muguet", "musk", "musky", "nutty", "orange", "ozonic", "patchouli", "peach", "pear", "phenolic", "pine", "pineapple", "powdery", "radiant", "resinous", "roasted", "rose", "rosy", "sandalwood", "smoke", "smoky", "spicy", "sulfurous", "sweet", "tenacious", "terpenic", "tobacco", "transparent", "tropical", "vanilla", "vetiver", "violet", "watery", "waxy", "winey", "woody"];
   var rows = [], i = 0, t0 = Date.now(), sel = {mol:'', desc:[]};
+
+  // ---- PRODUCTIVE-FIRST ORDERING -------------------------------------------------
+  // Only 497 of the 2,205 candidates contain BOTH a name-like span and a descriptor;
+  // those are the only ones that can become rows. The other 1,708 are one-keystroke
+  // rejects. Reviewing the productive ones first gets real corpus rows in one sitting.
+  //
+  // IMPORTANT, and the reason `queue_order` is stored on every row: this REORDERS the
+  // queue, it does not filter it. Precision is by definition the share of everything
+  // the filter accepted that was good, so dropping the boring ones would inflate it.
+  // The rejects still have to be worked through for that number — just later, and as a
+  // separate mechanical pass. The export keeps every row and its original position.
+  var _NAME = /\b[a-z0-9\[\]\(\),'-]*\d[a-z0-9\[\]\(\),'-]*(?:ol|al|one|ate|ene|ane|oate)\b/i;
+  var _TAGW = new RegExp("\\b(" + VOCAB.join("|") + ")\\b", "i");
+  function PRODUCTIVE(s){ return !!s && _NAME.test(s) && _TAGW.test(s); }
+
+  function applyOrder(){
+    var on = $('bprod') && $('bprod').checked;
+    rows.sort(function(a, b){
+      if(on && a.productive !== b.productive) return a.productive ? -1 : 1;
+      return a.queue_order - b.queue_order;
+    });
+  }
 
   function $(id){ return document.getElementById(id); }
   function esc(s){ return s.replace(/[&<>]/g, function(c){
@@ -276,6 +301,8 @@
     $('bok').disabled = $('bno').disabled = $('bskip').disabled = false;
     $('rsrc').textContent = r.source_id;
     $('roff').textContent = 'offset ' + r.char_offset;
+    var pleft = rows.filter(function(r){ return r.productive && !r.decision; }).length;
+    $('tprod').textContent = '(' + pleft + ' left)';
     $('rcount').textContent = (i+1) + ' / ' + rows.length;
     $('bar').style.width = ((i / rows.length) * 100) + '%';
     sel = {mol: r.molecule || '', desc: (r.descriptors || []).slice()};
@@ -297,6 +324,15 @@
   $('bno').onclick   = function(){ decide('reject'); };
   $('bskip').onclick = function(){ decide('skip'); };
   $('bback').onclick = function(){ if(i>0){ i--; render(); } };
+
+  // Re-sorting mid-review would move the row under the cursor. Anchor on the current
+  // row's identity and jump back to it after the sort so nothing is skipped silently.
+  $('bprod').onchange = function(){
+    var cur = rows[i];
+    applyOrder();
+    if(cur){ var j = rows.indexOf(cur); if(j >= 0) i = j; }
+    render();
+  };
 
   document.addEventListener('keydown', function(e){
     if(document.activeElement === $('rmol')){ if(e.key === 'Enter') $('rmol').blur(); return; }
@@ -323,6 +359,11 @@
             return JSON.parse(l); });
         }
         if(!rows.length) throw new Error('no rows');
+        rows.forEach(function(r, n){
+          if(r.queue_order === undefined) r.queue_order = n;   // remembers the original order
+          r.productive = PRODUCTIVE(r.sentence);
+        });
+        applyOrder();
         i = rows.findIndex(function(r){ return !r.decision; });
         if(i < 0) i = rows.length;
         t0 = Date.now();
