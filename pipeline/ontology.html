@@ -129,6 +129,12 @@
       <label for="q">filter</label>
       <input type="text" id="q" placeholder="substring…" style="width:150px">
       <label><input type="checkbox" id="onlyun" checked> unjudged only</label>
+      <!-- Examples picker lives HERE as well as in the loader. Loading the TSV hides the
+           loader card, which used to take the candidates.json input with it — so examples
+           could only ever be loaded BEFORE the terms, which nothing said and no one would
+           guess. Same input id is not reusable, hence fjson2. -->
+      <label for="fjson2" id="exlab">examples</label>
+      <input type="file" id="fjson2" accept=".json" style="width:186px;font-size:11px;padding:4px">
       <span class="tally" id="tally"></span>
       <button class="go" id="bexport">Export TSV</button>
     </div>
@@ -148,6 +154,7 @@
 <script>
 (function(){
   var terms = [], examples = {}, sel = 0, header = [];
+  var srcName = 'harvested-terms-classified.tsv';   // set from the loaded filename
 
   function $(id){ return document.getElementById(id); }
   function esc(s){ return (s||'').replace(/[&<>]/g,function(c){
@@ -167,6 +174,11 @@
           else if(p.length >= 2) terms.push({t:p[0], n:+p[1]||0, d:0, c:(p[2]||'').trim()});
         });
         if(!terms.length) throw new Error('no rows');
+        // Export under a name derived from what was LOADED. The old hardcoded
+        // 'harvested-terms-classified.tsv' offered to overwrite round 1's record
+        // no matter which round you were working on.
+        srcName = f.name.replace(/\.(tsv|txt)$/i, '').replace(/-classified$/i, '')
+                  + '-classified.tsv';
         $('loader').classList.add('hide'); $('app').classList.remove('hide');
         render();
       }catch(err){ $('err').textContent = 'Could not read that file: ' + err.message; }
@@ -174,12 +186,13 @@
     fr.readAsText(f);
   });
 
-  $('fjson').addEventListener('change', function(e){
+  function loadExamples(e){
     var f = e.target.files[0]; if(!f) return;
+    var lab = $('exlab'); if(lab) lab.textContent = 'reading…';
     var fr = new FileReader();
     fr.onload = function(){
       try{
-        var rows = JSON.parse(fr.result);
+        var rows = JSON.parse(fr.result), n = 0;
         // one short example per term — first sentence containing it. Cheap index.
         rows.forEach(function(r){
           var s = r.sentence, low = s.toLowerCase();
@@ -191,11 +204,19 @@
             examples[o.t] = (a>0?'…':'') + s.slice(a,b) + (b<s.length?'…':'');
           });
         });
+        terms.forEach(function(o){ if(examples[o.t]) n++; });
+        if(lab) lab.textContent = n + '/' + terms.length + ' w/ example';
         render();
-      }catch(err){ $('err').textContent = 'Could not read candidates.json: ' + err.message; }
+      }catch(err){
+        if(lab) lab.textContent = 'examples';
+        $('err').textContent = 'Could not read candidates.json: ' + err.message;
+        alert('Could not read candidates.json: ' + err.message);
+      }
     };
     fr.readAsText(f);
-  });
+  }
+  $('fjson').addEventListener('change', loadExamples);
+  $('fjson2').addEventListener('change', loadExamples);
 
   function visible(){
     var min = parseInt($('minn').value,10) || 0;
@@ -277,7 +298,7 @@
     var blob = new Blob([header.join('\n')+'\n'+body+'\n'], {type:'text/tab-separated-values'});
     var a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
-    a.download = 'harvested-terms-classified.tsv';
+    a.download = srcName;
     a.click();
     setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
   };

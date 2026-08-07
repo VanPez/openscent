@@ -10,21 +10,27 @@
 failures). `extract` with the v3 filter gives **3,191 candidates** across 1,027 patents;
 `corpus/extracted/candidates.json` is on the Mac.
 
-**Phase 0 vocabulary is classified but NOT settled.** 68 class-D terms at ≥30 docs → **49 distinct
-concepts**: minus 15 morphological duplicates (`musk`/`musky`, `rose`/`rosy`/`rose-like`, …), minus
-`muguet`=`lily`, minus `forest`/`woodland`/`spruce` — which turned out to be **one patent boilerplate
-paragraph copied across 124 patents**. Well below Mike's floor of 60. See the 2026-08-05 entry; document
-frequency does not defeat cross-document boilerplate, which is what `pipeline/boilerplate.py` now measures.
+**PHASE 0 VOCABULARY IS SETTLED — 67 distinct concepts**, inside Mike's 60–100 window.
+`ontology/harvested-terms-round2-classified.tsv`: 237 terms judged, 90 D, minus 23 morphological
+duplicates.
+
+Terms were admitted by **two thresholds at once — `docs >= 20` AND `attestations >= 30`** — because
+each counter is blind to the other's failure mode: documents are inflated by one sentence copied
+*between* patents (`woodland`: 124 docs, 5 sentences), attestations by many sentences *inside* one
+patent (`burnt-sweet`: 1 doc, 35 sentences). Four counters were needed to work this out; do not add a
+fifth without reading the 2026-08-05 (late) entry first.
+
+**The claim to make to Mike, precisely:** 67 concepts on the best available proxy — **not** 67 tags at
+30 molecules each, which is what he actually asked for. Attestations are sentences, and one odour table
+can spend four on a single compound. `anisic`, `neutral` and `coffee` sit nearest the floor and are the
+likely casualties once linkage produces real molecule counts.
 
 **Immediate next, in this order:**
-1. Second ontology pass over the **20–29 doc band** (183 terms, visibly rich) → ~75–85 concepts.
-   `boilerplate.py 20` has already been run, so the band is pre-vetted: `hay` (0.50) and `blossom`
-   (0.25) are flagged before they are judged.
-2. Inspect the three surviving D's the scan flagged — `ripe` 0.49, `watery` 0.34, `lily` 0.30 — from the
-   `top_context` column of `ontology/boilerplate-report.tsv` (on Hetzner).
-3. Then the candidate review below.
-
-`odor_terms.tsv`'s `tag` column stays **blank** until the tag list is settled.
+1. **Seed the `tag` column in `odor_terms.tsv`** from the 67 concepts — deliberately deferred until now,
+   because filling it before the tag list existed would have built the ontology from the wrong end.
+2. **OPSIN linkage** — the first thing that turns sentence counts into molecule counts and tests
+   Mike's actual criterion.
+3. The candidate review below (2,205 sentences) — still the only route to exact filter precision.
 
 > `$OPENSCENT_HOST` is the harvest box (`user@ip`). Set it in your shell — it is deliberately not
 > committed, so this repo can go public unchanged:
@@ -857,3 +863,115 @@ to boilerplate that sits outside that window. Not obviously the right trade; rev
 - **Inspect from `boilerplate-report.tsv`'s `top_context` column:** `ripe` 0.49, `watery` 0.34, `lily` 0.30
 - `hay` (0.50) and `blossom` (0.25) sit in the 20–29 band and are pre-flagged for the second pass —
   which is what running the scan at ≥20 was for
+
+---
+
+## 2026-08-05 (late) — Attestations. The fourth counter, and the one that works.
+
+### Reading the passages exposed the real unit
+
+`passages.py` found every sentence repeated across ≥15 patents and listed the vocabulary each
+carries. The flagged terms were not separate problems — they were **four paragraphs**:
+
+```
+120 patents  "suitable fragrances include ... almond, apple, cherry, grape, pear,
+              pineapple, orange, strawberry, raspberry"     -> apple fruits orange pear pineapple
+100 patents  "among the fragrances provided in this treatise are acacia, cassie ...
+              jasmine, lilac, lily, ... vanilla, violet"    -> jasmine lily vanilla violet hay blossom
+109 patents  "...herbal and woodland scents derived from
+              pine, spruce and other forest smells"         -> herbal forest spruce woodland
+ 85 patents  "musk, flower scents such as lavender-like,
+              rose-like, iris-like, carnation-like"         -> musk flower lavender rose-like
+```
+
+None attaches a smell to a molecule. They are "fragrances may include…" clauses naming an
+application field. A term can score a harmless per-term ratio and still be a passenger in a
+paragraph shared with ten others — `lily` (0.30) and `blossom` (0.25) are in the second one and
+neither looks bad alone.
+
+**So the unit was never the word. It is the distinct piece of text.**
+
+### `pipeline/attest.py`
+
+    attestations = distinct sentences a term was harvested from
+
+A sentence copied into 100 patents counts **once**. It imports `PRE`, `POST` and `STOP` from
+`vocab.py` rather than redefining them — deliberately, because boilerplate.py's separate window
+is exactly why its `docs` said 360 for `spruce` where vocab.py said 124. Two counters that
+disagree about what they count cannot be compared.
+
+### I predicted the count would fall. It rose, and the prediction was wrong.
+
+```
+>=30:  210 by documents  ->  299 by ATTESTATIONS
+```
+
+Genuine descriptors have **more** distinct sentences than documents — `floral` 431 docs, 1,331
+sentences, copy factor 0.3 — because patents describe the same molecule several ways across
+tables and examples. Only copied text inverts the ratio, which is what makes it visible:
+
+```
+forest    127 docs ->  9 sentences   copy 14.1   top 86%
+woodland  124 docs ->  5 sentences   copy 24.8   top 88%
+spruce    124 docs ->  5 sentences   copy 24.8   top 88%
+```
+
+Five sentences behind 124 documents. Meanwhile `apple` — which I had flagged as possibly going
+to zero — has 84 independent attestations and copy factor 1.1. It was fine. **Two wrong calls in
+a row: wrong about the direction, and wrong about `apple` specifically.**
+
+### And attestations alone is ALSO wrong — the same error, inverted
+
+```
+burnt-sweet   1 doc  -> 35 attestations
+apparatus     8 docs -> 62 attestations
+balsam        3 docs -> 31 attestations
+```
+
+Thirty-five different sentences, one patent. Nothing deduplicates because the sentences genuinely
+differ — but it is one lab, one document, one drafting session. That is the intra-document
+inflation that killed occurrence counting on 2026-08-04, returning through the front door.
+**33 of the 299 terms were ≥3× inflated this way.**
+
+So, plainly:
+
+| counter | blind to |
+|---|---|
+| occurrences | repetition inside one patent |
+| documents | one sentence copied between patents |
+| attestations | many different sentences inside one patent |
+
+Each fixes the previous one's failure and not its own. **Requiring `docs >= 20` AND
+`attestations >= 30` excludes both**, because the two failure modes push the two numbers in
+opposite directions. 237 terms admitted. No fifth counter was written.
+
+### Round 2 result: 67 concepts
+
+237 terms classified (160 carried from round 1, 77 new): **90 D**, 121 X, 11 H, 9 M, 6 T.
+After merging 23 morphological duplicates — `menthol`/`peppermint`→mint, `leathery`→leather,
+`dusty`→powdery, `rooty`→earthy, `citrus-like`→citrus, `refreshing`→fresh, plus the round-1
+families — **67 distinct concepts.** Inside Mike's 60–100 window.
+
+New concepts from round 2: `hay berry coconut coffee cedar peach pear pineapple lime honey juicy
+oily waxy geranium anisic oriental neutral`.
+
+**67 concepts is not 67 tags at 30 molecules each.** Attestations are sentences; one odour table
+can spend four on a single compound. The terms nearest the floor — `anisic`, `neutral`, `coffee`
+— are the ones that will fall when OPSIN linkage replaces sentence counts with molecule counts.
+The target is met on the best available proxy, not on the criterion Mike actually stated. Say it
+that way to him.
+
+### Two UI bugs found by using it
+
+- Loading the TSV hid the loader card **with the candidates.json input inside it**, so example
+  sentences could only ever be loaded *before* the terms — undocumented and unguessable. The
+  picker now also lives in the toolbar and reports how many terms it matched.
+- Export filename was hardcoded to `harvested-terms-classified.tsv`, offering to overwrite round
+  1's record while working on round 2. It is now derived from the loaded filename.
+
+### Standing
+
+- **67 concepts** — `ontology/harvested-terms-round2-classified.tsv`
+- Tag list is settled enough to seed the `tag` column in `odor_terms.tsv` — the thing that was
+  deliberately deferred on 2026-08-05 morning
+- Still unmeasured: filter precision (the 2,205-sentence review) and molecules per tag (linkage)

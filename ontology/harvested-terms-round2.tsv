@@ -1,0 +1,257 @@
+# ROUND 2 classifier input — admitted by TWO thresholds at once:
+#     docs >= 20   AND   attestations >= 30
+#
+# WHY BOTH. Each counter is blind to the other's failure mode:
+#   docs          inflated by one sentence COPIED ACROSS patents
+#                 (forest/woodland/spruce: 124 docs, 5-9 sentences)
+#   attestations  inflated by many sentences INSIDE ONE patent
+#                 (burnt-sweet: 1 doc, 35 sentences; apparatus: 8 docs, 62)
+# Requiring both excludes both. 33 of 299 terms at >=30 attestations were
+# >=3x one-patent inflated; the docs floor removes them.
+#
+# 237 terms. 160 carry their round-1 class; 77 are NEW.
+# Tick 'only unjudged' to see just the new ones.
+#
+# Column 3 is ATTESTATIONS — distinct sentences, a copied sentence counting once.
+# That is the evidence column. Column 2 is documents, kept for the sanity check
+# above: a term whose attestations hugely exceed its docs is one patent talking
+# to itself.
+#
+# term	docs	attestations	class
+floral	431	1331	D
+fruity	375	1060	D
+green	363	936	D
+woody	318	907	D
+pleasant	839	838	H
+top	319	831	T
+unpleasant	316	769	H
+fresh	321	722	D
+sweet	251	579	D
+base	274	537	T
+citrus	185	439	D
+musk	244	391	D
+middle	156	321	T
+rose	113	278	D
+spicy	146	276	D
+valley	70	242	X
+muguet	62	242	D
+herbal	203	212	D
+sandalwood	79	205	D
+aromatic	80	195	D
+musky	76	182	D
+particularly	118	176	X
+powdery	76	176	D
+bottom	90	166	T
+fruit	80	161	D
+fatty	82	156	D
+masking	83	155	H
+flowery	66	148	D
+mask	171	144	H
+earthy	73	137	D
+amber	51	131	D
+bad	52	129	M
+metallic	46	126	D
+dry	92	125	D
+tobacco	56	117	D
+foot	31	116	M
+heart	60	115	T
+minty	54	115	D
+watery	54	114	D
+grapefruit	49	114	D
+lily	37	113	D
+rosy	58	109	D
+aldehydic	69	108	D
+rose-like	36	107	D
+interesting	89	105	H
+vanilla	44	103	D
+balsamic	56	102	D
+clean	61	99	D
+sweat	46	98	M
+soft	44	95	D
+test	92	93	X
+animalic	34	93	D
+ambery	42	90	D
+patchouli	34	90	D
+lemon	57	89	D
+marine	43	89	D
+profile	40	88	X
+undesirable	67	86	M
+animal	62	86	D
+pleasing	96	84	H
+apple	92	84	D
+offensive	37	84	X
+technical	29	83	
+musty	37	82	D
+white	53	81	X
+warm	48	81	D
+creamy	44	77	D
+herbaceous	50	75	D
+camphoraceous	31	75	D
+synthetic	79	73	X
+head	43	73	T
+leather	30	73	D
+violet	44	72	D
+malodor	65	71	M
+acid	35	67	D
+urine	27	66	
+associated	55	65	X
+dried	31	65	X
+fragrant	54	64	H
+flower	163	61	D
+rich	38	61	X
+musk-like	21	61	
+thereby	42	60	X
+wood	39	60	D
+shows	24	60	
+exhibit	50	59	X
+generally	42	58	X
+leathery	20	58	
+eucalyptus	31	57	D
+responsible	56	56	X
+pungent	45	56	D
+waxy	29	56	
+toilet	27	56	
+citrus-like	26	56	
+strength	56	55	X
+give	50	55	X
+underarm	38	55	M
+since	53	54	X
+attractive	51	54	H
+jasmine	38	54	D
+substantive	35	54	X
+orange	44	53	D
+properties	38	53	X
+dusty	23	53	
+target	23	53	
+against	39	51	X
+cleaning	38	51	X
+accord	23	51	
+art	50	50	X
+resulting	41	50	X
+pineapple	29	50	
+impression	26	50	
+smoke	37	49	D
+somewhat	23	49	
+aspects	34	48	X
+corresponding	34	48	X
+pear	26	48	
+freshness	46	47	D
+red	20	47	
+positive	37	46	X
+compared	31	46	X
+juicy	29	46	
+valuable	24	46	
+lactonic	24	46	
+because	75	45	X
+effect	58	45	X
+relatively	35	45	X
+mint	33	45	D
+aforementioned	32	45	X
+hay	21	45	
+important	45	44	X
+contain	41	44	X
+wet	34	44	D
+dominant	32	44	X
+solution	29	44	
+alcohol	20	44	
+character	46	43	X
+increased	45	43	X
+fruits	38	43	D
+substantially	36	43	X
+primary	35	43	X
+adding	34	43	X
+nutty	31	43	D
+specifically	27	43	
+average	25	43	
+released	24	43	
+lingering	20	43	
+evaluate	40	42	X
+through	34	42	X
+water	31	42	X
+berry	25	42	
+flowers	24	42	
+geranium	24	42	
+extremely	43	41	X
+quality	34	41	X
+combination	33	41	X
+undesired	30	41	H
+case	29	41	
+coconut	28	41	
+chlorine	32	40	D
+oily	29	40	
+acetate	28	40	
+preparation	27	40	
+color	24	40	
+coffee	20	40	
+lavender	37	39	D
+together	34	39	X
+user	31	39	X
+kitchen	23	39	
+make	20	39	
+rooty	20	39	
+nice	69	38	H
+single	52	38	X
+particles	41	38	X
+washing	32	38	X
+reduced	30	38	X
+harsh	24	38	
+cedar	22	38	
+peach	21	38	
+intended	52	37	X
+achieve	48	37	X
+found	37	37	X
+comparative	24	37	
+lime	23	37	
+noticeable	35	36	X
+optionally	25	36	
+side	25	36	
+raw	41	35	X
+concentration	27	35	
+menthol	26	35	
+panelists	43	34	X
+aspect	31	34	X
+group	30	34	X
+medium	26	34	
+results	26	34	
+process	25	34	
+peppermint	24	34	
+neutral	23	34	
+volatility	22	34	
+hydrogen	20	34	
+honey	20	34	
+often	34	33	X
+possesses	30	33	X
+multiple	28	33	
+plant	21	33	
+evaluating	20	33	
+chemicals	50	32	X
+pigments	45	32	X
+extending	39	32	X
+intensive	37	32	X
+rate	36	32	X
+application	36	32	X
+clearly	35	32	X
+generate	29	32	
+enhances	28	32	
+whether	26	32	
+need	23	32	
+basic	22	32	
+score	21	32	
+origin	21	32	
+care	20	32	
+perspiration	84	31	M
+retain	59	31	X
+background	55	31	X
+combinable	29	31	
+before	37	30	X
+hydrophobic	34	30	X
+quite	33	30	X
+distinctive	28	30	
+possible	27	30	
+neat	26	30	
+increasing	26	30	
+oriental	25	30	
+odiferous	25	30	
+refreshing	23	30	
+tea	23	30	
+anisic	20	30	
