@@ -437,6 +437,11 @@
     [/\b(said|the compound of example|of example \d|formula \(?[IVX]+\)?|present compound|thereof)\b/i,
      'ANAPHORA — "said ingredient", "the compound of Example 3" are POINTERS, not names. ' +
      'If the thing being described is not named in this sentence, there is no row.'],
+    [/\b(without|lacking|devoid of|free of|absence of|no pronounced|not nearly)\b[^.]{0,45}?\b(odou?r|note|character|nuance|aroma|scent|tonality|connotation)\b/i,
+     'NEGATED DESCRIPTOR — this sentence says a note is ABSENT ("without pronounced musk ' +
+     'character", "devoid of the lily of the valley note"). The highlighter cannot read ' +
+     'negation and will suggest that word in green anyway. Recording it asserts the exact ' +
+     'opposite of the source.'],
     [/\b(different from|in contrast|unlike|whereas|compared (?:to|with)|rather than|instead of|as opposed to)\b/i,
      'CONTRAST — a molecule may be named only to say it smells DIFFERENT. Check that the ' +
      'descriptors belong to the molecule you are about to record, not to the thing it is ' +
