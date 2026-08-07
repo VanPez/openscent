@@ -197,6 +197,44 @@
   // One sentence now yields one row PER MOLECULE, each carrying the same descriptors and
   // the same quote.
 
+  // ---- DEDUPE THE QUEUE ---------------------------------------------------------
+  // 335 of the 2,205 candidates are the same sentence again (84 of them in the productive
+  // subset). Almost all are copied ACROSS patents, not repeated within one — one sentence
+  // occurs in 13 different patents. Patent boilerplate, the same problem that produced
+  // `woodland`, arriving here as wasted reading.
+  //
+  // Reviewed ONCE. The row keeps every source_id it came from and how many times it
+  // occurred, so nothing about provenance is lost and precision can still be computed
+  // either per-candidate (weight by occurrences) or per-distinct-sentence. Which of those
+  // is the honest denominator is arguable; keeping both means the choice can be made later
+  // and defended, instead of being silently baked in here.
+  //
+  // Split copies are EXEMPT — they share a sentence with their parent by design, and
+  // merging them would undo the split.
+  function dedupe(rs){
+    var seen = {}, out = [];
+    rs.forEach(function(r){
+      if(r.split_of !== undefined){ out.push(r); return; }
+      var k = (r.sentence || '').replace(/\s+/g,' ').trim().toLowerCase();
+      if(!seen[k]){
+        r.sources = [r.source_id];
+        r.occurrences = 1;
+        seen[k] = r; out.push(r);
+      } else {
+        var m = seen[k];
+        m.occurrences++;
+        if(m.sources.indexOf(r.source_id) < 0) m.sources.push(r.source_id);
+        // a decision already made on any copy wins, so resuming an export keeps the work
+        if(!m.decision && r.decision){
+          m.decision = r.decision;
+          m.molecules = r.molecules || (r.molecule ? [r.molecule] : []);
+          m.descriptors = r.descriptors || [];
+        }
+      }
+    });
+    return out;
+  }
+
   // ---- PRODUCTIVE-FIRST ORDERING -------------------------------------------------
   // Only 497 of the 2,205 candidates contain BOTH a name-like span and a descriptor;
   // those are the only ones that can become rows. The other 1,708 are one-keystroke
@@ -423,7 +461,8 @@
     var r = rows[i];
     $('bok').disabled = $('bno').disabled = $('bskip').disabled = false;
     $('rsrc').textContent = r.source_id;
-    $('roff').textContent = 'offset ' + r.char_offset;
+    $('roff').textContent = 'offset ' + r.char_offset
+      + (r.occurrences > 1 ? '  ·  ' + r.occurrences + ' patents' : '');
     var pleft = rows.filter(function(r){ return r.productive && !r.decision; }).length;
     $('tprod').textContent = '(' + pleft + ' left)';
     $('rcount').textContent = (i+1) + ' / ' + rows.length;
@@ -529,6 +568,7 @@
             return JSON.parse(l); });
         }
         if(!rows.length) throw new Error('no rows');
+        rows = dedupe(rows);
         rows.forEach(function(r, n){
           if(r.queue_order === undefined) r.queue_order = n;   // remembers the original order
           r.productive = PRODUCTIVE(r.sentence);
@@ -554,6 +594,9 @@
                              molecules:r.molecules || (r.molecule ? [r.molecule] : []),
                              molecule:r.molecule||'',
                              queue_order:r.queue_order,
+                             sources:r.sources || [r.source_id],
+                             occurrences:r.occurrences || 1,
+                             split_of:r.split_of,
                              descriptors:r.descriptors||[], reviewer:'vanpe',
                              extractor:'review/v1'});
     }).join('\n');
