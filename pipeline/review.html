@@ -146,8 +146,10 @@
             <input type="text" id="rmol" placeholder="click blue highlights, or select text">
             <button id="rmoladd" style="padding:9px 14px;font-size:12px;white-space:nowrap">Add</button>
           </div>
-          <div class="hint">One row is written per molecule, each with the same descriptors.
-            Click a chip to remove it.</div>
+          <div class="hint">Several molecules <b>sharing one description</b> &rarr; add them all
+            here, approve once, one row each.<br>Molecules with <b>different</b> descriptions
+            (&ldquo;X is floral <i>whereas</i> Y is fruity&rdquo;) &rarr; <b>Split</b>, then do them
+            one at a time.<br>Click a chip to remove it.</div>
           <div class="warn" id="molwarn"></div>
         </div>
         <div>
@@ -161,7 +163,7 @@
         <button class="no" id="bno">Reject<kbd>R</kbd></button>
         <button class="ghost" id="bback">Back<kbd>←</kbd></button>
         <button class="ghost" id="bskip">Skip<kbd>S</kbd></button>
-        <button class="ghost" id="bsplit" title="Same sentence, second molecule with its own descriptors">Split<kbd>P</kbd></button>
+        <button class="ghost" id="bsplit" title="Only when the molecules have DIFFERENT descriptors. Same description for all? Just add them as chips.">Split<kbd>P</kbd></button>
         <span id="splitnote" style="font-size:12px;color:var(--amber);margin-left:14px"></span>
         <button class="ghost" id="bexport" style="margin-left:auto">Export rows.jsonl</button>
       </div>
