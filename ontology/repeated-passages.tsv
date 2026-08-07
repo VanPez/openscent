@@ -1,0 +1,1043 @@
+# Sentences appearing in many DISTINCT patents, with the vocabulary they carry.
+# Each passage is ONE attestation regardless of how many documents repeat it.
+# docs	n_terms	terms	passage
+100	10	blossom,freshly,hay,jasmine,lily,orange,provided,sweet,vanilla,violet	among the fragrances provided in this treatise are acacia, cassie, chypre, cyclamen, fern, gardenia, hawthorn, heliotrope, honeysuckle, hyacinth, jasmine, lilac, lily, magnolia, mimosa, narcissus, freshly-cut hay, orange blossom, orchid, reseda, sweet pea, trefle, tuberose, vanilla, violet, wallflower, and the like.
+120	5	apple,fruits,orange,pear,pineapple	suitable fragrances include but are not limited to fruits such as almond, apple, cherry, grape, pear, pineapple, orange, strawberry, raspberry;
+109	5	forest,herbal,pleasant,spruce,woodland	other pleasant scents include herbal and woodland scents derived from pine, spruce and other forest smells.
+163	3	art,pleasant,positive	in other words such a co-ingredient, to be considered as being a perfuming one, must be recognized by a person skilled in the art as being able to impart or modify in a positive or pleasant way the odor of a composition, and not just as having an odor.
+160	3	art,combination,prior	the citation of any document is not an admission that it is prior art with respect to any invention disclosed or claimed herein or that it alone, or in any combination with any other reference or references, teaches, suggests or discloses any such invention.
+231	2	changes,intended	it is therefore intended to cover in the appended claims all such changes and modifications that are within the scope of this invention.
+224	2	intended,otherwise	instead, unless otherwise specified, each such dimension is intended to mean both the recited value and a functionally equivalent range surrounding that value.
+220	2	art,changes	while particular embodiments of the present invention have been illustrated and described, it would be obvious to those skilled in the art that various other changes and modifications can be made without departing from the spirit and scope of the invention.
+64	6	background,care,chemicals,give,need,perfumers	background of the invention there is an ongoing need in the fragrance industry to provide new chemicals to give perfumers and other persons the ability to create new fragrances for perfumes, colognes and personal care products.
+63	6	application,base,case,effect,intended,them	the nature and type of the perfuming co-ingredients present in the base do not warrant a more detailed description here, which in any case would not be exhaustive, the skilled person being able to select them on the basis of his general knowledge and according to intended use or application and the desired organoleptic effect.
+85	4	flower,lavender,musk,rose-like	musk, flower scents such as lavender-like, rose-like, iris-like, carnation-like.
+59	5	already,art,describe,preparation,prior	such articles already describe the various parameters affecting the preparation of such core-shell microcapsules following prior art methods that are also further detailed and exemplified in the patent literature.
+98	3	application,intended,otherwise	for example, a dimension disclosed as “40 mm” is intended to mean “about 40 mm.” every document cited herein, including any cross referenced or related patent or application and any patent application or patent to which this application claims priority or benefit thereof, is hereby incorporated herein by reference in its entirety unless expressly excluded or otherwise limited.
+71	4	art,base,effect,mixed	these values are dependent on the nature of the article to be perfumed and on the desired organoleptic effect as well as the nature of the co-ingredients in a given base when the compounds according to the invention are mixed with perfuming co-ingredients, solvents or additives commonly used in the art.
+47	6	application,base,case,effect,intended,them	the nature and type of the perfuming co-ingredients present in the base do not warrant a more detailed description here, which in any case would not be exhaustive, the skilled person being able to select them on the basis of its general knowledge and according to intended use or application and the desired organoleptic effect.
+134	2	base,group	ii) at least one ingredient selected from the group consisting of a perfumery carrier and a perfumery base;
+134	2	origin,synthetic	in general terms, these perfuming co-ingredients belong to chemical classes as varied as alcohols, lactones, aldehydes, ketones, esters, ethers, acetates, nitriles, terpenoids, nitrogenous or sulphurous heterocyclic compounds and essential oils, and said perfuming co-ingredients can be of natural or synthetic origin.
+121	2	color,stability	by “perfumery adjuvant” we mean here an ingredient capable of imparting additional added benefit such as a color, a particular light resistance, chemical stability, etc.
+34	7	apple,because,fully,nice,pleasant,ripe,sweet	if this apple odor were very pleasant because the odor is reminiscent, for example, of a sweet, fully ripe apple, the odor would be termed “nice”.
+17	14	fruit,fruits,geranium,jasmine,lavender,leaves,lemon,lily,orange,patchouli,rose,sandalwood,spruce,wood	natural perfumes include the extracts of blossoms (lily, lavender, rose, jasmine, neroli, ylang-ylang), stems and leaves (geranium, patchouli, petitgrain), fruits (anise, coriander, caraway, juniper), fruit peel (bergamot, lemon, orange), roots (nutmeg, angelica, celery, cardamom, costus, iris, calmus), woods (pinewood, sandalwood, guaiac wood, cedarwood, rosewood), herbs and grasses (tarragon, lemon grass, sage, thyme), needles and branches (spruce, fir, pine, dwarf pine), resins and balsams (g
+117	2	peppermint,plant	fragrances may also be derived from various oils, such as essential oils, or from plant materials such as peppermint, spearmint and the like.
+33	7	fruit,geranium,jasmine,lavender,patchouli,rose,sandalwood	castoreum, costus root oil, oak moss absolute, geranium oil, tree moss absolute, basil oil, fruit oils, such as bergamot oil and mandarine oil, myrtle oil, palmarose oil, patchouli oil, petitgrain oil, jasmine oil, rose oil, sandalwood oil, wormwood oil, lavender oil and/or ylang-ylang oil;
+36	6	brought,generally,impression,pleasant,positively,spontaneously	niceness generally refers to a spontaneously brought about, positively perceived, pleasant sensory impression.
+68	3	acetate,citrus,orange	citrus ingredients: dihydromyrcenol, citral, orange oil, linalyl acetate, citronellyl nitrile, orange terpenes, limonene, 1-p-menthen-8-yl acetate and/or 1,4(8)-p-menthadiene;
+28	7	brought,generally,identical,impression,panel,spontaneously,test	“conciseness” generally refers to a spontaneously brought about sensory impression which—for the same test panel—brings about a reproducibly identical reminder of something specific.
+39	5	applying,art,effect,formulations,standard	it is understood that a person skilled in the art is perfectly able to design optimal formulations for the desired effect by admixing the above mentioned components of a perfuming composition, simply by applying the standard knowledge of the art as well as by trial and error methodologies.
+24	8	acid,activity,bleach,defined,little,particularly,stability,water	one type of metal-containing bleach catalyst is a catalyst system comprising a transition metal cation of defined bleach catalytic activity, such as copper, iron, titanium, ruthenium, tungsten, molybdenum, or manganese cations, an auxiliary metal cation having little or no bleach catalytic activity, such as zinc or aluminum cations, and a sequestrate having defined stability constants for the catalytic and auxiliary metal cations, particularly ethylenediaminetetraacetic acid, ethylenediaminetetr
+31	6	application,base,case,effect,intended,them	the nature and type of the perfuming co-ingredients present in the base do not warrant a more detailed description here, which in any case would not be exhaustive, the skilled person being able to select them on the basis of his general knowledge and according to the intended use or application and the desired organoleptic effect.
+37	5	application,case,effect,intended,them	the nature and type of the perfuming ingredients present in the oil phase do not warrant a more detailed description here, which in any case would not be exhaustive, the skilled person being able to select them on the basis of its general knowledge and according to intended use or application and the desired organoleptic effect.
+37	5	application,case,effect,intended,them	the nature and type of the perfuming co-ingredients present in the perfuming composition do not warrant a more detailed description here, which in any case would not be exhaustive, the skilled person being able to select them on the basis of his general knowledge and according to the intended use or application and the desired organoleptic effect.
+26	7	applied,base,corresponding,deliver,formulation,optionally,pleasant	for the sake of clarity, it has to be mentioned that, by “perfumery consumer base” we mean here the functional formulation, as well as optionally additional benefit agents, corresponding to a consumer product which is compatible with perfuming ingredients and is expected to deliver a pleasant odor to the surface to which it is applied (e.g.
+36	5	cationic,contain,form,primary,side	the preferred cationic polymers are chosen from those that contain units comprising primary, secondary, tertiary and/or quaternary amine groups that can either form part of the main polymer chain or can be borne by a side substituent directly connected thereto.
+30	6	acetate,amber,anisic,powdery,spicy,watery	amber, powdery spicy or watery): dodecahydro-3a,6,6,9a-tetramethyl-naphtho[2,1-b]furan and any of its stereoisomers, heliotropin, anisic aldehyde, eugenol, cinnamic aldehyde, clove oil, 3-(1,3-benzodioxol-5-yl)-2-methylpropanal, 7-methyl-2h-1,5-benzodioxepin-3(4h)-one, 2,5,5-trimethyl-1,2,3,4,4a,5,6,7-octahydro-2-naphthalenol, 1-phenylvinyl acetate, 6-methyl-7-oxa-1-thia-4-azaspiro[4.4]nonan and/or 3-(3-isopropyl-1-phenyl)butanal.
+30	6	advantageous,apple,concise,nice,particularly,properties	if both reactions arise upon smelling the substance, in the example thus a nice and concise apple odor, then this substance has particularly advantageous sensory properties.
+176	1	case	many of these co-ingredients are in any case listed in reference texts such as the book by s.
+170	1	chemicals	arctander, perfume and flavor chemicals, 1969, montclair, n.j., usa, or its more recent versions, or in other works of a similar nature, as well as in the abundant patent literature in the field of perfumery.
+28	6	citrus,contain,eucalyptus,fresheners,lavender,synthetic	air fresheners for living areas contain, in particular, natural and synthetic essential oils such as pine needle oils, citrus oil, eucalyptus oil, lavender oil, and the like, in amounts for example of up to 50% by weight.
+42	4	base,comprise,origin,water	for the compositions which comprise both a perfumery carrier and a perfumery base, other suitable perfumery carriers than those previously specified, can be also ethanol, water/ethanol mixtures, limonene or other terpenes, isoparaffins such as those known under the trademark isopar® (origin: exxon chemical) or glycol ethers and glycol ether esters such as those known under the trademark dowanol® (origin: dow chemical company).
+83	2	active,otherwise	unless otherwise noted, all component or composition levels are in reference to the active portion of that component or composition, and are exclusive of impurities, for example, residual solvents or by-products, which may be present in commercially available sources of such components or compositions.
+83	2	combination,preparations	in these preparations, the compounds of the present invention can be used alone or in combination with other perfuming compositions, solvents, adjuvants and the like.
+55	3	called,form,washing	liquid, gel or paste-form all-purpose washing agents, especially the so-called heavy-duty liquid types;
+41	4	base,comprise,origin,water	for the compositions which comprise both a perfumery carrier and a perfumery base, other suitable perfumery carriers than those previously specified, can be also ethanol, water/ethanol mixtures, limonene or other terpenes, isoparaffins such as those known under the trademark isopar® (origin: exxon chemical) or glycol ethers and glycol ether esters such as those known under the trademark dowanol® (origin: dow chemical company), or hydrogenated castors oils such as those known under the trademark 
+54	3	bleach,care,water	a fabric care product, such as a liquid or solid detergent, a fabric softener, a fabric refresher, an ironing water, a paper, or a bleach;
+39	4	applied,deliver,effect,pleasant	for the sake of clarity, it has to be mentioned that, by “perfuming consumer product” it is meant a consumer product which is expected to deliver at least a pleasant perfuming effect to the surface to which it is applied (e.g.
+52	3	achieve,effects,since	however, these values are given only by way of example, since the experienced perfumer may also achieve effects or may create novel accords with lower or higher concentrations.
+52	3	application,applied,care	skin care including application of creams, lotions, and other topically applied products for consumer use;
+26	6	art,how,molecules,result,small,unexpected	those with skill in the art appreciate how small differences in chemical structures can result in unexpected and significant differences in odor, notes and characteristics of molecules.
+31	5	art,cationic,optionally,prior,process	as non-limiting examples of solid carriers, one may cite in particular the core-shell capsules with resins of aminoplast, polyamide, polyester, polyurea or polyurethane type or a mixture thereof (all of said resins are well known to a person skilled in the art) using techniques like phase separation process induced by polymerization, interfacial polymerization, coacervation or altogether (all of said techniques have been described in the prior art), optionally in the presence of a polymeric stab
+22	7	environmental,found,malodor,performance,perspiration,superior,unexpected	in addition, the compounds of the present invention are also surprisingly found to provide superior ingredient performance and possess unexpected advantages in malodor counteracting applications such as body perspiration, environmental odor such as mold and mildew, bathroom, and etc.
+22	7	care,contain,mask,pleasant,small,unpleasant,usually	air care products (includes products that contain preferably volatile and usually pleasant-smelling compounds which advantageously can even in very small amounts mask unpleasant odors).
+22	7	booster,deodorants,effects,fresheners,particularly,quickly,top	booster effects are particularly desired in fragrance composition when top-note-characterized applications are required, in which the odor is to be conveyed particularly quickly and intensively, for example in deodorants, air fresheners or in the taste sector in chewing gums.
+51	3	acid,fatty,particularly	the fatty acid amide derivative known under the ctfa name of cocamidopropyl betaine is particularly preferred.
+50	3	end,form,medium	a reaction medium without an adequate purification, in which the compound of the invention would be involved as a starting, intermediate or end-product could not be considered as a perfuming composition according to the invention as far as said mixture does not provide the inventive compound in a suitable form for perfumery.
+149	1	art	a detailed description of the nature and type of adjuvant commonly used in perfuming bases cannot be exhaustive, but it has to be mentioned that said ingredients are well known to a person skilled in the art.
+74	2	based,otherwise	all percentages and ratios are calculated based on the total composition unless otherwise indicated.
+29	5	amber,anisic,powdery,spicy,watery	amber, powdery spicy or watery): dodecahydro-3a,6,6,9a-tetramethyl-naphtho[2,1-b]furan and any of its stereoisomers, heliotropin, anisic aldehyde, eugenol, cinnamic aldehyde, clove oil, 3-(1,3-benzodioxol-5-yl)-2-methylpropanal and/or 3-(3-isopropyl-1-phenyl)butanal.
+48	3	art,how,result	those with skill in the art appreciate how differences in the chemical structure of the molecule can result in significant differences in the odor, notes and characteristics of a molecule.
+143	1	optionally	and iii) optionally at least one perfumery adjuvant.
+143	1	properties	that does not significantly alter the organoleptic properties of perfuming ingredients.
+71	2	generally,otherwise	thus, unpurified reaction mixtures are generally excluded from the present invention unless otherwise specified.
+46	3	bleach,cleaning,dry	as well as cleaning auxiliaries such as bleach additives and “stain-stick” or pre-treat types, substrate-laden products such as dryer added sheets, dry and wetted wipes and pads, nonwoven substrates, and sponges;
+138	1	acetate	decahydro-2,5,5,8a-tetramethyl-2-naphthyl acetate;
+23	6	background,care,chemicals,give,need,perfumers	background of the invention there is an ongoing need in the fragrance industry to provide new chemicals to give perfumers and other persons ability to create new fragrances for perfumes, colognes and personal care products.
+68	2	art,prior	the citation of any document is not to be construed as an admission that it is prior art with respect to the present invention.
+17	8	acetate,acid,alcohol,geranium,lemon,lilial,orange,rose	preference is given to using bergamot oil, dihydromyrcenol, lilial, lyral, citronellol, phenylethyl alcohol, α-hexylcinnamaldehyde, geraniol, benzylacetone, cyclamen aldehyde, linalool, boisambrene forte, ambroxan, indole, hedione, sandelice, lemon oil, mandarin oil, orange oil, allyl amyl glycolate, cyclovertal, lavandin oil, clary sage oil, β-damascone, geranium oil bourbon, cyclohexyl salicylate, vertofix coeur, iso-e-super, fixolide np, evernyl, iraldein gamma, phenylacetic acid, geranyl ace
+34	4	acid,combination,extract,increasing	a dietary ingredient may be one, or any combination, of the following substances: a vitamin, a mineral, an herb or other botanical, an amino acid, a dietary substance for use by people to supplement the diet by increasing the total dietary intake, a concentrate, metabolite, constituent, or extract.
+27	5	bacteria,perspiration,results,through,unpleasant	body odors are formed through the action of skin bacteria on apocrine perspiration which results in the formation of unpleasant-smelling degradation products.
+66	2	art,process	the encapsulation is a well known process to a person skilled in the art, and may be performed, for instance, using techniques such as spray-drying, agglomeration or yet extrusion;
+66	2	effect,preparation	moreover, by “perfuming co-ingredient” it is meant here a compound, which is used in a perfuming preparation or a composition to impart a hedonic effect.
+66	2	base,optionally	an invention&#39;s composition consisting of at least one compound of formula (i) and at least one perfumery carrier represents a particular embodiment of the invention as well as a perfuming composition comprising at least one compound of formula (i), at least one perfumery carrier, at least one perfumery base, and optionally at least one perfumery adjuvant.
+132	1	acetate	3-pentyltetrahydro-2h-pyran-4-yl acetate;
+33	4	aromatic,eucalyptus,herbal,menthol	aromatic-herbal ingredients: eucalyptus oil, camphor, eucalyptol, menthol and/or alpha-pinene;
+22	6	background,particularly,provided,relatively,top,volatility	background of the invention one of the problems faced by the perfumery industry lies in the relatively rapid loss of olfactive benefit provided by odoriferous compounds due to their volatility, particularly that of “top-notes”.
+26	5	determined,dry,prolonged,washing,wet	the substantivity can for example be determined by washing a textile with a textile detergent composition comprising the aroma chemical and subsequent olfactory evaluation of the textile directly after washing (wet textile) as well as evaluation of the dry textile after prolonged storage.
+129	1	comprise	examples of such materials may comprise wall-forming and plasticizing materials, such as mono, di- or trisaccharides, natural or modified starches, hydrocolloids, cellulose derivatives, polyvinyl acetates, polyvinylalcohols, proteins or pectins, or yet the materials cited in reference texts such as h.
+43	3	care,foot,hand	a soap, a shower or bath mousse, oil or gel, or a hygiene product or a foot/hand care products);
+32	4	base,effective,formulation,together	in other words, a perfumed consumer product according to the invention is a manufactured product which comprises a functional formulation also referred to as “base”, together with benefit agents, among which an effective amount of microcapsules according to the invention.
+127	1	care	a body-care product, such as a hair care product (e.g.
+42	3	art,pleasant,positive	in other words such an ingredient, to be considered as being a perfuming one, must be recognized by a person skilled in the art as being able to at least impart or modify in a positive or pleasant way the odor of a composition, and not just as having an odor.
+31	4	flowers,fruit,fruits,leaves	natural fragrances are extracts from flowers, stems and leaves, fruits, fruit peels, roots, woods, herbs and grasses, needles and branches, and resins and balsams.
+31	4	bleach,booster,care,water	a fabric care product, such as a liquid or solid detergent, a fabric softener, a liquid or solid scent booster, a fabric refresher, an ironing water, a paper, a bleach, a carpet cleaner, a curtain-care product;
+30	4	base,case,effect,them	the nature and type of the constituents of the perfumery consumer base do not warrant a more detailed description here, which in any case would not be exhaustive, the skilled person being able to select them on the basis of his general knowledge and according to the nature and the desired effect of said product.
+60	2	cedar,wood	acetylated cedar wood oil (methyl cedryl ketone);
+24	5	based,case,hydrophobic,pigments,preparation	the total quantity of inorganic pigments, in particular hydrophobic inorganic micro-pigments in the finished cosmetic preparation according to the present invention is advantageously from 0.1 to 30% by weight, preferably 0.5 to 10.0% by weight, in each case based on the total weight of the preparation.
+40	3	corresponding,formulation,optionally	in other words, a perfumed article according to the invention comprises the functional formulation, as well as optionally additional benefit agents, corresponding to a consumer product, e.g.
+20	6	concentration,defined,impression,panel,test,threshold	a threshold value of an odor is the concentration of a substance in the relevant gas space at which an odor impression can just still be perceived by a representative test panel, although it no longer has to be defined.
+118	1	ethyl	2-ethyl-4-hydroxy-5-methyl-2h-furan-3-one;
+118	1	provided	a list of suitable fragrances is provided in u.s.
+59	2	art,effect	those with skill in the art will be able to employ the desired amount to provide desired fragrance effect and intensity.
+57	2	form,precise	the precise nature of these additional components, and levels of incorporation thereof, will depend on the physical form of the composition and the nature of the operation for which it is to be used.
+38	3	aromatic,comprise,defined	the term “aliphatic polyisocyanate” is defined as a polyisocyanate which does not comprise any aromatic moiety.
+38	3	formulation,pleasant,synthetic	the terms “fragrance formulation”, “fragrance composition”, and “perfume composition” mean the same and refer to a consumer composition that is a mixture of compounds including, for example, alcohols, aldehydes, ketones, esters, ethers, lactones, nitriles, natural oils, synthetic oils, and mercaptans, which are admixed so that the combined odors of the individual components produce a pleasant or desired fragrance.
+56	2	antiperspirant,care	a vanishing cream or a deodorant or antiperspirant), or a skin-care product (e.g.
+22	5	applying,determined,impression,strip,test	the tenacity can for example be determined by applying the aroma chemical to a test strip, and by subsequent olfactory evaluation of the odor impression of the test strip.
+27	4	care,cleaning,comprise,performance	enzymes—the compositions can comprise one or more detergent enzymes which provide cleaning performance and/or fabric care benefits.
+18	6	active,activity,comprise,group,hydrophobic,solution	cationically active surfactants comprise the hydrophobic high molecular group required for the surface activity in the cation by dissociation in aqueous solution.
+36	3	cleaning,intended,washing	as detergents there are intended applications such as detergent compositions or cleaning products for washing up or for cleaning various surfaces, e.g.
+27	4	bacteria,perspiration,process,underarm	where perspiration is present in the underarm region, extracellular enzymes-esterases, mainly proteases and/or lipases are formed by bacteria and split the esters present in the perspiration, releasing odors in the process.
+35	3	application,determine,test	test methods it is understood that the test methods that are disclosed in the test methods section of the present application should be used to determine the respective values of the parameters of applicants&#39;
+105	1	provided	the following are provided as specific embodiments of the present invention.
+15	7	defined,easily,few,mixed,multiple,rather,single	complexity of odor notes refers to the presence of multiple and/or mixed but defined odors rather than a single note or a few easily identifiable notes.
+35	3	case,effect,them	the nature and type of the constituents of the perfumed consumer product do not warrant a more detailed description here, which in any case would not be exhaustive, the skilled person being able to select them on the basis of his general knowledge and according to the nature and the desired effect of said product.
+21	5	concentration,determine,precise,specifically,standard	specifically, the gas chromatograph is calibrated to determine the exact volume of the perfume oil ingredient injected by the syringe, the precise split ratio, and the hydrocarbon response using a hydrocarbon standard of known concentration and chain-length distribution.
+21	5	average,concentration,determines,panelists,threshold	the average across all panelists determines the odor threshold concentration of the perfuming compound.
+26	4	care,commercial,form,intended	home care, family care, feminine care, health care, snack and/or beverage products or devices intended to be used or consumed in the form in which it is sold, and not intended for subsequent commercial manufacture or modification.
+26	4	care,fresheners,preparation,preparations	the use of the compounds of the present invention is widely applicable in current perfumery products, including the preparation of perfumes and colognes, the perfuming of personal care products such as soaps, shower gels, and hair care products as well as air fresheners and cosmetic preparations.
+34	3	acid,comprise,water	suitable water-soluble organic materials are the homo- or co-polymeric acids or their salts, in which the polycarboxylic acid may comprise at least two carboxyl radicals separated from each other by not more than two carbon atoms.
+34	3	corresponding,formulation,optionally	in other words, a perfuming consumer product according to the invention comprises the functional formulation, as well as optionally additional benefit agents, corresponding to the desired consumer product, e.g.
+51	2	intended,whether	intended for textile, dish or hard-surface treatment, whether they are intended for domestic or industrial use.
+34	3	cationic,ethyl,particularly	particularly suitable cationic surfactants are quaternary ammonium compounds, preferably ammonium halides, more especially chlorides and bromides, such as alkyl trimethyl ammonium chlorides, dialkyl dimethyl ammonium chlorides and trialkyl methyl ammonium chlorides, for example, cetyl trimethyl ammonium chloride, stearyl trim ethyl ammonium chloride, distearyl dimethyl ammonium chloride, lauryl dimethyl ammonium chloride, lauryl dimethyl benzyl ammonium chloride and tricetyl methyl ammonium chlo
+34	3	acid,fatty,generally	“esterquats” are generally understood to be quaternized fatty acid triethanolamine ester salts.
+25	4	acetate,ethyl,patchouli,woody	woody ingredients: 1-(octahydro-2,3,8,8-tetramethyl-2-naphtalenyl)-1-ethanone, patchouli oil, terpenes fractions of patchouli oil, (1′r,e)-2-ethyl-4-(2′,2′,3′-trimethyl-3′-cyclopenten-1′-yl)-2-buten-1-ol, 2-ethyl-4-(2,2,3-trimethyl-3-cyclopenten-1-yl)-2-buten-1-ol, methyl cedryl ketone, 5-(2,2,3-trimethyl-3-cyclopentenyl)-3-methylpentan-2-ol, 1-(2,3,8,8-tetramethyl-1,2,3,4,6,7,8,8a-octahydronaphthalen-2-yl)ethan-1-one and/or isobornyl acetate;
+25	4	add,formulation,make,noticeable	when used in a fragrance formulation these ingredients provide additional notes to make a fragrance formulation more desirable and noticeable, and add the perception of value.
+99	1	art	other modifications of this invention will be readily apparent to those skilled in the art.
+33	3	applied,effect,pleasant	for the sake of clarity, “perfumed consumer product” is meant to designate a consumer product which delivers at least a pleasant perfuming effect to the surface or space to which it is applied (e.g.
+33	3	called,group,particularly	particularly suitable zwitterionic surfactants are the so-called betaines, such as the n-alkyl-n,n-dimethyl ammonium glycinates, for example, cocoalkyl dimethyl ammonium glycinate, n-acylaminopropyl-n,n-dimethyl ammonium glycinates, for example, cocoacylaminopropyl dimethyl ammonium glycinate, and 2-alkyl-3-carboxymethyl-3-hydroxyethyl imidazolines, containing 8 to 18 carbon atoms in the alkyl or acyl group, and cocoacylaminoethyl hydroxyethyl carboxymethyl glycinate.
+33	3	effect,effective,effects	olfactory effective amount is understood to mean the amount of compound in perfume compositions the individual component will contribute to its particular olfactory characteristics, but the olfactory effect of the perfume composition will be the sum of the effects of each of the perfumes or fragrance ingredients.
+97	1	neutral	by “perfumery carrier” we mean here a material which is practically neutral from a perfumery point of view, i.e.
+97	1	care	an air care product, such as an air freshener or a “ready to use” powdered air freshener;
+48	2	art,intended	it is intended herein that the compounds described herein include isomeric mixtures of such compounds, as well as those isomers that may be separated using techniques known to those having skill in the art.
+48	2	care,cleaning	and shaving products, products for and/or methods relating to treating fabrics, hard surfaces and any other surfaces in the area of fabric and home care, including: air care, car care, dishwashing, fabric conditioning (including softening), laundry detergency, laundry and rinse additive and/or care, hard surface cleaning and/or treatment, and other cleaning for consumer or institutional use;
+32	3	acetate,alcohol,ethyl	however, one can cite as non-limiting examples, solvents such as butylene or propylene glycol, glycerol, dipropyleneglycol and its monoether, 1,2,3-propanetriyl triacetate, dimethyl glutarate, dimethyl adipate 1,3-diacetyloxypropan-2-yl acetate, diethyl phthalate, isopropyl myristate, benzyl benzoate, benzyl alcohol, 2-(2-ethoxyethoxy)-1-ethano, tri-ethyl citrate or mixtures thereof, which are the most commonly used.
+32	3	applied,deliver,effect	for the sake of clarity, it has to be mentioned that, by “perfumed consumer product” it is meant a consumer product which is expected to deliver among different benefits a perfuming effect to the surface to which it is applied (e.g.
+32	3	case,effect,them	the nature and type of the other constituents of the perfumed consumer product do not warrant a more detailed description here, which in any case would not be exhaustive, the skilled person being able to select them on the basis of his general knowledge and according to the nature and the desired effect of said product.
+32	3	base,formulations,found	base formulations of consumer products in which the microcapsules of the invention can be incorporated can be found in the abundant literature relative to such products.
+19	5	aromatic,ethyl,eucalyptus,herbal,menthol	aromatic-herbal ingredients: eucalyptus oil, camphor, eucalyptol, 5-methyltricyclo[6.2.1.0˜2,7˜]undecan-4-one, 1-methoxy-3-hexanethiol, 2-ethyl-4,4-dimethyl-1,3-oxathiane, 2,2,7/8,9/10-tetramethylspiro[5.5]undec-8-en-1-one, menthol and/or alpha-pinene;
+94	1	art	the nature and variety of the other ingredients that can also be employed are known to those with skill in the art.
+47	2	character,formulation	the term “improving” in the phrase “improving, enhancing or modifying a fragrance formulation” is understood to mean raising the fragrance formulation to a more desirable character.
+47	2	character,formulation	the term “enhancing” is understood to mean making the fragrance formulation greater in effectiveness or providing the fragrance formulation with an improved character.
+47	2	art,process	the encapsulation is a well-known process to a person skilled in the art, and may be performed, for instance, by using techniques such as spray-drying, agglomeration or yet extrusion;
+31	3	additionally,alcohol,contain	as aerosols they tend to contain smaller amounts of such essential oils, by way of example less than 5% or less than 2% by weight, but additionally include compounds such as acetaldehyde (in particular, &lt;0.5% by weight), isopropyl alcohol (in particular, &lt;5% by weight), mineral oil (in particular, &lt;5% by weight), and propellants.
+31	3	malodor,obtain,result	in general, the amount of malodor counteractant agent present is the ordinary dosage required to obtain the desired result.
+31	3	defined,effect,preparation	by “perfumery co-ingredient” it is meant here a compound, which is used in a perfuming preparation or a composition to impart a hedonic effect and which is not a microcapsule as defined above.
+31	3	musk,nice,sandalwood	“nice” can also be the odor of musk or sandalwood.
+31	3	affect,comprise,intended	pharmaceutical compositions comprise compositions which are intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease as well as articles (other than food) intended to affect the structure or any function of the body of man or other animals.
+92	1	resulting	for the sake of clarity, it is also understood that any mixture resulting directly from a chemical synthesis, e.g.
+92	1	ethyl	2-ethyl-4-(2,2,3-trimethyl-3-cyclopent-1-yl)-2-buten-1-ol;
+23	4	cationic,character,non-ionic,water	the term “hydrocolloid” refers to a broad class of water-soluble or water-dispersible polymers having anionic, cationic, zwitterionic or non-ionic character.
+23	4	care,fresheners,preparation,preparations	the use of the compounds of the present invention is widely applicable in current perfumery products, including the preparation of perfumes and colognes, the perfuming of personal care products such as soaps, shower gels, and hair care products, fabric care products, air fresheners, and cosmetic preparations.
+46	2	character,formulation	the term “modifying” is understood to mean providing the fragrance formulation with a change in character.
+23	4	animal,bacteria,plant,whether	pests refer to any living organism, whether animal, plant or fungus, which is invasive or troublesome to plants or animals, pests include insects notably arthropods, mites, spiders, fungi, weeds, bacteria and other microorganisms.
+92	1	effect	the amount will vary depending on many factors including other ingredients, their relative amounts and the effect that is desired.
+18	5	cleaning,form,otherwise,powder,washing	as used herein, the term “fabric and/or hard surface cleaning and/or treatment composition” is a subset of cleaning and treatment compositions that includes, unless otherwise indicated, granular or powder-form all-purpose or “heavy-duty” washing agents, especially cleaning detergents;
+30	3	cleaning,medium,washing	as a practical matter, and not by way of limitation, the compositions and cleaning processes herein can be adjusted to provide on the order of at least one part per hundred million of the benefit agent mrl species in the aqueous washing medium, and may provide from about 0.005 ppm to about 25 ppm, from about 0.05 ppm to about 10 ppm, or even from about 0.1 ppm to about 5 ppm, of the mrl in the wash liquor.
+30	3	adding,effective,properties	in other words, it concerns a method to confer, enhance, improve or modify the odor properties of a perfuming composition or of a perfumed article, which method comprises adding to said composition or article an effective amount of at least a compound of formula (i).
+15	6	concentration,defined,impression,panel,test,threshold	a threshold value is the concentration of a substance in the relevant gas space at which an odor impression can just still be perceived by a representative test panel, although it no longer has to be defined.
+30	3	chemicals,need,perfumers	these variations and the ongoing need to discover and use the new chemicals in the development of new fragrances allow the perfumers to apply the new compounds in creating new fragrances.
+30	3	application,intended,otherwise	for example, a dimension disclosed as “40 mm” is intended to mean “about 40 mm.” every document cited herein, including any cross referenced or related patent or application, is hereby incorporated herein by reference in its entirety unless expressly excluded or otherwise limited.
+30	3	form,solution,water	b) preparing an aqueous solution of an emulsifier or colloidal stabilizer to form a water phase;
+18	5	acetate,alcohol,dried,form,powder	in particular the slurry may be spray-dried preferably in the presence of a polymeric carrier material such as polyvinyl acetate, polyvinyl alcohol, dextrins, natural or modified starch, vegetable gums, pectins, xanthans, alginates, carragenans or cellulose derivatives to provide microcapsules in a powder form.
+15	6	intensive,itself,mint,particularly,peppermint,top	in the mint range, for example, it is known that menthyl methyl ether intensifies the perfumery or taste mixtures of peppermint oils and particularly in top notes brings about a considerably more intensive and more complex perception although the ether itself, being a pure substance, develops no particular intensive odor at all.
+30	3	comprise,intended,plant	crop protection compositions comprise compositions which are intended for the managing of plant diseases, weeds and other pests (both vertebrate and invertebrate) that damage agricultural crops and forestry.
+22	4	art,base,effect,mixed	these values are dependent on the nature of the article to be perfumed and on the desired organoleptic effect as well as on the nature of the co-ingredients in a given base when the compounds according to the invention are mixed with perfuming co-ingredients, solvents or additives commonly used in the art.
+22	4	acid,art,comprise,neutral	they comprise, for example, as main constituent, a complex zinc salt of ricinoleic acid or specific, largely odour-neutral fragrances which are known to the person skilled in the art as “fixatives”, such as, for example, extracts of labdanum or styrax or certain abietic acid derivatives.
+22	4	base,comprise,origin,water	for the compositions which comprise both a perfumery carrier and a perfumery base, other suitable perfumery carrier, than those previously specified, can be also ethanol, water/ethanol mixtures, limonene or other terpenes, isoparaffins such as those known under the trademark isopar® (origin: exxon chemical) or glycol ethers and glycol ether esters such as those known under the trademark dowanol® (origin: dow chemical company).
+29	3	case,effect,them	the nature and type of the constituents of the consumer product do not warrant a more detailed description here, which in any case would not be exhaustive, the skilled person being able to select them on the basis of its general knowledge and according to the nature and the desired effect of said product.
+29	3	care,foot,hand	skin creams and lotions, face creams and lotions, sunscreen creams and lotions, after-sun creams and lotions, hand creams and lotions, foot creams and lotions, hair removal creams and lotions, after-shave creams and lotions, tanning creams and lotions, hair care products such as e.g.
+43	2	case,formulations	these formulations do not warrant a detailed description here which would in any case not be exhaustive.
+17	5	acid,called,fatty,head,technical	examples of such monocarboxylic acids are caproic acid, caprylic acid, capric acid and technical mixtures thereof such as, for example, so-called head-fractionated fatty acid.
+28	3	comprise,origin,water	for the compositions which comprise both a perfumery carrier and a perfumery co-ingredient, other suitable perfumery carriers than those previously specified, can be also ethanol, water/ethanol mixtures, limonene or other terpenes, isoparaffins such as those known under the trademark isopar® (origin: exxon chemical) or glycol ethers and glycol ether esters such as those known under the trademark dowanol® (origin: dow chemical company).
+21	4	acid,alcohol,fatty,mixed	mixed esters of pentaerythritol, fatty acids, citric acid and fatty alcohol and/or mixed esters of c 6-22 fatty acids, methyl glucose and polyols, preferably glycerol or polyglycerol, polyalkylene glycols and glycerol carbonate.
+28	3	acetate,ethyl,fruity	fruity ingredients: gamma-undecalactone, 2,2,5-trimethyl-5-pentylcyclopentanone, 2-methyl-4-propyl-1,3-oxathiane, 4-decanolide, ethyl 2-methyl-pentanoate, hexyl acetate, ethyl 2-methylbutanoate, gamma-nonalactone, allyl heptanoate, 2-phenoxyethyl isobutyrate, ethyl 2-methyl-1,3-dioxolane-2-acetate, 3-(3,3/1,1-dimethyl-5-indanyl)propanal, diethyl 1,4-cyclohexanedicarboxylate, 3-methyl-2-hexen-1-yl acetate, 1-[3,3-dimethylcyclohexyl]ethyl [3-ethyl-2-oxiranyl]acetate and/or diethyl 1,4-cyclohexane 
+28	3	apple,concise,tart	however, the odor of a typically tart apple can also be concise.
+21	4	acid,extract,fatty,plant	alpha-hydroxy fatty acids, palmitic acid, phytic acid, lactoferrin), alpha-hydroxy acids (for example citric acid, lactic acid, malic acid), humic acid, bile acid, bile extracts, bilirubin, biliverdin, boldin (=alkaloid from the plant peumus boldus, boldo extract, edta, egta and derivatives thereof, unsaturated fatty acids and derivatives thereof (e.g.
+81	1	aforementioned	the proportions in which the compounds according to the invention can be incorporated into the various aforementioned articles or compositions vary within a wide range of values.
+27	3	art,effect,how	the use of solid carrier is of current use in the art and a person skilled in the art knows how to reach the desired effect.
+27	3	adding,form,water	c) adding the oil phase to the water phase to form an oil-in-water dispersion, wherein the mean droplet size is comprised between 1 and 500 μm, preferably between 5 and 50 μm;
+27	3	acid,fatty,optionally	examples of other suitable polyolesters are the mono-, di- and triesters of trimethylol propane or pentaerythritol with lauric acid, cocofatty acid, tallow fatty acid, palmitic acid, stearic acid, oleic acid, behenic acid and the like optionally reacted with 1 to 30 mol ethylene oxide.
+27	3	care,color,preparation	a shampoo, a coloring preparation or a hair spray, a color-care product, a hair shaping product, a dental care product), a disinfectant, an intimate care product;
+27	3	chemicals,positive,properties	furthermore, aroma chemicals should also have additional positive secondary properties, such as e.g.
+20	4	called,properties,synthetic,waxy	the properties can be further optimized by so-called “coating” with suitable materials with regard to a more targeted release of the scent, for which purpose preferably waxy synthetic substances such as e.g.
+40	2	ethyl,muguet	super muguet™ ((e)-6-ethyl-3-methyloct-6-en-1-ol);
+20	4	based,form,preparation,process	typically a process for the preparation of polyurea or polyurethane-based microcapsule slurry include the following steps: a) dissolving at least one polyisocyanate having at least two isocyanate groups in an oil to form an oil phase;
+20	4	art,case,determined,easily	the amounts of cosmetic or dermatological auxiliary agents and additives and perfume to be used in each case can easily be determined by the person skilled in the art by simple trial and error, depending on the nature of the particular product.
+20	4	care,deodorants,fresheners,preparations	examples of suitable consumer product bases include solid or liquid detergents and fabric softeners as well as all the other articles common in perfumery, namely perfumes, colognes or after-shave lotions, perfumed soaps, shower or bath salts, mousses, oils or gels, hygiene products or hair care products such as shampoos, body-care products, deodorants or antiperspirants, air fresheners and also cosmetic preparations.
+40	2	acetate,green	green ingredients: 2-methyl-3-hexanone (e)-oxime, 2,4-dimethyl-3-cyclohexene-1-carbaldehyde, 2-tert-butyl-1-cyclohexyl acetate, styrallyl acetate, allyl (2-methylbutoxy)acetate, 4-methyl-3-decen-5-ol, diphenyl ether, (z)-3-hexen-1-ol and/or 1-(5,5-dimethyl-1-cyclohexen-1-yl)-4-penten-1-one;
+16	5	chemicals,entitled,formulations,identical,table	compositions 1a, 1b, 2a and 2b can for example be formulated in specific formulations as disclosed in ip.com number: ipcom000258614d entitled new aroma chemicals pages 6 to 46, table 1 to table d13, wherein the “fragrance composition 1a” is replaced by identical amounts of compositions 1a, 1b, 2a or 2b.
+20	4	care,fresheners,preparation,preparations	the use of the compounds of the present invention is widely applicable in current perfumery products, including the preparation of perfumes and colognes, the perfuming of personal care products such as soaps, shower gels, and hair care products, fabric care products as well as air fresheners and cosmetic preparations.
+79	1	effective	a detergent or an air freshener, and an olfactive effective amount of at least one invention&#39;s compound.
+39	2	otherwise,standard	the nmr spectral data were recorded in cdcl 3 (if not stated otherwise) with a 360 or 400 mhz machine for 1 h and 13 c, the chemical shifts δ are indicated in ppm with respect to tms as standard, the coupling constants j are expressed in hz.
+39	2	effect,formulation	however, the olfactory effect of the fragrance formulation will be the sum of effect of each of the fragrance ingredients.
+26	3	malodor,together,usually	thus, it will be seen that the composition of the invention is usually one in which the malodor counteractant is present together with a carrier by means of which or from which the malodor counteractant can be introduced into air space wherein the malodor is present, or a substrate on which the malodor has deposited.
+26	3	acid,combination,fatty	a combination of these substances with alkyl oligoglucosides and/or fatty acid n-methyl glucamides of the same chain length and/or polyglycerol poly-12-hydroxystearates is preferably used.
+26	3	aromatic,comprise,group	alkyl, aromatic or alkenyl), it is also meant a group which may comprise moieties having any one of said topologies or being saturated or unsaturated, as explained above.
+26	3	care,cleaning,toilet	or a home care product, such all-purpose cleaners, liquid or power or tablet dishwashing products, toilet cleaners or products for cleaning various surfaces, for example sprays &amp;
+26	3	maintains,profile,stability	an aroma chemical with high stability maintains its aroma profile over a long period in time, preferably in a large variety of compositions and under various storage conditions.
+77	1	otherwise	all percentages and ratios are calculated by weight unless otherwise indicated.
+77	1	fact	said compositions, which in fact can be advantageously employed as perfuming ingredients, are also an object of the present invention.
+76	1	ethyl	however, one can cite as non-limiting examples solvents such as dipropyleneglycol, diethyl phthalate, isopropyl myristate, benzyl benzoate, 2-(2-ethoxyethoxy)-1-ethanol or ethyl citrate, which are the most commonly used.
+76	1	art	examples the invention will now be described in further detail by way of the following examples, wherein the abbreviations have the usual meaning in the art, the temperatures are indicated in degrees centigrade (° c.);
+19	4	care,preparation,synthetic,washing	soap, synthetic detergent, liquid washing, shower and bath preparation, bath product (capsule, oil, tablet, salt, bath salt, soap, etc.), effervescent preparation, a skin care product such as e.g.
+19	4	flower,lavender,musk,rose-like	musk, flower scents such as lavender-like, rose-like, iris-like, and carnation-like.
+19	4	composed,denotes,impression,profile	the term “aroma profile” denotes the overall aroma impression of an aroma chemical and is composed of the individual aroma impressions of an aroma chemical.
+25	3	form,neat,optionally	composition, in neat form or diluted in a liquor, for example, a wash liquor and then the situs may be optionally washed and/or rinsed.
+25	3	acetate,ethyl,fruity	fruity ingredients: gamma undecalactone, 4-decanolide, ethyl 2-methyl-pentanoate, hexyl acetate, ethyl 2-methylbutanoate, gamma nonalactone, allyl heptanoate, 2-phenoxyethyl isobutyrate, ethyl 2-methyl-1,3-dioxolane-2-acetate and/or diethyl 1,4-cyclohexane dicarboxylate;
+15	5	advantageous,care,toilet,unexpected,water	summary of the invention the present invention provides novel compounds and their unexpected advantageous use in enhancing, improving or modifying the fragrance of perfumes, colognes, toilet water, fabric care products, personal products and the like.
+25	3	accord,found,performance	the odor qualities found in these materials assist in beautifying and enhancing the finished accord as well as improving the performance of the other materials in the fragrance.
+25	3	adding,formulation,resulting	until melted, (iii) with stirring, adding 4% cryogenically ground polymer containing a fragrance while maintaining the temperature 75° c., and (iv) stirring the resulting mixture in order to ensure a uniform suspension while a composition of this invention is added to the formulation.
+25	3	acid,fatty,formulations	c 12/18 fatty acid monoesters and diesters of addition products of ethylene oxide onto glycerol are known as lipid layer enhancers for cosmetic formulations.
+25	3	advantageous,green,violet	advantageous dyes are for example carmine, berlin blue, chromium oxide green, ultramarine blue and/or manganese violet.
+15	5	achieve,art,corresponding,result,substantially	as one of ordinary skill in the art will readily appreciate from the disclosure of the presently disclosed subject matter, processes, machines, manufacture, compositions of matter, means, methods, or steps, presently existing or later to be developed that perform substantially the same function or achieve substantially the same result as the corresponding embodiments described herein can be utilized according to the presently disclosed subject matter.
+15	5	cleaning,form,otherwise,powder,washing	as used herein, the term “cleaning composition” includes, unless otherwise indicated, granular or powder-form all-purpose or “heavy-duty” washing agents, especially cleaning detergents;
+25	3	applied,form,fresheners	perfume compositions can be selected from fine fragrances, air fresheners in liquid form, gel-like form or a form applied to a solid carrier, aerosol sprays, scented cleaners, perfume candles and oils, such as lamp oils or oils for massage.
+25	3	generally,impression,pleasant	the term odor composition comprises “fragrance composition” or “scent composition” (used interchangeably herein), which predominately induce an odor impression which is generally felt as pleasant.
+74	1	intended	for example, a dimension disclosed as “40 mm” is intended to mean “about 40 mm”.
+37	2	art,standard	it is understood that any standard method known by a person skilled in the art to perform such drying is also applicable.
+37	2	antiperspirant,care	a vanishing cream, body lotion or a deodorant or antiperspirant), or a skin-care product (e.g.
+72	1	acid	3,7-dimethyl-2,6-octadienoic acid nitrile;
+36	2	cationic,determined	the cationic charge density of the cationic polymers may be determined by the kjeldahl method as described in the us pharmacopoeia under chemical tests for nitrogen determination.
+24	3	environmental,often,origin	fragrances of natural origin are mostly expensive, often limited in their available amount and, on account of fluctuations in environmental conditions, are also subject to variations in their content, purity etc.
+36	2	nice,sweet	however, “nice” does not have to be synonymous with “sweet”.
+36	2	raw,specifically	specifically, mention may be made of: extracts from natural raw materials such as essential oils, concretes, absolutes, resins, resinoids, balsams, tinctures such as e.g.
+24	3	corresponding,formulation,optionally	in other words, a perfuming consumer product according to the invention is a perfumed consumer product which comprises the functional formulation, as well as optionally additional benefit agents, corresponding to the desired consumer product, e.g.
+18	4	art,comprise,found,raw	the individual perfume raw materials which comprise a known natural oil can be found by reference to journals commonly used by those skilled in the art such as “perfume and flavourist” or “journal of essential oil research”, or listed in reference texts such as the book by s.
+24	3	acid,fatty,group	finsolv® tn), linear or branched, symmetrical or asymmetrical dialkyl ethers having 6 to 22 carbon atoms per alkyl group, such as, for example, dicaprylyl ether (cetiol® oe), ring-opening products of epoxidized fatty acid esters with polyols, silicone oils (cyclomethicones, silicone methicone grades, etc.) and/or aliphatic or naphthenic hydrocarbons, such as, for example, squalane, squalene or dialkylcyclohexanes.
+24	3	deodorants,give,masking	the odour masking agents are fragrances or perfume oils, which, in addition to their function as odour masking agents, give the deodorants their respective fragrance note.
+24	3	group,neutral,preparation	other preferred liquid carrier substances, which may be a component of a preparation according to the invention are selected from the group consisting of oils such as vegetable oil, neutral oil and mineral oil.
+18	4	berry,blossom,lime,mint	examples are sage oil, camomile oil, clove oil, melissa oil, mint oil, cinnamon leaf oil, lime-blossom oil, juniper berry oil, vetiver oil, olibanum oil, galbanum oil, ladanum oil and lavendin oil.
+18	4	acid,application,fatty,through	reference is made in this connection to international patent application wo 91/01295 a1, according to which triethanolamine is partly esterified with fatty acids in the presence of hypophosphorous acid, air is passed through the reaction mixture and the whole is then quaternised with dimethyl sulphate or ethylene oxide.
+18	4	art,intended,prior,process	one such process, which is intended to be representative of the relevant prior art, is proposed in european patent ep 0750606 b1.
+18	4	advantageous,particularly,performance,properties	with the performance properties of the esterquats in mind, a ratio of 1.2:1 to 2.2:1 and preferably 1.5:1 to 1.9:1 has proved to be particularly advantageous.
+24	3	against,bacteria,effective	odour absorbers are not effective against bacteria.
+71	1	base	by “perfumery base” we mean here a composition comprising at least one perfuming co-ingredient.
+70	1	ethyl	3a-ethyl-6,6,9a-trimethyldodecahydronaphtho[2,1-b]furan;
+35	2	aromatic,chemicals	more preferably, the aromatic polyisocyanate is a polyisocyanurate of toluene diisocyanate (commercially available from bayer under the tradename desmodur® rc), a trimethylol propane-adduct of toluene diisocyanate (commercially available from bayer under the tradename desmodur® l75), a trimethylol propane-adduct of xylylene diisocyanate (commercially available from mitsui chemicals under the tradename takenate® d-110n).
+35	2	acid,synthetic	semi-synthetic polymers such as carboxymethyl cellulose, sulfated cellulose, sulfated methylcellulose, carboxymethyl starch, phosphated starch, lignin sulfonic acid;
+35	2	base,case	a perfumery base according to the invention may not be limited to the above mentioned perfuming co-ingredients, and many other of these co-ingredients are in any case listed in reference texts such as the book by s.
+69	1	technical	description technical field the present invention relates to the field of perfumery.
+23	3	care,foot,washing	cosmetic products include: (a) cosmetic skincare products, especially bath products, skin washing and cleansing products, skincare products, eye makeup, lip care products, nail care products, intimate care products, foot care products;
+23	3	aforementioned,aspect,combination	in yet another aspect, the aforementioned alternative compounds can be used in combination with amine compounds.
+23	3	advantageous,odiferous,properties	the compounds should have advantageous odiferous (olfactory) or gustatory properties.
+23	3	origin,primary,synthetic	the amine polymers can possess primary and/or secondary amine functionalities and can be of either natural or synthetic origin.
+23	3	powder,toilet,washing	floor cleaners, window cleaners, dishwashing compositions both for handwashing and machine washing use, bath and sanitary cleaners, scouring milk, solid and liquid toilet cleaners, powder and foam carpet cleaners, waxes and polishes such as furniture polishes, floor waxes, shoe creams, disinfectants, surface disinfectants and sanitary cleaners, brake cleaners, pipe cleaners, limescale removers, grill and oven cleaners, algae and moss removers, mold removers, facade cleaners.
+23	3	active,base,form	fabric softener an object of the invention is a consumer product in the form of a fabric softener composition comprising: a fabric softener active base;
+23	3	active,base,form	liquid detergent an object of the invention is a consumer product in the form of a liquid detergent composition comprising: a liquid detergent active base;
+23	3	active,base,form	solid detergent an object of the invention is a consumer product in the form of a solid detergent composition comprising: a solid detergent active base;
+23	3	active,base,form	shampoo/shower gel an object of the invention is a consumer product in the form of a shampoo or a shower gel composition comprising: a shampoo or a shower gel active base;
+23	3	active,base,form	rinse-off conditioner an object of the invention is a consumer product in the form of a rinse-off conditioner composition comprising: a rinse-off conditioner active base;
+23	3	adding,effective,properties	in other words it concerns a method to confer, enhance, improve or modify the odor properties of a perfuming composition or of a perfumed article, which method comprises adding to said composition or article an effective amount of at least a compound of formula (i).
+17	4	acid,ethyl,fatty,resulting	c reaction product of fatty acid with methyldiethanolamine in a molar ratio 1.5:1, quaternized with methylchloride, resulting in a 1:1 molar mixture of n,n-bis(stearoyl-oxy-ethyl) n,n-dimethyl ammonium chloride and n-(stearoyl-oxy-ethyl) n,-hydroxyethyl n,n dimethyl ammonium chloride.
+17	4	base,comprise,origin,water	for the compositions which comprise both a perfumery carrier and a perfumery base, other suitable perfumery carriers, than those previously specified, can be also ethanol, water/ethanol mixtures, limonene or other terpenes, isoparaffins such as those known under the trademark isopar® (origin: exxon chemical) or glycol ethers and glycol ether esters such as those known under the trademark dowanol® (origin: dow chemical company).
+17	4	acid,apple,extract,fruit	apple fruit extract, soya seed extract, ursolic acid, soya isoflavones and soya proteins), sage extracts, mdi (company atrium;
+17	4	absorb,active,antiperspirant,retain	odour absorbers and antiperspirant active agents suitable odour absorbers are substances which are able to absorb and largely retain odour-forming compounds.
+17	4	corresponding,effective,formulation,optionally	in other words, a perfumed consumer product according to the invention is a perfumed consumer product which comprises a functional formulation, as well as optionally additional benefit agents, corresponding to the desired consumer product, and an olfactive effective amount of at least one invention&#39;s compound.
+17	4	dried,final,obtain,optionally	and 5) optionally drying the final dispersion to obtain the dried core-shell microcapsule.
+17	4	acid,aforementioned,form,resulting	the resulting ether moiety-containing product may be used ‘as-is’ as a cross-linking agent for the aforementioned substituted or un-substituted acrylic acid polymer or copolymer, or it may be self-condensed to form dimers, trimers and/or tetramers which may also be used as cross-linking agents for the aforementioned substituted or un-substituted acrylic acid polymers or co-polymers.
+34	2	intended,raw	food means a raw, cooked, or processed edible substance, ice, beverage or ingredient used or intended for use in whole or in part for human consumption, or chewing gum, gummies, jellies, and confectionaries.
+34	2	add,intended	a food supplement is a product intended for ingestion that contains a dietary ingredient intended to add further nutritional value to the diet.
+67	1	ethyl	ethyl 2-ethyl-6,6-dimethyl-2-cyclohexenecarboxylate;
+22	3	cleaning,hand,toilet	liquid cleaning and disinfecting agents, including antibacterial hand-wash types, cleaning bars, car or carpet shampoos, bathroom cleaners including toilet bowl cleaners;
+33	2	important,tools	it is useful to mention here that the possibility to have, in the compositions mentioned above, more than one compound of formula (i) is important as it enables the perfumer to prepare accords, perfumes, possessing the odor tonality of various compounds of the invention, creating thus new tools for his work.
+22	3	aspect,comprise,single	in yet another aspect, a single molecule may comprise an amine moiety and one or more of the alternative heteroatom moieties, for example, thiols, phosphines and selenols.
+22	3	cationic,positive,resulting	another class of polymers include polyethylene oxide-co-propyleneoxide-co-butylene oxide polymers of any ethylene oxide/propylene oxide/butylene oxide ratio with cationic groups resulting in a net theoretical positive charge or equal to zero (amphoteric).
+22	3	changes,easily,make	from the above description, a skilled artisan can easily ascertain the essential characteristics of the present invention, and without departing from the spirit and scope thereof, can make various changes and modifications of the invention to adapt it to various usages and conditions.
+33	2	intended,otherwise	instead, unless otherwise specified, each such value is intended to mean both the recited value and a functionally equivalent range surrounding that value.
+66	1	cleaning	the present invention can also be used to perfume cleaning agents, such as, but not limited to detergents, dishwashing materials, scrubbing compositions, window cleaners and the like.
+22	3	active,contain,formulations	these unit dose formulations can contain high concentrations of a functional material (e.g., 5-100% fabric softening agent or detergent active), fragrance (e.g., 0.5-100%, 0.5-40%, and 0.5-15%), and flavor (e.g., 0.1-100%, 0.1-40%, and 1-20%).
+22	3	composed,particles,resulting	the shell can also be hybrid, namely organic-inorganic such as a hybrid shell composed of at least two types of inorganic particles that are cross-linked, or yet a shell resulting from the hydrolysis and condensation reaction of a polyalkoxysilane macro-monomeric composition.
+33	2	group,water	anionic surfactants are characterized by a water-solubilizing anionic group such as, for example, a carboxylate, sulfate, sulfonate or phosphate group and a lipophilic group.
+33	2	cationic,corresponding	in addition, the readily biodegradable quaternary ester compounds, such as, for example, the dialkyl ammonium methosulfates and methyl hydroxyalkyl dialkoyloxyalkyl ammonium methosulfates marketed under the name of stepantexe and the corresponding products of the dehyquart® series, may be used as cationic surfactants.
+22	3	chemicals,impression,panel	for aroma chemicals with high tenacity the time span after which the panel can still identify an aroma impression is long.
+22	3	impression,stability,treated	in order to impart a long-lasting aroma impression to a composition or to a surface treated with a composition, the tenacity, the substantivity as well as the stability of the aroma chemical in the compositions should preferably be high.
+33	2	chemicals,toilet	summary of the invention the present invention provides novel chemicals, and the use of the chemicals to enhance the fragrance of perfumes, toilet waters, colognes, personal products and the like.
+64	1	care	products and/or methods relating to oral care including toothpastes, tooth gels, tooth rinses, denture adhesives, tooth whitening;
+64	1	acetate	4,7-methano-3a,4,5,6,7,7a-hexahydro-5 or 6-indenyl acetate;
+16	4	cases,found,search,whether	the search for new fragrances and flavorings is therefore in most cases difficult and laborious without knowing whether a substance with the desired odor and/or taste will even actually be found.
+32	2	substantially,volatility	in a wick-type air freshener, the carrier is a substantially odorless liquid of low volatility.
+16	4	adding,effective,process,properties	in other words, it concerns a method or a process to confer, enhance, improve or modify the odor properties of a perfuming composition or of a perfumed article or of a surface, which method comprises adding to said composition or article an effective amount of at least a compound of formula (i), e.g.
+32	2	comprise,group	a specific group may comprise a linear alkyl, a branched alkenyl (e.g.
+32	2	form,group	similarly, in all the embodiments of the invention, when a group is mentioned as being in the form of more than one type of topology (e.g.
+32	2	form,group	similarly, in all the embodiments of the invention, when a group is mentioned as being in the form of one type of saturation or unsaturation, (e.g.
+16	4	acid,aspects,fatty,water	in some aspects, the crystalline, hydroxyl-containing stabilizing agents may be water-insoluble wax-like substances, including fatty acid, fatty ester or fatty soap.
+16	4	aspect,aspects,clearly,defined	each aspect so defined may be combined with any other aspect or aspects unless clearly indicated to the contrary.
+16	4	combination,fact,form,need	the expressions “combination of”, “in combination with” or “combined with” when used herein referring to the compositions, methods or the use of two compounds, take account of the fact that the two compounds do not need to be used in the form of a physical mixture of said compounds but can be used (e.g., added) separately.
+32	2	chemicals,toilet	in addition, the present invention is directed to the use of the novel chemicals to enhance fragrance in perfumes, toilet waters, colognes, personal products and the like.
+21	3	form,optionally,water	2) dispersing or dissolving into water an aminoplast resin and optionally a stabilizer to form a water phase;
+21	3	concentration,precise,since	since the precise concentration at the detector at any point in time is known, the mass per volume inhaled is known and hence the concentration of the perfuming compound.
+21	3	concentration,determine,threshold	to determine the threshold concentration, solutions are delivered to the sniff port at the back-calculated concentration.
+21	3	denotes,impression,pleasant	thus a “fragrance” or “scent” denotes an aroma chemical, which predominately induces a pleasant odor impression.
+31	2	contain,optionally	chelating agents—the compositions herein may also optionally contain one or more copper, iron and/or manganese chelating agents.
+31	2	comprise,treated	the fabric may comprise most any fabric capable of being laundered or treated in normal consumer use conditions.
+31	2	art,prior	said differences lend the invention&#39;s compounds and the prior art compounds to be each suitable for different uses, i.e.
+31	2	art,process	the encapsulation is a well-known process to a person skilled in the art, and may be performed, for instance, using techniques such as spray-drying, agglomeration or yet extrusion;
+31	2	determined,threshold	the intensity can be determined via a threshold value determination.
+61	1	chemicals	arctander, perfume and flavor chemicals, vol.
+61	1	found	another source of suitable fragrances is found in perfumes, cosmetics and soaps , second edition, edited by w.
+20	3	application,applied,care	skin care including application of creams, lotions, and other topically applied products for consumer use including fine fragrances;
+30	2	comprise,generally	if utilized, chelating agents will generally comprise from about 0.1% by weight of the compositions herein to about 15%, or even from about 3.0% to about 15% by weight of the compositions herein.
+20	3	cationic,contain,positive	another source of cationic polymers contain protonatable amine groups so that the overall net charge is zero (amphoteric: mixture of cationic and anionic functional groups) or positive.
+20	3	cationic,contain,group	another group of polymers that can be used are those that contain cationic groups in the main chain or backbone.
+20	3	based,cationic,positive	other polymers include cationic polysiloxanes and cationic polysiloxanes with carbon-based grafts with a net theoretical positive charge or equal to zero (mixture of cationic and anionic functional groups).
+20	3	case,effect,them	the nature and type of the constituents of the perfumery consumer product do not warrant a more detailed description here, which in any case would not be exhaustive, the skilled person being able to select them on the basis of his general knowledge and according to the nature and the desired effect of said product.
+20	3	application,few,intended	“rinse-off” means the intended product usage includes application to skin and/or hair followed by rinsing and/or wiping the product from the skin and/or hair within a few seconds to minutes of the application step.
+30	2	origin,synthetic	in general terms, these perfuming ingredients belong to chemical classes as varied as alcohols, aldehydes, ketones, esters, ethers, acetates, nitriles, terpenoids, nitrogenous or sulphurous heterocyclic compounds and essential oils, and said perfuming co-ingredients can be of natural or synthetic origin.
+20	3	bleach,care,water	a fabric care product, such as a liquid or solid detergent, tablets and pods, a fabric softener, a dryer sheet, a fabric refresher, an ironing water, or a bleach;
+20	3	based,preparation,preparations	the percentage content of surfactants in the preparations may be from 0.1 to 10% by weight and is preferably from 0.5 to 5% by weight, based on the preparation.
+20	3	contain,formulations,particularly	formulations according to the invention preferably contain at least one uv-b filter or a broadband filter, more particularly preferably at least one uv-a filter and at least one uv-b filter.
+20	3	acetate,acid,standard	film formers and anti-dandruff agents standard film formers are, for example, chitosan, microcrystalline chitosan, quaternized chitosan, polyvinyl pyrrolidone, vinyl pyrrolidone/vinyl acetate copolymers, polymers of the acrylic acid series, quaternary cellulose derivatives, collagen, hyaluronic acid and salts thereof and similar compounds.
+30	2	based,cationic	according to a particular embodiment, one will use cationic polymers based on acrylamide, methacrylamide, n-vinylpyrrolidone, quaternized n,n-dimethylaminomethacrylate, diallyldimethylammonium chloride, quaternized vinylimidazole (3-methyl-1-vinyl-1h-imidazol-3-ium chloride), vinylpyrrolidone, acrylamidopropyltrimonium chloride, cassia hydroxypropyltrimonium chloride, guar hydroxypropyltrimonium chloride or polygalactomannan 2-hydroxypropyltrimethylammonium chloride ether, starch hydroxypropyltr
+20	3	concentration,determined,threshold	the odor threshold concentration of a perfuming compound is determined by using a gas chromatograph (“gc”).
+30	2	apple,spontaneously	for example, a substance can have an odor which is spontaneously reminiscent of that of an “apple”: the odor would then be concisely of “apples”.
+20	3	denotes,impression,obtain	the term “aroma chemical” denotes a substance which is used to obtain a sensory or organoleptic (used interchangeably herein) impression and comprises its use to obtain an olfactory and/or a flavor impression.
+20	3	found,powders,soft	food supplements may be found in many forms such as tablets, capsules, soft gels, gel caps, liquids, or powders.
+15	4	clearly,combination,otherwise,possible	any combination of the embodiments, examples and preferences described herein in all possible variations thereof is encompassed by the present invention unless otherwise indicated herein, or otherwise clearly contradicted by context.
+15	4	care,cleaning,fresheners,preparations	fragrance products may include, for example, perfumes, colognes, personal care products such as soaps, shower gels, and hair care products, fabric products, air fresheners, cosmetic preparations, and perfume cleaning agents such as detergents, dishwashing materials, scrubbing compositions, and window cleaners.
+20	3	art,changes,rather	rather, the foregoing detailed description will provide those skilled in the art with a convenient road map for implementing an exemplary embodiment of the invention, it being understood that various changes may be made in the function and arrangement of elements described in an exemplary embodiment without departing from the scope of the invention as set forth in the appended claims and their legal equivalents.
+59	1	positively	fine or functional perfumery, to positively impart or modify the odor of a consumer product into which said compound (i) is added.
+59	1	art	the person skilled in the art of formulating such consumer products is perfectly able to select the suitable components on the basis of his general knowledge and of the available literature.
+29	2	art,based	such compounds and levels of use are well known in the art and include, for example, the manganese-based catalysts disclosed in u.s.
+29	2	deliver,effect	for the sake of clarity, it has to be mentioned that, by “perfuming consumer product” it is meant a consumer product which is expected to deliver at least a perfuming effect, in other words it is a perfumed consumer product.
+29	2	aspects,provided	examples of the functional products are provided herein to illustrate the various aspects of the present invention.
+29	2	effect,preparation	moreover, by “perfuming co-ingredient” it is meant here a compound, which is used in perfuming preparation or composition to impart a hedonic effect.
+57	1	defined	therefore, another object of the present invention is a perfuming composition comprising: i) as perfuming ingredient, at least one invention&#39;s compound as defined above;
+19	3	hydrogen,hydrophobic,through	this association can be through physical interactions, such as hydrogen bonding, ionic interactions, hydrophobic interactions, electron transfer interactions or, alternatively, the polymer coating could be chemically (covalently) grafted to the capsule or particle surface.
+19	3	fatty,form,result	as a result of this cooling step, the fatty alcohols and surfactant crystallized to form a crystalline gel network.
+19	3	form,group,hydrogen	” it is meant that said group consists of hydrogen and carbon atoms and can be in the form of an aliphatic hydrocarbon, i.e.
+19	3	acid,composed,form	and capsules composed of polymer or copolymer of styrene sulfonic acid in acid of salt form, and capsules cross-linked with melamine-formaldehyde as disclosed in u.s.
+19	3	concentration,determined,threshold	the odor threshold concentration of a chemical compound is determined in part by its shape, polarity, partial charges and molecular mass.
+19	3	art,aspects,changes	these embodiments are described in detail to enable those skilled in the art to practice the invention described herein, and it is to be understood that other embodiments may be utilized and that logical changes may be made without departing from the scope of the aspects presented herein.
+57	1	chemicals	arctander, perfume and flavor chemicals, 1969, montclair, new jersey, usa, or its more recent versions, or in other works of a similar nature, as well as in the abundant patent literature in the field of perfumery.
+19	3	application,particularly,test	more particularly, the test methods specified hereinafter are part of the general disclosure of the application and are not restricted to the specific working examples.
+56	1	ethyl	ethyl 2,3,6,6-tetramethyl-2-cyclohexenecarboxylate;
+28	2	effective,malodor	malodor counteracting effective amount is understood to mean the amount of the inventive malodor counteractant employed in a functional product that is organoleptically effective to abate a given malodor while reducing the combined intensity of the odor level, wherein the given malodor is present in air space or has deposited on a substrate.
+28	2	art,clearly	it is clearly understood by a person skilled in the art that only part of said added polymers will be incorporated into/deposited on the microcapsule shell.
+55	1	hand	hand dishwashing agents or light duty dishwashing agents, especially those of the high-foaming type;
+18	3	cleaning,hand,toilet	liquid cleaning and disinfecting agents, including antibacterial hand-wash types, cleaning bars, mouthwashes, denture cleaners, dentifrice, car or carpet shampoos, bathroom cleaners including toilet bowl cleaners;
+54	1	water	when the wash solvent is water, the water temperature typically ranges from about 5° c.
+54	1	care	or a home care product, such as a wipe, a dish detergent or hard-surface detergent.
+18	3	contain,end,primary	they contain primary amino groups attached to the end of a polyether backbone.
+27	2	acetate,green	green ingredients: 2,4-dimethyl-3-cyclohexene-1-carbaldehyde, 2-tert-butyl-1-cyclohexyl acetate, styrallyl acetate, allyl (2-methylbutoxy)acetate, 4-methyl-3-decen-5-ol, diphenyl ether, (z)-3-hexen-1-ol and/or 1-(5,5-dimethyl-1-cyclohexen-1-yl)-4-penten-1-one;
+27	2	otherwise,specifically	all ratios are weight ratios, unless specifically stated otherwise.
+18	3	application,determine,test	the test methods disclosed in the test methods section of the present application should be used to determine the respective values of the parameters of applicants&#39;
+27	2	active,malodor	in several applications, a composition of the invention contains a surface active agent or a disinfectant, while in others, the malodor counteractant is present on a fibrous substrate.
+18	3	acid,alcohol,fatty	it is understood by the artisan that the compounds disclosed in this section of the specification can in some instances fall into more than one classification, e.g., some fatty alcohol derivatives can also be classified as fatty acid derivatives.
+27	2	acid,fatty	fatty acid alkanolamides, especially cocofatty acid diethanolamide;
+27	2	contain,fatty	fatty compounds, such as for example fatty alcohols, fatty ketones, fatty aldehydes, fatty ethers and fatty carbonates which contain in all at least 24 carbon atoms, especially laurone and distearylether;
+27	2	important,process	it is important that perfumes must remain unimpaired in this process.
+27	2	pleasing,together	preference is, however, given to using mixtures of different fragrances which together produce a pleasing fragrance note.
+27	2	relatively,volatility	essential oils of relatively low volatility, which are mostly used as aroma components, are also suitable as perfume oils, e.g.
+18	3	aforementioned,application,effective	given the importance of this type of application in the perfume industry, research in this field has been sustained, in particular with the aim of finding new, and more effective solutions to the aforementioned problems.
+18	3	active,effect,preparations	a compound which is used as active ingredient in perfuming preparations or compositions in order to impart a hedonic effect.
+18	3	active,solution,through	the air was filtered through active charcoal and aspirated through a saturated solution of nacl (to ensure a constant humidity of the air of ca.
+27	2	acid,fatty	c 12/18 fatty acid monoesters and diesters of addition products of 1 to 30 mol ethylene oxide onto glycerol;
+27	2	average,out	they are homologue mixtures of which the average degree of alkoxylation corresponds to the ratio between the quantities of ethylene oxide and/or propylene oxide and substrate with which the addition reaction is carried out.
+18	3	active,contain,group	zwitterionic surfactants are surface-active compounds which contain at least one quaternary ammonium group and at least one carboxylate and one sulfonate group in the molecule.
+18	3	alcohol,ethyl,lilial	the ethers include, for example, benzyl ethyl ether, and the aldehydes include, for example, the linear alkanals having 8 to 18 carbon atoms, citral, citronellal, citronellyloxyacetaldehyde, cyclamen aldehyde, hydroxycitronellal, lilial and bourgeonal, the ketones include, for example, the ionones and methyl cedryl ketone, the alcohols include anethole, citronellol, eugenol, isoeugenol, geraniol, linaool, phenylethyl alcohol and terpineol, and the hydrocarbons include mainly the terpenes and bal
+27	2	group,particularly	lower alkyl glucosides, particularly those containing 1 to 8 carbon atoms in the alkyl group, for example methyl and butyl glucoside;
+18	3	cationic,group,particularly	cationic surfactants, in which the nitrogen group is substituted with two long acyl groups and two short alk(en)yl groups, are particularly preferred.
+18	3	acid,fatty,generally	esterquats are generally understood to be quaternised fatty acid triethanolamine ester salts.
+18	3	corresponding,group,tea	typical examples of esterquats suitable for use in accordance with the invention are products of which the acyl component derives from monocarboxylic acids corresponding to formula rcooh in which rco is an acyl group containing 6 to 10 carbon atoms, and the amine component is triethanolamine (tea).
+18	3	active,combination,single	by “active ingredient”, it is meant a single compound or a combination of ingredients.
+27	2	acid,released	the free acid is probably released by the cleavage of the citric acid ester and reduces the ph value of the skin to such an extent that the enzymes are inactivated by acylation.
+18	3	acetate,group,origin	group 7: (+−)-2-methyl-3-[4-(2-methyl-2-propanyl)phenyl]propanal (origin: givaudan sa, vernier, switzerland), 2,2,2-trichloro-1-phenylethyl acetate.
+53	1	preparation	a shampoo, a coloring preparation or a hair spray), a cosmetic preparation (e.g.
+53	1	antiperspirant	a skin cream or lotion, a vanishing cream or a deodorant or antiperspirant (e.g.
+52	1	technical	technical field the present invention relates to the field of perfumery.
+52	1	ethyl	however, one can cite as non-limiting example solvents such as dipropyleneglycol, diethyl phthalate, isopropyl myristate, benzyl benzoate, 2-(2-ethoxyethoxy)-1-ethanol or ethyl citrate, which are the most commonly used.
+26	2	alcohol,synthetic	typical synthetic fragrance compounds are products of the ester, ether, aldehyde, ketone, alcohol, and hydrocarbon type.
+26	2	care,water	over-the-counter health care including cough and cold remedies, pain relievers, rx pharmaceuticals, pet health and nutrition, and water purification;
+26	2	primary,synthetic	synthetic amine polymers include various degrees of hydrolyzed polyvinyl formamides, polyvinylamines, polyallyl amines and other synthetic polymers with primary and secondary amine pendants.
+52	1	ethyl	ethyl linalool ((e)-3,7-dimethylnona-1,6-dien-3-ol);
+52	1	care	in any field of fine and functional perfumery, such as perfumes, air care products, household products, laundry products, body care products and cosmetics.
+26	2	animal,raw	animal raw materials, for example civet and beaver, may also be used.
+26	2	chemicals,found	a listing of common prms can be found in various reference sources, for example, “perfume and flavor chemicals”, vols.
+17	3	care,cleaning,otherwise	as used herein, the term “cleaning and/or treatment composition” is a subset of consumer products that includes, unless otherwise indicated, beauty care, fabric &amp;
+17	3	art,combination,prior	the citation of any document is not an admission that it is prior art with respect to any invention disclosed or claimed herein or that it alone, or in any combination with any other reference or references, teaches, suggests, or discloses any such invention.
+17	3	formulation,provided,through	another embodiment of the present invention relates to a method of improving, enhancing or modifying a fragrance formulation through the addition of an olfactory acceptable amount of the novel compounds provided above.
+17	3	coffee,group,tea	instant beverages, preferably selected from the group consisting of instant cocoa beverages, instant tea beverages and instant coffee beverages i.
+17	3	character,composed,profile	a fragrance profile is composed of 2 characteristics: ‘intensity’ and ‘character’.
+17	3	art,determined,how	the term “about” or “approximately” means within an acceptable error range for the particular value as determined by one of ordinary skill in the art, which will depend in part on how the value is measured or determined, i.e., the limitations of the measurement system.
+17	3	acid,based,fatty	partial esters based on linear, branched, unsaturated or saturated c 6/22 fatty acids, ricinoleic acid and 12-hydroxystearic acid and glycerol, polyglycerol, pentaerythritol, -dipentaerythritol, sugar alcohols (for example sorbitol), alkyl glucosides (for example methyl glucoside, butyl glucoside, lauryl glucoside) and polyglucosides (for example cellulose);
+17	3	called,cationic,particularly	a further class of cationic surfactants particularly useful as co-surfactants for the present invention is represented by the so-called esterquats.
+17	3	fatty,out,process	in addition, german patent de 4308794 c1 describes a process for the production of solid esterquats in which the quaternisation of triethanolamine esters is carried out in the presence of suitable dispersants, preferably fatty alcohols.
+17	3	art,pleasant,positive	in other words such a co-ingredient, to be considered as being a perfuming one, must be recognized by a person skilled in the art as being able to at least impart or modify in a positive or pleasant way the odor of a composition, and not just as having an odor.
+17	3	cases,effect,them	the effect of the antioxidants consists in most cases in them acting as free-radical scavengers for the free radicals which arise during autoxidation.
+17	3	based,impact,raw	according to an embodiment, the oil phase (or the oil-based core) comprises: 25-100 wt % of a perfume oil comprising at least 15 wt % of high impact perfume raw materials having a log t&lt;−4, and 0-75 wt % of a density balancing material having a density greater than 1.07 g/cm 3 .
+17	3	defined,form,powder	according to a particular embodiment, the consumer product as defined above is in a powder form and comprises: a) from 2 to 65% by weight, relative to the total weight of the consumer product, of at least one surfactant;
+50	1	pigments	dyes and/or pigments), preservatives (e.g.
+25	2	comprise,optionally	optionally, the composition may comprise an anti-oxidant adjuvant.
+25	2	activity,thereby	the substances inhibit enzyme activity, thereby reducing the formation of odour.
+25	2	flower,mint	sage oil, camomile oil, oil of cloves, melissa oil, mint oil, cinnamon leaf oil, linden flower oil, juniperberry oil, vetiver oil, olibanum oil, galbanum oil, labdanum oil and lavandin oil.
+25	2	optionally,preparations	optionally, these preparations according to the invention may be produced using preservatives or solubilizers.
+25	2	advantageous,pigments	advantageous coloured pigments are for example titanium dioxide, mica, iron oxides (e.g.
+50	1	acid	3-methyl-5-phenyl-2-pentenoic acid nitrile;
+25	2	form,powder	microcapsules can be used in liquid form applicable to liquid consumer products as well as in powder form, applicable to powder consumer products.
+25	2	cleaning,hand	liquid cleaning and disinfecting agents, including antibacterial hand-wash types, cleaning bars, mouthwashes, denture cleaners, dentifrice, car or carpet shampoos, bathroom cleaners;
+49	1	alcohol	the solvent is preferably not an alcohol.
+16	3	aspect,form,standard	all of such products which were applicable may be in standard, concentrated or even highly concentrated form even to the extent that such products may in certain aspect be non-aqueous.
+16	3	acid,solution,water	this second solution contains 10 grams of butyl acrylate-acrylic acid copolymer emulsifier (colloid c351, 25% solids, pka 4.5-4.7, kemira), 120 grams of distilled water, sodium hydroxide solution to adjust ph to 4.8, 25 grams of partially methylated methylol melamine resin (cymel 385, 80% solids, cytec).
+48	1	intended	it will be appreciated that the invention as claimed is not intended to be limited in any way by these examples.
+24	2	deliver,formulation	in addition to the compounds of the present invention, other materials can also be used in conjunction with the fragrance formulation to encapsulate and/or deliver the fragrance.
+16	3	particles,particularly,properties	however, particularly good builder properties may even be achieved where the silicate particles produce indistinct or even sharp diffraction maxima in electron diffraction experiments.
+24	2	aromatic,form	cycloalkenyl or cycloalkynyl), or can be in the form of an aromatic hydrocarbon, i.e.
+16	3	application,intended,process	moreover, the scope of the present application is not intended to be limited to the particular embodiments of the process, machine, manufacture, composition of matter, means, methods and steps described in the specification.
+24	2	performance,specifically	the term “auxiliary agent” refers to ingredients that might be employed in a fragrance composition for reasons not specifically related to the olfactive performance of said composition.
+48	1	menthol	menthol (2-isopropyl-5-methylcyclohexanol);
+16	3	acid,extract,group	inci: propylene glycol, aqua, oenothera biennis root extract, ellagic acid and ellagitannins, for example from pomegranate), phosphoramidone hinokitiol, edta, galardin, equistat (company collaborative group;
+16	3	acid,group,leaves	preferred actives of are selected from the group consisting of retinyl palmitate, ursolic acid, extracts from the leaves of the rosaceae family, sub-family rosoideae, genistein and daidzein.
+24	2	active,antiperspirant	suitable astringent antiperspirant active ingredients are primarily salts of aluminium, zirconium or of zinc.
+16	3	basic,cationic,group	suitable dye clay conjugates include dye clay conjugates selected from the group comprising at least one cationic/basic dye and a smectite clay, and mixtures thereof.
+16	3	combination,defined,encapsulated	the perfume element of said consumer product can be a combination of perfume microcapsules as defined above and free or non-encapsulated perfume, as well as other types of perfume microcapsule than those here-disclosed.
+24	2	aspects,defined	although the various aspects of the invention have been illustrated above by reference to examples and preferred embodiments, it will be appreciated that the scope of the invention is defined not by the foregoing description but by the following claims properly construed under principles of patent law.
+16	3	care,make,powder	make-up cosmetic including manicure, mascara, eyeliner, eye shadow, liquid foundation, powder foundation, lipstick and cheek rouge k) consumer goods packaging such as fragranced cartons, fragranced plastic bottles/boxes l) pet care products i.
+24	2	important,tools	it is useful to mention here that the possibility to have, in the compositions mentioned above, more than one compound of formula (i) is important as it enables the perfumer to prepare accords, perfumes, possessing the odor tonality of various compounds of the invention, creating thus new tools for their work.
+16	3	art,effect,how	solid carriers are of current use in the art and a person skilled in the art knows how to reach the desired effect.
+24	2	aldehydic,formulations	in particular one may cite perfuming ingredients which are commonly used in perfume formulations, such as: aldehydic ingredients: decanal, dodecanal, 2-methyl-undecanal, 10-undecenal, octanal, nonanal and/or nonenal;
+16	3	active,base,water	for liquid consumer product mentioned below, by “active base”, it should be understood that the active base includes active materials (typically including surfactants) and water.
+47	1	washing	for purposes of the present invention, washing includes but is not limited to, scrubbing, and mechanical agitation.
+47	1	balsamic	balsamic ingredients: coumarin, ethylvanillin and/or vanillin;
+46	1	art	these examples are for the purpose of illustration only and it is understood that variations and modifications can be made by one skilled in the art.
+46	1	group	4,396,670, to the wiggins teape group limited is a pertinent early example of the latter.
+23	2	art,based	without further elaboration, it is believed that one skilled in the art can, based on the description herein, utilize the present invention to its fullest extent.
+23	2	art,changes	examples while particular embodiments of the present invention have been illustrated and described, it would be obvious to those skilled in the art that various other changes and modifications can be made without departing from the spirit and scope of the invention.
+23	2	defined,formulation	the fragrance formulation of the present invention comprises a compound of the present invention and further a complementary fragrance compound as defined above.
+23	2	particularly,water	and emulsions which are particularly preferred are of the “oil-in-water” (o/w) type or water-in-oil-in-water (w/o/w) type.
+23	2	clearly,otherwise	all methods described herein can be performed in any suitable order unless otherwise indicated herein or otherwise clearly contradicted by context.
+23	2	released,result	for example, the fragrance may be released as a result of simple hydrolysis, or by a shift in an equilibrium reaction, or by a ph-change, or by enzymatic release.
+23	2	form,group	aryl group, or can also be in the form of a mixture of said type of groups, e.g.
+46	1	group	examples of suitable ampholytic surfactants are n-alkyl glycines, n-alkyl propionic acids, n-alkylaminobutyric acids, n-alkyliminodipropionic acids, n-hydroxyethyl-n-alkylamidopropyl glycines, n-alkyl taurines, n-alkyl sarcosines, 2-alkylaminopropionic acids and alkylaminoacetic acids containing around 8 to 18 carbon atoms in the alkyl group.
+23	2	optionally,pigments	also preferred are particulate uv filters or inorganic pigments, which can optionally be hydrophobed, can be used, such as the oxides of titanium (tio 2 ), zinc (zno), iron (fe 2 o 3 ), zirconium (zro 2 ), silicon (sio 2 ), manganese (e.g.
+23	2	based,case	in the case of microcapsules including a perfume oil-based core, the products of the invention, can in particular be of used in perfumed consumer products such as product belonging to fine fragrance or “functional” perfumery.
+23	2	contain,primary	advantageously, the perfume used in the invention does not contain any primary alcohols and contains less than 15% of secondary and tertiary alcohols.
+23	2	base,cleaning	as used herein, “consumer product base” means a composition for use as a consumer product to fulfill specific actions, such as cleaning, softening, and caring or the like.
+23	2	activity,decrease	as used herein, a “pest control agent” indicates a substance that serves to repel or attract pests, to decrease, inhibit or promote their growth, development or their activity.
+23	2	care,water	body care compositions include cosmetic compositions and products for oral and dental hygiene, and can be selected from after-shaves, pre-shave products, splash colognes, solid and liquid soaps, shower gels, shampoos, shaving soaps, shaving foams, bath oils, cosmetic emulsions of the oil-in-water type, of the water-in-oil type and of the water-in-oil-in-water type, such as e.g.
+23	2	care,group	the personal care composition is preferably chosen in the group consisting of a hair-care product (e.g.
+23	2	particularly,performance	suitable techniques include chromatography such as high performance liquid chromatography, referred to as hplc, and particularly gel chromatography and solid phase microextraction, referred to as spme.
+15	3	possible,stability,water	the possible shell materials vary widely in their stability toward water.
+15	3	based,neutral,relatively	microcapsules that are based on urea-formaldehyde and/or melamine-formaldehyde are relatively stable, especially in near neutral aqueous-based solutions.
+15	3	fatty,hydrophobic,raw	non-limiting examples of such organic materials include but are not limited to hydrophobic materials such as organic oils, waxes, mineral oils, petrolatum, fatty acids or esters, sugars, surfactants, liposomes and even other perfume raw material (perfume oils), as well as natural oils, including body and/or other soils.
+15	3	art,chemicals,formulations	those with skill in the art will appreciate that many formulations can be created employing various solvents and fragrance chemicals.
+15	3	acid,fatty,optionally	esters of polybasic, optionally hydroxy-substituted carboxylic acids with fatty alcohols containing 6 to 22 carbon atoms, especially long-chain esters of tartaric acid;
+15	3	called,group,particularly	particularly suitable zwitterionic surfactants are the so-called betaines, such as the n-alkyl-n,n-dimethyl ammonium glycinates, for example cocoalkyl dimethyl ammonium glycinate, n-acylaminopropyl-n,n-dimethyl ammonium glycinates, for example cocoacylaminopropyl dimethyl ammonium glycinate, and 2-alkyl-3-carboxymethyl-3-hydroxyethyl imidazolines containing 8 to 18 carbon atoms in the alkyl or acyl group and cocoacylaminoethyl hydroxyethyl carboxymethyl glycinate.
+15	3	intended,sufficient,usually	the spacer is usually a hydrocarbon chain that is intended to be long enough such that the hydrophilic groups are a sufficient distance apart to be able to act independently of one another.
+15	3	concentration,generally,water	these types of surfactants are generally characterized by an unusually low critical micelle concentration and the ability to strongly reduce the surface tension of water.
+15	3	acetate,alcohol,ethyl	low molecular weight polar substances, such as for example, methanol, ethanol, propylene carbonate, acetone, acetonylacetone, diacetone alcohol, ethyl acetate, 2-propanol, ethylene glycol, propylene glycol, glycerin, diethylene glycol, dipropylene glycol monomethyl ether and dimethylformamide or their mixtures are preferred.
+15	3	group,particularly,superior	by virtue of their superior solubility, preferred representatives of this group are again the short-chain polyacrylates, which have molecular weights of 2,000 to 10,000 g/mol and, more particularly, 3,000 to 5,000 g/mol.
+15	3	fatty,origin,synthetic	suitable foam inhibitors include for example, soaps of natural or synthetic origin, which have a high content of c 18 -c 24 fatty acids.
+15	3	defined,optionally,powder	c) optionally perfume powder that is different from the microcapsules defined above.
+15	3	effect,effective,effects	as used herein olfactory effective amount is understood to mean the amount of compound in perfume compositions the individual component will contribute to its particular olfactory characteristics, but the olfactory effect of the fragrance composition will be the sum of the effects of each of the fragrance ingredients.
+22	2	contain,water	they can contain no water to limit the water content as low as less than 30% (e.g., less than 20%, less than 10%, and less than 5%).
+22	2	adding,formulation	to 100% a typical procedure for preparing the formulation includes the steps of (i) mixing by a blender according to the foregoing formulation to provide a toothpaste, and (ii) adding a composition of this invention and blending the resultant mixture till homogeneous.
+22	2	active,malodor	the active material is a fragrance, malodor counteractant or mixture thereof.
+22	2	care,cleaning	suitable compositions are for example perfume compositions, body care compositions (including cosmetic compositions and products for oral and dental hygiene), hygiene articles, cleaning compositions (including dishwashing compositions), textile detergent compositions, compositions for scent dispensers, foods, food supplements, pharmaceutical compositions and crop protection compositions.
+22	2	active,hydrophobic	according to a particular embodiment, the hydrophobic material is free of any active ingredient (such as perfume).
+43	1	comprise	liquors that may comprise the disclosed compositions may have a ph of from about 3 to about 11.5.
+43	1	acetate	4,7-methanooctahydro-5 or 6-indenyl acetate;
+43	1	group	individual fragrances from the group of hydrocarbons, such as e.g.
+43	1	care	an air care product, such as an air freshener or a “ready to use” powdered air freshener which can be used in the home space (rooms, refrigerators, cupboards, shoes or car) and/or in a public space (halls, hotels, malls, etc.);
+43	1	since	since then, many other authors have enriched the literature in this field and it would be impossible to cover all published developments here, but the general knowledge in encapsulation technology is very significant.
+42	1	effect	the olfactory acceptable amount may vary depending on many factors including other ingredients, their relative amounts and the olfactory effect that is desired.
+21	2	intended,otherwise	instead, unless otherwise specified, each such dimension is intended to mean both the recited value and functionally equivalent range surrounding that value.
+21	2	base,generally	generally speaking, by “perfumery base” we mean here a composition comprising at least one perfuming co-ingredient.
+21	2	acid,fatty	fatty acids, such as stearic acid, hydroxystearic acid or behenic acid, ring opening products of olefin epoxides containing 12 to 22 carbon atoms with fatty alcohols containing 12 to 22 carbon atoms and/or polyols containing 2 to 15 carbon atoms and 2 to 10 hydroxyl groups and mixtures thereof.
+21	2	group,optionally	group 3: perfuming ingredients comprising a phenyl ring or perfuming ingredients comprising a cyclohexane, cyclohexene, cyclohexanone or cyclohexenone ring substituted with at least one linear or branched c 5 to c 8 alkyl or alkenyl substituent or with at least one phenyl substituent and optionally one or more linear or branched c 1 to c 3 alkyl or alkenyl substituents;
+21	2	cationic,composed	capsules composed of cationic melamine-formaldehyde condensates as disclosed in u.s.
+21	2	deodorants,effects	(b) cosmetic products with specific effects, especially sunscreens, tanning products, de-pigmenting products, deodorants, antiperspirants, hair removers, and shaving products;
+21	2	powder,washing	textile detergent compositions can be selected from liquid detergents, powder detergents, laundry pretreatments such as bleaches, soaking agents and stain removers, fabric softeners, washing soaps, washing tablets.
+21	2	fresheners,make	eye-liners, eye-shadows, nail varnishes, make-ups, lipsticks and mascara, and products for oral and dental hygiene, such as toothpaste, dental floss, mouth wash, breath fresheners, dental foam, dental gels and dental strips.
+21	2	active,group	(ii) an active ingredient, preferably chosen in the group consisting of a cosmetic ingredient, skin caring ingredient, perfume ingredient, flavor ingredient, malodour counteracting ingredient, bactericide ingredient, fungicide ingredient, pharmaceutical or agrochemical ingredient, a sanitizing ingredient, an insect repellent or attractant, and mixtures thereof.
+21	2	art,thereby	those with skill in the art will recognize that some of the compounds of the present invention have a number of chiral centers, thereby providing numerous isomers of the claimed compounds.
+41	1	defined	more preferably the perfume comprises less than 20% and even more preferably less than 10% of solvent, all these percentages being defined by weight relative to the total weight of the perfume.
+41	1	care	a car care product, such as a polish, a wax or a plastic cleaner.
+20	2	cleaning,formulations	flick, advanced cleaning product formulations, noye publication, park ridge, n.j.
+20	2	achieve,target	note that salt is an adjustable ingredient, higher or lower levels may be added to achieve target viscosity.
+40	1	rate	in general such solid carriers are employed either to stabilize the composition, or to control the rate of evaporation of the compositions or of some ingredients.
+20	2	based,case	for example, in the case of perfuming compositions, typical concentrations are in the order of 0.001% to 10% by weight, or even more, of the compounds of the invention based on the weight of the composition into which they are incorporated.
+20	2	formulations,particularly	such formulations according to the invention are particularly suitable for protecting the skin and hair.
+20	2	alcohol,synthetic	typical synthetic perfume compounds are products of the ester, ether, aldehyde, ketone, alcohol and hydrocarbon type.
+20	2	relatively,volatility	other suitable perfume oils are essential oils of relatively low volatility which are mostly used as aroma components.
+20	2	form,formulations	the formulations according to the invention are preferably in the form of an emulsion, e.g.
+20	2	care,make	temporary direct-dyeing hair dye, semi-permanent hair dye, permanent hair dye, hair conditioner, hair mousse, eye care product, make-up, make-up remover or baby product.
+20	2	based,formulation	auxiliary substances and additives can be included in quantities of 5 to 99% b.w., preferably 10 to 80% b.w., based on the total weight of the formulation.
+20	2	particles,specifically	for the sake of clarity, by the expression “dispersion” in the present invention it is meant a system in which particles are dispersed in a continuous phase of a different composition and it specifically includes a suspension or an emulsion.
+20	2	background,water	the measurement is initiated by putting the sensor into a cold state by flushing with water until background counts are less than 100.
+20	2	group,non-ionic	preferred non-ionic polysaccharides are selected from the group consisting of locust bean gum, xyloglucan, guar gum, hydroxypropyl guar, hydroxypropyl cellulose and hydroxypropyl methyl cellulose.
+20	2	detectable,form	this means that the indicated material is at the very minimum not deliberately added to the composition to form part of it, or, preferably, is not present at analytically detectable levels.
+20	2	cationic,non-ionic	the surfactant(s) may be selected from anionic, non-ionic, cationic and/or amphoteric or zwitterionic surfactants.
+40	1	found	another source of suitable fragrances is found in perfumes, cosmetics and soaps, second edition, edited by w.
+20	2	application,intended	detailed description of the invention the following detailed description of the invention is merely exemplary in nature and is not intended to limit the invention or the application and uses of the invention.
+39	1	aromatic	the aromatic and araliphatic aldehydes such as e.g.
+39	1	aromatic	the aromatic and araliphatic ketones such as e.g.
+39	1	aromatic	the nitrogen-containing aromatic compounds such as e.g.
+39	1	ethyl	examples of such solvents are diethyl phthalate, isopropyl myristate, abalyn® (rosin resins, available from eastman), benzyl benzoate, ethyl citrate, limonene or other terpenes, or isoparaffins.
+39	1	application	description cross-reference to related applications this application is a u.s.
+38	1	water	and, when the situs comprises a fabric, the water to fabric ratio is typically from about 1:1 to about 30:1.
+19	2	against,effects	stabilisers against the detrimental effects of heat and light, bulking agents, acidulants, buffering agents and antioxidants.
+19	2	chemicals,pfw	10 trade name of pfw aroma chemicals b.v., the netherlands.
+19	2	aldehydic,formulations	in particular one may cite perfuming co-ingredients which are commonly used in perfume formulations, such as: aldehydic ingredients: decanal, dodecanal, 2-methyl-undecanal, 10-undecenal, octanal and/or nonenal;
+38	1	aromatic	the term “aromatic polyisocyanate” is meant here as encompassing any polyisocyanate comprising an aromatic moiety.
+19	2	extremely,moderate	and (ii) level of complexity, where 0=none, 1=very low, 5=moderate, 10=extremely high.
+19	2	art,preparation	the preparation of an aqueous dispersion/slurry of core-shell microcapsules is well known by a skilled person in the art.
+19	2	advantageous,pigments	advantageous inorganic secondary light protection pigments are finely dispersed metal oxides and metal salts which are also mentioned in wo 2005 123101 a1.
+19	2	acid,fatty	in oil (fatty oils or fatty acid esters, in particular c 6 -c 32 fatty acid c 2 -c 30 esters) or silicone oil, dispersion, suspension, creme, lotion or milk, depending on the production method and ingredients, a gel (including hydrogel, hydrodispersion gel, oleogel), spray (e.g.
+38	1	acetate	4,7-methanooctahydro-5, or 6-indenyl acetate;
+19	2	aspects,defined	the following description of example embodiments is, therefore, not to be taken in a limited sense, and the scope of the various aspects presented herein is defined by the appended claims.
+19	2	otherwise,specifically	in all embodiments of the present disclosure, all percentages are by weight of the total composition, unless specifically stated otherwise.
+19	2	intended,provided	examples the examples provided below are intended to be illustrative in nature and are not intended to be limiting.
+19	2	art,form	furthermore, while some embodiments described herein include some, but not other features included in other embodiments, combinations of features of different embodiments are meant to be within the scope of the subject matter, and form different embodiments, as would be understood by those in the art.
+37	1	solution	such compositions are typically employed at concentrations of from about 500 ppm to about 15,000 ppm in solution.
+37	1	acid	partial glycerides, especially stearic acid monoglyceride;
+37	1	background	description background of the invention 1.
+37	1	neutral	by “perfumery carrier” it is meant here a material which is practically neutral from a perfumery point of view, i.e.
+37	1	cleaning	a floor, bath, sanitary or a window-cleaning) detergent;
+37	1	art	those with skill in the art will be able to employ the desired level of the compounds of the invention to provide the desired fragrance and intensity.
+36	1	intended	processed food products intended primarily for consumption between customary meals or as a meal accompaniment (non-limiting examples include potato chips, tortilla chips, popcorn, pretzels, corn chips, cereal bars, vegetable chips or crisps, snack mixes, party mixes, multigrain chips, snack crackers, cheese snacks, pork rinds, corn snacks, pellet snacks, extruded snacks and bagel chips);
+36	1	water	the enzymes employed herein can be stabilized by the presence of water-soluble sources of calcium and/or magnesium ions in the finished compositions that provide such ions to the enzymes.
+36	1	application	description cross-reference to related applications this application is a national stage application (under 35 u.s.c.
+18	2	acetate,ethyl	xvi) esters of cycloaliphatic carboxylic acids, such as, for example, allyl 3-cyclohexyl-propionate, allyl cyclohexyl oxyacetate, methyl dihydrojasmonate, methyl jasmonate, methyl 2-hexyl-3-oxocyclopentanecarboxylate, ethyl 2-ethyl-6,6-dimethyl-2-cyclohexenecarboxylate, ethyl 2,3,6,6-tetramethyl-2-cyclohexenecarboxylate, ethyl 2-methyl-1,3-dioxolane-2-acetate;
+18	2	acetate,ethyl	xxiii) phenols, phenyl ethers and phenyl esters, such as, for example, estragole, anethole, eugenol, eugenyl methyl ether, isoeugenol, isoeugenol methyl ether, thymol, carvacrol, diphenyl ether, beta-naphthyl methyl ether, beta-naphthyl ethyl ether, beta-naphthyl isobutyl ether, 1,4-dimethoxybenzene, eugenyl acetate, 2-methoxy-4-methylphenol, 2-ethoxy-5-(1-propenyl)phenol, p-cresyl phenylacetate;
+18	2	cationic,group	another group of polymers that can be used to improve capsule/particle deposition are phospholipids that are modified with cationic polysiloxanes.
+36	1	art	a detailed description of the nature and type of adjuvant commonly used in perfuming composition cannot be exhaustive, but it has to be mentioned that said ingredients are well known to a person skilled in the art.
+36	1	alcohol	cinnamic alcohol ((e)-3-phenylprop-2-en-1-ol);
+36	1	form	according to any one of the above embodiments said perfume oil can be a perfuming ingredient alone or a mixture of ingredients in the form of a perfuming composition.
+18	2	modulating,primary	as a “perfuming ingredient” it is meant here a compound, which is used for the primary purpose of conferring or modulating an odour.
+18	2	acid,fatty	superfatting agents and consistency factors superfatting agents may be selected from such substances as, for example, lanolin and lecithin and also polyethoxylated or acylated lanolin and lecithin derivatives, polyol fatty acid esters, monoglycerides and fatty acid alkanolamides, the fatty acid alkanolamides also serving as foam stabilizers.
+18	2	acetate,ethyl	examples of perfume compounds of the ester type are benzyl acetate, phenoxyethyl isobutyrate, p-tert.butyl cyclohexylacetate, linalyl acetate, dimethyl benzyl carbinyl acetate, phenyl ethyl acetate, linalyl benzoate, benzyl formate, ethylmethyl phenyl glycinate, allyl cyclohexyl propionate, styrallyl propionate and benzyl salicylate.
+18	2	solution,water	w/o (water-in-oil), o/w (oil-in-water), w/o/w (water-in-oil-in-water), o/w/o (oil-in-water-in-oil) emulsion, pit emulsion, pickering emulsion, emulsion with a low oil content, micro- or nanoemulsion, a solution, e.g.
+18	2	dry,water	shampoo (including 2-in-1 shampoo, anti-dandruff shampoo, baby shampoo, shampoo for dry scalps, concentrated shampoo), conditioner, hair tonic, hair water, hair rinse, styling creme, pomade, perm and setting lotion, hair spray, styling aid (e.g.
+18	2	final,particularly	the molar ratio of mono and dicarboxylic acids in the final esterquat may be in the range from 1:99 to 99:1 and is preferably in the range from 50:50 to 90:10 and more particularly in the range from 70:30 to 80:20.
+18	2	corresponding,fatty	the esterquats may be obtained both from fatty acids and from the corresponding triglycerides in admixture with the corresponding dicarboxylic acids.
+18	2	average,technical	the preferred esterquats are technical mixtures of mono-, di- and triesters with an average degree of esterification of 1.5 to 1.9.
+18	2	application,otherwise	every document cited herein, including any cross referenced or related patent or application and any patent application or patent to which this application claims priority or benefit thereof, is hereby incorporated herein by reference in its entirety unless expressly excluded or otherwise limited.
+18	2	based,wood	however by way of non-limiting example of solid carriers, one may cite absorbing gums or polymers or inorganic material, such as porous polymers, cyclodextrins, wood based materials, organic or inorganic gels, clays, gypsum talc or zeolites.
+18	2	acid,alcohol	polyvinyl alcohol crosslinked with boric acid;
+18	2	art,cationic	cationic polymers are also well known to a person skilled in the art.
+18	2	chemicals,synthetic	arctander, perfume and flavor chemicals, 1969, montclair, n.j., usa, or its more recent versions, or in other works of similar nature such as fenaroli&#39;s handbook of flavor ingredients, 1975, crc press or synthetic food adjuncts, 1947, by m.
+18	2	changes,intended	it is therefore intended to cover in the appended claims all such changes and modifications that are within the scope of this disclosure.
+18	2	group,hydrophobic	according to this particular embodiment, it comprises, preferably consists of hydrophobic solvents, preferably chosen in the group consisting of isopropyl myristate, tryglycerides (e.g.
+35	1	retention	a panelist sniffs the gc effluent and identifies the retention time when odor is noticed.
+35	1	formulation	the fragrance formulation of the present invention is a consumer composition comprising a compound of the present invention.
+35	1	acid	formaldehyde, 2,2-dimethoxyethanal, glyoxal, glyoxylic acid or glycolaldehyde and mixtures thereof) with an amine such as urea, benzoguanamine, glycoluryl, melamine, methylol melamine, methylated methylol melamine, guanazole and the like, as well as mixtures thereof.
+35	1	rose	rose oxide (4-methyl-2-(2-methylprop-1-en-1-yl)tetrahydro-2h-pyran);
+35	1	hydrophobic	preferably, the solvent is very hydrophobic and highly sterically hindered, like for example abalyn® or benzyl benzoate.
+35	1	art	however, if it is desired to prepare individual stereoisomers, this may be achieved according to methods known in the art, e.g.
+17	2	based,mixed	the polyether backbone is normally based on either propylene oxide (po), ethylene oxide (eo), or mixed po/eo.
+17	2	end,form	the repeat units form the backbone of the oligomer and are preferably terminated with modified isethionate end-caps.
+34	1	aromatic	in a most preferred embodiment, the aromatic polyisocyanate is a trimethylol propane-adduct of xylylene diisocyanate.
+17	2	case,formulations	these formulations do not warrant a detailed description here, which would in any case not be exhaustive.
+17	2	particularly,performance	suitable techniques include chromatography such as high performance liquid chromatography, referred to as hplc, and particularly silica gel chromatography and gas chromatography trapping known as gc trapping.
+17	2	additionally,raw	additionally, some perfume raw materials are supplied by the fragrance houses (firmenich, international flavors &amp;
+17	2	art,standard	for example, “about” can mean within 3 or more than 3 standard deviations, per the practice in the art.
+17	2	based,preparation	%, based on the total weight of the preparation.
+17	2	extract,water	inci: water and lentinus edodes extract), actimp 1.9.3 (company expanscience/rahn;
+17	2	art,contain	detergent builders are well known in the art and can contain, for example, phosphate salts as well as various organic and inorganic nonphosphorus builders.
+34	1	ethyl	ethyl-2,3,6,6-tetramethyl-2-cyclohexene carboxylate;
+17	2	case,performance	olfactive performance in the case of perfuming ingredients.
+17	2	quickly,technical	§ 1.72(b) to allow the reader to quickly ascertain the nature and gist of the technical disclosure.
+17	2	color,stability	by “perfumery adjuvant”, it is meant here an ingredient capable of imparting additional added benefit such as a color, a particular light resistance, chemical stability, etc.
+34	1	particularly	ampholytic surfactants are also suitable, particularly as co-surfactants.
+17	2	defined,end	furthermore, the ranges defined throughout the specification include the end values as well, i.e.
+17	2	group,hydrophobic	according to a particular embodiment, the hydrophobic material comprises a mixture of a perfume with another ingredient selected from the group consisting of nutraceuticals, cosmetics, pest control agents and biocide actives.
+17	2	effects,hydrogen	to calculate the “weighted hansen solubility parameter” one must combine the effects of (atomic) dispersion forces, (molecular) permanent dipole-permanent dipole forces, and (molecular) hydrogen bonding (electron exchange).
+33	1	contain	dispersants—the compositions of the present invention can also contain dispersants.
+33	1	care	(c) cosmetic dental-care products, especially dental and oral care products, tooth care products, cleaners for dental prostheses, adhesives for dental prostheses;
+33	1	care	and (d) cosmetic hair care products, especially hair shampoos, hair care products, hair setting products, hair-shaping products, and hair coloring products.
+33	1	acetate	cedryl acetate ((1s,6r,8ar)-1,4,4,6-tetramethyloctahydro-1h-5,8a-methanoazulen-6-yl acetate);
+33	1	ethyl	ethyl-2-ethyl-6,6-dimethyl-2-cyclohexene carboxylate;
+33	1	cationic	preferred cationic polymers have cationic charge densities of at least 0.5 meq/g, more preferably at least about 1.5 meq/g, but also preferably less than about 7 meq/g, more preferably less than about 6.2 meq/g.
+33	1	contain	if the nonionic surfactants contain polyglycol ether chains, they may have a conventional homolog distribution, although they preferably have a narrow-range homolog distribution.
+32	1	cleaning	when present in the compositions herein, the dye transfer inhibiting agents are present at levels from about 0.0001%, from about 0.01%, from about 0.05% by weight of the cleaning compositions to about 10%, about 2%, or even about 1% by weight of the cleaning compositions.
+16	2	aspect,optionally	in one aspect, a situs is optionally washed and/or rinsed, contacted with a particle according to the present invention or composition comprising said particle and then optionally washed and/or rinsed.
+16	2	mixed,water	u.s.a.) is dissolved and mixed in 200 grams deionized water.
+16	2	end,intended	a solvent suitable for use in a consumer product is a solvent that, when combined with other components of the end product, will not render the consumer product unfit for its intended consumer use.
+16	2	acid,water	water-soluble polyamides containing acid groups are also suitable for this purpose.
+16	2	based,hydrogen	suitable block polyoxyethylene-polyoxypropylene polymeric surfactants include those based on ethylene glycol, propylene glycol, glycerol, trimethylolpropane and ethylenediamine as the initial reactive hydrogen compound.
+16	2	acid,base	amphoteric amines, i.e., amines that can react as an acid as well as a base, are another class of amines of use in this invention.
+16	2	group,positively	a salt can be formed between an anion and a positively charged group on the compound, polymer, or agent.
+32	1	otherwise	materials were purchased from aldrich chemical company unless noted otherwise.
+32	1	combination	the compounds of the present invention can be used in combination with a complementary fragrance compound.
+16	2	applying,through	next air in the container is removed by applying a vacuum to the valve and then propellant is added to container through the valve.
+16	2	otherwise,specifically	all ratios are weight ratios, unless specifically stated otherwise, and all measurements are made at 25° c., unless otherwise designated.
+16	2	out,standard	reactions were carried out in standard glassware under n 2 .
+16	2	extract,red	further naturally obtained extracts (for example paprika extract, black carrot extract, red cabbage extract) can be used for coloring purposes.
+16	2	aspect,comprise	in one aspect, said microcapsule wall material may comprise any suitable resin and especially including melamine, glyoxal, polyurea, polyurethane, polyamide, polyester, etc.
+16	2	contain,formulations	the formulations according to the invention advantageously contain at least one uv-a filter and/or at least one uv-b filter and/or a broadband filter and/or at least one inorganic pigment.
+16	2	acid,fatty	besides the quaternised fatty acid triethanolamine ester salts, other suitable esterquats are quaternized ester salts of mono-/dicarboxylic acid mixtures with diethanolalkyamines or 1,2-dihydroxypropyl dialkylamines.
+16	2	acid,particularly	citric acid, succinic acid, glutaric acid, adipic acid, gluconic acid and any mixtures thereof are particularly mentioned in this regard.
+16	2	defined,stability	other bleaching agents include metal complexes of transitional metals with ligands of defined stability constants.
+16	2	care,otherwise	as used herein, the term “fabric care composition” includes, unless otherwise indicated, fabric softening compositions, fabric enhancing compositions, fabric freshening compositions and combinations thereof.
+32	1	care	in any field of fine and functional perfumery, such as perfumes, household products, laundry products, body care products and cosmetics.
+16	2	base,cleaning	as used herein, ‘consumer product base’ means a composition for use as a consumer product to fulfill specific actions, such as cleaning, softening, and caring or the like.
+16	2	modulating,primary	as a “perfuming ingredient” it is meant here a compound, which is used for the primary purpose of conferring or modulating an odor.
+16	2	acid,form	the anionic surfactants may be present in acid form, salt form, or mixtures thereof.
+16	2	color,contain	compositions that contain conditioning actives may provide softness, anti-wrinkle, anti-static, conditioning, anti-stretch, color, and/or appearance benefits.
+16	2	active,care	fabric care products such as rinse conditioners (containing 1 to 30 weight % of a fabric conditioning active), fabric liquid conditioners (containing 1 to 30 weight % of a fabric conditioning active), tumble drier sheets, fabric refreshers, fabric refresher sprays, ironing liquids, and fabric softener systems such as those described in u.s.
+32	1	toilet	hygiene articles can be selected from joss sticks, insecticides, repellents, propellants, rust removers, perfumed freshening wipes, armpit pads, baby diapers, sanitary towels, toilet paper, cosmetic wipes, pocket tissues, dishwasher and deodorizer.
+16	2	effect,possible	according to the invention, all possible conformation or configuration isomers are expected to have a similar effect.
+16	2	art,formulations	a person skilled in art may be well versed with the various general formulations for the above-mentioned products.
+31	1	powder	as used herein, the term “solid” includes granular, powder, bar and tablet product forms.
+31	1	found	in addition to the disclosure below, suitable examples of such other adjuncts and levels of use are found in u.s.
+31	1	combination	a typical combination is a cocktail of conventional applicable enzymes like protease, lipase, cutinase and/or cellulase in conjunction with amylase.
+31	1	powder	for example, the carrier can be an aerosol propellant such as a chlorofluoro-methane, or a solid such as a wax, plastics material, rubber, inert powder or gel.
+31	1	art	such dosage is known to the skilled practitioner in the art.
+31	1	origin	trademark and origin: noveon 3) zetesol ao 328 u;
+31	1	origin	trademark and origin: goldschmidt 5) kathon cg;
+31	1	origin	trademark and origin: basf 2) carbopol aqua sf-1 polymer;
+31	1	group	alkyl), it is meant that said group can be in any type of topology (e.g.
+30	1	comprise	when present, the compositions will typically comprise at least about 1% builder, or from about 5% or 10% to about 80%, 50%, or even 30% by weight, of said builder.
+15	2	provided,synthetic	synthetic triglycerides can also be employed provided they are liquid at room temperature.
+15	2	neutral,washing	in accordance with the present invention, purity is achieved by washing the capsules until a neutral ph is achieved, which is indicative of removal of unwanted impurities and/or starting materials, e.g., polyisocyanate, cross-linking agent and the like.
+30	1	balsamic	balsamic ingredients: coumarine, ethylvanillin and/or vanillin;
+30	1	malodor	the exact amount of malodor counteractant agent employed may vary depending upon the type of malodor counteractant, the type of the carrier employed, and the level of malodor counteractancy desired.
+15	2	base,optionally	an invention&#39;s composition consisting of at least one compound of formula (i) and at least one perfumery carrier consists of a particular embodiment of the invention as well as a perfuming composition comprising at least one compound of formula (i), at least one perfumery carrier, at least one perfumery base, and optionally at least one perfumery adjuvant.
+15	2	called,results	goods results are also achieved with the colors named in the following, the so-called aluminum lakes: fd &amp;
+15	2	green,red	c red 40 lake, sunset yellow lake, carmoisine lake, amaranth lake, ponceau 4r lake, erythrosyne lake, red 2g lake, allura red lake, patent blue v lake, indigo carmine lake, brilliant blue lake, brown ht lake, black pn lake, green s lake and mixtures thereof.
+15	2	acetate,group	preferred antioxidants are selected from the group consisting of vitamin a and derivatives, vitamin c and derivatives, tocopherol and derivatives, preferably tocopheryl acetate, and ubiquinone.
+15	2	comprise,formulations	hair growth activators or inhibitors formulations and products according to the present invention may also comprise one or more hair growth activators, i.e.
+15	2	comprise,formulations	alternatively, formulations and products according to the present invention may comprise one or more hair growth inhibitors (as described above), i.e.
+15	2	ethyl,lilial	ethers include, for example, benzyl ethyl ether while aldehydes include, for example, the linear alkanals containing 8 to 18 carbon atoms, citral, citronellal, citronellyloxyacetaldehyde, cyclamen aldehyde, hydroxycitronellal, lilial and bourgeonal.
+15	2	generally,hydrophobic	generally speaking, such compounds are understood to mean compounds that have two hydrophilic groups and two hydrophobic groups per molecule.
+15	2	acid,comprise	copolymers of acrylic acid with maleic acid, which comprise 50 to 90 wt.
+15	2	acid,particularly	% maleic acid, have proven to be particularly suitable.
+15	2	effect,particularly	a polysaccharide with a dextrose equivalent (de) of 0.5 to 40 and, more particularly, 2 to 30 is preferred, the de being an accepted measure of the reducing effect of a polysaccharide in comparison with dextrose, which has a de of 100.
+15	2	advantageous,particularly	a product oxidized at c6 of the saccharide ring can be particularly advantageous.
+15	2	application,art	examples the present application is further described by means of the examples, presented below, wherein the abbreviations have the usual meaning in the art.
+15	2	application,applied	products, and/or methods relating to treating skin (human, dog, and/or cat), including application of creams, lotions, and other topically applied products for consumer use;
+15	2	acid,fatty	the reaction product of n-(2-hydroxyethyl)-1,2-ethylenediamine or n-(2-hydroxyisopropyl)-1,2-ethylenediamine with glycolic acid, esterified with fatty acid, where the fatty acid is (hydrogenated) tallow fatty acid, palm fatty acid, hydrogenated palm fatty acid, oleic acid, rapeseed fatty acid, hydrogenated rapeseed fatty acid;
+15	2	basic,violet	52015 conjugate, montmorillonite basic violet v3 c.i.
+15	2	basic,violet	52015 conjugate, hectorite basic violet v3 c.i.
+15	2	basic,violet	52015 conjugate, saponite basic violet v3 c.i.
+30	1	care	or a home care product, such as a mold remover, a furnisher care product, a wipe, a dish detergent or a hard-surface (e.g.
+15	2	acetate,ethyl	ethyl linalyl acetate ((z)-3,7-dimethylnona-1,6-dien-3-yl acetate);
+30	1	deodorants	hairsprays, hair gels, setting hair lotions, hair conditioners, hair shampoo, permanent and semi-permanent hair colorants, hair shaping compositions such as cold waves and hair smoothing compositions, hair tonics, hair creams and hair lotions, deodorants and antiperspirants such as e.g.
+15	2	care,formulations	as used herein the phrase “fabric care composition” includes compositions and formulations designed for treating fabric.
+30	1	neutral	cleaners for solid surfaces, can be selected from perfumed acidic, alkaline and neutral cleaners, such as e.g.
+30	1	based	%, based on the total weight of the composition.
+15	2	deodorants,mask	deodorizing compositions (deodorants and antiperspirants) counteract, mask or eliminate body odors.
+15	2	aspects,provided	the details, examples and preferences provided in relation to any particular one or more of the stated aspects of the present invention will be further described herein and apply equally to all aspects of the present invention.
+15	2	advantageous,particularly	this may be particularly advantageous where separation and/or purification steps can be avoided by using compound mixtures.
+15	2	deodorants,fresheners	these include substrates such as air fresheners, laundry detergents, fabric softeners, deodorants, lotions, and other household items.
+29	1	care	detailed description of the invention definitions as used herein “consumer product” means baby care, beauty care, fabric &amp;
+29	1	cleaning	the surfactant is typically present at a level of from about 0.1%, from about 1%, or even from about 5% by weight of the cleaning compositions to about 99.9%, to about 80%, to about 35%, or even to about 30% by weight of the cleaning compositions.
+29	1	acid	g se39 from wacker h diethylenetriaminepentaacetic acid.
+29	1	aspect	the lower alkyl alcohols useful herein are monohydric alcohols having 1 to 6 carbons, in one aspect, ethanol and isopropanol.
+29	1	origin	alternatively one may use preformed resins alkylolated polyamines such as those commercially available under the trademark urac® (origin: cytec technology corp.), cymel® (origin: cytec technology corp.), urecoll® or luracoll® (origin: basf).
+29	1	chemicals	preferred aliphatic polyisocyanates are a trimer of hexamethylene diisocyanate, a trimer of isophorone diisocyanate, a trimethylol propane-adduct of hexamethylene diisocyanate (available from mitsui chemicals) or a biuret of hexamethylene diisocyanate (commercially available from bayer under the tradename desmodur® n 100), among which a biuret of hexamethylene diisocyanate is even more preferred.
+29	1	optionally	optionally a c 1 -c 4 compounds comprising two nh 2 functional groups;
+29	1	fatty	glycerol mono- and diesters and sorbitan mono- and diesters of saturated and unsaturated fatty acids containing 6 to 22 carbon atoms and ethylene oxide addition products thereof;
+29	1	application	the compounds can be employed in widely varying amounts, depending upon the specific application and on the nature and quantity of other odorant ingredients.
+29	1	formulation	in addition to the compounds of the present invention, other materials can also be used in conjunction with the fragrance formulation.
+28	1	defined	consequently, a perfuming consumer product which comprises: i) as perfuming ingredient, at least one compound of formula (i), as defined above;
+28	1	medium	some of the above-mentioned consumer product bases may represent an aggressive medium for the invention&#39;s compound, so that it may be necessary to protect the latter from premature decomposition, for example by encapsulation or by chemically bounding it to another chemical which is suitable to release the invention&#39;s ingredient upon a suitable external stimulus, such as an enzyme, light, heat or a change of ph.
+28	1	art	for the sake of clarity, by the expression “any one of its stereoisomers”, or the similar, it is meant the normal meaning understood by a person skilled in the art, i.e.
+28	1	resulting	the resulting mixture is cooled to 40° c.
+28	1	rate	they lower the partial pressure of the individual components, thus also reducing their rate of diffusion.
+28	1	synthetic	perfume oils which may be mentioned are, for example, mixtures of natural and synthetic fragrances.
+28	1	corresponding	polysiloxane/polyalkyl polyether copolymers and corresponding derivatives;
+28	1	regarding	a key requirement from the industry regarding these systems is to survive suspension in challenging bases without physically dissociating or degrading.
+28	1	underarm	underarm sprays, roll-ons, deodorant sticks and deodorant creams, products of decorative cosmetics such as e.g.
+27	1	comprise	builders—the compositions of the present invention can comprise one or more detergent builders or builder systems.
+27	1	bleach	cobalt bleach catalysts useful herein are known, and are described, for example, in u.s.
+27	1	formulation	the amount of the compounds of the present invention employed in a fragrance formulation varies from about 0.005 to about 70 weight percent, preferably from 0.005 to about 50 weight percent, more preferably from about 0.5 to about 25 weight percent, and even more preferably from about 1 to about 10 weight percent.
+27	1	base	by “perfumery base” what is meant here is a composition comprising at least one perfuming co-ingredient.
+27	1	fatty	the addition products of ethylene oxide and/or propylene oxide onto fatty alcohols, fatty acids, alkylphenols, glycerol mono- and diesters and sorbitan mono- and diesters of fatty acids or onto castor oil are known commercially available products.
+27	1	contain	suitable polyols preferably contain 2 to 15 carbon atoms and at least two hydroxyl groups.
+27	1	contain	the polyols may contain other functional groups, more especially amino groups, or may be modified with nitrogen.
+27	1	average	alkylene glycols such as, for example, ethylene glycol, diethylene glycol, propylene glycol, butylene glycol, hexylene glycol and polyethylene glycols with an average molecular weight of 100 to 1000 dalton;
+27	1	technical	technical oligoglycerol mixtures with a degree of self-condensation of 1.5 to 10, such as for example technical diglycerol mixtures with a diglycerol content of 40 to 50% by weight;
+27	1	process	suitable equipment for use in the processes disclosed herein may include continuous stirred tank reactors, homogenizers, turbine agitators, recirculating pumps, paddle mixers, plough shear mixers, ribbon blenders, vertical axis granulators and drum mixers, both in batch and, where available, in continuous process configurations, spray dryers, and extruders.
+27	1	activity	esterase inhibitors inhibit enzyme activity and thus reduce odor formation.
+27	1	properties	the term “anti-bacterial agents” as used herein encompasses substances which have bactericidal and/or bacteriostatic properties.
+26	1	malodor	the term “fragrance product” means a consumer product containing a fragrance ingredient that adds fragrance or masks malodor.
+26	1	defined	the fragrance product of the present invention contains a compound of the present invention and further a complementary fragrance compound as defined above.
+26	1	formulation	the term “olfactory acceptable amount” is understood to mean the amount of a compound in a fragrance formulation, wherein the compound will contribute its individual olfactory characteristics.
+26	1	color	it might also be an ingredient that provides additional benefits such as imparting color or texture.
+26	1	synthetic	chemically modified waxes (hard waxes) such as, for example, montan ester waxes, sasol waxes, hydrogenated jojoba waxes and synthetic waxes such as, for example, polyalkylene waxes and polyethylene glycol waxes.
+26	1	acid	other substances which are suitable esterase inhibitors are sterol sulfates or phosphates, such as, for example, lanosterol, cholesterol, campesterol, stigmasterol and sitosterol sulfate or phosphate, dicarboxylic acids and esters thereof, such as, for example, glutaric acid, monoethyl glutarate, diethyl glutarate, adipic acid, monoethyl adipate, diethyl adipate, malonic acid and diethyl malonate, hydroxycarboxylic acids and esters thereof, such as, for example, citric acid, malic acid, tartaric
+26	1	application	the invention&#39;s microcapsules can advantageously be used in many application fields and used in consumer products.
+26	1	defined	consequently, another object of the present invention consists of a perfumed consumer product comprising as a perfuming ingredient, the microcapsules defined above or a perfuming composition as defined above.
+26	1	end	without an adequate purification, in which the compound of the invention would be involved as a starting, intermediate or end-product could not be considered as a perfuming composition according to the invention.
+26	1	mixed	the remaining ingredients of phase a are mixed separately by addition of one after the other while mixing well after each adjunction.
+26	1	washing	the term “substantivity” describes the interaction of an aroma chemical with a surface, such as for example the skin or a textile, especially after subsequent treatment of the surface, such as for example washing.
+26	1	perfumers	these variations allow perfumers and other persons to apply new compounds in creating new fragrances.
+25	1	alcohol	1-phenylethyl alcohol, 2-phenylethyl alcohol, 3-phenylpropanol;
+25	1	aromatic	the aromatic and araliphatic carboxylic acids and esters thereof such as e.g.
+25	1	cationic	for example, cationic reagents of choice are 3-chloro-2-hydroxypropyl trimethylammonium chloride or its epoxy version.
+25	1	substantially	the compounds of the present invention substantially eliminate the perception of malodors and/or prevent the formation of such malodors, thus, can be utilized with a vast number of functional products.
+25	1	acetate	fragrance compounds of the ester type are, for example, benzyl acetate, p-tert-butylcyclohexyl acetate, linalyl acetate, phenylethyl acetate, linalyl benzoate, benzyl formate, allyl cyclohexylpropionate, styrallyl propionate and benzyl salicylate.
+25	1	active	such suitable antihydrotic active ingredients are, for example, aluminium chloride, aluminium chlorohydrate, aluminium dichlorohydrate, aluminium sesquichlorohydrate and complex compounds thereof, e.g.
+25	1	raw	perfume raw materials having a boiling point b.p.
+25	1	origin	trademark and origin: basf 2) zetesol ao 328 u;
+25	1	generally	fabric softening compositions, and components thereof, are generally described in us 2004/0204337 and us 2003/0060390.
+25	1	otherwise	detailed description of the invention unless stated otherwise, percentages (%) are meant to designate a percentage by weight of a composition.
+25	1	fatty	metal salts of fatty acids such as, for example, magnesium, aluminium and/or zinc stearate or ricinoleate may be used as stabilizers.
+25	1	animal	also suitable are animal products, such as, for example, civet and castoreum.
+25	1	water	b) water or a water-miscible hydrophilic organic solvent;
+25	1	end	by “consumer product” or “end-product” it is meant a manufactured product ready to be distributed, sold and used by a consumer.
+25	1	aromatic	according to one embodiment, said polyisocyanate is an aromatic polyisocyanate.
+25	1	rate	the air flow rate is accurately measured and, assuming the duration of a human inhalation to last 12 seconds, the sampled volume is calculated.
+25	1	art	(1994) and “perfumes: art, science and technology”, miller, p.
+25	1	particularly	particularly preferred ampholytic surfactants are n-cocoalk-ylaminopropionate, cocoacylaminoethyl aminopropionate and acyl sarcosine.
+25	1	impression	an odor composition being a composition, which predominately induces an odor impression, a flavor composition being a composition, which predominantly induces a taste impression.
+24	1	cationic	d cationic high amylose maize starch available from national starch under the trade name cato ®.
+24	1	base	non-limiting examples of suitable perfumery consumer base can be a perfume, such as a fine perfume, a cologne or an after-shave lotion;
+24	1	otherwise	thus, unless expressly stated otherwise, each feature disclosed is only an example of a generic series of equivalent or similar features.
+24	1	commercial	yet, commercial products are mostly offered as isomeric mixtures.
+24	1	otherwise	all parts, percentages and proportions refer to herein and in the claims are by weight unless otherwise indicated.
+24	1	origin	trademark and origin: goldschmidt 4) merquat 550;
+24	1	group	alkyl group), a linear or branched unsaturated hydrocarbon (e.g.
+24	1	fatty	the consistency factors mainly used are fatty alcohols or hydroxyfatty alcohols containing 12 to 22 and preferably 16 to 18 carbon atoms and also partial glycerides, fatty acids or hydroxyfatty acids.
+24	1	aromatic	preferred aromatic polyisocyanates are biurets, polyisocyanurates and trimethylol propane adducts of diisocyanates, more preferably comprising one of the above-cited specific aromatic moieties.
+24	1	group	(ii) at least one ingredient selected from the group consisting of a perfumery carrier, a perfumery co-ingredient and mixtures thereof;
+24	1	optionally	(iii) optionally at least one perfumery adjuvant.
+24	1	properties	a material that does not significantly alter the organoleptic properties of odorants.
+23	1	acid	ether hydroxypolycarboxylates, copolymers of maleic anhydride with ethylene or vinyl methyl ether, 1,3,5-trihydroxybenzene-2,4,6-trisulphonic acid, and carboxymethyl-oxysuccinic acid, the various alkali metal, ammonium and substituted ammonium salts of polyacetic acids such as ethylenediamine tetraacetic acid and nitrilotriacetic acid, as well as polycarboxylates such as mellitic acid, succinic acid, oxydisuccinic acid, polymaleic acid, benzene 1,3,5-tricarboxylic acid, carboxymethyloxysuccinic 
+23	1	ethyl	3a-ethyl-6,6,9a-trimethyldodecahydro-naphtho[2,1-b]furan;
+23	1	art	examples the invention will now be described in further detail by way of the following examples, wherein the abbreviations have the usual meaning in the art, the temperatures are indicated in degrees centigrade (° c.).
+23	1	mixed	such arps may also be mixed with additional prms to provide benefits of polymer-assisted delivery and/or amine-assisted delivery.
+23	1	aforementioned	the proportions in which the compounds according to the invention can be incorporated into the various aforementioned products or compositions vary within a wide range of values.
+23	1	formulation	thus, the compound of the present invention can be used to improve or enhance the aroma characteristics of the fragrance formulation, or by modifying the olfactory reaction contributed by other ingredients in the formulation.
+23	1	formulation	preservative (as needed) the formulation is prepared by (i) mixing the above ingredients, (ii) heating the resultant composition to 75° c.
+23	1	origin	trademark and origin: basf 2) texapon nso is;
+23	1	origin	trademark and origin: cognis 3) merquat 550;
+23	1	origin	trademark and origin: lubrizol 4) dehyton ab-30;
+23	1	origin	trademark and origin: cognis 5) glucamate lt;
+23	1	origin	trademark and origin: lubrizol 6) euperlan pk 3000 am;
+23	1	origin	trademark and origin: cognis 7) cremophor rh 40;
+23	1	fact	said compositions, which in fact can be advantageously employed as perfuming ingredient, are also an object of the present invention.
+23	1	process	a representative process used for aminoplast encapsulation is disclosed in u.s.
+23	1	acetate	and/or vetiveryl acetate ((4,8-dimethyl-2-propan-2-ylidene-3,3a,4,5,6,8a-hexahydro-1h-azulen-6-yl) acetate);
+23	1	defined	and c) a perfuming composition as defined above is another object of the invention.
+23	1	care	a personal-care product, such as a hair-care product (e.g.
+23	1	preparation	a shampoo, hair conditioner, a colouring preparation or a hair spray), a cosmetic preparation (e.g.
+23	1	intended	wipes intended for the treatment/refreshment of textiles or hard surfaces (floors, tiles, stone-floors etc.);
+23	1	toilet	a hygiene product such as sanitary napkins, diapers, toilet paper.
+23	1	alcohol	in addition, hydrotropes, for example ethanol, isopropyl alcohol or polyols, may be used to improve flow behaviour.
+23	1	care	fabric care, household products and personal care products such as laundry care detergents, rinse conditioner, personal cleansing composition, detergent for dishwasher, surface cleaner;
+23	1	water	biocides are commonly used in medicine, agriculture, forestry, and in industry where they prevent the fouling of, for example, water, agricultural products including seed, and oil pipelines.
+23	1	otherwise	unless otherwise specified, all measurements herein are conducted at 20° c.
+23	1	chemicals	arctander, perfume and flavor chemicals (montclair, n.j., 1969), in s.
+22	1	solution	after mixing at higher speed until a stable emulsion is obtained, the second solution and 4 grams of sodium sulfate salt are added to the emulsion.
+22	1	pigments	pigments, dyestuffs and colouring matters;
+22	1	acid	natural gums such as alginate esters, carrageenan, xanthanes, agar-agar, pectines, pectic acid, and natural gums such as gum arabic, gum tragacanth and gum karaya, guar gums and quaternized guar gums;
+22	1	art	those skilled in the art would appreciate that the charge of these polymers can be adjusted by changing the ph, depending on the product in which this technology is to be used.
+22	1	powder	liquid or powder laundry detergents which can use the present invention include those systems described in u.s.
+22	1	optionally	optionally an emulsifier or an emollient may be included including but not limited to those listed above ii.
+22	1	group	group 4: perfuming ingredients comprising at least two fused or linked c 5 and/or c 6 rings;
+22	1	group	group 5: perfuming ingredients comprising a camphor-like ring structure;
+22	1	cationic	suitable fabric softening agents include cationic surfactants.
+22	1	aromatic	non-limiting examples are quaternary ammonium compounds such as alkylated quaternary ammonium compounds, ring or cyclic quaternary ammonium compounds, aromatic quaternary ammonium compounds, diquaternary ammonium compounds, alkoxylated quaternary ammonium compounds, amidoamine quaternary ammonium compounds, ester quaternary ammonium compounds, and mixtures thereof.
+22	1	stability	it might also be an ingredient that imparts light resistance or chemical stability to one or more ingredients contained in a fragrance composition.
+22	1	stability	for instance, fragranced personal and household cleansers containing high levels of aggressive surfactant detergents are very challenging for the stability of microcapsules.
+22	1	aromatic	preferably, when used as a mixture the molar ratio between the aliphatic polyisocyanate and the aromatic polyisocyanate is ranging from 80:20 to 10:90.
+22	1	defined	and (b) a perfuming composition as defined above is part of the invention.
+22	1	form	4) performing a curing step to form the wall of said microcapsule;
+22	1	care	skin care cosmetic such as foundation, pack, sunscreen, skin lotion, milky lotion, skin cream, emollients, skin whitening vi.
+22	1	active	by “use of a compound of formula (i)” it has to be understood here also the use of any composition containing compound (i) and which can be advantageously employed in perfumery industry as active ingredients.
+22	1	resulting	preferably, any mixture resulting directly from a chemical synthesis, e.g.
+22	1	otherwise	all temperatures herein are in degrees celsius (° c.) unless otherwise indicated.
+22	1	profile	the term “modifying” comprises the change of an aroma profile.
+22	1	origin	origin: clarian part a and b are heated separately to 75° c.;
+21	1	properties	which does not significantly alter the organoleptic properties of perfuming ingredients.
+21	1	found	examples of suitable polysiloxanes are found in u.s.
+21	1	found	examples of these polymers are found in u.s.
+21	1	test	the accusizer will dilute the test sample until 9200 counts/second and initiate the evaluation.
+21	1	contain	alcoholic fine fragrances may contain the following: 1.
+21	1	released	the fragrance materials may be released from the pro-fragrances in a number of ways.
+21	1	group	group 2: perfuming ingredients comprising a cyclopentane, cyclopentene, cyclopentanone or cyclopentenone ring substituted with at least one linear or branched c 4 to c 8 alkyl or alkenyl substituent;
+21	1	raw	suitable quadrant i, ii, iii and iv perfume raw materials are disclosed in u.s.
+21	1	water	0.1 methylisothiazolinone 11) d-panthenol 75% 12) 0.1 water deionized 0.3 f sodium chloride 25% aqueous sol.
+21	1	care	fabric care, household products and personal care products such as cosmetics, laundry care detergents, rinse conditioner, personal cleansing composition, detergent for dishwasher, surface cleaner;
+21	1	found	a detailed overview of suitable volatile silicones can be found in todd et al.
+21	1	care	functional perfumery includes in particular personal-care products including hair-care, body cleansing, skin care, hygiene-care as well as home-care products including laundry care and air care.
+21	1	rate	the instrument is configured with the following conditions and selections: flow rate=1 ml/sec;
+21	1	threshold	the determination of odor threshold is described in more detail in c.
+21	1	provided	the abstract is provided to comply with 37 c.f.r.
+21	1	out	hair conditioners (rinse-out conditioners, leave-in conditioners, and cleansing conditioners) iii.
+21	1	medium	some of the above-mentioned consumer product bases may represent an aggressive medium for the invention&#39;s compound, so that it may be necessary to protect the latter from premature decomposition, for example by encapsulation.
+21	1	contain	surfactant-containing compositions, such as for example shower gels, foam baths, shampoos, etc., preferably contain at least one anionic surfactant.
+20	1	acid	5-phenyl-3-methyl-2-pentenoic acid nitrile;
+20	1	called	the microencapsulation can take place for example by the so-called coacervation method with the help of capsule materials, e.g.
+20	1	soft	made of polyurethane-like substances or soft gelatin.
+20	1	determine	the ph during use will determine the overall net charge of the polymer.
+20	1	cationic	also, glyoxylated cationic polyacrylamides can be used.
+20	1	cationic	typical polymers of choice are those containing the cationic monomer dimethylaminoethyl methacrylate (dmaema) or methacrylamidopropyl trimethyl ammonium chloride (maptac).
+20	1	found	dmaema can be found in gafquat and gaffix vc-713 polymers from isp.
+20	1	positive	x and y can be varied as long as the theoretical net charge of the polymer is zero (amphoteric) or positive.
+20	1	based	some of the seminal literature related to the encapsulation of perfumes by polycondensation of amino resins, namely melamine based resins with aldehydes includes articles such as those published by k.
+20	1	origin	origin: clariant 4) origin: genencor international 5) aculyn 88;
+20	1	acid	aprepitant, hydroxyphenyl propamidobenzoic acid), cannabinoid receptor agonists (e.g.
+20	1	water	and 1013 mbar (including highly viscous substances) as for example glycerol, 1,2-propylene glycol, 1,2-butylene glycol, 1,3-propylene glycol, 1,3-butylene glycol, ethanol, water and mixtures of two or more of said liquid carrier materials with water.
+20	1	alcohol	suitable alcohols are anethol, citronellol, eugenol, isoeugenol, geraniol, linalool, phenylethyl alcohol and terpineol.
+20	1	solution	pump spray or spray with propellant) or a foam or an impregnating solution for cosmetic wipes, a detergent, e.g.
+20	1	powder	an emulsion (as described above), ointment, paste, gel (as described above), oil, balsam, serum, powder (e.g.
+20	1	art	techniques for controlling ph at recommended usage levels include the use of buffers, alkalis, acids, etc., and are well known to those skilled in the art.
+20	1	defined	preferably, the perfume comprises at least 30%, preferably at least 50%, more preferably at least 60% of ingredients selected from groups 1 to 7, as defined above.
+20	1	defined	more preferably said perfume comprises at least 30%, preferably at least 50% of ingredients from groups 3 to 7, as defined above.
+20	1	defined	most preferably said perfume comprises at least 30%, preferably at least 50% of ingredients from groups 3, 4, 6 or 7, as defined above.
+20	1	art	for the sake of clarity, by the expression “any one of its stereoisomers or a mixture thereof”, or the similar, it is meant the normal meaning understood by a person skilled in the art, i.e.
+20	1	application	national phase application of international patent application no.
+20	1	active	the ratio between the active material and the fabric softening agent can be 1:500 to 1:2 (e.g., 1:250 to 1:4 and 1:100 to 1:8).
+20	1	positively	furthermore, the invention&#39;s compound can also be advantageously used in all the fields of modern perfumery to positively impart or modify the odor of a consumer product into which said compound (i) is added.
+20	1	substantially	the terms “substantially free of” or “substantially free from” may be used herein.
+20	1	color	sunscreen ant tattoo color protection (sprays, lotions, and sticks) iv.
+20	1	stability	the term “stability” describes the behavior of an aroma chemical upon contact with oxygen, light and/or other substances.
+20	1	art	“niceness” and “conciseness” are terms which are familiar to the person skilled in the art, such as a perfumer.
+20	1	mixed	ceteareth-25 is added once the other part a ingredients are mixed and heated.
+20	1	ethyl	2-ethyl-4-(2,2,3-trimethyl-3 cyclopent-1-yl)-2-buten-1-ol;
+20	1	acetate	4,7 methanooctahydro-5 or 6-indenyl acetate;
+20	1	ethyl	ethyl 2-ethyl-6,6 dimethyl-2-cyclohexenecarboxylate;
+20	1	alcohol	1-phenylethyl alcohol, 2 phenylethyl alcohol, 3-phenylpropanol;
+20	1	ethyl	2 ethyl-4-hydroxy-5-methyl-2h-furan-3-one;
+20	1	cationic	other cationic surfactants suitable for use in accordance with the invention are the quaternized protein hydrolysates.
+20	1	background	furthermore, there is no intention to be bound by any theory presented in the preceding background of the invention or the following detailed description of the invention.
+20	1	intended	it should also be appreciated that the exemplary embodiment or exemplary embodiments are only examples, and are not intended to limit the scope, applicability, or configuration of the invention in any way.
+19	1	aromatic	xix) aromatic and aliphatic aldehydes, such as, for example, benzaldehyde;
+19	1	ethyl	xxiv) heterocyclic compounds, such as, for example, 2,5-dimethyl-4-hydroxy-2h-furan-3-one, 2-ethyl-4-hydroxy-5-methyl-2h-furan-3-one, 3-hydroxy-2-methyl-4h-pyran-4-one, 2-ethyl-3-hydroxy-4h-pyran-4-one;
+19	1	art	the above-listed applications are all well known in the art.
+19	1	musk	musk ingredients: 1,4-dioxa-5,17-cycloheptadecanedione, pentadecenolide, 3-methyl-5-cyclopentadecen-1-one, 1,3,4,6,7,8-hexahydro-4,6,6,7,8,8-hexamethyl-cyclopenta-g-2-benzopyrane, (1s,1′r)-2-[1-(3′,3′-dimethyl-1′-cyclohexyl)ethoxy]-2-methylpropyl propanoate, pentadecanolide and/or (1s,1′r)-[1-(3′,3′-dimethyl-1′-cyclohexyl)ethoxycarbonyl]methyl propanoate;
+19	1	alcohol	and the cetyl alcohol, stearyl alcohol, and the sles surfactant are added to it.
+19	1	acid	a polymeric compound comprising, at least two moieties selected from the moieties consisting of a carboxylic acid moiety, an amine moiety, a hydroxyl moiety, and a nitrile moiety on a backbone of polybutadiene, polyisoprene, polybutadiene/styrene, polybutadiene/acrylonitrile, carboxyl-terminated polybutadiene/acrylonitrile or combinations thereof;
+19	1	cationic	pre-formed coacervates of anionic surfactants combined with cationic polymers;
+19	1	intended	such compounds of low melting point are not intended to be included in this section.
+19	1	otherwise	commercially available reagents and solvents were used without further purification if not stated otherwise.
+19	1	found	maptac can be found in basf&#39;s luviquat pq11 pn and isp&#39;s gafquat hs100.
+19	1	acid	an acrylic acid-acrylamide copolymer, cross-linked with a melamine-formaldehyde resin as disclosed in u.s.
+19	1	cationic	capsule wall material formed from a complex of cationic and anionic melamine-formaldehyde precondensates that are then cross-linked as disclosed in u.s.
+19	1	alcohol	preferred beta-ketoesters include alkyl-malonates, alkyl aceto acetates and polyvinyl alcohol aceto acetates.
+19	1	intended	accordingly, the appended claims are intended to include within their scope such processes, machines, manufacture, compositions of matter, means, methods, or steps.
+19	1	preparations	waxes and stabilizers besides natural oils used, waxes may also be present in the preparations, more especially natural waxes such as, for example, candelilla wax, carnauba wax, japan wax, espartograss wax, cork wax, guaruma wax, rice oil wax, sugar cane wax, ouricury wax, montan wax, beeswax, shellac wax, spermaceti, lanolin (wool wax), uropygial fat, ceresine, ozocerite (earth wax), petrolatum, paraffin waxes and microwaxes;
+19	1	formulation	in a further preferred embodiment a formulation according to the invention contains a total amount of sunscreen agents, i.e.
+19	1	comprise	said polyisocyanate comprises at least 2, preferably at least 3 but may comprise up to 6, or even only 4, isocyanate functional groups.
+19	1	application	description cross-reference to related applications this application claims priority to u.s.
+19	1	optionally	gelatin-polyphosphate coacervates optionally cross-linked with gluteraldehyde;
+19	1	toilet	all-purpose cleaners including bucket dilutable cleaners and toilet cleaners viii.
+19	1	fresheners	air fresheners including room deodorizer and car deodorizer, scented candles, sprays, scented oil air freshener, automatic spray air freshener, and neutralizing gel beads xviii.
+19	1	hand	lotion including body lotion, facial lotion, and hand lotion xiii.
+19	1	comprise	the compositions of the present disclosure can comprise, consist essentially of, or consist of, the components of the present disclosure.
+19	1	art	furthermore, the features, structures or characteristics may be combined in any suitable manner, as would be apparent to a person skilled in the art from this disclosure, in one or more embodiments.
+19	1	combination	for example, in the appended claims, any of the claimed embodiments are used in any combination.
+19	1	entitled	for the avoidance of doubt, the applicant shall be entitled to any equivalents according to applicable law.
+19	1	ethyl	ethyl 2,3,6,6-tetramethyl-2 cyclohexene-carboxylate;
+19	1	based	% and preferably 0.1 to 2 wt.-%, based on the total weight of the composition.
+19	1	otherwise	as used herein all percentages are weight percent unless otherwise noted, ppm is understood to stand for parts per million and g is understood to be grams.
+18	1	fatty	in addition to these nonionic surfactants, fatty alcohols with more than 12 eo can also be used.
+18	1	primary	typically the reactive amines are primary and/or secondary amines, and may be part of a polymer or a monomer (non-polymer).
+18	1	menthol	vii) cyclic terpene alcohols, such as, for example, menthol, isopulegol, alpha-terpineol, terpinen-4-ol, menthan-8-ol, menthan-1-ol, menthan-7-ol, borneol, isoborneol, linalool oxide, nopol, cedrol, ambrinol, vetiverol, guaiol, and the formates, acetates, propionates, isobutyrates, butyrates, isovalerates, pentanoates, hexanoates, crotonates, tiglinates and 3-methyl-2-butenoates of alpha-terpineol, terpinen-4-ol, methan-8-ol, methan-1-ol, methan-7-ol, borneol, isoborneol, linalool oxide, nopol, 
+18	1	single	they include single compounds and mixtures.
+18	1	fully	these soil release agents are described fully in u.s.
+18	1	end	4,711,730, the anionic end-capped oligomeric esters of u.s.
+18	1	group	said soil release agent also comprises from about 0.5% to about 20%, by weight of the oligomer, of a crystalline-reducing stabilizer, preferably selected from the group consisting of xylene sulfonate, cumene sulfonate, toluene sulfonate, and mixtures thereof.
+18	1	through	after incorporation, this mixture is passed through a heat exchanger where it is cooled to about 35° c.
+18	1	active	another example of a suitable inorganic carrier includes inorganic tubules, where the perfume or other active material is contained within the lumen of the nano- or micro-tubules.
+18	1	preparation	the preparation of the compounds of the present invention is detailed in the examples.
+18	1	application	description cross reference to related applications this application claims the benefit of u.s.
+18	1	intended	however, a given classification is not intended to be a limitation on that particular compound, but is done so for convenience of classification and nomenclature.
+18	1	formulation	flavor 0.8-1.2% the components described above were kneaded by a kneader according to the foregoing formulation to provide a chewing gum.
+18	1	encapsulated	encapsulated flavor or sensate is then added and blended till homogeneous.
+18	1	encapsulated	encapsulated volatile flavor 0.01-0.5% v.
+18	1	usually	the molecular weight of the organosilicone is usually indicated by the reference to the viscosity of the material.
+18	1	detectable	“free of” refers to no detectable amount of the stated ingredient or thing.
+18	1	acid	it is preferable to use, as the precondensate for cross-linking, the substituted or un-substituted acrylic acid polymer or co-polymer.
+18	1	defined	preferably, the consumer product comprises from 0.1 to 15 wt %, more preferably between 0.2 and 5 wt % of the microcapsules of the present invention, these percentages being defined by weight relative to the total weight of the consumer product.
+18	1	acid	acetic acid derivatives such as diclofenac, fenclofenac, indomethacin, sulindac, tolmetin or clindanac;
+18	1	together	however, it is preferred to use mixtures of different perfume compounds which, together, produce an agreeable perfume.
+18	1	group	x is a counter ion, preferably selected from the group of the halides, alkyl sulfates and alkyl carbonates.
+18	1	acid	other esterquats are those of which the acyl component derives from dicarboxylic acids like malonic acid, succinic acid, maleic acid, fumaric acid, glutaric acid, sorbic acid, pimelic acid, azelaic acid, sebacic acid and/or dodecanedioic acid, but preferably adipic acid.
+18	1	acid	overall, esterquats of which the acyl component derives from mixtures of monocarboxylic acids containing 6 to 22 carbon atoms, and adipic acid are preferably used.
+18	1	water	water-soluble, nonphosphorus organic builders useful herein include the various alkali metal, ammonium and substituted ammonium polyacetates, carboxylates, polycarboxylates and polyhydroxy sulfonates.
+18	1	acid	examples of polyacetate and polycarboxylate builders are the sodium, potassium, lithium, ammonium and substituted ammonium salts of ethylene diamine tetraacetic acid, nitrilotriacetic acid, oxydisuccinic acid, mellitic acid, benzene polycarboxylic acids, and citric acid.
+18	1	combination	a typical combination may be a cocktail of conventional applicable enzymes like protease, lipase, cutinase and/or cellulase in conjunction with amylase.
+18	1	acetate	calcium salts, for example, calcium chloride, calcium formate, calcium acetate, calcium bromide;
+18	1	single	by “perfume or flavour oil”, it is meant a single perfuming or flavouring compound or a mixture of several perfuming or flavouring compounds.
+18	1	ethyl	ethyl safranate (ethyl 2,6,6-trimethylcyclohexa-1,3-diene-1-carboxylate);
+18	1	specifically	combinations specifically contemplated combinations of the disclosure are herein described in the following lettered paragraphs.
+18	1	intended	these combinations are intended to be illustrative in nature and are not intended to be limiting.
+18	1	soft	of polyurethane-like substances or soft gelatin.
+18	1	defined	according to a particular embodiment, the consumer product as defined above is liquid and comprises: a) from 2 to 65% by weight, relative to the total weight of the consumer product, of at least one surfactant;
+18	1	form	hair coloration an object of the invention is a consumer product in the form of an oxidative hair coloring composition comprising: an oxidizing phase comprising an oxidizing agent and an alkaline phase comprising an alkakine agent, a dye precursor and a coupling compound;
+18	1	art	however, if it is desired to prepare individual stereoisomers, this may be achieved according to methodology known in the art, e.g.
+17	1	bleach	suitable transition-metals in the instant transition-metal bleach catalyst include manganese, iron and chromium.
+17	1	special	suitable mrl&#39;s herein are a special type of ultra-rigid ligand that is cross-bridged such as 5,12-diethyl-1,5,8,12-tetraazabicyclo[6.6.2]hexa-decane.
+17	1	process	and maintained overnight with continuous stirring to complete the encapsulation process.
+17	1	acetate	alpha, alpha-dimethylphenylethyl acetate;
+17	1	based	the ether amine can be monoamine, diamine, or triamine, based on this core structure.
+17	1	combination	6,287,603 and us 2002/0019369), pro-fragrances (wo 2000/072816 and ep 0 922 084), and any combination thereof.
+17	1	itself	any compound, polymer, or agent discussed above can be the compound, polymer, or agent itself as shown above, or its salt, precursor, hydrate, or solvate.
+17	1	effect	of course the above concentrations may be adapted according to the olfactive effect desired in each product.
+17	1	raw	nonpolar solvents, including but not limited to, mineral oil, perfume raw materials, silicone oils, hydrocarbon paraffin oils, and mixtures thereof.
+17	1	associated	other examples include those with amine functionality, which may be used to provide benefits associated with amine-assisted delivery (aad) and/or polymer-assisted delivery (pad) and/or amine-reaction products (arp).
+17	1	fatty	these fatty alcohols are saturated and can be straight or branched chain alcohols.
+17	1	concentration	the propellant may have a concentration from about 15%, 25%, 30%, 32%, 34%, 35%, 36%, 38%, 40%, or 42% to about 70%, 65%, 60%, 54%, 52%, 50%, 48%, 46%, 44%, or 42% by weight of the total fill of materials stored within the container.
+17	1	process	a representative process used for gelatin encapsulation is disclosed in u.s.
+17	1	acid	ethylene glycol cyclic ester of n-dodecanedioic acid;
+17	1	active	as an illustration, when the fabric softening agent is 5% by weight of the fabric softener, the active material is 0.01 to 2.5%, preferably 0.02 to 1.25% and more preferably 0.1 to 0.63%.
+17	1	active	as another example, when the fabric softening agent is 20% by weight of the fabric softener, the active material is 0.04 to 10%, preferably 0.08 to 5% and more preferably 0.4 to 2.5%.
+17	1	care	when the capsules are aimed to be used in products having low ph, e.g., fabric care conditioners, formaldehyde scavengers are preferably selected from beta diketones, such as beta-ketoesters, or from 1,3-diols, such as propylene glycol.
+17	1	art	a detailed description of the nature and type of adjuvants commonly used in fragrance compositions containing same cannot be exhaustive, but it has to be mentioned that said ingredients are well known to a person skilled in the art.
+17	1	extract	symmatrix (company symrise, inci: maltodextrin, rubus fruticosus (blackberry) leaf extract).
+17	1	extract	dragosantol and dragosantol 100 from symrise, oat glucan, echinacea purpurea extract and soy protein hydrolysate.
+17	1	extract	dragosantol and dragosantol 100 from symrise, oat glucan, echinacea purpurea extract, sinorhizobium meliloti ferment filtrate, calcium ketogluconate, alpinia galanga leaf extract and tetradecyl aminobutyroylvalylaminobutyric urea trifluoroacetate.
+17	1	acid	propionic acid derivatives such as ibuprofen, naproxen, benoxaprofen or pyrazoles such as phenylbutazone, oxyphenylbutazone, febrazone or azapropazone.
+17	1	art	enzymes can be used at their art-taught levels, for example at levels recommended by suppliers such as novozymes and genencor.
+17	1	application	description cross-reference to related applications this application is a continuation of u.s.
+17	1	group	according to a particular embodiment, a triisocyanate (3 isocyanate functional group) is used.
+17	1	group	preferably copolymers shall be selected from the group consisting of polyquaternium-5, polyquaternium-6, polyquaternium-7, polyquaternium10, polyquaternium-11, polyquaternium-16, polyquaternium-22, polyquaternium-28, polyquaternium-43, polyquaternium-44, polyquaternium-46, cassia hydroxypropyltrimonium chloride, guar hydroxypropyltrimonium chloride or polygalactomannan 2-hydroxypropyltrimethylammonium chloride ether, starch hydroxypropyltrimonium chloride and cellulose hydroxypropyltrimonium chl
+17	1	ethyl	aphermate (1-(3,3-dimethylcyclohexyl)ethyl formate);
+17	1	acetate	citronellyl acetate (3,7-dimethyloct-6-en-1-yl acetate);
+17	1	acetate	cyclogalbanate (allyl 2-(cyclohexyloxy)acetate);
+17	1	acetate	dimethyl benzyl carbinyl acetate (2-methyl-1-phenylpropan-2-yl acetate);
+17	1	fatty	suitable nonionic surfactants include alkoxylated fatty alcohols, such as ethoxylated fatty alcohols.
+17	1	combination	the nonionic surfactants may be linear, branched (e.g., mid-chain branched), or a combination thereof.
+17	1	art	a detailed description of the nature and type of adjuvant commonly used in perfuming bases cannot be exhaustive, but it has to be mentioned that the ingredients are well known to a person skilled in the art.
+17	1	properties	these include, firstly, the sensory properties, i.e.
+17	1	form	they are, in particular, alkyl sulfates in the form of their alkali metal, ammonium or alkanolammonium salts, alkylether sulfates, alkylether carboxylates, acyl isethionates, acyl sarcosinates, acyl taurines containing linear c12-c18 alkyl or acyl groups and sulfosuccinates and acyl glutamates in the form of their alkali metal or ammonium salts.
+17	1	hydrophobic	according to a particular embodiment, the hydrophobic material comprises a perfume.
+17	1	hydrophobic	according to a particular embodiment, the hydrophobic material consists of a perfume.
+17	1	hydrophobic	according to a particular embodiment, the hydrophobic material consists of biocide actives.
+17	1	hydrophobic	according to a particular embodiment, the hydrophobic material consists of pest control agents.
+17	1	acetate	4,7-methano-3a,4,5,6,7,7a-hexahydro-5- or 6-indenyl acetate;
+17	1	optionally	optionally at least an outer mineral layer.
+17	1	cleaning	these compounds can also be used to perfume cleaning agents, such as, but not limited to detergents, dishwashing materials, scrubbing compositions, window cleaners and the like.
+17	1	malodor	the term “fragrance product” means a consumer product that adds a fragrance or masks a malodor.
+16	1	form	and metal cleaners, fabric conditioning products including softening and/or freshening that may be in liquid, solid and/or dryer sheet form;
+16	1	solution	the ph of the solution is adjusted to ph of 4.0 with sodium hydroxide solution.
+16	1	bleach	combinations of conventional bleach activators can also be used.
+16	1	acid	dihydrolipoic acid), aurothioglucose, propylthiouracil and other thiols (e.g.
+16	1	cationic	suitable surfactants are nonionic surfactants, cationic surfactants, amphoteric surfactants, zwitterionic surfactants, and mixtures thereof.
+16	1	based	nonlimiting examples of polymeric amines include polymers based on polyalkylimines, such as polyethyleneimine (pei), or polyvinylamine (pvam).
+16	1	aromatic	in some embodiments, the mixture of polyisocyanates includes an aliphatic polyisocyanate and an aromatic polyisocyanate.
+16	1	aromatic	in certain embodiments, the polyisocyanate is an aliphatic isocyanate or a mixture of aliphatic isocyanate, free of any aromatic isocyanate.
+16	1	ethyl	x) cycloaliphatic alcohols, such as, for example, alpha, 3,3-trimethylcyclo-hexylmethanol, 2-methyl-4-(2,2,3-trimethyl-3-cyclopent-1-yl)butanol, 2-methyl-4-(2,2,3-trimethyl-3-cyclopent-1-yl)-2-buten-1-ol, 2-ethyl-4-(2,2,3-trimethyl-3-cyclopent-1-yl)-2-buten-1-ol, 3-methyl-5-(2,2,3-trimethyl-3-cyclopent-1-yl)-pentan-2-ol, 3-methyl-5-(2,2,3-trimethyl-3-cyclopent-1-yl)-4-penten-2-ol, 3,3-dimethyl-5-(2,2,3-trimethyl-3-cyclopent-1-yl)-4-penten-2-ol, 1-(2,2,6-trimethylcyclohexyl)pentan-3-ol, 1-(2,2,6-
+16	1	coconut	these include vegetable oils such as jojoba, soybean, canola, sunflower, safflower, rice bran, avocado, almond, olive, sesame, persic, castor, coconut, and mink oils.
+16	1	basic	the basic requirement for the polymer is that it be miscible or compatible with the other components of the core, namely the fragrance and other solvent.
+16	1	group	likewise, a salt can also be formed between a cation and a negatively charged group on the compound, polymer, or agent.
+16	1	water	a hydrate refers to the compound, polymer, or agent that contains water.
+16	1	possible	the compounds, polymers, and agents include all possible configurational stereoisomeric, regioisomeric, diastereomeric, enantiomeric, and epimeric forms as well as any mixtures thereof.
+16	1	combination	other embodiments all of the features disclosed in this specification may be combined in any combination.
+16	1	application	description cross reference to related applications this application is a continuation of u.s.
+16	1	case	many of these ingredients are in any case listed in reference texts such as the book by s.
+16	1	results	after 2 minutes of testing the accusizer will display the results, including volume-weighted median size.
+16	1	properties	these include, firstly, the organoleptic properties, i.e.
+16	1	substantially	while mixing each phase using a suitable mixer (e.g., anchor blade, propeller blade, or ika t25) until each reaches a substantially constant desired temperature and is homogenous.
+16	1	add	slowly add phase b to phase a while continuing to mix phase a.
+16	1	mixed	the ingredients of part i and part ii are mixed in separate suitable containers.
+16	1	water	part ii is then added slowly to part i under agitation to assure the making of a water-in-silicone emulsion.
+16	1	completely	until the all solids are completely melted.
+16	1	application	description cross reference to related applications this application is a national stage application of international application no.
+16	1	rather	desire to be in the gas phase rather than the liquid or solid state.
+16	1	application	description cross reference to related application this application claims the benefit of u.s.
+16	1	defined	therefore, another object of the present invention is a perfuming composition comprising: i) as a perfuming ingredient, at least one invention&#39;s compound as defined above;
+16	1	medium	some of the above-mentioned perfumed consumer products may represent an aggressive medium for the invention&#39;s compounds, so that it may be necessary to protect the latter from premature decomposition, for example by encapsulation or by chemically binding it to another chemical which is suitable to release the invention&#39;s ingredient upon a suitable external stimulus, such as an enzyme, light, heat or a change of ph.
+16	1	environmental	3.10 (2000, available at the us environmental protection agency).
+16	1	neat	when including capsules at these levels, the neat oil equivalent (noe) in the softener is 0.05 to 5% (e.g., 0.15 to 3.2%, 0.25 to 2%, and 0.3 to 1%).
+16	1	origin	amine-containing polymers of natural origin are typically proteins such as gelatin and albumen, as well as some polysaccharides.
+16	1	particularly	alternatively, particularly with respect to biological systems or processes, the term can mean within an order of magnitude, preferably within 5-fold, and more preferably within 2-fold, of a value.
+16	1	process	this process is described in more details in wo 2013/068255, the content of which is included by reference.
+16	1	based	suitable compounds which reduce the hypersensitivity of skin nerves based on their action as trpv1 antagonists, encompass e.g.
+16	1	based	to produce the quaternised esters, the mixtures of mono- and dicarboxylic acids and the triethanolamine—based on the available carboxyl functions—may be used in a molar ratio of 1.1:1 to 3:1.
+16	1	acid	preferred salts are the salts of polycarboxylic acids such as citric acid, adipic acid, succinic acid, glutaric acid, tartaric acid, sugar acids and mixtures thereof.
+16	1	water	preferably, the foam inhibitors, especially silicone-containing and/or paraffin-containing foam inhibitors, are loaded onto a granular, water-soluble or dispersible carrier material.
+16	1	acid	builders for use in liquid detergents include citric acid.
+16	1	formulations	or they can be used in heavier-duty laundry detergent formulations at higher levels, e.g., about 0.1% and higher.
+16	1	acid	aminophosphonates such as diethylenetriamine pentamethylenephosphonic acid and, ethylenediamine tetramethylenephosphonic acid;
+16	1	aspects	in other aspects, the crystalline, hydroxyl-containing stabilizing agents may be derivatives of castor oil, such as hydrogenated castor oil derivatives, for example, castor wax.
+16	1	small	suitable dyes include small molecule dyes and polymeric dyes.
+16	1	violet	pigment blue 29), ultramarine violet (c.i.
+16	1	aromatic	suitable polyisocyanates used according to the invention include aromatic polyisocyanate, aliphatic polyisocyanate and mixtures thereof.
+16	1	powder	also a powder consumer product comprising (a) from 2 to 65% by weight, relative to the total weight of the consumer product, of at least one surfactant;
+16	1	acetate	4,7-methano-3a,4,5,6,7,7a-hexahydro-5, or 6-indenyl acetate;
+16	1	acetate	linalyl acetate (3,7-dimethylocta-1,6-dien-3-yl acetate);
+16	1	cationic	the surfactant system may include anionic surfactant, nonionic surfactant, zwitterionic surfactant, cationic surfactant, amphoteric surfactant, or combinations thereof.
+16	1	alcohol	the surfactant system may include linear alkyl benzene sulfonate, alkyl ethoxylated sulfate, alkyl sulfate, nonionic surfactant such as ethoxylated alcohol, amine oxide, or mixtures thereof.
+16	1	active	the composition may include from about 1%, or from about 2%, or from about 3%, to about 99%, or to about 75%, or to about 50%, or to about 40%, or to about 35%, or to about 30%, or to about 25%, or to about 20%, or to about 15%, or to about 10%, by weight of the composition, of conditioning active.
+16	1	active	the composition may include from about 5% to about 30%, by weight of the composition, of conditioning active.
+16	1	care	denture adhesive e) health care devices i.
+16	1	care	exfoliating scrub h) personal care devices i.
+16	1	defined	consequently, a perfumed article comprising: i) as perfuming ingredient, at least one compound of formula (i), as defined above, or an invention&#39;s perfuming composition;
+16	1	formulation	thus, the compounds of the present invention can be used to improve or enhance the aroma characteristics of the fragrance formulation, or by modifying the olfactory reaction contributed by other ingredients in the formulation.
+16	1	formulations	liquid dishwashing product formulations typically have a ph between about 6.8 and about 9.0.
+16	1	advantageous	in particular, any feature indicated as being preferred or advantageous may be combined with any other feature or features indicated as being preferred or advantageous.
+16	1	particles	granulated enzyme particles, corrosion inhibitors, antifoaming, sud suppressing agents;
+16	1	technical	for a more detailed description of the parameters and values, see charles hansen, the three dimensional solubility parameter and solvent diffusion coefficient, danish technical press (copenhagen, 1967).
+15	1	care	over-the-counter health care including cough and cold remedies, pain relievers, rx pharmaceuticals, pet health and nutrition;
+15	1	stability	the use of pre-loaded microcapsules requires the proper ratio of in-product stability and in-use and/or on-surface (on-situs) release, as well as proper selection of prms.
+15	1	treated	such perfume delivery technologies can also be used to increase the longevity of perfume release from the treated substrate.
+15	1	composed	a second type of useful ester oil is predominantly composed of triglycerides and modified triglycerides.
+15	1	provided	modified triglycerides include materials such as ethoxylated and maleated triglyceride derivatives provided they are liquids.
+15	1	acid	a third type of ester oil is liquid polyester formed from the reaction of a dicarboxylic acid and a diol.
+15	1	acetate	suitable anions include chloride, bromide, iodide, sulfate, nitrate, phosphate, citrate, methanesulfonate, trifluoroacetate, acetate, malate, tosylate, tartrate, fumurate, glutamate, glucuronate, lactate, glutarate, and maleate.
+15	1	since	since then, many other authors and creators have enriched the literature in this field and it would be impossible to cover all published developments here, but the general knowledge in this type of encapsulation is very significant.
+15	1	solution	the solution is then cooled to about 62° c.
+15	1	possible	the examples are given solely for the purpose of illustration and are not to be construed as limitations of the present invention, as many variations thereof are possible without departing from the spirit and scope of the invention.
+15	1	because	high levels of complexity are also assigned to compounds that possess ambiguous and somehow hard-to-define notes because of direct contribution or the many olfactive combinations of odors produced.
+15	1	quality	fragrance materials of high level complexity are considered having unusual and high quality.
+15	1	malodor	and v) enter a rating of overall intensity and malodor intensity on a handheld computer.
+15	1	group	group 6: perfuming ingredients comprising at least one c 7 to c 20 ring structure;
+15	1	through	these moieties may be attached directly to the siloxane backbone through a bivalent alkylene radical, (i.e., “pendant”) or may be part of the backbone.
+15	1	resulting	for purposes of practicing this invention, the resulting material has a molecular weight in the range of from 156 to 3000.
+15	1	determined	the “calculated log p” (c log p) is determined by the fragment approach of hansch and leo (cf., a.
+15	1	average	the cited degrees of ethoxylation and propoxylation constitute statistical average values that can be a whole or a fractional number for a specific product.
+15	1	alcohol	preferred alcohol ethoxylates and propoxylates have a narrowed homolog distribution (narrow range ethoxylates/propoxylates, nre/nrp).
+15	1	called	the so-called gemini surfactants can be considered as further surfactants.
+15	1	cases	in exceptional cases, however, not only dimeric but also trimeric surfactants are meant by the term gemini surfactants.
+15	1	acid	preferred polyacetals are obtained from dialdehydes like glyoxal, glutaraldehyde, terephthalaldehyde as well as their mixtures and from polycarboxylic acids like gluconic acid and/or glucoheptonic acid.
+15	1	average	the hydrolysis products preferably have average molecular weights in the range of 400 to 500,000 g/mol.
+15	1	form	3,158,615, is preferably used in the form of its sodium or magnesium salts.
+15	1	formulations	suitable addition quantities in zeolite-containing and/or silicate-containing formulations range from 3 to 15% by weight.
+15	1	case	especially in this case, mixtures of paraffins and bis-stearylethylene diamides are preferred.
+15	1	combination	as such, the particular features presented herein can be combined with each other in other manners within the scope of the disclosed subject matter such that the disclosed subject matter includes any suitable combination of the features disclosed herein.
+15	1	intended	it is not intended to be exhaustive or to limit the disclosed subject matter to those embodiments disclosed.
+15	1	intended	thus, it is intended that the disclosed subject matter include modifications and variations that are within the scope of the appended claims and their equivalents.
+15	1	care	products relating to disposable absorbent and/or non-absorbent articles including adult incontinence garments, bibs, diapers, training pants, infant and toddler care wipes;
+15	1	oily	polyglycerol esters (pges), oily sugar derivatives, and wax emulsions and a mixture of the above.
+15	1	combination	hueing agents can be used either alone or in combination to create a specific shade of hueing and/or to shade different fabric types.
+15	1	pigments	suitable fabric hueing agents include dyes, dye-clay conjugates, and organic and inorganic pigments.
+15	1	basic	42595 conjugate, montmorillonite basic blue b9 c.i.
+15	1	basic	basic black 2 conjugate, hectorite basic blue b7 c.i.
+15	1	basic	42595 conjugate, hectorite basic blue b9 c.i.
+15	1	basic	basic black 2 conjugate, saponite basic blue b7 c.i.
+15	1	basic	42595 conjugate, saponite basic blue b9 c.i.
+15	1	acetate	modified celluloses such as hydrolyzed cellulose acetate, hydroxy propyl cellulose, methyl cellulose, and mixtures thereof;
+15	1	combination	polysaccharides in combination with inorganic salts;
+15	1	acid	benzoic acid, sorbic acid), antioxidants (e.g.
+15	1	based	the fragment approach is based on the chemical structure of each perfume ingredient, and takes into account the numbers and types of atoms, the atom connectivity, and chemical bonding.
+15	1	based	some of the seminal literature related to the encapsulation of perfumes by polycondensation of amino resins, namely melamine based resins with aldehydes includes represented by articles such as those published by k.
+15	1	otherwise	detailed description of the invention unless stated otherwise, percentages (%) are meant to designate percent by weight of a composition.
+15	1	otherwise	monomeric and/or polymeric materials, including starch encapsulation, may be used to coat, plug, cap, or otherwise encapsulate the plt.
+15	1	acetate	fenchyl acetate ((2s)-1,3,3-trimethylbicyclo[2.2.1]heptan-2-yl acetate);
+15	1	acetate	rosacetol (2,2,2-trichloro-1-phenylethyl acetate);
+15	1	neutral	as used herein, “carrier material” means a material which is practically neutral from a odorant point of view, i.e.
+15	1	particularly	the sodium salts of the orthophosphates, the pyrophosphates and especially the tripolyphosphates are particularly suitable.
+15	1	antiperspirant	a body deodorant or antiperspirant product, such as a body deodorant spray, a roll-on deodorant, a deodorant stick, a deodorant cream, an antiperspirant spray, an antiperspirant stick, a roll-on antiperspirant liquid, an antiperspirant stick, or an antiperspirant cream;
+15	1	based	based on these characteristics, the prms may be categorized as quadrant i, quadrant ii, quadrant iii, or quadrant iv perfumes, as described in more detail below.
+15	1	preparation	a shampoo, hair conditioner, a coloring preparation or a hair spray), a cosmetic preparation (e.g.
+15	1	base	for the sake of clarity, it has to be mentioned that, by “consumer product base” we mean here a consumer product, which is compatible with perfuming ingredients.
+15	1	process	another encapsulation process, i.e., gelatin encapsulation, is disclosed in u.s.
+15	1	art	a person skilled in the art is well aware of processes to prepare said microcapsules.
+15	1	mixed	this pre-mix is added to the polyquaternium-10 dispersion and mixed for another 5 min.
+15	1	acid	other esterase inhibitors are sterol sulfates or phosphates such as, for example, lanosterol, cholesterol, campesterol, stigmasterol and sitosterol sulfate or phosphate, dicarboxylic acids and esters thereof, for example glutaric acid, glutaric acid monoethyl ester, glutaric acid diethyl ester, adipic acid, adipic acid monoethyl ester, adipic acid diethyl ester, malonic acid and malonic acid diethyl ester, hydroxycarboxylic acids and esters thereof, for example citric acid, malic acid, tartaric 
+15	1	alcohol	a diluent conventionally used in conjunction with odorants, such as diethyl phthalate (dep), dipropylene glycol (dpg), isopropyl myristate (ipm), pentane-1,2-diol, triethyl citrate (tec) and alcohol (e.g.
+15	1	acetate	4,7-methanooctahydro-5- or 6-indenyl acetate;
+15	1	water	3) preparing an oil-in-water dispersion, wherein the mean droplet size is comprised between 1 and 100 microns, by admixing the oil phase and the water phase;
+15	1	water	2) preparing an oil-in-water dispersion, wherein the droplet size is comprised between 1 and 600 microns, and comprising: a.
+15	1	deodorants	the compounds can also be used in body deodorants and antiperspirants, for example, those containing aluminum salts.
+15	1	synthetic	preferred compositions incorporating only synthetic detergents have a detergent level of from about 0.5% to 50%.
+15	1	comprise	compositions containing soap preferably comprise from about 10% to about 90% soap.
+15	1	application	the proportion is typically from 0.001 to 20 weight percent of the application.
+15	1	group	the second polymeric material can be selected from the group consisting of polyurea, polyurethane, polyamide, polyester, polyacrylate, polysiloxane, polycarbonate, polysulfonamide, polymers of urea and formaldehyde, melamine and formaldehyde, melamine and urea, or melamine and glyoxal and mixtures thereof, preferably polyurea and/or polyurethane.
