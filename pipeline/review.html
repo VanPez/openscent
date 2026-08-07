@@ -120,6 +120,14 @@
         <span class="count" id="rcount">1 / 2205</span>
       </div>
       <div class="bar"><i id="bar"></i></div>
+      <div id="collwarn" class="hide"
+           style="padding:9px 26px;background:#fdf6e9;border-bottom:1px solid rgba(154,106,20,.35);
+                  font-size:13px;color:#5c451a">
+        <b>Collective assertion?</b> This sentence mentions a mixture/blend/combination.
+        If the odour is attributed to the <i>mixture</i>, it says nothing about either
+        component &mdash; reject. If a named compound is described in its own right
+        (&ldquo;X, and mixtures thereof, exhibit&hellip;&rdquo;), it is fine. Your call.
+      </div>
       <div class="sentence" id="rtext"></div>
       <div id="selbar" class="hide"
            style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:10px 26px;
@@ -314,6 +322,7 @@
     }
     if(sel.mols.indexOf(v) < 0) sel.mols.push(v);
     $('rmol').value = ''; molchips();
+    $('collwarn').classList.toggle('hide', !COLLECTIVE.test(rows[i].sentence));
   };
   $('rmol').addEventListener('keydown', function(e){
     if(e.key === 'Enter'){ e.preventDefault(); $('rmoladd').onclick(); } });
@@ -371,6 +380,8 @@
     return {a:a,r:r,s:s,n:n};
   }
 
+  var COLLECTIVE = /\b(mixture|blend|combination|admixture|together with|in combination)\b/i;
+
   function render(){
     pending = ''; if($('selbar')) $('selbar').classList.add('hide');
     var c = counts();
@@ -398,6 +409,7 @@
     sel = {mols: (r.molecules || (r.molecule ? [r.molecule] : [])).slice(),
            desc: (r.descriptors || []).slice()};
     $('rmol').value = ''; molchips();
+    $('collwarn').classList.toggle('hide', !COLLECTIVE.test(rows[i].sentence));
     paint(); chips(); validate();
     $('bback').disabled = i === 0;
   }
