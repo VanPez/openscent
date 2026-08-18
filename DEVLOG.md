@@ -1287,3 +1287,50 @@ always writes a timestamped backup first.
 - A23L 27/00 confirmed additive. C11D 3/50 and A61K 8/00 still **unmeasured** — re-probe
   them separately, spaced apart.
 - Review: 100 of 1,870 done. Not blocked on anything except time.
+
+### Same day, later — Google is out for the corpus expansion. Moving to PatentsView.
+
+The A23L walk never ran. 503s at 11:40 (probe), 11:50 (walk), and again at 16:45 on the
+FIRST request of a run at a 6-12s delay. **Roughly five hours and still blocked**, against
+the one hour that cleared it on 2026-08-01, so each attempt does appear to extend it.
+`patents.google.com` loads fine in a browser throughout — the block is specific to
+unauthenticated `/xhr/query` traffic.
+
+**Decision: stop using Google's search backend for bulk discovery.** `harvest.py` has said
+so since day one —
+
+> losing this endpoint costs more than the time it saves, and USPTO's own bulk data
+> products are the sanctioned route for genuinely large pulls
+
+— and enumerating a second CPC class in the same week as a 2,588-patent walk is exactly
+the "genuinely large pull" that warning was about. Google Patents stays for fetching
+individual documents, which has never been the problem.
+
+**PatentsView PatentSearch API** is the replacement for discovery:
+
+| | Google /xhr/query | PatentsView |
+|---|---|---|
+| rate limit | unstated, punitive | 45/min, documented |
+| result cap | 1,000 per query | none — cursor pagination |
+| date windowing | required | unnecessary |
+| pre-grant apps | yes | yes, separate `/publication/` endpoint |
+| sanctioned | no | yes |
+
+The 1,000-cap workaround — 3-year windows, recursive splitting, ~90 requests per class —
+exists only because we were using a search UI's backend as a bulk API. It disappears here.
+Query by `{"cpc_current.cpc_group_id": "A23L27/00"}`; needs a free API key
+(`X-Api-Key` header), one per person, human-approved.
+
+**Both endpoints are needed.** `/patent/` covers grants, `/publication/` covers pre-grant
+applications — and a large share of the existing corpus is `A1` documents, so using only
+`/patent/` would silently halve coverage.
+
+Unverified until a key exists: the docs suggest CPC groups may be returned as `A23L27:00`
+with a colon rather than a slash. Test both rather than assume.
+
+**Blocked on:** an API key request, plus `search.patentsview.org` returning NXDOMAIN from
+two resolvers this evening while `patentsview.org` resolves normally — a subdomain DNS
+fault on their side, hours after the docs loaded fine. Request the key via the main site.
+
+(Also burned an hour on a red herring: the Mac resolves DNS through Tailscale's
+`100.100.100.100`, which looked like the culprit until Cloudflare returned NXDOMAIN too.)
