@@ -1,0 +1,50 @@
+{
+ "A23L27/00": {
+  "sampled_unique": 1081,
+  "sampled_new": 1021,
+  "overlap_pct": 5.6,
+  "est_new_full_class": 4424,
+  "windows": [
+   [
+    2013,
+    2016
+   ],
+   [
+    2022,
+    2025
+   ]
+  ]
+ },
+ "C11D3/50": {
+  "sampled_unique": 325,
+  "sampled_new": 185,
+  "overlap_pct": 43.1,
+  "est_new_full_class": 801,
+  "windows": [
+   [
+    2013,
+    2016
+   ],
+   [
+    2022,
+    2025
+   ]
+  ]
+ },
+ "A61K8/00": {
+  "sampled_unique": 0,
+  "sampled_new": 0,
+  "overlap_pct": 0,
+  "est_new_full_class": 0,
+  "windows": [
+   [
+    2013,
+    2016
+   ],
+   [
+    2022,
+    2025
+   ]
+  ]
+ }
+}

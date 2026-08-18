@@ -4,33 +4,44 @@
 
 ---
 
-## RESUME HERE — state as of 2026-08-05
+## RESUME HERE — state as of 2026-08-18
 
-**The corpus is IN.** 2,588 patents cached on Hetzner (`/opt/openscent/corpus/raw/`, 173 MB, zero
-failures). `extract` with the v3 filter gives **3,191 candidates** across 1,027 patents;
-`corpus/extracted/candidates.json` is on the Mac.
+**The corpus is IN, and is being expanded.** 2,588 patents on Hetzner
+(`/opt/openscent/corpus/raw/`). `corpus/extracted/candidates.json` on the Mac: 3,191
+candidates, 1,870 after deduping copied sentences.
 
-**PHASE 0 VOCABULARY IS SETTLED — 67 distinct concepts**, inside Mike's 60–100 window.
-`ontology/harvested-terms-round2-classified.tsv`: 237 terms judged, 90 D, minus 23 morphological
-duplicates.
+**PHASE 0 VOCABULARY IS SETTLED — 67 tags**, seeded into `ontology/odor_terms.tsv`
+(100 surface forms, uniqueness asserted). Admitted by `docs >= 20` AND
+`attestations >= 30`; four counters were needed to get there, so do not add a fifth
+without reading the 2026-08-05 (late) entry.
 
-Terms were admitted by **two thresholds at once — `docs >= 20` AND `attestations >= 30`** — because
-each counter is blind to the other's failure mode: documents are inflated by one sentence copied
-*between* patents (`woodland`: 124 docs, 5 sentences), attestations by many sentences *inside* one
-patent (`burnt-sweet`: 1 doc, 35 sentences). Four counters were needed to work this out; do not add a
-fifth without reading the 2026-08-05 (late) entry first.
+**First corpus rows exist:** `corpus/rows/pubchem-rows.jsonl` — 1,024 rows, 653 molecules,
+linkage free. OPSIN resolves 90% of well-formed patent names, so linkage is de-risked.
 
-**The claim to make to Mike, precisely:** 67 concepts on the best available proxy — **not** 67 tags at
-30 molecules each, which is what he actually asked for. Attestations are sentences, and one odour table
-can spend four on a single compound. `anisic`, `neutral` and `coffee` sit nearest the floor and are the
-likely casualties once linkage produces real molecule counts.
+**THE BINDING CONSTRAINT IS MOLECULES, NOT VOCABULARY.** Only 14 of 67 tags reach Mike's
+30-molecule bar. 2,588 patents yield ~400 rows; over 67 tags that is 6 each. The ontology
+is done and no further vocabulary work changes this.
 
-**Immediate next, in this order:**
-1. **Seed the `tag` column in `odor_terms.tsv`** from the 67 concepts — deliberately deferred until now,
-   because filling it before the tag list existed would have built the ontology from the wrong end.
-2. **OPSIN linkage** — the first thing that turns sentence counts into molecule counts and tests
-   Mike's actual criterion.
-3. The candidate review below (2,205 sentences) — still the only route to exact filter precision.
+**Immediate next:**
+1. **Finish the A23L 27/00 discovery walk.** Confirmed 94% new, ~4,400 patents, taking the
+   corpus to ~7,000. Blocked only by a Google IP cooldown — re-run and it resumes:
+   ```bash
+   cd pipeline && OPENSCENT_DELAY_MIN=6 OPENSCENT_DELAY_MAX=12 python3 discover_class.py A23L27/00
+   ```
+   Then `merge_ids.py <file> --write`, copy to Hetzner, fetch.
+2. **Re-probe `C11D 3/50` and `A61K 8/00`** — both still unmeasured, spaced well apart.
+3. **The candidate review** — 100 of 1,870 done, 82 approvals. The only source of tag
+   depth from patents, and the only thing blocked purely on time.
+
+**503s ARE AN IP COOLDOWN, NOT A RATE.** Hit twice. A longer delay cannot fix one you are
+already inside, and requests during it appear to extend it. Space sessions an hour apart.
+
+**Precision is ~0.2**, established two independent ways (blind sampling, and direct review
+back-solved across the queue). The 0.82 figure is precision *within the productive subset*
+and must never be quoted as the filter's precision.
+
+**EP/WO patents are NOT a shortcut** — non-US patents lack the US no-copyright status the
+CC0 claim rests on. Ruled out in `harvest.py`'s own comments since day one.
 
 > `$OPENSCENT_HOST` is the harvest box (`user@ip`). Set it in your shell — it is deliberately not
 > committed, so this repo can go public unchanged:
@@ -1180,3 +1191,99 @@ ready."* No pushback on the corpus expansion — treated as agreed. Recorded bec
 an on-chain publication route for the dataset itself, not only the MolNFT mint, and that only exists
 as a chat message. Terms unspecified: which chain artifact, what format, and whether "the db" means
 the rows, the ontology, or both. Worth pinning down before it is assumed either way.
+
+---
+
+## 2026-08-18 — Corpus expansion: A23L 27/00 confirmed, and the 503s are a cooldown not a rate
+
+### The decision, and what was told to Mike
+
+14 of 67 tags reach 30 molecules. The ontology is finished; **molecules are the binding
+constraint**, and only a bigger corpus adds molecules — everything else redistributes them.
+Told Mike we are expanding to 15–25k patents; no pushback, and he asked for the dataset to
+be published via GenesisL1 when ready.
+
+### I was wrong about EP/WO, and harvest.py already knew
+
+I suggested adding European and PCT patents as "probably a bigger multiplier than widening
+CPC classes". `harvest.py` has carried the answer since the first day:
+
+> `country=US` is enforced inside `search_window()` — non-US patents do not carry the US
+> no-copyright status the licence claim depends on.
+
+That is correct and my suggestion was not. The entire CC0 claim rests on US patent text
+being free of copyright; EP/WO would each need their own licence analysis before a single
+row could be used. It is a legal question, not a fetch. **Read the code's own comments
+before proposing a direction it has already ruled out.**
+
+### `pipeline/probe_classes.py` — measure a class before paying to fetch it
+
+"More patents" is not "more molecules". A class can be large and add nothing, either
+because its patents are already held under a second CPC code or because they are
+formulation documents that never name a compound. Discovery is cheap; fetching 20k pages
+is a day of bandwidth. So: sample two 3-year windows per class, and report **how many ids
+are NEW**, which is the only number that decides anything.
+
+Result for the one class that completed:
+
+```
+A23L 27/00 (food flavourings)   1,081 sampled · 1,021 new · 6% already held
+                                rough estimate ~4,400 new patents
+```
+
+**94% new.** Flavour houses rarely file under a perfume classification, so the pools are
+genuinely disjoint. That alone would take the corpus 2,588 → ~7,000.
+
+`C11D 3/50` and `A61K 8/00` returned nothing — 503s, not verdicts.
+
+### The 503s are an IP COOLDOWN, not a request rate
+
+Second time now. On 2026-08-01 it was blamed on the discovery fallback firing from
+Hetzner; today it happened from the Mac at the sanctioned 2–4s delay, and then again
+**on the very first request** of a run at 6–12s twenty minutes later.
+
+That timing is the whole lesson: a delay cannot fix a cooldown you are already inside, and
+requests made during one appear to extend it. **Space sessions apart, not requests.** An
+hour cleared it last time.
+
+`DELAY` is now env-overridable (`OPENSCENT_DELAY_MIN`/`MAX`) — for RAISING it. The file's
+original warning against lowering it stands.
+
+### A failed measurement must not look like a negative result
+
+The probe printed `0 ids, 0 new` for the two rate-limited classes and then an estimate of
+`~0 new patents`. That reads exactly like "this class is empty", which is a conclusion, and
+it was not one — we simply failed to look. Ivan's first reaction was "looking bad", which
+is the report doing the misleading.
+
+Empty windows are now reported as `NO DATA — empty or rate limited, not a result`, the
+class is marked `unmeasured`, and the combined total counts only fully measured classes.
+Same family as everything else this month: `degraded` on the price API, `vol_24h_complete`,
+the snapshot thread's bare `except: pass`. **Silence must never be mistakable for a
+finding.**
+
+### `discover_class.py` and `merge_ids.py`
+
+Discovery writes to its own file; merging into `corpus/patent-ids.json` is a separate,
+deliberate command. That file is the corpus definition, and `fetch` silently falls back to
+re-running discovery when it is missing — which is how the first 503 storm started. Nothing
+writes to it as a side effect any more.
+
+`discover_class.py`:
+- **saves after every window**, so a 503 halfway costs minutes rather than the walk
+- **records failed windows** instead of skipping them silently. A walk that quietly dropped
+  a window would leave a hole nothing downstream could detect: no later stage can tell
+  "this patent has no odour data" from "we never fetched this patent"
+- **splits windows that hit the 1,000 cap** in half, recursively. The original corpus run
+  came back with exactly 998 and looked complete; that is what taught us to check
+
+`merge_ids.py` refuses to merge a walk with unresolved failed windows unless forced, and
+always writes a timestamped backup first.
+
+### Standing
+
+- **Blocked on a Google cooldown**, not on a decision. Re-run the identical discover command
+  in an hour; it resumes.
+- A23L 27/00 confirmed additive. C11D 3/50 and A61K 8/00 still **unmeasured** — re-probe
+  them separately, spaced apart.
+- Review: 100 of 1,870 done. Not blocked on anything except time.

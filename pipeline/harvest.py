@@ -34,7 +34,11 @@ ROOT   = pathlib.Path(os.environ.get("OPENSCENT_ROOT",
              _here.parent if _here.name == "pipeline" else _here / "openscent"))
 RAW    = ROOT / "corpus" / "raw"
 OUT    = ROOT / "corpus" / "extracted"
-DELAY  = (2.0, 4.0)          # seconds between fetches, randomised
+# Seconds between requests, randomised. RAISE this when discovery starts returning 503s —
+# they are rate limiting, not a block, and they came back on 2026-08-18 during a class probe.
+# The warning above still stands: do not LOWER it to be clever.
+DELAY  = (float(os.environ.get("OPENSCENT_DELAY_MIN", 2.0)),
+          float(os.environ.get("OPENSCENT_DELAY_MAX", 4.0)))
 UA     = "OpenScent/0.1 (research corpus; contact via github.com/VanPez)"
 
 # stdlib only — nothing to pip install, which is the point for a headless box.
