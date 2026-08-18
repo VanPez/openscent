@@ -30,8 +30,11 @@ is done and no further vocabulary work changes this.
    ```
    Then `merge_ids.py <file> --write`, copy to Hetzner, fetch.
 2. **Re-probe `C11D 3/50` and `A61K 8/00`** — both still unmeasured, spaced well apart.
-3. **The candidate review** — 100 of 1,870 done, 82 approvals. The only source of tag
-   depth from patents, and the only thing blocked purely on time.
+3. **The candidate review** — 250 of 1,875 decided (207 approve, 41 reject, 2 skip).
+   219 molecule strings, 184 distinct. The only source of tag depth from patents, and the
+   only thing blocked purely on time.
+   **Before reviewing: RELOAD review.html.** An export from a stale tab overwrites
+   repairs made to the file on disk — see the 2026-08-18 (late) entry.
 
 **503s ARE AN IP COOLDOWN, NOT A RATE.** Hit twice. A longer delay cannot fix one you are
 already inside, and requests during it appear to extend it. Space sessions an hour apart.
@@ -1334,3 +1337,83 @@ fault on their side, hours after the docs loaded fine. Request the key via the m
 
 (Also burned an hour on a red herring: the Mac resolves DNS through Tailscale's
 `100.100.100.100`, which looked like the culprit until Cloudflare returned NXDOMAIN too.)
+
+---
+
+## 2026-08-18 (late) — mis-selected molecule spans, and the stale-tab trap
+
+Ivan noticed a molecule chip reading `(XI) (=7-methoxy-3,7-dimethyl-3-decanol)` — the
+patent's formula label captured along with the name — and asked whether such spans could be
+corrected after the fact. They can, and the reason is worth stating plainly: **every row
+stores its full sentence**, so a span's boundaries can be re-derived from the source rather
+than remembered. Storing the quote is what makes the review recoverable.
+
+Scan of 195 molecule strings found **8 bad (4%)**, none of them formula labels. All were
+bracket problems from clicking one half of a highlight the tokenizer had split.
+
+### Balancing brackets is the wrong objective
+
+The first version of `fix_spans.py` grew each span until the brackets matched. It produced:
+
+```
+4-(2,2,C-3,T-6-tetramethyl-R-1-cyclohexyl)-3-buten-2-one, trademark and origin: Firmenich SA)
+```
+
+Balanced, verbatim, and not a molecule. The orphan `)` belonged to the patent's *citation*
+parenthesis, so closing it swallowed prose. Unbalanced brackets are a SYMPTOM of a bad
+span; the thing being repaired is the name's boundary. Rewritten to try, in order:
+restore up to two clipped opening brackets (keeps the whole name), else trim the patent's
+own parenthesis away, else refuse.
+
+### Two cases the script must NOT fix
+
+- **US10407378B2** — `...cyclopropyl]methanol` is unbalanced *in the patent itself*; the
+  same document brackets it correctly two sentences earlier. No verbatim span can balance.
+  Trimming to `...cyclopropyl` would drop `methanol` and change the compound. Left flagged:
+  **the span is right, the source is wrong.** Guard added — never trim away a fragment
+  carrying 4+ letters.
+- **US20100130397A1** — `3-(` sat alongside the full name on the same row. A stray click,
+  not a name to reconstruct. Dropped, not expanded; expanding would have invented a second
+  molecule.
+
+Result: 7 repaired, 1 flagged, 194 strings all verbatim.
+
+### THE STALE-TAB TRAP — the real lesson
+
+Ivan went to export and spotted the backup file. Had he saved over `review.jsonl`, the
+export would have **silently reverted all 7 repairs** — his tab was loaded before the fix,
+so his browser still held the old spans. Confirmed by diffing: the export did carry every
+broken string back.
+
+The review UI holds the whole file in memory and writes it whole. So **any edit made to
+`review.jsonl` on disk while a tab is open will be destroyed by the next export.** This is
+not specific to span repairs; it applies to every fix that touches that file.
+
+Two habits follow, and the first is the one that matters:
+
+1. **Reload review.html before each session.** Cheap, and it closes the loop.
+2. Export under a NEW name when unsure. The merge is then a diff, not a coin flip.
+
+Merged: export was a clean superset (0 decisions lost, 0 changed, +25 approve, +15 reject),
+so promoting it and re-running `fix_spans.py` handled both the reverted rows and any new
+ones uniformly. The 25 new approvals introduced **zero** bad spans.
+
+### State
+
+```
+207 approve · 41 reject · 2 skip · 1625 undecided   (of 1875)
+219 molecule strings, 184 distinct, 0 not verbatim
+669 descriptor mentions, 202 distinct surface forms
+floral 49 · green 46 · fruity 32 · fresh 23 · muguet 21 · citrus 20 · sweet 18 · woody 18
+```
+
+**202 surface forms over 67 tags is ~3:1** — a healthy ratio, and evidence the tag
+granularity is about right. Near 1:1 would mean the tags are too specific to generalise;
+near 10:1 would mean they are too coarse to be informative.
+
+**`muguet` (21) now outnumbers `lily of the valley` (16)** in the corpus's own usage. Both
+map to one tag so nothing is at stake today, but this settles the pending rename question
+on evidence rather than on my earlier guess: rename the tag to `muguet` before publication.
+
+Stale backups and `review-new.jsonl` cleared after verifying the current file contained
+every decision in them.
