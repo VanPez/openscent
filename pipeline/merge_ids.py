@@ -42,7 +42,12 @@ def main() -> int:
         src = CORPUS / name if not pathlib.Path(name).is_absolute() else pathlib.Path(name)
         d = json.loads(src.read_text())
         ids = d["ids"] if isinstance(d, dict) else d
-        failed = d.get("failed_windows", []) if isinstance(d, dict) else []
+        # Two walkers, two spellings: discover_class.py (Google) records
+        # "failed_windows", discover_ops.py (EPO) records "failed". Check BOTH — a
+        # guard that silently matches nothing is worse than no guard, because it
+        # reads as a passed check.
+        failed = ([] if not isinstance(d, dict)
+                  else list(d.get("failed_windows", [])) + list(d.get("failed", [])))
         new = [i for i in ids if i not in merged]
         print(f"{src.name}: {len(ids)} ids, {len(new)} new")
         if failed:

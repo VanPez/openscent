@@ -23,21 +23,28 @@ linkage free. OPSIN resolves 90% of well-formed patent names, so linkage is de-r
 is done and no further vocabulary work changes this.
 
 **Immediate next:**
-1. **Finish the A23L 27/00 discovery walk.** Confirmed 94% new, ~4,400 patents, taking the
-   corpus to ~7,000. Blocked only by a Google IP cooldown — re-run and it resumes:
+1. **Fetch is now the bottleneck, and should be MEASURED before it is paid for.**
+   Discovery is solved (EPO OPS, 2026-08-19). A23L27/00 yielded 9,346 distinct
+   disclosures against a corpus of 2,588. But 9,346 patents is a day of Hetzner
+   bandwidth and the existing corpus yields ~0.15 usable rows per patent. Sample a few
+   hundred of the new ids, run the extractor, measure rows-per-patent, THEN decide.
    ```bash
-   cd pipeline && OPENSCENT_DELAY_MIN=6 OPENSCENT_DELAY_MAX=12 python3 discover_class.py A23L27/00
+   cd pipeline && python3 dedupe_families.py patent-ids-A23L27_00-ops.json --write
    ```
-   Then `merge_ids.py <file> --write`, copy to Hetzner, fetch.
-2. **Re-probe `C11D 3/50` and `A61K 8/00`** — both still unmeasured, spaced well apart.
-3. **The candidate review** — 250 of 1,875 decided (207 approve, 41 reject, 2 skip).
-   219 molecule strings, 184 distinct. The only source of tag depth from patents, and the
-   only thing blocked purely on time.
+2. **Audit the existing corpus for family duplicates.** Google had no family concept, so
+   some of the 2,588 are the same disclosure counted twice — and those counts selected
+   the 67 tags. Duplication ran at 13.2% in the OPS walk. ~3 unattended hours to settle.
+3. **Re-walk C11D 3/50 and A61K 8/00** with discover_ops.py — both still unmeasured, and
+   the old Google probe numbers for them are worthless anyway (bare-symbol scope).
+4. **The candidate review** — 250 of 1,875 decided. The only source of tag depth from
+   patents, and the only thing blocked purely on time.
    **Before reviewing: RELOAD review.html.** An export from a stale tab overwrites
    repairs made to the file on disk — see the 2026-08-18 (late) entry.
 
-**503s ARE AN IP COOLDOWN, NOT A RATE.** Hit twice. A longer delay cannot fix one you are
-already inside, and requests during it appear to extend it. Space sessions an hour apart.
+**GOOGLE DISCOVERY IS RETIRED** as of 2026-08-19 — see that entry for the OPS protocol
+table. Google's 503s were an IP cooldown, not a rate; that lesson generalised: OPS's
+`CLIENT.RobotDetected` fires on CONSTANT REQUEST SPACING even when comfortably under the
+published rate. Jitter, rest periodically, and never re-run into a cooldown.
 
 **Precision is ~0.2**, established two independent ways (blind sampling, and direct review
 back-solved across the queue). The 0.82 figure is precision *within the productive subset*
@@ -1417,3 +1424,116 @@ on evidence rather than on my earlier guess: rename the tag to `muguet` before p
 
 Stale backups and `review-new.jsonl` cleared after verifying the current file contained
 every decision in them.
+
+---
+
+## 2026-08-19 — EPO OPS replaces Google Patents. Five silent failures caught in an hour.
+
+Registration 42392 accepted, app "openscent-discovery" created. Credentials in `.env`
+(gitignored from the first commit). Google discovery is retired.
+
+### The protocol, as measured rather than assumed
+
+| thing | value | how we know |
+|---|---|---|
+| auth | Basic + `client_credentials`, ~20 min token | works first try |
+| search Content-Type | **`text/plain`**, despite a form-encoded body | `application/x-www-form-urlencoded` returns 415 |
+| page size | 100 max per request | span 101 rejected |
+| offset ceiling | **2,000** | 1901-2000 ok, 2001-2100 → 400 InvalidQuery |
+| CPC syntax | `cpc="A23L27/00"`, no space | with a space → 500 |
+| CPC subtree | **`cpc="A23L27/00/low"`** | see below |
+| country filter | `pn=US1*`…`US9*`, `USRE*` | `pn=US*` illegal, needs 3+ chars |
+| empty result | HTTP **404** `EntityNotFound` | not an empty list |
+| rate | `search=green:15` per minute, in every response | `x-throttling-control` |
+| quota | **bytes**, ~6 MB for a 10k-id walk | `x-registeredquotaperweek-used` |
+
+The last row matters strategically: the free tier is limited by VOLUME and discovery is
+tiny. The binding constraint is pacing, not allowance.
+
+### FIVE SILENT FAILURES, all with the same signature
+
+Each returned success while answering something narrower than what was asked. None
+errored. Listed because the pattern, not the individual bugs, is the lesson:
+
+1. **Literal CPC matching.** `cpc="A23L27/00"` = 7,131; `cpc="A23L27/00/low"` = 44,809.
+   Documents live in the subgroups, not the bare main group. The first walk finished in
+   ONE MINUTE with 589 US ids, reported itself clean, and covered ~1.3% of the class.
+   Caught only because 589 contradicted the earlier ~4,400 estimate. Detected by asking
+   for two subgroups: A23L27/10 (11,038) and /20 (1,665) together exceed the parent's
+   entire count, which is impossible if the parent contained them.
+   `cpc=A23L27*` is refused outright — truncation is allowed only at subclass level.
+
+2. **Client-side US filtering loses more than half.** Pulling a window and keeping US ids
+   found 31; querying `pn=US…` found 79. Cause: OPS returns one representative
+   publication per FAMILY, so a US patent with a WO/EP sibling surfaces under the
+   sibling's number and never reads as US. Query-time filtering is mandatory, not an
+   optimisation. **I had explicitly recommended the client-side approach as a safe
+   fallback one message earlier. It was wrong.**
+
+3. **Missing `USRE`.** Reissues begin with letters, so no digit prefix reaches them.
+   `--verify` found `USRE44508E`. One id in a test window — and a whole document class
+   in a full walk.
+
+4. **404 as "no results".** `US3*` in 2013-2015 legitimately has nothing, and OPS says so
+   with a 404. Crashed the run. Safe to read as zero HERE because OPS states it — unlike
+   Google, where an empty response could equally mean rate-limited, which is exactly how
+   probe_classes.py reported a false empty class on 2026-08-18.
+
+5. **Lexicographic sort in the family dedupe.** "Keep the earliest publication" compared
+   strings, so `US10517323` sorted before `US7501144` and the rule kept a 2019
+   continuation over the 2009 original. Fixed to compare numerically.
+
+### `CLIENT.RobotDetected` — a pacing failure, not a quota
+
+Hit after ~90 requests at a constant 4.5s, comfortably inside the advertised 15/min.
+**Staying under the rate limit is not sufficient; perfectly regular timing is itself the
+signal.** Now: randomised 4.5-8.5s gaps, a 20-40s rest every 25 requests, and a pause
+between prefixes. Re-ran after ~20 min and completed without complaint.
+
+My first error handler reported this as "your weekly quota is spent — resume next week",
+because I keyed on the 403 status and never read the body. That would have sent someone
+away for a week over a problem fixed by pacing. Three distinct refusals share status 403
+and are now distinguished explicitly.
+
+### THE FAMILY FINDING — the one with consequences
+
+OPS attaches a `family-id` to every result. Asking for the grant US10000723 returns
+US2015209688A1, its pre-grant publication: same disclosure, different number.
+
+The A23L27/00 walk: **10,762 US publications, 9,346 families.** 1,416 extras (13.2%) are
+one invention published repeatedly. One family carries EIGHT. A real example spans 16
+years: `US7501144B1` with continuations through `US10517323B1`.
+
+This is not a nuisance, it corrupts two counters the vocabulary rests on:
+
+* **`docs >= 20`** treats each document as an INDEPENDENT attestation. Eight continuations
+  are one party saying one thing eight times.
+* **boilerplate.py** measures the share of a term's documents carrying one identical
+  context window. Duplicate disclosures share text wholesale, inflating precisely the
+  signal detection depends on — genuine boilerplate would look like corroboration.
+
+`dedupe_families.py` keeps one publication per family (grants first, then genuinely
+earliest, deterministic so a re-run reproduces the corpus).
+
+**OPEN, AND IT POINTS BACKWARDS.** Google had no family concept, so the existing
+2,588-patent corpus almost certainly contains the same duplication — and that corpus
+produced the counts that selected the 67 tags. Unmeasured. ~3 unattended hours of family
+lookups would settle it. It may move nothing. It is not currently known.
+
+### State
+
+```
+A23L27/00 walk : 10,762 publications -> 9,346 families   (corpus today: 2,588)
+OPS spend      : ~6 MB of a multi-GB weekly allowance
+walk time      : ~10 min after the robot cooldown
+failed windows : 0
+```
+
+Discovery is no longer the bottleneck. **Fetch is** — 9,346 patents is a day of Hetzner
+bandwidth, and the existing corpus yields ~0.15 usable rows per patent. Sample a few
+hundred of the new ids and measure rows-per-patent BEFORE committing to the full fetch;
+the food-flavour subtree may well yield below the perfume classes.
+
+Licensing boundary held: OPS serves `description` and `claims`, and this client
+deliberately does not touch them. Numbers are facts; text delivery carries EPO terms.
+Discover at EPO, fetch from the US source, corpus stays CC0 without an asterisk.
