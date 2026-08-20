@@ -4,42 +4,50 @@
 
 ---
 
-## RESUME HERE — state as of 2026-08-18
+## RESUME HERE — state as of 2026-08-20
 
-**The corpus is IN, and is being expanded.** 2,588 patents on Hetzner
-(`/opt/openscent/corpus/raw/`). `corpus/extracted/candidates.json` on the Mac: 3,191
-candidates, 1,870 after deduping copied sentences.
+**THE CORPUS IS NO LONGER THE CONSTRAINT. REVIEW TIME IS.**
 
-**PHASE 0 VOCABULARY IS SETTLED — 67 tags**, seeded into `ontology/odor_terms.tsv`
-(100 surface forms, uniqueness asserted). Admitted by `docs >= 20` AND
-`attestations >= 30`; four counters were needed to get there, so do not add a fifth
-without reading the 2026-08-05 (late) entry.
+```
+5,346 patents (Hetzner /opt/openscent/corpus/raw/)   was 2,588
+6,599 candidates                                     was 2,205
+6,604 review rows · 250 decided · 6,350 undecided
+  186 distinct molecules, all verbatim
+```
 
-**First corpus rows exist:** `corpus/rows/pubchem-rows.jsonl` — 1,024 rows, 653 molecules,
-linkage free. OPSIN resolves 90% of well-formed patent names, so linkage is de-risked.
+Doubled on 2026-08-20 by walking C11B9/00 with the **/low** subtree scope — the class the
+corpus was already built from had only ever been harvested at the bare symbol, so four
+fifths of it was unseen. Sampled at 1.02 candidates/patent before fetching, vs 0.85 for
+the existing corpus.
 
-**THE BINDING CONSTRAINT IS MOLECULES, NOT VOCABULARY.** Only 14 of 67 tags reach Mike's
-30-molecule bar. 2,588 patents yield ~400 rows; over 67 tags that is 6 each. The ontology
-is done and no further vocabulary work changes this.
+**PHASE 0 VOCABULARY IS SETTLED — 67 tags**, in `ontology/odor_terms.tsv` (100 surface
+forms, uniqueness asserted). Admitted by `docs >= 20` AND `attestations >= 30`; four
+counters were needed, so do not add a fifth without reading the 2026-08-05 (late) entry.
+
+**PubChem rows exist:** `corpus/rows/pubchem-rows.jsonl` — 1,024 rows, 653 molecules,
+linkage free. OPSIN resolves 90% of well-formed patent names.
+
+**MORE PATENTS WILL NOT HELP.** There is already more material than can be reviewed. At
+0.75 distinct molecules per decision, Mike's 30-molecule bar across 60-100 tags needs
+~2,700 more decisions. The lever is ORDERING the queue by which tags are short, not
+enlarging it. Measure yield before fetching anything, always — A23L27/00 was walked,
+sampled at 0.17, and declined.
 
 **Immediate next:**
-1. **Fetch is now the bottleneck, and should be MEASURED before it is paid for.**
-   Discovery is solved (EPO OPS, 2026-08-19). A23L27/00 yielded 9,346 distinct
-   disclosures against a corpus of 2,588. But 9,346 patents is a day of Hetzner
-   bandwidth and the existing corpus yields ~0.15 usable rows per patent. Sample a few
-   hundred of the new ids, run the extractor, measure rows-per-patent, THEN decide.
-   ```bash
-   cd pipeline && python3 dedupe_families.py patent-ids-A23L27_00-ops.json --write
-   ```
-2. **Audit the existing corpus for family duplicates.** Google had no family concept, so
-   some of the 2,588 are the same disclosure counted twice — and those counts selected
-   the 67 tags. Duplication ran at 13.2% in the OPS walk. ~3 unattended hours to settle.
-3. **Re-walk C11D 3/50 and A61K 8/00** with discover_ops.py — both still unmeasured, and
-   the old Google probe numbers for them are worthless anyway (bare-symbol scope).
-4. **The candidate review** — 250 of 1,875 decided. The only source of tag depth from
-   patents, and the only thing blocked purely on time.
-   **Before reviewing: RELOAD review.html.** An export from a stale tab overwrites
-   repairs made to the file on disk — see the 2026-08-18 (late) entry.
+1. **BUILD SCARCITY-ORDERED REVIEW.** The corpus is no longer the constraint — 6,350
+   undecided candidates is more material than can be reviewed. The queue is
+   productive-first but blind to which TAGS are short. Ordering by under-represented
+   descriptors drives tags over the 30-molecule bar for the same hours. Highest value
+   thing to build, worth more than any further corpus expansion.
+2. **The review itself** — 250 of 6,604 decided, 186 distinct molecules. At 0.75
+   molecules/decision, the bar needs ~2,700 more decisions.
+   **Before reviewing: RELOAD review.html.** A stale tab's export overwrites the file on
+   disk — see 2026-08-18 (late).
+3. **Audit the pre-OPS corpus for family duplicates.** Google had no family concept, and
+   those counts selected the 67 tags. ~3 unattended hours.
+4. **Optional, measured first:** C11D3/50 (~1,240 US, yield unknown — sample 200 before
+   fetching). Do NOT fetch A61K8/00 (~44,000, cosmetics, almost certainly food-like
+   yield) and do NOT fetch A23L27/00 — measured at 0.17 and declined.
 
 **GOOGLE DISCOVERY IS RETIRED** as of 2026-08-19 — see that entry for the OPS protocol
 table. Google's 503s were an IP cooldown, not a rate; that lesson generalised: OPS's
@@ -1537,3 +1545,124 @@ the food-flavour subtree may well yield below the perfume classes.
 Licensing boundary held: OPS serves `description` and `claims`, and this client
 deliberately does not touch them. Numbers are facts; text delivery carries EPO terms.
 Discover at EPO, fetch from the US source, corpus stays CC0 without an asterisk.
+
+---
+
+## 2026-08-20 — the corpus doubled. Yield measured before paying, twice.
+
+### The decision that mattered: measure, don't assume
+
+A23L27/00 discovery had produced 9,346 disclosures and the obvious move was to fetch them.
+Instead, 200 were sampled first. **0.17 candidates/patent against the corpus's 0.85** —
+one fifth. Projected: 7 h of fetching and weeks of review for ~289 rows spread over 67
+tags, roughly 4 molecules per tag against a 30-molecule bar. Not worth it.
+
+The low yield is DEFINITIONAL, not a filter fault: food-flavour patents describe TASTE,
+this extractor looks for ODOUR. 651 odour sentences in 181 documents versus 1,952 in the
+same sample size from perfume. Tuning would not fix it, which is what made the decision
+easy rather than uncertain.
+
+**A23L27/00 IS NOT FETCHED. The walk is kept; the fetch was declined on evidence.**
+
+### What the sample redirected us to
+
+`class_size.py` (bare vs /low, counts only, 8 requests):
+
+| class | bare | /low | x | est. US deduped |
+|---|---|---|---|---|
+| C11B9/00 | 2,340 | 12,734 | **5.4x** | 2,658 |
+| A61Q13/00 | 4,412 | 4,412 | 1.0x | 921 |
+| C11D3/50 | 4,265 | 5,943 | 1.4x | 1,240 |
+| A61K8/00 | 522 | **210,689** | 403x | 43,991 |
+
+**C11B9/00 — the class the corpus was BUILT from — was only ever harvested at the bare
+symbol.** Four fifths of it had never been seen. That is where the 0.85 yield lives.
+
+A61K8/00's 403x is cosmetics-preparations generally: it contributes ~90% of any aggregate
+and would be the worst possible blind fetch. The combined "48,810 patents / 8,297 rows"
+line my own script printed was dominated by it and was misleading. Classes must be judged
+individually.
+
+### C11B9/00: walked, sampled, fetched
+
+```
+walk            3,845 publications -> 3,712 families   (dedupe only 3.5%, vs 13.2% food)
+already held      934  (25%)   <- the overlap check finally works, see below
+genuinely new   2,778
+sample yield    1.02 candidates/patent — 1.19x the corpus, 6x the food class
+```
+
+The 25% overlap is itself the proof that id normalisation is now correct. The A23L27 walk
+reported 100% new, which was an artefact of comparing two different numbering systems.
+
+Fetched 2,775 of 2,778 in ~3 h. **corpus/raw: 2,588 -> 5,346 documents.**
+Extract: **2,205 -> 6,599 candidates** (1.23/patent overall).
+
+Family duplication being 3.5% here vs 13.2% in food is worth remembering: the 13% was not
+a universal rate, and per-class measurement was the right call.
+
+### THE ID FORMAT BUG THAT ALMOST CORRUPTED THE MEASUREMENT
+
+OPS returns US application publications with the leading zero stripped —
+`US2001001711A1` where Google serves `US20010001711A1`. **5,801 of 5,924 application
+publications** in the A23L27 walk carried the short form.
+
+It fails as a **404**, and harvest.py treats a 404 as "this patent is unavailable" and
+continues. So the first yield run would have completed normally, reported ~70% of the
+class as missing, produced a yield figure of about a third of the truth, and the food
+class would have been rejected for the wrong reason on a clean-looking run.
+
+`ops_idcheck.py` was written specifically to catch this, ran, reported **10 of 10 do not
+round-trip** — and was then set aside unresolved while the family finding took attention.
+The check worked. Nobody read it. The cost surfaced only because a fetch was watched
+while it scrolled.
+
+Fixed at capture (`ops.to_uspto`, applied in `parse`), retrofitted to existing walk files
+(`normalise_ids.py`), and `yield_sample.py` now PREFLIGHTS one id and refuses to start on
+a 404. Also: harvest.py no longer retries 404s — 4 attempts x ~40 s of backoff per missing
+document was ~3 h of sleeping across a full fetch, and it disguised the miss rate as
+throttling.
+
+### CARRYING 250 DECISIONS ONTO A REGENERATED QUEUE
+
+`extract` rewrites candidates.json wholesale, so the review file's 250 hand-made decisions
+were keyed to a set that no longer existed. Loading the new candidates would have shown a
+fresh queue with the work simply absent — not deleted, never carried, and nothing would
+have said so.
+
+`merge_review.py` joins on **(source_id, sentence)** — not char_offset, which is only
+stable while normalisation is, and normalisation has changed twice. The sentence IS the
+evidence.
+
+**The first version reported "245 of 245 carried, 0 orphaned"** — a clean bill of health
+while silently dropping 5 rows. A dict keyed on (source_id, sentence) collapses SPLITS,
+which by design share both fields with their parent. Those 5 were the cis/trans and
+contrast pairs: the most carefully reasoned decisions in the file. Caught only because 245
+did not equal the 250 counted an hour earlier. Grouped into lists; all 250 carried.
+
+Also noticed in passing: `US20130295229A1` has `molecules=['1-Methoxy-3-heptanethiol',
+'tropical']` — a descriptor captured as a molecule. Fixable from the stored sentence.
+
+### State
+
+```
+corpus      5,346 patents        candidates  6,599
+queue       6,604 rows · 250 decided · 6,350 undecided
+molecules   186 distinct, all verbatim, 0 violations
+```
+
+### THE BOTTLENECK IS NOW REVIEW TIME, AND ORDERING IS THE ONLY LEVER
+
+At 0.75 distinct molecules per decision (186 from 250), reaching 30 molecules across
+60-100 tags needs on the order of **2,700 more decisions** — weeks of sittings. Fetching
+more patents does not help; there is already more material than can be reviewed.
+
+The queue is productive-first, which is right, but **blind to WHICH TAGS ARE SHORT**. A
+queue ordered to surface candidates mentioning under-represented descriptors would push
+tags over the bar far faster for the same hours. That is the highest-value thing to build
+next, and it is worth more than any further corpus expansion.
+
+(A regex proxy estimated 4,093 productive candidates, i.e. 64%. The UI's own rule found
+497 of 2,205 = 22.5% historically, which would put it nearer 1,400. The proxy is looser
+than the real rule — take the number from review.html's own counter, not from that
+estimate.)

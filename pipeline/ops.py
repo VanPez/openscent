@@ -211,6 +211,34 @@ def raw_search(cql: str, begin: int = 1, end: int = 100, retry=True):
         raise OPSError(f"HTTP {e.code} on search\nq={cql!r} range={begin}-{end}\n{body[:500]}")
 
 
+def to_uspto(pub: str) -> str:
+    """OPS docdb number -> the form Google Patents will actually serve.
+
+    US application publications are YEAR + a SEVEN-digit serial. OPS emits most of them
+    with the leading zero stripped — US2001001711A1 where the fetchable id is
+    US20010001711A1. Verified 2026-08-20: the padded form returns the real document
+    ("Bacterial strain, processed plant extracts…", published 2001-05-24); the short
+    form 404s.
+
+    5,801 of 5,924 application publications in the A23L27/00 walk were in the short form,
+    so ~70% of a fetch would have failed. And it fails as a 404 — indistinguishable from
+    a patent that genuinely is not there. ops_idcheck.py reported this as 10-of-10 broken
+    and it was set aside unresolved; the cost surfaced only when a fetch started dying.
+
+    Grants (US10064905B1, US1002506A) have no fixed width and are returned untouched.
+    """
+    m = re.match(r"^US(\d{4})(\d+)([A-Z]\d?)$", pub)
+    if not m:
+        return pub
+    year, serial, kind = m.groups()
+    # 10+ total digits means year + serial; a grant never reaches 10.
+    if len(year) + len(serial) < 10:
+        return pub
+    if not (1976 <= int(year) <= 2100):
+        return pub
+    return f"US{year}{serial.rjust(7, '0')}{kind}"
+
+
 def parse(xml_text: str) -> tuple[int, list[dict]]:
     """(total_result_count, [{"id": "US2015209688A1", "family": "53678132"}, ...])
 
@@ -245,9 +273,10 @@ def parse(xml_text: str) -> tuple[int, list[dict]]:
             parts = {c.tag.split("}")[-1]: (c.text or "") for c in dref}
             cc, num, kind = (parts.get("country", ""), parts.get("doc-number", ""),
                              parts.get("kind", ""))
-            if cc and num and f"{cc}{num}{kind}" not in seen:
-                seen.add(f"{cc}{num}{kind}")
-                out.append({"id": f"{cc}{num}{kind}", "family": fam})
+            pid = to_uspto(f"{cc}{num}{kind}")     # store the FETCHABLE form, always
+            if cc and num and pid not in seen:
+                seen.add(pid)
+                out.append({"id": pid, "family": fam})
     return total, out
 
 
