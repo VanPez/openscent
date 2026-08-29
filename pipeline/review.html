@@ -120,6 +120,12 @@
         <span class="count" id="rcount">1 / 2205</span>
       </div>
       <div class="bar"><i id="bar"></i></div>
+      <!-- A decided row restores its saved molecules and descriptors so the decision can
+           be revised. Without a marker that looks like the tool auto-filled the fields,
+           which is alarming in a corpus whose one rule is extract-never-generate. Say so. -->
+      <div id="donewarn" class="hide"
+           style="padding:9px 26px;background:#eef7f0;border-bottom:1px solid rgba(30,110,60,.3);
+                  font-size:13px;color:#1e5c34"></div>
       <div id="collwarn" class="hide"
            style="padding:9px 26px;background:#fdf6e9;border-bottom:1px solid rgba(154,106,20,.35);
                   font-size:13px;color:#5c451a">
@@ -472,13 +478,52 @@
       + (r.occurrences > 1 ? '  ·  ' + r.occurrences + ' patents' : '');
     var pleft = rows.filter(function(r){ return r.productive && !r.decision; }).length;
     $('tprod').textContent = '(' + pleft + ' left)';
-    $('rcount').textContent = (i+1) + ' / ' + rows.length;
+    // Position is NOT progress. applyOrder() re-sorts productive-first, so the cursor
+    // index says where you are in the current ordering, not how much is done — after
+    // the corpus doubled it read "59 / 4604" on a file holding 250 decisions, which
+    // looks exactly like lost work. Show the decided count, which is the real figure.
+    var nDone = 0;
+    for(var z = 0; z < rows.length; z++){ if(rows[z].decision) nDone++; }
+    $('rcount').textContent = (i+1) + ' / ' + rows.length +
+                              '   ·   ' + nDone + ' decided';
     $('bar').style.width = ((i / rows.length) * 100) + '%';
     // BACK-COMPAT: rows exported before multi-molecule support carry `molecule` (a
     // string). Read either shape so an in-progress export still resumes.
-    sel = {mols: (r.molecules || (r.molecule ? [r.molecule] : [])).slice(),
-           desc: (r.descriptors || []).slice()};
+    // A PROPOSAL is not a decision. An undecided row carrying proposed_* fields gets them
+    // pre-filled so the drag-selecting is done, but it is marked, and nothing counts until
+    // a key is pressed. Measured agreement was 85.7% — roughly one proposal in seven is
+    // wrong, so these are a starting point to correct, never an answer to wave through.
+    var isProp = !r.decision && r.proposed_decision;
+    sel = isProp
+      ? {mols: (r.proposed_molecules || []).slice(),
+         desc: (r.proposed_descriptors || []).slice()}
+      : {mols: (r.molecules || (r.molecule ? [r.molecule] : [])).slice(),
+         desc: (r.descriptors || []).slice()};
     $('rmol').value = ''; molchips();
+    // Restored-from-a-previous-decision, made VISIBLE. Without this the chips look like
+    // the tool filled them in by itself, which is exactly the thing this corpus must
+    // never do — and it cost a real "did you change the extractor?" scare on 2026-08-20.
+    var prev = r.decision;
+    $('donewarn').classList.toggle('hide', !prev && !isProp);
+    if(prev){
+      $('donewarn').style.background = '#eef7f0';
+      $('donewarn').style.color = '#1e5c34';
+      $('donewarn').innerHTML = '<b>Already decided: ' + esc(prev.toUpperCase()) + '</b>' +
+        (r.reviewer ? ' by ' + esc(r.reviewer) : '') +
+        '. The chips below are YOUR earlier selections, restored — nothing is filled in ' +
+        'automatically. Revise and press the button again, or move on.';
+    } else if(isProp){
+      // Visually distinct from a real decision. Confusing a machine suggestion for your
+      // own past judgement is the failure this whole propose-only design exists to avoid.
+      $('donewarn').style.background = '#f3eefb';
+      $('donewarn').style.color = '#4a2f7a';
+      $('donewarn').innerHTML =
+        '<b>PROPOSED: ' + esc(r.proposed_decision.toUpperCase()) + '</b> — ' +
+        esc(r.proposed_why || '') +
+        '<br><span style="opacity:.85">A suggestion, not a decision. About 1 in 7 is ' +
+        'wrong. Check the span and the descriptors, then press a key — that is what ' +
+        'records it.</span>';
+    }
     var fired = CUES.filter(function(c){ return c[0].test(rows[i].sentence); });
     $('collwarn').classList.toggle('hide', fired.length === 0);
     $('collwarn').innerHTML = fired.map(function(c){
@@ -496,7 +541,20 @@
     rows[i].molecules = d === 'approve' ? sel.mols.slice() : [];
     rows[i].molecule = rows[i].molecules[0] || '';   // kept for older readers
     rows[i].descriptors = d === 'approve' ? sel.desc.slice() : [];
-    i++; render();
+    i++; skipDecided(); render();
+  }
+
+  // ADVANCE PAST WORK ALREADY DONE.
+  //
+  // applyOrder() sorts productive-first, so previously decided rows sit scattered through
+  // the queue rather than in a block at the front. Stepping one at a time therefore walks
+  // back over old decisions — 250 of them after the corpus doubled, which is a lot of
+  // keypresses spent on nothing.
+  //
+  // Only forward motion skips. Back (<-) still lands on decided rows deliberately, which
+  // is how a decision gets revised when a rule sharpens.
+  function skipDecided(){
+    while(i < rows.length && rows[i].decision) i++;
   }
 
   $('bok').onclick   = function(){ decide('approve'); };
@@ -595,17 +653,33 @@
     var head = '{"_comment": "OpenScent review output. decision=approve rows are corpus rows: '
              + 'every entry in molecules[] and descriptors[] is a verbatim substring of sentence. '+ 'One sentence naming several compounds yields one corpus row PER MOLECULE. '+ '`molecule` repeats molecules[0] for older readers. reject/skip rows are '
              + 'kept deliberately — they are the precision measurement."}';
+    // FIELDS NOT LISTED HERE USED TO BE SILENTLY DROPPED.
+    //
+    // The export built a fresh object from a fixed key list, so anything a later stage had
+    // added to a row vanished on save. On 2026-08-29 that cost the proposed_* fields from
+    // propose.py: 112 unreviewed proposals were erased and the proposal-vs-decision
+    // comparison — the whole point of measuring as you go — became unrecoverable from the
+    // file. It exported cleanly and looked fine, which is why nobody noticed until a
+    // status count came back empty.
+    //
+    // Start from the row and OVERWRITE the canonical fields. Unknown keys survive.
     var body = rows.map(function(r){
-      return JSON.stringify({source_id:r.source_id, char_offset:r.char_offset, sentence:r.sentence,
-                             decision:r.decision,
-                             molecules:r.molecules || (r.molecule ? [r.molecule] : []),
-                             molecule:r.molecule||'',
-                             queue_order:r.queue_order,
-                             sources:r.sources || [r.source_id],
-                             occurrences:r.occurrences || 1,
-                             split_of:r.split_of,
-                             descriptors:r.descriptors||[], reviewer:'vanpe',
-                             extractor:'review/v1'});
+      var out = {};
+      for (var k in r) if (r.hasOwnProperty(k) && k !== 'productive') out[k] = r[k];
+      out.source_id = r.source_id;
+      out.char_offset = r.char_offset;
+      out.sentence = r.sentence;
+      out.decision = r.decision;
+      out.molecules = r.molecules || (r.molecule ? [r.molecule] : []);
+      out.molecule = r.molecule || '';
+      out.queue_order = r.queue_order;
+      out.sources = r.sources || [r.source_id];
+      out.occurrences = r.occurrences || 1;
+      out.split_of = r.split_of;
+      out.descriptors = r.descriptors || [];
+      out.reviewer = 'vanpe';
+      out.extractor = 'review/v1';
+      return JSON.stringify(out);
     }).join('\n');
     var blob = new Blob([head+'\n'+body+'\n'], {type:'application/json'});
     var a = document.createElement('a');

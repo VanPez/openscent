@@ -1,0 +1,98 @@
+{"n":0,"decision":"approve","molecules":["3-(4-tert-butylphenyl)-2-methylpropanal"],"descriptors":["muguet"],"why":"named cpd + muguet; Lilial is the same compound, not a second one"}
+{"n":1,"decision":"approve","molecules":["3-methyl-cyclohexadec-6-enone"],"descriptors":["woody","musky","powdery","creamy"],"why":"direct; feminine/warm/comfortable are not odour character"}
+{"n":2,"decision":"approve","molecules":["3-butylbicyclo[3.2.1]oct-6-en-2-one"],"descriptors":["fruity","green","herbal","celery"],"why":"direct possession"}
+{"n":3,"decision":"approve","molecules":["7-methyl-3,4-dihydro-2H-1,5-benzodioxepin-3-one"],"descriptors":["marine","ozonic"],"why":"named as an exemplar of the compounds known for these notes"}
+{"n":4,"decision":"approve","molecules":["3-cyclohexenyl-1-propanol"],"descriptors":["cinnamon"],"why":"the cinnamon note is what THIS compound imparts, not a blend effect"}
+{"n":5,"decision":"reject","molecules":[],"descriptors":[],"why":"counterfactual about a composition: what it WOULD have acquired"}
+{"n":6,"decision":"reject","molecules":[],"descriptors":[],"why":"the perfume OIL has the note; composition-level"}
+{"n":7,"decision":"reject","molecules":[],"descriptors":[],"why":"comparison between two compositions, not a compound description"}
+{"n":8,"decision":"approve","molecules":["1-methyl-2-[(2,2,3-trimethylcyclopentyl)methyl]cyclopropyl]methanol"],"descriptors":["sandalwood"],"why":"direct; sandalwood is an odour family, not a reference compound"}
+{"n":9,"decision":"approve","molecules":["1-methoxy-1-ethyl-cyclopentane"],"descriptors":["earthy","sweet","eucalyptus leaf","grapefruit"],"why":"notes originate from this compound"}
+{"n":10,"decision":"approve","molecules":["ethyl 4,6,6-trimethyl-1,3-cyclohexadiene-1-carboxylate"],"descriptors":["spicy","saffron"],"why":"direct; warm/pleasant are evaluations"}
+{"n":11,"decision":"reject","molecules":[],"descriptors":[],"why":"isomeric MIXTURE of two structures"}
+{"n":12,"decision":"reject","molecules":[],"descriptors":[],"why":"'this floral note' is anaphoric; named compounds are the contrast family"}
+{"n":13,"decision":"approve","molecules":["1-menthol"],"descriptors":["mint"],"why":"strong mint odor attributed to 1-menthol"}
+{"n":14,"decision":"reject","molecules":[],"descriptors":[],"why":"isomeric MIXTURE"}
+{"n":15,"decision":"approve","molecules":["(1R,6S)-allyl 2,2,6-trimethylcyclohexanecarboxylate"],"descriptors":["rose"],"why":"direct; damascone is a reference compound"}
+{"n":16,"decision":"approve","molecules":["3-methyl-cyclopentadec-5-en-1-one"],"descriptors":["musky","animal"],"why":"contrast pair - split; nitro-musk is a reference class"}
+{"n":17,"decision":"approve","molecules":["(Z)-enriched 4,8-dimethyl-3,7-nonadien-2-ol"],"descriptors":["rose"],"why":"the (Z) form described in its own right; mixture clause is separate"}
+{"n":18,"decision":"reject","molecules":[],"descriptors":[],"why":"'certain derivatives' - a class, no specific compound named"}
+{"n":19,"decision":"approve","molecules":["rel-3-((4R,6S)-4-(2-hydroxy-2-methylpropyl)-6-methylcyclohex-1-en-1-yl)propanal"],"descriptors":["floral","muguet","white floral","fresh","aldehydic","green","citrus"],"why":"direct"}
+{"n":20,"decision":"approve","molecules":["5-Methyl-2-(1-methylethenyl)-4-hexen-1-ol"],"descriptors":["herbal","rose"],"why":"direct; lavandulol is the same compound"}
+{"n":21,"decision":"approve","molecules":["cyclododec-2-enone"],"descriptors":["patchouli"],"why":"imparts patchouli note"}
+{"n":22,"decision":"approve","molecules":["(-)-ethyl (S)-2-(propanoyloxy)propanoate"],"descriptors":["fruity","vinous","floral"],"why":"direct possession"}
+{"n":23,"decision":"approve","molecules":["4,8-dimethylnonan-2-one"],"descriptors":["fresh","rose"],"why":"direct; citronellol is a reference compound"}
+{"n":24,"decision":"reject","molecules":[],"descriptors":[],"why":"generic class + derivatives, no specific compound"}
+{"n":25,"decision":"approve","molecules":["(S)-3-(3-(4-methylpentyl)phenyl)butanal"],"descriptors":["marine","floral","aldehydic","fatty","metallic","green","citrus"],"why":"direct"}
+{"n":26,"decision":"approve","molecules":["(1S)-8-mercaptomenthone"],"descriptors":["fresh","passion fruit"],"why":"R/S forms of ONE compound, not a blend of two"}
+{"n":27,"decision":"reject","molecules":[],"descriptors":[],"why":"composition + further blending"}
+{"n":28,"decision":"approve","molecules":["4(3)-(4-Hydroxy-4-methylpentyl)-3-cyclohexene-1-carbonitrile"],"descriptors":["citrus","muguet"],"why":"direct"}
+{"n":29,"decision":"approve","molecules":["3-Methyl-5-phenylpentanol"],"descriptors":["fresh","floral","rose"],"why":"direct; Phenoxanol is the same compound"}
+{"n":30,"decision":"approve","molecules":["1-ethoxy-1-ethyl-cyclohexane"],"descriptors":["camphor","rosemary","sweet","fruity"],"why":"notes originate from this compound"}
+{"n":31,"decision":"reject","molecules":[],"descriptors":[],"why":"'acetal of X' - derivative not specified, no definite structure"}
+{"n":32,"decision":"approve","molecules":["3,7-dimethyl-1-decen-3-ol"],"descriptors":["clean","fresh","citron"],"why":"explicit Odor description block"}
+{"n":33,"decision":"approve","molecules":["1-(Octahydro-4,7-methano-inden-5-yl)-propan-2-ol"],"descriptors":["green","floral","fruity"],"why":"direct; weak is intensity"}
+{"n":34,"decision":"approve","molecules":["2-methoxy-6-methyl-octa-2,5-diene"],"descriptors":["herbal","ozonic"],"why":"'X and mixtures thereof exhibit' describes X in its own right"}
+{"n":35,"decision":"approve","molecules":["4-(4-methylcyclohexylidene)-butanal"],"descriptors":["fresh","grassy","lily of the valley"],"why":"direct; lily of the valley is a flower odour, not a compound"}
+{"n":36,"decision":"approve","molecules":["1-(5-pentylbenzo[d][1,3]-dioxol-2-yl)ethanone"],"descriptors":["ozonic","balsamic"],"why":"direct"}
+{"n":37,"decision":"approve","molecules":["2-methyl-5-[2-methyl-3-methylenebicyclo[2.2.1]hept-5-en-2-yl)]-2-penten-1-ol"],"descriptors":["sandalwood","cedar"],"why":"imparts these notes"}
+{"n":38,"decision":"approve","molecules":["3,3-diethyl-8-methyl-2-oxa-spiro[4.5]dec-7-ene"],"descriptors":["green","rhubarb","woody","aldehydic"],"why":"direct"}
+{"n":39,"decision":"approve","molecules":["(E)-enriched 4,8-dimethyl-3,7-nonadien-2-ol"],"descriptors":["rose"],"why":"the (E) form described in its own right"}
+{"n":40,"decision":"approve","molecules":["3-(4-isopropylphenyl)-2-methylpropanal","3-(4-isobutylphenyl)-2-methylpropanal"],"descriptors":["lily of the valley"],"why":"both named compounds possess the note"}
+{"n":41,"decision":"approve","molecules":["2α,6,5,5,8aβ-pentamethyl-3,5,6,7,8,8a-hexahydro-1(2H)-naphthalenone"],"descriptors":["powdery","woody","cedar"],"why":"direct; ionone is a reference compound"}
+{"n":42,"decision":"approve","molecules":["2-methyl-4-(2,2,3-trimethyl-3-cyclopenten-1-yl)-butanol","3,3-dimethyl-5-(2,2,3-trimethyl-3-cyclopenten-1-yl)-4-penten-2-ol"],"descriptors":["sandalwood"],"why":"listed as substances having sandalwood odour"}
+{"n":43,"decision":"approve","molecules":["(−)-ethyl (S)-2-(propanoyloxy)propanoate"],"descriptors":["fruity","vinous","floral"],"why":"direct possession"}
+{"n":44,"decision":"approve","molecules":["5-methyl-6-pentyl-tetrahydro-alpha-pyrone"],"descriptors":["caramel","coconut"],"why":"direct; blossom fragrances too vague"}
+{"n":45,"decision":"reject","molecules":[],"descriptors":[],"why":"'presents its own particularities' - no descriptor asserted"}
+{"n":46,"decision":"reject","molecules":[],"descriptors":[],"why":"'substances marked with an *' is a pointer; named compounds are blend partners"}
+{"n":47,"decision":"approve","molecules":["(6RS,7RS)-5,5,6,7,8,8-hexamethyl-3,4,5,6,7,8-hexahydro -naphthalen-2(1H)-one"],"descriptors":["earthy","musky","powdery"],"why":"direct; musk-ambrette is a reference compound"}
+{"n":48,"decision":"reject","molecules":[],"descriptors":[],"why":"figure caption about masking; no odour attributed"}
+{"n":49,"decision":"reject","molecules":[],"descriptors":[],"why":"'the top note' anaphoric; named compound is the comparison target"}
+{"n":50,"decision":"approve","molecules":["(−)-(E)-3,3-dimethyl-5-(2′,2′,3′-trimethyl-3′-cyclopenten-1′-yl)-4-penten-2-ol"],"descriptors":["sandalwood"],"why":"named compound with odour profile"}
+{"n":51,"decision":"approve","molecules":["2,2,4-trimethyl-1-phenyl-3-pentanone"],"descriptors":["grapefruit","balsamic","floral","ginger","herbal","green"],"why":"direct"}
+{"n":52,"decision":"approve","molecules":["1-[(1RS,4SR)-1,2,3,4,5,6,7,8-octahydro-6,7-dimethyl-1,4-methanonaphthalen-6-yl]-ethanone"],"descriptors":["woody","cedar","ambery","sweet","floral"],"why":"direct"}
+{"n":53,"decision":"approve","molecules":["cyclopropylmethyl (3Z)-3-hexenoate"],"descriptors":["green","fruity","pear","leafy","alliaceous"],"why":"direct"}
+{"n":54,"decision":"approve","molecules":["6-methyl-3-propylheptan-2-ol"],"descriptors":["green","aromatic","pyrazinic","earthy","rooty"],"why":"direct"}
+{"n":55,"decision":"reject","molecules":[],"descriptors":[],"why":"'Its' anaphoric; the named compound is the prior-art comparison target"}
+{"n":56,"decision":"reject","molecules":[],"descriptors":[],"why":"MIXTURE of two different compounds"}
+{"n":57,"decision":"approve","molecules":["6-methoxy-2,6-dimethyloctanal"],"descriptors":["citrus","clean","fresh"],"why":"contrast, but this compound described in its own right"}
+{"n":58,"decision":"approve","molecules":["1-(2-hydroxyphenyl)-3-phenylpropan-1-one"],"descriptors":["floral","green","linden","ylang ylang"],"why":"direct"}
+{"n":59,"decision":"approve","molecules":["6-methoxy-2,6-dimethyloctanal"],"descriptors":["marine","ozone","green","fruity","citrus"],"why":"direct"}
+{"n":60,"decision":"approve","molecules":["2,6,6-trimethyl-1-cyclohexene-1-acetonitrile"],"descriptors":["woody","patchouli","earthy"],"why":"direct"}
+{"n":61,"decision":"reject","molecules":[],"descriptors":[],"why":"MIXTURE of two compounds"}
+{"n":62,"decision":"reject","molecules":[],"descriptors":[],"why":"about alleviating menthol's irritancy; no odour character asserted"}
+{"n":63,"decision":"approve","molecules":["1-(cyclohex-3-en-1-yl)-2-methylpropan-1-ol"],"descriptors":["fresh","minty"],"why":"direct; menthol is a reference compound"}
+{"n":64,"decision":"reject","molecules":[],"descriptors":[],"why":"'compound (7)' is a pointer, never named"}
+{"n":65,"decision":"approve","molecules":["1-octen-3-one","1,5-octadien-3-one"],"descriptors":["metallic"],"why":"both named, share the description"}
+{"n":66,"decision":"approve","molecules":["7-(2-ethylbutyl)benzo[b][1,4]dioxepin-3-one","7-heptylbenzo[b][1,4]dioxapin-3-one"],"descriptors":["marine"],"why":"both named, share the description"}
+{"n":67,"decision":"approve","molecules":["6,6-dimethoxy-2,5,5-trimethyl-2-hexene","4,7-dimethyl-6-octen-3-one"],"descriptors":["citrus"],"why":"'known for imparting citrus notes' attributes to both"}
+{"n":68,"decision":"reject","molecules":[],"descriptors":[],"why":"MIXTURE of two compounds"}
+{"n":69,"decision":"approve","molecules":["(3R,5Z)-methyl-cyclopentadec-5-en-1-one"],"descriptors":["powdery","musk","animal"],"why":"named as the only isomer with the note"}
+{"n":70,"decision":"reject","molecules":[],"descriptors":[],"why":"composition possessing the note; compound is only released by a precursor"}
+{"n":71,"decision":"reject","molecules":[],"descriptors":[],"why":"'7-alkoxy' unspecified - no definite structure"}
+{"n":72,"decision":"reject","molecules":[],"descriptors":[],"why":"'said ingredient' anaphoric; Lilial is the contrast"}
+{"n":73,"decision":"reject","molecules":[],"descriptors":[],"why":"counterfactual, and the COMPOSITION acquires the note"}
+{"n":74,"decision":"approve","molecules":["5,9-dimethyl-9-hydroxy-decen-4-al"],"descriptors":["muguet"],"why":"direct"}
+{"n":75,"decision":"reject","molecules":[],"descriptors":[],"why":"the COMPOSITION has the musk odor"}
+{"n":76,"decision":"reject","molecules":[],"descriptors":[],"why":"'closer to the family known for X' then says it differs; no attribution"}
+{"n":77,"decision":"reject","molecules":[],"descriptors":[],"why":"precursor releasing Florhydral; the note is Florhydral's, not this compound's"}
+{"n":78,"decision":"approve","molecules":["6-(2-ethoxyethyl)-1,3,4-trimethylcyclohex-1-ene"],"descriptors":["fruity"],"why":"note originates from this compound"}
+{"n":79,"decision":"approve","molecules":["2-cyclohexyl-1,6-heptadien-3-one"],"descriptors":["green","pineapple","fruity"],"why":"parenthetical descriptors attach to the named compound"}
+{"n":80,"decision":"approve","molecules":["(6RS,7RS)-5,5,6,7,8,8-hexamethyl-4,4a,5,6,7,8-hexahydronaphthalen-2(3H)-one"],"descriptors":["musky","earthy","woody","pear"],"why":"direct"}
+{"n":81,"decision":"approve","molecules":["1-methoxy-1-ethyl-cyclopentane"],"descriptors":["earthy","sweet","eucalyptus leaf","grapefruit"],"why":"note originates from this compound"}
+{"n":82,"decision":"reject","molecules":[],"descriptors":[],"why":"1:1 MIXTURE of two compounds"}
+{"n":83,"decision":"reject","molecules":[],"descriptors":[],"why":"'the compound thus obtained'/'it' - never named; 8-drimanol is the similarity reference"}
+{"n":84,"decision":"approve","molecules":["1-(2-t-butylcyclohexyloxy)-2-butanol"],"descriptors":["woody","amber"],"why":"direct"}
+{"n":85,"decision":"reject","molecules":[],"descriptors":[],"why":"scaffold statement - the name is a basic structure, not a described compound"}
+{"n":86,"decision":"reject","molecules":[],"descriptors":[],"why":"'alkyl ... esters' generic class"}
+{"n":87,"decision":"reject","molecules":[],"descriptors":[],"why":"synergy between isomers; the COMPOSITION possesses the character"}
+{"n":88,"decision":"approve","molecules":["6α-isopropyl-perhydro-1α,3β-dimethyl-4aβH,8aαH-2-naphthalenone"],"descriptors":["woody"],"why":"slight woody note attributed directly"}
+{"n":89,"decision":"approve","molecules":["8-drimanol"],"descriptors":["amber","woody"],"why":"direct, both the heated and unheated description"}
+{"n":90,"decision":"approve","molecules":["6-(2-ethoxyethyl)-1,3,4-trimethylcyclohex-1-ene"],"descriptors":["fruity"],"why":"note originates from this compound"}
+{"n":91,"decision":"approve","molecules":["7-methoxy-3,7-dimethyl-3-decanol"],"descriptors":["melon","citrus"],"why":"explicit Odor description block"}
+{"n":92,"decision":"approve","molecules":["Delta-3-Carene"],"descriptors":["sweet","pungent"],"why":"direct"}
+{"n":93,"decision":"approve","molecules":["2-Butyl-4-methyl-1,3-oxathiane"],"descriptors":["green","herbaceous","spicy","woody"],"why":"direct"}
+{"n":94,"decision":"approve","molecules":["(1S)-8-mercaptomenthone"],"descriptors":["fresh","passion fruit"],"why":"4R/4S forms of ONE compound"}
+{"n":95,"decision":"approve","molecules":["4(3)-(4-hydroxy-4-methylpentyl)-3-cyclohexene-1-carbonitrile"],"descriptors":["citrus","muguet"],"why":"direct"}
+{"n":96,"decision":"reject","molecules":[],"descriptors":[],"why":"MIXTURE of two compounds"}
+{"n":97,"decision":"reject","molecules":[],"descriptors":[],"why":"'a small class of derivatives' - no specific compound"}

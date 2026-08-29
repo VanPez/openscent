@@ -1,0 +1,150 @@
+{"n": 279, "decision": "approve", "molecules": ["3-methyl-5-phenylhexan-1-ol"], "descriptors": ["gardenia"], "why": "direct; styrallyle is a reference cpd, green is a weaker-than comparative"}
+{"n": 282, "decision": "approve", "molecules": ["2-ethoxy-4-methylphenol"], "descriptors": ["sweet"], "why": "direct; isoeugenol is a reference compound"}
+{"n": 302, "decision": "reject", "molecules": [], "descriptors": [], "why": "MIXTURE of isomers/compounds - odour belongs to the blend (rule settled 2026-08-25)"}
+{"n": 303, "decision": "reject", "molecules": [], "descriptors": [], "why": "no odour attributed to a named compound"}
+{"n": 304, "decision": "reject", "molecules": [], "descriptors": [], "why": "unspecified substituent or 'derivatives' - no definite structure"}
+{"n": 305, "decision": "approve", "molecules": ["4(4-hydroxy-4-methylpentyl) 3-cyclohexene carboxaldehyde"], "descriptors": ["muguet"], "why": "direct; Cyclohexal/Lyral are trade names for the same cpd"}
+{"n": 306, "decision": "approve", "molecules": ["4,6-dimethyl-3-octen-5-ol"], "descriptors": ["green", "herbal"], "why": "direct"}
+{"n": 307, "decision": "approve", "molecules": ["ethyl 4-methylvalerate"], "descriptors": ["fruity"], "why": "direct"}
+{"n": 308, "decision": "approve", "molecules": ["2,4,7-trimethylocta-2,6-dien-1-ol"], "descriptors": ["floral", "rosy", "geranium", "citrus"], "why": "CONTRAST PAIR - split (P) for the second compound, which has different notes"}
+{"n": 310, "decision": "approve", "molecules": ["9-hydroxy-9-methyldecanal"], "descriptors": ["lily of the valley", "muguet"], "why": "direct"}
+{"n": 311, "decision": "reject", "molecules": [], "descriptors": [], "why": "anaphora: 'these compounds'/'this compound'/'the indanone' - nothing named"}
+{"n": 312, "decision": "approve", "molecules": ["2-(2,4-dimethylcyclohex-3-en-1-yl)-5-methyl-5-(1-methylpropyl)-1,3-dioxane"], "descriptors": ["dry", "radiant", "woody", "ambery"], "why": "direct; KARANAL is the trade name"}
+{"n": 313, "decision": "reject", "molecules": [], "descriptors": [], "why": "unspecified substituent or 'derivatives' - no definite structure"}
+{"n": 314, "decision": "reject", "molecules": [], "descriptors": [], "why": "unspecified substituent or 'derivatives' - no definite structure"}
+{"n": 315, "decision": "approve", "molecules": ["6-isopropyl-2,4-dimethylcyclohex-3-en-1-ol"], "descriptors": ["green", "rooty", "earthy"], "why": "all diastereomers possess these - a property of the compound, not of a blend"}
+{"n": 316, "decision": "approve", "molecules": ["3,7-Dimethyl-2-methylene-6-octen-1-ol"], "descriptors": ["fresh", "citrus"], "why": "direct"}
+{"n": 317, "decision": "approve", "molecules": ["3,7-dimethyl-2-methylene-6-octen-1-ol"], "descriptors": ["floral", "rose", "muguet"], "why": "direct"}
+{"n": 319, "decision": "approve", "molecules": ["2-[3,3-Dimethyl-cyclohexylidene]-propionitrile"], "descriptors": ["tobacco", "hay", "herbal", "spicy", "wood", "fruity"], "why": "direct"}
+{"n": 320, "decision": "reject", "molecules": [], "descriptors": [], "why": "anaphora: 'these compounds'/'this compound'/'the indanone' - nothing named"}
+{"n": 321, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour belongs to a composition/blend/sample, not the compound"}
+{"n": 323, "decision": "reject", "molecules": [], "descriptors": [], "why": "anaphora: 'these compounds'/'this compound'/'the indanone' - nothing named"}
+{"n": 324, "decision": "approve", "molecules": ["(2E,4Z)-4-methyl-2,4-tridecadienal"], "descriptors": ["moss", "metallic"], "why": "direct; the flavour-effect clause is separate"}
+{"n": 325, "decision": "reject", "molecules": [], "descriptors": [], "why": "MIXTURE of isomers/compounds - odour belongs to the blend (rule settled 2026-08-25)"}
+{"n": 326, "decision": "approve", "molecules": ["Ethyl (E)-non-3-enoate"], "descriptors": ["fruity"], "why": "direct, single isomer; weak is intensity"}
+{"n": 327, "decision": "approve", "molecules": ["Ethyl (Z)-non-3-enoate"], "descriptors": ["fruity", "aldehydic", "fatty"], "why": "direct, single isomer"}
+{"n": 328, "decision": "reject", "molecules": [], "descriptors": [], "why": "MIXTURE of isomers/compounds - odour belongs to the blend (rule settled 2026-08-25)"}
+{"n": 329, "decision": "approve", "molecules": ["(2S)-2-((4,4,8-trimethyltricyclo[6.3.1.0 2,5 ]dodecan-1-yl)oxy)propan-1-ol"], "descriptors": ["amber"], "why": "direct"}
+{"n": 330, "decision": "approve", "molecules": ["2-(hex-5-en-1-yl)cyclopentan-1-one"], "descriptors": ["fruity", "mango", "passionfruit"], "why": "direct"}
+{"n": 331, "decision": "approve", "molecules": ["3-hexen-1-ol"], "descriptors": ["fresh", "green", "leafy", "mint"], "why": "note originates in the compound"}
+{"n": 332, "decision": "reject", "molecules": [], "descriptors": [], "why": "no odour attributed to a named compound"}
+{"n": 333, "decision": "approve", "molecules": ["3-methoxy-2,3-dimethyl-pentane"], "descriptors": ["ethereal", "sweet", "mouldy", "hay", "chocolate", "eucalyptus", "leafy"], "why": "direct"}
+{"n": 334, "decision": "approve", "molecules": ["3-ethyl-3-methoxy-pentane"], "descriptors": ["mouldy", "woody", "cedarwood", "galbanum"], "why": "direct"}
+{"n": 335, "decision": "reject", "molecules": [], "descriptors": [], "why": "MIXTURE of isomers/compounds - odour belongs to the blend (rule settled 2026-08-25)"}
+{"n": 336, "decision": "approve", "molecules": ["3-methoxy-2,3-dimethyl-pentane"], "descriptors": ["ethereal", "sweet", "mouldy", "hay", "chocolate", "eucalyptus", "leafy"], "why": "direct (duplicate of an earlier sentence)"}
+{"n": 337, "decision": "approve", "molecules": ["3-ethyl-3-methoxy-pentane"], "descriptors": ["mouldy", "woody", "cedarwood", "galbanum"], "why": "direct (duplicate)"}
+{"n": 338, "decision": "reject", "molecules": [], "descriptors": [], "why": "MIXTURE of isomers/compounds - odour belongs to the blend (rule settled 2026-08-25)"}
+{"n": 339, "decision": "approve", "molecules": ["2-(1-(3,3-dimethylcyclohexyl)ethoxy)-2-methylpropyl tetrahydrofuran-2-carboxylate"], "descriptors": ["musk"], "why": "direct"}
+{"n": 340, "decision": "approve", "molecules": ["2-methylisoborneol", "2-ethylfenchol", "huminol", "ambrinol", "terranol"], "descriptors": ["earthy"], "why": "several molecules sharing one description"}
+{"n": 341, "decision": "approve", "molecules": ["4,8,11-dodecatrienal"], "descriptors": ["citrus"], "why": "direct"}
+{"n": 342, "decision": "approve", "molecules": ["4,8,11-dodecatrienal"], "descriptors": ["marine"], "why": "direct"}
+{"n": 343, "decision": "approve", "molecules": ["4,8,11-dodecatrienal"], "descriptors": ["ozonic"], "why": "direct"}
+{"n": 344, "decision": "approve", "molecules": ["[1-methyl-2-(1,2,2-trimethyl-bicyclo[3.1.0]hex-3-yl-methyl-)cyclopropyl-]methanol"], "descriptors": ["sandalwood"], "why": "direct"}
+{"n": 345, "decision": "approve", "molecules": ["(R)-3-(4-isopropylcyclohex-1-en-1-yl)propanal"], "descriptors": ["lily of the valley", "floral", "sweet", "watery", "powdery"], "why": "CONTRAST PAIR - split (P) for the (S) enantiomer"}
+{"n": 346, "decision": "approve", "molecules": ["(-)-(E)-3,3-dimethyl-5-(2′,2′,3′-trimethyl-3′-cyclopenten-1′-yl)-4-penten-2-ol"], "descriptors": ["sandalwood"], "why": "direct"}
+{"n": 348, "decision": "approve", "molecules": ["2,2,5-trimethyl-5-pentylcyclopentan-1-one"], "descriptors": ["fruity"], "why": "direct; Veloutone is the trade name"}
+{"n": 349, "decision": "approve", "molecules": ["[1-methyl-2-[(1,2,2-trimethyl-3-bicyclo[3.1.0]hexanyl)methyl]cyclo-propyl]methanol"], "descriptors": ["sandalwood"], "why": "direct; Javanol is the trade name"}
+{"n": 350, "decision": "approve", "molecules": ["1-(2-t-butylcyclohexyloxy)-2-butanol"], "descriptors": ["woody", "amber", "fresh", "cypress"], "why": "direct; Amber Core is the trade name"}
+{"n": 352, "decision": "approve", "molecules": ["2,3,6-Trimethyl-2-cyclohexen-1-one"], "descriptors": ["animalic", "woody", "floral", "green", "minty", "dusty", "phenolic", "camphoraceous"], "why": "direct"}
+{"n": 353, "decision": "approve", "molecules": ["2,3,6-Trimethyl-2-cyclohexen-1-one"], "descriptors": ["animalic", "woody", "floral", "green", "minty", "dusty", "phenolic", "camphoraceous"], "why": "direct (duplicate)"}
+{"n": 354, "decision": "approve", "molecules": ["2,3,6-Trimethyl-2-cyclohexen-1-one"], "descriptors": ["animalic", "woody", "floral", "green", "minty", "dusty", "phenolic", "camphoraceous"], "why": "direct (duplicate)"}
+{"n": 355, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour belongs to a composition/blend/sample, not the compound"}
+{"n": 356, "decision": "approve", "molecules": ["(R,E)-3,7-dimethylnon-6-enal"], "descriptors": ["citrus", "floral"], "why": "direct"}
+{"n": 357, "decision": "approve", "molecules": ["(S,E)-3,7-dimethylnon-6-enal"], "descriptors": ["waxy", "fatty", "citrus", "floral", "rosy"], "why": "direct"}
+{"n": 358, "decision": "approve", "molecules": ["(R,Z)-3,7-dimethylnon-6-enal"], "descriptors": ["waxy", "citrus", "fruity"], "why": "direct"}
+{"n": 359, "decision": "approve", "molecules": ["(S,Z)-3,7-dimethylnon-6-enal"], "descriptors": ["waxy", "fatty", "citrus"], "why": "direct"}
+{"n": 363, "decision": "reject", "molecules": [], "descriptors": [], "why": "no odour attributed to a named compound"}
+{"n": 364, "decision": "reject", "molecules": [], "descriptors": [], "why": "no odour attributed to a named compound"}
+{"n": 365, "decision": "approve", "molecules": ["1,3-butylene glycol"], "descriptors": ["sweet"], "why": "direct; faint is intensity"}
+{"n": 366, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour belongs to a composition/blend/sample, not the compound"}
+{"n": 367, "decision": "approve", "molecules": ["oxacyclohexadecan-6-one"], "descriptors": ["sweet", "fatty", "musk"], "why": "direct; vanillin is a reference compound"}
+{"n": 368, "decision": "approve", "molecules": ["1-(4-tert-butyl-2,6-dimethyl-3,5-dinitrophenyl)ethanone"], "descriptors": ["musk"], "why": "named as possessing the nitro musk character"}
+{"n": 369, "decision": "reject", "molecules": [], "descriptors": [], "why": "unspecified substituent or 'derivatives' - no definite structure"}
+{"n": 370, "decision": "approve", "molecules": ["1-(2-t-butylcyclohexyloxy)-2-butanol"], "descriptors": ["woody", "amber", "fresh"], "why": "direct"}
+{"n": 371, "decision": "approve", "molecules": ["2-{2-[3-(propan-2-yl)phenyl]propyl}-1,3-dioxan-5-one"], "descriptors": ["aquatic", "green", "floral", "jasmine"], "why": "direct"}
+{"n": 372, "decision": "approve", "molecules": ["3-Isopropyl-6-methyl-cyclohex-2-en-1-one"], "descriptors": ["minty"], "why": "direct; carvenone is the common name"}
+{"n": 373, "decision": "reject", "molecules": [], "descriptors": [], "why": "no odour attributed to a named compound"}
+{"n": 375, "decision": "reject", "molecules": [], "descriptors": [], "why": "unspecified substituent or 'derivatives' - no definite structure"}
+{"n": 376, "decision": "approve", "molecules": ["2-((1S,3R)-3-butyl-2,2-dimethylcyclopropyl)-3-methylcyclopent-2-en-1-one"], "descriptors": ["spicy", "woody", "green", "orris", "rooty", "vetiver"], "why": "direct"}
+{"n": 377, "decision": "approve", "molecules": ["ethyl cyclohexene-1-carboxylate"], "descriptors": ["cinnamon", "marzipan", "chlorine"], "why": "direct; benzophenone is a reference compound"}
+{"n": 381, "decision": "approve", "molecules": ["3-methyl-2-(nonan-2-yl)cyclopent-2-en-1-one"], "descriptors": ["peppery", "wood", "floral", "green", "metallic", "rooty", "fenugreek"], "why": "direct"}
+{"n": 382, "decision": "approve", "molecules": ["3-methyl-2-(6-methylhept-5-en-2-yl)cyclopent-2-en-1-one"], "descriptors": ["peppery", "woody", "green", "floral"], "why": "direct"}
+{"n": 383, "decision": "reject", "molecules": [], "descriptors": [], "why": "unspecified substituent or 'derivatives' - no definite structure"}
+{"n": 387, "decision": "approve", "molecules": ["5,5-dimethyltetrahydrofuran-2-one"], "descriptors": ["fruity", "apricot", "cumarin", "creamy"], "why": "direct"}
+{"n": 388, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour belongs to a composition/blend/sample, not the compound"}
+{"n": 389, "decision": "approve", "molecules": ["3-(2-isopropyl-4-methylphenyl)propanal"], "descriptors": ["aldehydic", "floral"], "why": "note originates in the compound"}
+{"n": 390, "decision": "approve", "molecules": ["7-formyl l,l,4,4,6-pentamethyl 1,2,3,4-tetrahydronaphthalene"], "descriptors": ["musk"], "why": "direct"}
+{"n": 391, "decision": "approve", "molecules": ["7-formyl 1,1,4,4-tetramethyl 6-ethyl 1,2,3,4-tetrahydronaphthalene"], "descriptors": ["musk"], "why": "direct"}
+{"n": 392, "decision": "approve", "molecules": ["4,6,6,8,8-pentamethyl as-hydrindacen-3-one"], "descriptors": ["musk"], "why": "direct"}
+{"n": 393, "decision": "approve", "molecules": ["4,6,6,7,7,8,8-heptamethyl as-hydrindacen-3-one"], "descriptors": ["musk"], "why": "direct"}
+{"n": 394, "decision": "reject", "molecules": [], "descriptors": [], "why": "anaphora: 'these compounds'/'this compound'/'the indanone' - nothing named"}
+{"n": 395, "decision": "approve", "molecules": ["acetyl-1,1,3,4,4-pentamethyl-1,2, 3,4-tetrahydronaphthalene"], "descriptors": ["musk"], "why": "two cpds share the description; second name is OCR-split"}
+{"n": 396, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour belongs to a composition/blend/sample, not the compound"}
+{"n": 397, "decision": "reject", "molecules": [], "descriptors": [], "why": "unspecified substituent or 'derivatives' - no definite structure"}
+{"n": 398, "decision": "approve", "molecules": ["Z-methyl-8-phenyl-7-nonen-4-one"], "descriptors": ["musk", "civet"], "why": "direct"}
+{"n": 399, "decision": "reject", "molecules": [], "descriptors": [], "why": "unspecified substituent or 'derivatives' - no definite structure"}
+{"n": 400, "decision": "approve", "molecules": ["2-sec-butylcyclohexanone"], "descriptors": ["fresh", "peppermint"], "why": "direct; the second mention is an OCR typo"}
+{"n": 401, "decision": "reject", "molecules": [], "descriptors": [], "why": "MIXTURE of isomers/compounds - odour belongs to the blend (rule settled 2026-08-25)"}
+{"n": 402, "decision": "reject", "molecules": [], "descriptors": [], "why": "molecule name is OCR-damaged beyond safe reconstruction"}
+{"n": 403, "decision": "approve", "molecules": ["2-(1- methylcyclopropyl)-2-propanol"], "descriptors": ["camphor"], "why": "direct"}
+{"n": 404, "decision": "approve", "molecules": ["2-oxa-4,5,5,8,8-pentamethyl-1,2,3,4,5,6,7,8-octahydroanthracene"], "descriptors": ["musk"], "why": "direct"}
+{"n": 405, "decision": "approve", "molecules": ["1,l-diethoxy-2-pentyl-5-isobutyl-4hexene"], "descriptors": ["fatty"], "why": "direct; faintly is intensity"}
+{"n": 406, "decision": "approve", "molecules": ["l,1-diethoxy- 5,9 dime&#39;thyl-9- methoxy-4-decene"], "descriptors": ["smoky", "fatty"], "why": "direct; name is OCR-damaged, check it"}
+{"n": 407, "decision": "approve", "molecules": ["bicyclo[5.1.1.]non-2-en-9- one", "bicyclo[4.1.1.]oct-2-en-8-one"], "descriptors": ["camphoraceous", "musky", "sweet"], "why": "two cpds sharing one description"}
+{"n": 408, "decision": "approve", "molecules": ["bicyclo[5.1.1.]nonan-9-one", "bicyclo[4.1.1]octan-8-one"], "descriptors": ["woody", "camphor", "melon"], "why": "two cpds sharing one description"}
+{"n": 409, "decision": "approve", "molecules": ["2,6,6-trimethylbicyclo[3.2.0]hept-2-en-7-one"], "descriptors": ["green", "herbaceous"], "why": "direct; phenylacetaldehyde is a reference compound"}
+{"n": 410, "decision": "approve", "molecules": ["3-hydroxy- 3,7-dimethyl-1,6-octadiene"], "descriptors": ["fresh", "flowery"], "why": "direct; linalool is the same compound"}
+{"n": 411, "decision": "approve", "molecules": ["3-acetoxy-4,7-dimethyl-1,6-octadiene"], "descriptors": ["green", "Gardenia"], "why": "direct"}
+{"n": 412, "decision": "approve", "molecules": ["3-hydroxy-4-ethyl-7-methyl-octane"], "descriptors": ["fresh", "gooseberries", "herby"], "why": "direct"}
+{"n": 413, "decision": "approve", "molecules": ["3-hydroxy-7-isobutyl- 1,6-octadiene"], "descriptors": ["fruity", "pineapple", "apples"], "why": "direct; allyl-alpha-ionone is a reference compound"}
+{"n": 414, "decision": "approve", "molecules": ["7,10-dimethyl-4,5,9-undecatrien-2-one"], "descriptors": ["caramel"], "why": "CONTRAST PAIR - split (P) for the isomer with the metallic odor"}
+{"n": 415, "decision": "approve", "molecules": ["7,10-dimethyl-3, 5,9-undecatrien-2-one"], "descriptors": ["dry"], "why": "direct; balsamic is negated (without)"}
+{"n": 416, "decision": "reject", "molecules": [], "descriptors": [], "why": "anaphora: 'these compounds'/'this compound'/'the indanone' - nothing named"}
+{"n": 417, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour belongs to a composition/blend/sample, not the compound"}
+{"n": 418, "decision": "approve", "molecules": ["2-(l,5-dimethylbicyclo[2.l.l]hexyl-2)ethanol"], "descriptors": ["sweet", "woody"], "why": "direct"}
+{"n": 420, "decision": "reject", "molecules": [], "descriptors": [], "why": "molecule name is OCR-damaged beyond safe reconstruction"}
+{"n": 421, "decision": "approve", "molecules": ["1,1-diethoxy-5,9-dimethyl-9- methoxy-4-decene"], "descriptors": ["smoky", "fatty"], "why": "direct"}
+{"n": 422, "decision": "approve", "molecules": ["1,1-dimethoxy- 2,5-dimethyl-hexane"], "descriptors": ["flowery", "green"], "why": "direct"}
+{"n": 423, "decision": "reject", "molecules": [], "descriptors": [], "why": "unspecified substituent or 'derivatives' - no definite structure"}
+{"n": 424, "decision": "reject", "molecules": [], "descriptors": [], "why": "MIXTURE of isomers/compounds - odour belongs to the blend (rule settled 2026-08-25)"}
+{"n": 425, "decision": "approve", "molecules": ["Z-hydroxy-4-isopropenyl-l-methylbicyclo- [3.1.0]hexane"], "descriptors": ["minty"], "why": "direct; name is OCR-damaged"}
+{"n": 426, "decision": "approve", "molecules": ["4- isopropenyl-l-methylbicyclo[3.1.0]hexan-2-one"], "descriptors": ["sweet", "clove", "hay"], "why": "direct"}
+{"n": 427, "decision": "approve", "molecules": ["3(l0)-caren-4-olacetate"], "descriptors": ["floral", "camphoraceous"], "why": "direct"}
+{"n": 428, "decision": "reject", "molecules": [], "descriptors": [], "why": "MIXTURE of isomers/compounds - odour belongs to the blend (rule settled 2026-08-25)"}
+{"n": 429, "decision": "approve", "molecules": ["2-hydroxy-4- isopropenyl-1-methylbicyclo[3.1.0]hexane"], "descriptors": ["minty", "camphoraceous"], "why": "direct"}
+{"n": 430, "decision": "approve", "molecules": ["(+)-4-isopropenyl-1- methylbicyclo[3.l.O]hexan-2-one"], "descriptors": ["sweet", "clove", "hay"], "why": "direct"}
+{"n": 431, "decision": "approve", "molecules": ["Bicyclo[3.3.ljnon-2-en-9-one"], "descriptors": ["green", "musty", "woody"], "why": "direct; name is OCR-damaged"}
+{"n": 432, "decision": "approve", "molecules": ["2a-(1-hydroxyethyl)-3-carene"], "descriptors": ["fruity", "citrus"], "why": "direct - the footnote attaches to this component"}
+{"n": 433, "decision": "approve", "molecules": ["5-acetyl-2,3,3a,4,7,7ahexahydro-4,7-methanoindene"], "descriptors": ["woody"], "why": "direct"}
+{"n": 434, "decision": "approve", "molecules": ["5-acetyl-2,3,3a,4,7,7a hexahydro 4,7-methanoidene"], "descriptors": ["woody"], "why": "direct (duplicate)"}
+{"n": 435, "decision": "approve", "molecules": ["3-isobutyryloxy-4,7-dimethyl-6-octene"], "descriptors": ["fresh", "fruit"], "why": "direct"}
+{"n": 436, "decision": "approve", "molecules": ["3-hydroxy-4-ethyl-7-methyloctene"], "descriptors": ["fresh", "gooseberries", "herby"], "why": "direct"}
+{"n": 437, "decision": "approve", "molecules": ["4-caronone"], "descriptors": ["herbal", "sage"], "why": "CONTRAST PAIR - split (P) for para-menth-3-en-2-one; carvone is a reference cpd"}
+{"n": 438, "decision": "approve", "molecules": ["4-caranone"], "descriptors": ["herbal", "sage"], "why": "direct; carvone/calamus are reference points"}
+{"n": 439, "decision": "approve", "molecules": ["para-menth-3-en-2-one"], "descriptors": ["minty", "sweet"], "why": "direct; carvone is a reference compound"}
+{"n": 440, "decision": "reject", "molecules": [], "descriptors": [], "why": "molecule name is OCR-damaged beyond safe reconstruction"}
+{"n": 441, "decision": "reject", "molecules": [], "descriptors": [], "why": "molecule name is OCR-damaged beyond safe reconstruction"}
+{"n": 442, "decision": "reject", "molecules": [], "descriptors": [], "why": "molecule name is OCR-damaged beyond safe reconstruction"}
+{"n": 443, "decision": "approve", "molecules": ["l,l-diethoxy-3-pentyl-5-isobutyl-4-hexene"], "descriptors": ["fatty"], "why": "direct"}
+{"n": 444, "decision": "approve", "molecules": ["1,1-diethoxy-5,9-dimethyl-9-methoxy-4-decene"], "descriptors": ["smoky", "fatty"], "why": "direct"}
+{"n": 445, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour belongs to a composition/blend/sample, not the compound"}
+{"n": 446, "decision": "approve", "molecules": ["torreyal"], "descriptors": ["citrus"], "why": "direct"}
+{"n": 447, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour belongs to a composition/blend/sample, not the compound"}
+{"n": 448, "decision": "approve", "molecules": ["3,6, IO-trimethyl- 5,9undecenediene-2-one"], "descriptors": ["floral"], "why": "direct; name is OCR-damaged"}
+{"n": 449, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour belongs to a composition/blend/sample, not the compound"}
+{"n": 450, "decision": "reject", "molecules": [], "descriptors": [], "why": "MIXTURE of isomers/compounds - odour belongs to the blend (rule settled 2026-08-25)"}
+{"n": 451, "decision": "approve", "molecules": ["3-Normethyldihydro-B-santalol"], "descriptors": ["sweet", "woody", "sandalwood"], "why": "direct"}
+{"n": 452, "decision": "reject", "molecules": [], "descriptors": [], "why": "molecule name is OCR-damaged beyond safe reconstruction"}
+{"n": 453, "decision": "reject", "molecules": [], "descriptors": [], "why": "duplicate of the 4-caranone/para-menth contrast; handle it there"}
+{"n": 454, "decision": "approve", "molecules": ["paramenth-3-en-2-one"], "descriptors": ["minty", "sweet"], "why": "direct"}
+{"n": 455, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour belongs to a composition/blend/sample, not the compound"}
+{"n": 456, "decision": "reject", "molecules": [], "descriptors": [], "why": "MIXTURE of isomers/compounds - odour belongs to the blend (rule settled 2026-08-25)"}
+{"n": 457, "decision": "reject", "molecules": [], "descriptors": [], "why": "anaphora: 'these compounds'/'this compound'/'the indanone' - nothing named"}
+{"n": 458, "decision": "approve", "molecules": ["1,1,2,3,3-pentamethylhexahydro-4(5H)-indanone"], "descriptors": ["woody", "amber", "musk"], "why": "direct"}
+{"n": 459, "decision": "reject", "molecules": [], "descriptors": [], "why": "anaphora: 'these compounds'/'this compound'/'the indanone' - nothing named"}
+{"n": 460, "decision": "approve", "molecules": ["4,5-dihydro-1,l,2,3,3-pentamethylindane"], "descriptors": ["woody", "amber", "piney"], "why": "direct"}
+{"n": 461, "decision": "approve", "molecules": ["4,5-dihydro-1,1,2, 3,3-pentamethylindane"], "descriptors": ["woody", "amber", "tobacco", "piney"], "why": "direct"}
+{"n": 462, "decision": "approve", "molecules": ["4-aceto-6,8a-ethano-1,1,6-trimethyl-1,2,3,5,6,7,8,8a-octahydronaphthalene"], "descriptors": ["amber", "woody", "musk"], "why": "direct"}
+{"n": 463, "decision": "approve", "molecules": ["1,l,2,3,3-pentamethylhexahydro-4(5H)-indanone"], "descriptors": ["woody", "amber", "musk"], "why": "direct"}
+{"n": 464, "decision": "approve", "molecules": ["8-mercapto-p-menthan-3-ol"], "descriptors": ["fruity", "camphor"], "why": "direct; indole and oak-moss are reference points"}
+{"n": 465, "decision": "reject", "molecules": [], "descriptors": [], "why": "molecule name is OCR-damaged beyond safe reconstruction"}

@@ -10,10 +10,14 @@
 
 ```
 5,346 patents (Hetzner /opt/openscent/corpus/raw/)   was 2,588
-6,599 candidates                                     was 2,205
-6,604 review rows · 250 decided · 6,350 undecided
-  186 distinct molecules, all verbatim
+6,599 candidates -> 4,613 rows after dedupe
+  488 decided · 372 approve · 114 reject · 4,125 undecided
+  ~475 PRODUCTIVE rows remain — that is where the corpus rows are
 ```
+
+**REVIEW-RULES.md holds the decision rules.** Written 2026-08-25 after a blind eval
+disagreed on 14 of 98 and the disagreements turned out to be two unwritten rules applied
+in opposite directions. Read it before reviewing.
 
 Doubled on 2026-08-20 by walking C11B9/00 with the **/low** subtree scope — the class the
 corpus was already built from had only ever been harvested at the bare symbol, so four
@@ -34,20 +38,23 @@ enlarging it. Measure yield before fetching anything, always — A23L27/00 was w
 sampled at 0.17, and declined.
 
 **Immediate next:**
-1. **BUILD SCARCITY-ORDERED REVIEW.** The corpus is no longer the constraint — 6,350
-   undecided candidates is more material than can be reviewed. The queue is
-   productive-first but blind to which TAGS are short. Ordering by under-represented
-   descriptors drives tags over the 30-molecule bar for the same hours. Highest value
-   thing to build, worth more than any further corpus expansion.
-2. **The review itself** — 250 of 6,604 decided, 186 distinct molecules. At 0.75
-   molecules/decision, the bar needs ~2,700 more decisions.
-   **Before reviewing: RELOAD review.html.** A stale tab's export overwrites the file on
-   disk — see 2026-08-18 (late).
-3. **Audit the pre-OPS corpus for family duplicates.** Google had no family concept, and
-   those counts selected the 67 tags. ~3 unattended hours.
-4. **Optional, measured first:** C11D3/50 (~1,240 US, yield unknown — sample 200 before
-   fetching). Do NOT fetch A61K8/00 (~44,000, cosmetics, almost certainly food-like
-   yield) and do NOT fetch A23L27/00 — measured at 0.17 and declined.
+1. **A BLIND measurement batch, before more volume.** Claude proposes and Ivan disposes
+   (propose.py) — 188 decisions in a sitting against 50 without it. But the 99.3%
+   agreement figure is contaminated by automation bias and by rows discussed in chat.
+   ~30 rows where the proposal is computed but HIDDEN until after the decision is the
+   only design that is not self-confirming. **No accuracy figure goes to Mike until then.**
+2. **Keep reviewing with proposals.** ~475 productive rows left of 4,125 undecided.
+   ```bash
+   python3 propose.py export --n 150     # then Claude labels, then apply
+   ```
+   **Before reviewing: RELOAD review.html.** A stale tab's export overwrites the file.
+3. **Fix 4 approvals** that violate the rules settled 2026-08-25 — one cis/trans mixture,
+   three unspecified-substituent names. See REVIEW-RULES.md.
+4. **Re-run the four counters over 5,346 patents.** The 67 tags were selected on a corpus
+   half this size, and 145 descriptors seen in review map to no tag (`ozonic`, `lactonic`,
+   `mossy`, `animalistic`, `orris`). Cheapest possible route to more tags at the bar —
+   it needs no reviewing at all.
+5. **Audit the pre-OPS corpus for family duplicates** (~3 unattended hours).
 
 **GOOGLE DISCOVERY IS RETIRED** as of 2026-08-19 — see that entry for the OPS protocol
 table. Google's 503s were an IP cooldown, not a rate; that lesson generalised: OPS's
@@ -1666,3 +1673,136 @@ next, and it is worth more than any further corpus expansion.
 497 of 2,205 = 22.5% historically, which would put it nearer 1,400. The proxy is looser
 than the real rule — take the number from review.html's own counter, not from that
 estimate.)
+
+---
+
+## 2026-08-25/29 — Claude proposes, Ivan disposes. And how not to measure it.
+
+### The question Ivan asked
+
+> "Each time I don't understand, I send you a screenshot and you tell me exactly what to do.
+> Why do I have to go through thousands of reviews if you could do it yourself by this
+> afternoon?"
+
+Fair, and the honest answer is: partly yes. 4,300 candidates is a few hours of labelling
+and most would be right. But the corpus's claim is that every row is a human-verified
+verbatim extraction; LLM-labelled odour data already exists and is exactly what nobody
+builds on, because you cannot tell which rows are real. The hand review is not overhead on
+the product, it substantially IS the product.
+
+What was true is that Claude was being underused — only seeing the candidates Ivan found
+hard, which is backwards.
+
+### MEASURE FIRST — and the number was bad
+
+Blind evaluation against 98 of Ivan's own decisions (rows discussed in chat excluded,
+since Claude supplied those answers):
+
+```
+overall agreement    85.7%
+precision on reject  85.3%     <- auto-rejection needs >=98%
+molecule spans       93%       on rows both approved
+```
+
+**Auto-rejection would have destroyed about one real row in seven, invisibly.** Not viable.
+And the errors were SYSTEMATIC, as predicted, in two opposed clusters:
+
+* Claude too permissive on **mixtures** (5 of 9 false approves) — argued a mixture of
+  enantiomers of one compound is still that compound.
+* Ivan too permissive on **generic names** (3 of 5 false rejects) — approved
+  `7-alkoxy-...`, `alkyl ... esters`, `acetal of X`. His verdict: *"clearly my error,
+  human fatigue sets in."*
+
+Two of Claude's "errors" were not errors but **ground-truth drift**: Ivan had approved
+composition-level claims weeks earlier that he rejects now. Part of that 14% is Claude
+disagreeing with Ivan's earlier self, which also means some old approvals are wrong by
+current standards.
+
+### TWO RULES SETTLED, AND WRITTEN DOWN (REVIEW-RULES.md)
+
+Both answered NO by Ivan:
+
+1. **Does a mixture of stereoisomers of one compound count?** No. Enantiomers can smell
+   different (carvone), so a 50:50 blend's odour is neither one's.
+2. **Does a name with an unspecified substituent count?** No. `alkyl`/`alkoxy` is a
+   family, not a molecule, and OPSIN cannot resolve it.
+
+Added 2026-08-29, after Ivan queried it: **`X (E/Z of ~4:1)` is also a mixture**, even
+though the grammatical subject is the compound rather than "the mixture of". Rejecting it
+usually costs nothing — a patent precise enough to state a ratio almost always
+characterises the pure isomers separately (it did, two lines later).
+
+Only **4 of 251** existing approvals violate the new rules. REVIEW-RULES.md now holds all
+of it, including the reference-point list and the OCR-damage tells, so neither party
+re-litigates it in three weeks.
+
+### THE EVAL SET IS BURNED
+
+heldout.py's own discipline: if a rule changes because of what the set revealed, the set is
+spent. It did. **85.7% is not an estimate of accuracy under the current rules** — it is the
+number that triggered writing them down.
+
+### PROPOSE-ONLY, AND WHY THE BATCH ORDER MATTERED MORE THAN THE LABELLING
+
+`propose.py` writes `proposed_*` fields; nothing writes `decision`. The UI pre-fills them
+under a purple PROPOSED banner and Ivan's keypress is what records anything.
+
+First batch sorted by queue order: **15 approvals of 150 (10%)** — the head of the queue is
+pointer-references and figure captions. Second batch filtered to PRODUCTIVE rows using the
+UI's own definition (copied verbatim, because an earlier hand-rolled approximation said 64%
+where the real rule says 22.5%): **101 of 150 (67%)**. Same labelling effort, nearly seven
+times the rows.
+
+**Result: 188 decisions in one sitting, against 50 in the hour before.** Ivan: *"I'm MUCH
+faster like this."*
+
+### THE MEASUREMENT THAT LOOKS GREAT AND ISN'T
+
+Agreement on that batch: **149/150 = 99.3%**, precision on reject 100%.
+
+**Do not quote this.** Ivan consulted Claude on ~16 of the 150, so those are not
+independent — Claude supplied the answer. Strip them and the rest agree 100%, which is not
+evidence of correctness but of **automation bias**: a pre-filled proposal with a confident
+reason is hard to argue with.
+
+The real signal is the opposite: **Ivan overruled Claude three times**, and each was a case
+where he stopped and read instead of pressing A —
+
+* `green` in "a bit weaker green note" — Claude excluded it as a comparative, but the note
+  IS present and "weaker" is intensity. Claude had approved "very weak fruity" -> fruity
+  two rows earlier. Inconsistent, and Ivan caught it.
+* the Bergamot footnote — Claude reasoned from table structure ("the footnote attaches to
+  this component") where the sentence alone does not carry it, and the OCR'd superscripts
+  are ambiguous between `carene 5.0` and `carene 15.0`.
+* a contrast pair Claude proposed rejecting as a duplicate.
+
+**A clean number needs a BLIND batch** — proposals computed but hidden until after Ivan
+decides. Until that exists, no accuracy figure should go to Mike or into the paper.
+
+### EXPORT SILENTLY DROPPED EVERY UNKNOWN FIELD
+
+The UI's export built a fresh object from a fixed key list, so anything a later stage added
+to a row vanished on save. It erased all `proposed_*` fields: 112 unreviewed proposals gone,
+and the proposal-vs-decision comparison unrecoverable from the file. Recovered only because
+`propose-batch.jsonl` and `propose-in.jsonl` were still on disk and could be matched on
+sentence text rather than row index (indices had shifted — splits insert rows).
+
+It exported cleanly and looked fine. Nobody noticed until a status count came back empty.
+Fixed: the export now starts from the row and overwrites the canonical fields.
+
+Same species as every other bug in this project — no error, no crash, a confident wrong
+answer. That is now the eighth.
+
+### State
+
+```
+4,613 rows · 372 approve · 114 reject · 2 skip · 4,125 undecided
+verbatim violations: 0
+productive rows remaining: ~475 of 4,125
+```
+
+Ivan can now spot OCR damage unaided — the tells are spaces before commas, `l`/`1` and
+`Z`/`2` and `S`/`3` substitutions, doubled letters at a junction, and hyphen-broken words
+followed by text that does not continue them (two-column bleed). Also learned: a
+comma-grouped number in the thousands is a CITATION, not a locant, because a locant can
+never exceed the parent chain length.
