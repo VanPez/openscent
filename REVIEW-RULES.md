@@ -130,3 +130,29 @@ once.
 Reject. A missing row costs one row. A wrong row is indistinguishable from a right one
 once it is in the corpus, and it is the thing the whole extract-never-generate rule exists
 to prevent.
+
+---
+
+## Derivatives named as "the X of Y"
+
+A patent often describes a compound without naming it directly, as a modification of one it
+has just named. Whether that is a row depends on whether the phrase picks out **exactly one
+substance**.
+
+| | |
+|---|---|
+| KEEP | "the **acetate ester** of 1,5-dimethylcyclooct-1-en-5-ol" — acetylate the OH; one compound |
+| KEEP | "the **propionate**/**formate** ester of X" — same |
+| KEEP | "the corresponding **alcohol**/**aldehyde**" when only one such exists |
+| REJECT | "the **acetal** of 2,4,7-decatrienal" — acetal with WHICH alcohol? a family |
+| REJECT | "the **ester** of X" — which acid? |
+| REJECT | "**derivatives** of X", "**substituted** X" |
+
+The test: can you draw it without choosing anything? If a second decision is needed to
+know what the substance is, it is a family.
+
+**Record the whole phrase**, verbatim — `acetate ester of 1,5-dimethylcyclooct-1-en-5-ol`,
+not the parent alcohol on its own. The parent is mentioned only to locate the derivative;
+attributing the odour to it would name the wrong molecule. OPSIN will not parse the phrase,
+so linkage has to rewrite it (`…-5-yl acetate`), but that is normalisation of extracted
+text, not invention, and it happens after review.

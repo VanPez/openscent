@@ -136,16 +136,50 @@ def harvest(texts):
     return c, d
 
 def prior_classes() -> dict:
-    """Carry over the human judgements already made in hand-run 04."""
-    out = {}
-    f = ONT / "harvested-terms-v0.tsv"
-    if f.exists():
+    """Carry over EVERY human judgement ever made, from every file that holds one.
+
+    This used to read harvested-terms-v0.tsv alone — 90 judgements — while
+    harvested-terms-classified.tsv held 7,172. Re-running over the doubled corpus on
+    2026-09-04 reported `carried 0` because v0 was not even present on the harvest box,
+    and had it been there it would have restored 90 of 7,172 and silently presented the
+    rest as unjudged. Hours of classification, quietly asking to be redone.
+
+    Later files win on conflict: a term reclassified in round 2 was reclassified for a
+    reason. Sources are listed oldest-first for that reason.
+    """
+    SOURCES = ["harvested-terms-v0.tsv",
+               "harvested-terms-corpus.tsv",
+               "harvested-terms-classified.tsv",
+               "harvested-terms-candidates.tsv",
+               "harvested-terms-round2.tsv",
+               "harvested-terms-round2-classified.tsv"]
+    out, seen = {}, []
+    for name in SOURCES:
+        f = ONT / name
+        if not f.exists():
+            continue
+        n = 0
         for line in f.read_text(encoding="utf-8").splitlines():
             if line.startswith("#") or not line.strip():
                 continue
             p = line.split("\t")
-            if len(p) == 3:
-                out[p[0].strip().lower()] = p[2].strip()
+            # term, count, [docs], class — the class is the LAST non-empty field
+            if len(p) >= 3 and p[-1].strip() in ("D", "H", "T", "M", "X"):
+                out[p[0].strip().lower()] = p[-1].strip()
+                n += 1
+        if n:
+            seen.append(f"{name}:{n}")
+    # The 67 shipped tags are D by definition, whatever any older file says.
+    ot = ONT / "odor_terms.tsv"
+    if ot.exists():
+        for line in ot.read_text(encoding="utf-8").splitlines():
+            if line.startswith("#") or not line.strip():
+                continue
+            p = line.split("\t")
+            if p and p[0].strip():
+                out[p[0].strip().lower()] = "D"
+    if seen:
+        print("prior judgements from  " + ", ".join(seen))
     return out
 
 def main() -> int:

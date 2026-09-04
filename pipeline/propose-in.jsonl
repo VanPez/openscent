@@ -1,70 +1,100 @@
-{"n": 518, "decision": "approve", "molecules": ["trans-2-ethylidene-cis-3-hexenal"], "descriptors": ["citrus"], "why": "direct"}
-{"n": 519, "decision": "approve", "molecules": ["2-Ethylidene-6-methyl-cis-3- heptenal"], "descriptors": ["green", "floral", "cucumber"], "why": "direct"}
-{"n": 520, "decision": "reject", "molecules": [], "descriptors": [], "why": "molecule name is OCR-damaged (l/1, Z/2, broken brackets, or a cleaner copy exists elsewhere)"}
-{"n": 521, "decision": "reject", "molecules": [], "descriptors": [], "why": "molecule name is OCR-damaged (l/1, Z/2, broken brackets, or a cleaner copy exists elsewhere)"}
-{"n": 522, "decision": "reject", "molecules": [], "descriptors": [], "why": "molecule name is OCR-damaged (l/1, Z/2, broken brackets, or a cleaner copy exists elsewhere)"}
-{"n": 523, "decision": "reject", "molecules": [], "descriptors": [], "why": "molecule name is OCR-damaged (l/1, Z/2, broken brackets, or a cleaner copy exists elsewhere)"}
-{"n": 524, "decision": "reject", "molecules": [], "descriptors": [], "why": "'7 and 8-acetyl' names two compounds at once"}
-{"n": 525, "decision": "approve", "molecules": ["3,3,5,6- tetramethylbicyclo-[2.2.2]-oct-5-en-2-one"], "descriptors": ["camphoraceous", "woody", "burnt"], "why": "direct; safranal is a reference compound"}
-{"n": 526, "decision": "approve", "molecules": ["2-ethylidene-cis-3-hexenal"], "descriptors": ["citrus"], "why": "direct"}
-{"n": 527, "decision": "approve", "molecules": ["1-(5-methyl-fur-2-yl)-1-(5-methyl-5-vinyl-tetrahydrofur-2-yl)-ethane"], "descriptors": ["fresh", "fruity", "lime"], "why": "direct olfactive note"}
-{"n": 528, "decision": "reject", "molecules": [], "descriptors": [], "why": "gustative/taste, not odour"}
-{"n": 529, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour/taste belongs to a composition, food, detergent or tobacco - not the compound"}
-{"n": 530, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour/taste belongs to a composition, food, detergent or tobacco - not the compound"}
-{"n": 531, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour/taste belongs to a composition, food, detergent or tobacco - not the compound"}
-{"n": 532, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour/taste belongs to a composition, food, detergent or tobacco - not the compound"}
-{"n": 533, "decision": "reject", "molecules": [], "descriptors": [], "why": "comparative between test samples; no compound described"}
-{"n": 534, "decision": "reject", "molecules": [], "descriptors": [], "why": "comparative between test samples; no compound described"}
-{"n": 535, "decision": "approve", "molecules": ["Cis-4a,5,6,7,8,8a-hexahydro-3,4a,5,5,8a-pentamethyl-2(1H)-naphthalenone"], "descriptors": ["green", "woody", "peppery"], "why": "direct"}
-{"n": 536, "decision": "approve", "molecules": ["Cis-3,4,4a,5,6,7,8,8a-octahydro-3,4a,5,5,8a-pentamethyl-2(1H)-naphthalenone"], "descriptors": ["woody", "amber"], "why": "direct"}
-{"n": 537, "decision": "approve", "molecules": ["Cis-3,4,4a,5,6,7,8,8a-octahydro-2,4a,8,8,8a-pentamethyl-1(2H)-naphthalenone"], "descriptors": ["woody"], "why": "direct"}
-{"n": 538, "decision": "reject", "molecules": [], "descriptors": [], "why": "molecule name is OCR-damaged (l/1, Z/2, broken brackets, or a cleaner copy exists elsewhere)"}
-{"n": 539, "decision": "approve", "molecules": ["cis-3,4,4a,5,6,7,8,8a-octahydro-3,4a,5,5,8a-pentamethyl-2(1H)-naphthalenone"], "descriptors": ["woody", "amber"], "why": "direct"}
-{"n": 540, "decision": "approve", "molecules": ["Cis-3,4,4a,5,6,7,8,8a-octahydro-2,4a,8,8,8a-pentamethyl-1(2H)-naphthalenone"], "descriptors": ["woody"], "why": "direct"}
-{"n": 541, "decision": "approve", "molecules": ["Cis-decahydro-1,2-epoxy-2,4a,8,8,8a-pentamethylnaphthalene"], "descriptors": ["woody", "cedar"], "why": "direct - this is the CLEAN copy of a name that is damaged elsewhere"}
-{"n": 542, "decision": "approve", "molecules": ["6-n-pentyl-alpha-pyrone"], "descriptors": ["green", "coconut", "tobacco"], "why": "direct"}
-{"n": 543, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour/taste belongs to a composition, food, detergent or tobacco - not the compound"}
-{"n": 544, "decision": "approve", "molecules": ["1-ethoxy-4-(1-ethoxyvinyl)-3,3,5,5-tetramethylcyclo-1-hexene"], "descriptors": ["woody"], "why": "direct - CLEAN copy of the name rejected as damaged in US3578715A"}
-{"n": 545, "decision": "approve", "molecules": ["1-ethoxy-4-acetyl-3,3,5,5-tetramethylcyclo-1-hexene"], "descriptors": ["woody"], "why": "direct - clean copy"}
-{"n": 546, "decision": "approve", "molecules": ["2-keto-6-hexyl-dioxane-(1,4)"], "descriptors": ["aldehydic", "wood"], "why": "direct"}
-{"n": 547, "decision": "approve", "molecules": ["1-ethoxy-4-(1-ethoxyvinyl)-3,3,5,5-tetramethylcyclo-1-hexene"], "descriptors": ["woody"], "why": "direct"}
-{"n": 548, "decision": "approve", "molecules": ["4,5-decamethylene-pyrimidine"], "descriptors": ["musk", "amber", "woody"], "why": "direct"}
-{"n": 549, "decision": "approve", "molecules": ["trans, E-1-crotonoyl-2,2,6-trimethylcyclohexane"], "descriptors": ["fruity", "earthy", "minty"], "why": "direct"}
-{"n": 550, "decision": "approve", "molecules": ["4,4,6-trimethyl-2-cyclohexenone"], "descriptors": ["herbaceous", "minty", "camphoraceous"], "why": "direct"}
-{"n": 551, "decision": "approve", "molecules": ["4,4,6-trimethyl-2-cyclohexenone"], "descriptors": ["herbaceous", "minty", "camphoraceous"], "why": "direct; cedar leaf oil is a comparison"}
-{"n": 552, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour/taste belongs to a composition, food, detergent or tobacco - not the compound"}
-{"n": 553, "decision": "reject", "molecules": [], "descriptors": [], "why": "molecule name is OCR-damaged (l/1, Z/2, broken brackets, or a cleaner copy exists elsewhere)"}
-{"n": 554, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour/taste belongs to a composition, food, detergent or tobacco - not the compound"}
-{"n": 555, "decision": "approve", "molecules": ["1,3,3,5-tetramethyl-7-carbomethoxy-bicyclo-[2.2.2]-oct-5-ene"], "descriptors": ["woody", "fruity", "green"], "why": "direct - CLEAN copy"}
-{"n": 556, "decision": "reject", "molecules": [], "descriptors": [], "why": "'7 and 8-acetyl' names two compounds at once"}
-{"n": 557, "decision": "approve", "molecules": ["trans-2-ethylidene-cis-3-hexenal"], "descriptors": ["citrus"], "why": "direct"}
-{"n": 558, "decision": "approve", "molecules": ["2-Ethylidene-6-methyl-cis-3-heptenal"], "descriptors": ["green", "floral", "cucumber"], "why": "direct"}
-{"n": 559, "decision": "reject", "molecules": [], "descriptors": [], "why": "'a pure product' - never named"}
-{"n": 560, "decision": "reject", "molecules": [], "descriptors": [], "why": "comparative between test samples; no compound described"}
-{"n": 561, "decision": "reject", "molecules": [], "descriptors": [], "why": "comparative between test samples; no compound described"}
-{"n": 562, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour/taste belongs to a composition, food, detergent or tobacco - not the compound"}
-{"n": 563, "decision": "approve", "molecules": ["3,7-Caryophyllane epoxide"], "descriptors": ["woody", "balsamic"], "why": "direct - 'itself has' is explicit"}
-{"n": 565, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour/taste belongs to a composition, food, detergent or tobacco - not the compound"}
-{"n": 566, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour/taste belongs to a composition, food, detergent or tobacco - not the compound"}
-{"n": 567, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour/taste belongs to a composition, food, detergent or tobacco - not the compound"}
-{"n": 568, "decision": "approve", "molecules": ["2-ethylidene-cis-3-hexenal"], "descriptors": ["citrus"], "why": "direct"}
-{"n": 569, "decision": "approve", "molecules": ["2-Ethylidene-6-methyl-cis-3-heptenal"], "descriptors": ["green", "floral", "cucumber"], "why": "direct"}
-{"n": 570, "decision": "approve", "molecules": ["cis-4-isopropenyl-cyclohexylmethanol"], "descriptors": ["flowery", "lily of the valley"], "why": "CONTRAST PAIR - split (P); the trans isomer is 'chemical', described separately"}
-{"n": 571, "decision": "reject", "molecules": [], "descriptors": [], "why": "gustative/taste, not odour"}
-{"n": 572, "decision": "approve", "molecules": ["Trans-4-isopropenyl-cyclohexylmethanol"], "descriptors": ["woody"], "why": "direct"}
-{"n": 573, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour/taste belongs to a composition, food, detergent or tobacco - not the compound"}
-{"n": 574, "decision": "approve", "molecules": ["Octahydro-9,9-dimethyl-1,6-methanonaphthalene-1-(2H)-ol"], "descriptors": ["patchouli"], "why": "character originates in the compound"}
-{"n": 575, "decision": "reject", "molecules": [], "descriptors": [], "why": "molecule name is OCR-damaged (l/1, Z/2, broken brackets, or a cleaner copy exists elsewhere)"}
-{"n": 576, "decision": "approve", "molecules": ["2-methyl-5-(2-endo-methyl-3-methylene-bicyclo(2.2.1)-hept-2-yl)-3-penten-2-ol"], "descriptors": ["woody", "sandal"], "why": "direct"}
-{"n": 577, "decision": "approve", "molecules": ["2-methyl-5(2-exo-methyl-3-methylene-bicyclo(2.2.1)-hept-2-yl)-3-penten-2-ol"], "descriptors": ["woody", "sandal"], "why": "direct; missing hyphen is formatting"}
-{"n": 578, "decision": "reject", "molecules": [], "descriptors": [], "why": "molecule name is OCR-damaged (l/1, Z/2, broken brackets, or a cleaner copy exists elsewhere)"}
-{"n": 579, "decision": "reject", "molecules": [], "descriptors": [], "why": "molecule name is OCR-damaged (l/1, Z/2, broken brackets, or a cleaner copy exists elsewhere)"}
-{"n": 580, "decision": "approve", "molecules": ["2-methyl-3-methylene-alpha(1-methylethenyl) bicyclo-(2.2.1) heptane-2-exo-propanol"], "descriptors": ["woody", "sandal"], "why": "direct"}
-{"n": 581, "decision": "approve", "molecules": ["2-methyl-3-methylene alpha-(1-methylethenyl) bicyclo(2.2.1) heptane-2-endo-propanol"], "descriptors": ["woody", "sandal"], "why": "direct"}
-{"n": 582, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour/taste belongs to a composition, food, detergent or tobacco - not the compound"}
-{"n": 583, "decision": "approve", "molecules": ["2,2-dimethyl-3-(2-(2-methyl-3-methylene bicyclo(2,2,1)hept-2-(exo)-yl)ethyl)-oxirane"], "descriptors": ["green", "woody"], "why": "direct"}
-{"n": 584, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour/taste belongs to a composition, food, detergent or tobacco - not the compound"}
-{"n": 585, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour/taste belongs to a composition, food, detergent or tobacco - not the compound"}
-{"n": 586, "decision": "approve", "molecules": ["2,5-dimethyl-2-propenyl hex-4-enal"], "descriptors": ["green", "citrus", "cumin", "sweet"], "why": "direct; carvone and lavandulol are reference compounds"}
-{"n": 587, "decision": "approve", "molecules": ["2-Benzyl-2-ethyl-hex-3-enal"], "descriptors": ["sweet", "floral", "rosey"], "why": "direct"}
-{"n": 588, "decision": "approve", "molecules": ["2-Butenyl-2-ethyl-5-methyl-hex-4-enal"], "descriptors": ["green", "sweet", "citrus", "rosey", "floral"], "why": "direct"}
+{"n": 591, "decision": "reject", "molecules": [], "descriptors": [], "why": "table fragment: two entries merged, attribution not recoverable"}
+{"n": 592, "decision": "reject", "molecules": [], "descriptors": [], "why": "MIXTURE / 'cis and trans' / 'X and Y' — odour belongs to the blend"}
+{"n": 593, "decision": "reject", "molecules": [], "descriptors": [], "why": "MIXTURE / 'cis and trans' / 'X and Y' — odour belongs to the blend"}
+{"n": 594, "decision": "approve", "molecules": ["2,6,10,10-Tetramethyl-1-oxa-spiro[4.5]decan-6-ol"], "descriptors": ["woody", "balsamic"], "why": "note imparted by the compound"}
+{"n": 595, "decision": "approve", "molecules": ["1-acetyl-3,3-dimethyl-(2-propenyl)cyclohexane"], "descriptors": ["woody", "earthy", "amber", "animal", "pineapple"], "why": "the compound imparts the aroma"}
+{"n": 596, "decision": "approve", "molecules": ["1-acetyl-3,3-dimethyl-(2-propenyl)cyclohexane"], "descriptors": ["floral"], "why": "the compound imparts the note"}
+{"n": 597, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour or taste belongs to a composition, flavour, detergent, cigarette or panel sample"}
+{"n": 598, "decision": "approve", "molecules": ["2-ethylidene-6-methyl-cis-3-heptenal"], "descriptors": ["green", "floral", "cucumber"], "why": "direct"}
+{"n": 599, "decision": "approve", "molecules": ["4-phenyl-2-pentenal"], "descriptors": ["green", "cuminic"], "why": "direct; styrallyl is a reference compound"}
+{"n": 600, "decision": "approve", "molecules": ["8,8-dimethyloctahydro-1,5-methano-1H-inden-1-ol"], "descriptors": ["patchouli"], "why": "the compound imparts the character"}
+{"n": 601, "decision": "approve", "molecules": ["1,5-Methano-1H-inden-1-ol, octahydro-7A,8,8-trimethyl"], "descriptors": ["earthy", "camphoraceous", "amber", "woody"], "why": "direct; 'Chemical I' is defined in this sentence as this compound"}
+{"n": 602, "decision": "approve", "molecules": ["3-(methallylthio)-2,6-dimethyl-4-heptanone"], "descriptors": ["sweet", "green", "woody"], "why": "direct; beta vetivone is a reference compound"}
+{"n": 603, "decision": "approve", "molecules": ["3-methylthio-4-heptanone"], "descriptors": ["green", "minty", "herbaceous"], "why": "direct"}
+{"n": 604, "decision": "approve", "molecules": ["3-methylthio-4-heptanol"], "descriptors": ["green", "floral", "herbal"], "why": "direct"}
+{"n": 605, "decision": "reject", "molecules": [], "descriptors": [], "why": "molecule name is OCR-damaged (`methallythio`, missing hyphens); a clean copy exists elsewhere"}
+{"n": 606, "decision": "approve", "molecules": ["3-methylthio-4-heptanol"], "descriptors": ["sweet", "green", "floral", "herbal"], "why": "table row, direct"}
+{"n": 607, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour or taste belongs to a composition, flavour, detergent, cigarette or panel sample"}
+{"n": 608, "decision": "reject", "molecules": [], "descriptors": [], "why": "'derivative(s)' or 'substituted' — a class, no definite structure"}
+{"n": 609, "decision": "reject", "molecules": [], "descriptors": [], "why": "'derivative(s)' or 'substituted' — a class, no definite structure"}
+{"n": 610, "decision": "reject", "molecules": [], "descriptors": [], "why": "MIXTURE / 'cis and trans' / 'X and Y' — odour belongs to the blend"}
+{"n": 611, "decision": "reject", "molecules": [], "descriptors": [], "why": "MIXTURE / 'cis and trans' / 'X and Y' — odour belongs to the blend"}
+{"n": 612, "decision": "approve", "molecules": ["3-(methallylthio)-2,6-dimethyl-4-heptanone"], "descriptors": ["sweet", "green", "woody"], "why": "direct (duplicate patent)"}
+{"n": 613, "decision": "approve", "molecules": ["3-methylthio-4-heptanone"], "descriptors": ["green", "minty", "herbaceous"], "why": "direct (duplicate patent)"}
+{"n": 614, "decision": "reject", "molecules": [], "descriptors": [], "why": "molecule name is OCR-damaged (`methallythio`, missing hyphens); a clean copy exists elsewhere"}
+{"n": 616, "decision": "approve", "molecules": ["4-mercapto-5-nonanone"], "descriptors": ["green", "minty", "grapefruit"], "why": "direct"}
+{"n": 617, "decision": "approve", "molecules": ["4-mercapto-5-nonanol"], "descriptors": ["green", "pepper", "grapefruit"], "why": "direct"}
+{"n": 618, "decision": "approve", "molecules": ["2,6-dimethyl-3-mercapto-heptanol-4"], "descriptors": ["green", "fruity", "grape", "grapefruit"], "why": "direct"}
+{"n": 619, "decision": "approve", "molecules": ["2,6-dimethyl-3-mercapto-heptanone-4"], "descriptors": ["green", "grapefruit"], "why": "direct"}
+{"n": 620, "decision": "approve", "molecules": ["5-mercapto-6-undecanol"], "descriptors": ["grapefruit", "buchu", "vetiver"], "why": "direct"}
+{"n": 621, "decision": "approve", "molecules": ["5-mercapto-6-undecanone"], "descriptors": ["green", "grapefruit", "woody", "vetiver"], "why": "direct"}
+{"n": 622, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour or taste belongs to a composition, flavour, detergent, cigarette or panel sample"}
+{"n": 623, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour or taste belongs to a composition, flavour, detergent, cigarette or panel sample"}
+{"n": 624, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour or taste belongs to a composition, flavour, detergent, cigarette or panel sample"}
+{"n": 625, "decision": "reject", "molecules": [], "descriptors": [], "why": "the burnt character belongs to a reaction product, not to 2,3-pentane dione"}
+{"n": 626, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour or taste belongs to a composition, flavour, detergent, cigarette or panel sample"}
+{"n": 627, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour or taste belongs to a composition, flavour, detergent, cigarette or panel sample"}
+{"n": 628, "decision": "approve", "molecules": ["2-n-pentyl-3-(2-oxopropyl)-1-cyclopentanone"], "descriptors": ["magnolia"], "why": "direct; stereoisomers share the description"}
+{"n": 629, "decision": "approve", "molecules": ["1,5-undecadien 4-ol"], "descriptors": ["green", "fatty"], "why": "direct; the 'corresponding acetate' is not named"}
+{"n": 630, "decision": "approve", "molecules": ["1-[3-(methylthio)butyryl]-2,6,6-trimethyl-cyclohexene"], "descriptors": ["floral", "rose"], "why": "the compound imparts the odor"}
+{"n": 631, "decision": "approve", "molecules": ["trans-2-ethylidene-cis-3-hexenal"], "descriptors": ["citrus"], "why": "direct"}
+{"n": 632, "decision": "approve", "molecules": ["trans-2-ethylidene-cis-3-hexenal"], "descriptors": ["sweet", "almond", "marzipan", "cherry"], "why": "direct"}
+{"n": 633, "decision": "approve", "molecules": ["2-Ethylidene-6-methyl-cis-3-heptenal"], "descriptors": ["green", "floral", "cucumber"], "why": "direct"}
+{"n": 634, "decision": "reject", "molecules": [], "descriptors": [], "why": "'suitable ... FOR THE PREPARATION OF' flower oils — not a description of their odour"}
+{"n": 635, "decision": "approve", "molecules": ["2,6,10,10-Tetramethyl-1-oxa-spiro[4.5] decan-6-ol"], "descriptors": ["woody", "balsamic"], "why": "direct (duplicate patent)"}
+{"n": 636, "decision": "reject", "molecules": [], "descriptors": [], "why": "'aromatic odoriferous notes' — no actual descriptor asserted"}
+{"n": 637, "decision": "reject", "molecules": [], "descriptors": [], "why": "gustative (taste), not odour"}
+{"n": 638, "decision": "approve", "molecules": ["1-butanoyl-3,3-dimethylcyclohexane"], "descriptors": ["fruity", "berry", "herbaceous", "green", "tobacco"], "why": "the compound imparts the aroma"}
+{"n": 639, "decision": "approve", "molecules": ["1-butanoyl-3,3-dimethylcyclohexane"], "descriptors": ["herbaceous"], "why": "the compound imparts the note"}
+{"n": 640, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour or taste belongs to a composition, flavour, detergent, cigarette or panel sample"}
+{"n": 641, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour or taste belongs to a composition, flavour, detergent, cigarette or panel sample"}
+{"n": 642, "decision": "approve", "molecules": ["alpha-allyl-3,3-dimethyl-2-norbornanemethanol"], "descriptors": ["sweet", "woody", "melony"], "why": "the compound imparts the note"}
+{"n": 643, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour or taste belongs to a composition, flavour, detergent, cigarette or panel sample"}
+{"n": 644, "decision": "approve", "molecules": ["2-butyl-3,5,5-trimethyl-2-cyclohexen-1,4-dione"], "descriptors": ["floral"], "why": "the compound imparts the note"}
+{"n": 645, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour or taste belongs to a composition, flavour, detergent, cigarette or panel sample"}
+{"n": 646, "decision": "reject", "molecules": [], "descriptors": [], "why": "'derivative(s)' or 'substituted' — a class, no definite structure"}
+{"n": 647, "decision": "reject", "molecules": [], "descriptors": [], "why": "'derivative(s)' or 'substituted' — a class, no definite structure"}
+{"n": 648, "decision": "approve", "molecules": ["1,8-dimethoxy-p-menthane"], "descriptors": ["sandalwood"], "why": "the sandalwood nuance is explicitly imparted BY this compound"}
+{"n": 649, "decision": "reject", "molecules": [], "descriptors": [], "why": "the DETERGENTS possess the nuance"}
+{"n": 650, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour or taste belongs to a composition, flavour, detergent, cigarette or panel sample"}
+{"n": 651, "decision": "reject", "molecules": [], "descriptors": [], "why": "MIXTURE / 'cis and trans' / 'X and Y' — odour belongs to the blend"}
+{"n": 652, "decision": "approve", "molecules": ["cis-oct-6-en-1-al"], "descriptors": ["fresh", "fruity", "melon", "cucumber"], "why": "direct, 'in its pure state'"}
+{"n": 653, "decision": "approve", "molecules": ["8,8-dimethyloctahydro-1,5-methano-1H-inden-1-ol"], "descriptors": ["patchouli"], "why": "direct (duplicate patent)"}
+{"n": 654, "decision": "approve", "molecules": ["1,5-Methano-1H-inden-1-ol, octahydro-7A,8,8-trimethyl"], "descriptors": ["earthy", "camphoraceous", "amber", "woody"], "why": "direct (duplicate patent)"}
+{"n": 655, "decision": "approve", "molecules": ["7,7-dimethyl-6-methylene-tricyclo[6.7.1.0 1 ,5 ] undecan-2-one"], "descriptors": ["woody"], "why": "direct, 'pure'"}
+{"n": 656, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour or taste belongs to a composition, flavour, detergent, cigarette or panel sample"}
+{"n": 657, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour or taste belongs to a composition, flavour, detergent, cigarette or panel sample"}
+{"n": 658, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour or taste belongs to a composition, flavour, detergent, cigarette or panel sample"}
+{"n": 659, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour or taste belongs to a composition, flavour, detergent, cigarette or panel sample"}
+{"n": 660, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour or taste belongs to a composition, flavour, detergent, cigarette or panel sample"}
+{"n": 661, "decision": "approve", "molecules": ["1,3,5-trimethyl-3-cyclohexene nitrile"], "descriptors": ["camphoraceous"], "why": "direct; harsh/chemical are not odour character"}
+{"n": 662, "decision": "approve", "molecules": ["1-methyl-3-cyclohexene nitrile"], "descriptors": ["camphoraceous"], "why": "direct"}
+{"n": 663, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour or taste belongs to a composition, flavour, detergent, cigarette or panel sample"}
+{"n": 664, "decision": "approve", "molecules": ["2,3-dimethyl-5-(2,2,3-trimethyl-3-cyclopent-1-yl)-2-pentanol"], "descriptors": ["woody", "oily", "sandalwood"], "why": "direct; santalol is a reference compound"}
+{"n": 665, "decision": "approve", "molecules": ["1-(2,6,6-trimethyl-1,3-cyclohexadien-1-yl)-1,3-butanedione"], "descriptors": ["floral"], "why": "the compound imparts the note"}
+{"n": 666, "decision": "reject", "molecules": [], "descriptors": [], "why": "'derivative(s)' or 'substituted' — a class, no definite structure"}
+{"n": 667, "decision": "reject", "molecules": [], "descriptors": [], "why": "'derivative(s)' or 'substituted' — a class, no definite structure"}
+{"n": 668, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour or taste belongs to a composition, flavour, detergent, cigarette or panel sample"}
+{"n": 671, "decision": "reject", "molecules": [], "descriptors": [], "why": "MIXTURE / 'cis and trans' / 'X and Y' — odour belongs to the blend"}
+{"n": 672, "decision": "reject", "molecules": [], "descriptors": [], "why": "MIXTURE / 'cis and trans' / 'X and Y' — odour belongs to the blend"}
+{"n": 673, "decision": "approve", "molecules": ["2,2,5-trimethyl-cyclopentanone", "2,2,5,5-tetramethyl-cyclopentanone", "2-methyl-2,5,5-tripropyl-cyclopentanone"], "descriptors": ["minty", "camphery", "anise"], "why": "three compounds sharing one description"}
+{"n": 674, "decision": "approve", "molecules": ["2,5,5-trimethyl-2-pentyl-cyclopentanone"], "descriptors": ["fruity", "peaches", "green"], "why": "the scent is the compound's"}
+{"n": 675, "decision": "reject", "molecules": [], "descriptors": [], "why": "'derivative(s)' or 'substituted' — a class, no definite structure"}
+{"n": 676, "decision": "reject", "molecules": [], "descriptors": [], "why": "'derivative(s)' or 'substituted' — a class, no definite structure"}
+{"n": 677, "decision": "reject", "molecules": [], "descriptors": [], "why": "MIXTURE / 'cis and trans' / 'X and Y' — odour belongs to the blend"}
+{"n": 678, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour or taste belongs to a composition, flavour, detergent, cigarette or panel sample"}
+{"n": 679, "decision": "reject", "molecules": [], "descriptors": [], "why": "MIXTURE / 'cis and trans' / 'X and Y' — odour belongs to the blend"}
+{"n": 680, "decision": "approve", "molecules": ["4-(3,3-dimethyl-2-norbornyl)-3-methyl-2-butanone"], "descriptors": ["sweet", "pine", "incense"], "why": "the compound imparts the aroma"}
+{"n": 681, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour or taste belongs to a composition, flavour, detergent, cigarette or panel sample"}
+{"n": 682, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour or taste belongs to a composition, flavour, detergent, cigarette or panel sample"}
+{"n": 683, "decision": "reject", "molecules": [], "descriptors": [], "why": "MIXTURE / 'cis and trans' / 'X and Y' — odour belongs to the blend"}
+{"n": 684, "decision": "approve", "molecules": ["3-allyl-1-methyl-2-oxabicyclo [2.2.2]octane"], "descriptors": ["minty", "buchu", "caraway", "herbaceous"], "why": "the compound imparts the nuances; eucalyptol is a reference cpd"}
+{"n": 685, "decision": "reject", "molecules": [], "descriptors": [], "why": "the only descriptor is 'earthly', an OCR slip for earthy — not usable verbatim"}
+{"n": 686, "decision": "approve", "molecules": ["6,8-Dimethyl-3-nonen-2-ol"], "descriptors": ["fruity", "flowery", "green", "mushroom"], "why": "direct"}
+{"n": 687, "decision": "reject", "molecules": [], "descriptors": [], "why": "MIXTURE / 'cis and trans' / 'X and Y' — odour belongs to the blend"}
+{"n": 688, "decision": "reject", "molecules": [], "descriptors": [], "why": "MIXTURE / 'cis and trans' / 'X and Y' — odour belongs to the blend"}
+{"n": 689, "decision": "reject", "molecules": [], "descriptors": [], "why": "MIXTURE / 'cis and trans' / 'X and Y' — odour belongs to the blend"}
+{"n": 690, "decision": "reject", "molecules": [], "descriptors": [], "why": "MIXTURE / 'cis and trans' / 'X and Y' — odour belongs to the blend"}
+{"n": 691, "decision": "reject", "molecules": [], "descriptors": [], "why": "MIXTURE / 'cis and trans' / 'X and Y' — odour belongs to the blend"}
+{"n": 692, "decision": "approve", "molecules": ["3-allyl-1-methyl-2-oxabicyclo[2.2.2]octane"], "descriptors": ["minty", "buchu", "caraway", "herbaceous"], "why": "direct (duplicate patent)"}
+{"n": 693, "decision": "approve", "molecules": ["4-acetyl-3,3,8,8-tetramethyl-as-hydrindacene"], "descriptors": ["musky", "sandalwood"], "why": "the compound imparts the note"}

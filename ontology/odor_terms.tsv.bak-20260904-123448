@@ -144,23 +144,3 @@ waxy	waxy	# 29/56
 wet	wet	# 34/44
 woody	woody	# 318/907
 wood	woody	# 39/60
-# --- surface-form variants harvested from the 5,346-patent run, 2026-09-04 ---
-# Spelling and plural variants of tags that already exist. NOT new tags: they map
-# onto existing ones, so the ontology is unchanged in size and meaning. Added so
-# the remaining ~4,000 review rows capture them instead of dropping them.
-citrusy	citrus
-spicey	spicy
-rosey	rose
-lemony	lemon
-powder	powdery
-jasmin	jasmine
-tobaccos	tobacco
-oranges	orange
-roses	rose
-cream	creamy
-smokey	smoke
-apples	apple
-smoky	smoke
-musks	musk
-spice	spicy
-musklike	musk

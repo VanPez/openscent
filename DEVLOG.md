@@ -10,9 +10,11 @@
 
 ```
 5,346 patents (Hetzner /opt/openscent/corpus/raw/)   was 2,588
-6,599 candidates -> 4,613 rows after dedupe
-  488 decided · 372 approve · 114 reject · 4,125 undecided
-  ~475 PRODUCTIVE rows remain — that is where the corpus rows are
+4,615 review rows after dedupe
+  700 decided · 469 approve · 229 reject · 3,915 undecided
+  411 distinct molecules · 0 verbatim violations
+  17 of 67 tags at the 30-molecule bar (12 on 2026-08-20)
+  ~250 PRODUCTIVE rows remain — that is where the corpus rows are
 ```
 
 **REVIEW-RULES.md holds the decision rules.** Written 2026-08-25 after a blind eval
@@ -38,16 +40,18 @@ enlarging it. Measure yield before fetching anything, always — A23L27/00 was w
 sampled at 0.17, and declined.
 
 **Immediate next:**
-1. **Apply the 44 audit corrections** (15 flips, 29 span trims) as propose-and-confirm.
-   See the 2026-09-04 entry. 15 reverse a human decision, so nothing auto-applies.
-2. **Keep reviewing with proposals.** ~350 productive rows left of 4,023 undecided.
+1. **Keep reviewing with proposals.** ~250 productive rows left of 3,915 undecided.
    ```bash
    python3 propose.py export --n 100     # Claude labels -> apply -> review
    ```
-   **RELOAD review.html first.** A stale tab's export overwrites the file.
-3. **Re-run the four counters over 5,346 patents.** The 67 tags were chosen on a corpus
-   half this size and 145 seen descriptors map to no tag (`ozonic`, `lactonic`, `mossy`,
-   `orris`). Cheapest route to more tags at the bar — needs no reviewing at all.
+   **RELOAD review.html first** — a stale tab's export overwrites the file, and the
+   highlight VOCAB changed on 2026-09-04.
+2. **`earthy` is ONE molecule short of the bar** (29). `spicy` is at 23. Targeted
+   scarcity-ordered review would push several tags over quickly.
+3. **D/H/T/M/X pass on the 29 new descriptor candidates** from the 5,346-patent vocabulary
+   run — piney, raspberry, vetiver, celery, ozonic, galbanum, orris… **Run attest.py
+   FIRST**; occurrence counts overstate everything and `chypre` is a family (T), not a
+   descriptor.
 4. **Audit the pre-OPS corpus for family duplicates** (~3 unattended hours).
 
 **ACCURACY: 67% BLIND, not 99.3%.** The high figure was anchoring — measured 2026-09-04 by
@@ -1884,3 +1888,80 @@ harmless — it buries the real hits and invites the reader to dismiss the whole
 
 Next: build the corrections as PROPOSE-AND-CONFIRM, not auto-apply — 15 of them reverse a
 decision a human made, and nothing in this project gets to do that silently.
+
+---
+
+## 2026-09-04 (later) — vocabulary re-run, and a scan that nearly discarded 302 judgements
+
+### The four counters over 5,346 patents
+
+`vocab.py corpus` on the doubled corpus:
+
+```
+distinct   10,623
+>=30 occ    1,017
+>=30 docs     657        (was 299 at 2,588 patents)
+```
+
+**But the first run printed `carried 0`.** The carry-over of prior D/H/T/M/X judgements
+read only `harvested-terms-v0.tsv` — 90 entries — and that file was not even on the
+harvest box. Had it been, it would have restored 90 and presented everything else as
+unjudged, quietly asking for hours of classification to be redone.
+
+Fixed to merge every file that holds a judgement, later ones winning, plus the 67 shipped
+tags as D by definition. Second run: **carried 302**.
+
+Worth noting the shape: nothing errored. A run that silently loses human work looks
+exactly like a run that had none to find.
+
+### What the new vocabulary is worth
+
+Of 657 terms clearing the document threshold, 699 are unjudged, and the top of that list is
+stop-list failure — `accompany`, `add`, `contribute`, `precise`. Two useful groups fall out:
+
+**Surface-form variants of EXISTING tags (16 added).** `citrusy`, `spicey`, `rosey`,
+`lemony`, `jasmin`, `smoky`, `musks`, `spice`, `musklike`, plurals. Not new tags: they map
+onto tags already present, so the ontology is unchanged in size and meaning. Recovered only
+8 descriptor mentions from existing approvals — the value is prospective, across the ~3,900
+rows still to review. 100 -> 116 surface forms, still 67 tags.
+
+**29 plausible NEW descriptors**, all >=20 docs: piney 161, raspberry 148, medicinal 128,
+peppery 107, vetiver 107, burnt 95, strawberry 85, ambergris 81, hyacinth 79, galbanum 75,
+camphor 75, orris 61, melon 60, coumarin 52, cassis 42, celery 38, mossy 31, ozonic 21…
+Several are ones Ivan kept hitting in review. **Not admitted** — occurrence counts overstate
+everything, `attest.py` must run first, and `chypre` at least is a fragrance family (T) not
+a compound descriptor. A D/H/T/M/X pass is a sitting of its own.
+
+### "Would it be worth it?" — measured, and the answer was no
+
+Ivan asked whether tolerating obvious OCR slips in DESCRIPTORS (the way we do in molecule
+names) would recover much. `2,4-dimethyl-nonan-8-ol` has an "**earthly**, natural note",
+rejected because `earthly` is not a usable descriptor.
+
+Naive edit-distance-1 over all 4,615 sentences: 383 rows look recoverable. **The number is
+almost entirely false** — `like` is one edit from `lily` (795 hits), `water` from `waxy`,
+plus `only`, `each`, `good`, `time`. A blanket rule would map ordinary English onto tags.
+
+Curated list of genuine slips: **46 rows contain one, 9 have no other descriptor**. And 7 of
+those 9 come from `smoky`/`musks`/`spice`/`musklike`, which are simply missing surface
+forms, now added. The actual typo case (`earthly`) is 2 rows.
+
+**Verdict: not worth it.** Same question that killed the A23L27 fetch, smaller stakes, same
+method — measure the payoff before changing a rule.
+
+### New rule: "the X of Y"
+
+Added to REVIEW-RULES.md. "the **acetate ester** of X" is one substance and is a row —
+record the whole phrase, not the parent alcohol, which is mentioned only to locate the
+derivative. "the **acetal** of X" is a family (which alcohol?) and is not. Test: can you
+draw it without choosing anything?
+
+### State
+
+```
+4,615 rows · 469 approve · 229 reject · 3,915 undecided
+700 decided (591 this morning, 488 yesterday) — 109 today after the audit
+411 distinct molecules · 0 verbatim violations
+17 of 67 tags at the bar (16 this morning, 12 on 2026-08-20)
+earthy is ONE molecule short at 29; spicy at 23
+```
