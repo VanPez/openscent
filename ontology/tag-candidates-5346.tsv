@@ -1,0 +1,45 @@
+# TAG CANDIDATES — validated, NOT admitted.
+# Harvested from the 5,346-patent corpus and passed through attest.py, 2026-09-04.
+#
+# All of these clear the independence test: copy_factor near or below 1.0 and
+# top_share under 30%, i.e. the documents assert them in their own words rather
+# than repeating one copied passage. `celery` was the specific worry and it is clean.
+#
+# THEY ARE NOT ADMITTED, and the reason is the molecules column. The best of them
+# reaches 7 molecules from patents and 8 from PubChem; the bar is 30. Adding all 28
+# would move the score from 17-of-67 to 17-of-95 — the same tags at the bar, a worse
+# denominator, and 28 new tags to fill. The binding constraint has been molecules,
+# not vocabulary, since 2026-08-05 and this run does not change that.
+#
+# Revisit when the molecule count per existing tag is comfortably past 30. Then these
+# are a ready, evidenced shortlist and no re-harvest is needed.
+# term	docs	attestations	copy_factor	top_share	molecules_now	class(D/H/T/M/X)
+piney	161	395	0.41	0.04	3	
+raspberry	148	224	0.66	0.09	0	
+medicinal	128	111	1.15	0.22	0	
+peppery	107	195	0.55	0.09	5	
+vetiver	107	178	0.60	0.07	6	
+burnt	95	95	1.00	0.07	1	
+strawberry	85	199	0.43	0.07	2	
+pepper	82	95	0.86	0.10	2	
+ambergris	81	201	0.40	0.14	0	
+hyacinth	79	123	0.64	0.13	2	
+chypre	79	115	0.69	0.10	0	T
+galbanum	75	160	0.47	0.13	3	
+camphor	75	109	0.69	0.08	6	
+leafy	61	112	0.54	0.08	4	
+orris	61	97	0.63	0.05	3	
+melon	60	88	0.68	0.08	4	
+buttery	56	73	0.77	0.12	1	
+coumarin	52	72	0.72	0.06	1	
+phenolic	49	75	0.65	0.06	3	
+cassis	42	64	0.66	0.07	1	
+clove	40	48	0.83	0.17	2	
+celery	38	61	0.62	0.16	7	
+banana	34	75	0.45	0.21	1	
+almond	33	39	0.85	0.18	4	
+mossy	31	35	0.89	0.19	1	
+carnation	30	47	0.64	0.17	0	
+smoky	30	35	0.86	0.10	4	
+ozonic	21	47	0.45	0.10	7	
+tuberose	21	22	0.95	0.29	2	

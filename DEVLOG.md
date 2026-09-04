@@ -48,10 +48,13 @@ sampled at 0.17, and declined.
    highlight VOCAB changed on 2026-09-04.
 2. **`earthy` is ONE molecule short of the bar** (29). `spicy` is at 23. Targeted
    scarcity-ordered review would push several tags over quickly.
-3. **D/H/T/M/X pass on the 29 new descriptor candidates** from the 5,346-patent vocabulary
-   run — piney, raspberry, vetiver, celery, ozonic, galbanum, orris… **Run attest.py
-   FIRST**; occurrence counts overstate everything and `chypre` is a family (T), not a
-   descriptor.
+3. **~~D/H/T/M/X pass on the new descriptor candidates~~ — DONE and DECIDED: not admitted.**
+   attest.py cleared all 28 on independence (copy_factor <=1.15, top_share <30%; `celery`
+   was the worry and is clean). But the best reaches 7 molecules from patents and 8 from
+   PubChem against a bar of 30. Admitting them gives 17-of-95 instead of 17-of-67 — same
+   numerator, worse denominator. Evidence preserved in
+   `ontology/tag-candidates-5346.tsv`; revisit only when existing tags are comfortably
+   past 30.
 4. **Audit the pre-OPS corpus for family duplicates** (~3 unattended hours).
 
 **ACCURACY: 67% BLIND, not 99.3%.** The high figure was anchoring — measured 2026-09-04 by
@@ -1965,3 +1968,45 @@ draw it without choosing anything?
 17 of 67 tags at the bar (16 this morning, 12 on 2026-08-20)
 earthy is ONE molecule short at 29; spicy at 23
 ```
+
+---
+
+## 2026-09-04 (end) — attest.py: the 28 candidates are real, and admitting them would hurt
+
+`attest.py` over 5,346 patents, using vocab.py's own regexes so the `docs` columns are
+directly comparable.
+
+**All 28 pass the independence test.** copy_factor 0.41-1.15, top_share 4-29% — the
+documents assert these in their own words, not by repeating a copied passage. `celery` was
+the specific worry (enumerations of the "suitable fragrances include apple, celery, pear"
+kind inflated counts in August); it comes in at copy_factor 0.60, top_share 16%. Clean.
+
+**And they must not be admitted.** The molecules column decides it:
+
+```
+best of the 28   celery / ozonic   7 molecules from patents
+                 almond            8 molecules from PubChem quotes
+the bar                            30
+17 of 67 tags at the bar  ->  admitting all 28 gives 17 of 95
+```
+
+PubChem contributes zero to every one of them because that harvest ran against the
+existing 67-tag list — but scanning its stored quotes for the candidate words tops out at
+8 molecules, so re-harvesting would not rescue them either.
+
+**A CORRECTION.** This morning's entry called the vocabulary re-run "the cheapest route to
+more tags at the bar — it needs no reviewing at all." That was wrong, and it contradicted
+this project's own finding of 2026-08-05, which the RESUME block has carried ever since:
+
+> THE BINDING CONSTRAINT IS MOLECULES, NOT VOCABULARY.
+
+Vocabulary was never what was short. The re-run earned its keep in other ways — it
+recovered 302 judgements that were about to be silently discarded, added 16 genuine
+surface forms, and produced an evidenced shortlist — but it yields zero tags at the bar,
+because the bar counts molecules.
+
+Candidates parked in `ontology/tag-candidates-5346.tsv` with their full evidence and the
+reason for not admitting them, so this is not re-litigated later.
+
+**The ontology is finished. Only review moves the number now.** 50 of 67 tags are below
+the bar; `earthy` is one molecule short.
