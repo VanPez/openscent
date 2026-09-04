@@ -1,0 +1,30 @@
+{"n": 488, "decision": "reject", "molecules": [], "descriptors": [], "why": "molecule name is OCR-damaged (l/1, Z/2, broken brackets, or a cleaner copy exists elsewhere)"}
+{"n": 489, "decision": "reject", "molecules": [], "descriptors": [], "why": "molecule name is OCR-damaged (l/1, Z/2, broken brackets, or a cleaner copy exists elsewhere)"}
+{"n": 490, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour/taste belongs to a composition, food, detergent or tobacco - not the compound"}
+{"n": 491, "decision": "approve", "molecules": ["3-(methylthio)propanol"], "descriptors": ["sweet"], "why": "direct; meat-like also present"}
+{"n": 492, "decision": "approve", "molecules": ["4-(methylthio)butanol"], "descriptors": ["metallic"], "why": "has a metallic character; the taste list is what it provides"}
+{"n": 493, "decision": "reject", "molecules": [], "descriptors": [], "why": "'derivatives' - a class, no definite structure"}
+{"n": 494, "decision": "approve", "molecules": ["ethyl 4-(methylthio)butyrate"], "descriptors": ["fruity", "ylang", "jasmin"], "why": "note originates in the compound"}
+{"n": 495, "decision": "approve", "molecules": ["4-(methylthio)butanol"], "descriptors": ["green", "celery", "jasmin"], "why": "note originates in the compound"}
+{"n": 496, "decision": "approve", "molecules": ["l,l-diethoxy-4-(methylthio)butane"], "descriptors": ["green", "galbanum"], "why": "direct; l/1 OCR is recoverable"}
+{"n": 497, "decision": "approve", "molecules": ["methyl 4-(methylthio)butyrate"], "descriptors": ["sweet", "ylang"], "why": "direct"}
+{"n": 498, "decision": "approve", "molecules": ["4-(methylthio)butanal"], "descriptors": ["green", "jasmin"], "why": "direct"}
+{"n": 499, "decision": "reject", "molecules": [], "descriptors": [], "why": "molecule name is OCR-damaged (l/1, Z/2, broken brackets, or a cleaner copy exists elsewhere)"}
+{"n": 500, "decision": "approve", "molecules": ["6-n-pentyl-alpha-pyrone"], "descriptors": ["green", "coconut", "tobacco"], "why": "note originates in the compound"}
+{"n": 501, "decision": "reject", "molecules": [], "descriptors": [], "why": "molecule name is OCR-damaged (l/1, Z/2, broken brackets, or a cleaner copy exists elsewhere)"}
+{"n": 502, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour/taste belongs to a composition, food, detergent or tobacco - not the compound"}
+{"n": 503, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour/taste belongs to a composition, food, detergent or tobacco - not the compound"}
+{"n": 504, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour/taste belongs to a composition, food, detergent or tobacco - not the compound"}
+{"n": 505, "decision": "reject", "molecules": [], "descriptors": [], "why": "odour/taste belongs to a composition, food, detergent or tobacco - not the compound"}
+{"n": 506, "decision": "approve", "molecules": ["3-(methylthio)propanol"], "descriptors": ["sweet"], "why": "direct (duplicate patent)"}
+{"n": 507, "decision": "approve", "molecules": ["4-(methylthio)butanol"], "descriptors": ["metallic"], "why": "direct (duplicate patent)"}
+{"n": 508, "decision": "approve", "molecules": ["ethyl 4(methylthio)butyrate"], "descriptors": ["fruity", "ylang", "jasmin"], "why": "direct; missing hyphen is formatting"}
+{"n": 509, "decision": "reject", "molecules": [], "descriptors": [], "why": "molecule name is OCR-damaged (l/1, Z/2, broken brackets, or a cleaner copy exists elsewhere)"}
+{"n": 510, "decision": "reject", "molecules": [], "descriptors": [], "why": "molecule name is OCR-damaged (l/1, Z/2, broken brackets, or a cleaner copy exists elsewhere)"}
+{"n": 511, "decision": "approve", "molecules": ["Cis-3,4,4a,5,6,7,8,8apentamethyl-1(2H)-naphthalenone"], "descriptors": ["woody"], "why": "direct; missing hyphen only"}
+{"n": 512, "decision": "reject", "molecules": [], "descriptors": [], "why": "molecule name is OCR-damaged (l/1, Z/2, broken brackets, or a cleaner copy exists elsewhere)"}
+{"n": 513, "decision": "reject", "molecules": [], "descriptors": [], "why": "molecule name is OCR-damaged (l/1, Z/2, broken brackets, or a cleaner copy exists elsewhere)"}
+{"n": 514, "decision": "reject", "molecules": [], "descriptors": [], "why": "gustative/taste, not odour"}
+{"n": 515, "decision": "reject", "molecules": [], "descriptors": [], "why": "molecule name is OCR-damaged (l/1, Z/2, broken brackets, or a cleaner copy exists elsewhere)"}
+{"n": 516, "decision": "reject", "molecules": [], "descriptors": [], "why": "'7 and 8-acetyl' names two compounds at once"}
+{"n": 517, "decision": "approve", "molecules": ["4-decenal"], "descriptors": ["orange", "flowery", "lily of the valley", "lilac"], "why": "direct"}

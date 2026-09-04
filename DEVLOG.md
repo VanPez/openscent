@@ -38,23 +38,20 @@ enlarging it. Measure yield before fetching anything, always — A23L27/00 was w
 sampled at 0.17, and declined.
 
 **Immediate next:**
-1. **A BLIND measurement batch, before more volume.** Claude proposes and Ivan disposes
-   (propose.py) — 188 decisions in a sitting against 50 without it. But the 99.3%
-   agreement figure is contaminated by automation bias and by rows discussed in chat.
-   ~30 rows where the proposal is computed but HIDDEN until after the decision is the
-   only design that is not self-confirming. **No accuracy figure goes to Mike until then.**
-2. **Keep reviewing with proposals.** ~475 productive rows left of 4,125 undecided.
+1. **Apply the 44 audit corrections** (15 flips, 29 span trims) as propose-and-confirm.
+   See the 2026-09-04 entry. 15 reverse a human decision, so nothing auto-applies.
+2. **Keep reviewing with proposals.** ~350 productive rows left of 4,023 undecided.
    ```bash
-   python3 propose.py export --n 150     # then Claude labels, then apply
+   python3 propose.py export --n 100     # Claude labels -> apply -> review
    ```
-   **Before reviewing: RELOAD review.html.** A stale tab's export overwrites the file.
-3. **Fix 4 approvals** that violate the rules settled 2026-08-25 — one cis/trans mixture,
-   three unspecified-substituent names. See REVIEW-RULES.md.
-4. **Re-run the four counters over 5,346 patents.** The 67 tags were selected on a corpus
-   half this size, and 145 descriptors seen in review map to no tag (`ozonic`, `lactonic`,
-   `mossy`, `animalistic`, `orris`). Cheapest possible route to more tags at the bar —
-   it needs no reviewing at all.
-5. **Audit the pre-OPS corpus for family duplicates** (~3 unattended hours).
+   **RELOAD review.html first.** A stale tab's export overwrites the file.
+3. **Re-run the four counters over 5,346 patents.** The 67 tags were chosen on a corpus
+   half this size and 145 seen descriptors map to no tag (`ozonic`, `lactonic`, `mossy`,
+   `orris`). Cheapest route to more tags at the bar — needs no reviewing at all.
+4. **Audit the pre-OPS corpus for family duplicates** (~3 unattended hours).
+
+**ACCURACY: 67% BLIND, not 99.3%.** The high figure was anchoring — measured 2026-09-04 by
+withholding proposals on 30 rows. Quote 67%. Propose-only stays; auto-reject stays off.
 
 **GOOGLE DISCOVERY IS RETIRED** as of 2026-08-19 — see that entry for the OPS protocol
 table. Google's 503s were an IP cooldown, not a rate; that lesson generalised: OPS's
@@ -1806,3 +1803,84 @@ Ivan can now spot OCR damage unaided — the tells are spaces before commas, `l`
 followed by text that does not continue them (two-column bleed). Also learned: a
 comma-grouped number in the thousands is a CITATION, not a locant, because a locant can
 never exceed the parent chain length.
+
+---
+
+## 2026-09-04 — the blind number. 67%, not 99.3%.
+
+### The measurement that was set up to be unfoolable
+
+100 rows labelled by Claude; the proposals for the **first 30 were withheld**, so Ivan met
+them with no banner and no idea what Claude thought. The other 70 came with proposals as
+usual. Neither party could see the other's answer on the blind set.
+
+```
+blind 30      agreement 20/30 = 67%
+anchored 150  agreement 149/150 = 99.3%   (previous session)
+```
+
+**The 99.3% was almost entirely anchoring.** Shown a confident pre-filled proposal, Ivan
+agreed; unable to see one, the two disagree a third of the time. Automation bias, measured
+rather than argued about. This is why propose-only was the right call over auto-reject, and
+it is the number that should be quoted anywhere.
+
+### The disagreements were not random, and Ivan predicted them
+
+He asked for a check on his own decisions BEFORE seeing the blind result, naming three
+worries: OCR-damaged names, molecules "added to tobacco", and roman-numeral prefixes left
+in the span. Nine of the ten blind disagreements are rows he approved and Claude rejects,
+falling in exactly the first two categories:
+
+* **tobacco / food / composition (5)** — the soup, three tobacco rows, the strawberry aroma
+* **OCR damage (4)** — `cyclohexanI-one`, `4-methylthio)butanol`, `1,3,15,5-…[2.2.21-0ct`,
+  `isobutyl-Z-methyl-…`
+
+The tenth goes the other way: Ivan REJECTED `8,8apentamethyl` as damaged where Claude
+accepted it as a missing hyphen. Erring toward caution, which is the right direction.
+
+**Self-diagnosis was accurate.** That is worth more than the agreement figure: he knows
+where he is weak, which is the thing that makes propose-only work.
+
+### What the proposals are actually FOR
+
+Not general accuracy — 67% blind is not a mandate. Specifically:
+
+* spotting **OCR damage** in a chemical name, which needs either chemistry or slow reading
+* spotting **composition vs compound attribution**, where the grammar is subtle
+  ("the flavor CONTAINING X produces…" vs "X IMPARTS … to the composition")
+
+Both are precisely where a non-chemist working at 25/min is weakest, and both are why the
+session throughput went from 50 decisions/hour to 188 without a drop in care.
+
+### AUDIT OF ALL 433 APPROVALS
+
+```
+15 rows to flip to reject
+29 spans to trim (row survives, the name is cleaned)
+44 of 433 = 10%
+```
+
+* flip: composition/tobacco/food 5, OCR damage 5, "7 and 8-acetyl" names two compounds 2,
+  unspecified substituent 3
+* trim: formula labels `(V)`, `(II)`, `(1a)`, `(r)`; parenthetical alternative names
+  (`3,7-dimethyloctan-1-ol (tetrahydrogeraniol)`, `Timberol (…)`); stray brackets
+
+**No rows are lost to trimming** — the molecule is right, the span merely carries the
+patent's label. Recoverable from the stored sentence with a verbatim re-check, exactly as
+in the 2026-08-18 repair.
+
+Two sloppy scans on the way there: regexes that flagged 87 then 80 rows, mostly false
+positives from patterns matching ordinary chemistry such as
+`3-(3-(tert-butyl)cyclohexyl)propanal`. Corrected to 44. A scan that over-reports is not
+harmless — it buries the real hits and invites the reader to dismiss the whole thing.
+
+### State
+
+```
+4,614 rows · 433 approve · 156 reject · 2 skip · 4,023 undecided
+591 decided (was 488) — 103 this session
+44 approvals pending correction
+```
+
+Next: build the corrections as PROPOSE-AND-CONFIRM, not auto-apply — 15 of them reverse a
+decision a human made, and nothing in this project gets to do that silently.
