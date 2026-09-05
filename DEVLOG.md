@@ -4,18 +4,33 @@
 
 ---
 
-## RESUME HERE — state as of 2026-08-20
+## RESUME HERE — state as of 2026-09-05
 
-**THE CORPUS IS NO LONGER THE CONSTRAINT. REVIEW TIME IS.**
+**THE PRODUCTIVE QUEUE IS EMPTY. THE CONSTRAINT IS NOW MATERIAL, NOT REVIEW TIME.**
+
+**Run `python3 pipeline/status.py` FIRST and quote no number that did not come out of
+it.** On 2026-09-05 the headline was recomputed by hand three times in ten minutes and
+gave 20, then 11, then 15 tags — see that entry. `status.py` now owns it. Live figures:
 
 ```
-5,346 patents (Hetzner /opt/openscent/corpus/raw/)   was 2,588
-4,615 review rows after dedupe
-  700 decided · 469 approve · 229 reject · 3,915 undecided
-  411 distinct molecules · 0 verbatim violations
-  17 of 67 tags at the 30-molecule bar (12 on 2026-08-20)
-  ~250 PRODUCTIVE rows remain — that is where the corpus rows are
+5,346 patents (Hetzner /opt/openscent/corpus/raw/)
+4,620 review rows
+  962 decided · 628 approve · 332 reject · 2 skip · 3,658 undecided
+  patents    15 of 67 at the bar     544 molecules
+  pubchem     6 of 67                655 molecules
+  COMBINED   20 of 67 at the bar   1,198 molecules   (12 on 2026-08-20)
+  amber 28 (needs 2) · sandalwood 23 · aldehydic 23 · animalic 22
+  0 PRODUCTIVE rows remain
 ```
+
+The 3,658 undecided rows carry no descriptor or no name-like span. They still need
+clearing for the precision figure but **will not add a molecule between them.**
+
+**THE BAR COUNTS THE UNION OF TWO ROW SOURCES** — `review.jsonl` (approved only) and
+`pubchem-rows.jsonl` (no review gate). Patents alone 15, PubChem alone 6, together 20.
+Reading one file is not an approximation of the answer, it is a different answer.
+`ontology/odor_terms.tsv` is `surface_form <TAB> tag`, **surface FIRST**; reversed,
+`flowery` never folds into `floral` and the count collapses.
 
 **REVIEW-RULES.md holds the decision rules.** Written 2026-08-25 after a blind eval
 disagreed on 14 of 98 and the disagreements turned out to be two unwritten rules applied
@@ -39,23 +54,36 @@ linkage free. OPSIN resolves 90% of well-formed patent names.
 enlarging it. Measure yield before fetching anything, always — A23L27/00 was walked,
 sampled at 0.17, and declined.
 
-**Immediate next:**
-1. **Keep reviewing with proposals.** ~250 productive rows left of 3,915 undecided.
-   ```bash
-   python3 propose.py export --n 100     # Claude labels -> apply -> review
-   ```
-   **RELOAD review.html first** — a stale tab's export overwrites the file, and the
-   highlight VOCAB changed on 2026-09-04.
-2. **`earthy` is ONE molecule short of the bar** (29). `spicy` is at 23. Targeted
-   scarcity-ordered review would push several tags over quickly.
-3. **~~D/H/T/M/X pass on the new descriptor candidates~~ — DONE and DECIDED: not admitted.**
+**Immediate next — A SOURCING DECISION, unchosen as of 2026-09-05.** Reviewing is done
+until there is new material. Options, ordered by what they cost to LEARN from, not by
+what they yield:
+
+1. **Sample `C11D 3/50` for yield** (~20 min, ~1,240 US patents, 1.4x subtree). Detergent
+   perfumery — where amber and musk descriptors live, which is where the four tags
+   nearest the bar are. Yield never measured. **Recommended: it buys information rather
+   than spending hours on a guess.**
+2. **Re-extract the 5,346 at a looser filter** (free, no network). Enlarges the queue with
+   weaker candidates; keep rate unknown.
+3. **Fetch A23L27/00** (~7 h). Already walked and deduped; sampled at 0.17, so ~280 rows.
+
+**Do not skip the yield sample before any fetch.** That discipline is what made the
+2026-08-20 doubling worth it and what correctly declined A23L27/00.
+
+**~~`earthy` is ONE molecule short~~** — stale, and an example of why to run `status.py`
+rather than trust a remembered figure. `earthy` is past the bar; `amber` at 28 is now the
+nearest, needing 2.
+
+**Settled, do not re-litigate:**
+
+- **~~D/H/T/M/X pass on the new descriptor candidates~~ — DONE and DECIDED: not admitted.**
    attest.py cleared all 28 on independence (copy_factor <=1.15, top_share <30%; `celery`
    was the worry and is clean). But the best reaches 7 molecules from patents and 8 from
    PubChem against a bar of 30. Admitting them gives 17-of-95 instead of 17-of-67 — same
    numerator, worse denominator. Evidence preserved in
    `ontology/tag-candidates-5346.tsv`; revisit only when existing tags are comfortably
    past 30.
-4. **Audit the pre-OPS corpus for family duplicates** (~3 unattended hours).
+**Still deferred:** audit the pre-OPS corpus for family duplicates (~3 unattended hours);
+rotate the OPS credentials in `.env` (they passed through a transcript).
 
 **ACCURACY: 67% BLIND, not 99.3%.** The high figure was anchoring — measured 2026-09-04 by
 withholding proposals on 30 rows. Quote 67%. Propose-only stays; auto-reject stays off.
