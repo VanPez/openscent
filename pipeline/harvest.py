@@ -24,6 +24,7 @@ genuinely large pulls (no key needed for those either).
 US ONLY. Non-US patents do not carry the US no-copyright status the licence claim rests on.
 """
 from __future__ import annotations
+import html as _html
 import json, os, re, sys, time, urllib.error, urllib.parse, urllib.request, pathlib, random
 
 # Works both inside the repo (openscent/pipeline/harvest.py) and dropped anywhere on its
@@ -148,6 +149,11 @@ def fetch(ids: list[str]) -> None:
             html = _get(f"https://patents.google.com/patent/{pid}/en")
             m = DESC.search(html)
             text = TAGS.sub(" ", m.group(0)) if m else ""
+            # DECODE ENTITIES. Stripping tags is not the same as decoding text: without
+            # this, `&#39;` and `&#34;` survive into the corpus and a molecule span reads
+            # 5-[1&#39;-ethoxyethoxy]-4-methyl-3-decene, which is the right compound
+            # written in a form nothing can resolve. Found 2026-09-05 in 379 sentences.
+            text = _html.unescape(text)
             text = re.sub(r"\s+", " ", text).strip()
             if len(text) < 500:
                 print(f"  [{n}/{len(todo)}] {pid} — too short, skipped"); continue
