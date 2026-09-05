@@ -142,3 +142,26 @@ The harvest host is referred to as `$OPENSCENT_HOST` throughout; set it in your 
 - **aroma-index** — the curated index and pilot mint (99 curated + 218 licence-clean sourced molecules).
   Separate project, shares the licence discipline. Its `reports/license-scan.md` is the evidence base for
   why OpenScent exists.
+
+## Licence
+
+Two licences, split by what the file is:
+
+| | Licence | Covers |
+|---|---|---|
+| **Data** | [CC0 1.0](LICENSE) | `corpus/`, `ontology/`, and every dataset derived from them |
+| **Code** | [Apache-2.0](LICENSE-CODE) | `pipeline/` and all other source |
+
+CC0 on the data is the whole point — no non-commercial clause, no share-alike, nothing
+that blocks a commercial or tradeable derivative. Apache-2.0 on the code because CC0
+addresses copyright but is silent on patents and warranty, which is what a company's
+legal review actually asks about code.
+
+Licence basis is recorded **per row, not per file**, so any row can be audited back to a
+source that carries no copyright restriction (US patent full text; PubChem/HSDB). Rows
+that cannot clear that bar are marked `excluded` with a reason and kept in place rather
+than deleted — see `pipeline/triage_pubchem.py`.
+
+**CC0 waives copyright, not patents.** This corpus is built from patent text. A molecule
+appearing here says nothing about whether making, using or selling it infringes a live
+claim. That question is separate and stays with the user.

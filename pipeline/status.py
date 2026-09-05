@@ -112,7 +112,14 @@ def main() -> int:
                 continue
             patents[tag].update(norm(m) for m in mols)
 
+    excluded = collections.Counter()
     for r in jsonl(PUBCHEM):
+        # triage_pubchem.py marks rather than deletes, so rows retired on provenance or
+        # attribution grounds are still IN the file. Counting them would inflate every
+        # figure this module exists to make trustworthy.
+        if r.get("excluded"):
+            excluded[r.get("excluded_category") or "?"] += 1
+            continue
         t = (r.get("tag") or "").strip()
         m = norm(r.get("molecule_name") or "")
         if t and m:
@@ -128,6 +135,8 @@ def main() -> int:
 
     print(f"decisions   {dict(decisions)}")
     print(f"            {decisions['approve']} approvals of {sum(decisions.values())} rows")
+    if excluded:
+        print(f"excluded    {sum(excluded.values())} pubchem rows retired  {dict(excluded)}")
     print()
     for name, d in (("patents", patents), ("pubchem", pubchem), ("COMBINED", combined)):
         mols = {m for s in d.values() for m in s}

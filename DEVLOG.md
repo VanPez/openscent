@@ -2108,3 +2108,56 @@ measured 0.17 yield, ~280 rows).
 Still deferred: the pre-OPS corpus has never been audited for family duplicates (~3
 unattended hours), and the OPS credentials in `.env` passed through a transcript and
 should be rotated.
+
+## 2026-09-05 (later) — licensed, and the 77 flagged rows triaged, ahead of going public
+
+Prompted by "should the repo be public now". History checked first: `.env` was never
+committed, and no host, key or token appears in any commit. The only IP-shaped strings in
+the history are ring-system notation (`tricyclo[6.2.1.0 2,7]`) and a deliberately fake
+`100.100.100.100`. Clean.
+
+**There was no LICENSE file.** A public repo without one is "all rights reserved" by
+default — the precise opposite of a CC0 project, and it would have been the first thing a
+reader hit. Now split, because the two halves need different instruments:
+
+    LICENSE        CC0 1.0        corpus/ ontology/ and derived datasets
+    LICENSE-CODE   Apache-2.0     pipeline/ and all other source
+
+CC0 on the data is the point of the project. Apache-2.0 on the code because CC0 addresses
+copyright and is silent on patents and warranty, which is what a legal review asks about
+code — and the patent grant has some resonance for a project built out of patent text.
+Both texts fetched from apache.org and creativecommons.org rather than reproduced from
+memory. The LICENSE header states plainly what CC0 does NOT do: it waives copyright, not
+patents, and a molecule appearing here says nothing about live claims.
+
+**The 77 `expression_risk: review` rows, flagged by the pipeline and never looked at.**
+Fine while private; not fine public, since the flag exists to catch the two things a CC0
+dataset must not contain. The flag conflated them, so `triage_pubchem.py` separates them.
+Six excluded, 71 reviewed and kept:
+
+*Provenance (3).* Quotes in flavour-industry register — "Odor description at 0.01%",
+"Aroma characteristics at 1.0%", "Detection: 20 ppb". The HSDB record is public domain,
+but HSDB cites its sources and that phrasing is the house style of commercial flavour
+databases, not of a safety datasheet. Origin is not establishable from the record. Three
+rows are not worth the argument against the rule that nothing GoodScents- or
+Leffingwell-derived touches any phase. **Dropped on suspicion, deliberately.**
+
+*Attribution (3).* The interesting finding is that a negation cue is NOT itself a reject —
+what matters is what the negation attaches to. Of five rows the pipeline flagged for
+negation, two were **kept**: decahydronaphthalene "resembling menthol; pure decalin does
+not smell of naphthalene" (negation on naphthalene, menthol asserted plainly) and
+isobutyric acid "Pungent odor ... but not as unpleasant" (negation on "unpleasant"). Three
+dropped: `ISOBUTYRIC ACID -> acid`, where the span came from **"butyric acid"**, the
+reference compound's own name — a substring match inside a molecule name, the
+reference-point failure REVIEW-RULES.md already names; `Nornicotine -> pungent`, a
+comparative; and `INDOLE -> floral`, hedged twice and conditional on purification state.
+Indole genuinely is used in florals, which is what made that one tempting — and is exactly
+why "when in doubt reject" bites hardest where prior knowledge argues against the text.
+
+Rows are MARKED `excluded` with a category and reason, never deleted, so the judgement is
+auditable and reversible. `status.py` was amended in the same commit to skip them — it had
+been counting the file, and marked rows are still in the file. Effect: 1,198 -> 1,196
+molecules, **20 tags at the bar unchanged**, nothing near the bar touched.
+
+Also: I said "seven drops" when listing them and it was six. Small, but the same class of
+error as the morning's three-different-answers — arithmetic asserted rather than run.
