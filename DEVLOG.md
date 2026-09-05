@@ -16,10 +16,10 @@ gave 20, then 11, then 15 tags — see that entry. `status.py` now owns it. Live
 5,346 patents (Hetzner /opt/openscent/corpus/raw/)
 4,620 review rows
   962 decided · 628 approve · 332 reject · 2 skip · 3,658 undecided
-  patents    15 of 67 at the bar     544 molecules
-  pubchem     6 of 67                655 molecules
-  COMBINED   20 of 67 at the bar   1,198 molecules   (12 on 2026-08-20)
-  amber 28 (needs 2) · sandalwood 23 · aldehydic 23 · animalic 22
+  patents    15 of 67 at the bar     545 molecules
+  pubchem     6 of 67                653 molecules
+  COMBINED   20 of 67 at the bar   1,197 molecules   (12 on 2026-08-20)
+  sandalwood 28 · camphoraceous 28 · amber 28 — all need 2 · animalic 23 · aldehydic 23
   0 PRODUCTIVE rows remain
 ```
 
@@ -54,20 +54,32 @@ linkage free. OPSIN resolves 90% of well-formed patent names.
 enlarging it. Measure yield before fetching anything, always — A23L27/00 was walked,
 sampled at 0.17, and declined.
 
-**Immediate next — A SOURCING DECISION, unchosen as of 2026-09-05.** Reviewing is done
-until there is new material. Options, ordered by what they cost to LEARN from, not by
-what they yield:
+**Immediate next — SOURCING. Two of the three options are now closed on evidence.**
+Reviewing is done until there is new material. See the 2026-09-05 (evening) entry.
 
-1. **Sample `C11D 3/50` for yield** (~20 min, ~1,240 US patents, 1.4x subtree). Detergent
-   perfumery — where amber and musk descriptors live, which is where the four tags
-   nearest the bar are. Yield never measured. **Recommended: it buys information rather
-   than spending hours on a guess.**
-2. **Re-extract the 5,346 at a looser filter** (free, no network). Enlarges the queue with
-   weaker candidates; keep rate unknown.
-3. **Fetch A23L27/00** (~7 h). Already walked and deduped; sampled at 0.17, so ~280 rows.
+1. ~~**Sample `C11D 3/50`**~~ — **DONE, and DECLINED.** Walked (3,396 pubs → 2,946
+   families), sampled clean at **0.36 candidates/patent, 0.29x the corpus**. Worse, ~70%
+   of its descriptor mass lands on tags already past 30, and **sandalwood and animalic —
+   two of the four nearest the bar — do not appear at all**. ~2 h fetching and ~1,040
+   candidates of review to clear one tag. Walk kept, fetch declined.
+2. **Re-extract the 5,346 at a looser filter** (free, no network) — **the remaining
+   option.** Measure first: count how many sentences in the existing corpus carry a
+   `sandalwood` or `animalic` surface form AND were dropped by the filter. Then
+   `score.py` before and after, per `TESTSET.md`.
+3. ~~**Fetch A23L27/00**~~ — declined 2026-08-20 at 0.17.
 
-**Do not skip the yield sample before any fetch.** That discipline is what made the
-2026-08-20 doubling worth it and what correctly declined A23L27/00.
+**A61Q13/00 is not a fourth option** — checked 2026-09-05, `class_size.py` measures it
+4,412 bare / 4,412 low, 1.0x. C11B9/00's 5.4x subtree was the exception, not the pattern.
+
+**Do not skip the yield sample before any fetch — and sample into a CLEAN root.**
+`yield_sample.py` globs every `.txt` in its root, so a previous sample's documents are
+silently included and the rate measures a blend of classes. Cost us the first C11D 3/50
+number (0.51, contaminated; 0.36 clean). Not yet fixed in the script.
+
+**Yield is no longer sufficient to judge a class.** Also count where its descriptors land
+against what each tag still needs — `unmapped_report.py` and the 2026-09-05 (evening)
+entry show the method. A class can be twice as rich as a declined one and still buy
+nothing.
 
 **~~`earthy` is ONE molecule short~~** — stale, and an example of why to run `status.py`
 rather than trust a remembered figure. `earthy` is past the bar; `amber` at 28 is now the
@@ -83,7 +95,22 @@ nearest, needing 2.
    `ontology/tag-candidates-5346.tsv`; revisit only when existing tags are comfortably
    past 30.
 **Still deferred:** audit the pre-OPS corpus for family duplicates (~3 unattended hours);
-rotate the OPS credentials in `.env` (they passed through a transcript).
+rotate the OPS credentials in `.env` — **now more pressing: as of 2026-09-05 they are on
+the Hetzner box as well as the Mac**, and they had already passed through a transcript.
+
+**Open, from 2026-09-05 (evening):**
+
+- **ROTATE THE OPS CREDENTIALS.** Ivan's call, not yet done — a login at
+  `developers.epo.org` and a new key into `.env` on both machines. The case rests on the
+  transcript exposure, which predates today; 2026-09-05 only added a second copy on the
+  Hetzner box. `/opt/openscent` is a bare deployment with no `.git`, so there is no
+  publication risk there — an earlier claim in this session that there was is withdrawn.
+  Worth settling at the same time: the box may not need credentials at all, since
+  `discover_ops.py` runs from the Mac.
+- `yield_sample.py` accepts a dirty root and silently measures a blend of classes. Guard it.
+- ~~mapping decisions~~ / ~~cresol~~ / ~~commit unmapped_report.py~~ — all DONE, see below.
+- Sample documents preserved as evidence, nothing deleted: `/opt/openscent-sample` (178
+  C11D 3/50 docs) and `/opt/openscent-sample-prior` (366 August docs).
 
 **ACCURACY: 67% BLIND, not 99.3%.** The high figure was anchoring — measured 2026-09-04 by
 withholding proposals on 30 rows. Quote 67%. Propose-only stays; auto-reject stays off.
@@ -2186,3 +2213,186 @@ measured figure.
 
 Lesson, same shape as this morning's three-different-answers and the six-not-seven miscount: **numbers
 copied forward are numbers unverified.** The repo now has exactly one place that computes them.
+
+## 2026-09-05 (evening) — C11D 3/50 walked, sampled, DECLINED. And the sample that measured the wrong class.
+
+**Decision: C11D 3/50 is NOT fetched.** The walk is kept. Second class declined on
+evidence, after A23L27/00.
+
+```
+walk          3,396 US publications -> 2,946 families  (13.3% dupes, food-like, not perfume-like)
+sample          178 documents -> 64 candidates
+yield          0.36 candidates/patent   ·   existing corpus 1.23   ·   0.29x
+projection    ~1,040 candidates for the full 2,889, ~208 usable rows at 0.2, ~2 h fetching
+```
+
+Twice A23L27/00's 0.17 and a quarter of its fetch cost, so yield alone did not settle it.
+What settled it was **where the descriptors land**, which is a measurement this project
+had never made before and should make for every class from now on.
+
+### The yield number was contaminated, and it read as clean
+
+The first run printed `0.51 candidates/patent, 0.42x` and a full projection table. It was
+wrong. The tell was two lines above the table:
+
+```
+fetched in 10 min · 544 of 188 produced usable text
+  -356 were skipped as too short (<500 chars) or failed
+```
+
+544 documents from a 188-document sample, and a **negative** skip count.
+`yield_sample.py` computes `cached = harvest.RAW.glob("*.txt")` — every `.txt` in the
+sample root, not this run's — then `harvest.extract()` runs over all of them. The default
+`--root /opt/openscent-sample` still held 366 documents from the August A23L27/00 and
+C11B9/00 samples. The rate was a blend of three classes.
+
+**Its isolation docstring is right about the wrong direction.** It protects `corpus/raw/`
+from the sample; nothing protects the sample from a *previous* sample in the same root.
+
+Recovered without refetching — the August files were moved to `/opt/openscent-sample-prior`
+by mtime (`! -newermt 2026-09-01`, nothing deleted) and extract re-run over the remaining
+178: **64 candidates, 0.36.** Note the direction: the leftovers ran at ~0.59 (216/366), so
+the contamination **flattered** C11D 3/50. Acting on 0.51 would have been an optimistic
+error, not a cautious one.
+
+Same shape as the 998 cap, the 503-as-empty-class and the client-side US filter: not an
+error, a confident wrong answer that completes normally. **Open: `yield_sample.py` should
+refuse a non-empty `raw/`, or default its root per id-file.** Not fixed.
+
+### The tag-targeting measurement — the reason to decline
+
+C11D 3/50 was chosen for *aim*, not yield: detergent perfumery is where amber and musk
+descriptors live. Counting `odor_terms.tsv` surface forms across the 64 sample sentences
+(95 tag hits) tested that directly:
+
+| | sample hits | now | |
+|---|---|---|---|
+| woody, lily, green, fruity, floral, musk, powdery, fatty, earthy, fresh… | 66 | all ≥30 | already at the bar |
+| amber | 2 | 28 | would clear |
+| aldehydic | 2 | 23 | reaches ~28 |
+| patchouli | 4 | 7 | nowhere near |
+| **sandalwood** | **0** | 23 | **absent** |
+| **animalic** | **0** | 22 | **absent** |
+
+**~70% of the descriptor mass lands on tags already past 30.** The class is a diluted copy
+of the corpus we have — same top tags, a third of the density. Scaled up it clears exactly
+one tag for ~2 h of fetching and ~1,040 candidates of review, which is more decisions than
+the entire project has made to date (962). Declined.
+
+Musk does appear (7 hits) — the premise was not baseless, it was just aimed at a tag
+sitting at 66. **A class's yield and a class's aim are two different measurements and the
+second is now the one that decides.**
+
+### The Hetzner deployment was a year of scripts behind
+
+`discover_ops.py` was missing from the box entirely — the August walk ran from the Mac, so
+the walker had never been deployed. Also absent: `ops.py`, `dedupe_families.py`, `.env`.
+`harvest.py` was at `/opt/harvest.py`, not in `pipeline/` — that is its documented
+"dropped anywhere on its own" path (`_here.name != "pipeline"` → `ROOT = _here/openscent`),
+which is how the Aug 20 fetch landed in `/opt/openscent/corpus/raw`. Copied the four
+scripts over; the old one is parked as `/opt/harvest.py.as-fetched-aug20` rather than
+deleted, since it is the version that produced the 5,346.
+
+The Mac's `harvest.py` had changed that morning (`bf76f03`, the HTML-entity decode). The
+diff is one line in `fetch()` and touches no filter constant, so `TESTSET.md`'s
+score-before-and-after rule did not bind. Small honest bias to record: the sample was
+fetched with decoding on while the baseline `candidates.json` was extracted without it, so
+the 1.23 comparison very slightly favours the sample.
+
+Five genuine 404s in 188 (~3%): four are 2026 publications Google does not serve yet, plus
+`USRE38659E`.
+
+### What mapping the unmapped descriptors would actually buy — and a retraction
+
+`status.py` reports "221 distinct, 413 uses" and stops. `unmapped_report.py` (new, read
+only, imports status.py's loaders rather than reimplementing them) asks what each would
+add if mapped. First pass looked like free progress: `ambergris` +3 to amber, `camphor` +10
+to camphoraceous.
+
+**Then I counted documents, which I should have done first:**
+
+| form | mols | docs | tag → | |
+|---|---|---|---|---|
+| `ambergris` | 3 | **1** | amber 28 → 31 | crosses, one patent, one structural series |
+| `camphor` | 10 | 9 | camphoraceous 18 → 28 | short |
+| `camphery` | 3 | **1** | camphoraceous → 31 | crosses only on top of camphor |
+| `aldehyde` | 5 | 4 | aldehydic 23 → 28 | short |
+| `sandal` | 5 | 2 | sandalwood 23 → 28 | short |
+| `animalistic` | 2 | **1** | animalic 22 → 24 | short |
+
+Both crossings rest on a single document. The bar is stated as ≥30 *molecules* with no
+document-spread requirement, so mapping `ambergris` would legitimately read 31 — it is not
+rule-breaking, it is thin, and it is what `docs>=20` and `dedupe_families.py` exist to
+distrust. **Held, not taken.** All three `ambergris` rows are macrocyclic lactones from
+US6573391B1; both `animalistic` uses are one sentence printed twice in US11946019B2.
+
+Proposed and awaiting Ivan: accept `sandal`→sandalwood, `animalistic`→animalic,
+`camphor`→camphoraceous as genuine surface variants (correctness — none changes a count);
+hold `ambergris` and `camphery`; reject `ambrette`, `musk-ambrette`, `ambrinol` as
+substances; reject `aldehyde` — 4 documents is respectable but 2 of 5 uses are comparisons
+("aldehyde- and thuyone-like", "pyrazine and aldehyde connotation"), a global mapping
+cannot take only the good three, and it lands at 28 either way.
+
+**Nothing was written to `odor_terms.tsv`.** The free lever moves no tag past the bar.
+
+### Two things found on the way
+
+**A review error.** US11946019B2's row lists `cresol` as a molecule, but the sentence is
+"…exhibits a minty, fresh tobacco leaf, cresol, horse and/or animalistic odour" — cresol is
+a comparison there, not a second subject, and is contributing a spurious molecule to every
+tag on that sentence. Flagged, not touched. Ivan decides.
+
+**A61Q13/00 ruled out.** Checked whether the August `/low` subtree trick applies to the
+corpus's *other* founding class. `class_size.py` already measured it: 4,412 bare, 4,412
+low, 1.0x. No hidden subtree. C11B9/00's 5.4x was the exception, not the pattern.
+
+**The RESUME block's cached figures were stale in the way this project keeps rediscovering:**
+it said pubchem 655 / combined 1,198; `status.py` says **653 / 1,196**, the six retired rows
+being the difference. Corrected above. Tag count 20 unchanged.
+
+### Where that leaves the sourcing question
+
+Three options went in; two are now closed on evidence and one is untouched.
+
+**Option 2 — re-extract the 5,346 at a looser filter — is what remains**, and it gets the
+same treatment before any effort is spent: count, on the box, for free, how many sentences
+in the existing 5,346 carry a `sandalwood` or `animalic` surface form **and** were dropped
+by the filter. That says whether loosening recovers the two tags C11D 3/50 provably cannot
+supply, before touching `ODOUR`/`DESCR`/`NAMED`/`HEADING`/`EXCLUDE` and re-scoring
+`score.py` per `TESTSET.md`.
+
+### Applied the same evening — three mappings, one correction, one script
+
+Ivan took the proposal as given. **20 of 67 tags, unchanged** — which was the prediction,
+and is the point: this was correctness work, not progress.
+
+```
+sandal        -> sandalwood      23 -> 28   (2 docs)
+camphor       -> camphoraceous   18 -> 28   (9 docs)
+animalistic   -> animalic        22 -> 23   (1 doc)
+molecules   1,196 -> 1,197 · unmapped 221/413 -> 218/396 · verbatim invariant clean
+```
+
+`animalic` gained one, not two, because one of `animalistic`'s two molecules **was** the
+cresol row corrected in the same pass. The two edits met in the middle, which is a small
+argument for making them together rather than a week apart.
+
+Three tags now sit at 28 needing 2: `sandalwood`, `camphoraceous`, `amber`. That is a
+worse position than it sounds — it means three tags are each two molecules from the bar
+and the corpus has no productive rows left to supply them.
+
+`ambergris` and `camphery` are **held, and the reason is recorded in odor_terms.tsv
+itself** rather than only here, since that file is the auditable artefact. Both would
+cross a tag on a single patent.
+
+**US11946019B2, two rows:** `cresol` removed from `molecules`. The sentence is
+"…exhibits a minty, fresh tobacco leaf, cresol, horse and/or animalistic odour" — cresol
+is a comparison, not a second subject. Rows carry a `note` field saying so; the
+molecule was removed rather than the row rejected, because the row's other molecule
+(`2-ethyl-5,5-dimethyl-cyclohexanol`) is correctly attributed. Backups taken first,
+written via `os.replace`, verbatim invariant re-asserted before and after.
+
+**`pipeline/unmapped_report.py` committed.** Now prints a **docs** column beside mols and
+flags single-document crossings, because the first version printed molecules alone and
+that is precisely how it produced two wrong recommendations an hour earlier. Its docstring
+carries that story. `python3 pipeline/unmapped_report.py [tag ...]`.

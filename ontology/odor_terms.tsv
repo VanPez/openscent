@@ -164,3 +164,18 @@ smoky	smoke
 musks	musk
 spice	spicy
 musklike	musk
+# --- surface-form variants, 2026-09-05 ------------------------------------
+# From unmapped_report.py over the 628 approved rows. Accepted as variants of
+# EXISTING tags; the ontology stays 67. None of the three crosses the bar.
+#   sandal        5 mols /2 docs -> sandalwood 23->28
+#   camphor      10 mols /9 docs -> camphoraceous 18->28
+#   animalistic   2 mols /1 doc  -> animalic 22->23 (one of the two was the
+#                                  cresol row, corrected the same day)
+# HELD, not added: ambergris (3 mols, ONE patent, would read amber 31) and
+# camphery (3 mols, one patent). Each crosses a tag on a single document.
+# REJECTED as substances, not qualities: ambrette, musk-ambrette, ambrinol.
+# REJECTED: aldehyde — 4 docs, but 2 of 5 uses are comparisons ("aldehyde- and
+# thuyone-like", "pyrazine and aldehyde connotation") and it lands at 28 anyway.
+sandal	sandalwood
+camphor	camphoraceous
+animalistic	animalic
