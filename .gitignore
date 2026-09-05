@@ -28,3 +28,11 @@ secrets.*
 # The CURRENT round's key must never be committed before labelling is done.
 # Completed rounds are renamed round<N>-* and ARE committed — they are the evidence.
 pipeline/heldout-key.json
+
+# Timestamped safety copies written by fix_spans / merge_review / propose / fix_audit
+# before they touch review.jsonl. Git is the real history — review.jsonl is committed at
+# every milestone, so these matter only in the window between a script writing and the
+# next commit. Delete them freely AFTER committing; never before.
+*.jsonl.bak-*
+*.json.bak-*
+*.tsv.bak-*
