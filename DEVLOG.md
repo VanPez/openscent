@@ -2010,3 +2010,73 @@ reason for not admitting them, so this is not re-litigated later.
 
 **The ontology is finished. Only review moves the number now.** 50 of 67 tags are below
 the bar; `earthy` is one molecule short.
+
+## 2026-09-05 — the productive queue is empty; and three wrong answers to one question
+
+**262 decisions today** (700 -> 962). Every candidate in the corpus carrying both a
+name-like span and a descriptor has now been seen by a human. The seam is worked out.
+
+```
+4,620 rows   628 approve   332 reject   2 skip   3,658 undecided
+patents    15 of 67 at the bar     544 molecules
+pubchem     6 of 67                655 molecules
+COMBINED   20 of 67 at the bar   1,198 molecules      (12 on 2026-08-20)
+amber 28 (needs 2) · sandalwood 23 · aldehydic 23 · animalic 22
+```
+
+The 3,658 undecided rows carry no descriptor or no name-like span. They still need
+clearing for the precision figure but will not add a molecule between them.
+
+The richest single document in the whole queue was the last one: US6573391B1, sixteen
+macrocyclic musk lactones with explicit `Odor:` lines. Six taken, eight refused on
+stereochemistry notation. The patent argues the refusal itself — it says the (S) form is
+weaker than the enantiomer mixture and the (R) stronger than the (S), which is the carvone
+case demonstrated inside the source. A racemate row would also collide with the
+unspecified-stereo row, since OPSIN resolves both to one structure.
+
+Also today: `fix_entities.py` (379 sentences carried `&#39;` and `&#34;` because harvest.py
+stripped tags without decoding entities), and the audit pass Ivan asked for after
+correctly self-diagnosing three of his own error classes before seeing any data.
+
+**A MEASUREMENT FAILURE, RECORDED BECAUSE IT NEARLY ENTERED THIS FILE AS FACT.**
+
+Asked "where are we" three times in ten minutes, I produced three different answers:
+
+```
+20 of 67 tags, 561 molecules     from the session summary, unverified
+11 of 67 tags, 569 molecules     ad-hoc script, odor_terms.tsv columns REVERSED
+15 of 67 tags, 544 molecules     columns fixed, pubchem-rows.jsonl never read
+```
+
+Only the first was right, and I could not reproduce it, so I could not defend it. Every
+wrong version printed the same confident `AT THE BAR` header as the right one. Had I
+written the second into this log, the project's own record would have said the tag count
+went backwards from 17 to 11 overnight, and the next session would have believed it.
+
+Two distinct mistakes:
+
+1. `odor_terms.tsv` is `surface_form <TAB> tag`, surface FIRST. Reversed, `flowery` never
+   folds into `floral` and `muguet` never into `lily`.
+2. The bar counts the UNION of two row sources. Patents give 15, PubChem 6, together 20 —
+   the union is nowhere near either part, so reading one file is not an approximation of
+   the answer, it is a different answer.
+
+The headline number was the only number in this project still being recomputed by hand
+each time it was asked for. `pipeline/status.py` now owns it: it imports
+`rows_pubchem.load_tags()` rather than re-parsing the TSV, reads both row sources,
+casefolds names across them (PubChem stores `BENZENE`, the patents `benzene`), and
+re-checks the verbatim invariant. **Quote no number that did not come out of it.**
+
+The name join is weak and the file says so: it matches text, not structure, so
+`linalool` and `(+)-linalool` stay separate. 1,198 is an upper bound on distinct
+molecules. Fixing it needs InChIKeys on the patent side, which do not exist yet.
+
+**Open, unchosen.** All three material sources are near-exhausted. Options, in order of
+what they cost to learn from: sample `C11D 3/50` for yield (~20 min, ~1,240 US patents,
+detergent perfumery, which is where amber and musk descriptors live); re-extract the
+5,346 patents at a looser filter (free, weaker candidates); fetch A23L27/00 (~7 h at the
+measured 0.17 yield, ~280 rows).
+
+Still deferred: the pre-OPS corpus has never been audited for family duplicates (~3
+unattended hours), and the OPS credentials in `.env` passed through a transcript and
+should be rotated.
