@@ -14,7 +14,7 @@ Three artifacts, one build:
 
 | | What | Status |
 |---|---|---|
-| **Corpus** | molecule → odour-tag assertions, each backed by a verbatim quote from a public-domain source | **collection done, tagging not started** |
+| **Corpus** | molecule → odour-tag assertions, each backed by a verbatim quote from a public-domain source | **in progress — 1,196 molecules, 20 of 67 tags at ≥30** |
 | **Model** | one-vs-rest GBDT per tag (GL1F), inference by `eth_call`, no state change | not started |
 | **Paper** | first permissively-licensed odour corpus; verifiable SMILES→prediction path | not started |
 
@@ -44,43 +44,73 @@ See `reports/phase0-1-pipeline.md` for the full design and the provenance schema
 
 ---
 
-## Where it actually stands (2026-08-03)
+## Where it actually stands (2026-09-05)
 
-**Patent corpus collected.** 2,588 US patents (CPC C11B 9/00 + A61Q 13/00, priority 2001+), fetched
-clean: zero failures, zero short-document rejects, 173 MB. Extraction over 992,396 sentences yields
-**4,068 candidate assertions** across ~1,100 patents.
+Run `python3 pipeline/status.py` for the live figures — it is the only counter, and every number
+below comes out of it. Do not trust a figure quoted anywhere else in this repo, including here,
+if it disagrees.
 
-**Second source built.** PubChem's `Odor` annotations — 2,358 records → **1,453 usable CIDs**. Its value
-is that PubChem returns the compound ID directly, so the patent pipeline's most dangerous failure (an
-accurate odour description bound to the *wrong* molecule) cannot occur there. See
-`reports/pubchem-source.md`.
+```
+5,346 US patents        CPC C11B 9/00 (/low subtree) + A61Q 13/00, priority 2001+
+4,620 candidate rows    extracted, one per molecule+descriptor sentence
+  962 decided by hand   628 approve · 332 reject · 2 skip
+   20 of 67 tags        at the 30-molecule bar        (12 on 2026-08-20)
+1,196 molecules         544 from patents, the rest PubChem/HSDB
+```
 
-**Measured accuracy: precision 0.16, recall 1.00.** 50 sentences from patents never used for tuning,
-drawn blind, labelled by hand, scored once (`pipeline/heldout.py`). The same filter scores 1.00/1.00 on
-its own tuning set — that figure is memorisation and should never be quoted. Recall is a floor rather than
-an estimate: 25 rejected sentences were sampled and none should have been kept, which is consistent with
-few misses but does not prove it.
+**The human-review seam is worked out.** Every candidate carrying both a name-like span and a
+descriptor has been seen by a human. The 3,658 rows still undecided carry one or neither, and will
+not add molecules between them. Growth from here needs new source material, not more reviewing.
 
-**What 0.16 means in practice.** The filter is a deliberately wide sieve; precision is the *review cost*,
-not a correctness claim. ~650 of the 4,068 candidates are expected to survive human review — inside the
-original 600–1,000 molecule projection — but a human reads 4,068 sentences to get there. Two failure modes
-account for it: definitional claim language (15 of 21 false positives) and descriptor-only headings, which
-structurally cannot name a molecule and so can never yield a row at sentence scope.
+**Second source.** PubChem's `Odor` annotations — 2,358 records → 1,453 usable CIDs. Its value is
+that PubChem returns the compound ID directly, so the patent pipeline's most dangerous failure (an
+accurate odour description bound to the *wrong* molecule) cannot occur there. It is also one
+database — 2,080 of 2,082 records are HSDB — not a diverse second source, and the paper should say
+so. See `reports/pubchem-source.md`.
 
-**Then, in order:** ontology derivation over the full corpus → OPSIN name→structure linkage →
-copyright-notice scan → tagging.
+**Filter precision ≈0.2**, established two independent ways (blind sampling, and back-solved across
+the reviewed queue). The filter is a deliberately wide sieve, so precision here is *review cost*,
+not a correctness claim. Two failure modes account for most of it: definitional claim language, and
+descriptor-only headings, which structurally cannot name a molecule.
+
+> **A figure that must never be quoted as the filter's precision: 0.82.** That is precision
+> *within the productive subset* — the rows already known to carry both a name and a descriptor.
+> Quoting it as the filter's precision overstates it four-fold.
+
+**Proposal accuracy: 67%, measured blind.** Candidates are pre-labelled by an assistant and decided
+by a human. Measured against decisions made *with* the proposals visible, agreement is 99.3% — that
+number is anchoring, not accuracy. Withholding the proposals on 30 rows gives 67%. Nothing is
+auto-accepted, and auto-reject is off.
+
+**Every span is verbatim.** Each molecule and descriptor is a substring of the source sentence it
+came from, checked mechanically on every run. Nothing is generated or paraphrased.
+
+**Next:** new source material — a yield sample on a further CPC class before any fetch. Yield is
+always measured before fetching: that discipline doubled the corpus in August and correctly
+declined a class that would have cost a day for ~280 rows.
 
 ### Measured findings worth knowing
 
 - **Yield is lower than assumed.** ≈0.2 clean assertions per patent at the v0 filter, against the 1–3
-  guessed from hand-picked examples. Projects to a **600–1,000 molecule** corpus — not Leffingwell's
-  3,500, but the largest anyone can use commercially, which is the point.
+  guessed from hand-picked examples. The original projection was a **600–1,000 molecule** corpus; the
+  patent side has landed at 544 and the combined figure at 1,196 — not Leffingwell's 3,500, but the
+  largest anyone can use commercially, which is the point.
+- **Measure yield before fetching, always.** Sampling a CPC class costs ~20 minutes and has twice
+  changed the decision: C11B 9/00 sampled at 1.02 candidates/patent and doubled the corpus; A23L27/00
+  sampled at 0.17 and was declined, saving a ~7-hour fetch for ~280 rows.
 - **Note tiers are neither sourceable nor computable.** Across 60 patents there are **zero** per-compound
   tier assertions; patents use top/heart/base for accord architecture, never to classify a molecule. A
   fitted rule reproduces curated tiers at 56% under leave-one-out. The sister project replaced them with
   an honestly-named `volatility_band`.
-- **Phase 0 needs scale.** 60 patents give 1,035 distinct terms but only 14 occurring ≥30 times. A
-  60–100 tag ontology at ≥30 molecules per tag needs 500–1,000 patents; the corpus now has 2,588.
+- **Phase 0 is settled: 67 tags**, in `ontology/odor_terms.tsv` (116 surface forms, uniqueness
+  asserted). Admitted on `docs >= 20` **and** `attestations >= 30`, where an attestation is a
+  *distinct sentence* — a passage copied into 100 patents counts once (`pipeline/attest.py`). Four
+  successive counters were needed to get that right; read the 2026-08-05 DEVLOG entry before adding
+  a fifth.
+- **The binding constraint is molecules, not vocabulary.** 29 further descriptor candidates passed
+  the independence test and were still refused: the best reaches 8 molecules against a bar of 30, so
+  admitting them would have turned 17-of-67 into 17-of-95 — same numerator, worse denominator.
+  Evidence kept in `ontology/tag-candidates-5346.tsv` so it is not re-litigated.
 - **Deodorant subclasses must be excluded at query time.** A61Q 13/00 includes patents describing smells
   they intend to destroy — malodour terms otherwise dominate the harvested vocabulary.
 
@@ -90,8 +120,8 @@ copyright-notice scan → tagging.
 
 | Source | Licence basis | Role | Status |
 |---|---|---|---|
-| USPTO patent full text | US Government work — no copyright | modern aroma chemicals, incl. captives documented nowhere else | **collected, 2,588 docs** |
-| PubChem `Odor` (HSDB) | US Government work — public domain | common molecules, CID given so linkage is exact | **collected, 1,453 CIDs** |
+| USPTO patent full text | US Government work — no copyright | modern aroma chemicals, incl. captives documented nowhere else | **collected, 5,346 docs** |
+| PubChem `Odor` (HSDB) | US Government work — public domain | common molecules, CID given so linkage is exact | **collected, 1,453 CIDs → 1,018 rows** |
 | PubChem / FEMA GRAS | public domain / identifiers | CID·CAS·SMILES backbone; FEMA number as a selection layer | in use |
 | Keller & Vosshall 2016 | CC0 | 480 molecules, calibrated human ratings | not yet ingested |
 | Parry, Piesse (pre-1930) | expired copyright | historical materials | **checked and dropped** — see below |
@@ -112,7 +142,7 @@ and Piesse describes plant *materials* that never resolve to a structure. Full r
 ```
 openscent/
   corpus/
-    patent-ids.json   2,588 discovered ids — expensive to rebuild, deliberately committed
+    patent-ids.json   5,346 discovered ids — expensive to rebuild, deliberately committed
     raw/              source documents as retrieved (gitignored: 173 MB)
     raw-pubchem/      PubChem annotation pages, committed so rows are checkable offline
     extracted/        candidate assertions + provenance, pre-tagging
@@ -133,7 +163,7 @@ python3 pipeline/heldout.py sample     # draw the blind evaluation set
 ```
 
 `fetch` and `extract` are deliberately separate: the filter is not finished, and improving a regex must
-never require re-downloading 2,588 documents.
+never require re-downloading 5,346 documents.
 
 The harvest host is referred to as `$OPENSCENT_HOST` throughout; set it in your shell.
 

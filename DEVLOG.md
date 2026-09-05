@@ -2161,3 +2161,28 @@ molecules, **20 tags at the bar unchanged**, nothing near the bar touched.
 
 Also: I said "seven drops" when listing them and it was six. Small, but the same class of
 error as the morning's three-different-answers — arithmetic asserted rather than run.
+
+## 2026-09-05 (later still) — the README was a month stale in its numbers
+
+Ivan asked whether to change the "Where it actually stands (2026-08-03)" date to today. **No** — the
+date was the only honest thing in that section. It claimed 2,588 patents (5,346), 4,068 candidates
+(4,620), and precision 0.16, superseded weeks ago. Restamping it would have made month-old figures
+read as current, which is strictly worse than a stale date: a reader can discount an old date, but
+cannot detect a false new one.
+
+Rewritten from `status.py` output rather than from memory, and it now says so at the top: run
+`status.py`, and distrust any figure elsewhere in the repo that disagrees with it — including the
+README itself. Also corrected across the file: the sources table (2,588 -> 5,346 docs), the layout
+notes, and two findings bullets whose conclusions had been overtaken ("Phase 0 needs scale" -> Phase 0
+is settled at 67 tags).
+
+The worst one was the header table on line 17, the first thing anyone opening the repo reads:
+**"collection done, tagging not started."** 962 decisions ago that stopped being true.
+
+Two claims were deliberately *kept* prominent because they are the ones most likely to be misquoted
+upward by someone skimming: that 0.82 is precision within the productive subset and must never be
+given as the filter's precision, and that the 99.3% proposal agreement is anchoring while 67% is the
+measured figure.
+
+Lesson, same shape as this morning's three-different-answers and the six-not-seven miscount: **numbers
+copied forward are numbers unverified.** The repo now has exactly one place that computes them.
