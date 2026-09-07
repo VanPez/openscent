@@ -47,6 +47,17 @@ def key(r):
 
 def main() -> int:
     write = "--write" in sys.argv
+    # --accept-orphans "why". Deliberately requires a REASON, not a bare --force: the
+    # guard below exists because a silent orphan is indistinguishable from a broken join,
+    # and the only thing that tells them apart is a human who has looked. The reason is
+    # stamped onto every orphan record, so review-orphans.jsonl says why the work was
+    # dropped and not merely that it was.
+    reason = ""
+    if "--accept-orphans" in sys.argv:
+        i = sys.argv.index("--accept-orphans")
+        reason = sys.argv[i + 1] if i + 1 < len(sys.argv) else ""
+        if not reason or reason.startswith("--"):
+            sys.exit("--accept-orphans needs a reason in quotes")
     cands = json.loads(CAND.read_text(encoding="utf-8"))
 
     head, old = None, []
@@ -113,10 +124,17 @@ def main() -> int:
         print("\nDry run. Add --write to rebuild review.jsonl.")
         return 0
 
-    if n_carried != n_decided:
+    if n_carried != n_decided and not reason:
         print(f"\n! {n_decided - n_carried} decision(s) failed to carry. That suggests the join is")
         print("  wrong, not that the extractor changed. NOT writing — check first.")
+        print("\n  If you have checked and the extractor really did change, say why:")
+        print('    python3 merge_review.py --write --accept-orphans "norm/2 unmerged ..."')
+        print("  The reason is stored in review-orphans.jsonl. There is no bare --force,")
+        print("  because the only safe way past this guard is an explanation.")
         return 1
+    if n_carried != n_decided:
+        print(f"\n! OVERRIDDEN: {n_decided - n_carried} decision(s) dropped deliberately.")
+        print(f"  reason: {reason}")
 
     bak = REVIEW.with_suffix(f".jsonl.bak-{time.strftime('%Y%m%d-%H%M%S')}")
     bak.write_text(REVIEW.read_text(encoding="utf-8"), encoding="utf-8")
@@ -128,6 +146,9 @@ def main() -> int:
     if orphans:
         with ORPHANS.open("w", encoding="utf-8") as fh:
             for r in orphans:
+                if reason:
+                    r = dict(r, orphaned_reason=reason,
+                             orphaned_at=time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()))
                 fh.write(json.dumps(r, ensure_ascii=False) + "\n")
         print(f"\norphans -> {ORPHANS.name}")
     print(f"backup  -> {bak.name}")

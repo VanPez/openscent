@@ -36,6 +36,7 @@ pipeline/heldout-key.json
 *.jsonl.bak-*
 *.json.bak-*
 *.tsv.bak-*
+*.py.bak-*
 
 # session handoff note — useful locally, not part of the published work
 NEW-CHAT-PROMPT.md

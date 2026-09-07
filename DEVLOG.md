@@ -4,9 +4,11 @@
 
 ---
 
-## RESUME HERE — state as of 2026-09-05
+## RESUME HERE — state as of 2026-09-07
 
-**THE PRODUCTIVE QUEUE IS EMPTY. THE CONSTRAINT IS NOW MATERIAL, NOT REVIEW TIME.**
+**THE QUEUE IS PRODUCTIVE AGAIN — 5,731 rows to review.** `DESCR_COLON` (2026-09-07) added
+~88 sentences of the `Odor description of X: a, b, c` form. Reviewing is unblocked; the
+sourcing question is parked because both remaining options were measured and declined.
 
 **Run `python3 pipeline/status.py` FIRST and quote no number that did not come out of
 it.** On 2026-09-05 the headline was recomputed by hand three times in ten minutes and
@@ -14,17 +16,20 @@ gave 20, then 11, then 15 tags — see that entry. `status.py` now owns it. Live
 
 ```
 5,346 patents (Hetzner /opt/openscent/corpus/raw/)
-4,620 review rows
-  962 decided · 628 approve · 332 reject · 2 skip · 3,658 undecided
-  patents    15 of 67 at the bar     545 molecules
+6,686 review rows            (was 4,620 — re-extracted 2026-09-07)
+  955 decided · 627 approve · 326 reject · 2 skip · 5,731 undecided
+  patents    15 of 67 at the bar     541 molecules
   pubchem     6 of 67                653 molecules
-  COMBINED   20 of 67 at the bar   1,197 molecules   (12 on 2026-08-20)
-  sandalwood 28 · camphoraceous 28 · amber 28 — all need 2 · animalic 23 · aldehydic 23
-  0 PRODUCTIVE rows remain
+  COMBINED   20 of 67 at the bar   1,193 molecules   (12 on 2026-08-20)
+  sandalwood 28 · amber 28 (need 2) · camphoraceous 27 · animalic 23 · aldehydic 23
 ```
 
-The 3,658 undecided rows carry no descriptor or no name-like span. They still need
-clearing for the precision figure but **will not add a molecule between them.**
+Most of the 5,731 undecided rows still carry no descriptor or no name-like span and will
+not add a molecule. The productive ones are the ~88 `DESCR_COLON` sentences.
+
+**955 decided is 7 higher than the 948 actually carried** — 56 sentences appear more than
+once in the same document, so a decision made once is written onto each occurrence. Counted
+in sets, so tag counts are unaffected; do not compute precision from decision counts.
 
 **THE BAR COUNTS THE UNION OF TWO ROW SOURCES** — `review.jsonl` (approved only) and
 `pubchem-rows.jsonl` (no review gate). Patents alone 15, PubChem alone 6, together 20.
@@ -62,11 +67,19 @@ Reviewing is done until there is new material. See the 2026-09-05 (evening) entr
    of its descriptor mass lands on tags already past 30, and **sandalwood and animalic —
    two of the four nearest the bar — do not appear at all**. ~2 h fetching and ~1,040
    candidates of review to clear one tag. Walk kept, fetch declined.
-2. **Re-extract the 5,346 at a looser filter** (free, no network) — **the remaining
-   option.** Measure first: count how many sentences in the existing corpus carry a
-   `sandalwood` or `animalic` surface form AND were dropped by the filter. Then
-   `score.py` before and after, per `TESTSET.md`.
+2. ~~**Re-extract at a looser filter**~~ — **MEASURED AND CLOSED 2026-09-07.**
+   `exclusion_probe.py` + `descr_probe.py`: of 18,545 dropped sentences on the five short
+   tags, the two biggest classes are ingredient enumerations, and only ONE construction
+   was worth taking (`DESCR_COLON`, 88 sentences, adopted). There is no broad loosening
+   that pays.
 3. ~~**Fetch A23L27/00**~~ — declined 2026-08-20 at 0.17.
+
+**ALL THREE SOURCING OPTIONS ARE NOW CLOSED ON MEASUREMENT.** The next real lever is
+**PASSAGE-SCOPE EXTRACTION** — a context window so a molecule named in one sentence can
+carry descriptors from the next. Three findings now point at it independently: the HEADING
+removal (2026-08-03), `organoleptic-colon`'s 345 molecule-less sentences (2026-09-07), and
+`t09` in the test set, the one standing recall failure. It does not exist yet;
+`passages.py` is a boilerplate detector, not this. Design it before building it.
 
 **A61Q13/00 is not a fourth option** — checked 2026-09-05, `class_size.py` measures it
 4,412 bare / 4,412 low, 1.0x. C11B9/00's 5.4x subtree was the exception, not the pattern.
@@ -107,7 +120,15 @@ the Hetzner box as well as the Mac**, and they had already passed through a tran
   publication risk there — an earlier claim in this session that there was is withdrawn.
   Worth settling at the same time: the box may not need credentials at all, since
   `discover_ops.py` runs from the Mac.
+- **The pre-OPS family-duplicate audit now has EVIDENCE, not a hypothesis** — US10045551B2
+  and US20140023770A1 carry identical sentences and identical 36/36 counts. Deferred since
+  2026-08-20; it is the next thing queued.
+- **56 sentences appear more than once within one document** (89 extra candidate rows).
+  `merge_review.py` copies a decision onto every occurrence. Dedupe candidates on
+  (source_id, sentence), or teach the review UI to collapse them.
 - `yield_sample.py` accepts a dirty root and silently measures a blend of classes. Guard it.
+- `merge_review.py`'s docstring section "ORPHANS ARE REPORTED, NEVER DISCARDED QUIETLY"
+  predates `--accept-orphans` and does not yet describe it. Bring the two into agreement.
 - ~~mapping decisions~~ / ~~cresol~~ / ~~commit unmapped_report.py~~ — all DONE, see below.
 - Sample documents preserved as evidence, nothing deleted: `/opt/openscent-sample` (178
   C11D 3/50 docs) and `/opt/openscent-sample-prior` (366 August docs).
@@ -2361,6 +2382,8 @@ by the filter. That says whether loosening recovers the two tags C11D 3/50 prova
 supply, before touching `ODOUR`/`DESCR`/`NAMED`/`HEADING`/`EXCLUDE` and re-scoring
 `score.py` per `TESTSET.md`.
 
+*(Superseded 2026-09-07 — option 2 was measured and is now closed too. See below.)*
+
 ### Applied the same evening — three mappings, one correction, one script
 
 Ivan took the proposal as given. **20 of 67 tags, unchanged** — which was the prediction,
@@ -2396,3 +2419,128 @@ written via `os.replace`, verbatim invariant re-asserted before and after.
 flags single-document crossings, because the first version printed molecules alone and
 that is precisely how it produced two wrong recommendations an hour earlier. Its docstring
 carries that story. `python3 pipeline/unmapped_report.py [tag ...]`.
+
+## 2026-09-07 — option 2 measured and closed. One rule adopted, one two-day-old bug found underneath it.
+
+**The productive queue is open again — 5,731 rows to review, first time since Friday.**
+`DESCR_COLON` added, `norm/2` fixes an entity bug that would have cost 84 decisions on
+any re-extract, and three separate duplicate problems surfaced.
+
+```
+20 of 67 tags at the bar · 1,193 molecules · verbatim clean
+review.jsonl  4,620 -> 6,686 rows · 948 decisions carried, 14 orphaned
+sandalwood 28 · amber 28 (need 2) · camphoraceous 27 · animalic 23 · aldehydic 23
+```
+
+### Option 2 is closed. "Loosen the filter" was never a plan, and the data says so.
+
+`exclusion_probe.py` (new) calls `harvest.decide()` rather than reimplementing it, and
+asks what the corpus already drops for the five tags nearest the bar:
+
+```
+19,541 sentences mention one · 996 kept · 18,545 dropped
+length                    7,965  (6,695 with a name visible)
+no odour word             6,697  (3,647)
+no description verb       1,942  (  843)
+no compound/example name    851  (    0)   <- sanity check passes by construction
+EXCLUDE:*                ~1,090
+```
+
+**11,185 dropped sentences with a compound name visible looks like a goldmine and is not.**
+The two biggest classes are ingredient enumerations — `Spanish sage oil; sandalwood oil;
+celery seed oil; spike lavender oil; ...` — which pass `named()` because a list of oils is
+full of suffix-matching words, not because any molecule is being given an odour. The
+320-char bound exists for exactly these.
+
+Caveat on that table, recorded because it is mine: the surface forms `animal` and `camphor`
+match non-odour senses ("animal or plant proteins", "ketolactonization of camphor"), so
+`animalic` 4,312 and `camphoraceous` 5,321 are inflated. Do not quote those two.
+
+### What was recoverable: ONE construction, measured before it was written
+
+`descr_probe.py` (new) sized five candidate rules against the 11,304 sentences where DESCR
+is the only failing gate:
+
+| pattern | admits | verdict on reading the examples |
+|---|---|---|
+| `odour-description-of` | **88** | clean rows, every one |
+| `organoleptic-colon` | 345 | **names no compound at all** |
+| `smells-of` | 115 | "enhance the smell of the product", "sniff test" |
+| `imparts` | 108 | composition-level, which REVIEW-RULES rejects |
+| `described-as` | 12 | negations and a mixture |
+
+**`organoleptic-colon` is the trap and it is the same trap as always.** "Odor description:
+anisic, fennel seed, with connotations of p-cresol and myrrh" — the molecule is in the
+PRECEDING sentence. `named()` passes only because `anisic` and `jasmone` match the suffix
+rule. That is the third independent time this project has landed on the context window:
+`harvest.py`'s own comment when HEADING was removed on 2026-08-03 says *"Recover these with
+a context window, not with this rule."* `passages.py` is a boilerplate detector, not that.
+**Sentence scope is the binding constraint, and the extractor to fix it does not exist.**
+
+Also learned from reading DESCR rather than assuming: it already contains `imparts?`,
+`reminiscent` and `is described as`, so the `imparts` hits were all `confers`/`gives a`,
+and `described-as` only caught the `are`/`was`/`were` inflections. Both confirmed noise.
+
+**DESCR_COLON adopted**, as a separate named rule rather than a widening of DESCR, so it
+can be quoted and reverted as itself. The `of <name>` is load-bearing and the comment says
+so. score.py 1.00/0.89 before and after — **which is a NON-RESULT, not a pass**: TESTSET.md
+says every sentence in the set was surfaced by an earlier filter, so the set contains none
+of these. The real check was three sentences by hand: the target form kept, both traps
+still dropped.
+
+**Its yield is thinner than 88.** 72 of the 88 are in US10045551B2 and US20140023770A1 —
+identical sentences, identical 36/36 counts, one disclosure published twice. Ivan chose to
+take it anyway with that known.
+
+### The bug underneath: the 2026-09-05 entity fix was one stage too late
+
+First `merge_review.py` run orphaned **84 decisions**. Predicted zero — the change only
+ADDS an accept path.
+
+Cause: bf76f03's commit message says it decodes "at extraction". It decodes in `fetch()`.
+Every document in `corpus/raw/` was fetched before that change, so the raw text still holds
+765 `&#34;` and 264 `&#39;`; `fix_entities.py` decoded `review.jsonl` and nothing decoded
+the source. The join is on (source_id, sentence) — `the applicant&#39;s` against `the
+applicant's` — and it missed.
+
+**Nothing surfaced this for two days because nothing re-extracted.** It was waiting for
+whoever next changed the filter.
+
+`norm/2` decodes in `norm()`, the one path both source text and spans pass through, so the
+verbatim invariant cannot see one decoded and the other not. Orphans 84 -> 14.
+
+**And it exposed a second, quieter consequence.** `&#34;` and `&#39;` END IN A SEMICOLON,
+and `SENT` splits on `(?<=[.;])\s+`. **Every entity followed by a space and a capital was
+manufacturing a fake sentence boundary.** The corpus has been split at HTML entities all
+along. Decoding unmerges them, which is correct, and costs 21 candidates whose merged
+sentences now exceed 320 chars, plus the 14 decided fragments that no longer exist as
+units. Verified before writing: **no tag lost, 20 at the bar before and after**;
+`camphoraceous` 28 -> 27, ten other tags -1 molecule.
+
+### merge_review.py refused to write, and was right to
+
+The guard: any orphan means "the join is wrong, not that the extractor changed". Here the
+extractor really had changed and we knew why — so the guard needed an override rather than
+a bypass. Added `--accept-orphans "<reason>"`:
+
+- **there is no bare `--force`.** The flag requires a reason and exits without one.
+- the reason and a UTC timestamp are stamped onto every record in `review-orphans.jsonl`,
+  so the file says WHY work was dropped, not merely that it was.
+
+The reason given is in that file. Claude said "safe to write" before checking whether the
+script would permit it; the script was the one that was right.
+
+### Third duplicate problem, pre-existing: the same sentence twice in one document
+
+The decision arithmetic did not close — 955 decided rows where 948 was expected.
+`candidates-new.json` holds **56 sentences appearing more than once in the same document**
+(89 extra rows): patents restate a sentence in the summary and again in the examples.
+`merge_review.py` writes one row per occurrence and copies the decision onto each, so 6
+true duplicates became 7 extra decided rows (the other 20 shared keys are legitimate
+splits). Harmless to the headline — molecules are counted in sets — but the review UI will
+show the same sentence twice, and any precision computed from DECISION counts is off.
+
+**Three duplicate-shaped findings in one day**, and they are three different scopes of the
+same neglect: family duplicates across documents (the pair above), sentence duplicates
+within a document (these 56), and entity-split fragments within a sentence. The pre-OPS
+family audit, deferred since 2026-08-20, now has evidence rather than a hypothesis.

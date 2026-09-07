@@ -183,6 +183,31 @@ DESCR  = re.compile(r"\b(has|have|having|possess(?:es|ing)?|exhibit(?:s|ing)?|"
                     # missed the KARANAL sentence (t07), which is the captive case
                     # this whole source type exists to capture.
                     r"valued for|prized for|known for|appreciated for|noted for)\b", re.I)
+
+# DESCR_COLON, added 2026-09-07. Patents assert the same thing with a COLON and no verb:
+#
+#     "Odor description of 4-isopropyl-2-methylcyclohex-2-en-1-one: spicy, herb, fat,
+#      floral, cumin."
+#
+# Molecule named, descriptors listed, attribution unambiguous — and decide() dropped it
+# as "no description verb". Kept SEPARATE from DESCR rather than folded into it, so that
+# DESCR still means "a verb of attribution" and this rule can be quoted, scored and
+# reverted as itself.
+#
+# THE "of <name>" IS LOAD-BEARING. Do not relax it to a bare "Odor description:".
+# descr_probe.py measured that broader form at 345 sentences, and they name no compound
+# at all — the molecule is in the PRECEDING sentence and named() passes only because
+# "anisic" and "jasmone" match the suffix rule. Admitting them would readmit the failure
+# HEADING was removed for on 2026-08-03. They need a context window, not this.
+#
+# Measured before writing: 88 sentences in the 5,346-patent corpus. Note the shape of
+# that number — 72 of the 88 are in US10045551B2 and US20140023770A1, which appear to be
+# one disclosure published twice (identical sentences, identical 36/36 counts). So the
+# real yield is nearer 50, and the duplicate pair is itself evidence for the pre-OPS
+# family-duplicate audit that has been deferred since 2026-08-20.
+DESCR_COLON = re.compile(r"\b(odou?r|organoleptic|olfactive)\s+"
+                         r"(description|propert\w+|characteristic\w*)\s+of\b[^:]{0,120}:",
+                         re.I)
 # --- NAMED, v3. The v2 rule was broken in both directions at once. ---------------
 #
 # Measured over the 3,379 candidates from the full 2,588-patent run, the single most
@@ -318,10 +343,27 @@ SENT = re.compile(r"(?<=[.;])\s+(?=[A-Z0-9(])")
 
 def norm(s: str) -> str:
     """Deterministic, versioned. Applied identically to source and span before any
-    verbatim comparison — see handrun-01 (OCR noise in pre-2000 scans)."""
-    return re.sub(r"\s+", " ", s).strip()
+    verbatim comparison — see handrun-01 (OCR noise in pre-2000 scans).
 
-NORM_VERSION = "norm/1"
+    norm/2, 2026-09-07: DECODE HTML ENTITIES HERE, not only in fetch().
+
+    The 2026-09-05 fix (bf76f03) put _html.unescape() in fetch() and its commit message
+    claimed it decoded "at extraction". It did not. Every document in corpus/raw/ was
+    fetched BEFORE that change, so the raw text still holds 765 `&#34;` and 264 `&#39;`,
+    and extract() faithfully reproduced them on every run. fix_entities.py had decoded
+    review.jsonl, so the two sides no longer agreed.
+
+    The bill came due on the first re-extract after the fix: merge_review.py joins on
+    (source_id, sentence) and 84 decided rows failed to match — `the applicant&#39;s`
+    against `the applicant's`. Not lost, but silently unjoinable, which is the same
+    class of failure the whole file guards against.
+
+    Decoding in norm() rather than in extract() puts it on the ONE path that both source
+    text and spans pass through, so the verbatim invariant cannot see one decoded and the
+    other not. Whitespace collapse runs after, since an entity can produce a space."""
+    return re.sub(r"\s+", " ", _html.unescape(s)).strip()
+
+NORM_VERSION = "norm/2"
 
 
 def decide(s: str) -> tuple[bool, str]:
@@ -355,7 +397,8 @@ def decide(s: str) -> tuple[bool, str]:
     # to its excellent odour characteristics..."), accepting it with no verb and no
     # name. Recover these with a context window, not with this rule.
     if not ODOUR.search(s):            return False, "no odour word"
-    if not DESCR.search(s):            return False, "no description verb"
+    if not (DESCR.search(s) or DESCR_COLON.search(s)):
+                                       return False, "no description verb"
     if not named(s):                   return False, "no compound/example name"
     return True, "kept"
 
