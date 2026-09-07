@@ -74,6 +74,13 @@ Reviewing is done until there is new material. See the 2026-09-05 (evening) entr
    that pays.
 3. ~~**Fetch A23L27/00**~~ — declined 2026-08-20 at 0.17.
 
+**THE CORPUS IS 19.4% REDUNDANT (upper bound; 702 pairs is the floor)** — measured
+2026-09-07, `reports/dupgroups.json`. It does NOT change the molecule counts: `status.py`
+counts in sets and a second copy of a disclosure adds no new molecule. It DOES threaten
+`docs >= 20`, the vocabulary admission counter, which treats documents as independent
+attestations. **Re-run `attest.py` over collapsed groups before trusting the 67-tag
+vocabulary.** Not done.
+
 **ALL THREE SOURCING OPTIONS ARE NOW CLOSED ON MEASUREMENT.** The next real lever is
 **PASSAGE-SCOPE EXTRACTION** — a context window so a molecule named in one sentence can
 carry descriptors from the next. Three findings now point at it independently: the HEADING
@@ -120,9 +127,14 @@ the Hetzner box as well as the Mac**, and they had already passed through a tran
   publication risk there — an earlier claim in this session that there was is withdrawn.
   Worth settling at the same time: the box may not need credentials at all, since
   `discover_ops.py` runs from the Mac.
-- **The pre-OPS family-duplicate audit now has EVIDENCE, not a hypothesis** — US10045551B2
-  and US20140023770A1 carry identical sentences and identical 36/36 counts. Deferred since
-  2026-08-20; it is the next thing queued.
+- ~~pre-OPS family-duplicate audit~~ — **RUN 2026-09-07.** 1,035 redundant documents
+  (19.4%, an upper bound). Headline unaffected — sets already absorbed it. **What is NOT
+  yet answered, and is the next thing to do: re-run `attest.py` with groups collapsed and
+  check whether any of the 67 tags was admitted on `docs >= 20` of duplicate testimony.**
+  Groups are in `reports/dupgroups.json`.
+- **`dup_audit.py`'s BOILERPLATE_MAX = 5 caps detectable family size at 5** and lets
+  1970s-80s house template through as "rare" text. Fix before quoting 19.4% as anything
+  but an upper bound; 702 pairs is the defensible floor.
 - **56 sentences appear more than once within one document** (89 extra candidate rows).
   `merge_review.py` copies a decision onto every occurrence. Dedupe candidates on
   (source_id, sentence), or teach the review UI to collapse them.
@@ -2544,3 +2556,75 @@ show the same sentence twice, and any precision computed from DECISION counts is
 same neglect: family duplicates across documents (the pair above), sentence duplicates
 within a document (these 56), and entity-split fragments within a sentence. The pre-OPS
 family audit, deferred since 2026-08-20, now has evidence rather than a hypothesis.
+
+### The family-duplicate audit, finally run — and it moves the worry, not the headline
+
+`dup_audit.py` (new). **19.4% of the corpus is redundant — and the molecule count does not
+care.** Both halves of that matter.
+
+```
+5,346 documents · 817,133 distinct sentences
+835 duplicate groups · 1,035 redundant documents (19.4%)
+group sizes  {2: 702, 3: 79, 4: 41, 5: 13}
+```
+
+**Method: text, not OPS.** Family ids would be 5,346 requests at a 4.5s floor — seven
+hours — and they answer only for publications OPS returns under the number we hold, which
+is the exact assumption the pre-OPS corpus breaks. Text is free and is the thing itself.
+Sentences are indexed to their documents, only documents sharing a sentence are compared,
+sentences in more than 5 documents are discarded as boilerplate (`passages.py` found
+paragraphs copied across unrelated patents), and the score is CONTAINMENT — shared /
+min(|A|,|B|) — because a grant is shorter than its application and Jaccard punishes that
+asymmetry. Union-find, because a family can put more than two publications in the corpus.
+
+**The 19.4% is an upper bound and the reason is a threshold artifact of mine.** No group
+exceeds 5 members, and BOILERPLATE_MAX is 5 — a sentence in six documents is discarded, so
+a six-publication family is undetectable, while one in exactly five survives as "rare".
+The era mix gives it away:
+
+```
+group size 2:  13.7% are 1976-90 grants     <- modern application+grant, genuine
+group size 3:  45.6%
+group size 4:  53.7%
+group size 5:  92.3%                         <- 1970s-80s house template, not families
+```
+
+Patents from one assignee in that era were written from a template — same background, same
+formulation boilerplate, same example scaffolding. **Trust the 702 pairs; treat the larger
+groups as unproven.** The known-true pair (US10045551B2 / US20140023770A1) is found, so the
+method does catch what it was built for.
+
+### The headline was never inflated, and the reason is worth stating
+
+```
+today (duplicates present)      20 of 67 at the bar · 1,193 molecules
+collapse, discard rows          19 of 67 · 1,144      <- loses `powdery`
+collapse, TRANSFER rows         20 of 67 · 1,183      <- correct: -10 molecules, no tags
+```
+
+`status.py` counts distinct molecules **in sets**. Two copies of one disclosure hold the
+same molecules, so the second copy adds nothing to add. Duplication cannot inflate that
+number, and never did.
+
+The one-tag loss in the middle row was Claude's accounting error, caught by asking why:
+dropping a redundant document does not un-attest its molecules, it only detaches the
+approval from the copy that survives. Of 67 approvals on redundant documents, **45 transfer
+cleanly** — the sentence is verbatim in the kept copy — and 22 have nowhere to go, being
+text one publication has and the other does not. Collapse plus transfer is the correct
+operation and it costs 10 molecules and no tags.
+
+### So the exposure is the VOCABULARY, which is where the audit was always pointed
+
+`docs >= 20` counts documents as INDEPENDENT ATTESTATIONS, and sets do not protect it.
+`discover_ops.py` said it in August: "eight continuations of one filing are one party
+saying one thing eight times." **Phase 0's 67 tags were admitted on document counts over a
+corpus that is up to 19.4% redundant.** Some may rest on one party testifying twice.
+
+`attest.py` exists for exactly this counting problem and has no way to know about families.
+
+**NEXT, and it is the audit's actual payload:** collapse each group to its kept member,
+re-run `attest.py`, and see whether any of the 67 falls below threshold. Use the 702 pairs
+for the conservative answer and all 835 groups for the pessimistic one. Nothing about the
+vocabulary should be re-litigated until that number exists — and nothing has been deleted:
+`dup_audit.py` reports groups and refuses to choose a survivor, because removing a document
+invalidates rows that point at it and that goes through `merge_review.py`, deliberately.
