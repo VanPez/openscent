@@ -27,6 +27,12 @@ gave 20, then 11, then 15 tags — see that entry. `status.py` now owns it. Live
 Most of the 5,731 undecided rows still carry no descriptor or no name-like span and will
 not add a molecule. The productive ones are the ~88 `DESCR_COLON` sentences.
 
+**THE CORPUS HAS FEATURES NOW** (2026-09-08): `reports/openscent-pubchem.csv`, 648
+molecules x 40 numeric columns, sent to M for GL1F. It has real signal (`fatty` 0.93,
+`mint` 0.87 AUC) — see that entry, including why `chlorine` 0.94 is trivial and why the
+10-positive tags should not be quoted. **Only the PubChem half.** The patent half needs
+OPSIN name->structure; that is what takes it to ~1,200 rows and adds actual perfumery.
+
 **955 decided is 7 higher than the 948 actually carried** — 56 sentences appear more than
 once in the same document, so a decision made once is written onto each occurrence. Counted
 in sets, so tag counts are unaffected; do not compute precision from decision counts.
@@ -2628,3 +2634,91 @@ for the conservative answer and all 835 groups for the pessimistic one. Nothing 
 vocabulary should be re-litigated until that number exists — and nothing has been deleted:
 `dup_audit.py` reports groups and refuses to choose a survivor, because removing a document
 invalidates rows that point at it and that goes through `merge_review.py`, deliberately.
+
+## 2026-09-08 — the corpus has features for the first time, and they carry signal
+
+**`reports/openscent-pubchem.csv` — 648 molecules x 40 numeric columns, built for M's
+GL1F.** First time this project has produced anything a model can read.
+
+```
+648 rows · 22 RDKit descriptors · 15 tag columns · n_tags · primary_tag_id · cid
+0 missing cells · every value numeric
+```
+
+**Two new scripts:** `pubchem_smiles.py` (Mac only — PubChem is unreachable from Hetzner
+and from Claude's sandbox) and `build_csv.py` (needs rdkit; runs in the sandbox).
+
+### The thing that was missing was structures, not labels
+
+`pubchem-rows.jsonl` carries `molecule_cid` and `molecule_name` and NOTHING chemical.
+Linkage was called "free" for this source because the CID *is* a structure identifier —
+true for counting molecules, useless for computing anything. 651 live CIDs, fetched in 7
+batched requests.
+
+**FEATURES ARE COMPUTED, NEVER FETCHED.** Only the structure comes from PubChem; every
+descriptor is RDKit over it, offline. Asking PubChem for logP or TPSA would tie the table
+to a remote service's descriptor version — unreproducible, and the same objection this
+project makes to hand-supplied vocabulary.
+
+**`CanonicalSMILES` no longer exists and PUG REST does not say so.** The first run asked
+for it, got HTTP 200, and filled InChIKey, formula and MolecularWeight for all 651 CIDs
+with `"smiles": null` on every one. The property is now `SMILES` / `ConnectivitySMILES`.
+An unknown property is simply absent from the response — no error, no warning, cache
+happily populated, and the one field the script exists for empty. **Fourth time this week
+that a successful call answered a narrower question than the one asked.** The repair also
+had to treat "cached without a smiles" as unfetched, or it would have been a no-op.
+
+InChIKey was collected while there anyway: `status.py` notes the patent/PubChem molecule
+join is weak because it matches on NAME TEXT, and says fixing it needs InChIKeys on both
+sides. This is one side.
+
+### 648, not 651
+
+`ClF3`, `BrF5`, `ClFO3` — hypervalent halogens RDKit's valence model rejects. Industrial
+oxidisers with HSDB odour records, not aroma chemicals. Listed in the script's output
+rather than silently dropped.
+
+### Columns: M resolved the budget question himself
+
+"20-30 columns" became moot: *"You actually choose task in ui and so labels/classes
+there... One may be label for one task and feature for another."* So everything is numeric
+and GL1F decides what is a label. `primary_tag_id` is his suggested codification, using the
+**rarest** tag a molecule carries — most-common-wins would label two thirds of the file
+`pungent` and teach nothing.
+
+Only 15 of the 54 tags present reach 10 molecules, and the mean is 1.41 tags per molecule,
+so the tail is omitted: a column with 4 positives in 648 rows invites a spurious split.
+
+### It has signal — 5-fold stratified CV, AUC
+
+```
+chlorine  0.943   fatty 0.925   mint  0.874   rose   0.873   citrus 0.862
+aromatic  0.851   fruity 0.843  floral 0.820  green  0.799   pungent 0.751
+woody     0.739   musty 0.692   spicy 0.657   acid   0.633   sweet   0.619
+```
+
+M's "don't underestimate how it captures signal on small datasets" holds. Three caveats
+recorded so nobody quotes the top of that list as the project's accuracy:
+
+- **`chlorine` 0.94 is trivial** — `n_halogen` gives it away. A pipeline check, not a finding.
+- **`citrus`, `rose`, `woody`, `spicy` have 10-12 positives.** Five-fold AUC swings hard at
+  that size; treat them as "probably learnable", not as measurements.
+- **`aromatic` 0.85 has a semantic confound** — the odour tag and the chemical property are
+  different concepts that correlate, so part of that score is free.
+
+`fatty` 0.925 and `mint` 0.874 are the honest results: chain length and logP really do
+carry fattiness, and mint is a tight structural family.
+
+### On grouping, where M and Claude disagree — and why it does not bite yet
+
+M: *"Same patent is not much of issue I think because of random split. Yes some minor leak
+but livable."* **For THIS csv he is right by accident of source:** these are HSDB records,
+one row per compound, no document clustering, nothing to leak, so no `group_id` is emitted.
+
+It bites when the patent half joins. 36 cyclohexenones from US10045551B2 split randomly put
+near-identical structures on both sides of the fold, and 19.4% of the corpus is duplicate
+documents (2026-09-07). Not argued, because the data to show it does not exist yet.
+
+**Next for the CSV: OPSIN name -> structure on the patent side**, which adds ~540 molecules
+of actual perfumery and takes the file to ~1,200 — M's original row target. It also needs a
+`group_id`, and the argument above becomes testable rather than theoretical.

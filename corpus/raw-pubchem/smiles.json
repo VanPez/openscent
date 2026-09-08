@@ -1,0 +1,4559 @@
+{
+ "241": {
+  "smiles": "C1=CC=CC=C1",
+  "connectivity_smiles": "C1=CC=CC=C1",
+  "inchikey": "UHOVQNZJYSORNB-UHFFFAOYSA-N",
+  "formula": "C6H6",
+  "mw": "78.11"
+ },
+ "2537": {
+  "smiles": "CC1(C2CCC1(C(=O)C2)C)C",
+  "connectivity_smiles": "CC1(C2CCC1(C(=O)C2)C)C",
+  "inchikey": "DSSYKIVIOFKYAU-UHFFFAOYSA-N",
+  "formula": "C10H16O",
+  "mw": "152.23"
+ },
+ "7835": {
+  "smiles": "C1C(O1)CCl",
+  "connectivity_smiles": "C1C(O1)CCl",
+  "inchikey": "BRLQWZUYTZBJKN-UHFFFAOYSA-N",
+  "formula": "C3H5ClO",
+  "mw": "92.52"
+ },
+ "176": {
+  "smiles": "CC(=O)O",
+  "connectivity_smiles": "CC(=O)O",
+  "inchikey": "QTBSBXVTEAMEQO-UHFFFAOYSA-N",
+  "formula": "C2H4O2",
+  "mw": "60.05"
+ },
+ "180": {
+  "smiles": "CC(=O)C",
+  "connectivity_smiles": "CC(=O)C",
+  "inchikey": "CSCPPACGZOOCGX-UHFFFAOYSA-N",
+  "formula": "C3H6O",
+  "mw": "58.08"
+ },
+ "6342": {
+  "smiles": "CC#N",
+  "connectivity_smiles": "CC#N",
+  "inchikey": "WEVYAHXRMPXWCK-UHFFFAOYSA-N",
+  "formula": "C2H3N",
+  "mw": "41.05"
+ },
+ "6115": {
+  "smiles": "C1=CC=C(C=C1)N",
+  "connectivity_smiles": "C1=CC=C(C=C1)N",
+  "inchikey": "PAYRUJLWNCNPSJ-UHFFFAOYSA-N",
+  "formula": "C6H7N",
+  "mw": "93.13"
+ },
+ "7519": {
+  "smiles": "COC1=CC=CC=C1",
+  "connectivity_smiles": "COC1=CC=CC=C1",
+  "inchikey": "RDOXTESZEPMUJZ-UHFFFAOYSA-N",
+  "formula": "C7H8O",
+  "mw": "108.14"
+ },
+ "244": {
+  "smiles": "C1=CC=C(C=C1)CO",
+  "connectivity_smiles": "C1=CC=C(C=C1)CO",
+  "inchikey": "WVDDGKGOMKODPV-UHFFFAOYSA-N",
+  "formula": "C7H8O",
+  "mw": "108.14"
+ },
+ "7961": {
+  "smiles": "C1=CC=C(C=C1)Br",
+  "connectivity_smiles": "C1=CC=C(C=C1)Br",
+  "inchikey": "QARVLSVVCXYDNA-UHFFFAOYSA-N",
+  "formula": "C6H5Br",
+  "mw": "157.01"
+ },
+ "263": {
+  "smiles": "CCCCO",
+  "connectivity_smiles": "CCCCO",
+  "inchikey": "LRHPLDYGYMQRHN-UHFFFAOYSA-N",
+  "formula": "C4H10O",
+  "mw": "74.12"
+ },
+ "6560": {
+  "smiles": "CC(C)CO",
+  "connectivity_smiles": "CC(C)CO",
+  "inchikey": "ZXEKIIBDNHEJCQ-UHFFFAOYSA-N",
+  "formula": "C4H10O",
+  "mw": "74.12"
+ },
+ "6348": {
+  "smiles": "C(=S)=S",
+  "connectivity_smiles": "C(=S)=S",
+  "inchikey": "QGJOPFRUJISHPQ-UHFFFAOYSA-N",
+  "formula": "CS2",
+  "mw": "76.15"
+ },
+ "5943": {
+  "smiles": "C(Cl)(Cl)(Cl)Cl",
+  "connectivity_smiles": "C(Cl)(Cl)(Cl)Cl",
+  "inchikey": "VZGDMQKNWNREIO-UHFFFAOYSA-N",
+  "formula": "CCl4",
+  "mw": "153.8"
+ },
+ "8076": {
+  "smiles": "CCOCCO",
+  "connectivity_smiles": "CCOCCO",
+  "inchikey": "ZNQVEEAIQZEUHB-UHFFFAOYSA-N",
+  "formula": "C4H10O2",
+  "mw": "90.12"
+ },
+ "7964": {
+  "smiles": "C1=CC=C(C=C1)Cl",
+  "connectivity_smiles": "C1=CC=C(C=C1)Cl",
+  "inchikey": "MVPPADPHJFYWMZ-UHFFFAOYSA-N",
+  "formula": "C6H5Cl",
+  "mw": "112.55"
+ },
+ "7953": {
+  "smiles": "CC1=CC(=NC(=C1)C)C",
+  "connectivity_smiles": "CC1=CC(=NC(=C1)C)C",
+  "inchikey": "BWZVCCNYKMEVEX-UHFFFAOYSA-N",
+  "formula": "C8H11N",
+  "mw": "121.18"
+ },
+ "8078": {
+  "smiles": "C1CCCCC1",
+  "connectivity_smiles": "C1CCCCC1",
+  "inchikey": "XDTMQSROBMDMFD-UHFFFAOYSA-N",
+  "formula": "C6H12",
+  "mw": "84.16"
+ },
+ "9253": {
+  "smiles": "C1CCCC1",
+  "connectivity_smiles": "C1CCCC1",
+  "inchikey": "RGSFGYAAUTVSQA-UHFFFAOYSA-N",
+  "formula": "C5H10",
+  "mw": "70.13"
+ },
+ "6365": {
+  "smiles": "CC(Cl)Cl",
+  "connectivity_smiles": "CC(Cl)Cl",
+  "inchikey": "SCYULBFZEHDVBN-UHFFFAOYSA-N",
+  "formula": "C2H4Cl2",
+  "mw": "98.96"
+ },
+ "11": {
+  "smiles": "C(CCl)Cl",
+  "connectivity_smiles": "C(CCl)Cl",
+  "inchikey": "WSLDOOZREJYCGB-UHFFFAOYSA-N",
+  "formula": "C2H4Cl2",
+  "mw": "98.96"
+ },
+ "6344": {
+  "smiles": "C(Cl)Cl",
+  "connectivity_smiles": "C(Cl)Cl",
+  "inchikey": "YMWUJEATGCHHMB-UHFFFAOYSA-N",
+  "formula": "CH2Cl2",
+  "mw": "84.93"
+ },
+ "3283": {
+  "smiles": "CCOCC",
+  "connectivity_smiles": "CCOCC",
+  "inchikey": "RTZKZFJDLAIYFH-UHFFFAOYSA-N",
+  "formula": "C4H10O",
+  "mw": "74.12"
+ },
+ "7937": {
+  "smiles": "CC1=NC(=CC=C1)C",
+  "connectivity_smiles": "CC1=NC(=CC=C1)C",
+  "inchikey": "OISVCGZHLKNMSJ-UHFFFAOYSA-N",
+  "formula": "C7H9N",
+  "mw": "107.15"
+ },
+ "8857": {
+  "smiles": "CCOC(=O)C",
+  "connectivity_smiles": "CCOC(=O)C",
+  "inchikey": "XEKOWRVHYACXOJ-UHFFFAOYSA-N",
+  "formula": "C4H8O2",
+  "mw": "88.11"
+ },
+ "7500": {
+  "smiles": "CCC1=CC=CC=C1",
+  "connectivity_smiles": "CCC1=CC=CC=C1",
+  "inchikey": "YNQLUTRBYVCPMQ-UHFFFAOYSA-N",
+  "formula": "C8H10",
+  "mw": "106.16"
+ },
+ "7947": {
+  "smiles": "CC1=CC(=CC(=C1)C)C",
+  "connectivity_smiles": "CC1=CC(=CC(=C1)C)C",
+  "inchikey": "AUHZEENZYGFFBQ-UHFFFAOYSA-N",
+  "formula": "C9H12",
+  "mw": "120.19"
+ },
+ "887": {
+  "smiles": "CO",
+  "connectivity_smiles": "CO",
+  "inchikey": "OKKJLVBELUTLKV-UHFFFAOYSA-N",
+  "formula": "CH4O",
+  "mw": "32.042"
+ },
+ "6584": {
+  "smiles": "CC(=O)OC",
+  "connectivity_smiles": "CC(=O)OC",
+  "inchikey": "KXKVLQRXCPHEJC-UHFFFAOYSA-N",
+  "formula": "C3H6O2",
+  "mw": "74.08"
+ },
+ "6569": {
+  "smiles": "CCC(=O)C",
+  "connectivity_smiles": "CCC(=O)C",
+  "inchikey": "ZWEHNKRNPOVVGH-UHFFFAOYSA-N",
+  "formula": "C4H8O",
+  "mw": "72.11"
+ },
+ "6404": {
+  "smiles": "CC(C)(C)CO",
+  "connectivity_smiles": "CC(C)(C)CO",
+  "inchikey": "KPSSIOMAKSHJJG-UHFFFAOYSA-N",
+  "formula": "C5H12O",
+  "mw": "88.15"
+ },
+ "7416": {
+  "smiles": "C1=CC=C(C=C1)[N+](=O)[O-]",
+  "connectivity_smiles": "C1=CC=C(C=C1)[N+](=O)[O-]",
+  "inchikey": "LQNUZADURLCDLV-UHFFFAOYSA-N",
+  "formula": "C6H5NO2",
+  "mw": "123.11"
+ },
+ "6587": {
+  "smiles": "CC[N+](=O)[O-]",
+  "connectivity_smiles": "CC[N+](=O)[O-]",
+  "inchikey": "MCSAJNNLRCFZED-UHFFFAOYSA-N",
+  "formula": "C2H5NO2",
+  "mw": "75.07"
+ },
+ "996": {
+  "smiles": "C1=CC=C(C=C1)O",
+  "connectivity_smiles": "C1=CC=C(C=C1)O",
+  "inchikey": "ISWSIDIOOBJBQZ-UHFFFAOYSA-N",
+  "formula": "C6H6O",
+  "mw": "94.11"
+ },
+ "8082": {
+  "smiles": "C1CCNCC1",
+  "connectivity_smiles": "C1CCNCC1",
+  "inchikey": "NQRYJNQNLNOLGT-UHFFFAOYSA-N",
+  "formula": "C5H11N",
+  "mw": "85.15"
+ },
+ "6591": {
+  "smiles": "C(C(Cl)Cl)(Cl)Cl",
+  "connectivity_smiles": "C(C(Cl)Cl)(Cl)Cl",
+  "inchikey": "QPFMBZIOSGYJDE-UHFFFAOYSA-N",
+  "formula": "C2H2Cl4",
+  "mw": "167.8"
+ },
+ "8028": {
+  "smiles": "C1CCOC1",
+  "connectivity_smiles": "C1CCOC1",
+  "inchikey": "WYURNTSHIVDZCO-UHFFFAOYSA-N",
+  "formula": "C4H8O",
+  "mw": "72.11"
+ },
+ "8894": {
+  "smiles": "C1CCOCC1",
+  "connectivity_smiles": "C1CCOCC1",
+  "inchikey": "DHXVGJBLRPWPCS-UHFFFAOYSA-N",
+  "formula": "C5H10O",
+  "mw": "86.13"
+ },
+ "8404": {
+  "smiles": "C1CCC2=CC=CC=C2C1",
+  "connectivity_smiles": "C1CCC2=CC=CC=C2C1",
+  "inchikey": "CXWXQJXEFPUFDZ-UHFFFAOYSA-N",
+  "formula": "C10H12",
+  "mw": "132.20"
+ },
+ "8030": {
+  "smiles": "C1=CSC=C1",
+  "connectivity_smiles": "C1=CSC=C1",
+  "inchikey": "YTPLMLYBLZKORZ-UHFFFAOYSA-N",
+  "formula": "C4H4S",
+  "mw": "84.14"
+ },
+ "1140": {
+  "smiles": "CC1=CC=CC=C1",
+  "connectivity_smiles": "CC1=CC=CC=C1",
+  "inchikey": "YXFVVABEGXRONW-UHFFFAOYSA-N",
+  "formula": "C7H8",
+  "mw": "92.14"
+ },
+ "6575": {
+  "smiles": "C(=C(Cl)Cl)Cl",
+  "connectivity_smiles": "C(=C(Cl)Cl)Cl",
+  "inchikey": "XSTXAVWGXDQKEL-UHFFFAOYSA-N",
+  "formula": "C2HCl3",
+  "mw": "131.38"
+ },
+ "7237": {
+  "smiles": "CC1=CC=CC=C1C",
+  "connectivity_smiles": "CC1=CC=CC=C1C",
+  "inchikey": "CTQNGGLPUBDAKN-UHFFFAOYSA-N",
+  "formula": "C8H10",
+  "mw": "106.16"
+ },
+ "7929": {
+  "smiles": "CC1=CC(=CC=C1)C",
+  "connectivity_smiles": "CC1=CC(=CC=C1)C",
+  "inchikey": "IVSZLXZYQVIEFR-UHFFFAOYSA-N",
+  "formula": "C8H10",
+  "mw": "106.16"
+ },
+ "7809": {
+  "smiles": "CC1=CC=C(C=C1)C",
+  "connectivity_smiles": "CC1=CC=C(C=C1)C",
+  "inchikey": "URLKBWYHVLBVBO-UHFFFAOYSA-N",
+  "formula": "C8H10",
+  "mw": "106.16"
+ },
+ "24670": {
+  "smiles": "C1=CC=C(C=C1)C2=CC=CC=C2.C1=CC=C(C=C1)OC2=CC=CC=C2",
+  "connectivity_smiles": "C1=CC=C(C=C1)C2=CC=CC=C2.C1=CC=C(C=C1)OC2=CC=CC=C2",
+  "inchikey": "MHCVCKDNQYMGEX-UHFFFAOYSA-N",
+  "formula": "C24H20O",
+  "mw": "324.4"
+ },
+ "6389": {
+  "smiles": "C(F)(Cl)(Cl)Cl",
+  "connectivity_smiles": "C(F)(Cl)(Cl)Cl",
+  "inchikey": "CYRMSUTZVYGINF-UHFFFAOYSA-N",
+  "formula": "CCl3F",
+  "mw": "137.36"
+ },
+ "7909": {
+  "smiles": "CC(C)CC(=O)C",
+  "connectivity_smiles": "CC(C)CC(=O)C",
+  "inchikey": "NTIZESTWPVYFNL-UHFFFAOYSA-N",
+  "formula": "C6H12O",
+  "mw": "100.16"
+ },
+ "10900": {
+  "smiles": "C(=CCl)Cl",
+  "connectivity_smiles": "C(=CCl)Cl",
+  "inchikey": "KFUSEUYYWQURPO-UHFFFAOYSA-N",
+  "formula": "C2H2Cl2",
+  "mw": "96.94"
+ },
+ "31272": {
+  "smiles": "CCCCOC(=O)C",
+  "connectivity_smiles": "CCCCOC(=O)C",
+  "inchikey": "DKPFZGUDAPQIHT-UHFFFAOYSA-N",
+  "formula": "C6H12O2",
+  "mw": "116.16"
+ },
+ "7915": {
+  "smiles": "CC(C)OC(=O)C",
+  "connectivity_smiles": "CC(C)OC(=O)C",
+  "inchikey": "JMMWKPVZQRWMSS-UHFFFAOYSA-N",
+  "formula": "C5H10O2",
+  "mw": "102.13"
+ },
+ "7997": {
+  "smiles": "CCCOC(=O)C",
+  "connectivity_smiles": "CCCOC(=O)C",
+  "inchikey": "YKYONYBAUNKHLG-UHFFFAOYSA-N",
+  "formula": "C5H10O2",
+  "mw": "102.13"
+ },
+ "222": {
+  "smiles": "N",
+  "connectivity_smiles": "N",
+  "inchikey": "QGZKDVFQNNGYKY-UHFFFAOYSA-N",
+  "formula": "H3N",
+  "mw": "17.031"
+ },
+ "712": {
+  "smiles": "C=O",
+  "connectivity_smiles": "C=O",
+  "inchikey": "WSFSSNUMVMOOMR-UHFFFAOYSA-N",
+  "formula": "CH2O",
+  "mw": "30.026"
+ },
+ "768": {
+  "smiles": "C#N",
+  "connectivity_smiles": "C#N",
+  "inchikey": "LELOWRISYMNNSU-UHFFFAOYSA-N",
+  "formula": "CHN",
+  "mw": "27.025"
+ },
+ "6325": {
+  "smiles": "C=C",
+  "connectivity_smiles": "C=C",
+  "inchikey": "VGGSQFUCUMXWEO-UHFFFAOYSA-N",
+  "formula": "C2H4",
+  "mw": "28.05"
+ },
+ "6338": {
+  "smiles": "C=CCl",
+  "connectivity_smiles": "C=CCl",
+  "inchikey": "BZHJMEDXRYGGRV-UHFFFAOYSA-N",
+  "formula": "C2H3Cl",
+  "mw": "62.50"
+ },
+ "6354": {
+  "smiles": "C1CO1",
+  "connectivity_smiles": "C1CO1",
+  "inchikey": "IAYPIBMASNFSPL-UHFFFAOYSA-N",
+  "formula": "C2H4O",
+  "mw": "44.05"
+ },
+ "7501": {
+  "smiles": "C=CC1=CC=CC=C1",
+  "connectivity_smiles": "C=CC1=CC=CC=C1",
+  "inchikey": "PPBRXRYQALVLMV-UHFFFAOYSA-N",
+  "formula": "C8H8",
+  "mw": "104.15"
+ },
+ "7406": {
+  "smiles": "CC(C)C1=CC=CC=C1",
+  "connectivity_smiles": "CC(C)C1=CC=CC=C1",
+  "inchikey": "RWGFKTVRMDUZSP-UHFFFAOYSA-N",
+  "formula": "C9H12",
+  "mw": "120.19"
+ },
+ "6378": {
+  "smiles": "CC1CO1",
+  "connectivity_smiles": "CC1CO1",
+  "inchikey": "GOOHAUXETOMSMM-UHFFFAOYSA-N",
+  "formula": "C3H6O",
+  "mw": "58.08"
+ },
+ "7855": {
+  "smiles": "C=CC#N",
+  "connectivity_smiles": "C=CC#N",
+  "inchikey": "NLHHRLWOUZZQLW-UHFFFAOYSA-N",
+  "formula": "C3H3N",
+  "mw": "53.06"
+ },
+ "7847": {
+  "smiles": "C=CC=O",
+  "connectivity_smiles": "C=CC=O",
+  "inchikey": "HGINCPLSRVDWNT-UHFFFAOYSA-N",
+  "formula": "C3H4O",
+  "mw": "56.06"
+ },
+ "7850": {
+  "smiles": "C=CCCl",
+  "connectivity_smiles": "C=CCCl",
+  "inchikey": "OSDWBNJEKMUWAV-UHFFFAOYSA-N",
+  "formula": "C3H5Cl",
+  "mw": "76.52"
+ },
+ "7844": {
+  "smiles": "CCC=C",
+  "connectivity_smiles": "CCC=C",
+  "inchikey": "VXNZUUAINFGPBY-UHFFFAOYSA-N",
+  "formula": "C4H8",
+  "mw": "56.11"
+ },
+ "7845": {
+  "smiles": "C=CC=C",
+  "connectivity_smiles": "C=CC=C",
+  "inchikey": "KAKZBPTYRLMSJV-UHFFFAOYSA-N",
+  "formula": "C4H6",
+  "mw": "54.09"
+ },
+ "7923": {
+  "smiles": "C1=CC(=O)OC1=O",
+  "connectivity_smiles": "C1=CC(=O)OC1=O",
+  "inchikey": "FPYJFEHAWHCUMM-UHFFFAOYSA-N",
+  "formula": "C4H2O3",
+  "mw": "98.06"
+ },
+ "931": {
+  "smiles": "C1=CC=C2C=CC=CC2=C1",
+  "connectivity_smiles": "C1=CC=C2C=CC=CC2=C1",
+  "inchikey": "UFWIBTONFRDIAS-UHFFFAOYSA-N",
+  "formula": "C10H8",
+  "mw": "128.17"
+ },
+ "7967": {
+  "smiles": "C1CCC(=O)CC1",
+  "connectivity_smiles": "C1CCC(=O)CC1",
+  "inchikey": "JHIVVAPYMSGYDF-UHFFFAOYSA-N",
+  "formula": "C6H10O",
+  "mw": "98.14"
+ },
+ "7858": {
+  "smiles": "C=CCO",
+  "connectivity_smiles": "C=CCO",
+  "inchikey": "XXROGKLTLUQVRX-UHFFFAOYSA-N",
+  "formula": "C3H6O",
+  "mw": "58.08"
+ },
+ "8821": {
+  "smiles": "CCOC(=O)C=C",
+  "connectivity_smiles": "CCOC(=O)C=C",
+  "inchikey": "JIGUQPWFLRLWPJ-UHFFFAOYSA-N",
+  "formula": "C5H8O2",
+  "mw": "100.12"
+ },
+ "6658": {
+  "smiles": "CC(=C)C(=O)OC",
+  "connectivity_smiles": "CC(=C)C(=O)OC",
+  "inchikey": "VVQNEPGJFQJSBK-UHFFFAOYSA-N",
+  "formula": "C5H8O2",
+  "mw": "100.12"
+ },
+ "7407": {
+  "smiles": "CC(=C)C1=CC=CC=C1",
+  "connectivity_smiles": "CC(=C)C1=CC=CC=C1",
+  "inchikey": "XYLMUPLGERFSHI-UHFFFAOYSA-N",
+  "formula": "C9H10",
+  "mw": "118.18"
+ },
+ "3036": {
+  "smiles": "C1=CC(=CC=C1C(C2=CC=C(C=C2)Cl)C(Cl)(Cl)Cl)Cl",
+  "connectivity_smiles": "C1=CC(=CC=C1C(C2=CC=C(C=C2)Cl)C(Cl)(Cl)Cl)Cl",
+  "inchikey": "YVGGHNCTFXOJCH-UHFFFAOYSA-N",
+  "formula": "C14H9Cl5",
+  "mw": "354.5"
+ },
+ "24526": {
+  "smiles": "ClCl",
+  "connectivity_smiles": "ClCl",
+  "inchikey": "KZBUYRJDOAKODT-UHFFFAOYSA-N",
+  "formula": "Cl2",
+  "mw": "70.90"
+ },
+ "2345": {
+  "smiles": "C1=CC=C(C=C1)COC(=O)C2=CC=CC=C2",
+  "connectivity_smiles": "C1=CC=C(C=C1)COC(=O)C2=CC=CC=C2",
+  "inchikey": "SESFRYSPDFLNCH-UHFFFAOYSA-N",
+  "formula": "C14H12O2",
+  "mw": "212.24"
+ },
+ "637511": {
+  "smiles": "C1=CC=C(C=C1)/C=C/C=O",
+  "connectivity_smiles": "C1=CC=C(C=C1)C=CC=O",
+  "inchikey": "KJPRLNWUNMBNBZ-QPJJXVBHSA-N",
+  "formula": "C9H8O",
+  "mw": "132.16"
+ },
+ "3314": {
+  "smiles": "COC1=C(C=CC(=C1)CC=C)O",
+  "connectivity_smiles": "COC1=C(C=CC(=C1)CC=C)O",
+  "inchikey": "RRAFCDWBNXTKKO-UHFFFAOYSA-N",
+  "formula": "C10H12O2",
+  "mw": "164.20"
+ },
+ "2707": {
+  "smiles": "C(C(Cl)(Cl)Cl)(O)O",
+  "connectivity_smiles": "C(C(Cl)(Cl)Cl)(O)O",
+  "inchikey": "RNFNDJAIBTYOQL-UHFFFAOYSA-N",
+  "formula": "C2H3Cl3O2",
+  "mw": "165.40"
+ },
+ "1119": {
+  "smiles": "O=S=O",
+  "connectivity_smiles": "O=S=O",
+  "inchikey": "RAHZWNYVWXNFOC-UHFFFAOYSA-N",
+  "formula": "O2S",
+  "mw": "64.07"
+ },
+ "177": {
+  "smiles": "CC=O",
+  "connectivity_smiles": "CC=O",
+  "inchikey": "IKHGUXGNUITLKF-UHFFFAOYSA-N",
+  "formula": "C2H4O",
+  "mw": "44.05"
+ },
+ "7918": {
+  "smiles": "CC(=O)OC(=O)C",
+  "connectivity_smiles": "CC(=O)OC(=O)C",
+  "inchikey": "WFDIJRYMOXRFFG-UHFFFAOYSA-N",
+  "formula": "C4H6O3",
+  "mw": "102.09"
+ },
+ "447466": {
+  "smiles": "C/C=C/C=O",
+  "connectivity_smiles": "CC=CC=O",
+  "inchikey": "MLUCVPSAIODCQM-NSCUHMNNSA-N",
+  "formula": "C4H6O",
+  "mw": "70.09"
+ },
+ "10986": {
+  "smiles": "CC(=O)[O-].CC(=O)[O-].[Cd+2]",
+  "connectivity_smiles": "CC(=O)[O-].CC(=O)[O-].[Cd+2]",
+  "inchikey": "LHQLJMJLROMYRN-UHFFFAOYSA-L",
+  "formula": "C4H6CdO4",
+  "mw": "230.50"
+ },
+ "7044": {
+  "smiles": "C1CCC2CCCCC2C1",
+  "connectivity_smiles": "C1CCC2CCCCC2C1",
+  "inchikey": "NNBZCPXTIHJBJL-UHFFFAOYSA-N",
+  "formula": "C10H18",
+  "mw": "138.25"
+ },
+ "8175": {
+  "smiles": "CCCCCCCCCC=O",
+  "connectivity_smiles": "CCCCCCCCCC=O",
+  "inchikey": "KSMVZQYAVGTKIV-UHFFFAOYSA-N",
+  "formula": "C10H20O",
+  "mw": "156.26"
+ },
+ "12844": {
+  "smiles": "CCCCCCCC1CCCC(=O)O1",
+  "connectivity_smiles": "CCCCCCCC1CCCC(=O)O1",
+  "inchikey": "QRPLZGZHJABGRS-UHFFFAOYSA-N",
+  "formula": "C12H22O2",
+  "mw": "198.30"
+ },
+ "650": {
+  "smiles": "CC(=O)C(=O)C",
+  "connectivity_smiles": "CC(=O)C(=O)C",
+  "inchikey": "QSJXEFYPDANLFS-UHFFFAOYSA-N",
+  "formula": "C4H6O2",
+  "mw": "86.09"
+ },
+ "8040": {
+  "smiles": "CC(=O)OOC(=O)C",
+  "connectivity_smiles": "CC(=O)OOC(=O)C",
+  "inchikey": "ZQMIGQNCOMNODD-UHFFFAOYSA-N",
+  "formula": "C4H6O4",
+  "mw": "118.09"
+ },
+ "8846": {
+  "smiles": "CCCCOC(=O)C=C",
+  "connectivity_smiles": "CCCCOC(=O)C=C",
+  "inchikey": "CQEYYJKEWSMYFG-UHFFFAOYSA-N",
+  "formula": "C7H12O2",
+  "mw": "128.17"
+ },
+ "3031": {
+  "smiles": "C1=CC(=C(C(=C1)Cl)C#N)Cl",
+  "connectivity_smiles": "C1=CC(=C(C(=C1)Cl)C#N)Cl",
+  "inchikey": "YOYAIZYFCNQIRF-UHFFFAOYSA-N",
+  "formula": "C7H3Cl2N",
+  "mw": "172.01"
+ },
+ "11715": {
+  "smiles": "CC(=O)CBr",
+  "connectivity_smiles": "CC(=O)CBr",
+  "inchikey": "VQFAIAKCILWQPZ-UHFFFAOYSA-N",
+  "formula": "C3H5BrO",
+  "mw": "136.98"
+ },
+ "6627": {
+  "smiles": "C1=CC=C(C=C1)[Si](C2=CC=CC=C2)(Cl)Cl",
+  "connectivity_smiles": "C1=CC=C(C=C1)[Si](C2=CC=CC=C2)(Cl)Cl",
+  "inchikey": "OSXYHAQZDCICNX-UHFFFAOYSA-N",
+  "formula": "C12H10Cl2Si",
+  "mw": "253.19"
+ },
+ "3039": {
+  "smiles": "COP(=O)(OC)OC=C(Cl)Cl",
+  "connectivity_smiles": "COP(=O)(OC)OC=C(Cl)Cl",
+  "inchikey": "OEBRKCOSUFCWJD-UHFFFAOYSA-N",
+  "formula": "C4H7Cl2O4P",
+  "mw": "220.97"
+ },
+ "6492": {
+  "smiles": "C1C=CC2C1C3CC2C=C3",
+  "connectivity_smiles": "C1C=CC2C1C3CC2C=C3",
+  "inchikey": "HECLRDQVFMWTQS-UHFFFAOYSA-N",
+  "formula": "C10H12",
+  "mw": "132.20"
+ },
+ "6356": {
+  "smiles": "B(F)(F)F",
+  "connectivity_smiles": "B(F)(F)F",
+  "inchikey": "WTEOIRVLGSZEPR-UHFFFAOYSA-N",
+  "formula": "BF3",
+  "mw": "67.81"
+ },
+ "25135": {
+  "smiles": "B(Cl)(Cl)Cl",
+  "connectivity_smiles": "B(Cl)(Cl)Cl",
+  "inchikey": "FAQYAMRNWDIXMY-UHFFFAOYSA-N",
+  "formula": "BCl3",
+  "mw": "117.2"
+ },
+ "25134": {
+  "smiles": "B(Br)(Br)Br",
+  "connectivity_smiles": "B(Br)(Br)Br",
+  "inchikey": "ILAHWRKJUDSMFH-UHFFFAOYSA-N",
+  "formula": "BBr3",
+  "mw": "250.53"
+ },
+ "10461": {
+  "smiles": "C(CCl)SCCCl",
+  "connectivity_smiles": "C(CCl)SCCCl",
+  "inchikey": "QKSKPIVNLNLAAV-UHFFFAOYSA-N",
+  "formula": "C4H8Cl2S",
+  "mw": "159.08"
+ },
+ "17038": {
+  "smiles": "C1C=CCC2C1C(=O)N(C2=O)SC(C(Cl)Cl)(Cl)Cl",
+  "connectivity_smiles": "C1C=CCC2C1C(=O)N(C2=O)SC(C(Cl)Cl)(Cl)Cl",
+  "inchikey": "JHRWWRDRBPCWTF-UHFFFAOYSA-N",
+  "formula": "C10H9Cl4NO2S",
+  "mw": "349.1"
+ },
+ "7641": {
+  "smiles": "CCCCC(CC)COC(=O)CCCCC(=O)OCC(CC)CCCC",
+  "connectivity_smiles": "CCCCC(CC)COC(=O)CCCCC(=O)OCC(CC)CCCC",
+  "inchikey": "SAOKZLXYCUGLFA-UHFFFAOYSA-N",
+  "formula": "C22H42O4",
+  "mw": "370.6"
+ },
+ "7773": {
+  "smiles": "CCCCCCCCCCCC(=O)OOC(=O)CCCCCCCCCCC",
+  "connectivity_smiles": "CCCCCCCCCCCC(=O)OOC(=O)CCCCCCCCCCC",
+  "inchikey": "YIVJZNGAASQVEM-UHFFFAOYSA-N",
+  "formula": "C24H46O4",
+  "mw": "398.6"
+ },
+ "5273469": {
+  "smiles": "C1=CC=C(C=C1)COC(=O)/C=C/C2=CC=CC=C2",
+  "connectivity_smiles": "C1=CC=C(C=C1)COC(=O)C=CC2=CC=CC=C2",
+  "inchikey": "NGHOLYJTSCBCGC-VAWYXSNFSA-N",
+  "formula": "C16H14O2",
+  "mw": "238.28"
+ },
+ "6398": {
+  "smiles": "C[Si](C)(Cl)Cl",
+  "connectivity_smiles": "C[Si](C)(Cl)Cl",
+  "inchikey": "LIKFHECYJZWXFJ-UHFFFAOYSA-N",
+  "formula": "C2H6Cl2Si",
+  "mw": "129.06"
+ },
+ "10687": {
+  "smiles": "CC1=C(C(=CC=C1)O)C",
+  "connectivity_smiles": "CC1=C(C(=CC=C1)O)C",
+  "inchikey": "QWBBPBRQALCEIZ-UHFFFAOYSA-N",
+  "formula": "C8H10O",
+  "mw": "122.16"
+ },
+ "31271": {
+  "smiles": "CCCCCCCCOC(=O)CCCCC(=O)OCCCCCCCC",
+  "connectivity_smiles": "CCCCCCCCOC(=O)CCCCC(=O)OCCCCCCCC",
+  "inchikey": "NEHDRDVHPTWWFG-UHFFFAOYSA-N",
+  "formula": "C22H42O4",
+  "mw": "370.6"
+ },
+ "7503": {
+  "smiles": "C1=CC=C(C=C1)CCl",
+  "connectivity_smiles": "C1=CC=C(C=C1)CCl",
+  "inchikey": "KCXMKQUNVWSEMD-UHFFFAOYSA-N",
+  "formula": "C7H7Cl",
+  "mw": "126.58"
+ },
+ "7498": {
+  "smiles": "C1=CC=C(C=C1)CBr",
+  "connectivity_smiles": "C1=CC=C(C=C1)CBr",
+  "inchikey": "AGEZXYOZHKGVCM-UHFFFAOYSA-N",
+  "formula": "C7H7Br",
+  "mw": "171.03"
+ },
+ "10426": {
+  "smiles": "C(=O)(OC(Cl)(Cl)Cl)Cl",
+  "connectivity_smiles": "C(=O)(OC(Cl)(Cl)Cl)Cl",
+  "inchikey": "HCUYBXPSSCRKRF-UHFFFAOYSA-N",
+  "formula": "C2Cl4O2",
+  "mw": "197.8"
+ },
+ "7412": {
+  "smiles": "C1=CC=C(C=C1)C(=O)Cl",
+  "connectivity_smiles": "C1=CC=C(C=C1)C(=O)Cl",
+  "inchikey": "PASDCCFISLVPSO-UHFFFAOYSA-N",
+  "formula": "C7H5ClO",
+  "mw": "140.56"
+ },
+ "8400": {
+  "smiles": "C1=CC=C(C=C1)C(C(=O)C2=CC=CC=C2)O",
+  "connectivity_smiles": "C1=CC=C(C=C1)C(C(=O)C2=CC=CC=C2)O",
+  "inchikey": "ISAOCJYIOMOJEB-UHFFFAOYSA-N",
+  "formula": "C14H12O2",
+  "mw": "212.24"
+ },
+ "20568": {
+  "smiles": "CCCCCCCCCCCC[Si](Cl)(Cl)Cl",
+  "connectivity_smiles": "CCCCCCCCCCCC[Si](Cl)(Cl)Cl",
+  "inchikey": "BNCXNUWGWUZTCN-UHFFFAOYSA-N",
+  "formula": "C12H25Cl3Si",
+  "mw": "303.8"
+ },
+ "240": {
+  "smiles": "C1=CC=C(C=C1)C=O",
+  "connectivity_smiles": "C1=CC=C(C=C1)C=O",
+  "inchikey": "HUMNYLRZRPPJDN-UHFFFAOYSA-N",
+  "formula": "C7H6O",
+  "mw": "106.12"
+ },
+ "12968": {
+  "smiles": "CCCN(CCC)C(=O)SCC",
+  "connectivity_smiles": "CCCN(CCC)C(=O)SCC",
+  "inchikey": "GUVLYNGULCJVDO-UHFFFAOYSA-N",
+  "formula": "C9H19NOS",
+  "mw": "189.32"
+ },
+ "8868": {
+  "smiles": "CCOC(=O)CC(=O)C",
+  "connectivity_smiles": "CCOC(=O)CC(=O)C",
+  "inchikey": "XYIBRDXRRQCHLP-UHFFFAOYSA-N",
+  "formula": "C6H10O3",
+  "mw": "130.14"
+ },
+ "6877": {
+  "smiles": "CCOC(=O)C1=CC=CC=C1N",
+  "connectivity_smiles": "CCOC(=O)C1=CC=CC=C1N",
+  "inchikey": "TWLLPUMZVVGILS-UHFFFAOYSA-N",
+  "formula": "C9H11NO2",
+  "mw": "165.19"
+ },
+ "7762": {
+  "smiles": "CCCC(=O)OCC",
+  "connectivity_smiles": "CCCC(=O)OCC",
+  "inchikey": "OBNCKNCVKJNDBV-UHFFFAOYSA-N",
+  "formula": "C6H12O2",
+  "mw": "116.16"
+ },
+ "7751": {
+  "smiles": "CCOC(=O)CCl",
+  "connectivity_smiles": "CCOC(=O)CCl",
+  "inchikey": "VEUUMBGHMNQHGO-UHFFFAOYSA-N",
+  "formula": "C4H7ClO2",
+  "mw": "122.55"
+ },
+ "10928": {
+  "smiles": "CCOC(=O)Cl",
+  "connectivity_smiles": "CCOC(=O)Cl",
+  "inchikey": "RIFGWPKJUGCATF-UHFFFAOYSA-N",
+  "formula": "C3H5ClO2",
+  "mw": "108.52"
+ },
+ "7344": {
+  "smiles": "CCOC(=O)C(C)O",
+  "connectivity_smiles": "CCOC(=O)C(C)O",
+  "inchikey": "LZCLXQDLBQLTDK-UHFFFAOYSA-N",
+  "formula": "C5H10O3",
+  "mw": "118.13"
+ },
+ "8026": {
+  "smiles": "CCON=O",
+  "connectivity_smiles": "CCON=O",
+  "inchikey": "QQZWEECEMNQSTG-UHFFFAOYSA-N",
+  "formula": "C2H5NO2",
+  "mw": "75.07"
+ },
+ "54680660": {
+  "smiles": "CCCCCCCCCCCCCCCC(=O)OC[C@@H]([C@@H]1C(=C(C(=O)O1)O)O)O",
+  "connectivity_smiles": "CCCCCCCCCCCCCCCC(=O)OCC(C1C(=C(C(=O)O1)O)O)O",
+  "inchikey": "QAQJMLQRFWZOBN-LAUBAEHRSA-N",
+  "formula": "C22H38O7",
+  "mw": "414.5"
+ },
+ "11711": {
+  "smiles": "CC[As](Cl)Cl",
+  "connectivity_smiles": "CC[As](Cl)Cl",
+  "inchikey": "LQSFEOMOHFPNEB-UHFFFAOYSA-N",
+  "formula": "C2H5AsCl2",
+  "mw": "174.89"
+ },
+ "34": {
+  "smiles": "C(CCl)O",
+  "connectivity_smiles": "C(CCl)O",
+  "inchikey": "SZIFAVKTNFCBPC-UHFFFAOYSA-N",
+  "formula": "C2H5ClO",
+  "mw": "80.51"
+ },
+ "8160": {
+  "smiles": "CCCCOCCOC(=O)C",
+  "connectivity_smiles": "CCCCOCCOC(=O)C",
+  "inchikey": "NQBXSWAWVZHKBZ-UHFFFAOYSA-N",
+  "formula": "C8H16O3",
+  "mw": "160.21"
+ },
+ "14304": {
+  "smiles": "CC[Si](C1=CC=CC=C1)(Cl)Cl",
+  "connectivity_smiles": "CC[Si](C1=CC=CC=C1)(Cl)Cl",
+  "inchikey": "QFHGBZXWBRWAQV-UHFFFAOYSA-N",
+  "formula": "C8H10Cl2Si",
+  "mw": "205.15"
+ },
+ "24294": {
+  "smiles": "Cl[Sb](Cl)(Cl)(Cl)Cl",
+  "connectivity_smiles": "Cl[Sb](Cl)(Cl)(Cl)Cl",
+  "inchikey": "VMPVEPPRYRXYNP-UHFFFAOYSA-I",
+  "formula": "Cl5Sb",
+  "mw": "299.0"
+ },
+ "445070": {
+  "smiles": "CC(=CCC/C(=C/CC/C(=C/CO)/C)/C)C",
+  "connectivity_smiles": "CC(=CCCC(=CCCC(=CCO)C)C)C",
+  "inchikey": "CRDAMVZIKSXKFV-YFVJMOTDSA-N",
+  "formula": "C15H26O",
+  "mw": "222.37"
+ },
+ "637566": {
+  "smiles": "CC(=CCC/C(=C/CO)/C)C",
+  "connectivity_smiles": "CC(=CCCC(=CCO)C)C",
+  "inchikey": "GLZPCOQZEFWAFX-JXMROGBWSA-N",
+  "formula": "C10H18O",
+  "mw": "154.25"
+ },
+ "5283468": {
+  "smiles": "CCCCCCCC/C=C\\CCCCCCCC(=O)OCC(CO)O",
+  "connectivity_smiles": "CCCCCCCCC=CCCCCCCCC(=O)OCC(CO)O",
+  "inchikey": "RZRNAYUHWVFMIP-KTKRTIGZSA-N",
+  "formula": "C21H40O4",
+  "mw": "356.5"
+ },
+ "7837": {
+  "smiles": "CC(=C)C(=O)OCC1CO1",
+  "connectivity_smiles": "CC(=C)C(=O)OCC1CO1",
+  "inchikey": "VOZRXNHHFUQHIL-UHFFFAOYSA-N",
+  "formula": "C7H10O3",
+  "mw": "142.15"
+ },
+ "8115": {
+  "smiles": "C(CCl)OCCCl",
+  "connectivity_smiles": "C(CCl)OCCCl",
+  "inchikey": "ZNSMNVMLTJELDZ-UHFFFAOYSA-N",
+  "formula": "C4H8Cl2O",
+  "mw": "143.01"
+ },
+ "280": {
+  "smiles": "C(=O)=O",
+  "connectivity_smiles": "C(=O)=O",
+  "inchikey": "CURLTUGMZLYLDI-UHFFFAOYSA-N",
+  "formula": "CO2",
+  "mw": "44.009"
+ },
+ "24870": {
+  "smiles": "O=Cl[O]",
+  "connectivity_smiles": "O=Cl[O]",
+  "inchikey": "OSVXSBDYLRYLIG-UHFFFAOYSA-N",
+  "formula": "ClO2",
+  "mw": "67.45"
+ },
+ "7239": {
+  "smiles": "C1=CC=C(C(=C1)Cl)Cl",
+  "connectivity_smiles": "C1=CC=C(C(=C1)Cl)Cl",
+  "inchikey": "RFFLAFLAYFXFSW-UHFFFAOYSA-N",
+  "formula": "C6H4Cl2",
+  "mw": "147.00"
+ },
+ "7958": {
+  "smiles": "CC(C)CC(=O)CC(C)C",
+  "connectivity_smiles": "CC(C)CC(=O)CC(C)C",
+  "inchikey": "PTTPXKJBFFKCEK-UHFFFAOYSA-N",
+  "formula": "C9H18O",
+  "mw": "142.24"
+ },
+ "1493": {
+  "smiles": "C1=CC(=C(C=C1[N+](=O)[O-])[N+](=O)[O-])O",
+  "connectivity_smiles": "C1=CC(=C(C=C1[N+](=O)[O-])[N+](=O)[O-])O",
+  "inchikey": "UFBJCMHMOXMLKC-UHFFFAOYSA-N",
+  "formula": "C6H4N2O5",
+  "mw": "184.11"
+ },
+ "6337": {
+  "smiles": "CCCl",
+  "connectivity_smiles": "CCCl",
+  "inchikey": "HRYZWHHZPQKTII-UHFFFAOYSA-N",
+  "formula": "C2H5Cl",
+  "mw": "64.51"
+ },
+ "8133": {
+  "smiles": "CCCCOCCO",
+  "connectivity_smiles": "CCCCOCCO",
+  "inchikey": "POAOYUHQDCAZBD-UHFFFAOYSA-N",
+  "formula": "C6H14O2",
+  "mw": "118.17"
+ },
+ "9033": {
+  "smiles": "C1CN1",
+  "connectivity_smiles": "C1CN1",
+  "inchikey": "NOWKCMXCCJGMRR-UHFFFAOYSA-N",
+  "formula": "C2H5N",
+  "mw": "43.07"
+ },
+ "24524": {
+  "smiles": "FF",
+  "connectivity_smiles": "FF",
+  "inchikey": "PXGOKWXKJXAPGV-UHFFFAOYSA-N",
+  "formula": "F2",
+  "mw": "37.99680632"
+ },
+ "11583": {
+  "smiles": "CCCCC(=O)C",
+  "connectivity_smiles": "CCCCC(=O)C",
+  "inchikey": "QQZOPKMRPOGIEB-UHFFFAOYSA-N",
+  "formula": "C6H12O",
+  "mw": "100.16"
+ },
+ "313": {
+  "smiles": "Cl",
+  "connectivity_smiles": "Cl",
+  "inchikey": "VEXZGXHMUGYJMC-UHFFFAOYSA-N",
+  "formula": "ClH",
+  "mw": "36.46"
+ },
+ "6184": {
+  "smiles": "CCCCCC=O",
+  "connectivity_smiles": "CCCCCC=O",
+  "inchikey": "JARKCYVAAOWBJS-UHFFFAOYSA-N",
+  "formula": "C6H12O",
+  "mw": "100.16"
+ },
+ "8103": {
+  "smiles": "CCCCCCO",
+  "connectivity_smiles": "CCCCCCO",
+  "inchikey": "ZSIAUFGUXNUGDI-UHFFFAOYSA-N",
+  "formula": "C6H14O",
+  "mw": "102.17"
+ },
+ "3610": {
+  "smiles": "CCCCCCC1=C(C=C(C=C1)O)O",
+  "connectivity_smiles": "CCCCCCC1=C(C=C(C=C1)O)O",
+  "inchikey": "WFJIVOKAWHGMBH-UHFFFAOYSA-N",
+  "formula": "C12H18O2",
+  "mw": "194.27"
+ },
+ "8438": {
+  "smiles": "C1OC2=C(O1)C=C(C=C2)C=O",
+  "connectivity_smiles": "C1OC2=C(O1)C=C(C=C2)C=O",
+  "inchikey": "SATCULPHIDQDRE-UHFFFAOYSA-N",
+  "formula": "C8H6O3",
+  "mw": "150.13"
+ },
+ "5541": {
+  "smiles": "CC(=O)OCC(COC(=O)C)OC(=O)C",
+  "connectivity_smiles": "CC(=O)OCC(COC(=O)C)OC(=O)C",
+  "inchikey": "URAYPUMNDPQOKB-UHFFFAOYSA-N",
+  "formula": "C9H14O6",
+  "mw": "218.20"
+ },
+ "1549026": {
+  "smiles": "CC(=CCC/C(=C/COC(=O)C)/C)C",
+  "connectivity_smiles": "CC(=CCCC(=CCOC(=O)C)C)C",
+  "inchikey": "HIGQPQRQIQDZMP-DHZHZOJOSA-N",
+  "formula": "C12H20O2",
+  "mw": "196.29"
+ },
+ "1254": {
+  "smiles": "CC1CCC(C(C1)O)C(C)C",
+  "connectivity_smiles": "CC1CCC(C(C1)O)C(C)C",
+  "inchikey": "NOOLISFMXDJSKH-UHFFFAOYSA-N",
+  "formula": "C10H20O",
+  "mw": "156.26"
+ },
+ "7794": {
+  "smiles": "CC(CCC=C(C)C)CC=O",
+  "connectivity_smiles": "CC(CCC=C(C)C)CC=O",
+  "inchikey": "NEHNMFOYXAPHSD-UHFFFAOYSA-N",
+  "formula": "C10H18O",
+  "mw": "154.25"
+ },
+ "798": {
+  "smiles": "C1=CC=C2C(=C1)C=CN2",
+  "connectivity_smiles": "C1=CC=C2C(=C1)C=CN2",
+  "inchikey": "SIKJAQJRHWYJAI-UHFFFAOYSA-N",
+  "formula": "C8H7N",
+  "mw": "117.15"
+ },
+ "8053": {
+  "smiles": "CC(C)CCON=O",
+  "connectivity_smiles": "CC(C)CCON=O",
+  "inchikey": "OWFXIOWLTKNBAP-UHFFFAOYSA-N",
+  "formula": "C5H11NO2",
+  "mw": "117.15"
+ },
+ "8038": {
+  "smiles": "CC(C)COC(=O)C",
+  "connectivity_smiles": "CC(C)COC(=O)C",
+  "inchikey": "GJRQTCIYDGXPES-UHFFFAOYSA-N",
+  "formula": "C6H12O2",
+  "mw": "116.16"
+ },
+ "6561": {
+  "smiles": "CC(C)C=O",
+  "connectivity_smiles": "CC(C)C=O",
+  "inchikey": "AMIMRNSIRUDHCM-UHFFFAOYSA-N",
+  "formula": "C4H8O",
+  "mw": "72.11"
+ },
+ "14899": {
+  "smiles": "CC(C)CCCCCCCOC(=O)C=C",
+  "connectivity_smiles": "CC(C)CCCCCCCOC(=O)C=C",
+  "inchikey": "LVGFPWDANALGOY-UHFFFAOYSA-N",
+  "formula": "C13H24O2",
+  "mw": "212.33"
+ },
+ "5971": {
+  "smiles": "C=CCN=C=S",
+  "connectivity_smiles": "C=CCN=C=S",
+  "inchikey": "ZOJBYZNEUISWFT-UHFFFAOYSA-N",
+  "formula": "C4H5NS",
+  "mw": "99.16"
+ },
+ "6544": {
+  "smiles": "CC1=CC(=O)CC(C1)(C)C",
+  "connectivity_smiles": "CC1=CC(=O)CC(C1)(C)C",
+  "inchikey": "HJOVHMDZYOCNQW-UHFFFAOYSA-N",
+  "formula": "C9H14O",
+  "mw": "138.21"
+ },
+ "18052": {
+  "smiles": "C=CCOC(=O)Cl",
+  "connectivity_smiles": "C=CCOC(=O)Cl",
+  "inchikey": "CAEWJEXPFKNBQL-UHFFFAOYSA-N",
+  "formula": "C4H5ClO2",
+  "mw": "120.53"
+ },
+ "7841": {
+  "smiles": "C=CCBr",
+  "connectivity_smiles": "C=CCBr",
+  "inchikey": "BHELZAPQIKSEDF-UHFFFAOYSA-N",
+  "formula": "C3H5Br",
+  "mw": "120.98"
+ },
+ "7914": {
+  "smiles": "CC(C)OC(C)C",
+  "connectivity_smiles": "CC(C)OC(C)C",
+  "inchikey": "ZAFNJMIOTHYJRJ-UHFFFAOYSA-N",
+  "formula": "C6H14O",
+  "mw": "102.17"
+ },
+ "11552": {
+  "smiles": "CC(C)CC=O",
+  "connectivity_smiles": "CC(C)CC=O",
+  "inchikey": "YGHRJJRRZDOVPD-UHFFFAOYSA-N",
+  "formula": "C5H10O",
+  "mw": "86.13"
+ },
+ "11025": {
+  "smiles": "CC(=O)[O-].CC(=O)[O-].CC(=O)[O-].CC(=O)[O-].[Pb+2]",
+  "connectivity_smiles": "CC(=O)[O-].CC(=O)[O-].CC(=O)[O-].CC(=O)[O-].[Pb+2]",
+  "inchikey": "ACKFDYCQCBEDNU-UHFFFAOYSA-J",
+  "formula": "C8H12O8Pb-2",
+  "mw": "443"
+ },
+ "8294": {
+  "smiles": "CC(=CCCC(C)(C=C)OC(=O)C)C",
+  "connectivity_smiles": "CC(=CCCC(C)(C=C)OC(=O)C)C",
+  "inchikey": "UWKAYLJWKGQEPM-UHFFFAOYSA-N",
+  "formula": "C12H20O2",
+  "mw": "196.29"
+ },
+ "6549": {
+  "smiles": "CC(=CCCC(C)(C=C)O)C",
+  "connectivity_smiles": "CC(=CCCC(C)(C=C)O)C",
+  "inchikey": "CDOSHBSSFJOMGT-UHFFFAOYSA-N",
+  "formula": "C10H18O",
+  "mw": "154.25"
+ },
+ "6505": {
+  "smiles": "CCCCOC(=O)CC(CC(=O)OCCCC)(C(=O)OCCCC)OC(=O)C",
+  "connectivity_smiles": "CCCCOC(=O)CC(CC(=O)OCCCC)(C(=O)OCCCC)OC(=O)C",
+  "inchikey": "QZCLKYGREBVARF-UHFFFAOYSA-N",
+  "formula": "C20H34O8",
+  "mw": "402.5"
+ },
+ "6367": {
+  "smiles": "CC(=O)Cl",
+  "connectivity_smiles": "CC(=O)Cl",
+  "inchikey": "WETWJCDKMRHUPV-UHFFFAOYSA-N",
+  "formula": "C2H3ClO",
+  "mw": "78.50"
+ },
+ "10482": {
+  "smiles": "CC(=O)Br",
+  "connectivity_smiles": "CC(=O)Br",
+  "inchikey": "FXXACINHVKSMDR-UHFFFAOYSA-N",
+  "formula": "C2H3BrO",
+  "mw": "122.95"
+ },
+ "7758": {
+  "smiles": "CCC(C)OC(=O)C",
+  "connectivity_smiles": "CCC(C)OC(=O)C",
+  "inchikey": "DCKVNWZUADLDEH-UHFFFAOYSA-N",
+  "formula": "C6H12O2",
+  "mw": "116.16"
+ },
+ "6568": {
+  "smiles": "CCC(C)O",
+  "connectivity_smiles": "CCC(C)O",
+  "inchikey": "BTANRVKWQNVYAZ-UHFFFAOYSA-N",
+  "formula": "C4H10O",
+  "mw": "74.12"
+ },
+ "24007": {
+  "smiles": "O=[Se]=O",
+  "connectivity_smiles": "O=[Se]=O",
+  "inchikey": "JPJALAQPGMAKDF-UHFFFAOYSA-N",
+  "formula": "O2Se",
+  "mw": "110.97"
+ },
+ "24647": {
+  "smiles": "O=[Se](Cl)Cl",
+  "connectivity_smiles": "O=[Se](Cl)Cl",
+  "inchikey": "LIRMPIXWGWLNND-UHFFFAOYSA-N",
+  "formula": "Cl2OSe",
+  "mw": "165.87"
+ },
+ "24556": {
+  "smiles": "F[Si](F)(F)F",
+  "connectivity_smiles": "F[Si](F)(F)F",
+  "inchikey": "ABTOQLMXBSRXSM-UHFFFAOYSA-N",
+  "formula": "F4Si",
+  "mw": "104.079"
+ },
+ "957": {
+  "smiles": "CCCCCCCCO",
+  "connectivity_smiles": "CCCCCCCCO",
+  "inchikey": "KBPLFHHGFOOTCA-UHFFFAOYSA-N",
+  "formula": "C8H18O",
+  "mw": "130.23"
+ },
+ "8418": {
+  "smiles": "C1=CC=C2C=C3C=CC=CC3=CC2=C1",
+  "connectivity_smiles": "C1=CC=C2C=C3C=CC=CC3=CC2=C1",
+  "inchikey": "MWPLVEDNUUSJAV-UHFFFAOYSA-N",
+  "formula": "C14H10",
+  "mw": "178.23"
+ },
+ "6570": {
+  "smiles": "CC(=O)C=C",
+  "connectivity_smiles": "CC(=O)C=C",
+  "inchikey": "FUSUHKVFWTUUBE-UHFFFAOYSA-N",
+  "formula": "C4H6O",
+  "mw": "70.09"
+ },
+ "24823": {
+  "smiles": "[O-][O+]=O",
+  "connectivity_smiles": "[O-][O+]=O",
+  "inchikey": "CBENFWSGALASAD-UHFFFAOYSA-N",
+  "formula": "O3",
+  "mw": "47.998"
+ },
+ "3032552": {
+  "smiles": "N(=O)[O]",
+  "connectivity_smiles": "N(=O)[O]",
+  "inchikey": "JCXJVPUVTGWSNB-UHFFFAOYSA-N",
+  "formula": "NO2",
+  "mw": "46.006"
+ },
+ "30318": {
+  "smiles": "O=[Os](=O)(=O)=O",
+  "connectivity_smiles": "O=[Os](=O)(=O)=O",
+  "inchikey": "VUVGYHUDAICLFK-UHFFFAOYSA-N",
+  "formula": "O4Os",
+  "mw": "254.2"
+ },
+ "6998": {
+  "smiles": "C1=CC=C(C(=C1)C=O)O",
+  "connectivity_smiles": "C1=CC=C(C(=C1)C=O)O",
+  "inchikey": "SMQUZDBALVYZAC-UHFFFAOYSA-N",
+  "formula": "C7H6O2",
+  "mw": "122.12"
+ },
+ "6506": {
+  "smiles": "CCOC(=O)CC(CC(=O)OCC)(C(=O)OCC)O",
+  "connectivity_smiles": "CCOC(=O)CC(CC(=O)OCC)(C(=O)OCC)O",
+  "inchikey": "DOOTYTYQINUNNV-UHFFFAOYSA-N",
+  "formula": "C12H20O7",
+  "mw": "276.28"
+ },
+ "23662384": {
+  "smiles": "CC(=O)O.CC(=O)[O-].[Na+]",
+  "connectivity_smiles": "CC(=O)O.CC(=O)[O-].[Na+]",
+  "inchikey": "BHZOKUMUHVTPBX-UHFFFAOYSA-M",
+  "formula": "C4H7NaO4",
+  "mw": "142.09"
+ },
+ "23665760": {
+  "smiles": "[O-]Cl.[Na+]",
+  "connectivity_smiles": "[O-]Cl.[Na+]",
+  "inchikey": "SUKJFIGYRHOWBL-UHFFFAOYSA-N",
+  "formula": "ClNaO",
+  "mw": "74.44"
+ },
+ "24813": {
+  "smiles": "O=P(Cl)(Cl)Cl",
+  "connectivity_smiles": "O=P(Cl)(Cl)Cl",
+  "inchikey": "XHXFXVLFKHQFAL-UHFFFAOYSA-N",
+  "formula": "Cl3OP",
+  "mw": "153.33"
+ },
+ "6371": {
+  "smiles": "C(=O)(Cl)Cl",
+  "connectivity_smiles": "C(=O)(Cl)Cl",
+  "inchikey": "YGYAWVDWMABLBF-UHFFFAOYSA-N",
+  "formula": "CCl2O",
+  "mw": "98.91"
+ },
+ "25353": {
+  "smiles": "S(Cl)Cl",
+  "connectivity_smiles": "S(Cl)Cl",
+  "inchikey": "FWMUJAIKEJWSSY-UHFFFAOYSA-N",
+  "formula": "Cl2S",
+  "mw": "102.97"
+ },
+ "11954021": {
+  "smiles": "C1C2C(C(C1Cl)Cl)[C@]3(C(=C([C@@]2(C3(Cl)Cl)Cl)Cl)Cl)Cl",
+  "connectivity_smiles": "C1C2C(C(C1Cl)Cl)C3(C(=C(C2(C3(Cl)Cl)Cl)Cl)Cl)Cl",
+  "inchikey": "BIWJNBZANLAXMG-YQELWRJZSA-N",
+  "formula": "C10H6Cl8",
+  "mw": "409.8"
+ },
+ "1146": {
+  "smiles": "CN(C)C",
+  "connectivity_smiles": "CN(C)C",
+  "inchikey": "GETQZCLCWQTVFV-UHFFFAOYSA-N",
+  "formula": "C3H9N",
+  "mw": "59.11"
+ },
+ "2365": {
+  "smiles": "C1COC1=O",
+  "connectivity_smiles": "C1COC1=O",
+  "inchikey": "VEZXCJBBBCKRPI-UHFFFAOYSA-N",
+  "formula": "C3H4O2",
+  "mw": "72.06"
+ },
+ "6351": {
+  "smiles": "C1CC1",
+  "connectivity_smiles": "C1CC1",
+  "inchikey": "LVZWSLJZHVFIQJ-UHFFFAOYSA-N",
+  "formula": "C3H6",
+  "mw": "42.08"
+ },
+ "878": {
+  "smiles": "CS",
+  "connectivity_smiles": "CS",
+  "inchikey": "LSDPWZHWYPCBBB-UHFFFAOYSA-N",
+  "formula": "CH4S",
+  "mw": "48.11"
+ },
+ "379": {
+  "smiles": "CCCCCCCC(=O)O",
+  "connectivity_smiles": "CCCCCCCC(=O)O",
+  "inchikey": "WWZKQHOCKIZLMA-UHFFFAOYSA-N",
+  "formula": "C8H16O2",
+  "mw": "144.21"
+ },
+ "27867": {
+  "smiles": "CC1CCC(C(C1)OC(=O)C)C(C)C",
+  "connectivity_smiles": "CC1CCC(C(C1)OC(=O)C)C(C)C",
+  "inchikey": "XHXUANMFYXWVNG-UHFFFAOYSA-N",
+  "formula": "C12H22O2",
+  "mw": "198.30"
+ },
+ "24807": {
+  "smiles": "S(SCl)Cl",
+  "connectivity_smiles": "S(SCl)Cl",
+  "inchikey": "PXJJSXABGXMUSU-UHFFFAOYSA-N",
+  "formula": "Cl2S2",
+  "mw": "135.0"
+ },
+ "24648": {
+  "smiles": "O=S(=O)(Cl)Cl",
+  "connectivity_smiles": "O=S(=O)(Cl)Cl",
+  "inchikey": "YBBRCQOCSYXUOC-UHFFFAOYSA-N",
+  "formula": "Cl2O2S",
+  "mw": "134.97"
+ },
+ "10908": {
+  "smiles": "CC(=O)OC(C)(C)C",
+  "connectivity_smiles": "CC(=O)OC(C)(C)C",
+  "inchikey": "WMOVHXAZOJBABW-UHFFFAOYSA-N",
+  "formula": "C6H12O2",
+  "mw": "116.16"
+ },
+ "16043": {
+  "smiles": "CC(C)(C)C1=C(C=CC(=C1)O)O",
+  "connectivity_smiles": "CC(C)(C)C1=C(C=CC(=C1)O)O",
+  "inchikey": "BGNXCDMCOKJUMV-UHFFFAOYSA-N",
+  "formula": "C10H14O2",
+  "mw": "166.22"
+ },
+ "6399": {
+  "smiles": "C[Si](Cl)(Cl)Cl",
+  "connectivity_smiles": "C[Si](Cl)(Cl)Cl",
+  "inchikey": "JLUFWMXJHAVVNN-UHFFFAOYSA-N",
+  "formula": "CH3Cl3Si",
+  "mw": "149.47"
+ },
+ "6511": {
+  "smiles": "CC[Pb](CC)(CC)CC",
+  "connectivity_smiles": "CC[Pb](CC)(CC)CC",
+  "inchikey": "MRMOZBOQVYRSEM-UHFFFAOYSA-N",
+  "formula": "C8H20Pb",
+  "mw": "323"
+ },
+ "7873": {
+  "smiles": "CCOP(=O)(OCC)OP(=O)(OCC)OCC",
+  "connectivity_smiles": "CCOP(=O)(OCC)OP(=O)(OCC)OCC",
+  "inchikey": "IDCBOTIENDVCBQ-UHFFFAOYSA-N",
+  "formula": "C8H20O7P2",
+  "mw": "290.19"
+ },
+ "8063": {
+  "smiles": "CCCCC=O",
+  "connectivity_smiles": "CCCCC=O",
+  "inchikey": "HGBOYTHUEUWSSQ-UHFFFAOYSA-N",
+  "formula": "C5H10O",
+  "mw": "86.13"
+ },
+ "10509": {
+  "smiles": "C([N+](=O)[O-])([N+](=O)[O-])([N+](=O)[O-])[N+](=O)[O-]",
+  "connectivity_smiles": "C([N+](=O)[O-])([N+](=O)[O-])([N+](=O)[O-])[N+](=O)[O-]",
+  "inchikey": "NYTOUQBROMCLBJ-UHFFFAOYSA-N",
+  "formula": "CN4O8",
+  "mw": "196.03"
+ },
+ "14215": {
+  "smiles": "CCCCN(CC)C(=O)SCCC",
+  "connectivity_smiles": "CCCCN(CC)C(=O)SCCC",
+  "inchikey": "SGEJQUSYQTVSIU-UHFFFAOYSA-N",
+  "formula": "C10H21NOS",
+  "mw": "203.35"
+ },
+ "24386": {
+  "smiles": "O=S(Cl)Cl",
+  "connectivity_smiles": "O=S(Cl)Cl",
+  "inchikey": "FYSNRJHAOHDILO-UHFFFAOYSA-N",
+  "formula": "Cl2OS",
+  "mw": "118.97"
+ },
+ "19883": {
+  "smiles": "P(=S)(Cl)(Cl)Cl",
+  "connectivity_smiles": "P(=S)(Cl)(Cl)Cl",
+  "inchikey": "WQYSXVGEZYESBR-UHFFFAOYSA-N",
+  "formula": "Cl3PS",
+  "mw": "169.4"
+ },
+ "6989": {
+  "smiles": "CC1=CC(=C(C=C1)C(C)C)O",
+  "connectivity_smiles": "CC1=CC(=C(C=C1)C(C)C)O",
+  "inchikey": "MGSRCZKZVOBKFT-UHFFFAOYSA-N",
+  "formula": "C10H14O",
+  "mw": "150.22"
+ },
+ "11088": {
+  "smiles": "CC1=CC(=C(C=C1C2=CC(=C(C=C2C)OI)C(C)C)C(C)C)OI",
+  "connectivity_smiles": "CC1=CC(=C(C=C1C2=CC(=C(C=C2C)OI)C(C)C)C(C)C)OI",
+  "inchikey": "SHOKWSLXDAIZPP-UHFFFAOYSA-N",
+  "formula": "C20H24I2O2",
+  "mw": "550.2"
+ },
+ "24193": {
+  "smiles": "Cl[Ti](Cl)(Cl)Cl",
+  "connectivity_smiles": "Cl[Ti](Cl)(Cl)Cl",
+  "inchikey": "XJDNKRIXUMDJCW-UHFFFAOYSA-J",
+  "formula": "Cl4Ti",
+  "mw": "189.7"
+ },
+ "16653": {
+  "smiles": "CCSC(=O)N1CCCCCC1",
+  "connectivity_smiles": "CCSC(=O)N1CCCCCC1",
+  "inchikey": "DEDOPGXGGQYYMW-UHFFFAOYSA-N",
+  "formula": "C9H17NOS",
+  "mw": "187.30"
+ },
+ "11443": {
+  "smiles": "CC1=C(C=C(C=C1)N=C=O)N=C=O",
+  "connectivity_smiles": "CC1=C(C=C(C=C1)N=C=O)N=C=O",
+  "inchikey": "DVKJHBMWWAPEIU-UHFFFAOYSA-N",
+  "formula": "C9H6N2O2",
+  "mw": "174.16"
+ },
+ "6050": {
+  "smiles": "CCCC(=O)OCC(COC(=O)CCC)OC(=O)CCC",
+  "connectivity_smiles": "CCCC(=O)OCC(COC(=O)CCC)OC(=O)CCC",
+  "inchikey": "UYXTWWCETRIEDR-UHFFFAOYSA-N",
+  "formula": "C15H26O6",
+  "mw": "302.36"
+ },
+ "6327": {
+  "smiles": "CCl",
+  "connectivity_smiles": "CCl",
+  "inchikey": "NEHMKBQYUWJMIP-UHFFFAOYSA-N",
+  "formula": "CH3Cl",
+  "mw": "50.49"
+ },
+ "6909": {
+  "smiles": "C1(=O)N(C(=O)N(C(=O)N1Cl)Cl)Cl",
+  "connectivity_smiles": "C1(=O)N(C(=O)N(C(=O)N1Cl)Cl)Cl",
+  "inchikey": "YRIZYWQGELRKNT-UHFFFAOYSA-N",
+  "formula": "C3Cl3N3O3",
+  "mw": "232.41"
+ },
+ "7885": {
+  "smiles": "CCCCC[Si](Cl)(Cl)Cl",
+  "connectivity_smiles": "CCCCC[Si](Cl)(Cl)Cl",
+  "inchikey": "KWDQAHIRKOXFAV-UHFFFAOYSA-N",
+  "formula": "C5H11Cl3Si",
+  "mw": "205.6"
+ },
+ "6413": {
+  "smiles": "C=C[Si](Cl)(Cl)Cl",
+  "connectivity_smiles": "C=C[Si](Cl)(Cl)Cl",
+  "inchikey": "GQIUQDDJKHLHTB-UHFFFAOYSA-N",
+  "formula": "C2H3Cl3Si",
+  "mw": "161.48"
+ },
+ "992": {
+  "smiles": "C1(=C(C(=C(C(=C1Cl)Cl)Cl)Cl)Cl)O",
+  "connectivity_smiles": "C1(=C(C(=C(C(=C1Cl)Cl)Cl)Cl)Cl)O",
+  "inchikey": "IZUPBVBPLAPZRR-UHFFFAOYSA-N",
+  "formula": "C6HCl5O",
+  "mw": "266.3"
+ },
+ "31215": {
+  "smiles": "CCOP(OCC)OCC",
+  "connectivity_smiles": "CCOP(OCC)OCC",
+  "inchikey": "BDZBKCUKTQZUTL-UHFFFAOYSA-N",
+  "formula": "C6H15O3P",
+  "mw": "166.16"
+ },
+ "6616": {
+  "smiles": "CC1(C2CCC(C2)C1=C)C",
+  "connectivity_smiles": "CC1(C2CCC(C2)C1=C)C",
+  "inchikey": "CRPUJAZIXJMDBK-UHFFFAOYSA-N",
+  "formula": "C10H16",
+  "mw": "136.23"
+ },
+ "10364": {
+  "smiles": "CC1=C(C=C(C=C1)C(C)C)O",
+  "connectivity_smiles": "CC1=C(C=C(C=C1)C(C)C)O",
+  "inchikey": "RECUKUPTGUEGMW-UHFFFAOYSA-N",
+  "formula": "C10H14O",
+  "mw": "150.22"
+ },
+ "24638": {
+  "smiles": "OS(=O)(=O)Cl",
+  "connectivity_smiles": "OS(=O)(=O)Cl",
+  "inchikey": "XTHPWXDJESJLNJ-UHFFFAOYSA-N",
+  "formula": "ClHO3S",
+  "mw": "116.53"
+ },
+ "24504": {
+  "smiles": "[O-]Cl.[O-]Cl.[Ca+2]",
+  "connectivity_smiles": "[O-]Cl.[O-]Cl.[Ca+2]",
+  "inchikey": "ZKQDCIXGCQPQNV-UHFFFAOYSA-N",
+  "formula": "CaCl2O2",
+  "mw": "142.98"
+ },
+ "10477": {
+  "smiles": "C(#N)Cl",
+  "connectivity_smiles": "C(#N)Cl",
+  "inchikey": "QPJDMGCKMHUXFD-UHFFFAOYSA-N",
+  "formula": "CClN",
+  "mw": "61.47"
+ },
+ "3026": {
+  "smiles": "CCCCOC(=O)C1=CC=CC=C1C(=O)OCCCC",
+  "connectivity_smiles": "CCCCOC(=O)C1=CC=CC=C1C(=O)OCCCC",
+  "inchikey": "DOIRQSBPFJWKBE-UHFFFAOYSA-N",
+  "formula": "C16H22O4",
+  "mw": "278.34"
+ },
+ "6781": {
+  "smiles": "CCOC(=O)C1=CC=CC=C1C(=O)OCC",
+  "connectivity_smiles": "CCOC(=O)C1=CC=CC=C1C(=O)OCC",
+  "inchikey": "FLKPEMZONWLCSK-UHFFFAOYSA-N",
+  "formula": "C12H14O4",
+  "mw": "222.24"
+ },
+ "6116": {
+  "smiles": "CC(=O)[O-].CC(=O)[O-].[Ca+2]",
+  "connectivity_smiles": "CC(=O)[O-].CC(=O)[O-].[Ca+2]",
+  "inchikey": "VSGNNIFQASZAOI-UHFFFAOYSA-L",
+  "formula": "C4H6CaO4",
+  "mw": "158.17"
+ },
+ "7583": {
+  "smiles": "C1=CC=C(C=C1)OC2=CC=CC=C2",
+  "connectivity_smiles": "C1=CC=C(C=C1)OC2=CC=CC=C2",
+  "inchikey": "USIUVYZYUHIAEV-UHFFFAOYSA-N",
+  "formula": "C12H10O",
+  "mw": "170.21"
+ },
+ "31237": {
+  "smiles": "CCCCCCCCCCCCC1=CC=CC=C1",
+  "connectivity_smiles": "CCCCCCCCCCCCC1=CC=CC=C1",
+  "inchikey": "KWKXNDCHNDYVRT-UHFFFAOYSA-N",
+  "formula": "C18H30",
+  "mw": "246.4"
+ },
+ "31278": {
+  "smiles": "CCCCCCCCCCCCCCCCCC(=O)OCCCC",
+  "connectivity_smiles": "CCCCCCCCCCCCCCCCCC(=O)OCCCC",
+  "inchikey": "ULBTUVJTXULMLP-UHFFFAOYSA-N",
+  "formula": "C22H44O2",
+  "mw": "340.6"
+ },
+ "8025": {
+  "smiles": "CCOC=O",
+  "connectivity_smiles": "CCOC=O",
+  "inchikey": "WBJINCZRORDGAQ-UHFFFAOYSA-N",
+  "formula": "C3H6O2",
+  "mw": "74.08"
+ },
+ "8467": {
+  "smiles": "CCOC1=C(C=CC(=C1)C=O)O",
+  "connectivity_smiles": "CCOC1=C(C=CC(=C1)C=O)O",
+  "inchikey": "CBOQJANXLMLOSS-UHFFFAOYSA-N",
+  "formula": "C9H10O3",
+  "mw": "166.17"
+ },
+ "3485": {
+  "smiles": "C(CC=O)CC=O",
+  "connectivity_smiles": "C(CC=O)CC=O",
+  "inchikey": "SXRSQZLOMIGNAQ-UHFFFAOYSA-N",
+  "formula": "C5H8O2",
+  "mw": "100.12"
+ },
+ "1548943": {
+  "smiles": "CC(C)/C=C/CCCCC(=O)NCC1=CC(=C(C=C1)O)OC",
+  "connectivity_smiles": "CC(C)C=CCCCCC(=O)NCC1=CC(=C(C=C1)O)OC",
+  "inchikey": "YKPUWZUDDOIDPM-SOFGYWHQSA-N",
+  "formula": "C18H27NO3",
+  "mw": "305.4"
+ },
+ "14780": {
+  "smiles": "[P-3].[P-3].[Ca+2].[Ca+2].[Ca+2]",
+  "connectivity_smiles": "[P-3].[P-3].[Ca+2].[Ca+2].[Ca+2]",
+  "inchikey": "HMJZRBDFJAQGEY-UHFFFAOYSA-N",
+  "formula": "Ca3P2",
+  "mw": "182.18"
+ },
+ "7410": {
+  "smiles": "CC(=O)C1=CC=CC=C1",
+  "connectivity_smiles": "CC(=O)C1=CC=CC=C1",
+  "inchikey": "KWOLFJPFCHCOCG-UHFFFAOYSA-N",
+  "formula": "C8H8O",
+  "mw": "120.15"
+ },
+ "24637": {
+  "smiles": "FCl(F)F",
+  "connectivity_smiles": "FCl(F)F",
+  "inchikey": "JOHWNGGYGAVMGU-UHFFFAOYSA-N",
+  "formula": "ClF3",
+  "mw": "92.45"
+ },
+ "10757": {
+  "smiles": "C1=CC=C(C=C1)C(=O)CCl",
+  "connectivity_smiles": "C1=CC=C(C=C1)C(=O)CCl",
+  "inchikey": "IMACFCSSMIZSPP-UHFFFAOYSA-N",
+  "formula": "C8H7ClO",
+  "mw": "154.59"
+ },
+ "6577": {
+  "smiles": "C(C(=O)Cl)Cl",
+  "connectivity_smiles": "C(C(=O)Cl)Cl",
+  "inchikey": "VGCXGMAHQTYDJK-UHFFFAOYSA-N",
+  "formula": "C2H2Cl2O",
+  "mw": "112.94"
+ },
+ "179": {
+  "smiles": "CC(C(=O)C)O",
+  "connectivity_smiles": "CC(C(=O)C)O",
+  "inchikey": "ROWKJAVDOGWPAT-UHFFFAOYSA-N",
+  "formula": "C4H8O2",
+  "mw": "88.11"
+ },
+ "22150757": {
+  "smiles": "[O-2].[O-2].[Cl-].[Cl-].[Cr+6]",
+  "connectivity_smiles": "[O-2].[O-2].[Cl-].[Cl-].[Cr+6]",
+  "inchikey": "AKNPEMSZIKCOGC-UHFFFAOYSA-L",
+  "formula": "Cl2CrO2",
+  "mw": "154.90"
+ },
+ "638011": {
+  "smiles": "CC(=CCC/C(=C/C=O)/C)C",
+  "connectivity_smiles": "CC(=CCCC(=CC=O)C)C",
+  "inchikey": "WTEVQBCEXWBHNA-JXMROGBWSA-N",
+  "formula": "C10H16O",
+  "mw": "152.23"
+ },
+ "9005": {
+  "smiles": "COC(OC)OC",
+  "connectivity_smiles": "COC(OC)OC",
+  "inchikey": "PYOKUURKVVELLB-UHFFFAOYSA-N",
+  "formula": "C4H10O3",
+  "mw": "106.12"
+ },
+ "8472": {
+  "smiles": "COP(OC)OC",
+  "connectivity_smiles": "COP(OC)OC",
+  "inchikey": "CYTQBVOFDCPGCX-UHFFFAOYSA-N",
+  "formula": "C3H9O3P",
+  "mw": "124.08"
+ },
+ "8635": {
+  "smiles": "COC(=O)C1=CC=CC=C1N",
+  "connectivity_smiles": "COC(=O)C1=CC=CC=C1N",
+  "inchikey": "VAMXMNNIEUEQDV-UHFFFAOYSA-N",
+  "formula": "C8H9NO2",
+  "mw": "151.16"
+ },
+ "6397": {
+  "smiles": "C[Si](C)(C)Cl",
+  "connectivity_smiles": "C[Si](C)(C)Cl",
+  "inchikey": "IJOOHPMOJXWVHK-UHFFFAOYSA-N",
+  "formula": "C3H9ClSi",
+  "mw": "108.64"
+ },
+ "24273": {
+  "smiles": "Cl[V](Cl)(Cl)Cl",
+  "connectivity_smiles": "Cl[V](Cl)(Cl)Cl",
+  "inchikey": "JTJFQBNJBPPZRI-UHFFFAOYSA-J",
+  "formula": "Cl4V",
+  "mw": "192.7"
+ },
+ "1183": {
+  "smiles": "COC1=C(C=CC(=C1)C=O)O",
+  "connectivity_smiles": "COC1=C(C=CC(=C1)C=O)O",
+  "inchikey": "MWOOGOJBHIARFG-UHFFFAOYSA-N",
+  "formula": "C8H8O3",
+  "mw": "152.15"
+ },
+ "25246088": {
+  "smiles": "CCCCCC1C(O1)C/C=C\\CCCCCCCC(=O)[O-]",
+  "connectivity_smiles": "CCCCCC1C(O1)CC=CCCCCCCCC(=O)[O-]",
+  "inchikey": "CCPPLLJZDQAOHD-FLIBITNWSA-M",
+  "formula": "C18H31O3-",
+  "mw": "295.4"
+ },
+ "11641": {
+  "smiles": "C=CBr",
+  "connectivity_smiles": "C=CBr",
+  "inchikey": "INLLPKCGLOXCIV-UHFFFAOYSA-N",
+  "formula": "C2H3Br",
+  "mw": "106.95"
+ },
+ "24387": {
+  "smiles": "P(Cl)(Cl)Cl",
+  "connectivity_smiles": "P(Cl)(Cl)Cl",
+  "inchikey": "FAIAAWCVCHQXDN-UHFFFAOYSA-N",
+  "formula": "Cl3P",
+  "mw": "137.33"
+ },
+ "7861": {
+  "smiles": "COC=C",
+  "connectivity_smiles": "COC=C",
+  "inchikey": "XJRBAMWJDBPFIM-UHFFFAOYSA-N",
+  "formula": "C3H6O",
+  "mw": "58.08"
+ },
+ "31211": {
+  "smiles": "CC(=O)CCC1=CC(=C(C=C1)O)OC",
+  "connectivity_smiles": "CC(=O)CCC1=CC(=C(C=C1)O)OC",
+  "inchikey": "OJYLAHXKWMRDGS-UHFFFAOYSA-N",
+  "formula": "C11H14O3",
+  "mw": "194.23"
+ },
+ "7840": {
+  "smiles": "CCCBr",
+  "connectivity_smiles": "CCCBr",
+  "inchikey": "CYNYIHKIEHGYOZ-UHFFFAOYSA-N",
+  "formula": "C3H7Br",
+  "mw": "122.99"
+ },
+ "6571": {
+  "smiles": "CC(=O)CCl",
+  "connectivity_smiles": "CC(=O)CCl",
+  "inchikey": "BULLHNJGPPOUOX-UHFFFAOYSA-N",
+  "formula": "C3H5ClO",
+  "mw": "92.52"
+ },
+ "10977": {
+  "smiles": "CCCCCCl",
+  "connectivity_smiles": "CCCCCCl",
+  "inchikey": "SQCZQTSHSZLZIQ-UHFFFAOYSA-N",
+  "formula": "C5H11Cl",
+  "mw": "106.59"
+ },
+ "8174": {
+  "smiles": "CCCCCCCCCCO",
+  "connectivity_smiles": "CCCCCCCCCCO",
+  "inchikey": "MWKFXSUHUHTGQN-UHFFFAOYSA-N",
+  "formula": "C10H22O",
+  "mw": "158.28"
+ },
+ "8193": {
+  "smiles": "CCCCCCCCCCCCO",
+  "connectivity_smiles": "CCCCCCCCCCCCO",
+  "inchikey": "LQZZUXJYWNFBMV-UHFFFAOYSA-N",
+  "formula": "C12H26O",
+  "mw": "186.33"
+ },
+ "8129": {
+  "smiles": "CCCCCCCO",
+  "connectivity_smiles": "CCCCCCCO",
+  "inchikey": "BBMCTIGTTCKYKF-UHFFFAOYSA-N",
+  "formula": "C7H16O",
+  "mw": "116.20"
+ },
+ "8184": {
+  "smiles": "CCCCCCCCCCCO",
+  "connectivity_smiles": "CCCCCCCCCCCO",
+  "inchikey": "KJIOQYGWTQBHNH-UHFFFAOYSA-N",
+  "formula": "C11H24O",
+  "mw": "172.31"
+ },
+ "6564": {
+  "smiles": "CC(CCl)Cl",
+  "connectivity_smiles": "CC(CCl)Cl",
+  "inchikey": "KNKRKFALVUDBJE-UHFFFAOYSA-N",
+  "formula": "C3H6Cl2",
+  "mw": "112.98"
+ },
+ "13": {
+  "smiles": "C1=CC(=C(C=C1Cl)Cl)Cl",
+  "connectivity_smiles": "C1=CC(=C(C=C1Cl)Cl)Cl",
+  "inchikey": "PBKONEOXTCPAFI-UHFFFAOYSA-N",
+  "formula": "C6H3Cl3",
+  "mw": "181.4"
+ },
+ "89594": {
+  "smiles": "CN1CCC[C@H]1C2=CN=CC=C2",
+  "connectivity_smiles": "CN1CCCC1C2=CN=CC=C2",
+  "inchikey": "SNICXCGAKADSCV-JTQLQIEISA-N",
+  "formula": "C10H14N2",
+  "mw": "162.23"
+ },
+ "11487": {
+  "smiles": "C1=CC=C(C=C1)NC2=CC=CC=C2",
+  "connectivity_smiles": "C1=CC=C(C=C1)NC2=CC=CC=C2",
+  "inchikey": "DMBHHRLKUKUOEG-UHFFFAOYSA-N",
+  "formula": "C12H11N",
+  "mw": "169.22"
+ },
+ "24883": {
+  "smiles": "C(C=CCl)Cl",
+  "connectivity_smiles": "C(C=CCl)Cl",
+  "inchikey": "UOORRWUZONOOLO-UHFFFAOYSA-N",
+  "formula": "C3H4Cl2",
+  "mw": "110.97"
+ },
+ "4650": {
+  "smiles": "C1=CC(=O)C=CC1=O",
+  "connectivity_smiles": "C1=CC(=O)C=CC1=O",
+  "inchikey": "AZQWKYJCGOJGHM-UHFFFAOYSA-N",
+  "formula": "C6H4O2",
+  "mw": "108.09"
+ },
+ "24553": {
+  "smiles": "N(F)(F)F",
+  "connectivity_smiles": "N(F)(F)F",
+  "inchikey": "GVGCUCJTUSOZKP-UHFFFAOYSA-N",
+  "formula": "F3N",
+  "mw": "71.002"
+ },
+ "7516": {
+  "smiles": "C1=CC=C(C=C1)NN",
+  "connectivity_smiles": "C1=CC=C(C=C1)NN",
+  "inchikey": "HKOOXMFOFWEVGF-UHFFFAOYSA-N",
+  "formula": "C6H8N2",
+  "mw": "108.14"
+ },
+ "7720": {
+  "smiles": "CCCCC(CC)CO",
+  "connectivity_smiles": "CCCCC(CC)CO",
+  "inchikey": "YIWUKEYIRIRTPP-UHFFFAOYSA-N",
+  "formula": "C8H18O",
+  "mw": "130.23"
+ },
+ "8051": {
+  "smiles": "CCCCCC(=O)C",
+  "connectivity_smiles": "CCCCCC(=O)C",
+  "inchikey": "CATSNJVOTSVZJV-UHFFFAOYSA-N",
+  "formula": "C7H14O",
+  "mw": "114.19"
+ },
+ "13165": {
+  "smiles": "C=CC(=O)OCCO",
+  "connectivity_smiles": "C=CC(=O)OCCO",
+  "inchikey": "OMIGHNLMNHATMP-UHFFFAOYSA-N",
+  "formula": "C5H8O3",
+  "mw": "116.11"
+ },
+ "7057": {
+  "smiles": "C1=CC=C2C=C(C=CC2=C1)N",
+  "connectivity_smiles": "C1=CC=C2C=C(C=CC2=C1)N",
+  "inchikey": "JBIJLHTVPXGSAM-UHFFFAOYSA-N",
+  "formula": "C10H9N",
+  "mw": "143.18"
+ },
+ "6946": {
+  "smiles": "C1=CC=C(C(=C1)N)[N+](=O)[O-]",
+  "connectivity_smiles": "C1=CC=C(C(=C1)N)[N+](=O)[O-]",
+  "inchikey": "DPJCXCZTLWNFOH-UHFFFAOYSA-N",
+  "formula": "C6H6N2O2",
+  "mw": "138.12"
+ },
+ "6947": {
+  "smiles": "C1=CC=C(C(=C1)[N+](=O)[O-])O",
+  "connectivity_smiles": "C1=CC=C(C(=C1)[N+](=O)[O-])O",
+  "inchikey": "IQUPABOKLQSFBK-UHFFFAOYSA-N",
+  "formula": "C6H5NO3",
+  "mw": "139.11"
+ },
+ "398": {
+  "smiles": "CC(C)[N+](=O)[O-]",
+  "connectivity_smiles": "CC(C)[N+](=O)[O-]",
+  "inchikey": "FGLBSLMDCBOPQK-UHFFFAOYSA-N",
+  "formula": "C3H7NO2",
+  "mw": "89.09"
+ },
+ "7321": {
+  "smiles": "C1=CC(=C(C=C1[N+](=O)[O-])[N+](=O)[O-])N",
+  "connectivity_smiles": "C1=CC(=C(C=C1[N+](=O)[O-])[N+](=O)[O-])N",
+  "inchikey": "LXQOQPGNCGEELI-UHFFFAOYSA-N",
+  "formula": "C6H5N3O4",
+  "mw": "183.12"
+ },
+ "31404": {
+  "smiles": "CC1=CC(=C(C(=C1)C(C)(C)C)O)C(C)(C)C",
+  "connectivity_smiles": "CC1=CC(=C(C(=C1)C(C)(C)C)O)C(C)(C)C",
+  "inchikey": "NLZUEZXRPGMBCV-UHFFFAOYSA-N",
+  "formula": "C15H24O",
+  "mw": "220.35"
+ },
+ "4420": {
+  "smiles": "COP(=O)(OC)OC(C(Cl)(Cl)Br)Br",
+  "connectivity_smiles": "COP(=O)(OC)OC(C(Cl)(Cl)Br)Br",
+  "inchikey": "BUYMVQAILCEWRR-UHFFFAOYSA-N",
+  "formula": "C4H7Br2Cl2O4P",
+  "mw": "380.78"
+ },
+ "6501": {
+  "smiles": "CCOC(=O)C1C(O1)(C)C2=CC=CC=C2",
+  "connectivity_smiles": "CCOC(=O)C1C(O1)(C)C2=CC=CC=C2",
+  "inchikey": "LQKRYVGRPXFFAV-UHFFFAOYSA-N",
+  "formula": "C12H14O3",
+  "mw": "206.24"
+ },
+ "15965": {
+  "smiles": "C1(=C(C(=NC(=C1Cl)Cl)C(=O)O)Cl)N",
+  "connectivity_smiles": "C1(=C(C(=NC(=C1Cl)Cl)C(=O)O)Cl)N",
+  "inchikey": "NQQVFXUMIDALNH-UHFFFAOYSA-N",
+  "formula": "C6H3Cl3N2O2",
+  "mw": "241.5"
+ },
+ "31256": {
+  "smiles": "CC(=O)CC(C)(C)O",
+  "connectivity_smiles": "CC(=O)CC(C)(C)O",
+  "inchikey": "SWXVUIWOUIDPGS-UHFFFAOYSA-N",
+  "formula": "C6H12O2",
+  "mw": "116.16"
+ },
+ "7959": {
+  "smiles": "CC(C)CC(C)OC(=O)C",
+  "connectivity_smiles": "CC(C)CC(C)OC(=O)C",
+  "inchikey": "CPIVYSAVIPTCCX-UHFFFAOYSA-N",
+  "formula": "C8H16O2",
+  "mw": "144.21"
+ },
+ "7475": {
+  "smiles": "C1=CC(=CC=C1N)[N+](=O)[O-]",
+  "connectivity_smiles": "C1=CC(=CC=C1N)[N+](=O)[O-]",
+  "inchikey": "TYMLOMAKGOJONV-UHFFFAOYSA-N",
+  "formula": "C6H6N2O2",
+  "mw": "138.12"
+ },
+ "7473": {
+  "smiles": "CC1=CC=C(C=C1)[N+](=O)[O-]",
+  "connectivity_smiles": "CC1=CC=C(C=C1)[N+](=O)[O-]",
+  "inchikey": "ZPTVNYMJQHSSEA-UHFFFAOYSA-N",
+  "formula": "C7H7NO2",
+  "mw": "137.14"
+ },
+ "13143": {
+  "smiles": "CC(=C)C(=O)C",
+  "connectivity_smiles": "CC(=C)C(=O)C",
+  "inchikey": "ZGHFDIIVVIFNPS-UHFFFAOYSA-N",
+  "formula": "C5H8O",
+  "mw": "84.12"
+ },
+ "4130": {
+  "smiles": "COP(=S)(OC)OC1=CC=C(C=C1)[N+](=O)[O-]",
+  "connectivity_smiles": "COP(=S)(OC)OC1=CC=C(C=C1)[N+](=O)[O-]",
+  "inchikey": "RLBIQVVOMOPOHC-UHFFFAOYSA-N",
+  "formula": "C8H10NO5PS",
+  "mw": "263.21"
+ },
+ "4115": {
+  "smiles": "COC1=CC=C(C=C1)C(C2=CC=C(C=C2)OC)C(Cl)(Cl)Cl",
+  "connectivity_smiles": "COC1=CC=C(C=C1)C(C2=CC=C(C=C2)OC)C(Cl)(Cl)Cl",
+  "inchikey": "IAKOZHOLGAGEJT-UHFFFAOYSA-N",
+  "formula": "C16H15Cl3O2",
+  "mw": "345.6"
+ },
+ "7148": {
+  "smiles": "CCC(=O)C1=CC=CC=C1",
+  "connectivity_smiles": "CCC(=O)C1=CC=CC=C1",
+  "inchikey": "KRIOVPPHQSLHCZ-UHFFFAOYSA-N",
+  "formula": "C9H10O",
+  "mw": "134.17"
+ },
+ "1032": {
+  "smiles": "CCC(=O)O",
+  "connectivity_smiles": "CCC(=O)O",
+  "inchikey": "XBDQKXXYIPTUBI-UHFFFAOYSA-N",
+  "formula": "C3H6O2",
+  "mw": "74.08"
+ },
+ "527": {
+  "smiles": "CCC=O",
+  "connectivity_smiles": "CCC=O",
+  "inchikey": "NBBJYMSMWIIQGU-UHFFFAOYSA-N",
+  "formula": "C3H6O",
+  "mw": "58.08"
+ },
+ "8858": {
+  "smiles": "CC(=CC(=O)C)C",
+  "connectivity_smiles": "CC(=CC(=O)C)C",
+  "inchikey": "SHOJXDKTYKFBRD-UHFFFAOYSA-N",
+  "formula": "C6H10O",
+  "mw": "98.14"
+ },
+ "6433251": {
+  "smiles": "CCCCCCCC/C=C\\CCCCCCCC(=O)[O-].CCCCCCCC/C=C\\CCCCCCCC(=O)[O-].[Hg+2]",
+  "connectivity_smiles": "CCCCCCCCC=CCCCCCCCC(=O)[O-].CCCCCCCCC=CCCCCCCCC(=O)[O-].[Hg+2]",
+  "inchikey": "PCWIWQHAGMGLFA-CVBJKYQLSA-L",
+  "formula": "C36H66HgO4",
+  "mw": "763.5"
+ },
+ "24819": {
+  "smiles": "P(Cl)(Cl)(Cl)(Cl)Cl",
+  "connectivity_smiles": "P(Cl)(Cl)(Cl)(Cl)Cl",
+  "inchikey": "UHZYTMXLRWXGPK-UHFFFAOYSA-N",
+  "formula": "Cl5P",
+  "mw": "208.2"
+ },
+ "25247": {
+  "smiles": "[N+](=O)([O-])[O-].[Hg+]",
+  "connectivity_smiles": "[N+](=O)([O-])[O-].[Hg+]",
+  "inchikey": "DRXYRSRECMWYAV-UHFFFAOYSA-N",
+  "formula": "HgNO3",
+  "mw": "262.60"
+ },
+ "31263": {
+  "smiles": "CCC(=O)OC(=O)CC",
+  "connectivity_smiles": "CCC(=O)OC(=O)CC",
+  "inchikey": "WYVAMUWZEOHJOQ-UHFFFAOYSA-N",
+  "formula": "C6H10O3",
+  "mw": "130.14"
+ },
+ "10947": {
+  "smiles": "CC1CCCCCCCCCCCCC(=O)C1",
+  "connectivity_smiles": "CC1CCCCCCCCCCCCC(=O)C1",
+  "inchikey": "ALHUZKCOMYUFRB-UHFFFAOYSA-N",
+  "formula": "C16H30O",
+  "mw": "238.41"
+ },
+ "24402": {
+  "smiles": "[NH4+].OP(=O)(O)[O-]",
+  "connectivity_smiles": "[NH4+].OP(=O)(O)[O-]",
+  "inchikey": "LFVGISIMTYGQHF-UHFFFAOYSA-N",
+  "formula": "H6NO4P",
+  "mw": "115.03"
+ },
+ "145068": {
+  "smiles": "[N]=O",
+  "connectivity_smiles": "[N]=O",
+  "inchikey": "MWUXSHHQAYIFBG-UHFFFAOYSA-N",
+  "formula": "NO",
+  "mw": "30.006"
+ },
+ "26447": {
+  "smiles": "C[C@@H]1CC[C@H](C(=O)C1)C(C)C",
+  "connectivity_smiles": "CC1CCC(C(=O)C1)C(C)C",
+  "inchikey": "NFLGAXVYCFJBMK-BDAKNGLRSA-N",
+  "formula": "C10H18O",
+  "mw": "154.25"
+ },
+ "3423265": {
+  "smiles": "CCCCCCCCCCCCOS(=O)(=O)[O-].[Na+]",
+  "connectivity_smiles": "CCCCCCCCCCCCOS(=O)(=O)[O-].[Na+]",
+  "inchikey": "DBMJMQXJHONAFJ-UHFFFAOYSA-M",
+  "formula": "C12H25NaO4S",
+  "mw": "288.38"
+ },
+ "7102": {
+  "smiles": "C1=CC=C(C=C1)C2=CC=C(C=C2)N",
+  "connectivity_smiles": "C1=CC=C(C=C1)C2=CC=C(C=C2)N",
+  "inchikey": "DMVOXQPQNTYEKQ-UHFFFAOYSA-N",
+  "formula": "C12H11N",
+  "mw": "169.22"
+ },
+ "6328": {
+  "smiles": "CI",
+  "connectivity_smiles": "CI",
+  "inchikey": "INQOMBQAUSQDDS-UHFFFAOYSA-N",
+  "formula": "CH3I",
+  "mw": "141.939"
+ },
+ "6574": {
+  "smiles": "C(C(Cl)Cl)Cl",
+  "connectivity_smiles": "C(C(Cl)Cl)Cl",
+  "inchikey": "UBOXGVDOUJQMTN-UHFFFAOYSA-N",
+  "formula": "C2H3Cl3",
+  "mw": "133.40"
+ },
+ "6581": {
+  "smiles": "C=CC(=O)O",
+  "connectivity_smiles": "C=CC(=O)O",
+  "inchikey": "NIXOWILDQLNWCW-UHFFFAOYSA-N",
+  "formula": "C3H4O2",
+  "mw": "72.06"
+ },
+ "6950": {
+  "smiles": "CCC(C)C1=C(C(=CC(=C1)[N+](=O)[O-])[N+](=O)[O-])O",
+  "connectivity_smiles": "CCC(C)C1=C(C(=CC(=C1)[N+](=O)[O-])[N+](=O)[O-])O",
+  "inchikey": "OWZPCEFYPSAJFR-UHFFFAOYSA-N",
+  "formula": "C10H12N2O5",
+  "mw": "240.21"
+ },
+ "5280970": {
+  "smiles": "C(/C=C\\Cl)Cl",
+  "connectivity_smiles": "C(C=CCl)Cl",
+  "inchikey": "UOORRWUZONOOLO-UPHRSURJSA-N",
+  "formula": "C3H4Cl2",
+  "mw": "110.97"
+ },
+ "24726": {
+  "smiles": "C(/C=C/Cl)Cl",
+  "connectivity_smiles": "C(C=CCl)Cl",
+  "inchikey": "UOORRWUZONOOLO-OWOJBTEDSA-N",
+  "formula": "C3H4Cl2",
+  "mw": "110.97"
+ },
+ "7521": {
+  "smiles": "C=CC1=CC=CC=N1",
+  "connectivity_smiles": "C=CC1=CC=CC=N1",
+  "inchikey": "KGIGUEBEKRSTEW-UHFFFAOYSA-N",
+  "formula": "C7H7N",
+  "mw": "105.14"
+ },
+ "7502": {
+  "smiles": "C=CC1=CC=NC=C1",
+  "connectivity_smiles": "C=CC1=CC=NC=C1",
+  "inchikey": "KFDVPJUYSDEJTH-UHFFFAOYSA-N",
+  "formula": "C7H7N",
+  "mw": "105.14"
+ },
+ "10234": {
+  "smiles": "CCC(C)C1=C(C(=CC(=C1)[N+](=O)[O-])[N+](=O)[O-])OC(=O)C=C(C)C",
+  "connectivity_smiles": "CCC(C)C1=C(C(=CC(=C1)[N+](=O)[O-])[N+](=O)[O-])OC(=O)C=C(C)C",
+  "inchikey": "ZRDUSMYWDRPZRM-UHFFFAOYSA-N",
+  "formula": "C15H18N2O6",
+  "mw": "322.31"
+ },
+ "10760": {
+  "smiles": "CCCCOC(=O)C1=CC(=O)CC(O1)(C)C",
+  "connectivity_smiles": "CCCCOC(=O)C1=CC(=O)CC(O1)(C)C",
+  "inchikey": "OKIJSNGRQAOIGZ-UHFFFAOYSA-N",
+  "formula": "C12H18O4",
+  "mw": "226.27"
+ },
+ "17581": {
+  "smiles": "COC1=CC(=C(C=C1Cl)OC)Cl",
+  "connectivity_smiles": "COC1=CC(=C(C=C1Cl)OC)Cl",
+  "inchikey": "PFIADAMVCJPXSF-UHFFFAOYSA-N",
+  "formula": "C8H8Cl2O2",
+  "mw": "207.05"
+ },
+ "6621": {
+  "smiles": "C1=CC=C(C=C1)S(=O)(=O)C2=CC=C(C=C2)Cl",
+  "connectivity_smiles": "C1=CC=C(C=C1)S(=O)(=O)C2=CC=C(C=C2)Cl",
+  "inchikey": "OFCFYWOKHPOXKF-UHFFFAOYSA-N",
+  "formula": "C12H9ClO2S",
+  "mw": "252.72"
+ },
+ "727": {
+  "smiles": "C1(C(C(C(C(C1Cl)Cl)Cl)Cl)Cl)Cl",
+  "connectivity_smiles": "C1(C(C(C(C(C1Cl)Cl)Cl)Cl)Cl)Cl",
+  "inchikey": "JLYXXMFPNIAWKQ-UHFFFAOYSA-N",
+  "formula": "C6H6Cl6",
+  "mw": "290.8"
+ },
+ "5284469": {
+  "smiles": "C=C1C(C2(C(C(C1(C2(Cl)Cl)Cl)Cl)Cl)Cl)(CCl)CCl",
+  "connectivity_smiles": "C=C1C(C2(C(C(C1(C2(Cl)Cl)Cl)Cl)Cl)Cl)(CCl)CCl",
+  "inchikey": "OEJNXTAZZBRGDN-UHFFFAOYSA-N",
+  "formula": "C10H8Cl8",
+  "mw": "411.8"
+ },
+ "31369": {
+  "smiles": "C=CC(=C)Cl",
+  "connectivity_smiles": "C=CC(=C)Cl",
+  "inchikey": "YACLQRRMGMJLJV-UHFFFAOYSA-N",
+  "formula": "C4H5Cl",
+  "mw": "88.53"
+ },
+ "323": {
+  "smiles": "C1=CC=C2C(=C1)C=CC(=O)O2",
+  "connectivity_smiles": "C1=CC=C2C(=C1)C=CC(=O)O2",
+  "inchikey": "ZYGHJZDHTFUPRJ-UHFFFAOYSA-N",
+  "formula": "C9H6O2",
+  "mw": "146.14"
+ },
+ "8079": {
+  "smiles": "C1CCC=CC1",
+  "connectivity_smiles": "C1CCC=CC1",
+  "inchikey": "HGCIXCUEYOPUTN-UHFFFAOYSA-N",
+  "formula": "C6H10",
+  "mw": "82.14"
+ },
+ "9550": {
+  "smiles": "C=[N+]=[N-]",
+  "connectivity_smiles": "C=[N+]=[N-]",
+  "inchikey": "YXHKONLOYHBTNS-UHFFFAOYSA-N",
+  "formula": "CH2N2",
+  "mw": "42.040"
+ },
+ "7280": {
+  "smiles": "C(C(CBr)Br)Cl",
+  "connectivity_smiles": "C(C(CBr)Br)Cl",
+  "inchikey": "WBEJYOJJBDISQU-UHFFFAOYSA-N",
+  "formula": "C3H5Br2Cl",
+  "mw": "236.33"
+ },
+ "7765": {
+  "smiles": "CCOC(C)OCC",
+  "connectivity_smiles": "CCOC(C)OCC",
+  "inchikey": "DHKHKXVYLBGOIT-UHFFFAOYSA-N",
+  "formula": "C6H14O2",
+  "mw": "118.17"
+ },
+ "6163": {
+  "smiles": "CCOS(=O)(=O)OCC",
+  "connectivity_smiles": "CCOS(=O)(=O)OCC",
+  "inchikey": "DENRZWYUOJLTMF-UHFFFAOYSA-N",
+  "formula": "C4H10O4S",
+  "mw": "154.19"
+ },
+ "8554": {
+  "smiles": "COC(=O)C1=CC=CC=C1C(=O)OC",
+  "connectivity_smiles": "COC(=O)C1=CC=CC=C1C(=O)OC",
+  "inchikey": "NIQCNGHVCWTJSM-UHFFFAOYSA-N",
+  "formula": "C10H10O4",
+  "mw": "194.18"
+ },
+ "10788": {
+  "smiles": "CN1CN(C(=S)SC1)C",
+  "connectivity_smiles": "CN1CN(C(=S)SC1)C",
+  "inchikey": "QAYICIQNSGETAS-UHFFFAOYSA-N",
+  "formula": "C5H10N2S2",
+  "mw": "162.3"
+ },
+ "284": {
+  "smiles": "C(=O)O",
+  "connectivity_smiles": "C(=O)O",
+  "inchikey": "BDAGIHXWWSANSR-UHFFFAOYSA-N",
+  "formula": "CH2O2",
+  "mw": "46.025"
+ },
+ "26039": {
+  "smiles": "[C-]#[O+].[C-]#[O+].[C-]#[O+].[C-]#[O+].[Ni]",
+  "connectivity_smiles": "[C-]#[O+].[C-]#[O+].[C-]#[O+].[C-]#[O+].[Ni]",
+  "inchikey": "AWDHUGLHGCVIEG-UHFFFAOYSA-N",
+  "formula": "C4NiO4",
+  "mw": "170.73"
+ },
+ "944": {
+  "smiles": "[N+](=O)(O)[O-]",
+  "connectivity_smiles": "[N+](=O)(O)[O-]",
+  "inchikey": "GRYLNZFGIOXLOG-UHFFFAOYSA-N",
+  "formula": "HNO3",
+  "mw": "63.013"
+ },
+ "7474": {
+  "smiles": "C1=CC(=CC=C1[N+](=O)[O-])Cl",
+  "connectivity_smiles": "C1=CC(=CC=C1[N+](=O)[O-])Cl",
+  "inchikey": "CZGCEKJOLUNIFY-UHFFFAOYSA-N",
+  "formula": "C6H4ClNO2",
+  "mw": "157.55"
+ },
+ "6394": {
+  "smiles": "C[Pb](C)(C)C",
+  "connectivity_smiles": "C[Pb](C)(C)C",
+  "inchikey": "XOOGZRUBTYCLHG-UHFFFAOYSA-N",
+  "formula": "C4H12Pb",
+  "mw": "267"
+ },
+ "17435": {
+  "smiles": "CCOC(=O)C(C1=CC=CC=C1)SP(=S)(OC)OC",
+  "connectivity_smiles": "CCOC(=O)C(C1=CC=CC=C1)SP(=S)(OC)OC",
+  "inchikey": "XAMUDJHXFNRLCY-UHFFFAOYSA-N",
+  "formula": "C12H17O4PS2",
+  "mw": "320.4"
+ },
+ "8297": {
+  "smiles": "CCNC(=O)CSP(=S)(OC)OC",
+  "connectivity_smiles": "CCNC(=O)CSP(=S)(OC)OC",
+  "inchikey": "DICRHEJCQXFJBY-UHFFFAOYSA-N",
+  "formula": "C6H14NO3PS2",
+  "mw": "243.3"
+ },
+ "14337": {
+  "smiles": "CCN(C1CCCCC1)C(=O)SCC",
+  "connectivity_smiles": "CCN(C1CCCCC1)C(=O)SCC",
+  "inchikey": "DFCAFRGABIXSDS-UHFFFAOYSA-N",
+  "formula": "C11H21NOS",
+  "mw": "215.36"
+ },
+ "16181": {
+  "smiles": "CCSC(=O)N(CC(C)C)CC(C)C",
+  "connectivity_smiles": "CCSC(=O)N(CC(C)C)CC(C)C",
+  "inchikey": "BMTAFVWTTFSTOG-UHFFFAOYSA-N",
+  "formula": "C11H23NOS",
+  "mw": "217.37"
+ },
+ "13676": {
+  "smiles": "CCOP(=S)(CC)SC1=CC=CC=C1",
+  "connectivity_smiles": "CCOP(=S)(CC)SC1=CC=CC=C1",
+  "inchikey": "KVGLBTYUCJYMND-UHFFFAOYSA-N",
+  "formula": "C10H15OPS2",
+  "mw": "246.3"
+ },
+ "8303": {
+  "smiles": "C(=O)(C(Cl)(Cl)Cl)C(Cl)(Cl)Cl",
+  "connectivity_smiles": "C(=O)(C(Cl)(Cl)Cl)C(Cl)(Cl)Cl",
+  "inchikey": "DOJXGHGHTWFZHK-UHFFFAOYSA-N",
+  "formula": "C3Cl6O",
+  "mw": "264.7"
+ },
+ "61021": {
+  "smiles": "CC1OC(OC(OC(O1)C)C)C",
+  "connectivity_smiles": "CC1OC(OC(OC(O1)C)C)C",
+  "inchikey": "GKKDCARASOJPNG-UHFFFAOYSA-N",
+  "formula": "C8H16O4",
+  "mw": "176.21"
+ },
+ "8442": {
+  "smiles": "CCCCCCCCS(=O)C(C)CC1=CC2=C(C=C1)OCO2",
+  "connectivity_smiles": "CCCCCCCCS(=O)C(C)CC1=CC2=C(C=C1)OCO2",
+  "inchikey": "ATTZFSUZZUNHBP-UHFFFAOYSA-N",
+  "formula": "C18H28O3S",
+  "mw": "324.5"
+ },
+ "6720": {
+  "smiles": "C1(=C(C(=C(C(=C1Cl)Cl)Cl)Cl)Cl)[N+](=O)[O-]",
+  "connectivity_smiles": "C1(=C(C(=C(C(=C1Cl)Cl)Cl)Cl)Cl)[N+](=O)[O-]",
+  "inchikey": "LKPLKUMXSAEKID-UHFFFAOYSA-N",
+  "formula": "C6Cl5NO2",
+  "mw": "295.3"
+ },
+ "18609": {
+  "smiles": "CCCOP(=S)(OCCC)OP(=S)(OCCC)OCCC",
+  "connectivity_smiles": "CCCOP(=S)(OCCC)OP(=S)(OCCC)OCCC",
+  "inchikey": "IIDFEIDMIKSJSV-UHFFFAOYSA-N",
+  "formula": "C12H28O5P2S2",
+  "mw": "378.4"
+ },
+ "8286": {
+  "smiles": "CCCC[P+](CCCC)(CCCC)CC1=C(C=C(C=C1)Cl)Cl.[Cl-]",
+  "connectivity_smiles": "CCCC[P+](CCCC)(CCCC)CC1=C(C=C(C=C1)Cl)Cl.[Cl-]",
+  "inchikey": "IVHVNMLJNASKHW-UHFFFAOYSA-M",
+  "formula": "C19H32Cl3P",
+  "mw": "397.8"
+ },
+ "6421": {
+  "smiles": "C(=O)(C(Cl)(Cl)Cl)O",
+  "connectivity_smiles": "C(=O)(C(Cl)(Cl)Cl)O",
+  "inchikey": "YNJBWRMUSHSURL-UHFFFAOYSA-N",
+  "formula": "C2HCl3O2",
+  "mw": "163.38"
+ },
+ "22311": {
+  "smiles": "CC1=CCC(CC1)C(=C)C",
+  "connectivity_smiles": "CC1=CCC(CC1)C(=C)C",
+  "inchikey": "XMGQYMWWDOXHJM-UHFFFAOYSA-N",
+  "formula": "C10H16",
+  "mw": "136.23"
+ },
+ "335": {
+  "smiles": "CC1=CC=CC=C1O",
+  "connectivity_smiles": "CC1=CC=CC=C1O",
+  "inchikey": "QWVGKYWNOKOFNN-UHFFFAOYSA-N",
+  "formula": "C7H8O",
+  "mw": "108.14"
+ },
+ "2879": {
+  "smiles": "CC1=CC=C(C=C1)O",
+  "connectivity_smiles": "CC1=CC=C(C=C1)O",
+  "inchikey": "IWDCLRJOBJJRNH-UHFFFAOYSA-N",
+  "formula": "C7H8O",
+  "mw": "108.14"
+ },
+ "342": {
+  "smiles": "CC1=CC(=CC=C1)O",
+  "connectivity_smiles": "CC1=CC(=CC=C1)O",
+  "inchikey": "RLSSMJSEOOYNOY-UHFFFAOYSA-N",
+  "formula": "C7H8O",
+  "mw": "108.14"
+ },
+ "7802": {
+  "smiles": "CCCCC(=O)CC",
+  "connectivity_smiles": "CCCCC(=O)CC",
+  "inchikey": "NGAZZOYFWWSOGK-UHFFFAOYSA-N",
+  "formula": "C7H14O",
+  "mw": "114.19"
+ },
+ "31276": {
+  "smiles": "CC(C)CCOC(=O)C",
+  "connectivity_smiles": "CC(C)CCOC(=O)C",
+  "inchikey": "MLFHJEHSLIIPHL-UHFFFAOYSA-N",
+  "formula": "C7H14O2",
+  "mw": "130.18"
+ },
+ "24762": {
+  "smiles": "CCCCCCCCCCCCCCCCCC(=O)OCCO",
+  "connectivity_smiles": "CCCCCCCCCCCCCCCCCC(=O)OCCO",
+  "inchikey": "RFVNOJDQRGSOEL-UHFFFAOYSA-N",
+  "formula": "C20H40O3",
+  "mw": "328.5"
+ },
+ "7667": {
+  "smiles": "C1=CC=C(C=C1)C=CBr",
+  "connectivity_smiles": "C1=CC=C(C=C1)C=CBr",
+  "inchikey": "YMOONIIMQBGTDU-UHFFFAOYSA-N",
+  "formula": "C8H7Br",
+  "mw": "183.04"
+ },
+ "22044": {
+  "smiles": "C1=CC=C(C=C1)C(C#N)Br",
+  "connectivity_smiles": "C1=CC=C(C=C1)C(C#N)Br",
+  "inchikey": "XUHFBOUSHUEAQZ-UHFFFAOYSA-N",
+  "formula": "C8H6BrN",
+  "mw": "196.04"
+ },
+ "14862": {
+  "smiles": "CC(C)CCCCCCC=O",
+  "connectivity_smiles": "CC(C)CCCCCCC=O",
+  "inchikey": "WDMOXLRWVGEXJV-UHFFFAOYSA-N",
+  "formula": "C10H20O",
+  "mw": "156.26"
+ },
+ "6366": {
+  "smiles": "C=C(Cl)Cl",
+  "connectivity_smiles": "C=C(Cl)Cl",
+  "inchikey": "LGXVIGDEPROXKC-UHFFFAOYSA-N",
+  "formula": "C2H2Cl2",
+  "mw": "96.94"
+ },
+ "21354": {
+  "smiles": "CCCCCCCC[Si](Cl)(Cl)Cl",
+  "connectivity_smiles": "CCCCCCCC[Si](Cl)(Cl)Cl",
+  "inchikey": "RCHUVCPBWWSUMC-UHFFFAOYSA-N",
+  "formula": "C8H17Cl3Si",
+  "mw": "247.7"
+ },
+ "21355": {
+  "smiles": "CCCCCCCCC[Si](Cl)(Cl)Cl",
+  "connectivity_smiles": "CCCCCCCCC[Si](Cl)(Cl)Cl",
+  "inchikey": "SSBOTKQTCWQWMG-UHFFFAOYSA-N",
+  "formula": "C9H19Cl3Si",
+  "mw": "261.7"
+ },
+ "21863527": {
+  "smiles": "[H+].[H+].F[Si-2](F)(F)(F)(F)F",
+  "connectivity_smiles": "[H+].[H+].F[Si-2](F)(F)(F)(F)F",
+  "inchikey": "OHORFAFFMDIQRR-UHFFFAOYSA-P",
+  "formula": "F6H2Si",
+  "mw": "144.091"
+ },
+ "12679": {
+  "smiles": "CN(C)P(=O)(N(C)C)N(C)C",
+  "connectivity_smiles": "CN(C)P(=O)(N(C)C)N(C)C",
+  "inchikey": "GNOIPBMMFNIUFM-UHFFFAOYSA-N",
+  "formula": "C6H18N3OP",
+  "mw": "179.20"
+ },
+ "7242": {
+  "smiles": "CC1=CC=CC=C1N",
+  "connectivity_smiles": "CC1=CC=CC=C1N",
+  "inchikey": "RNVCVTLRINQCPJ-UHFFFAOYSA-N",
+  "formula": "C7H9N",
+  "mw": "107.15"
+ },
+ "7934": {
+  "smiles": "CC1=CC(=CC=C1)N",
+  "connectivity_smiles": "CC1=CC(=CC=C1)N",
+  "inchikey": "JJYPMNFTHPTTDI-UHFFFAOYSA-N",
+  "formula": "C7H9N",
+  "mw": "107.15"
+ },
+ "7813": {
+  "smiles": "CC1=CC=C(C=C1)N",
+  "connectivity_smiles": "CC1=CC=C(C=C1)N",
+  "inchikey": "RZXMPPFPUUCRFN-UHFFFAOYSA-N",
+  "formula": "C7H9N",
+  "mw": "107.15"
+ },
+ "7240": {
+  "smiles": "C1=CC=C(C(=C1)N)Cl",
+  "connectivity_smiles": "C1=CC=C(C(=C1)N)Cl",
+  "inchikey": "AKCRQHGQIJBRMN-UHFFFAOYSA-N",
+  "formula": "C6H6ClN",
+  "mw": "127.57"
+ },
+ "7932": {
+  "smiles": "C1=CC(=CC(=C1)Cl)N",
+  "connectivity_smiles": "C1=CC(=CC(=C1)Cl)N",
+  "inchikey": "PNPCRKVUWYDDST-UHFFFAOYSA-N",
+  "formula": "C6H6ClN",
+  "mw": "127.57"
+ },
+ "7812": {
+  "smiles": "C1=CC(=CC=C1N)Cl",
+  "connectivity_smiles": "C1=CC(=CC=C1N)Cl",
+  "inchikey": "QSNSCYSYFYORTR-UHFFFAOYSA-N",
+  "formula": "C6H6ClN",
+  "mw": "127.57"
+ },
+ "12661": {
+  "smiles": "C=C1CC(=O)O1",
+  "connectivity_smiles": "C=C1CC(=O)O1",
+  "inchikey": "WASQWSOJHCZDFK-UHFFFAOYSA-N",
+  "formula": "C4H4O2",
+  "mw": "84.07"
+ },
+ "6780": {
+  "smiles": "C1=CC=C2C(=C1)C(=O)C3=CC=CC=C3C2=O",
+  "connectivity_smiles": "C1=CC=C2C(=C1)C(=O)C3=CC=CC=C3C2=O",
+  "inchikey": "RZVHIXYEVGDQDX-UHFFFAOYSA-N",
+  "formula": "C14H8O2",
+  "mw": "208.21"
+ },
+ "7368": {
+  "smiles": "C1=CC=C(C=C1)C(F)(F)F",
+  "connectivity_smiles": "C1=CC=C(C=C1)C(F)(F)F",
+  "inchikey": "GETTZEONDQJALK-UHFFFAOYSA-N",
+  "formula": "C7H5F3",
+  "mw": "146.11"
+ },
+ "8794": {
+  "smiles": "C1=CC=C(C=C1)CC#N",
+  "connectivity_smiles": "C1=CC=C(C=C1)CC#N",
+  "inchikey": "SUSQOBVLVYHIEX-UHFFFAOYSA-N",
+  "formula": "C8H7N",
+  "mw": "117.15"
+ },
+ "12141": {
+  "smiles": "C1=CC=C(C=C1)COCCO",
+  "connectivity_smiles": "C1=CC=C(C=C1)COCCO",
+  "inchikey": "CUZKCNWZBXLAJX-UHFFFAOYSA-N",
+  "formula": "C9H12O2",
+  "mw": "152.19"
+ },
+ "9999": {
+  "smiles": "C(#N)C#N",
+  "connectivity_smiles": "C(#N)C#N",
+  "inchikey": "JMANVNJQNLATNU-UHFFFAOYSA-N",
+  "formula": "C2N2",
+  "mw": "52.03"
+ },
+ "7268": {
+  "smiles": "CCOC(=O)C(=O)OCC",
+  "connectivity_smiles": "CCOC(=O)C(=O)OCC",
+  "inchikey": "WYACBZDAHNBPPB-UHFFFAOYSA-N",
+  "formula": "C6H10O4",
+  "mw": "146.14"
+ },
+ "5936": {
+  "smiles": "CC(C)OP(=O)(OC(C)C)F",
+  "connectivity_smiles": "CC(C)OP(=O)(OC(C)C)F",
+  "inchikey": "MUCZHBLJLSDCSD-UHFFFAOYSA-N",
+  "formula": "C6H14FO3P",
+  "mw": "184.15"
+ },
+ "995": {
+  "smiles": "C1=CC=C2C(=C1)C=CC3=CC=CC=C32",
+  "connectivity_smiles": "C1=CC=C2C(=C1)C=CC3=CC=CC=C32",
+  "inchikey": "YNPNZTXNASCQKK-UHFFFAOYSA-N",
+  "formula": "C14H10",
+  "mw": "178.23"
+ },
+ "444795": {
+  "smiles": "CC1=C(C(CCC1)(C)C)/C=C/C(=C/C=C/C(=C/C(=O)O)/C)/C",
+  "connectivity_smiles": "CC1=C(C(CCC1)(C)C)C=CC(=CC=CC(=CC(=O)O)C)C",
+  "inchikey": "SHGAZHPCJJPHSC-YCNIQYBTSA-N",
+  "formula": "C20H28O2",
+  "mw": "300.4"
+ },
+ "6944": {
+  "smiles": "CC1=CC=CC=C1[N+](=O)[O-]",
+  "connectivity_smiles": "CC1=CC=CC=C1[N+](=O)[O-]",
+  "inchikey": "PLAZTCDQAHEYBI-UHFFFAOYSA-N",
+  "formula": "C7H7NO2",
+  "mw": "137.14"
+ },
+ "6335": {
+  "smiles": "CC#C",
+  "connectivity_smiles": "CC#C",
+  "inchikey": "MWWATHDPGQKSAR-UHFFFAOYSA-N",
+  "formula": "C3H4",
+  "mw": "40.06"
+ },
+ "108177": {
+  "smiles": "C1=CC(=C(C2=C1C(=C(C(=C2Cl)Cl)Cl)Cl)Cl)Cl",
+  "connectivity_smiles": "C1=CC(=C(C2=C1C(=C(C(=C2Cl)Cl)Cl)Cl)Cl)Cl",
+  "inchikey": "CTLMCQOGOWNFHA-UHFFFAOYSA-N",
+  "formula": "C10H2Cl6",
+  "mw": "334.8"
+ },
+ "16591": {
+  "smiles": "CCCSSCC=C",
+  "connectivity_smiles": "CCCSSCC=C",
+  "inchikey": "FCSSPCOFDUKHPV-UHFFFAOYSA-N",
+  "formula": "C6H12S2",
+  "mw": "148.3"
+ },
+ "24258": {
+  "smiles": "O=Cl(=O)(=O)F",
+  "connectivity_smiles": "O=Cl(=O)(=O)F",
+  "inchikey": "XHFXMNZYIKFCPN-UHFFFAOYSA-N",
+  "formula": "ClFO3",
+  "mw": "102.45"
+ },
+ "7903": {
+  "smiles": "CCC[N+](=O)[O-]",
+  "connectivity_smiles": "CCC[N+](=O)[O-]",
+  "inchikey": "JSZOAYXJRCEYSX-UHFFFAOYSA-N",
+  "formula": "C3H7NO2",
+  "mw": "89.09"
+ },
+ "2336": {
+  "smiles": "C1=CC=C2C3=C4C(=CC2=C1)C=CC5=C4C(=CC=C5)C=C3",
+  "connectivity_smiles": "C1=CC=C2C3=C4C(=CC2=C1)C=CC5=C4C(=CC=C5)C=C3",
+  "inchikey": "FMMWHPNWAFZXNH-UHFFFAOYSA-N",
+  "formula": "C20H12",
+  "mw": "252.3"
+ },
+ "6407": {
+  "smiles": "C(=O)C(Cl)(Cl)Cl",
+  "connectivity_smiles": "C(=O)C(Cl)(Cl)Cl",
+  "inchikey": "HFFLGKNGCAIQMO-UHFFFAOYSA-N",
+  "formula": "C2HCl3O",
+  "mw": "147.38"
+ },
+ "6534": {
+  "smiles": "CCOP(=O)(CC)OCC",
+  "connectivity_smiles": "CCOP(=O)(CC)OCC",
+  "inchikey": "AATNZNJRDOVKDD-UHFFFAOYSA-N",
+  "formula": "C6H15O3P",
+  "mw": "166.16"
+ },
+ "7423": {
+  "smiles": "C1=CC(=CC(=C1)[N+](=O)[O-])N",
+  "connectivity_smiles": "C1=CC(=CC(=C1)[N+](=O)[O-])N",
+  "inchikey": "XJCVRTZCHMZPBD-UHFFFAOYSA-N",
+  "formula": "C6H6N2O2",
+  "mw": "138.12"
+ },
+ "31244": {
+  "smiles": "COC1=CC=C(C=C1)C=O",
+  "connectivity_smiles": "COC1=CC=C(C=C1)C=O",
+  "inchikey": "ZRSNZINYAWTAHE-UHFFFAOYSA-N",
+  "formula": "C8H8O2",
+  "mw": "136.15"
+ },
+ "7276": {
+  "smiles": "C1C(O1)C2=CC=CC=C2",
+  "connectivity_smiles": "C1C(O1)C2=CC=CC=C2",
+  "inchikey": "AWMVMTVKBNGEAK-UHFFFAOYSA-N",
+  "formula": "C8H8O",
+  "mw": "120.15"
+ },
+ "1133": {
+  "smiles": "C(C(=O)O)S",
+  "connectivity_smiles": "C(C(=O)O)S",
+  "inchikey": "CWERGRDVMFNCDR-UHFFFAOYSA-N",
+  "formula": "C2H4O2S",
+  "mw": "92.12"
+ },
+ "34306": {
+  "smiles": "CC(C)CCCCCOC(=O)CS",
+  "connectivity_smiles": "CC(C)CCCCCOC(=O)CS",
+  "inchikey": "RZBBHEJLECUBJT-UHFFFAOYSA-N",
+  "formula": "C10H20O2S",
+  "mw": "204.33"
+ },
+ "8481": {
+  "smiles": "CC(=O)NC1=CC=C(C=C1)S(=O)(=O)Cl",
+  "connectivity_smiles": "CC(=O)NC1=CC=C(C=C1)S(=O)(=O)Cl",
+  "inchikey": "GRDXCFKBQWDAJH-UHFFFAOYSA-N",
+  "formula": "C8H8ClNO3S",
+  "mw": "233.67"
+ },
+ "7867": {
+  "smiles": "C=CC[Si](Cl)(Cl)Cl",
+  "connectivity_smiles": "C=CC[Si](Cl)(Cl)Cl",
+  "inchikey": "HKFSBKQQYCMCKO-UHFFFAOYSA-N",
+  "formula": "C3H5Cl3Si",
+  "mw": "175.51"
+ },
+ "12573": {
+  "smiles": "C1=CC=C(C=C1)P(Cl)Cl",
+  "connectivity_smiles": "C1=CC=C(C=C1)P(Cl)Cl",
+  "inchikey": "IMDXZWRLUZPMDH-UHFFFAOYSA-N",
+  "formula": "C6H5Cl2P",
+  "mw": "178.98"
+ },
+ "10989": {
+  "smiles": "CC(C)CCOCCC(C)C",
+  "connectivity_smiles": "CC(C)CCOCCC(C)C",
+  "inchikey": "AQZGPSLYZOOYQP-UHFFFAOYSA-N",
+  "formula": "C10H22O",
+  "mw": "158.28"
+ },
+ "6826": {
+  "smiles": "CNC1=CC=CC=C1C(=O)OC",
+  "connectivity_smiles": "CNC1=CC=CC=C1C(=O)OC",
+  "inchikey": "GVOWHGSUZUUUDR-UHFFFAOYSA-N",
+  "formula": "C9H11NO2",
+  "mw": "165.19"
+ },
+ "261": {
+  "smiles": "CCCC=O",
+  "connectivity_smiles": "CCCC=O",
+  "inchikey": "ZTQSAGDEMFDKMZ-UHFFFAOYSA-N",
+  "formula": "C4H8O",
+  "mw": "72.11"
+ },
+ "7298": {
+  "smiles": "C1CCC(C1)O",
+  "connectivity_smiles": "C1CCC(C1)O",
+  "inchikey": "XCIXKGXIYUWCLL-UHFFFAOYSA-N",
+  "formula": "C5H10O",
+  "mw": "86.13"
+ },
+ "8452": {
+  "smiles": "C1CCC(=O)C1",
+  "connectivity_smiles": "C1CCC(=O)C1",
+  "inchikey": "BGTOWKSIORTVQH-UHFFFAOYSA-N",
+  "formula": "C5H8O",
+  "mw": "84.12"
+ },
+ "7917": {
+  "smiles": "CC(C)OC(=O)Cl",
+  "connectivity_smiles": "CC(C)OC(=O)Cl",
+  "inchikey": "IVRIRQXJSNCSPQ-UHFFFAOYSA-N",
+  "formula": "C4H7ClO2",
+  "mw": "122.55"
+ },
+ "8785": {
+  "smiles": "CC(=O)OCC1=CC=CC=C1",
+  "connectivity_smiles": "CC(=O)OCC1=CC=CC=C1",
+  "inchikey": "QUKGYYKBILRGFE-UHFFFAOYSA-N",
+  "formula": "C9H10O2",
+  "mw": "150.17"
+ },
+ "7834": {
+  "smiles": "CCC1CO1",
+  "connectivity_smiles": "CCC1CO1",
+  "inchikey": "RBACIKXCRWGCBB-UHFFFAOYSA-N",
+  "formula": "C4H8O",
+  "mw": "72.11"
+ },
+ "7619": {
+  "smiles": "C1COCCN1SC2=NC3=CC=CC=C3S2",
+  "connectivity_smiles": "C1COCCN1SC2=NC3=CC=CC=C3S2",
+  "inchikey": "MHKLKWCYGIBEQF-UHFFFAOYSA-N",
+  "formula": "C11H12N2OS2",
+  "mw": "252.4"
+ },
+ "8034": {
+  "smiles": "CC(C)CCC(=O)C",
+  "connectivity_smiles": "CC(C)CCC(=O)C",
+  "inchikey": "FFWSICBKRCICMR-UHFFFAOYSA-N",
+  "formula": "C7H14O",
+  "mw": "114.19"
+ },
+ "7830": {
+  "smiles": "CCCCCCCCC1C(O1)CCCCCCCC(=O)OCCCC",
+  "connectivity_smiles": "CCCCCCCCC1C(O1)CCCCCCCC(=O)OCCCC",
+  "inchikey": "FEXXLIKDYGCVGJ-UHFFFAOYSA-N",
+  "formula": "C22H42O3",
+  "mw": "354.6"
+ },
+ "11966": {
+  "smiles": "CC(C)(C)OOC(=O)C1=CC=CC=C1",
+  "connectivity_smiles": "CC(C)(C)OOC(=O)C1=CC=CC=C1",
+  "inchikey": "GJBRNHKUVLOCEB-UHFFFAOYSA-N",
+  "formula": "C11H14O3",
+  "mw": "194.23"
+ },
+ "12695": {
+  "smiles": "C(=O)(C(F)(F)F)C(F)(F)F",
+  "connectivity_smiles": "C(=O)(C(F)(F)F)C(F)(F)F",
+  "inchikey": "VBZWSGALLODQNC-UHFFFAOYSA-N",
+  "formula": "C3F6O",
+  "mw": "166.02"
+ },
+ "7954": {
+  "smiles": "C1(=NC(=NC(=N1)Cl)Cl)Cl",
+  "connectivity_smiles": "C1(=NC(=NC(=N1)Cl)Cl)Cl",
+  "inchikey": "MGNCLNQXLYJVJD-UHFFFAOYSA-N",
+  "formula": "C3Cl3N3",
+  "mw": "184.41"
+ },
+ "87468080": {
+  "smiles": "CCC(C)C#CC=O",
+  "connectivity_smiles": "CCC(C)C#CC=O",
+  "inchikey": "PQNOIQPKCYIDJB-UHFFFAOYSA-N",
+  "formula": "C7H10O",
+  "mw": "110.15"
+ },
+ "11419": {
+  "smiles": "CC1CCCCC1=O",
+  "connectivity_smiles": "CC1CCCCC1=O",
+  "inchikey": "LFSAPCRASZRSKS-UHFFFAOYSA-N",
+  "formula": "C7H12O",
+  "mw": "112.17"
+ },
+ "114878": {
+  "smiles": "C1=CC2=C(C(=C1)Cl)C(=C(C(=C2Cl)Cl)Cl)Cl",
+  "connectivity_smiles": "C1=CC2=C(C(=C1)Cl)C(=C(C(=C2Cl)Cl)Cl)Cl",
+  "inchikey": "JRZKNHITLINYHV-UHFFFAOYSA-N",
+  "formula": "C10H3Cl5",
+  "mw": "300.4"
+ },
+ "29910": {
+  "smiles": "C1=CC=C2C(=C1)C(=C(C(=C2Cl)Cl)Cl)Cl",
+  "connectivity_smiles": "C1=CC=C2C(=C1)C(=C(C(=C2Cl)Cl)Cl)Cl",
+  "inchikey": "NAQWICRLNQSPPW-UHFFFAOYSA-N",
+  "formula": "C10H4Cl4",
+  "mw": "265.9"
+ },
+ "7422": {
+  "smiles": "CC1=CC(=CC=C1)[N+](=O)[O-]",
+  "connectivity_smiles": "CC1=CC(=CC=C1)[N+](=O)[O-]",
+  "inchikey": "QZYHIOPPLUPUJF-UHFFFAOYSA-N",
+  "formula": "C7H7NO2",
+  "mw": "137.14"
+ },
+ "5281077": {
+  "smiles": "CCC(/C=C/Cl)(C#C)O",
+  "connectivity_smiles": "CCC(C=CCl)(C#C)O",
+  "inchikey": "ZEHYJZXQEQOSON-AATRIKPKSA-N",
+  "formula": "C7H9ClO",
+  "mw": "144.60"
+ },
+ "4781": {
+  "smiles": "CCCCC1C(=O)N(N(C1=O)C2=CC=CC=C2)C3=CC=CC=C3",
+  "connectivity_smiles": "CCCCC1C(=O)N(N(C1=O)C2=CC=CC=C2)C3=CC=CC=C3",
+  "inchikey": "VYMDGNCVAMGZFE-UHFFFAOYSA-N",
+  "formula": "C19H20N2O2",
+  "mw": "308.4"
+ },
+ "8280": {
+  "smiles": "CCC1(C(=O)N(C(=O)O1)C)C",
+  "connectivity_smiles": "CCC1(C(=O)N(C(=O)O1)C)C",
+  "inchikey": "VQASKUSHBVDKGU-UHFFFAOYSA-N",
+  "formula": "C7H11NO3",
+  "mw": "157.17"
+ },
+ "4842": {
+  "smiles": "C1CN(CCN1C(=O)CCBr)C(=O)CCBr",
+  "connectivity_smiles": "C1CN(CCN1C(=O)CCBr)C(=O)CCBr",
+  "inchikey": "NJBFOOCLYDNZJN-UHFFFAOYSA-N",
+  "formula": "C10H16Br2N2O2",
+  "mw": "356.05"
+ },
+ "3735": {
+  "smiles": "CCC(CC1=C(C(=C(C=C1I)I)N)I)C(=O)O",
+  "connectivity_smiles": "CCC(CC1=C(C(=C(C=C1I)I)N)I)C(=O)O",
+  "inchikey": "OIRFJRBSRORBCM-UHFFFAOYSA-N",
+  "formula": "C11H12I3NO2",
+  "mw": "570.93"
+ },
+ "10836": {
+  "smiles": "C[C@@H](CC1=CC=CC=C1)NC",
+  "connectivity_smiles": "CC(CC1=CC=CC=C1)NC",
+  "inchikey": "MYWUZJCMWCOHBA-VIFPVBQESA-N",
+  "formula": "C10H15N",
+  "mw": "149.23"
+ },
+ "31264": {
+  "smiles": "CC1OC(OC(O1)C)C",
+  "connectivity_smiles": "CC1OC(OC(O1)C)C",
+  "inchikey": "SQYNKIJPMDEDEG-UHFFFAOYSA-N",
+  "formula": "C6H12O3",
+  "mw": "132.16"
+ },
+ "11085337": {
+  "smiles": "C/C(=C/CC[C@@]1(C2C[C@H]3C1([C@H]3C2)C)C)/CO",
+  "connectivity_smiles": "CC(=CCCC1(C2CC3C1(C3C2)C)C)CO",
+  "inchikey": "PDEQKAVEYSOLJX-RQGDDBKYSA-N",
+  "formula": "C15H24O",
+  "mw": "220.35"
+ },
+ "4347343": {
+  "smiles": "C1=CC=C(C=C1)S(=O)(=O)[N-]Cl.[Na+]",
+  "connectivity_smiles": "C1=CC=C(C=C1)S(=O)(=O)[N-]Cl.[Na+]",
+  "inchikey": "KDNCILYKSYKEFJ-UHFFFAOYSA-N",
+  "formula": "C6H5ClNNaO2S",
+  "mw": "213.62"
+ },
+ "6736": {
+  "smiles": "CC1=CNC2=CC=CC=C12",
+  "connectivity_smiles": "CC1=CNC2=CC=CC=C12",
+  "inchikey": "ZFRKQXVRDFCRJG-UHFFFAOYSA-N",
+  "formula": "C9H9N",
+  "mw": "131.17"
+ },
+ "10658": {
+  "smiles": "C1=CC2=C(C=CO2)C3=C1C=CC(=O)O3",
+  "connectivity_smiles": "C1=CC2=C(C=CO2)C3=C1C=CC(=O)O3",
+  "inchikey": "XDROKJSWHURZGO-UHFFFAOYSA-N",
+  "formula": "C11H6O3",
+  "mw": "186.16"
+ },
+ "3080": {
+  "smiles": "C(C(CS)S)O",
+  "connectivity_smiles": "C(C(CS)S)O",
+  "inchikey": "WQABCVAJNWAXTE-UHFFFAOYSA-N",
+  "formula": "C3H8OS2",
+  "mw": "124.23"
+ },
+ "6478": {
+  "smiles": "C1(=C(C(C(=C1Cl)Cl)(Cl)Cl)Cl)Cl",
+  "connectivity_smiles": "C1(=C(C(C(=C1Cl)Cl)(Cl)Cl)Cl)Cl",
+  "inchikey": "VUNCWTMEJYMOOR-UHFFFAOYSA-N",
+  "formula": "C5Cl6",
+  "mw": "272.8"
+ },
+ "16421": {
+  "smiles": "CCOP(=S)(C1=CC=CC=C1)OC2=CC=C(C=C2)[N+](=O)[O-]",
+  "connectivity_smiles": "CCOP(=S)(C1=CC=CC=C1)OC2=CC=C(C=C2)[N+](=O)[O-]",
+  "inchikey": "AIGRXSNSLVJMEA-UHFFFAOYSA-N",
+  "formula": "C14H14NO4PS",
+  "mw": "323.31"
+ },
+ "8657": {
+  "smiles": "CCC1=CC=CC=C1CC",
+  "connectivity_smiles": "CCC1=CC=CC=C1CC",
+  "inchikey": "KVNYFPKFSJIPBJ-UHFFFAOYSA-N",
+  "formula": "C10H14",
+  "mw": "134.22"
+ },
+ "7734": {
+  "smiles": "CCC1=CC=C(C=C1)CC",
+  "connectivity_smiles": "CCC1=CC=C(C=C1)CC",
+  "inchikey": "DSNHSQKRULAAEI-UHFFFAOYSA-N",
+  "formula": "C10H14",
+  "mw": "134.22"
+ },
+ "16682740": {
+  "smiles": "CCCC[Sn](CCCC)(OC(=O)C)OC(=O)C",
+  "connectivity_smiles": "CCCC[Sn](CCCC)(OC(=O)C)OC(=O)C",
+  "inchikey": "JJLKTTCRRLHVGL-UHFFFAOYSA-L",
+  "formula": "C12H24O4Sn",
+  "mw": "351.03"
+ },
+ "5284369": {
+  "smiles": "C1=CC=C(C=C1)/C=C/COC(=O)C2=CC=CC=C2N",
+  "connectivity_smiles": "C1=CC=C(C=C1)C=CCOC(=O)C2=CC=CC=C2N",
+  "inchikey": "GABQNAFEZZDSCM-RMKNXTFCSA-N",
+  "formula": "C16H15NO2",
+  "mw": "253.29"
+ },
+ "7409": {
+  "smiles": "CC(C1=CC=CC=C1)O",
+  "connectivity_smiles": "CC(C1=CC=CC=C1)O",
+  "inchikey": "WAPNOHKVXSQRPX-UHFFFAOYSA-N",
+  "formula": "C8H10O",
+  "mw": "122.16"
+ },
+ "9223": {
+  "smiles": "C1=CC=C2C(=C1)C=CO2",
+  "connectivity_smiles": "C1=CC=C2C(=C1)C=CO2",
+  "inchikey": "IANQTJSKSUMEQM-UHFFFAOYSA-N",
+  "formula": "C8H6O",
+  "mw": "118.13"
+ },
+ "3672772": {
+  "smiles": "CCC(C)(OO)OOC(C)(CC)OO",
+  "connectivity_smiles": "CCC(C)(OO)OOC(C)(CC)OO",
+  "inchikey": "WFUGQJXVXHBTEM-UHFFFAOYSA-N",
+  "formula": "C8H18O6",
+  "mw": "210.22"
+ },
+ "17816": {
+  "smiles": "CC(C)CC(=O)OCC=C",
+  "connectivity_smiles": "CC(C)CC(=O)OCC=C",
+  "inchikey": "HOMAGVUCNZNWBC-UHFFFAOYSA-N",
+  "formula": "C8H14O2",
+  "mw": "142.20"
+ },
+ "440917": {
+  "smiles": "CC1=CC[C@@H](CC1)C(=C)C",
+  "connectivity_smiles": "CC1=CCC(CC1)C(=C)C",
+  "inchikey": "XMGQYMWWDOXHJM-JTQLQIEISA-N",
+  "formula": "C10H16",
+  "mw": "136.23"
+ },
+ "517202": {
+  "smiles": "C1(=NC(=O)N(C(=O)N1Cl)Cl)[O-].[Na+]",
+  "connectivity_smiles": "C1(=NC(=O)N(C(=O)N1Cl)Cl)[O-].[Na+]",
+  "inchikey": "MSFGZHUJTJBYFA-UHFFFAOYSA-M",
+  "formula": "C3Cl2N3NaO3",
+  "mw": "219.94"
+ },
+ "460": {
+  "smiles": "COC1=CC=CC=C1O",
+  "connectivity_smiles": "COC1=CC=CC=C1O",
+  "inchikey": "LHGVFZTZFXWLCP-UHFFFAOYSA-N",
+  "formula": "C7H8O2",
+  "mw": "124.14"
+ },
+ "7386": {
+  "smiles": "C1=CC(=CC(=C1)[N+](=O)[O-])C(F)(F)F",
+  "connectivity_smiles": "C1=CC(=CC(=C1)[N+](=O)[O-])C(F)(F)F",
+  "inchikey": "WHNAMGUAXHGCHH-UHFFFAOYSA-N",
+  "formula": "C7H4F3NO2",
+  "mw": "191.11"
+ },
+ "7394": {
+  "smiles": "C1=CC(=CC=C1C(F)(F)F)Cl",
+  "connectivity_smiles": "C1=CC(=CC=C1C(F)(F)F)Cl",
+  "inchikey": "QULYNCCPRWKEMF-UHFFFAOYSA-N",
+  "formula": "C7H4ClF3",
+  "mw": "180.55"
+ },
+ "9016": {
+  "smiles": "COC1=CC=C(C=C1)OC",
+  "connectivity_smiles": "COC1=CC=C(C=C1)OC",
+  "inchikey": "OHBQPCCCRFSCAX-UHFFFAOYSA-N",
+  "formula": "C8H10O2",
+  "mw": "138.16"
+ },
+ "3641960": {
+  "smiles": "CC1=CC=C(C=C1)S(=O)(=O)[N-]Cl.[Na+]",
+  "connectivity_smiles": "CC1=CC=C(C=C1)S(=O)(=O)[N-]Cl.[Na+]",
+  "inchikey": "VDQQXEISLMTGAB-UHFFFAOYSA-N",
+  "formula": "C7H7ClNNaO2S",
+  "mw": "227.64"
+ },
+ "524223": {
+  "smiles": "C1=CC=C2C(=C1)C=C(C(=C2Cl)Cl)Cl",
+  "connectivity_smiles": "C1=CC=C2C(=C1)C=C(C(=C2Cl)Cl)Cl",
+  "inchikey": "QEPTXDCPBXMWJC-UHFFFAOYSA-N",
+  "formula": "C10H5Cl3",
+  "mw": "231.5"
+ },
+ "660": {
+  "smiles": "C1CC(=O)OC2=CC=CC=C21",
+  "connectivity_smiles": "C1CC(=O)OC2=CC=CC=C21",
+  "inchikey": "VMUXSMXIQBNMGZ-UHFFFAOYSA-N",
+  "formula": "C9H8O2",
+  "mw": "148.16"
+ },
+ "7092": {
+  "smiles": "CC1=CC2=C(C=C1)OC(=O)C=C2",
+  "connectivity_smiles": "CC1=CC2=C(C=C1)OC(=O)C=C2",
+  "inchikey": "FXFYOPQLGGEACP-UHFFFAOYSA-N",
+  "formula": "C10H8O2",
+  "mw": "160.17"
+ },
+ "8360": {
+  "smiles": "CC1(C(=O)N(C(=O)N1Cl)Cl)C",
+  "connectivity_smiles": "CC1(C(=O)N(C(=O)N1Cl)Cl)C",
+  "inchikey": "KEQGZUUPPQEDPF-UHFFFAOYSA-N",
+  "formula": "C5H6Cl2N2O2",
+  "mw": "197.02"
+ },
+ "6786": {
+  "smiles": "CCCCCCOC(=O)C1=CC=CC=C1C(=O)OCCCCCC",
+  "connectivity_smiles": "CCCCCCOC(=O)C1=CC=CC=C1C(=O)OCCCCCC",
+  "inchikey": "KCXZNSGUUQJJTR-UHFFFAOYSA-N",
+  "formula": "C20H30O4",
+  "mw": "334.4"
+ },
+ "7127": {
+  "smiles": "COC1=C(C=C(C=C1)CC=C)OC",
+  "connectivity_smiles": "COC1=C(C=C(C=C1)CC=C)OC",
+  "inchikey": "ZYEMGPIYFIJGTP-UHFFFAOYSA-N",
+  "formula": "C11H14O2",
+  "mw": "178.23"
+ },
+ "6054": {
+  "smiles": "C1=CC=C(C=C1)CCO",
+  "connectivity_smiles": "C1=CC=C(C=C1)CCO",
+  "inchikey": "WRMNZCZEMHIOCP-UHFFFAOYSA-N",
+  "formula": "C8H10O",
+  "mw": "122.16"
+ },
+ "7390": {
+  "smiles": "CC1=CC=C(C=C1)C(C)(C)C",
+  "connectivity_smiles": "CC1=CC=C(C=C1)C(C)(C)C",
+  "inchikey": "QCWXDVFBZVHKLV-UHFFFAOYSA-N",
+  "formula": "C11H16",
+  "mw": "148.24"
+ },
+ "999": {
+  "smiles": "C1=CC=C(C=C1)CC(=O)O",
+  "connectivity_smiles": "C1=CC=C(C=C1)CC(=O)O",
+  "inchikey": "WLJVXDMOQOGPHL-UHFFFAOYSA-N",
+  "formula": "C8H8O2",
+  "mw": "136.15"
+ },
+ "5315892": {
+  "smiles": "C1=CC=C(C=C1)/C=C/CO",
+  "connectivity_smiles": "C1=CC=C(C=C1)C=CCO",
+  "inchikey": "OOCCDEMITAIZTP-QPJJXVBHSA-N",
+  "formula": "C9H10O",
+  "mw": "134.17"
+ },
+ "10997": {
+  "smiles": "C(=O)[O-].C(=O)[O-].[Ca+2]",
+  "connectivity_smiles": "C(=O)[O-].C(=O)[O-].[Ca+2]",
+  "inchikey": "CBOCVOKPQGJKKJ-UHFFFAOYSA-L",
+  "formula": "C2H2CaO4",
+  "mw": "130.11"
+ },
+ "28019": {
+  "smiles": "[O-]S(=O)S(=O)(=O)[O-].[K+].[K+]",
+  "connectivity_smiles": "[O-]S(=O)S(=O)(=O)[O-].[K+].[K+]",
+  "inchikey": "RWPGFSMJFRPDDP-UHFFFAOYSA-L",
+  "formula": "K2O5S2",
+  "mw": "222.33"
+ },
+ "7748": {
+  "smiles": "CCOC(=O)CBr",
+  "connectivity_smiles": "CCOC(=O)CBr",
+  "inchikey": "PQJJJMRNHATNKG-UHFFFAOYSA-N",
+  "formula": "C4H7BrO2",
+  "mw": "167.00"
+ },
+ "13002": {
+  "smiles": "C1C(O1)C=O",
+  "connectivity_smiles": "C1C(O1)C=O",
+  "inchikey": "IWYRWIUNAVNFPE-UHFFFAOYSA-N",
+  "formula": "C3H4O2",
+  "mw": "72.06"
+ },
+ "12001": {
+  "smiles": "CCOC(=O)N(C)N=O",
+  "connectivity_smiles": "CCOC(=O)N(C)N=O",
+  "inchikey": "CAUBWLYZCDDYEF-UHFFFAOYSA-N",
+  "formula": "C4H8N2O3",
+  "mw": "132.12"
+ },
+ "14923": {
+  "smiles": "[NH4+].[OH-]",
+  "connectivity_smiles": "[NH4+].[OH-]",
+  "inchikey": "VHUUQVKOLVNVRT-UHFFFAOYSA-N",
+  "formula": "H5NO",
+  "mw": "35.046"
+ },
+ "7463": {
+  "smiles": "CC1=CC=C(C=C1)C(C)C",
+  "connectivity_smiles": "CC1=CC=C(C=C1)C(C)C",
+  "inchikey": "HFPZCAJZSCWRBC-UHFFFAOYSA-N",
+  "formula": "C10H14",
+  "mw": "134.22"
+ },
+ "6573": {
+  "smiles": "CCC(Cl)Cl",
+  "connectivity_smiles": "CCC(Cl)Cl",
+  "inchikey": "WIHMGGWNMISDNJ-UHFFFAOYSA-N",
+  "formula": "C3H6Cl2",
+  "mw": "112.98"
+ },
+ "7728": {
+  "smiles": "CCC1=CN=C(C=C1)C",
+  "connectivity_smiles": "CCC1=CN=C(C=C1)C",
+  "inchikey": "NTSLROIKFLNUIJ-UHFFFAOYSA-N",
+  "formula": "C8H11N",
+  "mw": "121.18"
+ },
+ "7580": {
+  "smiles": "C1=CC=C(C=C1)CC2=CC=CC=C2",
+  "connectivity_smiles": "C1=CC=C(C=C1)CC2=CC=CC=C2",
+  "inchikey": "CZZYITDELCSZES-UHFFFAOYSA-N",
+  "formula": "C13H12",
+  "mw": "168.23"
+ },
+ "8914": {
+  "smiles": "CCCCCCCCCO",
+  "connectivity_smiles": "CCCCCCCCCO",
+  "inchikey": "ZWRUINPWMLAQRD-UHFFFAOYSA-N",
+  "formula": "C9H20O",
+  "mw": "144.25"
+ },
+ "454": {
+  "smiles": "CCCCCCCC=O",
+  "connectivity_smiles": "CCCCCCCC=O",
+  "inchikey": "NUJGJRNETVAIRJ-UHFFFAOYSA-N",
+  "formula": "C8H16O",
+  "mw": "128.21"
+ },
+ "6416": {
+  "smiles": "CC(=O)C(C)(C)C",
+  "connectivity_smiles": "CC(=O)C(C)(C)C",
+  "inchikey": "PJGSXYOJTGTZAV-UHFFFAOYSA-N",
+  "formula": "C6H12O",
+  "mw": "100.16"
+ },
+ "6565": {
+  "smiles": "C=C(CCl)Cl",
+  "connectivity_smiles": "C=C(CCl)Cl",
+  "inchikey": "FALCMQXTWHPRIH-UHFFFAOYSA-N",
+  "formula": "C3H4Cl2",
+  "mw": "110.97"
+ },
+ "6576": {
+  "smiles": "C(=O)C(Cl)Cl",
+  "connectivity_smiles": "C(=O)C(Cl)Cl",
+  "inchikey": "NWQWQKUXRJYXFH-UHFFFAOYSA-N",
+  "formula": "C2H2Cl2O",
+  "mw": "112.94"
+ },
+ "6590": {
+  "smiles": "CC(C)C(=O)O",
+  "connectivity_smiles": "CC(C)C(=O)O",
+  "inchikey": "KQNPFQTWMSNSAP-UHFFFAOYSA-N",
+  "formula": "C4H8O2",
+  "mw": "88.11"
+ },
+ "6777": {
+  "smiles": "C1CCC(CC1)OC(=O)C2=CC=CC=C2C(=O)OC3CCCCC3",
+  "connectivity_smiles": "C1CCC(CC1)OC(=O)C2=CC=CC=C2C(=O)OC3CCCCC3",
+  "inchikey": "VOWAEIGWURALJQ-UHFFFAOYSA-N",
+  "formula": "C20H26O4",
+  "mw": "330.4"
+ },
+ "7040": {
+  "smiles": "CC1=C(C=CC=C1N=C=O)N=C=O",
+  "connectivity_smiles": "CC1=C(C=CC=C1N=C=O)N=C=O",
+  "inchikey": "RUELTTOHQODFPA-UHFFFAOYSA-N",
+  "formula": "C9H6N2O2",
+  "mw": "174.16"
+ },
+ "7042": {
+  "smiles": "C1=CC=C(C(=C1)C#N)C#N",
+  "connectivity_smiles": "C1=CC=C(C(=C1)C#N)C#N",
+  "inchikey": "XQZYPMVTSDWCCE-UHFFFAOYSA-N",
+  "formula": "C8H4N2",
+  "mw": "128.13"
+ },
+ "7150": {
+  "smiles": "COC(=O)C1=CC=CC=C1",
+  "connectivity_smiles": "COC(=O)C1=CC=CC=C1",
+  "inchikey": "QPJVMBTYPHYUOC-UHFFFAOYSA-N",
+  "formula": "C8H8O2",
+  "mw": "136.15"
+ },
+ "7238": {
+  "smiles": "CC1=CC=CC=C1Cl",
+  "connectivity_smiles": "CC1=CC=CC=C1Cl",
+  "inchikey": "IBSQPLPBRSHTTG-UHFFFAOYSA-N",
+  "formula": "C7H7Cl",
+  "mw": "126.58"
+ },
+ "7247": {
+  "smiles": "CC1=CC(=C(C=C1)C)C",
+  "connectivity_smiles": "CC1=CC(=C(C=C1)C)C",
+  "inchikey": "GWHJZXXIDMPWGX-UHFFFAOYSA-N",
+  "formula": "C9H12",
+  "mw": "120.19"
+ },
+ "7295": {
+  "smiles": "COC(=O)CCl",
+  "connectivity_smiles": "COC(=O)CCl",
+  "inchikey": "QABLOFMHHSOFRJ-UHFFFAOYSA-N",
+  "formula": "C3H5ClO2",
+  "mw": "108.52"
+ },
+ "7308": {
+  "smiles": "CC1=CC(=C(C=C1SC2=CC(=C(C=C2C)O)C(C)(C)C)C(C)(C)C)O",
+  "connectivity_smiles": "CC1=CC(=C(C=C1SC2=CC(=C(C=C2C)O)C(C)(C)C)C(C)(C)C)O",
+  "inchikey": "HXIQYSLFEXIOAV-UHFFFAOYSA-N",
+  "formula": "C22H30O2S",
+  "mw": "358.5"
+ },
+ "7351": {
+  "smiles": "CC(C)COC(=O)C(C)C",
+  "connectivity_smiles": "CC(C)COC(=O)C(C)C",
+  "inchikey": "RXGUIWHIADMCFC-UHFFFAOYSA-N",
+  "formula": "C8H16O2",
+  "mw": "144.21"
+ },
+ "17100": {
+  "smiles": "CC1=CCC(CC1)C(C)(C)O",
+  "connectivity_smiles": "CC1=CCC(CC1)C(C)(C)O",
+  "inchikey": "WUOACPNHFRMFPN-UHFFFAOYSA-N",
+  "formula": "C10H18O",
+  "mw": "154.25"
+ },
+ "7411": {
+  "smiles": "C1=CC=C(C=C1)C(Cl)Cl",
+  "connectivity_smiles": "C1=CC=C(C=C1)C(Cl)Cl",
+  "inchikey": "CAHQGWAXKLQREW-UHFFFAOYSA-N",
+  "formula": "C7H6Cl2",
+  "mw": "161.03"
+ },
+ "7591": {
+  "smiles": "CCOC(=O)NC1=CC=CC=C1",
+  "connectivity_smiles": "CCOC(=O)NC1=CC=CC=C1",
+  "inchikey": "LBKPGNUOUPTQKA-UHFFFAOYSA-N",
+  "formula": "C9H11NO2",
+  "mw": "165.19"
+ },
+ "7710": {
+  "smiles": "CCCCCC1CCC(=O)O1",
+  "connectivity_smiles": "CCCCCC1CCC(=O)O1",
+  "inchikey": "OALYTRUKMRCXNH-UHFFFAOYSA-N",
+  "formula": "C9H16O2",
+  "mw": "156.22"
+ },
+ "7725": {
+  "smiles": "CC1=CC=C(C=C1)C=O",
+  "connectivity_smiles": "CC1=CC=C(C=C1)C=O",
+  "inchikey": "FXLOVSHXALFLKQ-UHFFFAOYSA-N",
+  "formula": "C8H8O",
+  "mw": "120.15"
+ },
+ "7731": {
+  "smiles": "CC1=CC=C(C=C1)OC",
+  "connectivity_smiles": "CC1=CC=C(C=C1)OC",
+  "inchikey": "CHLICZRVGGXEOD-UHFFFAOYSA-N",
+  "formula": "C8H10O",
+  "mw": "122.16"
+ },
+ "7735": {
+  "smiles": "C1CC(CCC1CO)CO",
+  "connectivity_smiles": "C1CC(CCC1CO)CO",
+  "inchikey": "YIMQCDZDWXUDCA-UHFFFAOYSA-N",
+  "formula": "C8H16O2",
+  "mw": "144.21"
+ },
+ "7749": {
+  "smiles": "CCC(=O)OCC",
+  "connectivity_smiles": "CCC(=O)OCC",
+  "inchikey": "FKRCODPIKNYEAC-UHFFFAOYSA-N",
+  "formula": "C5H10O2",
+  "mw": "102.13"
+ },
+ "7798": {
+  "smiles": "CCCC(=O)OC(=O)CCC",
+  "connectivity_smiles": "CCCC(=O)OC(=O)CCC",
+  "inchikey": "YHASWHZGWUONAO-UHFFFAOYSA-N",
+  "formula": "C8H14O3",
+  "mw": "158.19"
+ },
+ "246728": {
+  "smiles": "CCCCCC(=O)CC",
+  "connectivity_smiles": "CCCCCC(=O)CC",
+  "inchikey": "RHLVCLIPMVJYKS-UHFFFAOYSA-N",
+  "formula": "C8H16O",
+  "mw": "128.21"
+ },
+ "7991": {
+  "smiles": "CCCCC(=O)O",
+  "connectivity_smiles": "CCCCC(=O)O",
+  "inchikey": "NQPDZGIKBAWPEJ-UHFFFAOYSA-N",
+  "formula": "C5H10O2",
+  "mw": "102.13"
+ },
+ "8469": {
+  "smiles": "CCOC(=O)C1C(O1)C2=CC=CC=C2",
+  "connectivity_smiles": "CCOC(=O)C1C(O1)C2=CC=CC=C2",
+  "inchikey": "GOMAKLPNAAZVCJ-UHFFFAOYSA-N",
+  "formula": "C11H12O3",
+  "mw": "192.21"
+ },
+ "31398": {
+  "smiles": "C1CC(=O)N(C1=O)Cl",
+  "connectivity_smiles": "C1CC(=O)N(C1=O)Cl",
+  "inchikey": "JRNVZBWKYDBUCA-UHFFFAOYSA-N",
+  "formula": "C4H4ClNO2",
+  "mw": "133.53"
+ },
+ "8815": {
+  "smiles": "COC1=CC=C(C=C1)CC=C",
+  "connectivity_smiles": "COC1=CC=C(C=C1)CC=C",
+  "inchikey": "ZFMSMUAANRJZFM-UHFFFAOYSA-N",
+  "formula": "C10H12O",
+  "mw": "148.20"
+ },
+ "10795": {
+  "smiles": "CC(OC)OC",
+  "connectivity_smiles": "CC(OC)OC",
+  "inchikey": "SPEUIVXLLWOEMJ-UHFFFAOYSA-N",
+  "formula": "C4H10O2",
+  "mw": "90.12"
+ },
+ "16692": {
+  "smiles": "C12=C(C(=C(C(=C1Cl)Cl)Cl)Cl)C(=C(C(=C2Cl)Cl)Cl)Cl",
+  "connectivity_smiles": "C12=C(C(=C(C(=C1Cl)Cl)Cl)Cl)C(=C(C(=C2Cl)Cl)Cl)Cl",
+  "inchikey": "RTNLUFLDZOAXIC-UHFFFAOYSA-N",
+  "formula": "C10Cl8",
+  "mw": "403.7"
+ },
+ "8881": {
+  "smiles": "C(CCl)CCl",
+  "connectivity_smiles": "C(CCl)CCl",
+  "inchikey": "YHRUOJUYPBUZOS-UHFFFAOYSA-N",
+  "formula": "C3H6Cl2",
+  "mw": "112.98"
+ },
+ "10423": {
+  "smiles": "C1COC1",
+  "connectivity_smiles": "C1COC1",
+  "inchikey": "AHHWIHXENZJRFG-UHFFFAOYSA-N",
+  "formula": "C3H6O",
+  "mw": "58.08"
+ },
+ "8091": {
+  "smiles": "CCCCCCCC(=O)OC",
+  "connectivity_smiles": "CCCCCCCC(=O)OC",
+  "inchikey": "JGHZJRVDZXSNKQ-UHFFFAOYSA-N",
+  "formula": "C9H18O2",
+  "mw": "158.24"
+ },
+ "8093": {
+  "smiles": "CCCCCCC(=O)C",
+  "connectivity_smiles": "CCCCCCC(=O)C",
+  "inchikey": "ZPVFWPFBNIEHGJ-UHFFFAOYSA-N",
+  "formula": "C8H16O",
+  "mw": "128.21"
+ },
+ "8139": {
+  "smiles": "CCCCCCCCCCCC(=O)OC",
+  "connectivity_smiles": "CCCCCCCCCCCC(=O)OC",
+  "inchikey": "UQDUPQYQJKYHQI-UHFFFAOYSA-N",
+  "formula": "C13H26O2",
+  "mw": "214.34"
+ },
+ "8158": {
+  "smiles": "CCCCCCCCC(=O)O",
+  "connectivity_smiles": "CCCCCCCCC(=O)O",
+  "inchikey": "FBUKVWPVBMHYJY-UHFFFAOYSA-N",
+  "formula": "C9H18O2",
+  "mw": "158.24"
+ },
+ "8165": {
+  "smiles": "CCOCCOCCOC(=O)C",
+  "connectivity_smiles": "CCOCCOCCOC(=O)C",
+  "inchikey": "FPZWZCWUIYYYBU-UHFFFAOYSA-N",
+  "formula": "C8H16O4",
+  "mw": "176.21"
+ },
+ "9862": {
+  "smiles": "CC(=CCCC(=O)C)C",
+  "connectivity_smiles": "CC(=CCCC(=O)C)C",
+  "inchikey": "UHEPJGULSIKKTP-UHFFFAOYSA-N",
+  "formula": "C8H14O",
+  "mw": "126.20"
+ },
+ "5364509": {
+  "smiles": "CCCCCCCC/C=C\\CCCCCCCC(=O)OC",
+  "connectivity_smiles": "CCCCCCCCC=CCCCCCCCC(=O)OC",
+  "inchikey": "QYDYPVFESGNLHU-KHPPLWFESA-N",
+  "formula": "C19H36O2",
+  "mw": "296.5"
+ },
+ "31236": {
+  "smiles": "C1=CC=C(C=C1)OCCO",
+  "connectivity_smiles": "C1=CC=C(C=C1)OCCO",
+  "inchikey": "QCDWFXQBSFUVSP-UHFFFAOYSA-N",
+  "formula": "C8H10O2",
+  "mw": "138.16"
+ },
+ "31242": {
+  "smiles": "CCC1=CC=C(C=C1)O",
+  "connectivity_smiles": "CCC1=CC=C(C=C1)O",
+  "inchikey": "HXDOZKJGKXYMEW-UHFFFAOYSA-N",
+  "formula": "C8H10O",
+  "mw": "122.16"
+ },
+ "20083": {
+  "smiles": "CCCCCCC(C)O",
+  "connectivity_smiles": "CCCCCCC(C)O",
+  "inchikey": "SJWFXCIHNDVPSH-UHFFFAOYSA-N",
+  "formula": "C8H18O",
+  "mw": "130.23"
+ },
+ "31284": {
+  "smiles": "CCCCCCCCCCCCCC(=O)OC",
+  "connectivity_smiles": "CCCCCCCCCCCCCC(=O)OC",
+  "inchikey": "ZAZKJZBWRNNLDS-UHFFFAOYSA-N",
+  "formula": "C15H30O2",
+  "mw": "242.40"
+ },
+ "31341": {
+  "smiles": "C1C=CCC2C1C3CC=CCC3(O2)C=O",
+  "connectivity_smiles": "C1C=CCC2C1C3CC=CCC3(O2)C=O",
+  "inchikey": "XNYGOEGATLFFOX-UHFFFAOYSA-N",
+  "formula": "C13H16O2",
+  "mw": "204.26"
+ },
+ "14896": {
+  "smiles": "CC1(C2CCC(=C)C1C2)C",
+  "connectivity_smiles": "CC1(C2CCC(=C)C1C2)C",
+  "inchikey": "WTARULDDTDQWMU-UHFFFAOYSA-N",
+  "formula": "C10H16",
+  "mw": "136.23"
+ },
+ "8908": {
+  "smiles": "CCCCCCOC(=O)C",
+  "connectivity_smiles": "CCCCCCOC(=O)C",
+  "inchikey": "AOGQPLXWSUTHQB-UHFFFAOYSA-N",
+  "formula": "C8H16O2",
+  "mw": "144.21"
+ },
+ "16666": {
+  "smiles": "C[C@@H]1CC[C@H]([C@@H](C1)O)C(C)C",
+  "connectivity_smiles": "CC1CCC(C(C1)O)C(C)C",
+  "inchikey": "NOOLISFMXDJSKH-KXUCPTDWSA-N",
+  "formula": "C10H20O",
+  "mw": "156.26"
+ },
+ "10247670": {
+  "smiles": "COC1=C(C=CC(=C1)[C@@H]2[C@H]3CO[C@@H]([C@H]3CO2)C4=CC5=C(C=C4)OCO5)O",
+  "connectivity_smiles": "COC1=C(C=CC(=C1)C2C3COC(C3CO2)C4=CC5=C(C=C4)OCO5)O",
+  "inchikey": "VBIRCRCPHNUJAS-AFHBHXEDSA-N",
+  "formula": "C20H20O6",
+  "mw": "356.4"
+ },
+ "10946": {
+  "smiles": "C(C(=O)OC(=O)CCl)Cl",
+  "connectivity_smiles": "C(C(=O)OC(=O)CCl)Cl",
+  "inchikey": "PNVPNXKRAUBJGW-UHFFFAOYSA-N",
+  "formula": "C4H4Cl2O3",
+  "mw": "170.98"
+ },
+ "11124": {
+  "smiles": "CCC(=O)OC",
+  "connectivity_smiles": "CCC(=O)OC",
+  "inchikey": "RJUFJBKOKNCXHH-UHFFFAOYSA-N",
+  "formula": "C4H8O2",
+  "mw": "88.11"
+ },
+ "11463": {
+  "smiles": "CC1=CCC(=C(C)C)CC1",
+  "connectivity_smiles": "CC1=CCC(=C(C)C)CC1",
+  "inchikey": "MOYAFQVGZZPNRA-UHFFFAOYSA-N",
+  "formula": "C10H16",
+  "mw": "136.23"
+ },
+ "5287573": {
+  "smiles": "C/C=C\\C",
+  "connectivity_smiles": "CC=CC",
+  "inchikey": "IAQRGUVFOMOMEM-ARJAWSKDSA-N",
+  "formula": "C4H8",
+  "mw": "56.11"
+ },
+ "11734": {
+  "smiles": "CC(C(=O)O)Cl",
+  "connectivity_smiles": "CC(C(=O)O)Cl",
+  "inchikey": "GAWAYYRQGQZKCR-UHFFFAOYSA-N",
+  "formula": "C3H5ClO2",
+  "mw": "108.52"
+ },
+ "12180": {
+  "smiles": "CCCC(=O)OC",
+  "connectivity_smiles": "CCCC(=O)OC",
+  "inchikey": "UUIQMZJEGPQKFD-UHFFFAOYSA-N",
+  "formula": "C5H10O2",
+  "mw": "102.13"
+ },
+ "62695": {
+  "smiles": "C/C=C/C",
+  "connectivity_smiles": "CC=CC",
+  "inchikey": "IAQRGUVFOMOMEM-ONEGZZNKSA-N",
+  "formula": "C4H8",
+  "mw": "56.11"
+ },
+ "12748": {
+  "smiles": "CC1=CSC=N1",
+  "connectivity_smiles": "CC1=CSC=N1",
+  "inchikey": "QMHIMXFNBOYPND-UHFFFAOYSA-N",
+  "formula": "C4H5NS",
+  "mw": "99.16"
+ },
+ "61022": {
+  "smiles": "CCCCCCC(C)OC(=O)CCCCC(=O)OC(C)CCCCCC",
+  "connectivity_smiles": "CCCCCCC(C)OC(=O)CCCCC(=O)OC(C)CCCCCC",
+  "inchikey": "RTUMJAGKSDIHOW-UHFFFAOYSA-N",
+  "formula": "C22H42O4",
+  "mw": "370.6"
+ },
+ "16238": {
+  "smiles": "CC(C)C1=CC2=CC=CC=C2C=C1",
+  "connectivity_smiles": "CC(C)C1=CC2=CC=CC=C2C=C1",
+  "inchikey": "TVYVQNHYIHAJTD-UHFFFAOYSA-N",
+  "formula": "C13H14",
+  "mw": "170.25"
+ },
+ "16726": {
+  "smiles": "C1(=O)NC(=O)N(C(=O)N1Cl)Cl",
+  "connectivity_smiles": "C1(=O)NC(=O)N(C(=O)N1Cl)Cl",
+  "inchikey": "CEJLBZWIKQJOAT-UHFFFAOYSA-N",
+  "formula": "C3HCl2N3O3",
+  "mw": "197.96"
+ },
+ "15122": {
+  "smiles": "C(C=CCCl)Cl",
+  "connectivity_smiles": "C(C=CCCl)Cl",
+  "inchikey": "FQDIANVAWVHZIR-UHFFFAOYSA-N",
+  "formula": "C4H6Cl2",
+  "mw": "124.99"
+ },
+ "8855": {
+  "smiles": "CCCC(=O)Cl",
+  "connectivity_smiles": "CCCC(=O)Cl",
+  "inchikey": "DVECBJCOGJRVPX-UHFFFAOYSA-N",
+  "formula": "C4H7ClO",
+  "mw": "106.55"
+ },
+ "8130": {
+  "smiles": "CCCCCCC=O",
+  "connectivity_smiles": "CCCCCCC=O",
+  "inchikey": "FXHGMKSSBGDXIY-UHFFFAOYSA-N",
+  "formula": "C7H14O",
+  "mw": "114.19"
+ },
+ "38235": {
+  "smiles": "CC(C)(C)C(=NOC(=O)NC)CSC",
+  "connectivity_smiles": "CC(C)(C)C(=NOC(=O)NC)CSC",
+  "inchikey": "FZSVSABTBYGOQH-UHFFFAOYSA-N",
+  "formula": "C9H18N2O2S",
+  "mw": "218.32"
+ },
+ "7859": {
+  "smiles": "C#CCO",
+  "connectivity_smiles": "C#CCO",
+  "inchikey": "TVDSBUOJIPERQY-UHFFFAOYSA-N",
+  "formula": "C3H4O",
+  "mw": "56.06"
+ },
+ "9481": {
+  "smiles": "C1=CC(=C(C=C1C(F)(F)F)Cl)Cl",
+  "connectivity_smiles": "C1=CC(=C(C=C1C(F)(F)F)Cl)Cl",
+  "inchikey": "XILPLWOGHPSJBK-UHFFFAOYSA-N",
+  "formula": "C7H3Cl2F3",
+  "mw": "215.00"
+ },
+ "13032": {
+  "smiles": "CC(C)NC1=CC=CC=C1",
+  "connectivity_smiles": "CC(C)NC1=CC=CC=C1",
+  "inchikey": "FRCFWPVMFJMNDP-UHFFFAOYSA-N",
+  "formula": "C9H13N",
+  "mw": "135.21"
+ },
+ "13192": {
+  "smiles": "C(CCCN=C=O)CCN=C=O",
+  "connectivity_smiles": "C(CCCN=C=O)CCN=C=O",
+  "inchikey": "RRAMGCGOFNQTLD-UHFFFAOYSA-N",
+  "formula": "C8H12N2O2",
+  "mw": "168.19"
+ },
+ "32791": {
+  "smiles": "CC(C)CCCCCCCOP(=S)(OCCCCCCCC(C)C)[S-].CC(C)CCCCCCCOP(=S)(OCCCCCCCC(C)C)[S-].[Zn+2]",
+  "connectivity_smiles": "CC(C)CCCCCCCOP(=S)(OCCCCCCCC(C)C)[S-].CC(C)CCCCCCCOP(=S)(OCCCCCCCC(C)C)[S-].[Zn+2]",
+  "inchikey": "JTRDOXTXNZMWMG-UHFFFAOYSA-L",
+  "formula": "C40H84O4P2S4Zn",
+  "mw": "884.7"
+ },
+ "12278": {
+  "smiles": "CCCC(C)OC(=O)C",
+  "connectivity_smiles": "CCCC(C)OC(=O)C",
+  "inchikey": "GQKZRWSUJHVIPE-UHFFFAOYSA-N",
+  "formula": "C7H14O2",
+  "mw": "130.18"
+ },
+ "73422990": {
+  "smiles": "CC(CCl)Cl.C(C=CCl)Cl",
+  "connectivity_smiles": "CC(CCl)Cl.C(C=CCl)Cl",
+  "inchikey": "FLWMCWWTXIAPAH-UHFFFAOYSA-N",
+  "formula": "C6H10Cl4",
+  "mw": "223.9"
+ },
+ "7856": {
+  "smiles": "C(C#N)Cl",
+  "connectivity_smiles": "C(C#N)Cl",
+  "inchikey": "RENMDAKOXSCIGH-UHFFFAOYSA-N",
+  "formula": "C2H2ClN",
+  "mw": "75.50"
+ },
+ "8022": {
+  "smiles": "CCN=C=O",
+  "connectivity_smiles": "CCN=C=O",
+  "inchikey": "WUDNUHPRLBTKOJ-UHFFFAOYSA-N",
+  "formula": "C3H5NO",
+  "mw": "71.08"
+ },
+ "10478": {
+  "smiles": "C(#N)I",
+  "connectivity_smiles": "C(#N)I",
+  "inchikey": "WPBXOELOQKLBDF-UHFFFAOYSA-N",
+  "formula": "CIN",
+  "mw": "152.922"
+ },
+ "12671": {
+  "smiles": "CP(=O)(Cl)Cl",
+  "connectivity_smiles": "CP(=O)(Cl)Cl",
+  "inchikey": "SCLFRABIDYGTAZ-UHFFFAOYSA-N",
+  "formula": "CH3Cl2OP",
+  "mw": "132.91"
+ },
+ "169132": {
+  "smiles": "CC1(CC(CC(C1)(C)CN=C=O)N=C=O)C",
+  "connectivity_smiles": "CC1(CC(CC(C1)(C)CN=C=O)N=C=O)C",
+  "inchikey": "NIMLQBUJDJZYEJ-UHFFFAOYSA-N",
+  "formula": "C12H18N2O2",
+  "mw": "222.28"
+ },
+ "26040": {
+  "smiles": "[C]=O.[C]=O.[C]=O.[C]=O.[C]=O.[Fe]",
+  "connectivity_smiles": "[C]=O.[C]=O.[C]=O.[C]=O.[C]=O.[Fe]",
+  "inchikey": "FYOFOKCECDGJBF-UHFFFAOYSA-N",
+  "formula": "C5FeO5",
+  "mw": "195.90"
+ },
+ "156614055": {
+  "smiles": "C1=CC=C(C=C1)[Si](Cl)(Cl)Cl.Cl.Cl",
+  "connectivity_smiles": "C1=CC=C(C=C1)[Si](Cl)(Cl)Cl.Cl.Cl",
+  "inchikey": "QFLNHKMRCRBGOY-UHFFFAOYSA-N",
+  "formula": "C6H7Cl5Si",
+  "mw": "284.5"
+ },
+ "6500": {
+  "smiles": "CCOP(=O)(C#N)N(C)C",
+  "connectivity_smiles": "CCOP(=O)(C#N)N(C)C",
+  "inchikey": "PJVJTCIRVMBVIA-UHFFFAOYSA-N",
+  "formula": "C5H11N2O2P",
+  "mw": "162.13"
+ },
+ "7871": {
+  "smiles": "CC(C)OP(=O)(C)F",
+  "connectivity_smiles": "CC(C)OP(=O)(C)F",
+  "inchikey": "DYAHQFWOVKZOOW-UHFFFAOYSA-N",
+  "formula": "C4H10FO2P",
+  "mw": "140.09"
+ },
+ "10923": {
+  "smiles": "C(=C[As](Cl)Cl)Cl",
+  "connectivity_smiles": "C(=C[As](Cl)Cl)Cl",
+  "inchikey": "GIKLTQKNOXNBNY-UHFFFAOYSA-N",
+  "formula": "C2H2AsCl3",
+  "mw": "207.31"
+ },
+ "30692": {
+  "smiles": "C1=CC=C2C(=C1)N=C(S2)SCSC#N",
+  "connectivity_smiles": "C1=CC=C2C(=C1)N=C(S2)SCSC#N",
+  "inchikey": "TUBQDCKAWGHZPF-UHFFFAOYSA-N",
+  "formula": "C9H6N2S3",
+  "mw": "238.4"
+ },
+ "56846457": {
+  "smiles": "CC1=CC(=C(C=C1)N)C.CC1=CC(=C(C=C1)C)N.CC1=C(C(=CC=C1)N)C.CC1=C(C(=CC=C1)C)N.CC1=C(C=C(C=C1)N)C.CC1=CC(=CC(=C1)N)C",
+  "connectivity_smiles": "CC1=CC(=C(C=C1)N)C.CC1=CC(=C(C=C1)C)N.CC1=C(C(=CC=C1)N)C.CC1=C(C(=CC=C1)C)N.CC1=C(C=C(C=C1)N)C.CC1=CC(=CC(=C1)N)C",
+  "inchikey": "CDULGHZNHURECF-UHFFFAOYSA-N",
+  "formula": "C48H66N6",
+  "mw": "727.1"
+ },
+ "6468": {
+  "smiles": "C1CCC(CC1)(C2=CC=CC=C2)N3CCCCC3",
+  "connectivity_smiles": "C1CCC(CC1)(C2=CC=CC=C2)N3CCCCC3",
+  "inchikey": "JTJMJGYZQZDUJJ-UHFFFAOYSA-N",
+  "formula": "C17H25N",
+  "mw": "243.4"
+ },
+ "10297": {
+  "smiles": "C[C@@H]([C@@H](C1=CC=CC=C1)O)N",
+  "connectivity_smiles": "CC(C(C1=CC=CC=C1)O)N",
+  "inchikey": "DLNKOYKMWOXYQA-CBAPKCEASA-N",
+  "formula": "C9H13NO",
+  "mw": "151.21"
+ },
+ "1988": {
+  "smiles": "CCC1=CC=CC(=C1N(COCC)C(=O)CCl)C",
+  "connectivity_smiles": "CCC1=CC=CC(=C1N(COCC)C(=O)CCl)C",
+  "inchikey": "VTNQPKFIQCLBDU-UHFFFAOYSA-N",
+  "formula": "C14H20ClNO2",
+  "mw": "269.77"
+ },
+ "44072": {
+  "smiles": "C1=CC(=C(C=C1C(F)(F)F)Cl)OC2=CC(=C(C=C2)[N+](=O)[O-])C(=O)[O-].[Na+]",
+  "connectivity_smiles": "C1=CC(=C(C=C1C(F)(F)F)Cl)OC2=CC(=C(C=C2)[N+](=O)[O-])C(=O)[O-].[Na+]",
+  "inchikey": "RVULBHWZFCBODE-UHFFFAOYSA-M",
+  "formula": "C14H6ClF3NNaO5",
+  "mw": "383.64"
+ },
+ "39230": {
+  "smiles": "COC(=O)C1=C(C=CC(=C1)OC2=C(C=C(C=C2)Cl)Cl)[N+](=O)[O-]",
+  "connectivity_smiles": "COC(=O)C1=C(C=CC(=C1)OC2=C(C=C(C=C2)Cl)Cl)[N+](=O)[O-]",
+  "inchikey": "SUSRORUBZHMPCO-UHFFFAOYSA-N",
+  "formula": "C14H9Cl2NO5",
+  "mw": "342.1"
+ },
+ "6442842": {
+  "smiles": "CC1=C(C=CC=C1C2=CC=CC=C2)COC(=O)[C@@H]3[C@@H](C3(C)C)/C=C(/C(F)(F)F)\\Cl",
+  "connectivity_smiles": "CC1=C(C=CC=C1C2=CC=CC=C2)COC(=O)C3C(C3(C)C)C=C(C(F)(F)F)Cl",
+  "inchikey": "OMFRMAHOUUJSGP-IRHGGOMRSA-N",
+  "formula": "C23H22ClF3O2",
+  "mw": "422.9"
+ },
+ "104926": {
+  "smiles": "CC1(C(C1C(=O)OC(C#N)C2=CC(=C(C=C2)F)OC3=CC=CC=C3)C=C(Cl)Cl)C",
+  "connectivity_smiles": "CC1(C(C1C(=O)OC(C#N)C2=CC(=C(C=C2)F)OC3=CC=CC=C3)C=C(Cl)Cl)C",
+  "inchikey": "QQODLKZGRKWIFG-UHFFFAOYSA-N",
+  "formula": "C22H18Cl2FNO3",
+  "mw": "434.3"
+ },
+ "53597": {
+  "smiles": "CP(=O)(CCC(C(=O)[O-])N)O.[NH4+]",
+  "connectivity_smiles": "CP(=O)(CCC(C(=O)[O-])N)O.[NH4+]",
+  "inchikey": "ZBMRKNMTMPPMMK-UHFFFAOYSA-N",
+  "formula": "C5H15N2O4P",
+  "mw": "198.16"
+ },
+ "54738": {
+  "smiles": "CC(C)C1(C(=O)NC(=N1)C2=C(C=CC=N2)C(=O)O)C",
+  "connectivity_smiles": "CC(C)C1(C(=O)NC(=N1)C2=C(C=CC=N2)C(=O)O)C",
+  "inchikey": "CLQMBPJKHLGMQK-UHFFFAOYSA-N",
+  "formula": "C13H15N3O3",
+  "mw": "261.28"
+ },
+ "54739": {
+  "smiles": "CC(C)C1(C(=O)NC(=N1)C2=NC3=CC=CC=C3C=C2C(=O)O)C",
+  "connectivity_smiles": "CC(C)C1(C(=O)NC(=N1)C2=NC3=CC=CC=C3C=C2C(=O)O)C",
+  "inchikey": "CABMTIJINOIHOD-UHFFFAOYSA-N",
+  "formula": "C17H17N3O3",
+  "mw": "311.33"
+ },
+ "73672": {
+  "smiles": "CCC(C)(CC)C1=NOC(=C1)NC(=O)C2=C(C=CC=C2OC)OC",
+  "connectivity_smiles": "CCC(C)(CC)C1=NOC(=C1)NC(=O)C2=C(C=CC=C2OC)OC",
+  "inchikey": "PMHURSZHKKJGBM-UHFFFAOYSA-N",
+  "formula": "C18H24N2O4",
+  "mw": "332.4"
+ },
+ "38479": {
+  "smiles": "CCC(CC)NC1=C(C=C(C(=C1[N+](=O)[O-])C)C)[N+](=O)[O-]",
+  "connectivity_smiles": "CCC(CC)NC1=C(C=C(C(=C1[N+](=O)[O-])C)C)[N+](=O)[O-]",
+  "inchikey": "CHIFOSRWCNZCFN-UHFFFAOYSA-N",
+  "formula": "C13H19N3O4",
+  "mw": "281.31"
+ },
+ "39676": {
+  "smiles": "CC1(C(=O)N(C(=O)O1)C2=CC(=CC(=C2)Cl)Cl)C=C",
+  "connectivity_smiles": "CC1(C(=O)N(C(=O)O1)C2=CC(=CC(=C2)Cl)Cl)C=C",
+  "inchikey": "FSCWZHGZWWDELK-UHFFFAOYSA-N",
+  "formula": "C12H9Cl2NO3",
+  "mw": "286.11"
+ },
+ "7305": {
+  "smiles": "CC(C(C)(C)C)OP(=O)(C)F",
+  "connectivity_smiles": "CC(C(C)(C)C)OP(=O)(C)F",
+  "inchikey": "GRXKLBBBQUKJJZ-UHFFFAOYSA-N",
+  "formula": "C7H16FO2P",
+  "mw": "182.17"
+ },
+ "8842": {
+  "smiles": "CC(CCC=C(C)C)CCO",
+  "connectivity_smiles": "CC(CCC=C(C)C)CCO",
+  "inchikey": "QMVPMAAFGQKVCJ-UHFFFAOYSA-N",
+  "formula": "C10H20O",
+  "mw": "156.26"
+ },
+ "3102": {
+  "smiles": "C1=CC=C(C=C1)C(=O)C2=CC=CC=C2",
+  "connectivity_smiles": "C1=CC=C(C=C1)C(=O)C2=CC=CC=C2",
+  "inchikey": "RWCCWEUUXYIKHB-UHFFFAOYSA-N",
+  "formula": "C13H10O",
+  "mw": "182.22"
+ },
+ "20011": {
+  "smiles": "C1N2CN3CN1C[N+](C2)(C3)CC=CCl.[Cl-]",
+  "connectivity_smiles": "C1N2CN3CN1C[N+](C2)(C3)CC=CCl.[Cl-]",
+  "inchikey": "UKHVLWKBNNSRRR-UHFFFAOYSA-M",
+  "formula": "C9H16Cl2N4",
+  "mw": "251.15"
+ },
+ "34192": {
+  "smiles": "CCN(CC)C(=O)SCC1=CC=C(C=C1)Cl",
+  "connectivity_smiles": "CCN(CC)C(=O)SCC1=CC=C(C=C1)Cl",
+  "inchikey": "QHTQREMOGMZHJV-UHFFFAOYSA-N",
+  "formula": "C12H16ClNOS",
+  "mw": "257.78"
+ },
+ "52999": {
+  "smiles": "CC1=NC(=NC(=N1)OC)NC(=O)NS(=O)(=O)C2=CC=CC=C2C(=O)OC",
+  "connectivity_smiles": "CC1=NC(=NC(=N1)OC)NC(=O)NS(=O)(=O)C2=CC=CC=C2C(=O)OC",
+  "inchikey": "RSMUVYRMZCOLBH-UHFFFAOYSA-N",
+  "formula": "C14H15N5O6S",
+  "mw": "381.37"
+ },
+ "153909": {
+  "smiles": "CC1=NC(=NC(=N1)OC)N(C)C(=O)NS(=O)(=O)C2=CC=CC=C2C(=O)OC",
+  "connectivity_smiles": "CC1=NC(=NC(=N1)OC)N(C)C(=O)NS(=O)(=O)C2=CC=CC=C2C(=O)OC",
+  "inchikey": "VLCQZHSMCYCDJL-UHFFFAOYSA-N",
+  "formula": "C15H17N5O6S",
+  "mw": "395.4"
+ },
+ "5383": {
+  "smiles": "CC(C)(C)C1=NN=C(S1)N(C)C(=O)NC",
+  "connectivity_smiles": "CC(C)(C)C1=NN=C(S1)N(C)C(=O)NC",
+  "inchikey": "HBPDKDSFLXWOAE-UHFFFAOYSA-N",
+  "formula": "C9H16N4OS",
+  "mw": "228.32"
+ },
+ "31677": {
+  "smiles": "CCCCOCN(C1=C(C=CC=C1CC)CC)C(=O)CCl",
+  "connectivity_smiles": "CCCCOCN(C1=C(C=CC=C1CC)CC)C(=O)CCl",
+  "inchikey": "HKPHPIREJKHECO-UHFFFAOYSA-N",
+  "formula": "C17H26ClNO2",
+  "mw": "311.8"
+ },
+ "6597": {
+  "smiles": "C(C(=O)O)(Cl)Cl",
+  "connectivity_smiles": "C(C(=O)O)(Cl)Cl",
+  "inchikey": "JXTHNDFMNIQAHM-UHFFFAOYSA-N",
+  "formula": "C2H2Cl2O2",
+  "mw": "128.94"
+ },
+ "5366546": {
+  "smiles": "CC(C)OC(=O)/C=C(\\C)/C=C/CC(C)CCCC(C)(C)OC",
+  "connectivity_smiles": "CC(C)OC(=O)C=C(C)C=CCC(C)CCCC(C)(C)OC",
+  "inchikey": "NFGXHKASABOEEW-LDRANXPESA-N",
+  "formula": "C19H34O3",
+  "mw": "310.5"
+ },
+ "61088": {
+  "smiles": "C(#N)N=C([S-])[S-].[Na+].[Na+]",
+  "connectivity_smiles": "C(#N)N=C([S-])[S-].[Na+].[Na+]",
+  "inchikey": "AZDIXEXNLJMBJO-UHFFFAOYSA-L",
+  "formula": "C2N2Na2S2",
+  "mw": "162.15"
+ },
+ "176879": {
+  "smiles": "CC(C)OC(=O)NNC1=C(C=CC(=C1)C2=CC=CC=C2)OC",
+  "connectivity_smiles": "CC(C)OC(=O)NNC1=C(C=CC(=C1)C2=CC=CC=C2)OC",
+  "inchikey": "VHLKTXFWDRXILV-UHFFFAOYSA-N",
+  "formula": "C17H20N2O3",
+  "mw": "300.35"
+ },
+ "86453": {
+  "smiles": "CCOC1=NC(=CC2=NC(=NN21)S(=O)(=O)NC3=C(C=CC=C3Cl)C(=O)OC)F",
+  "connectivity_smiles": "CCOC1=NC(=CC2=NC(=NN21)S(=O)(=O)NC3=C(C=CC=C3Cl)C(=O)OC)F",
+  "inchikey": "BIKACRYIQSLICJ-UHFFFAOYSA-N",
+  "formula": "C15H13ClFN5O5S",
+  "mw": "429.8"
+ },
+ "18996": {
+  "smiles": "CC1CCCCN1CCCOC(=O)C2=CC(=C(C=C2)Cl)Cl",
+  "connectivity_smiles": "CC1CCCCN1CCCOC(=O)C2=CC(=C(C=C2)Cl)Cl",
+  "inchikey": "BZGLBXYQOMFXAU-UHFFFAOYSA-N",
+  "formula": "C16H21Cl2NO2",
+  "mw": "330.2"
+ },
+ "62781": {
+  "smiles": "C[N+]1(CCCCC1)C.[Cl-]",
+  "connectivity_smiles": "C[N+]1(CCCCC1)C.[Cl-]",
+  "inchikey": "VHOVSQVSAAQANU-UHFFFAOYSA-M",
+  "formula": "C7H16ClN",
+  "mw": "149.66"
+ },
+ "3220": {
+  "smiles": "CC1=CC2=C(C(=C1)O)C(=O)C3=C(C2=O)C=C(C=C3O)O",
+  "connectivity_smiles": "CC1=CC2=C(C(=C1)O)C(=O)C3=C(C2=O)C=C(C=C3O)O",
+  "inchikey": "RHMXXJGYXNZAPX-UHFFFAOYSA-N",
+  "formula": "C15H10O5",
+  "mw": "270.24"
+ },
+ "62478": {
+  "smiles": "C(S(=O)(=O)C(Cl)(Cl)Cl)(Cl)(Cl)Cl",
+  "connectivity_smiles": "C(S(=O)(=O)C(Cl)(Cl)Cl)(Cl)(Cl)Cl",
+  "inchikey": "YBNLWIZAWPBUKQ-UHFFFAOYSA-N",
+  "formula": "C2Cl6O2S",
+  "mw": "300.8"
+ },
+ "91752": {
+  "smiles": "CCC(C)SP(=O)(OCC)SC(C)CC",
+  "connectivity_smiles": "CCC(C)SP(=O)(OCC)SC(C)CC",
+  "inchikey": "KXRPCFINVWWFHQ-UHFFFAOYSA-N",
+  "formula": "C10H23O2PS2",
+  "mw": "270.4"
+ },
+ "5564": {
+  "smiles": "C1=CC(=C(C=C1Cl)O)OC2=C(C=C(C=C2)Cl)Cl",
+  "connectivity_smiles": "C1=CC(=C(C=C1Cl)O)OC2=C(C=C(C=C2)Cl)Cl",
+  "inchikey": "XEFQLINVKFYRCS-UHFFFAOYSA-N",
+  "formula": "C12H7Cl3O2",
+  "mw": "289.5"
+ },
+ "12307": {
+  "smiles": "CCCO[N+](=O)[O-]",
+  "connectivity_smiles": "CCCO[N+](=O)[O-]",
+  "inchikey": "JNTOKFNBDFMTIV-UHFFFAOYSA-N",
+  "formula": "C3H7NO3",
+  "mw": "105.09"
+ },
+ "4116": {
+  "smiles": "COC(C(Cl)Cl)(F)F",
+  "connectivity_smiles": "COC(C(Cl)Cl)(F)F",
+  "inchikey": "RFKMCNOHBTXSMU-UHFFFAOYSA-N",
+  "formula": "C3H4Cl2F2O",
+  "mw": "164.96"
+ },
+ "31289": {
+  "smiles": "CCCCCCCCC=O",
+  "connectivity_smiles": "CCCCCCCCC=O",
+  "inchikey": "GYHFUZHODSMOHU-UHFFFAOYSA-N",
+  "formula": "C9H18O",
+  "mw": "142.24"
+ },
+ "23677927": {
+  "smiles": "[Li+].C(C(C(C(C(F)(F)S(=O)(=O)[O-])(F)F)(F)F)(F)F)(C(C(C(F)(F)F)(F)F)(F)F)(F)F",
+  "connectivity_smiles": "[Li+].C(C(C(C(C(F)(F)S(=O)(=O)[O-])(F)F)(F)F)(F)F)(C(C(C(F)(F)F)(F)F)(F)F)(F)F",
+  "inchikey": "XVCUGNWRDDNCRD-UHFFFAOYSA-M",
+  "formula": "C8F17LiO3S",
+  "mw": "506.1"
+ },
+ "91731": {
+  "smiles": "C1=C(C=NC(=C1Cl)NC2=C(C=C(C(=C2[N+](=O)[O-])Cl)C(F)(F)F)[N+](=O)[O-])C(F)(F)F",
+  "connectivity_smiles": "C1=C(C=NC(=C1Cl)NC2=C(C=C(C(=C2[N+](=O)[O-])Cl)C(F)(F)F)[N+](=O)[O-])C(F)(F)F",
+  "inchikey": "UZCGKGPEKUCDTF-UHFFFAOYSA-N",
+  "formula": "C13H4Cl2F6N4O4",
+  "mw": "465.09"
+ },
+ "93315": {
+  "smiles": "CCCCCCCCCCCCC1=C(C(=O)C2=CC=CC=C2C1=O)OC(=O)C",
+  "connectivity_smiles": "CCCCCCCCCCCCC1=C(C(=O)C2=CC=CC=C2C1=O)OC(=O)C",
+  "inchikey": "QDRXWCAVUNHOGA-UHFFFAOYSA-N",
+  "formula": "C24H32O4",
+  "mw": "384.5"
+ },
+ "86354": {
+  "smiles": "CCC1=NN(C(=C1Cl)C(=O)NCC2=CC=C(C=C2)C(C)(C)C)C",
+  "connectivity_smiles": "CCC1=NN(C(=C1Cl)C(=O)NCC2=CC=C(C=C2)C(C)(C)C)C",
+  "inchikey": "ZZYSLNWGKKDOML-UHFFFAOYSA-N",
+  "formula": "C18H24ClN3O",
+  "mw": "333.9"
+ },
+ "180089": {
+  "smiles": "CCCCOC(=O)[C@@H](C)OC1=CC=C(C=C1)OC2=C(C=C(C=C2)C#N)F",
+  "connectivity_smiles": "CCCCOC(=O)C(C)OC1=CC=C(C=C1)OC2=C(C=C(C=C2)C#N)F",
+  "inchikey": "TYIYMOAHACZAMQ-CQSZACIVSA-N",
+  "formula": "C20H20FNO4",
+  "mw": "357.4"
+ },
+ "84098": {
+  "smiles": "CS(=O)(=O)C1=C(C=CC(=C1)C(F)(F)F)C(=O)C2=C(ON=C2)C3CC3",
+  "connectivity_smiles": "CS(=O)(=O)C1=C(C=CC(=C1)C(F)(F)F)C(=O)C2=C(ON=C2)C3CC3",
+  "inchikey": "OYIKARCXOQLFHF-UHFFFAOYSA-N",
+  "formula": "C15H12F3NO4S",
+  "mw": "359.3"
+ },
+ "153974": {
+  "smiles": "CCOC1=C(C=CC(=C1)C(C)(C)C)C2COC(=N2)C3=C(C=CC=C3F)F",
+  "connectivity_smiles": "CCOC1=C(C=CC(=C1)C(C)(C)C)C2COC(=N2)C3=C(C=CC=C3F)F",
+  "inchikey": "IXSZQYVWNJNRAL-UHFFFAOYSA-N",
+  "formula": "C21H23F2NO2",
+  "mw": "359.4"
+ },
+ "213029": {
+  "smiles": "CCN(CC)CCOCC1=CC=C(C=C1)C.Cl",
+  "connectivity_smiles": "CCN(CC)CCOCC1=CC=C(C=C1)C.Cl",
+  "inchikey": "JNPUCJSASHXMFN-UHFFFAOYSA-N",
+  "formula": "C14H24ClNO",
+  "mw": "257.80"
+ },
+ "61286": {
+  "smiles": "CCCCC(CC)COC(=O)COC1=C(C=C(C=C1)Cl)Cl",
+  "connectivity_smiles": "CCCCC(CC)COC(=O)COC1=C(C=C(C=C1)Cl)Cl",
+  "inchikey": "QZSFJRIWRPJUOH-UHFFFAOYSA-N",
+  "formula": "C16H22Cl2O3",
+  "mw": "333.2"
+ },
+ "61948": {
+  "smiles": "C(CC(CBr)(C#N)Br)C#N",
+  "connectivity_smiles": "C(CC(CBr)(C#N)Br)C#N",
+  "inchikey": "DHVLDKHFGIVEIP-UHFFFAOYSA-N",
+  "formula": "C6H6Br2N2",
+  "mw": "265.93"
+ },
+ "62097": {
+  "smiles": "CCCCNC(=O)OCC#CI",
+  "connectivity_smiles": "CCCCNC(=O)OCC#CI",
+  "inchikey": "WYVVKGNFXHOCQV-UHFFFAOYSA-N",
+  "formula": "C8H12INO2",
+  "mw": "281.09"
+ },
+ "36565": {
+  "smiles": "CCC(C)NC1=C(C=C(C=C1[N+](=O)[O-])C(C)(C)C)[N+](=O)[O-]",
+  "connectivity_smiles": "CCC(C)NC1=C(C=C(C=C1[N+](=O)[O-])C(C)(C)C)[N+](=O)[O-]",
+  "inchikey": "SPNQRCTZKIBOAX-UHFFFAOYSA-N",
+  "formula": "C14H21N3O4",
+  "mw": "295.33"
+ },
+ "8001": {
+  "smiles": "C(CBr)CBr",
+  "connectivity_smiles": "C(CBr)CBr",
+  "inchikey": "VEFLKXRACNJHOV-UHFFFAOYSA-N",
+  "formula": "C3H6Br2",
+  "mw": "201.89"
+ },
+ "51040": {
+  "smiles": "CC(C)(C)C1=CC=C(C=C1)C(=O)CC(=O)C2=CC=C(C=C2)OC",
+  "connectivity_smiles": "CC(C)(C)C1=CC=C(C=C1)C(=O)CC(=O)C2=CC=C(C=C2)OC",
+  "inchikey": "XNEFYCZVKIDDMS-UHFFFAOYSA-N",
+  "formula": "C20H22O3",
+  "mw": "310.4"
+ },
+ "31225": {
+  "smiles": "CCC(=O)OCCC1=CC=CC=C1",
+  "connectivity_smiles": "CCC(=O)OCCC1=CC=CC=C1",
+  "inchikey": "HVGZQCSMLUDISR-UHFFFAOYSA-N",
+  "formula": "C11H14O2",
+  "mw": "178.23"
+ },
+ "33360": {
+  "smiles": "CCOC1C(C2=C(O1)C=CC(=C2)OS(=O)(=O)C)(C)C",
+  "connectivity_smiles": "CCOC1C(C2=C(O1)C=CC(=C2)OS(=O)(=O)C)(C)C",
+  "inchikey": "IRCMYGHHKLLGHV-UHFFFAOYSA-N",
+  "formula": "C13H18O5S",
+  "mw": "286.35"
+ },
+ "24606": {
+  "smiles": "FBr(F)(F)(F)F",
+  "connectivity_smiles": "FBr(F)(F)(F)F",
+  "inchikey": "XHVUVQAANZKEKF-UHFFFAOYSA-N",
+  "formula": "BrF5",
+  "mw": "174.90"
+ },
+ "6422": {
+  "smiles": "C(=O)(C(F)(F)F)O",
+  "connectivity_smiles": "C(=O)(C(F)(F)F)O",
+  "inchikey": "DTQVDTLACAAQTR-UHFFFAOYSA-N",
+  "formula": "C2HF3O2",
+  "mw": "114.02"
+ },
+ "880": {
+  "smiles": "CC(=O)C=O",
+  "connectivity_smiles": "CC(=O)C=O",
+  "inchikey": "AIJULSRZWUXGPQ-UHFFFAOYSA-N",
+  "formula": "C3H4O2",
+  "mw": "72.06"
+ },
+ "91497": {
+  "smiles": "CC1COCC2=CC3=C(C=C12)C(C(C3(C)C)C)(C)C",
+  "connectivity_smiles": "CC1COCC2=CC3=C(C=C12)C(C(C3(C)C)C)(C)C",
+  "inchikey": "ONKNPOPIGWHAQC-UHFFFAOYSA-N",
+  "formula": "C18H26O",
+  "mw": "258.4"
+ },
+ "89440": {
+  "smiles": "CC1CC(C2=C(C1(C)C)C=C(C(=C2)C(=O)C)C)(C)C",
+  "connectivity_smiles": "CC1CC(C2=C(C1(C)C)C=C(C(=C2)C(=O)C)C)(C)C",
+  "inchikey": "DNRJTBAOUJJKDY-UHFFFAOYSA-N",
+  "formula": "C18H26O",
+  "mw": "258.4"
+ },
+ "10686": {
+  "smiles": "CC1=C(C(=CC=C1)C)C",
+  "connectivity_smiles": "CC1=C(C(=CC=C1)C)C",
+  "inchikey": "FYGHSUNMUKGBRK-UHFFFAOYSA-N",
+  "formula": "C9H12",
+  "mw": "120.19"
+ },
+ "64505": {
+  "smiles": "CP(=O)(OC1CCCCC1)F",
+  "connectivity_smiles": "CP(=O)(OC1CCCCC1)F",
+  "inchikey": "SNTRKUOVAPUGAY-UHFFFAOYSA-N",
+  "formula": "C7H14FO2P",
+  "mw": "180.16"
+ },
+ "5363265": {
+  "smiles": "CCCC/C=C\\CC/C=C\\CCCCCCOC(=O)C",
+  "connectivity_smiles": "CCCCC=CCCC=CCCCCCCOC(=O)C",
+  "inchikey": "BXJHOKLLMOYSRQ-QOXWLJPHSA-N",
+  "formula": "C18H32O2",
+  "mw": "280.4"
+ },
+ "69610": {
+  "smiles": "CP(=O)(F)F",
+  "connectivity_smiles": "CP(=O)(F)F",
+  "inchikey": "PQIOSYKVBBWRRI-UHFFFAOYSA-N",
+  "formula": "CH3F2OP",
+  "mw": "100.004"
+ },
+ "62329": {
+  "smiles": "CC1=C(C(=C(C(=C1[N+](=O)[O-])C(C)(C)C)[N+](=O)[O-])C)[N+](=O)[O-]",
+  "connectivity_smiles": "CC1=C(C(=C(C(=C1[N+](=O)[O-])C(C)(C)C)[N+](=O)[O-])C)[N+](=O)[O-]",
+  "inchikey": "XMWRWTSZNLOZFN-UHFFFAOYSA-N",
+  "formula": "C12H15N3O6",
+  "mw": "297.26"
+ },
+ "6753": {
+  "smiles": "CC1=C(C=C(C(=C1[N+](=O)[O-])OC)C(C)(C)C)[N+](=O)[O-]",
+  "connectivity_smiles": "CC1=C(C=C(C(=C1[N+](=O)[O-])OC)C(C)(C)C)[N+](=O)[O-]",
+  "inchikey": "SUAUILGSCPYJCS-UHFFFAOYSA-N",
+  "formula": "C12H16N2O5",
+  "mw": "268.27"
+ },
+ "6669": {
+  "smiles": "CC1=C(C(=C(C(=C1[N+](=O)[O-])C(C)(C)C)[N+](=O)[O-])C)C(=O)C",
+  "connectivity_smiles": "CC1=C(C(=C(C(=C1[N+](=O)[O-])C(C)(C)C)[N+](=O)[O-])C)C(=O)C",
+  "inchikey": "WXCMHFPAUCOJIG-UHFFFAOYSA-N",
+  "formula": "C14H18N2O5",
+  "mw": "294.30"
+ },
+ "11839": {
+  "smiles": "COC1=C(C=C(C=C1Br)Br)Br",
+  "connectivity_smiles": "COC1=C(C=C(C=C1Br)Br)Br",
+  "inchikey": "YXTRCOAFNXQTKL-UHFFFAOYSA-N",
+  "formula": "C7H5Br3O",
+  "mw": "344.83"
+ },
+ "10110": {
+  "smiles": "C#CC(=O)O",
+  "connectivity_smiles": "C#CC(=O)O",
+  "inchikey": "UORVCLMRJXCDCP-UHFFFAOYSA-N",
+  "formula": "C3H2O2",
+  "mw": "70.05"
+ },
+ "24530": {
+  "smiles": "N=[N+]=[N-]",
+  "connectivity_smiles": "N=[N+]=[N-]",
+  "inchikey": "JUINSXZKUKVTMD-UHFFFAOYSA-N",
+  "formula": "HN3",
+  "mw": "43.029"
+ },
+ "12512": {
+  "smiles": "CCOC(C)(C)C",
+  "connectivity_smiles": "CCOC(C)(C)C",
+  "inchikey": "NUMQCACRALPSHD-UHFFFAOYSA-N",
+  "formula": "C6H14O",
+  "mw": "102.17"
+ },
+ "11784975": {
+  "smiles": "COC1=CN=C(N2C1=NC(=N2)NS(=O)(=O)C3=C(C=CC=C3OCC(F)F)C(F)(F)F)OC",
+  "connectivity_smiles": "COC1=CN=C(N2C1=NC(=N2)NS(=O)(=O)C3=C(C=CC=C3OCC(F)F)C(F)(F)F)OC",
+  "inchikey": "SYJGKVOENHZYMQ-UHFFFAOYSA-N",
+  "formula": "C16H14F5N5O5S",
+  "mw": "483.4"
+ },
+ "11409499": {
+  "smiles": "COC1=CC(=NC(=N1)NC(=O)NS(=O)(=O)C2=C(C=CC(=C2)CNS(=O)(=O)C)C(=O)OC)OC",
+  "connectivity_smiles": "COC1=CC(=NC(=N1)NC(=O)NS(=O)(=O)C2=C(C=CC(=C2)CNS(=O)(=O)C)C(=O)OC)OC",
+  "inchikey": "NIFKBBMCXCMCAO-UHFFFAOYSA-N",
+  "formula": "C17H21N5O9S2",
+  "mw": "503.5"
+ },
+ "11419598": {
+  "smiles": "CN(C)C(=O)C1=C(C=C(C=C1)NC=O)S(=O)(=O)NC(=O)NC2=NC(=CC(=N2)OC)OC",
+  "connectivity_smiles": "CN(C)C(=O)C1=C(C=C(C=C1)NC=O)S(=O)(=O)NC(=O)NC2=NC(=CC(=N2)OC)OC",
+  "inchikey": "PXDNXJSDGQBLKS-UHFFFAOYSA-N",
+  "formula": "C17H20N6O7S",
+  "mw": "452.4"
+ },
+ "3226": {
+  "smiles": "C(C(OC(F)F)(F)F)(F)Cl",
+  "connectivity_smiles": "C(C(OC(F)F)(F)F)(F)Cl",
+  "inchikey": "JPGQOUSTVILISH-UHFFFAOYSA-N",
+  "formula": "C3H2ClF5O",
+  "mw": "184.49"
+ },
+ "23984": {
+  "smiles": "[GeH4]",
+  "connectivity_smiles": "[GeH4]",
+  "inchikey": "QUZPNFFHZPRKJD-UHFFFAOYSA-N",
+  "formula": "GeH4",
+  "mw": "76.66"
+ },
+ "13633097": {
+  "smiles": "CC1=CSC(=C1N([C@@H](C)COC)C(=O)CCl)C",
+  "connectivity_smiles": "CC1=CSC(=C1N(C(C)COC)C(=O)CCl)C",
+  "inchikey": "JLYFCTQDENRSOL-VIFPVBQESA-N",
+  "formula": "C12H18ClNO2S",
+  "mw": "275.80"
+ },
+ "5821911": {
+  "smiles": "CN\\1COCN(/C1=N/[N+](=O)[O-])CC2=CN=C(S2)Cl",
+  "connectivity_smiles": "CN1COCN(C1=N[N+](=O)[O-])CC2=CN=C(S2)Cl",
+  "inchikey": "NWWZPOKUUAIXIW-DHZHZOJOSA-N",
+  "formula": "C8H10ClN5O3S",
+  "mw": "291.72"
+ },
+ "15655387": {
+  "smiles": "CCCCCC(C)(CC)C(=O)NC",
+  "connectivity_smiles": "CCCCCC(C)(CC)C(=O)NC",
+  "inchikey": "FDFPSNISSMYYDS-UHFFFAOYSA-N",
+  "formula": "C11H23NO",
+  "mw": "185.31"
+ },
+ "493591": {
+  "smiles": "C([C@@H]1[C@H]([C@@H]([C@H]([C@H](O1)O[C@H]([C@@H](CO)O)[C@@H]([C@H](CO)O)O)O)O)O)O",
+  "connectivity_smiles": "C(C1C(C(C(C(O1)OC(C(CO)O)C(C(CO)O)O)O)O)O)O",
+  "inchikey": "VQHSOMBJVWLPSR-WUJBLJFYSA-N",
+  "formula": "C12H24O11",
+  "mw": "344.31"
+ },
+ "237332": {
+  "smiles": "C1=C(OC(=C1)C=O)CO",
+  "connectivity_smiles": "C1=C(OC(=C1)C=O)CO",
+  "inchikey": "NOEGNKMFWQHSLB-UHFFFAOYSA-N",
+  "formula": "C6H6O3",
+  "mw": "126.11"
+ },
+ "31209": {
+  "smiles": "CCCCCC(=CC1=CC=CC=C1)C=O",
+  "connectivity_smiles": "CCCCCC(=CC1=CC=CC=C1)C=O",
+  "inchikey": "HMKKIXGYKWDQSV-UHFFFAOYSA-N",
+  "formula": "C14H18O",
+  "mw": "202.29"
+ },
+ "10868": {
+  "smiles": "C1CCC(CC1)N=C=NC2CCCCC2",
+  "connectivity_smiles": "C1CCC(CC1)N=C=NC2CCCCC2",
+  "inchikey": "QOSSAOTZNIDXMA-UHFFFAOYSA-N",
+  "formula": "C13H22N2",
+  "mw": "206.33"
+ },
+ "27423": {
+  "smiles": "CCC(COC(=O)C=C)(COC(=O)C=C)COC(=O)C=C",
+  "connectivity_smiles": "CCC(COC(=O)C=C)(COC(=O)C=C)COC(=O)C=C",
+  "inchikey": "DAKWPKUUDNSNPN-UHFFFAOYSA-N",
+  "formula": "C15H20O6",
+  "mw": "296.31"
+ },
+ "42113": {
+  "smiles": "C(C(F)(F)F)(OC(F)F)F",
+  "connectivity_smiles": "C(C(F)(F)F)(OC(F)F)F",
+  "inchikey": "DPYMFVXJLLWWEU-UHFFFAOYSA-N",
+  "formula": "C3H2F6O",
+  "mw": "168.04"
+ },
+ "24864132": {
+  "smiles": "C1C[C@@H]2[C@H]3CCC[N@+]4([C@H]3[C@@H](CCC4)CN2C(=O)C1)[O-]",
+  "connectivity_smiles": "C1CC2C3CCC[N+]4(C3C(CCC4)CN2C(=O)C1)[O-]",
+  "inchikey": "XVPBINOPNYFXID-JARXUMMXSA-N",
+  "formula": "C15H24N2O2",
+  "mw": "264.36"
+ },
+ "5899068": {
+  "smiles": "COC1=CC(=O)OC(C1)/C=C/C2=CC3=C(C=C2)OCO3",
+  "connectivity_smiles": "COC1=CC(=O)OC(C1)C=CC2=CC3=C(C=C2)OCO3",
+  "inchikey": "GTEXBOVBADJOQH-DUXPYHPUSA-N",
+  "formula": "C15H14O5",
+  "mw": "274.27"
+ },
+ "442495": {
+  "smiles": "C[C@@H]1CCC(=C(C)C)C(=O)C1",
+  "connectivity_smiles": "CC1CCC(=C(C)C)C(=O)C1",
+  "inchikey": "NZGWDASTMWDZIW-MRVPVSSYSA-N",
+  "formula": "C10H16O",
+  "mw": "152.23"
+ },
+ "21648": {
+  "smiles": "CC(=O)CCC1=CC=C(C=C1)O",
+  "connectivity_smiles": "CC(=O)CCC1=CC=C(C=C1)O",
+  "inchikey": "NJGBTKGETPDVIK-UHFFFAOYSA-N",
+  "formula": "C10H12O2",
+  "mw": "164.20"
+ },
+ "7471": {
+  "smiles": "CC1=CC=C(C=C1)N(C)C",
+  "connectivity_smiles": "CC1=CC=C(C=C1)N(C)C",
+  "inchikey": "GYVGXEWAOAAJEU-UHFFFAOYSA-N",
+  "formula": "C9H13N",
+  "mw": "135.21"
+ },
+ "643820": {
+  "smiles": "CC(=CCC/C(=C\\CO)/C)C",
+  "connectivity_smiles": "CC(=CCCC(=CCO)C)C",
+  "inchikey": "GLZPCOQZEFWAFX-YFHOEESVSA-N",
+  "formula": "C10H18O",
+  "mw": "154.25"
+ },
+ "65575": {
+  "smiles": "C[C@@H]1CC[C@@H]2[C@]13CC[C@@]([C@H](C3)C2(C)C)(C)O",
+  "connectivity_smiles": "CC1CCC2C13CCC(C(C3)C2(C)C)(C)O",
+  "inchikey": "SVURIXNDRWRAFU-OGMFBOKVSA-N",
+  "formula": "C15H26O",
+  "mw": "222.37"
+ },
+ "31234": {
+  "smiles": "C1=CC=C(C=C1)CCCO",
+  "connectivity_smiles": "C1=CC=C(C=C1)CCCO",
+  "inchikey": "VAJVDSVGBWFCLW-UHFFFAOYSA-N",
+  "formula": "C9H12O",
+  "mw": "136.19"
+ },
+ "5281167": {
+  "smiles": "CC/C=C\\CCO",
+  "connectivity_smiles": "CCC=CCCO",
+  "inchikey": "UFLHIIWVXFIJGU-ARJAWSKDSA-N",
+  "formula": "C6H12O",
+  "mw": "100.16"
+ },
+ "5282108": {
+  "smiles": "CC1=CCCC(C1/C=C/C(=O)C)(C)C",
+  "connectivity_smiles": "CC1=CCCC(C1C=CC(=O)C)(C)C",
+  "inchikey": "UZFLPKAIBPNNCA-BQYQJAHWSA-N",
+  "formula": "C13H20O",
+  "mw": "192.30"
+ },
+ "1268142": {
+  "smiles": "C[C@@H]1CC(=O)C=C2[C@]1(C[C@@H](CC2)C(=C)C)C",
+  "connectivity_smiles": "CC1CC(=O)C=C2C1(CC(CC2)C(=C)C)C",
+  "inchikey": "WTOYNNBCKUYIKC-JMSVASOKSA-N",
+  "formula": "C15H22O",
+  "mw": "218.33"
+ },
+ "1549018": {
+  "smiles": "CC/C=C\\CC1=C(CCC1=O)C",
+  "connectivity_smiles": "CCC=CCC1=C(CCC1=O)C",
+  "inchikey": "XMLSXPIVAXONDL-PLNGDYQASA-N",
+  "formula": "C11H16O",
+  "mw": "164.24"
+ },
+ "5282198": {
+  "smiles": "CCOC(=O)/C=C(\\C)/C=C/C[C@@H](C)CCCC(C)C",
+  "connectivity_smiles": "CCOC(=O)C=C(C)C=CCC(C)CCCC(C)C",
+  "inchikey": "FYQGBXGJFWXIPP-OJROSNHMSA-N",
+  "formula": "C17H30O2",
+  "mw": "266.4"
+ },
+ "7476": {
+  "smiles": "CC(=O)C1=CC=C(C=C1)OC",
+  "connectivity_smiles": "CC(=O)C1=CC=C(C=C1)OC",
+  "inchikey": "NTPLXRHDUXRPNE-UHFFFAOYSA-N",
+  "formula": "C9H10O2",
+  "mw": "150.17"
+ },
+ "8369": {
+  "smiles": "CC1=C(C(=O)C=CO1)O",
+  "connectivity_smiles": "CC1=C(C(=O)C=CO1)O",
+  "inchikey": "XPCTZQVDEJYUGT-UHFFFAOYSA-N",
+  "formula": "C6H6O3",
+  "mw": "126.11"
+ },
+ "19309": {
+  "smiles": "CC1C(=O)C(=C(O1)C)O",
+  "connectivity_smiles": "CC1C(=O)C(=C(O1)C)O",
+  "inchikey": "INAXVXBDKKUCGI-UHFFFAOYSA-N",
+  "formula": "C6H8O3",
+  "mw": "128.13"
+ },
+ "8693": {
+  "smiles": "CCCOC(=O)C1=CN=C(C=C1)C(=O)OCCC",
+  "connectivity_smiles": "CCCOC(=O)C1=CN=C(C=C1)C(=O)OCCC",
+  "inchikey": "IITCWRFYJWUUPC-UHFFFAOYSA-N",
+  "formula": "C13H17NO4",
+  "mw": "251.28"
+ },
+ "62324": {
+  "smiles": "CCC(=O)Cl",
+  "connectivity_smiles": "CCC(=O)Cl",
+  "inchikey": "RZWZRACFZGVKFM-UHFFFAOYSA-N",
+  "formula": "C3H5ClO",
+  "mw": "92.52"
+ },
+ "7590": {
+  "smiles": "CCOC(=O)CC1=CC=CC=C1",
+  "connectivity_smiles": "CCOC(=O)CC1=CC=CC=C1",
+  "inchikey": "DULCUDSUACXJJC-UHFFFAOYSA-N",
+  "formula": "C10H12O2",
+  "mw": "164.20"
+ },
+ "7559": {
+  "smiles": "COC(=O)CC1=CC=CC=C1",
+  "connectivity_smiles": "COC(=O)CC1=CC=CC=C1",
+  "inchikey": "CRZQGDNQQAALAY-UHFFFAOYSA-N",
+  "formula": "C9H10O2",
+  "mw": "150.17"
+ },
+ "8363": {
+  "smiles": "C1=CC=C(C=C1)COC(=O)C2=CC=CC=C2O",
+  "connectivity_smiles": "C1=CC=C(C=C1)COC(=O)C2=CC=CC=C2O",
+  "inchikey": "ZCTQGTTXIYCGGC-UHFFFAOYSA-N",
+  "formula": "C14H12O3",
+  "mw": "228.24"
+ },
+ "61106": {
+  "smiles": "C(=O)(C(F)(F)F)Cl",
+  "connectivity_smiles": "C(=O)(C(F)(F)F)Cl",
+  "inchikey": "PNQBEPDZQUOCNY-UHFFFAOYSA-N",
+  "formula": "C2ClF3O",
+  "mw": "132.47"
+ },
+ "61585": {
+  "smiles": "CC(=O)C1=C2CCC(C2=CC(=C1)C(C)(C)C)(C)C",
+  "connectivity_smiles": "CC(=O)C1=C2CCC(C2=CC(=C1)C(C)(C)C)(C)C",
+  "inchikey": "IKTHMQYJOWTSJO-UHFFFAOYSA-N",
+  "formula": "C17H24O",
+  "mw": "244.37"
+ },
+ "7761": {
+  "smiles": "CCOC(=O)CC(=O)OCC",
+  "connectivity_smiles": "CCOC(=O)CC(=O)OCC",
+  "inchikey": "IYXGSMUGOJNHAZ-UHFFFAOYSA-N",
+  "formula": "C7H12O4",
+  "mw": "160.17"
+ },
+ "7946": {
+  "smiles": "CC(COC)OC(=O)C",
+  "connectivity_smiles": "CC(COC)OC(=O)C",
+  "inchikey": "LLHKCFNBLRBOGN-UHFFFAOYSA-N",
+  "formula": "C6H12O3",
+  "mw": "132.16"
+ },
+ "91744": {
+  "smiles": "CC1=CSC(=C1N(C(C)COC)C(=O)CCl)C",
+  "connectivity_smiles": "CC1=CSC(=C1N(C(C)COC)C(=O)CCl)C",
+  "inchikey": "JLYFCTQDENRSOL-UHFFFAOYSA-N",
+  "formula": "C12H18ClNO2S",
+  "mw": "275.80"
+ },
+ "637531": {
+  "smiles": "CC(=O)O[C@@H]1C[C@H]2CC[C@@]1(C2(C)C)C",
+  "connectivity_smiles": "CC(=O)OC1CC2CCC1(C2(C)C)C",
+  "inchikey": "KGEKLUUHTZCSIP-FOGDFJRCSA-N",
+  "formula": "C12H20O2",
+  "mw": "196.29"
+ },
+ "61250": {
+  "smiles": "CCCCCO[N+](=O)[O-]",
+  "connectivity_smiles": "CCCCCO[N+](=O)[O-]",
+  "inchikey": "HSNWZBCBUUSSQD-UHFFFAOYSA-N",
+  "formula": "C5H11NO3",
+  "mw": "133.15"
+ },
+ "10026": {
+  "smiles": "CCCCCON=O",
+  "connectivity_smiles": "CCCCCON=O",
+  "inchikey": "CSDTZUBPSYWZDX-UHFFFAOYSA-N",
+  "formula": "C5H11NO2",
+  "mw": "117.15"
+ },
+ "61437": {
+  "smiles": "N(Cl)(Cl)Cl",
+  "connectivity_smiles": "N(Cl)(Cl)Cl",
+  "inchikey": "QEHKBHWEUPXBCW-UHFFFAOYSA-N",
+  "formula": "Cl3N",
+  "mw": "120.36"
+ },
+ "23667638": {
+  "smiles": "C1(=NC(=O)N(C(=O)N1Cl)Cl)[O-].O.O.[Na+]",
+  "connectivity_smiles": "C1(=NC(=O)N(C(=O)N1Cl)Cl)[O-].O.O.[Na+]",
+  "inchikey": "PYILKOIEIHHYGD-UHFFFAOYSA-M",
+  "formula": "C3H4Cl2N3NaO5",
+  "mw": "255.97"
+ }
+}
