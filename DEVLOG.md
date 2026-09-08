@@ -27,6 +27,12 @@ gave 20, then 11, then 15 tags — see that entry. `status.py` now owns it. Live
 Most of the 5,731 undecided rows still carry no descriptor or no name-like span and will
 not add a molecule. The productive ones are the ~88 `DESCR_COLON` sentences.
 
+**A FOUR-PAGE PAPER IS THE NEXT DELIVERABLE** (Joe, 2026-09-08). Scientific-paper template
+(two-column) from `JoMfN/genesisl1-community-publication-templates`, via Overleaf. "4p" =
+four pages. Material assembled in `reports/manuscript-source.md` with a §11 word budget —
+it is the quarry, not the draft, and the job is CUTTING. Settle first whether the model
+belongs here or in M's `GL1F.pdf`.
+
 **THE CORPUS HAS FEATURES NOW** (2026-09-08): `reports/openscent-pubchem.csv`, 648
 molecules x 40 numeric columns, sent to M for GL1F. It has real signal (`fatty` 0.93,
 `mint` 0.87 AUC) — see that entry, including why `chlorine` 0.94 is trivial and why the
@@ -2720,5 +2726,52 @@ near-identical structures on both sides of the fold, and 19.4% of the corpus is 
 documents (2026-09-07). Not argued, because the data to show it does not exist yet.
 
 **Next for the CSV: OPSIN name -> structure on the patent side**, which adds ~540 molecules
-of actual perfumery and takes the file to ~1,200 — M's original row target. It also needs a
-`group_id`, and the argument above becomes testable rather than theoretical.
+of actual perfumery and takes the file to ~1,190 — inside the 1,000-1,500 M asked for. It
+also needs a `group_id`, and the argument above becomes testable rather than theoretical.
+
+*(That row figure is Claude's arithmetic, not M's. He said "1000-1500". Caught by Ivan
+before the message went out, and worth generalising: M and Joe have been paraphrased from
+screenshots all week, and a number attributed to the wrong person hardens into fact once it
+is in this file.)*
+
+### Same day, later — a paper, because Joe cannot follow the work
+
+Joe, in the GenesisL1 chat: *"Perhaps at this time it might be worth it to document what
+you're doing. I'm having difficulties to follow all of the elements you're trying to
+cover."*
+
+**Fair, and the diagnosis is not "no documentation".** There are four levels of it —
+`README.md` (outward-facing, opens with the licensing argument), this DEVLOG (2,700+ lines,
+oldest-first, unreadable to anyone who was not in the room), `REVIEW-RULES.md`, and seven
+files under `reports/`. What there is not, is a PUBLICATION. Joe has been following this as
+Telegram fragments and has never seen the repo's front page.
+
+**"4p" is FOUR PAGES, not a format name.** Established by asking: he is merging it into the
+scientific-paper template (two-column) from
+`JoMfN/genesisl1-community-publication-templates`, processed in Overleaf — *"if you have 18
+pages and want to sober it up to 4"*. Claude initially assumed it was one of the repo's six
+format names, checked, found no match, and said so rather than guessing. Guessing would
+have produced a Protocol/Method draft aimed at the wrong target.
+
+He is explicit that it is guidance: *"only a template and only to guide you in making this
+study ready to publish it anywhere. Don't use it if you don't seem to have the same feeling
+that it would guide your publicity manuscript."*
+
+**`reports/manuscript-source.md` (new) — the quarry, not the draft.** Every figure in it
+re-derived from `status.py` on 2026-09-08, with a warning at its head not to copy a number
+out without re-running: several README figures were already days stale (544/1,196 against
+today's 541/1,193), which is exactly how a wrong number reaches print.
+
+It also carries a §11 word budget for the cut. Four pages two-column is ~3,300 words; the
+source runs eight to ten. **The manuscript is made by cutting, and the judgement recorded
+there is that the NEGATIVE RESULTS are the paper** — note tiers unsourceable (zero
+per-compound assertions in 60 patents; a fitted rule at 56% leave-one-out), vocabulary not
+the binding constraint, the pre-1930 literature redundant rather than merely awkward,
+sentence scope binding. "We built a dataset, it is at 20 of 67" is a status report. Those
+four are findings someone else can act on.
+
+**Open before drafting: does the model belong in this paper or in M's `GL1F.pdf`?** He is
+drafting one for ledger submission. If GL1F is the modelling paper and OpenScent the dataset
+it consumes, §3 here shrinks to a reference and four pages becomes easy; if not, the AUC
+table has to carry a results section alone, and 648 molecules with 10-positive tags is thin
+ground. Also unsettled: authorship, given Mikhail Fedorov proposed the project.
