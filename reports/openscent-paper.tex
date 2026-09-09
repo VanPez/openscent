@@ -1,0 +1,410 @@
+% =============================================================================
+% OpenScent — draft v1, 2026-09-09
+% Set THIS file as the main document in Overleaf (not template.tex).
+% Content source: openscent/reports/paper-draft-v1.md
+% Every figure re-derived from pipeline/status.py on 2026-09-09 — re-run before
+% submission, several moved within the last week.
+% =============================================================================
+% `chemistry` is deliberately NOT enabled. It loads mhchem, chemfig, chemnum and
+% chemmacros (cls lines 514-517), and this paper uses none of them — no \ce{}, no
+% \compound{}, no schemes. Enabling it roughly tripled compile time and put the
+% project near Overleaf's free-plan timeout. Add it back the day a structure
+% diagram or a reaction actually appears in the text, and not before.
+\documentclass[
+  computerscience
+]{genesisl1-paper}
+
+% -----------------------------------------------------------------------------
+% Document identity
+% -----------------------------------------------------------------------------
+\GenesisTitle{OpenScent: a permissively licensed structure--odour corpus}
+\GenesisSubtitle{Built by construction rather than by permission}
+\GenesisRunningTitle{OpenScent: a CC0 structure--odour corpus}
+\GenesisVersion{Draft 0.1}
+\GenesisStatus{DRAFT}
+\GenesisDate{\today}
+\GenesisAuthors{Ivan Pezzini}                       % TODO authorship — see notes
+\GenesisAffiliations{Independent researcher. Project proposed by Mikhail Fedorov, GenesisL1.}
+\GenesisCorrespondence{veryveryarte@gmail.com}
+\GenesisIdentifier{}
+\GenesisRepository{https://github.com/VanPez/openscent}
+\GenesisFields{Cheminformatics; scientific data; olfaction}
+\GenesisKeywords{structure--odour relationship; open data; CC0; text mining; provenance}
+\GenesisLicense{Data CC0 1.0; code Apache-2.0}
+
+% Optional exact-artifact metadata. Fill at submission, not before.
+\GenesisDataIdentifier{}
+\GenesisCodeIdentifier{}
+\GenesisModelIdentifier{}
+\GenesisExecutionIdentifier{}
+\GenesisContentHash{}
+\GenesisIPFSCID{}
+\GenesisIPFSGateway{}
+
+\begin{document}
+
+\begin{GenesisFrontMatter}
+  \begin{GenesisStructuredAbstract}
+    \AbstractBackground{
+      Machine learning on olfaction depends on datasets pairing molecular structures
+      with odour descriptors. The descriptor-labelled sets in common use derive from
+      commercial flavour-and-fragrance databases carrying non-commercial licence terms,
+      which foreclose commercial application, tokenised derivatives and independent
+      redistribution. The obstacle is licensing rather than science.
+    }
+    \AbstractMethods{
+      Odour assertions were extracted from two public-domain sources: 5{,}346 United
+      States patent documents, which are government works not subject to copyright, and
+      1{,}018 Hazardous Substances Data Bank records obtained through PubChem. Every
+      molecule name and descriptor was required to appear as a literal substring of its
+      source sentence, an invariant re-asserted on every run. A human adjudicated every
+      row against written rules; automated proposals were advisory and never
+      auto-accepted. Vocabulary admission required attestation across at least twenty
+      distinct documents, counted at passage level.
+    }
+    \AbstractResults{
+      The corpus contained 1{,}193 distinct molecules across a 67-term vocabulary, of
+      which 20 terms reached the threshold of 30 molecules with adjudication ongoing
+      (418 productive rows outstanding, a lower bound, targeting the terms nearest threshold). A
+      648-molecule subset
+      carrying 22 computed structural descriptors supported supervised prediction of
+      odour labels under five-fold stratified cross-validation, with areas under the
+      ROC curve of 0.93 for \emph{fatty} ($n=16$) and 0.87 for \emph{mint} ($n=24$).
+      Four negative results constrained the method: per-compound note tiers were absent
+      from 60 patents examined; 29 additional vocabulary candidates were refused for
+      insufficient molecular support; the pre-1930 literature was redundant with
+      existing sources for 27 of 30 compounds tested; and extraction at sentence scope
+      was identified as the binding recall constraint.
+    }
+    \AbstractConclusion{
+      A permissively licensed structure--odour corpus can be assembled by construction
+      from public-domain sources. The result is smaller than the encumbered
+      alternatives and is reported as such, and its labels carry structure-dependent
+      signal rather than noise.
+    }
+  \end{GenesisStructuredAbstract}
+\end{GenesisFrontMatter}
+
+% =============================================================================
+\section{Introduction}
+
+Quantitative structure--odour relationship work requires training data mapping molecular
+structures to odour descriptors. The dataset most widely used for this purpose comprises
+3{,}523 molecules with expert-assigned descriptors, curated from the commercial
+\emph{Leffingwell PMP 2001} database and released alongside the reference deep-learning
+treatment of the problem \cite{sanchez2019machine}. It is distributed under CC~BY-NC, and
+its files are additionally access-restricted, released only on request and on condition
+of non-commercial use \cite{leffingwell2020}.
+
+The consequence is not scientific but legal. A non-commercial clause forecloses
+commercial application, forecloses tokenised or tradeable derivatives, and prevents a
+third party from redistributing a corrected or extended version. Work built upon such
+data cannot in turn be built upon.
+
+Permissively licensed alternatives exist but differ in kind and in scale. Keller and
+Vosshall \cite{keller2016} released psychophysical ratings for 480 molecules under CC0:
+panel ratings against a fixed set of semantic scales rather than curated descriptor
+assignments. The resource is valuable and does not substitute for a descriptor-labelled
+corpus.
+
+We report an attempt to obtain the missing artefact by construction, rebuilding a
+molecule-to-descriptor corpus from sources carrying no restriction, so that the licence
+question is settled before any row exists rather than negotiated afterwards.
+
+Two source classes qualify. United States patent full text is a government work not
+subject to copyright, and is where modern aroma chemicals are described, including
+captive molecules documented nowhere else. The Hazardous Substances Data Bank, accessed
+through PubChem, is public domain and supplies a compound identifier, making the link
+from an odour claim to a structure exact rather than inferred from a name.
+
+\subsection{Aims}
+\begin{enumerate}
+  \item Determine whether a descriptor-labelled odour corpus of usable size can be
+        assembled entirely from public-domain sources.
+  \item Establish extraction and adjudication procedures under which every recorded
+        claim remains traceable to a verbatim source span.
+  \item Evaluate whether the resulting labels carry structure-dependent signal.
+\end{enumerate}
+
+% =============================================================================
+\section{Methods}
+
+Four procedural rules governed the work. Each is stated as a rule and as the failure it
+prevents, because in every case the failure occurred first.
+
+\subsection{Subjects, materials, and datasets}
+
+Patent text was harvested from 5{,}346 United States documents identified through
+classification searches of C11B~9/00 (essential oils and perfumes) and A61Q~13/00
+(perfume formulations). Non-US patents were excluded throughout: they do not carry the
+absence of copyright on which the licence claim depends. The European Patent Office Open
+Patent Services interface was used to \emph{identify} United States documents; only
+United States documents were retrieved.
+
+Odour annotations were additionally obtained from the Hazardous Substances Data Bank
+through PubChem, yielding 1{,}018 usable records across 651 distinct compound
+identifiers after six records were retired on provenance or attribution grounds. The
+database is a hazardous-substances resource, so industrial compounds appear alongside
+aroma chemicals.
+
+Sources derived from GoodScents or Leffingwell were excluded from every stage.
+
+\subsection{Extraction procedure}
+
+\textbf{Verbatim extraction.} Every molecule name and descriptor recorded in a row was
+required to be a literal substring of its source sentence. A status utility re-asserted
+this invariant across the corpus on each run and refused to report figures when it was
+violated. A paraphrased or generated row is indistinguishable from an extracted one once
+written; per-row provenance is meaningful only when the recorded span can be located in
+the cited source. Text normalisation was consequently versioned and applied identically
+to source text and extracted spans, a comparison between differently normalised strings
+not constituting a verbatim check.
+
+\textbf{Yield measurement before retrieval.} Before harvesting a classification, a
+200-document sample was retrieved and extraction yield measured, at a cost of
+approximately twenty minutes. This altered the decision three times
+(Table~\ref{tab:yield}).
+
+\begin{table}[t]
+\caption{Sampled yield and the resulting retrieval decision.}
+\label{tab:yield}
+\centering
+\begin{tabular}{lcl}
+\hline
+Classification & Candidates/document & Decision \\
+\hline
+C11B~9/00 (subtree) & 1.02 & retrieved \\
+A23L~27/00          & 0.17 & declined \\
+C11D~3/50           & 0.36 & declined \\
+\hline
+\end{tabular}
+\end{table}
+
+Yield alone proved insufficient. C11D~3/50 (detergent perfumery) was sampled because it
+was expected to carry amber and musk descriptors, and yielded twice the rate of the
+declined food classification. Counting where its descriptors fell showed approximately
+70\,\% landing on vocabulary terms already well past threshold, while \emph{sandalwood}
+and \emph{animalic}, the two terms motivating the sample, did not occur. Target coverage
+is now measured alongside yield.
+
+\textbf{Adjudicated review.} A human decided every row against written rules; automated
+proposals were advisory and automatic rejection was disabled. Blind proposal accuracy,
+measured by withholding proposals on 30 rows, was 67\,\%; errors skewed towards rejecting
+valid rows. The rules were written after a blind evaluation disagreed on 14 of 98 rows
+and the disagreements proved to be two unwritten conventions applied in opposite
+directions. Three rules required the most deliberation: mixtures yield no row, including
+mixtures of stereoisomers of a single compound, since enantiomers may smell differently
+and the odour of a racemate is not that of either component; a compound named as a
+comparison is a reference point rather than a descriptor, whereas a plant or food named
+as a smell is a descriptor; and negation or comparison inverts the claim.
+
+\textbf{Independent attestation.} A vocabulary term was admitted only on appearing in at
+least 20 distinct documents with at least 30 attestations, an attestation being a
+distinct sentence. Four successive counters were required, each correcting the
+predecessor's blind spot: raw occurrences, document counts, a per-term boilerplate ratio,
+and finally passage-level counting. The admitted vocabulary comprises 67 terms with 119
+surface forms; the mapping from surface form to term is a human-written table and is the
+only point at which extracted text becomes a category.
+
+\subsection{Statistical analysis}
+
+Structural descriptors were computed offline with RDKit from structures resolved through
+PubChem identifiers: 22 interpretable descriptors comprising molecular weight, log~$P$,
+topological polar surface area, hydrogen-bond donors and acceptors, rotatable bonds, ring
+counts, fraction sp\textsuperscript{3}, element counts, Labute surface area and Bertz
+complexity. Descriptors were computed rather than retrieved; requesting precomputed
+properties from a remote service would make the feature table depend on that service's
+descriptor version, which is neither reproducible nor auditable.
+
+One binary classification task was defined per label. Gradient-boosted decision trees were
+evaluated under five-fold stratified cross-validation, reporting area under the ROC curve.
+Labels with fewer than ten positive instances were excluded.
+
+\begin{GenesisProvenance}
+Corpus, ontology, extraction code and analysis scripts are at
+\url{https://github.com/VanPez/openscent}. Every row records its source document
+identifier, the verbatim source sentence, the extracted spans and a licence basis.
+All headline figures are computed by a single utility so that any quoted number can be
+regenerated rather than recalled.
+\end{GenesisProvenance}
+
+% =============================================================================
+\section{Results}
+
+\subsection{Corpus}
+
+Harvesting produced 5{,}346 patent documents, of which 2{,}426 were represented in the
+review queue as 6{,}686 candidate rows. Of these, 955 were adjudicated by hand (627
+accepted, 326 rejected, 2 deferred). Together with 1{,}018 database records the corpus
+contained 1{,}193 distinct molecules.
+
+Twenty of the 67 vocabulary terms reached the threshold of 30 molecules:
+\emph{acid, aromatic, citrus, earthy, fatty, floral, fresh, fruity, green, herbal, lily,
+mint, musk, musty, powdery, pungent, rose, spicy, sweet} and \emph{woody}. Five further
+terms lay within seven molecules of threshold: \emph{sandalwood} (28), \emph{amber} (28),
+\emph{camphoraceous} (27), \emph{animalic} (23) and \emph{aldehydic} (23).
+
+The design target was 60--100 terms at 30 molecules each. The corpus reached 20 at the
+census date, with adjudication incomplete: 418 of the 5{,}731 undecided rows satisfy the
+review queue's productivity criterion, carrying both a compound-like token and a
+vocabulary term, and they fall disproportionately on terms below threshold
+(\emph{aldehydic} 30 rows, \emph{camphoraceous} 16, \emph{sandalwood} 14, \emph{animalic}
+9). That count is a lower bound: the review interface tests against a hard-coded
+vocabulary of 110 surface forms while the ontology now holds 119, so rows carrying only
+one of the 46 unlisted forms are not counted. At the precision observed within the
+productive subset (0.82), these adjudications alone would be expected to carry several
+further terms past threshold without any additional source material. Twenty is therefore
+a census figure, not a ceiling.
+
+\subsection{Structural signal}
+
+Of 651 database compounds, 648 resolved to parseable structures; three failures were
+hypervalent halogen oxidisers rejected by the valence model. Cross-validated performance
+is given in Table~\ref{tab:auc}.
+
+\begin{table}[t]
+\caption{Five-fold stratified cross-validated AUC by label, with positive counts.}
+\label{tab:auc}
+\centering
+\begin{tabular}{lrc}
+\hline
+Label & $n$ & AUC \\
+\hline
+chlorine  &  18 & 0.943 \\
+fatty     &  16 & 0.925 \\
+mint      &  24 & 0.874 \\
+rose      &  12 & 0.873 \\
+citrus    &  11 & 0.862 \\
+aromatic  & 140 & 0.851 \\
+fruity    &  85 & 0.843 \\
+floral    &  39 & 0.820 \\
+green     &  12 & 0.799 \\
+pungent   & 186 & 0.751 \\
+woody     &  10 & 0.739 \\
+musty     &  28 & 0.692 \\
+spicy     &  11 & 0.657 \\
+acid      &  31 & 0.633 \\
+sweet     & 149 & 0.619 \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{GenesisEvidence}
+Three qualifications belong with Table~\ref{tab:auc} and should not be separated from it.
+The result for \emph{chlorine} is determined by halogen count and serves as a pipeline
+check rather than a finding. Labels with 10--12 positive instances yield unstable
+cross-validated estimates at this sample size. The label \emph{aromatic} carries a
+semantic confound: the odour term and the structural property are distinct concepts that
+correlate, so part of that score is unearned. The substantive results are \emph{fatty}
+(0.925) and \emph{mint} (0.874), where chain length and lipophilicity track fattiness and
+mint labels concentrate within a narrow structural family.
+\end{GenesisEvidence}
+
+The purpose of this analysis was negative control rather than performance. A corpus of
+incorrect labels, however carefully assembled, would score near 0.5 and would be
+indistinguishable from a correct one by inspection.
+
+% =============================================================================
+\section{Discussion}
+
+The study shows that a descriptor-labelled odour corpus can be assembled entirely from
+public-domain sources, and that the resulting labels carry structure-dependent signal.
+The corpus is smaller than encumbered alternatives; its distinguishing property is that
+it may be used commercially, extended, and redistributed by anyone.
+
+The transferable content of this work is procedural, together with four results that
+constrain what the sources can be asked to supply.
+
+\textbf{Note tiers are absent from patent text.} Perfumery classifies materials as top,
+heart or base notes. Across 60 patents examined there were no per-compound tier
+assertions: the terms describe accord architecture, never an individual molecule. A rule
+fitted to curated tier assignments reproduced them at 56\,\% under leave-one-out
+validation, marginally above chance across three classes. Tiers are neither sourceable
+from this literature nor recoverable by inference.
+
+\textbf{Vocabulary was not the binding constraint.} Twenty-nine further descriptor
+candidates passed an independence test and were nonetheless refused: the best supported
+reached 8 molecules against a threshold of 30. Admitting them would have converted 20 of
+67 into 20 of 95, leaving the numerator unchanged and the denominator worse.
+
+\textbf{The pre-1930 literature was redundant rather than inconvenient.} Of 30 classic
+synthetics from that period, 27 already carried a database odour record; apparent misses
+were naming artefacts. Expired-copyright sources were dropped for redundancy, not for
+licensing.
+
+\textbf{Sentence scope is the binding recall constraint.} Three independent observations
+converge: a heading-matching rule was removed for producing rows naming no molecule; 345
+sentences carry descriptors whose compound is named in the preceding sentence; and the
+single standing recall failure in the evaluation set is of that form. Extraction at
+passage scope is the identified next step and is not yet implemented.
+
+\begin{GenesisInterpretation}
+Our results provide evidence that the licensing obstacle in structure--odour data is
+tractable by source selection rather than by negotiation. The observation that patent
+text supplies descriptors but not note tiers points towards a general limit: patent
+prose documents what a compound smells of, not how a perfumer would deploy it. These
+findings are consistent with the corpus remaining useful for descriptor prediction while
+being unsuitable, without further sources, for tasks requiring formulation semantics.
+\end{GenesisInterpretation}
+
+\begin{GenesisLimitations}
+Although encouraging, this study has limitations. Twenty of 67 vocabulary terms reached
+threshold against a design target of 60--100, with at least 418 productive adjudications
+outstanding. The patent-derived half of the corpus does
+not yet carry computed structures, so the analysis in Table~\ref{tab:auc} covers 648 of
+1{,}193 molecules. Molecules are matched between the two sources by name text rather than
+by structure, so stereochemical variants remain distinct entries. Whole-queue precision
+of the candidate filter is approximately 0.2; a figure of 0.82 recorded elsewhere in the
+project is precision within the productive subset and must not be read as the filter's
+precision. A text-containment audit identified 835 groups covering 1{,}035 documents,
+19.4\,\%, as the same disclosure published more than once, typically an application and
+its granted patent; this is an upper bound, since the detector admits era-specific
+template text as evidence. Redundancy does not inflate the molecule counts, which are
+computed over sets, but it bears on the document-count criterion for vocabulary
+admission, and that recount has not been performed. Despite these limitations, the
+consistency of the observed structural signal across independently adjudicated labels
+supports the corpus being fit for its stated purpose.
+\end{GenesisLimitations}
+
+% =============================================================================
+\section{Conclusion}
+
+A structure--odour corpus of 1{,}193 molecules across 20 vocabulary terms was assembled
+entirely from public-domain sources and released without restriction. Its labels carry
+structure-dependent signal. The corpus is smaller than licence-encumbered alternatives,
+and unlike them it may be used, extended and redistributed by anyone.
+
+% =============================================================================
+\section*{Data and code availability}
+
+Corpus and ontology are released under CC0~1.0; code under Apache-2.0. Repository:
+\url{https://github.com/VanPez/openscent}. Every row carries its source identifier, the
+verbatim source sentence and a licence basis, so that a challenge to any single source
+removes the affected rows rather than invalidating the corpus.
+
+CC0 waives copyright, not patents. The corpus is built from patent text; the presence of
+a molecule in it says nothing about live patent claims covering that molecule or its use.
+
+% \PrintGenesisArtifactRecord
+
+\section*{Author contributions}
+% TODO CRediT statement. Mikhail Fedorov proposed the project; authorship unsettled.
+
+\section*{Ethics, privacy, rights, and safety}
+
+The work uses only published patent text and public-domain database records. No personal
+data, credentials or confidential material are present in the corpus or in any published
+artefact.
+
+\section*{Competing interests and funding}
+% TODO declare GenesisL1 relationship.
+
+\section*{Acknowledgements}
+% TODO
+
+\GenesisEndMatterNotice
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

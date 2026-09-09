@@ -24,8 +24,27 @@ gave 20, then 11, then 15 tags — see that entry. `status.py` now owns it. Live
   sandalwood 28 · amber 28 (need 2) · camphoraceous 27 · animalic 23 · aldehydic 23
 ```
 
-Most of the 5,731 undecided rows still carry no descriptor or no name-like span and will
-not add a molecule. The productive ones are the ~88 `DESCR_COLON` sentences.
+**418 OF THE 5,731 UNDECIDED ROWS ARE PRODUCTIVE** — and `status.py` now computes this on
+every run, reading `review.html`'s own `PRODUCTIVE()` predicate rather than copying it. A
+FLOOR: `review.html` hard-codes 110 surface forms against the ontology's 119, so rows
+carrying only one of the 46 unlisted forms are invisible to it. They land on the short
+tags: `aldehydic` 30 rows, `camphoraceous` 16, `sandalwood` 14, `animalic` 9, `tobacco` 32.
+At 0.82 productive-subset precision that is ~342 approvals — **more tags from review alone,
+with no new material.**
+
+**~~0 PRODUCTIVE rows remain~~ WAS WRONG, and it drove two days of work.** It was 53 even
+before the 2026-09-07 re-extraction, not 0. That claim is what produced "the constraint is
+now material, not review time", the C11D 3/50 sample, and the whole sourcing hunt. Caught
+by Ivan asking, while reading the paper draft, why 20 of 67 was presented as final when
+thousands of rows were still unreviewed. The lesson is the project's own and was not
+applied here: **a number nobody recomputes is a number nobody has.**
+
+**REVIEW IS THE HIGHEST-VALUE WORK AVAILABLE, and was wrongly marked blocked.** 418
+productive rows (2026-09-09, a FLOOR — `status.py` prints it every run now), targeting
+`aldehydic`, `camphoraceous`, `sandalwood` and `animalic`. Open `review.html`,
+productive-first, and work them. **Fix its hard-coded 110-form `VOCAB` first** — the
+ontology has 119, and 46 forms are invisible to the ordering, `sandal` and `animalistic`
+among them.
 
 **A FOUR-PAGE PAPER IS THE NEXT DELIVERABLE** (Joe, 2026-09-08). Scientific-paper template
 (two-column) from `JoMfN/genesisl1-community-publication-templates`, via Overleaf. "4p" =
@@ -2640,6 +2659,73 @@ for the conservative answer and all 835 groups for the pessimistic one. Nothing 
 vocabulary should be re-litigated until that number exists — and nothing has been deleted:
 `dup_audit.py` reports groups and refuses to choose a survivor, because removing a document
 invalidates rows that point at it and that goes through `merge_review.py`, deliberately.
+
+## 2026-09-09 — "0 productive rows" was wrong, and norm/2 was worth far more than we logged
+
+**Two corrections, both found by Ivan reading the paper draft rather than by any script.**
+
+**1. The queue was never exhausted.** Measured with `review.html`'s own `PRODUCTIVE()`
+predicate — `_NAME` requires a token containing a DIGIT plus a chemical suffix, `_TAGW` a
+vocabulary word, both must hold:
+
+```
+2026-09-07, before re-extraction   3,658 undecided ·  53 productive
+2026-09-09, after                  5,731 undecided · 418 productive
+```
+
+**Claude first reported 483 and it was wrong — the same error, within the hour.** The
+ad-hoc check used `odor_terms.tsv` (119 surface forms) for the vocabulary test while
+`review.html` hard-codes 110. 483 is what would be productive IF VOCAB were synced; 418 is
+what the reviewer actually sees. The figure went into the paper and this entry before the
+faithful version existed. Fixed in both. **Writing the count into `status.py` — which reads
+the predicate out of `review.html` rather than copying it — is what surfaced the
+discrepancy**, and is the reason it is now a computed number rather than a claim.
+
+The RESUME block had said **0 productive rows remain** since 2026-09-05. It was 53 then.
+That single wrong figure produced the conclusion "the constraint is now material, not
+review time", and from it the C11D 3/50 walk and sample, the exclusion and DESCR probes,
+and two days of sourcing analysis. **The measure-it-don't-remember-it discipline this
+project is built on was not applied to its own headline claim.**
+
+Nothing done on those two days was wasted — C11D 3/50 was correctly declined, the entity
+bug was real and would have cost 84 decisions — but the premise was false.
+
+**2. `norm/2` created ~430 productive rows and we logged it as costing 21.** The
+2026-09-08 entry records only the loss. Unmerging the entity-split fragments reunited
+sentences whose molecule and descriptor had been separated by a fake sentence boundary, so
+53 productive rows became 418. The fix was worth an order of magnitude more than its entry
+claims.
+
+**Where the 418 land**, against what each tag still needs:
+
+```
+tobacco        5, needs 25   32 rows      camphoraceous 27, needs 3   16 rows
+aldehydic     23, needs  7   30 rows      sandalwood    28, needs 2   14 rows
+leather        7, needs 23   25 rows      animalic      23, needs 7    9 rows
+warm           8, needs 22   18 rows      patchouli      7, needs 23  18 rows
+```
+
+At 0.82 productive-subset precision — the correct use of that figure, it being precisely
+the productive subset under discussion — 418 rows is ~342 approvals, and plausibly carries
+`sandalwood`, `camphoraceous`, `aldehydic` and `animalic` past the bar. **20 -> 24 from
+review alone.** Reviewing is the highest-value work available and has been mislabelled as
+blocked since Friday.
+
+**Also found: `review.html` hardcodes a 109-term `VOCAB` array** rather than reading
+`ontology/odor_terms.tsv` (now 119 surface forms). `sandal`, `animalistic` and the other
+2026-09-05 additions are invisible to productive-ordering, so the 418 is if anything an
+undercount. Same two-copies failure as `harvest.py` on Hetzner, third instance this week.
+
+**Paper corrected** in the same pass: the abstract, §3.1 and the limitations now say 20 is
+a census figure with at least 418 adjudications outstanding, not a ceiling. As written it undersold
+the work in the one section a reader judges it by.
+
+**Open, from Ivan's other question:** vapour pressure is absent from the feature table and
+should not be. RDKit computes graph descriptors, not thermodynamic ones — but HSDB records
+VP, and HSDB is where these 651 compounds came from. It needs a unit parser (`0.14 mm Hg at
+25 °C`, `1.2 hPa (20°C)`) and will be partial. Volatility is the physical basis of the
+top/heart/base distinction the project already had to abandon as unsourceable, so this is
+the honest version of that axis. Queued behind OPSIN.
 
 ## 2026-09-08 — the corpus has features for the first time, and they carry signal
 

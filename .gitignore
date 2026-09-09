@@ -38,5 +38,11 @@ pipeline/heldout-key.json
 *.tsv.bak-*
 *.py.bak-*
 
+# Overleaf upload bundles. Build artefacts: Joe's scientific-paper template plus our
+# one .tex, regenerated whenever the paper changes and stale the moment it does. The
+# manuscript source that IS worth versioning is openscent-paper.tex, copied back into
+# reports/ when the draft settles.
+*.zip
+
 # session handoff note — useful locally, not part of the published work
 NEW-CHAT-PROMPT.md

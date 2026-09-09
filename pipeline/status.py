@@ -55,7 +55,7 @@ splitting one molecule across two spellings counts it twice only if both spellin
 were approved, which review should have caught).
 """
 from __future__ import annotations
-import collections, importlib.util, json, pathlib, sys
+import collections, importlib.util, json, pathlib, re, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 REVIEW = ROOT / "corpus" / "rows" / "review.jsonl"
@@ -74,6 +74,46 @@ def load_tags() -> dict[str, str]:
 
 def norm(s: str) -> str:
     return " ".join(s.lower().split())
+
+
+def productive_predicate():
+    """review.html's PRODUCTIVE(), READ OUT OF review.html — never reimplemented here.
+
+    WHY THIS FUNCTION IS UGLY ON PURPOSE
+    ------------------------------------
+    On 2026-09-09 the RESUME block still said "0 PRODUCTIVE rows remain". It had said so
+    since 2026-09-05, and it was wrong then (53) and very wrong by then (483). That one
+    stale figure produced "the constraint is now material, not review time" and with it
+    the C11D 3/50 walk, two sampling probes and two days of sourcing analysis.
+
+    It went stale because NOTHING RECOMPUTED IT. status.py exists precisely so the
+    headline cannot be remembered rather than measured — and it reported tags and
+    molecules, not queue productivity, so the one number that decided what to work on
+    next was outside its scope. Adding it here closes that.
+
+    The predicate itself lives in review.html and stays there: it is what the reviewer
+    actually sees, and a Python copy would drift from it exactly as this project's other
+    duplicated definitions have (harvest.py on Hetzner; VOCAB below). So the regexes and
+    the vocabulary array are PARSED OUT of the JavaScript. That is uglier than a copy and
+    it is the point: if review.html changes, this follows, and if it cannot be parsed
+    this refuses to guess.
+    """
+    html = (ROOT / "pipeline" / "review.html").read_text(encoding="utf-8")
+
+    m = re.search(r"var\s+_NAME\s*=\s*/(.+?)/([a-z]*);", html)
+    v = re.search(r"var\s+VOCAB\s*=\s*(\[.*?\]);", html, re.S)
+    if not m or not v:
+        return None, None, "could not parse _NAME or VOCAB out of review.html"
+
+    flags = re.I if "i" in m.group(2) else 0
+    name_rx = re.compile(m.group(1), flags)
+    vocab = json.loads(v.group(1))
+    tag_rx = re.compile(r"\b(" + "|".join(re.escape(w) for w in vocab) + r")\b", re.I)
+
+    def productive(s: str) -> bool:
+        return bool(s) and bool(name_rx.search(s)) and bool(tag_rx.search(s))
+
+    return productive, vocab, None
 
 
 def jsonl(p: pathlib.Path):
@@ -166,6 +206,49 @@ def main() -> int:
         print(f"\nunmapped descriptors: {len(unmapped)} distinct, {sum(unmapped.values())} uses")
         print("  (approved text with no odor_terms.tsv entry — candidates, not errors)")
         print("  " + ", ".join(w for w, _ in unmapped.most_common(12)))
+
+    # ---- QUEUE PRODUCTIVITY. The number that told us to stop reviewing, wrongly. ----
+    productive, vocab, err = productive_predicate()
+    print()
+    if err:
+        print(f"!! productive rows NOT COMPUTED — {err}")
+        print("   Fix that rather than assuming the queue is empty. That assumption")
+        print("   cost two days on 2026-09-05.")
+    else:
+        und = [r for r in jsonl(REVIEW) if not r.get("decision")]
+        prod = [r for r in und if productive(r.get("sentence") or "")]
+        print(f"review queue: {len(und)} undecided, {len(prod)} PRODUCTIVE "
+              f"(review.html's own rule)")
+        if prod:
+            # Which SHORT tags those rows would feed. A productive row aimed at a tag
+            # already past the bar adds a molecule but not a tag.
+            pats = [(re.compile(r"\b" + re.escape(f) + r"\b", re.I), t)
+                    for f, t in surf.items()]
+            hits: collections.Counter = collections.Counter()
+            for r in prod:
+                s = r.get("sentence") or ""
+                for rx, t in pats:
+                    if rx.search(s):
+                        hits[t] += 1
+            short = [(t, len(combined.get(t, ())), n) for t, n in hits.most_common()
+                     if len(combined.get(t, ())) < BAR][:6]
+            if short:
+                print("  aimed at tags below the bar:")
+                for t, have, n in short:
+                    print(f"     {t:<16}{have:>4} have, needs {BAR-have:<3} "
+                          f"{n:>4} rows waiting")
+            print(f"  at 0.82 productive-subset precision that is ~{int(len(prod)*0.82)} "
+                  f"approvals — REVIEW BEFORE FETCHING ANYTHING.")
+
+        # VOCAB drift. review.html hardcodes its vocabulary; odor_terms.tsv is the real
+        # one. Forms missing from VOCAB are invisible to productive-ordering, so the
+        # count above is a floor.
+        missing = sorted(set(surf) - {w.lower() for w in vocab})
+        if missing:
+            print(f"  ! review.html's VOCAB has {len(vocab)} forms; odor_terms.tsv has "
+                  f"{len(surf)}. {len(missing)} not in VOCAB, so the count above is a "
+                  f"FLOOR:")
+            print("    " + ", ".join(missing[:12]))
     return 0
 
 
