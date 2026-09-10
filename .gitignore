@@ -54,3 +54,16 @@ NEW-CHAT-PROMPT.md
 # Overleaf PDF downloads. Same reasoning as *.zip above — a build artefact of
 # reports/openscent-paper.tex, stale the moment the .tex changes.
 openscent_paper*.pdf
+
+# pubchem_probe.py page caches — 131 files, 185 MB, and re-retrievable in about four
+# minutes. Same reasoning as corpus/raw/ above: what is worth keeping is the MEASUREMENT,
+# and that lives in the DEVLOG entry for 2026-09-10 (night) and in the probe's own output.
+# NOTE: corpus/raw-pubchem/ as a whole is NOT ignored, and the odor-p*/fema-p* pages that
+# back the shipped PubChem rows may already be in history. Left alone deliberately —
+# untracking them is a separate decision, not a side effect of this rule.
+corpus/raw-pubchem/probe-*.json
+
+# passage_probe.py --dump output. Regenerated from corpus/raw/ in minutes, and the thing
+# worth keeping is the analysis, not the pairs.
+pairs.jsonl
+pairs-*.jsonl

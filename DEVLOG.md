@@ -24,11 +24,43 @@ review queue: 3,592 undecided, 0 PRODUCTIVE
 **THE PRODUCTIVE QUEUE IS EMPTY. REVIEW IS FINISHED AS A SOURCE OF TAGS.** Not "nearly",
 not "mis-ordered" — zero productive rows, and the 3,592 that remain are one-keystroke
 rejects by the filter's own rule. `sandalwood` and `camphoraceous` crossed on 2026-09-10
-and they were the only two reachable. **The sourcing question parked on 2026-09-07 is now
-the only question**, and the one option never measured is **PubChem's untapped headings** —
-`pubchem.py` reads `Odor` and `FEMA Number` and nothing else, while `Physical Description`,
-`Color/Form` and `Taste` are the same endpoint, same HSDB provenance, no key, and land
-WITHOUT a review gate. ~20 min to count. Measure before fetching.
+and they were the only two reachable.
+
+**THE SOURCING QUESTION IS ANSWERED, AND THE ANSWER IS A LICENCE.** All three untapped
+PubChem headings were measured on 2026-09-10 (`pipeline/pubchem_probe.py`, all pages
+cached). `Color/Form` and `Taste` are dead — 3 and 16 odour rows. **`Physical Description`
+is rich: 2,923 odour attributions, 1,461 compounds we do not hold, descriptors on terms we
+are short of.** And **72% of it is JECFA under CC BY-NC-SA 3.0 IGO** — ShareAlike would
+relicense the corpus, NonCommercial would reintroduce the restriction the project exists to
+remove, and it is not a US Government work. Refused.
+
+**WHAT IS ACTUALLY AVAILABLE: 212 compounds**, CAMEO + OSHA + NIOSH, US Government works,
+no review gate. **NOT YET INGESTED** — the probe's clause gate is a yield estimator, not an
+extractor, and its docstring says so. Ingest needs a real extractor with the verbatim
+guarantee, `SourceName` filtering, and `triage_pubchem.py`. Pages are cached; it is offline
+work. **Haz-Map (277 more CIDs) is the swing vote and needs a licence determination.**
+
+**THE JECFA QUESTION IS FOR A LAWYER, NOT A JUDGEMENT CALL.** The counter-argument — that
+a short factual statement of what a chemical smells like is thin copyright ground — is real
+and is recorded in that entry. It cuts less here because the corpus stores the VERBATIM
+sentence, which is expression rather than fact. Settle it before anything ships.
+
+**PASSAGE SCOPE IS MEASURED: +3 TAGS (22 -> 25) FOR ~1,124 ADJUDICATIONS AND A CHANGE TO
+WHAT A ROW MEANS.** `pipeline/passage_probe.py`, 2026-09-10. 4,849 pairs at window 2, 1,124
+explicitly anaphoric, **~25% admissible** on two seeded samples. `amber`, `aldehydic` and
+`animalic` cross; two of the three marginally. Nothing else comes close. A passage row
+asserts a RESOLVED REFERENCE — a human deciding what "It" refers to — which REVIEW-RULES
+rejects today by name; the verbatim invariant survives but the claim changes. Conditions
+for adoption are in that entry. **NOT DECIDED.**
+
+**FREE WIN, WHATEVER IS DECIDED: 366 QUEUE ROWS CAN NEVER BECOME ROWS.** They were
+extracted because `named()` matched an ordinary English word — `NAMED_SUFFIX` matches
+**"natural"** (`natur` + `al`) — and are read and then rejected for anaphora. Add the
+-al/-ol/-one English words to `named()`'s stop list. Not done.
+
+**THE THREE OPEN QUESTIONS, IN ORDER:** Haz-Map's licence (277 CIDs, an hour of reading);
+JECFA and a lawyer (1,052 CIDs, would cross several tags); whether +3 tags justifies
+changing what a row means. Everything else measurable has been measured.
 
 **MOLECULE COUNTS ARE INFLATED BY OCR SPELLINGS — `amber` NEEDS 4, NOT 2.** Molecules are
 joined on name TEXT, so one compound scanned three ways counts three times:
@@ -3395,3 +3427,200 @@ acknowledgements · `cmd_status` split agreement · OPS credential rotation.
 **Awaiting M:** does the model live in the OpenScent paper or in `GL1F.pdf`.
 **Awaiting Joe:** is 67 terms defensible; `sandal`→sandalwood and `camphor`→camphoraceous;
 `animalic` / `aldehydic` / `camphoraceous` usage.
+
+---
+
+## 2026-09-10 (night) — the sourcing question is answered, and the answer is a licence
+
+**There IS more odour data. Most of it is CC BY-NC-SA.** PubChem's `Physical Description`
+heading — never read before tonight — holds **2,923 odour attributions over 124,132
+annotations, covering 1,461 compounds we do not have**, with descriptors on terms we are
+actually short of. It is the largest reservoir this project has found. **72% of it is
+JECFA, published under CC BY-NC-SA 3.0 IGO, and is unusable.**
+
+```
+heading              pages    anns    raw   ODOUR   NEW CIDs  below-bar
+Physical Description   125  124132  11615    2923       1461        543
+Color/Form               5    4880   1858       3          1          0
+Taste                    1     755    259      16          2          1
+```
+
+### The source split is the whole finding
+
+`SourceName` is per row and had to be counted per row — the heading is 77% HMDB by volume
+and HMDB contributes **zero** odour rows (its `Physical Description` entries are
+solid-state). What actually carries the odour:
+
+```
+source                                    rows  NEW CIDs  below-bar   licence
+Joint FAO/WHO (JECFA)                     1251      1052        391   CC BY-NC-SA 3.0 IGO
+Haz-Map                                    660       277         70   UNDETERMINED
+CAMEO Chemicals (NOAA/EPA)                 498       176         52   US Gov
+ILO-WHO ICSC                               189        74          0   international
+OSHA                                       163        21         15   US Gov
+NIOSH                                      146        15         13   US Gov
+```
+
+JECFA's below-bar terms are exactly what the corpus wants — `balsamic` 43, `nutty` 41,
+`pineapple` 30, `apple` 27, `warm` 24, `vanilla` 20, `honey` 19, `pear` 17, `coconut` 16.
+This is not a marginal loss.
+
+**Why it is refused, and it is not a technicality.** ShareAlike would relicense any corpus
+incorporating it, so CC0 could not survive. NonCommercial would reintroduce the exact
+restriction §1 of the paper exists to remove — OpenScent would acquire the Leffingwell
+defect it was written to fix. And it is not a US Government work, which is the same test
+that ruled out non-US patents on 2026-08-19.
+
+The counter-argument is recorded rather than dismissed: a short factual statement of what
+a chemical smells like is thin copyright ground, and `pubchem-source.md` already makes
+that argument about HSDB summarising Merck. It cuts less here for a reason specific to
+this design — **the corpus stores the VERBATIM sentence**, which is the expression and not
+merely the fact. A `(molecule, descriptor)`-only corpus would stand on firmer ground and
+would lose the provenance the whole method rests on. **This is a question for a lawyer
+before any of it ships, not for a judgement call in a devlog.**
+
+**USABLE NOW: 212 compounds** from CAMEO + OSHA + NIOSH, all US Government works, no
+review gate. Roughly 17 of CAMEO's 52 below-bar hits are `chlorine`, the tag the paper
+already discounts. **Haz-Map at 277 new CIDs is the swing vote and needs a real licence
+determination** — NLM-hosted for years, authored by an individual, now commercial.
+
+### `Physical Description` needed `heading_type`, and the name was never wrong
+
+`?heading=Physical+Description` returns PUGVIEW.NotFound. `&heading_type=Compound`
+returns 125 pages. Two hours were nearly spent concluding the heading did not exist.
+**The right place to look is `/rest/pug_view/index/compound/<CID>/JSON`**, which lists the
+exact TOC headings a real molecule carries. Encoded in `HEADING_TYPE` in the probe.
+
+### PAGE 1 IS NOT A SAMPLE — results are alphabetical
+
+Page 1 of `Physical Description` is Acetal, Acetaldehyde, Acetamide, Acetic acid: 100%
+CAMEO Chemicals, industrial C1-C3 chemistry, and it showed `amber`, `oily` and `acid` as
+the top below-bar terms — all false positives. On the full 125 pages the dominant source
+is JECFA and the terms are `balsamic` and `nutty`. **A one-page probe of an alphabetical
+endpoint measures the letter A.** The probe says so now.
+
+### THE FOURTH ITERATION OF ONE LESSON IN ONE DAY
+
+The probe first counted a vocabulary word appearing anywhere and reported `Color/Form` at
+**298 new CIDs and 157 below-bar hits** — good enough to justify a harvest. Gating on the
+annotation mentioning odour took it to **0**. That still was not enough: on
+`Physical Description` the sentences carry a colour, a texture and an odour at once —
+
+```
+"amber colored liquids with a pungent odor"     amber is the COLOUR
+"...oily liquid with an irritating odor"        oily is the TEXTURE
+"ACETIC ACID, glacial ... odor of vinegar"      acid is the NAME
+```
+
+— and `amber`, the tag we most want, scored 12 of 12 false. So the term must now share a
+CLAUSE with the odour word. Tested against those exact sentences: drops `amber`, `oily`,
+`acid`; keeps `chlorine`, `aromatic`, `musty`, `orange`.
+
+**Today's four:** `named()` on ingredient enumerations, the review queue's productivity
+ranking, the probe's annotation gate, the probe's clause gate. **A word is not a claim,
+and a token-shaped rule cannot become a semantic judgement by being tuned.**
+
+### The paper gained the finding, not the data
+
+§4 now reports the measurement and the exclusion, with no JECFA text — a number and a
+licence name, which is a fact ABOUT the source and carries no licence with it. It
+generalises §1 from one encumbered dataset to a measured ratio of roughly five to one
+against, and it is the same shape as the C11D 3/50 and pre-1930 results: measured,
+declined, reported. Cost ~1,400 characters against a paper already over Joe's four-page
+spec; the Evidence box was trimmed and bought back only 370. **Still five pages.**
+
+### Not done, and deliberately not done
+
+**The 212 compounds are NOT ingested.** The probe's clause gate is a yield estimator and
+its own docstring says it is not an extractor; generating corpus rows from it would be the
+exact error this entry is about. Ingest needs a real extractor with the verbatim
+guarantee, `SourceName` filtering to US Government works only, and `triage_pubchem.py`
+over the result. Pages are already cached, so it is offline work.
+
+---
+
+## 2026-09-10 (late) — passage scope measured: +3 tags, and it costs what a row means
+
+**22 -> 25 of 67, for ~1,124 adjudications and a change to the corpus's central claim.**
+Measured, not argued, for the first time since the HEADING removal on 2026-08-03 told us
+to "recover these with a context window" and nobody counted them.
+
+```
+window   pairs   anaphoric   below-bar pairs   already-extracted-and-rejected
+  1       3303        861             1501            266
+  2       4849       1124             2073            366
+```
+
+At the **25%** measured on two seeded samples (20 rows at window 1, 12 of the 68 window-2
+additions), the anaphoric subset carries `amber` (needs 2, est 10), `aldehydic` (needs 5,
+est 5) and `animalic` (needs 3, est 4) over the bar. **Two of those three are marginal —
+the estimate barely exceeds the gap.** Nothing else comes close: `tobacco` needs 15 and
+gets ~9, `patchouli` needs 23 and gets ~8, `leather` needs 15 and gets ~8.
+
+**Compare the cost.** Today's review sitting bought 2 tags for ~60 adjudications and
+changed nothing about what a row is. This buys 3 for ~1,124 and changes the claim.
+
+### What is actually in the pairs, because the totals are not the answer
+
+The 20-row window-1 sample: **5 clean approvals, 1 borderline.** The clean ones are
+textbook —
+
+    PREV  "...provides 1.76 g. of 2,3-dimethyl-5,6,7,8-tetrahydroquinoxaline."
+    THIS  "This material is a colorless crystalline solid having a tobacco-honey odor..."
+
+The 14 rejections split in two, and the split matters:
+
+- **9 are bad at any scope** — composition-level ("a cosmetic powder is prepared... *It*
+  has a creamy nuance" — *It* is the powder), families ("these compounds", "derivative(s)",
+  "compounds of formula (I)"), a *plant*, and a consumer panel where "the **Lemon users**
+  reported Odor 5..." matched `lemon` because the test group was named after it.
+- **4 were good sentences whose referent sat one line too far back** — the previous
+  sentence was NMR or IR data with the compound named just above it.
+
+That second group is why window 2 was run. **It did not help as much as expected**: the
+263 extra anaphoric pairs sampled at ~21%, BELOW window 1's 28%, because most of what a
+second look-back reaches is surfactant boilerplate — "It can preferably be used to impart
+a long-lasting X note to a surfactant comprising composition" — which is composition-level
+and rejects. Two of twelve were clean, and one of those feeds `aldehydic`.
+
+### FREE WIN, INDEPENDENT OF ANY DECISION ABOUT PASSAGE SCOPE
+
+**366 pairs are sentences ALREADY IN THE QUEUE that can never become rows.** They were
+extracted because `named()` matched an ordinary English word — the case that started this
+is US5326748A, where `NAMED_SUFFIX` matched **"natural"** (`natur` + `al`) — then read,
+then rejected for anaphora. That is pure wasted reviewing and filtering it costs nothing.
+**`named()`'s stop list needs the -al/-ol/-one English words.** Not done.
+
+### Two flaws in my own probe, both found by testing rather than reading
+
+1. **The first draft counted the wrong population.** It looked only at sentences
+   `decide()` DROPS for "no compound/example name". But the case that motivated the whole
+   exercise is one `decide()` ACCEPTS and review then rejects. Caught by running the probe
+   against US5326748A by hand before trusting it.
+2. **Examples were the first N, not a sample.** Every run printed the same dozen rows from
+   the US100-104 range, so `--window 2` looked identical to `--window 1` while the set had
+   grown by 1,546 pairs and the additions — the interesting part — were never shown. Now a
+   seeded random sample of the anaphoric subset.
+
+### If it is adopted, and this is the part that is not a code change
+
+A passage row asserts a **resolved reference**: a human decided what "It" refers to. The
+verbatim invariant survives — both spans stay literal substrings of their own sentences —
+but the claim changes, and REVIEW-RULES rejects exactly this today by name. Conditions,
+recorded so they are not quietly dropped later: the row records BOTH sentences and which
+supplied which span; it carries a flag marking the link as human-resolved; passage rows
+stay SEPARABLE so anyone can filter to sentence-scope-only and get today's guarantee
+unchanged; precision is measured separately and NEVER inherited.
+
+**The argument against is in the project's own docs.** `pubchem.py`: the worst patent
+failure is "an accurate odour description bound to the wrong molecule, which looks exactly
+like a valid row." This multiplies those chances. **Not decided. Ivan's call, and not one
+to make at the end of a long day.**
+
+### The paper either way
+
+§4 currently calls passage scope "the identified next step and is not yet implemented" —
+an untested hypothesis, which is the shape of claim that produced 418. It can now say:
+measured across 5,346 documents, 4,849 candidate pairs, 1,124 explicitly anaphoric, ~25%
+admissible on two seeded samples, three terms recoverable, at the cost of introducing a
+resolved reference. Not yet written into the .tex.
