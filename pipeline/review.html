@@ -230,8 +230,20 @@ var VOCAB = ["acid", "aldehydic", "almond", "amber", "ambery", "animal", "animal
       if(r.split_of !== undefined){ out.push(r); return; }
       var k = (r.sentence || '').replace(/\s+/g,' ').trim().toLowerCase();
       if(!seen[k]){
-        r.sources = [r.source_id];
-        r.occurrences = 1;
+        // DO NOT OVERWRITE PROVENANCE THAT IS ALREADY ON THE ROW.
+        // This ran unconditionally until 2026-09-10 and cost the corpus its source
+        // lists. The first export deduped 6,686 candidates into 4,655 sentences and was
+        // verified loss-free. Reloading THAT file to carry on reviewing put every row
+        // through here again — and on already-deduped input every sentence is unique,
+        // so this branch fired for all of them and reset occurrences to 1 and sources
+        // to a single id. One sentence that had been attested in 24 patents came back
+        // claiming one. Nothing warned, because the row count was unchanged: dedupe is
+        // idempotent in ROWS and was destructive in FIELDS.
+        // Restored from commit a568ee9 by joining on the normalised sentence.
+        if(r.occurrences === undefined){
+          r.sources = [r.source_id];
+          r.occurrences = 1;
+        }
         seen[k] = r; out.push(r);
       } else {
         var m = seen[k];

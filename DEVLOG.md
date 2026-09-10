@@ -3301,6 +3301,38 @@ agreement can detect it. About five lines. Not done.
 - **I claimed to have corrected a report file and had not.** Said it, then did it a turn
   later when it surfaced. Say it after doing it.
 
+### DEDUPE IS IDEMPOTENT IN ROWS AND WAS DESTRUCTIVE IN FIELDS
+
+Found while pulling figures for paper v0.2, hours after the day's work was committed.
+
+`dedupe()` set `r.sources` and `r.occurrences` unconditionally on the first sighting of a
+sentence. That is correct on raw candidates. **On an ALREADY-DEDUPED file every sentence is
+unique, so the branch fires for every row and resets the provenance.** Reloading the
+morning's verified export to carry on reviewing therefore flattened it:
+
+```
+commit a568ee9   4,655 rows   sum(occurrences) 6,686   1,149 multi-source   max 24
+after reload     4,657 rows   sum(occurrences) 4,657       0 multi-source   max  1
+```
+
+One sentence attested in 24 patents came back claiming one. **Nothing warned, because the
+ROW COUNT was unchanged** — the export looked exactly like a good export, and this
+morning's three-way loss-free verification would have passed it, because that check tested
+rows and decisions, not fields.
+
+Restored by joining today's rows to `a568ee9` on the normalised sentence: 4,634 non-split
+rows and 6,665 occurrences, identical on both sides, decisions untouched at 703/360/2. The
+23 split copies carry `occurrences=1` as the committed format has them, so the total now
+reads 6,688 — the committed 6,686 plus the two new split copies.
+
+Guard added: `if(r.occurrences === undefined)`. A simulated reload of the repaired file is
+now stable at 4,657 / 6,688 / 1,149 / 24.
+
+**The general lesson, and it is the third time this project has met it:** an operation that
+is safe on raw input is not automatically safe on its own output. Check the FIELDS an
+idempotency claim covers, not just the row count. Same shape as `merge_review.py` copying a
+decision onto every occurrence, and as `yield_sample.py` globbing a dirty root.
+
 ### Where this leaves the sourcing question
 
 **Review is finished as a source of tags.** Not "nearly", not "mis-ordered" — 0 productive
