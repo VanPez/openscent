@@ -46,6 +46,13 @@ productive-first, and work them. **Fix its hard-coded 110-form `VOCAB` first** �
 ontology has 119, and 46 forms are invisible to the ordering, `sandal` and `animalistic`
 among them.
 
+**JOE IS THE CHEMISTRY REVIEWER** (2026-09-10) — Masters in biochemistry, offered
+unprompted after reading the paper. Three questions are with him: is 67 terms defensible,
+are `sandal`->sandalwood / `camphor`->camphoraceous sound, are `animalic`/`aldehydic`/
+`camphoraceous` used as assumed. **The PubChem half now carries three naming layers**
+(verbatim / `common_name` / `iupac_name`, 651 / 651 / 644); the patent half gets them from
+OPSIN.
+
 **A FOUR-PAGE PAPER IS THE NEXT DELIVERABLE** (Joe, 2026-09-08). Scientific-paper template
 (two-column) from `JoMfN/genesisl1-community-publication-templates`, via Overleaf. "4p" =
 four pages. Material assembled in `reports/manuscript-source.md` with a §11 word budget —
@@ -2659,6 +2666,76 @@ for the conservative answer and all 835 groups for the pessimistic one. Nothing 
 vocabulary should be re-litigated until that number exists — and nothing has been deleted:
 `dup_audit.py` reports groups and refuses to choose a survivor, because removing a document
 invalidates rows that point at it and that goes through `merge_review.py`, deliberately.
+
+## 2026-09-10 — Joe read the paper, understood it, and is a biochemist
+
+**The paper did the job it was written for.** Joe, who on 2026-09-08 said he had lost track
+of the work: *"I soo much better understand what you're depicting now."* Four pages of his
+own template answered what six weeks of Telegram fragments had not.
+
+**And he is qualified where this project is not.** *"I've masters in biochemistry and
+bachelor with minor chemistry I can add-on regarding the field specifics."* That is exactly
+the gap the call brief said to ask him for, offered before the call happened — the call was
+postponed and the question got answered anyway.
+
+Asked of him, unanswered so far: whether a 67-term odour vocabulary is defensible; whether
+`sandal` -> sandalwood and `camphor` -> camphoraceous are sound collapses or ones a
+perfumer would refuse; whether `animalic`, `aldehydic`, `camphoraceous` are used the way
+this corpus assumes.
+
+### Three naming layers, and the case for each
+
+Joe: *"For the chemical nomenclature go for IUPAC naming, that is unique for each organic
+molecule possible!"* He is right, and it was missing. `pubchem_smiles.py` now fetches
+`IUPACName` and `Title` alongside the structure — one extra field each on a request that
+was already being made.
+
+```
+verbatim (HSDB)      common_name        iupac_name
+COUMARIN             Coumarin           chromen-2-one
+CAMPHOR              Camphor            1,7,7-trimethylbicyclo[2.2.1]heptan-2-one
+(D)-LIMONENE         (+)-Limonene       (4R)-1-methyl-4-prop-1-en-2-ylcyclohexene
+Octylaldehyde        Octanal            octanal
+ISOAMYL ACETATE      Isoamyl Acetate    3-methylbutyl acetate
+
+651 of 651 have a common name · 644 an IUPAC name
+170 of 651 common names differ from the HSDB label beyond casing
+```
+
+**Each column carries a different guarantee, and that is the whole point:**
+
+- the **verbatim span** is what the source said. Defensible, never rewritten. It is the
+  claim.
+- **`iupac_name`** is canonical identity — one name per structure, per the IUPAC **Blue
+  Book** (*Nomenclature of Organic Chemistry: Recommendations and Preferred Names 2013*,
+  Favre & Powell, RSC 2014), which defines Preferred IUPAC Names.
+- **`common_name`** is what a human types. Ivan's question that started this: nobody
+  searches `2H-chromen-2-one`, they search coumarin.
+
+Rewriting the extracted span into any of the others would be GENERATION. Three fields,
+three provenances, one invariant intact.
+
+**Joe sent the GOLD Book** — the *Compendium of Chemical Terminology* — which is a
+dictionary of terms, not nomenclature rules. The advice is right and the citation is one
+book over; the paper should cite the Blue Book for the naming claim and the Gold Book only
+if it defines terms. Told him so, plainly, because he is the chemist and would rather be
+corrected than flattered.
+
+**On trade names, settled:** `Lilial`, `Hedione`, `Galaxolide`, `Cashmeran` and others
+appear 145+ times in the corpus. Trademark law does not prevent naming a mark to refer to
+the thing it names; the reason to exclude them is `REVIEW-RULES.md`'s, and it is better —
+Lilial and 3-(4-tert-butylphenyl)-2-methylpropanal are ONE compound, and recording both
+double-counts the molecule.
+
+**Still only the PubChem half.** The patent side has verbatim names and nothing else. All
+three layers there fall out of OPSIN — name -> structure -> InChIKey -> PubChem — so this
+is not a separate job, it is one more column from a step already queued. That same step
+also fixes the weak name-text join `status.py` complains about.
+
+**Not yet done:** `build_csv.py` does not emit the new columns. M's CSV is all-numeric by
+his own spec, so names belong in a companion lookup keyed on `cid`, not in the CSV itself.
+And the paper has NO nomenclature section at all — a chemist reading it will notice, and
+one just did.
 
 ## 2026-09-09 — "0 productive rows" was wrong, and norm/2 was worth far more than we logged
 

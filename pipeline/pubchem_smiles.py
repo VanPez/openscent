@@ -60,7 +60,26 @@ BATCH = 100
 # An unknown property is not an error to PUG REST. It is simply absent from the response,
 # so the request succeeds, the cache fills, and the one field the whole script exists for
 # is empty. Ask for both names, and let the loader below take whichever arrives.
-PROPS = "SMILES,ConnectivitySMILES,InChIKey,MolecularFormula,MolecularWeight"
+#
+# IUPACName ADDED 2026-09-10, on Joe's advice: "go for IUPAC naming, that is unique for
+# each organic molecule possible". He is right, and it is the identity column this corpus
+# has been missing. Its authority is the IUPAC Blue Book — Nomenclature of Organic
+# Chemistry: Recommendations and Preferred Names 2013 — which defines Preferred IUPAC
+# Names, one name per structure. (He sent the Gold Book, which is terminology, not
+# nomenclature; the advice stands, the citation is one book over.)
+#
+# THIS DOES NOT REPLACE THE EXTRACTED SPAN AND MUST NOT. What the patent said stays
+# verbatim in its own field, because that is the claim we can defend. A canonical IUPAC
+# name is DERIVED identity metadata with its own provenance — PubChem, keyed by CID —
+# and lives in its own column. Same argument as the common-name column: different
+# guarantees, different fields.
+# Title ADDED 2026-09-10: PubChem's preferred COMMON name — "Coumarin", not
+# "chromen-2-one" and not "COUMARIN". HSDB's molecule_name is usually the common name
+# already but shouts and is inconsistent (COUMARIN, Octylaldehyde, N-BUTYL ALCOHOL), and
+# nobody searches a corpus in caps. Three naming layers, three columns, one guarantee
+# each: the verbatim source span, the canonical IUPAC identity, the name a human types.
+PROPS = ("SMILES,ConnectivitySMILES,InChIKey,IUPACName,Title,"
+         "MolecularFormula,MolecularWeight")
 URL = ("https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{cids}"
        "/property/" + PROPS + "/JSON")
 
@@ -96,7 +115,10 @@ def main() -> int:
     # CanonicalSMILES rename left behind, and treating "present in cache" as "fetched"
     # would make the repair a no-op.
     missing = [c for c in cids
-               if str(c) not in cache or not cache[str(c)].get("smiles")]
+               if str(c) not in cache
+               or not cache[str(c)].get("smiles")
+               or "iupac_name" not in cache[str(c)]
+               or "common_name" not in cache[str(c)]]
     print(f"live CIDs {len(cids)} · cached {len(cache)} · to fetch {len(missing)}")
 
     if "--status" in sys.argv:
@@ -121,6 +143,8 @@ def main() -> int:
                           or p.get("CanonicalSMILES"),
                 "connectivity_smiles": p.get("ConnectivitySMILES"),
                 "inchikey": p.get("InChIKey"),
+                "iupac_name": p.get("IUPACName"),
+                "common_name": p.get("Title"),
                 "formula": p.get("MolecularFormula"),
                 "mw": p.get("MolecularWeight"),
             }

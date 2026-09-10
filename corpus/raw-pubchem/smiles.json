@@ -3,6 +3,8 @@
   "smiles": "C1=CC=CC=C1",
   "connectivity_smiles": "C1=CC=CC=C1",
   "inchikey": "UHOVQNZJYSORNB-UHFFFAOYSA-N",
+  "iupac_name": "benzene",
+  "common_name": "Benzene",
   "formula": "C6H6",
   "mw": "78.11"
  },
@@ -10,6 +12,8 @@
   "smiles": "CC1(C2CCC1(C(=O)C2)C)C",
   "connectivity_smiles": "CC1(C2CCC1(C(=O)C2)C)C",
   "inchikey": "DSSYKIVIOFKYAU-UHFFFAOYSA-N",
+  "iupac_name": "1,7,7-trimethylbicyclo[2.2.1]heptan-2-one",
+  "common_name": "Camphor",
   "formula": "C10H16O",
   "mw": "152.23"
  },
@@ -17,6 +21,8 @@
   "smiles": "C1C(O1)CCl",
   "connectivity_smiles": "C1C(O1)CCl",
   "inchikey": "BRLQWZUYTZBJKN-UHFFFAOYSA-N",
+  "iupac_name": "2-(chloromethyl)oxirane",
+  "common_name": "Epichlorohydrin",
   "formula": "C3H5ClO",
   "mw": "92.52"
  },
@@ -24,6 +30,8 @@
   "smiles": "CC(=O)O",
   "connectivity_smiles": "CC(=O)O",
   "inchikey": "QTBSBXVTEAMEQO-UHFFFAOYSA-N",
+  "iupac_name": "acetic acid",
+  "common_name": "Acetic Acid",
   "formula": "C2H4O2",
   "mw": "60.05"
  },
@@ -31,6 +39,8 @@
   "smiles": "CC(=O)C",
   "connectivity_smiles": "CC(=O)C",
   "inchikey": "CSCPPACGZOOCGX-UHFFFAOYSA-N",
+  "iupac_name": "propan-2-one",
+  "common_name": "Acetone",
   "formula": "C3H6O",
   "mw": "58.08"
  },
@@ -38,6 +48,8 @@
   "smiles": "CC#N",
   "connectivity_smiles": "CC#N",
   "inchikey": "WEVYAHXRMPXWCK-UHFFFAOYSA-N",
+  "iupac_name": "acetonitrile",
+  "common_name": "Acetonitrile",
   "formula": "C2H3N",
   "mw": "41.05"
  },
@@ -45,6 +57,8 @@
   "smiles": "C1=CC=C(C=C1)N",
   "connectivity_smiles": "C1=CC=C(C=C1)N",
   "inchikey": "PAYRUJLWNCNPSJ-UHFFFAOYSA-N",
+  "iupac_name": "aniline",
+  "common_name": "Aniline",
   "formula": "C6H7N",
   "mw": "93.13"
  },
@@ -52,6 +66,8 @@
   "smiles": "COC1=CC=CC=C1",
   "connectivity_smiles": "COC1=CC=CC=C1",
   "inchikey": "RDOXTESZEPMUJZ-UHFFFAOYSA-N",
+  "iupac_name": "anisole",
+  "common_name": "Anisole",
   "formula": "C7H8O",
   "mw": "108.14"
  },
@@ -59,6 +75,8 @@
   "smiles": "C1=CC=C(C=C1)CO",
   "connectivity_smiles": "C1=CC=C(C=C1)CO",
   "inchikey": "WVDDGKGOMKODPV-UHFFFAOYSA-N",
+  "iupac_name": "phenylmethanol",
+  "common_name": "Benzyl Alcohol",
   "formula": "C7H8O",
   "mw": "108.14"
  },
@@ -66,6 +84,8 @@
   "smiles": "C1=CC=C(C=C1)Br",
   "connectivity_smiles": "C1=CC=C(C=C1)Br",
   "inchikey": "QARVLSVVCXYDNA-UHFFFAOYSA-N",
+  "iupac_name": "bromobenzene",
+  "common_name": "Bromobenzene",
   "formula": "C6H5Br",
   "mw": "157.01"
  },
@@ -73,6 +93,8 @@
   "smiles": "CCCCO",
   "connectivity_smiles": "CCCCO",
   "inchikey": "LRHPLDYGYMQRHN-UHFFFAOYSA-N",
+  "iupac_name": "butan-1-ol",
+  "common_name": "1-Butanol",
   "formula": "C4H10O",
   "mw": "74.12"
  },
@@ -80,6 +102,8 @@
   "smiles": "CC(C)CO",
   "connectivity_smiles": "CC(C)CO",
   "inchikey": "ZXEKIIBDNHEJCQ-UHFFFAOYSA-N",
+  "iupac_name": "2-methylpropan-1-ol",
+  "common_name": "Isobutanol",
   "formula": "C4H10O",
   "mw": "74.12"
  },
@@ -87,6 +111,8 @@
   "smiles": "C(=S)=S",
   "connectivity_smiles": "C(=S)=S",
   "inchikey": "QGJOPFRUJISHPQ-UHFFFAOYSA-N",
+  "iupac_name": "methanedithione",
+  "common_name": "Carbon Disulfide",
   "formula": "CS2",
   "mw": "76.15"
  },
@@ -94,6 +120,8 @@
   "smiles": "C(Cl)(Cl)(Cl)Cl",
   "connectivity_smiles": "C(Cl)(Cl)(Cl)Cl",
   "inchikey": "VZGDMQKNWNREIO-UHFFFAOYSA-N",
+  "iupac_name": "tetrachloromethane",
+  "common_name": "Carbon Tetrachloride",
   "formula": "CCl4",
   "mw": "153.8"
  },
@@ -101,6 +129,8 @@
   "smiles": "CCOCCO",
   "connectivity_smiles": "CCOCCO",
   "inchikey": "ZNQVEEAIQZEUHB-UHFFFAOYSA-N",
+  "iupac_name": "2-ethoxyethanol",
+  "common_name": "Glycol monoethyl ether",
   "formula": "C4H10O2",
   "mw": "90.12"
  },
@@ -108,6 +138,8 @@
   "smiles": "C1=CC=C(C=C1)Cl",
   "connectivity_smiles": "C1=CC=C(C=C1)Cl",
   "inchikey": "MVPPADPHJFYWMZ-UHFFFAOYSA-N",
+  "iupac_name": "chlorobenzene",
+  "common_name": "Chlorobenzene",
   "formula": "C6H5Cl",
   "mw": "112.55"
  },
@@ -115,6 +147,8 @@
   "smiles": "CC1=CC(=NC(=C1)C)C",
   "connectivity_smiles": "CC1=CC(=NC(=C1)C)C",
   "inchikey": "BWZVCCNYKMEVEX-UHFFFAOYSA-N",
+  "iupac_name": "2,4,6-trimethylpyridine",
+  "common_name": "2,4,6-Trimethylpyridine",
   "formula": "C8H11N",
   "mw": "121.18"
  },
@@ -122,6 +156,8 @@
   "smiles": "C1CCCCC1",
   "connectivity_smiles": "C1CCCCC1",
   "inchikey": "XDTMQSROBMDMFD-UHFFFAOYSA-N",
+  "iupac_name": "cyclohexane",
+  "common_name": "Cyclohexane",
   "formula": "C6H12",
   "mw": "84.16"
  },
@@ -129,6 +165,8 @@
   "smiles": "C1CCCC1",
   "connectivity_smiles": "C1CCCC1",
   "inchikey": "RGSFGYAAUTVSQA-UHFFFAOYSA-N",
+  "iupac_name": "cyclopentane",
+  "common_name": "Cyclopentane",
   "formula": "C5H10",
   "mw": "70.13"
  },
@@ -136,6 +174,8 @@
   "smiles": "CC(Cl)Cl",
   "connectivity_smiles": "CC(Cl)Cl",
   "inchikey": "SCYULBFZEHDVBN-UHFFFAOYSA-N",
+  "iupac_name": "1,1-dichloroethane",
+  "common_name": "1,1-Dichloroethane",
   "formula": "C2H4Cl2",
   "mw": "98.96"
  },
@@ -143,6 +183,8 @@
   "smiles": "C(CCl)Cl",
   "connectivity_smiles": "C(CCl)Cl",
   "inchikey": "WSLDOOZREJYCGB-UHFFFAOYSA-N",
+  "iupac_name": "1,2-dichloroethane",
+  "common_name": "1,2-Dichloroethane",
   "formula": "C2H4Cl2",
   "mw": "98.96"
  },
@@ -150,6 +192,8 @@
   "smiles": "C(Cl)Cl",
   "connectivity_smiles": "C(Cl)Cl",
   "inchikey": "YMWUJEATGCHHMB-UHFFFAOYSA-N",
+  "iupac_name": "dichloromethane",
+  "common_name": "Dichloromethane",
   "formula": "CH2Cl2",
   "mw": "84.93"
  },
@@ -157,6 +201,8 @@
   "smiles": "CCOCC",
   "connectivity_smiles": "CCOCC",
   "inchikey": "RTZKZFJDLAIYFH-UHFFFAOYSA-N",
+  "iupac_name": "ethoxyethane",
+  "common_name": "Diethyl Ether",
   "formula": "C4H10O",
   "mw": "74.12"
  },
@@ -164,6 +210,8 @@
   "smiles": "CC1=NC(=CC=C1)C",
   "connectivity_smiles": "CC1=NC(=CC=C1)C",
   "inchikey": "OISVCGZHLKNMSJ-UHFFFAOYSA-N",
+  "iupac_name": "2,6-dimethylpyridine",
+  "common_name": "2,6-Lutidine",
   "formula": "C7H9N",
   "mw": "107.15"
  },
@@ -171,6 +219,8 @@
   "smiles": "CCOC(=O)C",
   "connectivity_smiles": "CCOC(=O)C",
   "inchikey": "XEKOWRVHYACXOJ-UHFFFAOYSA-N",
+  "iupac_name": "ethyl acetate",
+  "common_name": "Ethyl Acetate",
   "formula": "C4H8O2",
   "mw": "88.11"
  },
@@ -178,6 +228,8 @@
   "smiles": "CCC1=CC=CC=C1",
   "connectivity_smiles": "CCC1=CC=CC=C1",
   "inchikey": "YNQLUTRBYVCPMQ-UHFFFAOYSA-N",
+  "iupac_name": "ethylbenzene",
+  "common_name": "Ethylbenzene",
   "formula": "C8H10",
   "mw": "106.16"
  },
@@ -185,6 +237,8 @@
   "smiles": "CC1=CC(=CC(=C1)C)C",
   "connectivity_smiles": "CC1=CC(=CC(=C1)C)C",
   "inchikey": "AUHZEENZYGFFBQ-UHFFFAOYSA-N",
+  "iupac_name": "1,3,5-trimethylbenzene",
+  "common_name": "Mesitylene",
   "formula": "C9H12",
   "mw": "120.19"
  },
@@ -192,6 +246,8 @@
   "smiles": "CO",
   "connectivity_smiles": "CO",
   "inchikey": "OKKJLVBELUTLKV-UHFFFAOYSA-N",
+  "iupac_name": "methanol",
+  "common_name": "Methanol",
   "formula": "CH4O",
   "mw": "32.042"
  },
@@ -199,6 +255,8 @@
   "smiles": "CC(=O)OC",
   "connectivity_smiles": "CC(=O)OC",
   "inchikey": "KXKVLQRXCPHEJC-UHFFFAOYSA-N",
+  "iupac_name": "methyl acetate",
+  "common_name": "Methyl Acetate",
   "formula": "C3H6O2",
   "mw": "74.08"
  },
@@ -206,6 +264,8 @@
   "smiles": "CCC(=O)C",
   "connectivity_smiles": "CCC(=O)C",
   "inchikey": "ZWEHNKRNPOVVGH-UHFFFAOYSA-N",
+  "iupac_name": "butan-2-one",
+  "common_name": "Methyl Ethyl Ketone",
   "formula": "C4H8O",
   "mw": "72.11"
  },
@@ -213,6 +273,8 @@
   "smiles": "CC(C)(C)CO",
   "connectivity_smiles": "CC(C)(C)CO",
   "inchikey": "KPSSIOMAKSHJJG-UHFFFAOYSA-N",
+  "iupac_name": "2,2-dimethylpropan-1-ol",
+  "common_name": "Neopentyl alcohol",
   "formula": "C5H12O",
   "mw": "88.15"
  },
@@ -220,6 +282,8 @@
   "smiles": "C1=CC=C(C=C1)[N+](=O)[O-]",
   "connectivity_smiles": "C1=CC=C(C=C1)[N+](=O)[O-]",
   "inchikey": "LQNUZADURLCDLV-UHFFFAOYSA-N",
+  "iupac_name": "nitrobenzene",
+  "common_name": "Nitrobenzene",
   "formula": "C6H5NO2",
   "mw": "123.11"
  },
@@ -227,6 +291,8 @@
   "smiles": "CC[N+](=O)[O-]",
   "connectivity_smiles": "CC[N+](=O)[O-]",
   "inchikey": "MCSAJNNLRCFZED-UHFFFAOYSA-N",
+  "iupac_name": "1-nitroethane",
+  "common_name": "Nitroethane",
   "formula": "C2H5NO2",
   "mw": "75.07"
  },
@@ -234,6 +300,8 @@
   "smiles": "C1=CC=C(C=C1)O",
   "connectivity_smiles": "C1=CC=C(C=C1)O",
   "inchikey": "ISWSIDIOOBJBQZ-UHFFFAOYSA-N",
+  "iupac_name": "phenol",
+  "common_name": "Phenol",
   "formula": "C6H6O",
   "mw": "94.11"
  },
@@ -241,6 +309,8 @@
   "smiles": "C1CCNCC1",
   "connectivity_smiles": "C1CCNCC1",
   "inchikey": "NQRYJNQNLNOLGT-UHFFFAOYSA-N",
+  "iupac_name": "piperidine",
+  "common_name": "Piperidine",
   "formula": "C5H11N",
   "mw": "85.15"
  },
@@ -248,6 +318,8 @@
   "smiles": "C(C(Cl)Cl)(Cl)Cl",
   "connectivity_smiles": "C(C(Cl)Cl)(Cl)Cl",
   "inchikey": "QPFMBZIOSGYJDE-UHFFFAOYSA-N",
+  "iupac_name": "1,1,2,2-tetrachloroethane",
+  "common_name": "1,1,2,2-Tetrachloroethane",
   "formula": "C2H2Cl4",
   "mw": "167.8"
  },
@@ -255,6 +327,8 @@
   "smiles": "C1CCOC1",
   "connectivity_smiles": "C1CCOC1",
   "inchikey": "WYURNTSHIVDZCO-UHFFFAOYSA-N",
+  "iupac_name": "oxolane",
+  "common_name": "Tetrahydrofuran",
   "formula": "C4H8O",
   "mw": "72.11"
  },
@@ -262,6 +336,8 @@
   "smiles": "C1CCOCC1",
   "connectivity_smiles": "C1CCOCC1",
   "inchikey": "DHXVGJBLRPWPCS-UHFFFAOYSA-N",
+  "iupac_name": "oxane",
+  "common_name": "Tetrahydropyran",
   "formula": "C5H10O",
   "mw": "86.13"
  },
@@ -269,6 +345,8 @@
   "smiles": "C1CCC2=CC=CC=C2C1",
   "connectivity_smiles": "C1CCC2=CC=CC=C2C1",
   "inchikey": "CXWXQJXEFPUFDZ-UHFFFAOYSA-N",
+  "iupac_name": "1,2,3,4-tetrahydronaphthalene",
+  "common_name": "Tetralin",
   "formula": "C10H12",
   "mw": "132.20"
  },
@@ -276,6 +354,8 @@
   "smiles": "C1=CSC=C1",
   "connectivity_smiles": "C1=CSC=C1",
   "inchikey": "YTPLMLYBLZKORZ-UHFFFAOYSA-N",
+  "iupac_name": "thiophene",
+  "common_name": "Thiophene",
   "formula": "C4H4S",
   "mw": "84.14"
  },
@@ -283,6 +363,8 @@
   "smiles": "CC1=CC=CC=C1",
   "connectivity_smiles": "CC1=CC=CC=C1",
   "inchikey": "YXFVVABEGXRONW-UHFFFAOYSA-N",
+  "iupac_name": "toluene",
+  "common_name": "Toluene",
   "formula": "C7H8",
   "mw": "92.14"
  },
@@ -290,6 +372,8 @@
   "smiles": "C(=C(Cl)Cl)Cl",
   "connectivity_smiles": "C(=C(Cl)Cl)Cl",
   "inchikey": "XSTXAVWGXDQKEL-UHFFFAOYSA-N",
+  "iupac_name": "1,1,2-trichloroethene",
+  "common_name": "Trichloroethylene",
   "formula": "C2HCl3",
   "mw": "131.38"
  },
@@ -297,6 +381,8 @@
   "smiles": "CC1=CC=CC=C1C",
   "connectivity_smiles": "CC1=CC=CC=C1C",
   "inchikey": "CTQNGGLPUBDAKN-UHFFFAOYSA-N",
+  "iupac_name": "1,2-xylene",
+  "common_name": "O-Xylene",
   "formula": "C8H10",
   "mw": "106.16"
  },
@@ -304,6 +390,8 @@
   "smiles": "CC1=CC(=CC=C1)C",
   "connectivity_smiles": "CC1=CC(=CC=C1)C",
   "inchikey": "IVSZLXZYQVIEFR-UHFFFAOYSA-N",
+  "iupac_name": "1,3-xylene",
+  "common_name": "M-Xylene",
   "formula": "C8H10",
   "mw": "106.16"
  },
@@ -311,6 +399,8 @@
   "smiles": "CC1=CC=C(C=C1)C",
   "connectivity_smiles": "CC1=CC=C(C=C1)C",
   "inchikey": "URLKBWYHVLBVBO-UHFFFAOYSA-N",
+  "iupac_name": "1,4-xylene",
+  "common_name": "P-Xylene",
   "formula": "C8H10",
   "mw": "106.16"
  },
@@ -318,6 +408,8 @@
   "smiles": "C1=CC=C(C=C1)C2=CC=CC=C2.C1=CC=C(C=C1)OC2=CC=CC=C2",
   "connectivity_smiles": "C1=CC=C(C=C1)C2=CC=CC=C2.C1=CC=C(C=C1)OC2=CC=CC=C2",
   "inchikey": "MHCVCKDNQYMGEX-UHFFFAOYSA-N",
+  "iupac_name": "1,1'-biphenyl;phenoxybenzene",
+  "common_name": "1,1'-Biphenyl, mixt. with 1,1'-oxybis(benzene)",
   "formula": "C24H20O",
   "mw": "324.4"
  },
@@ -325,6 +417,8 @@
   "smiles": "C(F)(Cl)(Cl)Cl",
   "connectivity_smiles": "C(F)(Cl)(Cl)Cl",
   "inchikey": "CYRMSUTZVYGINF-UHFFFAOYSA-N",
+  "iupac_name": "trichloro(fluoro)methane",
+  "common_name": "Trichlorofluoromethane",
   "formula": "CCl3F",
   "mw": "137.36"
  },
@@ -332,6 +426,8 @@
   "smiles": "CC(C)CC(=O)C",
   "connectivity_smiles": "CC(C)CC(=O)C",
   "inchikey": "NTIZESTWPVYFNL-UHFFFAOYSA-N",
+  "iupac_name": "4-methylpentan-2-one",
+  "common_name": "Methyl Isobutyl Ketone",
   "formula": "C6H12O",
   "mw": "100.16"
  },
@@ -339,6 +435,8 @@
   "smiles": "C(=CCl)Cl",
   "connectivity_smiles": "C(=CCl)Cl",
   "inchikey": "KFUSEUYYWQURPO-UHFFFAOYSA-N",
+  "iupac_name": "1,2-dichloroethene",
+  "common_name": "1,2-Dichloroethylene",
   "formula": "C2H2Cl2",
   "mw": "96.94"
  },
@@ -346,6 +444,8 @@
   "smiles": "CCCCOC(=O)C",
   "connectivity_smiles": "CCCCOC(=O)C",
   "inchikey": "DKPFZGUDAPQIHT-UHFFFAOYSA-N",
+  "iupac_name": "butyl acetate",
+  "common_name": "Butyl Acetate",
   "formula": "C6H12O2",
   "mw": "116.16"
  },
@@ -353,6 +453,8 @@
   "smiles": "CC(C)OC(=O)C",
   "connectivity_smiles": "CC(C)OC(=O)C",
   "inchikey": "JMMWKPVZQRWMSS-UHFFFAOYSA-N",
+  "iupac_name": "propan-2-yl acetate",
+  "common_name": "Isopropyl Acetate",
   "formula": "C5H10O2",
   "mw": "102.13"
  },
@@ -360,6 +462,8 @@
   "smiles": "CCCOC(=O)C",
   "connectivity_smiles": "CCCOC(=O)C",
   "inchikey": "YKYONYBAUNKHLG-UHFFFAOYSA-N",
+  "iupac_name": "propyl acetate",
+  "common_name": "Propyl Acetate",
   "formula": "C5H10O2",
   "mw": "102.13"
  },
@@ -367,6 +471,8 @@
   "smiles": "N",
   "connectivity_smiles": "N",
   "inchikey": "QGZKDVFQNNGYKY-UHFFFAOYSA-N",
+  "iupac_name": "azane",
+  "common_name": "Ammonia",
   "formula": "H3N",
   "mw": "17.031"
  },
@@ -374,6 +480,8 @@
   "smiles": "C=O",
   "connectivity_smiles": "C=O",
   "inchikey": "WSFSSNUMVMOOMR-UHFFFAOYSA-N",
+  "iupac_name": "formaldehyde",
+  "common_name": "Formaldehyde",
   "formula": "CH2O",
   "mw": "30.026"
  },
@@ -381,6 +489,8 @@
   "smiles": "C#N",
   "connectivity_smiles": "C#N",
   "inchikey": "LELOWRISYMNNSU-UHFFFAOYSA-N",
+  "iupac_name": "formonitrile",
+  "common_name": "Hydrogen Cyanide",
   "formula": "CHN",
   "mw": "27.025"
  },
@@ -388,6 +498,8 @@
   "smiles": "C=C",
   "connectivity_smiles": "C=C",
   "inchikey": "VGGSQFUCUMXWEO-UHFFFAOYSA-N",
+  "iupac_name": "ethene",
+  "common_name": "Ethylene",
   "formula": "C2H4",
   "mw": "28.05"
  },
@@ -395,6 +507,8 @@
   "smiles": "C=CCl",
   "connectivity_smiles": "C=CCl",
   "inchikey": "BZHJMEDXRYGGRV-UHFFFAOYSA-N",
+  "iupac_name": "chloroethene",
+  "common_name": "Vinyl Chloride",
   "formula": "C2H3Cl",
   "mw": "62.50"
  },
@@ -402,6 +516,8 @@
   "smiles": "C1CO1",
   "connectivity_smiles": "C1CO1",
   "inchikey": "IAYPIBMASNFSPL-UHFFFAOYSA-N",
+  "iupac_name": "oxirane",
+  "common_name": "Ethylene Oxide",
   "formula": "C2H4O",
   "mw": "44.05"
  },
@@ -409,6 +525,8 @@
   "smiles": "C=CC1=CC=CC=C1",
   "connectivity_smiles": "C=CC1=CC=CC=C1",
   "inchikey": "PPBRXRYQALVLMV-UHFFFAOYSA-N",
+  "iupac_name": "styrene",
+  "common_name": "Styrene",
   "formula": "C8H8",
   "mw": "104.15"
  },
@@ -416,6 +534,8 @@
   "smiles": "CC(C)C1=CC=CC=C1",
   "connectivity_smiles": "CC(C)C1=CC=CC=C1",
   "inchikey": "RWGFKTVRMDUZSP-UHFFFAOYSA-N",
+  "iupac_name": "cumene",
+  "common_name": "Cumene",
   "formula": "C9H12",
   "mw": "120.19"
  },
@@ -423,6 +543,8 @@
   "smiles": "CC1CO1",
   "connectivity_smiles": "CC1CO1",
   "inchikey": "GOOHAUXETOMSMM-UHFFFAOYSA-N",
+  "iupac_name": "2-methyloxirane",
+  "common_name": "Propylene Oxide",
   "formula": "C3H6O",
   "mw": "58.08"
  },
@@ -430,6 +552,8 @@
   "smiles": "C=CC#N",
   "connectivity_smiles": "C=CC#N",
   "inchikey": "NLHHRLWOUZZQLW-UHFFFAOYSA-N",
+  "iupac_name": "prop-2-enenitrile",
+  "common_name": "Acrylonitrile",
   "formula": "C3H3N",
   "mw": "53.06"
  },
@@ -437,6 +561,8 @@
   "smiles": "C=CC=O",
   "connectivity_smiles": "C=CC=O",
   "inchikey": "HGINCPLSRVDWNT-UHFFFAOYSA-N",
+  "iupac_name": "prop-2-enal",
+  "common_name": "Acrolein",
   "formula": "C3H4O",
   "mw": "56.06"
  },
@@ -444,6 +570,8 @@
   "smiles": "C=CCCl",
   "connectivity_smiles": "C=CCCl",
   "inchikey": "OSDWBNJEKMUWAV-UHFFFAOYSA-N",
+  "iupac_name": "3-chloroprop-1-ene",
+  "common_name": "Allyl chloride",
   "formula": "C3H5Cl",
   "mw": "76.52"
  },
@@ -451,6 +579,8 @@
   "smiles": "CCC=C",
   "connectivity_smiles": "CCC=C",
   "inchikey": "VXNZUUAINFGPBY-UHFFFAOYSA-N",
+  "iupac_name": "but-1-ene",
+  "common_name": "1-Butene",
   "formula": "C4H8",
   "mw": "56.11"
  },
@@ -458,6 +588,8 @@
   "smiles": "C=CC=C",
   "connectivity_smiles": "C=CC=C",
   "inchikey": "KAKZBPTYRLMSJV-UHFFFAOYSA-N",
+  "iupac_name": "buta-1,3-diene",
+  "common_name": "1,3-Butadiene",
   "formula": "C4H6",
   "mw": "54.09"
  },
@@ -465,6 +597,8 @@
   "smiles": "C1=CC(=O)OC1=O",
   "connectivity_smiles": "C1=CC(=O)OC1=O",
   "inchikey": "FPYJFEHAWHCUMM-UHFFFAOYSA-N",
+  "iupac_name": "furan-2,5-dione",
+  "common_name": "Maleic Anhydride",
   "formula": "C4H2O3",
   "mw": "98.06"
  },
@@ -472,6 +606,8 @@
   "smiles": "C1=CC=C2C=CC=CC2=C1",
   "connectivity_smiles": "C1=CC=C2C=CC=CC2=C1",
   "inchikey": "UFWIBTONFRDIAS-UHFFFAOYSA-N",
+  "iupac_name": "naphthalene",
+  "common_name": "Naphthalene",
   "formula": "C10H8",
   "mw": "128.17"
  },
@@ -479,6 +615,8 @@
   "smiles": "C1CCC(=O)CC1",
   "connectivity_smiles": "C1CCC(=O)CC1",
   "inchikey": "JHIVVAPYMSGYDF-UHFFFAOYSA-N",
+  "iupac_name": "cyclohexanone",
+  "common_name": "Cyclohexanone",
   "formula": "C6H10O",
   "mw": "98.14"
  },
@@ -486,6 +624,8 @@
   "smiles": "C=CCO",
   "connectivity_smiles": "C=CCO",
   "inchikey": "XXROGKLTLUQVRX-UHFFFAOYSA-N",
+  "iupac_name": "prop-2-en-1-ol",
+  "common_name": "Allyl Alcohol",
   "formula": "C3H6O",
   "mw": "58.08"
  },
@@ -493,6 +633,8 @@
   "smiles": "CCOC(=O)C=C",
   "connectivity_smiles": "CCOC(=O)C=C",
   "inchikey": "JIGUQPWFLRLWPJ-UHFFFAOYSA-N",
+  "iupac_name": "ethyl prop-2-enoate",
+  "common_name": "Ethyl Acrylate",
   "formula": "C5H8O2",
   "mw": "100.12"
  },
@@ -500,6 +642,8 @@
   "smiles": "CC(=C)C(=O)OC",
   "connectivity_smiles": "CC(=C)C(=O)OC",
   "inchikey": "VVQNEPGJFQJSBK-UHFFFAOYSA-N",
+  "iupac_name": "methyl 2-methylprop-2-enoate",
+  "common_name": "Methyl Methacrylate",
   "formula": "C5H8O2",
   "mw": "100.12"
  },
@@ -507,6 +651,8 @@
   "smiles": "CC(=C)C1=CC=CC=C1",
   "connectivity_smiles": "CC(=C)C1=CC=CC=C1",
   "inchikey": "XYLMUPLGERFSHI-UHFFFAOYSA-N",
+  "iupac_name": "prop-1-en-2-ylbenzene",
+  "common_name": "Alpha-Methylstyrene",
   "formula": "C9H10",
   "mw": "118.18"
  },
@@ -514,6 +660,8 @@
   "smiles": "C1=CC(=CC=C1C(C2=CC=C(C=C2)Cl)C(Cl)(Cl)Cl)Cl",
   "connectivity_smiles": "C1=CC(=CC=C1C(C2=CC=C(C=C2)Cl)C(Cl)(Cl)Cl)Cl",
   "inchikey": "YVGGHNCTFXOJCH-UHFFFAOYSA-N",
+  "iupac_name": "1-chloro-4-[2,2,2-trichloro-1-(4-chlorophenyl)ethyl]benzene",
+  "common_name": "1-Chloro-4-(2,2,2-trichloro-1-(4-chlorophenyl)ethyl)benzene",
   "formula": "C14H9Cl5",
   "mw": "354.5"
  },
@@ -521,6 +669,8 @@
   "smiles": "ClCl",
   "connectivity_smiles": "ClCl",
   "inchikey": "KZBUYRJDOAKODT-UHFFFAOYSA-N",
+  "iupac_name": "molecular chlorine",
+  "common_name": "Chlorine",
   "formula": "Cl2",
   "mw": "70.90"
  },
@@ -528,6 +678,8 @@
   "smiles": "C1=CC=C(C=C1)COC(=O)C2=CC=CC=C2",
   "connectivity_smiles": "C1=CC=C(C=C1)COC(=O)C2=CC=CC=C2",
   "inchikey": "SESFRYSPDFLNCH-UHFFFAOYSA-N",
+  "iupac_name": "benzyl benzoate",
+  "common_name": "Benzyl Benzoate",
   "formula": "C14H12O2",
   "mw": "212.24"
  },
@@ -535,6 +687,8 @@
   "smiles": "C1=CC=C(C=C1)/C=C/C=O",
   "connectivity_smiles": "C1=CC=C(C=C1)C=CC=O",
   "inchikey": "KJPRLNWUNMBNBZ-QPJJXVBHSA-N",
+  "iupac_name": "(E)-3-phenylprop-2-enal",
+  "common_name": "Cinnamaldehyde",
   "formula": "C9H8O",
   "mw": "132.16"
  },
@@ -542,6 +696,8 @@
   "smiles": "COC1=C(C=CC(=C1)CC=C)O",
   "connectivity_smiles": "COC1=C(C=CC(=C1)CC=C)O",
   "inchikey": "RRAFCDWBNXTKKO-UHFFFAOYSA-N",
+  "iupac_name": "2-methoxy-4-prop-2-enylphenol",
+  "common_name": "Eugenol",
   "formula": "C10H12O2",
   "mw": "164.20"
  },
@@ -549,6 +705,8 @@
   "smiles": "C(C(Cl)(Cl)Cl)(O)O",
   "connectivity_smiles": "C(C(Cl)(Cl)Cl)(O)O",
   "inchikey": "RNFNDJAIBTYOQL-UHFFFAOYSA-N",
+  "iupac_name": "2,2,2-trichloroethane-1,1-diol",
+  "common_name": "Chloral Hydrate",
   "formula": "C2H3Cl3O2",
   "mw": "165.40"
  },
@@ -556,6 +714,8 @@
   "smiles": "O=S=O",
   "connectivity_smiles": "O=S=O",
   "inchikey": "RAHZWNYVWXNFOC-UHFFFAOYSA-N",
+  "iupac_name": "sulfur dioxide",
+  "common_name": "Sulfur Dioxide",
   "formula": "O2S",
   "mw": "64.07"
  },
@@ -563,6 +723,8 @@
   "smiles": "CC=O",
   "connectivity_smiles": "CC=O",
   "inchikey": "IKHGUXGNUITLKF-UHFFFAOYSA-N",
+  "iupac_name": "acetaldehyde",
+  "common_name": "Acetaldehyde",
   "formula": "C2H4O",
   "mw": "44.05"
  },
@@ -570,6 +732,8 @@
   "smiles": "CC(=O)OC(=O)C",
   "connectivity_smiles": "CC(=O)OC(=O)C",
   "inchikey": "WFDIJRYMOXRFFG-UHFFFAOYSA-N",
+  "iupac_name": "acetyl acetate",
+  "common_name": "Acetic Anhydride",
   "formula": "C4H6O3",
   "mw": "102.09"
  },
@@ -577,6 +741,8 @@
   "smiles": "C/C=C/C=O",
   "connectivity_smiles": "CC=CC=O",
   "inchikey": "MLUCVPSAIODCQM-NSCUHMNNSA-N",
+  "iupac_name": "(E)-but-2-enal",
+  "common_name": "Crotonaldehyde",
   "formula": "C4H6O",
   "mw": "70.09"
  },
@@ -584,6 +750,8 @@
   "smiles": "CC(=O)[O-].CC(=O)[O-].[Cd+2]",
   "connectivity_smiles": "CC(=O)[O-].CC(=O)[O-].[Cd+2]",
   "inchikey": "LHQLJMJLROMYRN-UHFFFAOYSA-L",
+  "iupac_name": "cadmium(2+) diacetate",
+  "common_name": "Cadmium acetate",
   "formula": "C4H6CdO4",
   "mw": "230.50"
  },
@@ -591,6 +759,8 @@
   "smiles": "C1CCC2CCCCC2C1",
   "connectivity_smiles": "C1CCC2CCCCC2C1",
   "inchikey": "NNBZCPXTIHJBJL-UHFFFAOYSA-N",
+  "iupac_name": "1,2,3,4,4a,5,6,7,8,8a-decahydronaphthalene",
+  "common_name": "Decalin",
   "formula": "C10H18",
   "mw": "138.25"
  },
@@ -598,6 +768,8 @@
   "smiles": "CCCCCCCCCC=O",
   "connectivity_smiles": "CCCCCCCCCC=O",
   "inchikey": "KSMVZQYAVGTKIV-UHFFFAOYSA-N",
+  "iupac_name": "decanal",
+  "common_name": "Decanal",
   "formula": "C10H20O",
   "mw": "156.26"
  },
@@ -605,6 +777,8 @@
   "smiles": "CCCCCCCC1CCCC(=O)O1",
   "connectivity_smiles": "CCCCCCCC1CCCC(=O)O1",
   "inchikey": "QRPLZGZHJABGRS-UHFFFAOYSA-N",
+  "iupac_name": "6-heptyloxan-2-one",
+  "common_name": "delta-Dodecalactone",
   "formula": "C12H22O2",
   "mw": "198.30"
  },
@@ -612,6 +786,8 @@
   "smiles": "CC(=O)C(=O)C",
   "connectivity_smiles": "CC(=O)C(=O)C",
   "inchikey": "QSJXEFYPDANLFS-UHFFFAOYSA-N",
+  "iupac_name": "butane-2,3-dione",
+  "common_name": "Butanedione",
   "formula": "C4H6O2",
   "mw": "86.09"
  },
@@ -619,6 +795,8 @@
   "smiles": "CC(=O)OOC(=O)C",
   "connectivity_smiles": "CC(=O)OOC(=O)C",
   "inchikey": "ZQMIGQNCOMNODD-UHFFFAOYSA-N",
+  "iupac_name": "acetyl ethaneperoxoate",
+  "common_name": "Diacetyl peroxide",
   "formula": "C4H6O4",
   "mw": "118.09"
  },
@@ -626,6 +804,8 @@
   "smiles": "CCCCOC(=O)C=C",
   "connectivity_smiles": "CCCCOC(=O)C=C",
   "inchikey": "CQEYYJKEWSMYFG-UHFFFAOYSA-N",
+  "iupac_name": "butyl prop-2-enoate",
+  "common_name": "Butyl Acrylate",
   "formula": "C7H12O2",
   "mw": "128.17"
  },
@@ -633,6 +813,8 @@
   "smiles": "C1=CC(=C(C(=C1)Cl)C#N)Cl",
   "connectivity_smiles": "C1=CC(=C(C(=C1)Cl)C#N)Cl",
   "inchikey": "YOYAIZYFCNQIRF-UHFFFAOYSA-N",
+  "iupac_name": "2,6-dichlorobenzonitrile",
+  "common_name": "Dichlobenil",
   "formula": "C7H3Cl2N",
   "mw": "172.01"
  },
@@ -640,6 +822,8 @@
   "smiles": "CC(=O)CBr",
   "connectivity_smiles": "CC(=O)CBr",
   "inchikey": "VQFAIAKCILWQPZ-UHFFFAOYSA-N",
+  "iupac_name": "1-bromopropan-2-one",
+  "common_name": "Bromoacetone",
   "formula": "C3H5BrO",
   "mw": "136.98"
  },
@@ -647,6 +831,8 @@
   "smiles": "C1=CC=C(C=C1)[Si](C2=CC=CC=C2)(Cl)Cl",
   "connectivity_smiles": "C1=CC=C(C=C1)[Si](C2=CC=CC=C2)(Cl)Cl",
   "inchikey": "OSXYHAQZDCICNX-UHFFFAOYSA-N",
+  "iupac_name": "dichloro(diphenyl)silane",
+  "common_name": "Dichlorodiphenylsilane",
   "formula": "C12H10Cl2Si",
   "mw": "253.19"
  },
@@ -654,6 +840,8 @@
   "smiles": "COP(=O)(OC)OC=C(Cl)Cl",
   "connectivity_smiles": "COP(=O)(OC)OC=C(Cl)Cl",
   "inchikey": "OEBRKCOSUFCWJD-UHFFFAOYSA-N",
+  "iupac_name": "2,2-dichloroethenyl dimethyl phosphate",
+  "common_name": "Dichlorvos",
   "formula": "C4H7Cl2O4P",
   "mw": "220.97"
  },
@@ -661,6 +849,8 @@
   "smiles": "C1C=CC2C1C3CC2C=C3",
   "connectivity_smiles": "C1C=CC2C1C3CC2C=C3",
   "inchikey": "HECLRDQVFMWTQS-UHFFFAOYSA-N",
+  "iupac_name": "tricyclo[5.2.1.02,6]deca-3,8-diene",
+  "common_name": "Dicyclopentadiene",
   "formula": "C10H12",
   "mw": "132.20"
  },
@@ -668,6 +858,8 @@
   "smiles": "B(F)(F)F",
   "connectivity_smiles": "B(F)(F)F",
   "inchikey": "WTEOIRVLGSZEPR-UHFFFAOYSA-N",
+  "iupac_name": "trifluoroborane",
+  "common_name": "Boron trifluoride",
   "formula": "BF3",
   "mw": "67.81"
  },
@@ -675,6 +867,8 @@
   "smiles": "B(Cl)(Cl)Cl",
   "connectivity_smiles": "B(Cl)(Cl)Cl",
   "inchikey": "FAQYAMRNWDIXMY-UHFFFAOYSA-N",
+  "iupac_name": "trichloroborane",
+  "common_name": "Boron Trichloride",
   "formula": "BCl3",
   "mw": "117.2"
  },
@@ -682,6 +876,8 @@
   "smiles": "B(Br)(Br)Br",
   "connectivity_smiles": "B(Br)(Br)Br",
   "inchikey": "ILAHWRKJUDSMFH-UHFFFAOYSA-N",
+  "iupac_name": "tribromoborane",
+  "common_name": "Boron tribromide",
   "formula": "BBr3",
   "mw": "250.53"
  },
@@ -689,6 +885,8 @@
   "smiles": "C(CCl)SCCCl",
   "connectivity_smiles": "C(CCl)SCCCl",
   "inchikey": "QKSKPIVNLNLAAV-UHFFFAOYSA-N",
+  "iupac_name": "1-chloro-2-(2-chloroethylsulfanyl)ethane",
+  "common_name": "Sulfur Mustard",
   "formula": "C4H8Cl2S",
   "mw": "159.08"
  },
@@ -696,6 +894,8 @@
   "smiles": "C1C=CCC2C1C(=O)N(C2=O)SC(C(Cl)Cl)(Cl)Cl",
   "connectivity_smiles": "C1C=CCC2C1C(=O)N(C2=O)SC(C(Cl)Cl)(Cl)Cl",
   "inchikey": "JHRWWRDRBPCWTF-UHFFFAOYSA-N",
+  "iupac_name": "2-(1,1,2,2-tetrachloroethylsulfanyl)-3a,4,7,7a-tetrahydroisoindole-1,3-dione",
+  "common_name": "Captafol",
   "formula": "C10H9Cl4NO2S",
   "mw": "349.1"
  },
@@ -703,6 +903,8 @@
   "smiles": "CCCCC(CC)COC(=O)CCCCC(=O)OCC(CC)CCCC",
   "connectivity_smiles": "CCCCC(CC)COC(=O)CCCCC(=O)OCC(CC)CCCC",
   "inchikey": "SAOKZLXYCUGLFA-UHFFFAOYSA-N",
+  "iupac_name": "bis(2-ethylhexyl) hexanedioate",
+  "common_name": "Bis(2-ethylhexyl) adipate",
   "formula": "C22H42O4",
   "mw": "370.6"
  },
@@ -710,6 +912,8 @@
   "smiles": "CCCCCCCCCCCC(=O)OOC(=O)CCCCCCCCCCC",
   "connectivity_smiles": "CCCCCCCCCCCC(=O)OOC(=O)CCCCCCCCCCC",
   "inchikey": "YIVJZNGAASQVEM-UHFFFAOYSA-N",
+  "iupac_name": "dodecanoyl dodecaneperoxoate",
+  "common_name": "Lauroyl peroxide",
   "formula": "C24H46O4",
   "mw": "398.6"
  },
@@ -717,6 +921,8 @@
   "smiles": "C1=CC=C(C=C1)COC(=O)/C=C/C2=CC=CC=C2",
   "connectivity_smiles": "C1=CC=C(C=C1)COC(=O)C=CC2=CC=CC=C2",
   "inchikey": "NGHOLYJTSCBCGC-VAWYXSNFSA-N",
+  "iupac_name": "benzyl (E)-3-phenylprop-2-enoate",
+  "common_name": "Benzyl Cinnamate",
   "formula": "C16H14O2",
   "mw": "238.28"
  },
@@ -724,6 +930,8 @@
   "smiles": "C[Si](C)(Cl)Cl",
   "connectivity_smiles": "C[Si](C)(Cl)Cl",
   "inchikey": "LIKFHECYJZWXFJ-UHFFFAOYSA-N",
+  "iupac_name": "dichloro(dimethyl)silane",
+  "common_name": "Dichlorodimethylsilane",
   "formula": "C2H6Cl2Si",
   "mw": "129.06"
  },
@@ -731,6 +939,8 @@
   "smiles": "CC1=C(C(=CC=C1)O)C",
   "connectivity_smiles": "CC1=C(C(=CC=C1)O)C",
   "inchikey": "QWBBPBRQALCEIZ-UHFFFAOYSA-N",
+  "iupac_name": "2,3-dimethylphenol",
+  "common_name": "2,3-Dimethylphenol",
   "formula": "C8H10O",
   "mw": "122.16"
  },
@@ -738,6 +948,8 @@
   "smiles": "CCCCCCCCOC(=O)CCCCC(=O)OCCCCCCCC",
   "connectivity_smiles": "CCCCCCCCOC(=O)CCCCC(=O)OCCCCCCCC",
   "inchikey": "NEHDRDVHPTWWFG-UHFFFAOYSA-N",
+  "iupac_name": "dioctyl hexanedioate",
+  "common_name": "Dioctyl Adipate",
   "formula": "C22H42O4",
   "mw": "370.6"
  },
@@ -745,6 +957,8 @@
   "smiles": "C1=CC=C(C=C1)CCl",
   "connectivity_smiles": "C1=CC=C(C=C1)CCl",
   "inchikey": "KCXMKQUNVWSEMD-UHFFFAOYSA-N",
+  "iupac_name": "chloromethylbenzene",
+  "common_name": "Benzyl Chloride",
   "formula": "C7H7Cl",
   "mw": "126.58"
  },
@@ -752,6 +966,8 @@
   "smiles": "C1=CC=C(C=C1)CBr",
   "connectivity_smiles": "C1=CC=C(C=C1)CBr",
   "inchikey": "AGEZXYOZHKGVCM-UHFFFAOYSA-N",
+  "iupac_name": "bromomethylbenzene",
+  "common_name": "Benzyl Bromide",
   "formula": "C7H7Br",
   "mw": "171.03"
  },
@@ -759,6 +975,8 @@
   "smiles": "C(=O)(OC(Cl)(Cl)Cl)Cl",
   "connectivity_smiles": "C(=O)(OC(Cl)(Cl)Cl)Cl",
   "inchikey": "HCUYBXPSSCRKRF-UHFFFAOYSA-N",
+  "iupac_name": "trichloromethyl carbonochloridate",
+  "common_name": "Diphosgene",
   "formula": "C2Cl4O2",
   "mw": "197.8"
  },
@@ -766,6 +984,8 @@
   "smiles": "C1=CC=C(C=C1)C(=O)Cl",
   "connectivity_smiles": "C1=CC=C(C=C1)C(=O)Cl",
   "inchikey": "PASDCCFISLVPSO-UHFFFAOYSA-N",
+  "iupac_name": "benzoyl chloride",
+  "common_name": "Benzoyl chloride",
   "formula": "C7H5ClO",
   "mw": "140.56"
  },
@@ -773,6 +993,8 @@
   "smiles": "C1=CC=C(C=C1)C(C(=O)C2=CC=CC=C2)O",
   "connectivity_smiles": "C1=CC=C(C=C1)C(C(=O)C2=CC=CC=C2)O",
   "inchikey": "ISAOCJYIOMOJEB-UHFFFAOYSA-N",
+  "iupac_name": "2-hydroxy-1,2-diphenylethanone",
+  "common_name": "Benzoin",
   "formula": "C14H12O2",
   "mw": "212.24"
  },
@@ -780,6 +1002,8 @@
   "smiles": "CCCCCCCCCCCC[Si](Cl)(Cl)Cl",
   "connectivity_smiles": "CCCCCCCCCCCC[Si](Cl)(Cl)Cl",
   "inchikey": "BNCXNUWGWUZTCN-UHFFFAOYSA-N",
+  "iupac_name": "trichloro(dodecyl)silane",
+  "common_name": "Dodecyltrichlorosilane",
   "formula": "C12H25Cl3Si",
   "mw": "303.8"
  },
@@ -787,6 +1011,8 @@
   "smiles": "C1=CC=C(C=C1)C=O",
   "connectivity_smiles": "C1=CC=C(C=C1)C=O",
   "inchikey": "HUMNYLRZRPPJDN-UHFFFAOYSA-N",
+  "iupac_name": "benzaldehyde",
+  "common_name": "Benzaldehyde",
   "formula": "C7H6O",
   "mw": "106.12"
  },
@@ -794,6 +1020,8 @@
   "smiles": "CCCN(CCC)C(=O)SCC",
   "connectivity_smiles": "CCCN(CCC)C(=O)SCC",
   "inchikey": "GUVLYNGULCJVDO-UHFFFAOYSA-N",
+  "iupac_name": "S-ethyl N,N-dipropylcarbamothioate",
+  "common_name": "Eptam",
   "formula": "C9H19NOS",
   "mw": "189.32"
  },
@@ -801,6 +1029,8 @@
   "smiles": "CCOC(=O)CC(=O)C",
   "connectivity_smiles": "CCOC(=O)CC(=O)C",
   "inchikey": "XYIBRDXRRQCHLP-UHFFFAOYSA-N",
+  "iupac_name": "ethyl 3-oxobutanoate",
+  "common_name": "Ethyl Acetoacetate",
   "formula": "C6H10O3",
   "mw": "130.14"
  },
@@ -808,6 +1038,8 @@
   "smiles": "CCOC(=O)C1=CC=CC=C1N",
   "connectivity_smiles": "CCOC(=O)C1=CC=CC=C1N",
   "inchikey": "TWLLPUMZVVGILS-UHFFFAOYSA-N",
+  "iupac_name": "ethyl 2-aminobenzoate",
+  "common_name": "Ethyl 2-aminobenzoate",
   "formula": "C9H11NO2",
   "mw": "165.19"
  },
@@ -815,6 +1047,8 @@
   "smiles": "CCCC(=O)OCC",
   "connectivity_smiles": "CCCC(=O)OCC",
   "inchikey": "OBNCKNCVKJNDBV-UHFFFAOYSA-N",
+  "iupac_name": "ethyl butanoate",
+  "common_name": "Ethyl butyrate",
   "formula": "C6H12O2",
   "mw": "116.16"
  },
@@ -822,6 +1056,8 @@
   "smiles": "CCOC(=O)CCl",
   "connectivity_smiles": "CCOC(=O)CCl",
   "inchikey": "VEUUMBGHMNQHGO-UHFFFAOYSA-N",
+  "iupac_name": "ethyl 2-chloroacetate",
+  "common_name": "Ethyl chloroacetate",
   "formula": "C4H7ClO2",
   "mw": "122.55"
  },
@@ -829,6 +1065,8 @@
   "smiles": "CCOC(=O)Cl",
   "connectivity_smiles": "CCOC(=O)Cl",
   "inchikey": "RIFGWPKJUGCATF-UHFFFAOYSA-N",
+  "iupac_name": "ethyl carbonochloridate",
+  "common_name": "Ethyl chloroformate",
   "formula": "C3H5ClO2",
   "mw": "108.52"
  },
@@ -836,6 +1074,8 @@
   "smiles": "CCOC(=O)C(C)O",
   "connectivity_smiles": "CCOC(=O)C(C)O",
   "inchikey": "LZCLXQDLBQLTDK-UHFFFAOYSA-N",
+  "iupac_name": "ethyl 2-hydroxypropanoate",
+  "common_name": "Ethyl Lactate",
   "formula": "C5H10O3",
   "mw": "118.13"
  },
@@ -843,6 +1083,8 @@
   "smiles": "CCON=O",
   "connectivity_smiles": "CCON=O",
   "inchikey": "QQZWEECEMNQSTG-UHFFFAOYSA-N",
+  "iupac_name": "ethyl nitrite",
+  "common_name": "Ethyl Nitrite",
   "formula": "C2H5NO2",
   "mw": "75.07"
  },
@@ -850,6 +1092,8 @@
   "smiles": "CCCCCCCCCCCCCCCC(=O)OC[C@@H]([C@@H]1C(=C(C(=O)O1)O)O)O",
   "connectivity_smiles": "CCCCCCCCCCCCCCCC(=O)OCC(C1C(=C(C(=O)O1)O)O)O",
   "inchikey": "QAQJMLQRFWZOBN-LAUBAEHRSA-N",
+  "iupac_name": "[(2S)-2-[(2R)-3,4-dihydroxy-5-oxo-2H-furan-2-yl]-2-hydroxyethyl] hexadecanoate",
+  "common_name": "Ascorbyl Palmitate",
   "formula": "C22H38O7",
   "mw": "414.5"
  },
@@ -857,6 +1101,8 @@
   "smiles": "CC[As](Cl)Cl",
   "connectivity_smiles": "CC[As](Cl)Cl",
   "inchikey": "LQSFEOMOHFPNEB-UHFFFAOYSA-N",
+  "iupac_name": "dichloro(ethyl)arsane",
+  "common_name": "Ethyldichloroarsine",
   "formula": "C2H5AsCl2",
   "mw": "174.89"
  },
@@ -864,6 +1110,8 @@
   "smiles": "C(CCl)O",
   "connectivity_smiles": "C(CCl)O",
   "inchikey": "SZIFAVKTNFCBPC-UHFFFAOYSA-N",
+  "iupac_name": "2-chloroethanol",
+  "common_name": "2-Chloroethanol",
   "formula": "C2H5ClO",
   "mw": "80.51"
  },
@@ -871,6 +1119,8 @@
   "smiles": "CCCCOCCOC(=O)C",
   "connectivity_smiles": "CCCCOCCOC(=O)C",
   "inchikey": "NQBXSWAWVZHKBZ-UHFFFAOYSA-N",
+  "iupac_name": "2-butoxyethyl acetate",
+  "common_name": "Glycol monobutyl ether acetate",
   "formula": "C8H16O3",
   "mw": "160.21"
  },
@@ -878,6 +1128,8 @@
   "smiles": "CC[Si](C1=CC=CC=C1)(Cl)Cl",
   "connectivity_smiles": "CC[Si](C1=CC=CC=C1)(Cl)Cl",
   "inchikey": "QFHGBZXWBRWAQV-UHFFFAOYSA-N",
+  "iupac_name": "dichloro-ethyl-phenylsilane",
+  "common_name": "Ethylphenyldichlorosilane",
   "formula": "C8H10Cl2Si",
   "mw": "205.15"
  },
@@ -885,6 +1137,8 @@
   "smiles": "Cl[Sb](Cl)(Cl)(Cl)Cl",
   "connectivity_smiles": "Cl[Sb](Cl)(Cl)(Cl)Cl",
   "inchikey": "VMPVEPPRYRXYNP-UHFFFAOYSA-I",
+  "iupac_name": "pentachloro-lambda5-stibane",
+  "common_name": "Antimony pentachloride",
   "formula": "Cl5Sb",
   "mw": "299.0"
  },
@@ -892,6 +1146,8 @@
   "smiles": "CC(=CCC/C(=C/CC/C(=C/CO)/C)/C)C",
   "connectivity_smiles": "CC(=CCCC(=CCCC(=CCO)C)C)C",
   "inchikey": "CRDAMVZIKSXKFV-YFVJMOTDSA-N",
+  "iupac_name": "(2E,6E)-3,7,11-trimethyldodeca-2,6,10-trien-1-ol",
+  "common_name": "Farnesol",
   "formula": "C15H26O",
   "mw": "222.37"
  },
@@ -899,6 +1155,8 @@
   "smiles": "CC(=CCC/C(=C/CO)/C)C",
   "connectivity_smiles": "CC(=CCCC(=CCO)C)C",
   "inchikey": "GLZPCOQZEFWAFX-JXMROGBWSA-N",
+  "iupac_name": "(2E)-3,7-dimethylocta-2,6-dien-1-ol",
+  "common_name": "Geraniol",
   "formula": "C10H18O",
   "mw": "154.25"
  },
@@ -906,6 +1164,8 @@
   "smiles": "CCCCCCCC/C=C\\CCCCCCCC(=O)OCC(CO)O",
   "connectivity_smiles": "CCCCCCCCC=CCCCCCCCC(=O)OCC(CO)O",
   "inchikey": "RZRNAYUHWVFMIP-KTKRTIGZSA-N",
+  "iupac_name": "2,3-dihydroxypropyl (Z)-octadec-9-enoate",
+  "common_name": "Glyceryl Monooleate",
   "formula": "C21H40O4",
   "mw": "356.5"
  },
@@ -913,6 +1173,8 @@
   "smiles": "CC(=C)C(=O)OCC1CO1",
   "connectivity_smiles": "CC(=C)C(=O)OCC1CO1",
   "inchikey": "VOZRXNHHFUQHIL-UHFFFAOYSA-N",
+  "iupac_name": "oxiran-2-ylmethyl 2-methylprop-2-enoate",
+  "common_name": "Glycidyl methacrylate",
   "formula": "C7H10O3",
   "mw": "142.15"
  },
@@ -920,6 +1182,8 @@
   "smiles": "C(CCl)OCCCl",
   "connectivity_smiles": "C(CCl)OCCCl",
   "inchikey": "ZNSMNVMLTJELDZ-UHFFFAOYSA-N",
+  "iupac_name": "1-chloro-2-(2-chloroethoxy)ethane",
+  "common_name": "Bis(2-chloroethyl) ether",
   "formula": "C4H8Cl2O",
   "mw": "143.01"
  },
@@ -927,6 +1191,8 @@
   "smiles": "C(=O)=O",
   "connectivity_smiles": "C(=O)=O",
   "inchikey": "CURLTUGMZLYLDI-UHFFFAOYSA-N",
+  "iupac_name": "carbon dioxide",
+  "common_name": "Carbon Dioxide",
   "formula": "CO2",
   "mw": "44.009"
  },
@@ -934,6 +1200,8 @@
   "smiles": "O=Cl[O]",
   "connectivity_smiles": "O=Cl[O]",
   "inchikey": "OSVXSBDYLRYLIG-UHFFFAOYSA-N",
+  "iupac_name": null,
+  "common_name": "Chlorine Dioxide",
   "formula": "ClO2",
   "mw": "67.45"
  },
@@ -941,6 +1209,8 @@
   "smiles": "C1=CC=C(C(=C1)Cl)Cl",
   "connectivity_smiles": "C1=CC=C(C(=C1)Cl)Cl",
   "inchikey": "RFFLAFLAYFXFSW-UHFFFAOYSA-N",
+  "iupac_name": "1,2-dichlorobenzene",
+  "common_name": "1,2-Dichlorobenzene",
   "formula": "C6H4Cl2",
   "mw": "147.00"
  },
@@ -948,6 +1218,8 @@
   "smiles": "CC(C)CC(=O)CC(C)C",
   "connectivity_smiles": "CC(C)CC(=O)CC(C)C",
   "inchikey": "PTTPXKJBFFKCEK-UHFFFAOYSA-N",
+  "iupac_name": "2,6-dimethylheptan-4-one",
+  "common_name": "Isobutyl ketone",
   "formula": "C9H18O",
   "mw": "142.24"
  },
@@ -955,6 +1227,8 @@
   "smiles": "C1=CC(=C(C=C1[N+](=O)[O-])[N+](=O)[O-])O",
   "connectivity_smiles": "C1=CC(=C(C=C1[N+](=O)[O-])[N+](=O)[O-])O",
   "inchikey": "UFBJCMHMOXMLKC-UHFFFAOYSA-N",
+  "iupac_name": "2,4-dinitrophenol",
+  "common_name": "2,4-Dinitrophenol",
   "formula": "C6H4N2O5",
   "mw": "184.11"
  },
@@ -962,6 +1236,8 @@
   "smiles": "CCCl",
   "connectivity_smiles": "CCCl",
   "inchikey": "HRYZWHHZPQKTII-UHFFFAOYSA-N",
+  "iupac_name": "chloroethane",
+  "common_name": "Chloroethane",
   "formula": "C2H5Cl",
   "mw": "64.51"
  },
@@ -969,6 +1245,8 @@
   "smiles": "CCCCOCCO",
   "connectivity_smiles": "CCCCOCCO",
   "inchikey": "POAOYUHQDCAZBD-UHFFFAOYSA-N",
+  "iupac_name": "2-butoxyethanol",
+  "common_name": "2-Butoxyethanol",
   "formula": "C6H14O2",
   "mw": "118.17"
  },
@@ -976,6 +1254,8 @@
   "smiles": "C1CN1",
   "connectivity_smiles": "C1CN1",
   "inchikey": "NOWKCMXCCJGMRR-UHFFFAOYSA-N",
+  "iupac_name": "aziridine",
+  "common_name": "Aziridine",
   "formula": "C2H5N",
   "mw": "43.07"
  },
@@ -983,6 +1263,8 @@
   "smiles": "FF",
   "connectivity_smiles": "FF",
   "inchikey": "PXGOKWXKJXAPGV-UHFFFAOYSA-N",
+  "iupac_name": "molecular fluorine",
+  "common_name": "Fluorine",
   "formula": "F2",
   "mw": "37.99680632"
  },
@@ -990,6 +1272,8 @@
   "smiles": "CCCCC(=O)C",
   "connectivity_smiles": "CCCCC(=O)C",
   "inchikey": "QQZOPKMRPOGIEB-UHFFFAOYSA-N",
+  "iupac_name": "hexan-2-one",
+  "common_name": "2-Hexanone",
   "formula": "C6H12O",
   "mw": "100.16"
  },
@@ -997,6 +1281,8 @@
   "smiles": "Cl",
   "connectivity_smiles": "Cl",
   "inchikey": "VEXZGXHMUGYJMC-UHFFFAOYSA-N",
+  "iupac_name": "chlorane",
+  "common_name": "Hydrochloric Acid",
   "formula": "ClH",
   "mw": "36.46"
  },
@@ -1004,6 +1290,8 @@
   "smiles": "CCCCCC=O",
   "connectivity_smiles": "CCCCCC=O",
   "inchikey": "JARKCYVAAOWBJS-UHFFFAOYSA-N",
+  "iupac_name": "hexanal",
+  "common_name": "Hexanal",
   "formula": "C6H12O",
   "mw": "100.16"
  },
@@ -1011,6 +1299,8 @@
   "smiles": "CCCCCCO",
   "connectivity_smiles": "CCCCCCO",
   "inchikey": "ZSIAUFGUXNUGDI-UHFFFAOYSA-N",
+  "iupac_name": "hexan-1-ol",
+  "common_name": "1-Hexanol",
   "formula": "C6H14O",
   "mw": "102.17"
  },
@@ -1018,6 +1308,8 @@
   "smiles": "CCCCCCC1=C(C=C(C=C1)O)O",
   "connectivity_smiles": "CCCCCCC1=C(C=C(C=C1)O)O",
   "inchikey": "WFJIVOKAWHGMBH-UHFFFAOYSA-N",
+  "iupac_name": "4-hexylbenzene-1,3-diol",
+  "common_name": "Hexylresorcinol",
   "formula": "C12H18O2",
   "mw": "194.27"
  },
@@ -1025,6 +1317,8 @@
   "smiles": "C1OC2=C(O1)C=C(C=C2)C=O",
   "connectivity_smiles": "C1OC2=C(O1)C=C(C=C2)C=O",
   "inchikey": "SATCULPHIDQDRE-UHFFFAOYSA-N",
+  "iupac_name": "1,3-benzodioxole-5-carbaldehyde",
+  "common_name": "Piperonal",
   "formula": "C8H6O3",
   "mw": "150.13"
  },
@@ -1032,6 +1326,8 @@
   "smiles": "CC(=O)OCC(COC(=O)C)OC(=O)C",
   "connectivity_smiles": "CC(=O)OCC(COC(=O)C)OC(=O)C",
   "inchikey": "URAYPUMNDPQOKB-UHFFFAOYSA-N",
+  "iupac_name": "2,3-diacetyloxypropyl acetate",
+  "common_name": "Triacetin",
   "formula": "C9H14O6",
   "mw": "218.20"
  },
@@ -1039,6 +1335,8 @@
   "smiles": "CC(=CCC/C(=C/COC(=O)C)/C)C",
   "connectivity_smiles": "CC(=CCCC(=CCOC(=O)C)C)C",
   "inchikey": "HIGQPQRQIQDZMP-DHZHZOJOSA-N",
+  "iupac_name": "[(2E)-3,7-dimethylocta-2,6-dienyl] acetate",
+  "common_name": "Geranyl Acetate",
   "formula": "C12H20O2",
   "mw": "196.29"
  },
@@ -1046,6 +1344,8 @@
   "smiles": "CC1CCC(C(C1)O)C(C)C",
   "connectivity_smiles": "CC1CCC(C(C1)O)C(C)C",
   "inchikey": "NOOLISFMXDJSKH-UHFFFAOYSA-N",
+  "iupac_name": "5-methyl-2-propan-2-ylcyclohexan-1-ol",
+  "common_name": "Menthol",
   "formula": "C10H20O",
   "mw": "156.26"
  },
@@ -1053,6 +1353,8 @@
   "smiles": "CC(CCC=C(C)C)CC=O",
   "connectivity_smiles": "CC(CCC=C(C)C)CC=O",
   "inchikey": "NEHNMFOYXAPHSD-UHFFFAOYSA-N",
+  "iupac_name": "3,7-dimethyloct-6-enal",
+  "common_name": "Citronellal",
   "formula": "C10H18O",
   "mw": "154.25"
  },
@@ -1060,6 +1362,8 @@
   "smiles": "C1=CC=C2C(=C1)C=CN2",
   "connectivity_smiles": "C1=CC=C2C(=C1)C=CN2",
   "inchikey": "SIKJAQJRHWYJAI-UHFFFAOYSA-N",
+  "iupac_name": "1H-indole",
+  "common_name": "Indole",
   "formula": "C8H7N",
   "mw": "117.15"
  },
@@ -1067,6 +1371,8 @@
   "smiles": "CC(C)CCON=O",
   "connectivity_smiles": "CC(C)CCON=O",
   "inchikey": "OWFXIOWLTKNBAP-UHFFFAOYSA-N",
+  "iupac_name": "3-methylbutyl nitrite",
+  "common_name": "Isoamyl Nitrite",
   "formula": "C5H11NO2",
   "mw": "117.15"
  },
@@ -1074,6 +1380,8 @@
   "smiles": "CC(C)COC(=O)C",
   "connectivity_smiles": "CC(C)COC(=O)C",
   "inchikey": "GJRQTCIYDGXPES-UHFFFAOYSA-N",
+  "iupac_name": "2-methylpropyl acetate",
+  "common_name": "Isobutyl Acetate",
   "formula": "C6H12O2",
   "mw": "116.16"
  },
@@ -1081,6 +1389,8 @@
   "smiles": "CC(C)C=O",
   "connectivity_smiles": "CC(C)C=O",
   "inchikey": "AMIMRNSIRUDHCM-UHFFFAOYSA-N",
+  "iupac_name": "2-methylpropanal",
+  "common_name": "Isobutyraldehyde",
   "formula": "C4H8O",
   "mw": "72.11"
  },
@@ -1088,6 +1398,8 @@
   "smiles": "CC(C)CCCCCCCOC(=O)C=C",
   "connectivity_smiles": "CC(C)CCCCCCCOC(=O)C=C",
   "inchikey": "LVGFPWDANALGOY-UHFFFAOYSA-N",
+  "iupac_name": "8-methylnonyl prop-2-enoate",
+  "common_name": "Isodecyl acrylate",
   "formula": "C13H24O2",
   "mw": "212.33"
  },
@@ -1095,6 +1407,8 @@
   "smiles": "C=CCN=C=S",
   "connectivity_smiles": "C=CCN=C=S",
   "inchikey": "ZOJBYZNEUISWFT-UHFFFAOYSA-N",
+  "iupac_name": "3-isothiocyanatoprop-1-ene",
+  "common_name": "Allyl Isothiocyanate",
   "formula": "C4H5NS",
   "mw": "99.16"
  },
@@ -1102,6 +1416,8 @@
   "smiles": "CC1=CC(=O)CC(C1)(C)C",
   "connectivity_smiles": "CC1=CC(=O)CC(C1)(C)C",
   "inchikey": "HJOVHMDZYOCNQW-UHFFFAOYSA-N",
+  "iupac_name": "3,5,5-trimethylcyclohex-2-en-1-one",
+  "common_name": "Isophorone",
   "formula": "C9H14O",
   "mw": "138.21"
  },
@@ -1109,6 +1425,8 @@
   "smiles": "C=CCOC(=O)Cl",
   "connectivity_smiles": "C=CCOC(=O)Cl",
   "inchikey": "CAEWJEXPFKNBQL-UHFFFAOYSA-N",
+  "iupac_name": "prop-2-enyl carbonochloridate",
+  "common_name": "Allyl chloroformate",
   "formula": "C4H5ClO2",
   "mw": "120.53"
  },
@@ -1116,6 +1434,8 @@
   "smiles": "C=CCBr",
   "connectivity_smiles": "C=CCBr",
   "inchikey": "BHELZAPQIKSEDF-UHFFFAOYSA-N",
+  "iupac_name": "3-bromoprop-1-ene",
+  "common_name": "Allyl bromide",
   "formula": "C3H5Br",
   "mw": "120.98"
  },
@@ -1123,6 +1443,8 @@
   "smiles": "CC(C)OC(C)C",
   "connectivity_smiles": "CC(C)OC(C)C",
   "inchikey": "ZAFNJMIOTHYJRJ-UHFFFAOYSA-N",
+  "iupac_name": "2-propan-2-yloxypropane",
+  "common_name": "Diisopropyl Ether",
   "formula": "C6H14O",
   "mw": "102.17"
  },
@@ -1130,6 +1452,8 @@
   "smiles": "CC(C)CC=O",
   "connectivity_smiles": "CC(C)CC=O",
   "inchikey": "YGHRJJRRZDOVPD-UHFFFAOYSA-N",
+  "iupac_name": "3-methylbutanal",
+  "common_name": "3-Methylbutanal",
   "formula": "C5H10O",
   "mw": "86.13"
  },
@@ -1137,6 +1461,8 @@
   "smiles": "CC(=O)[O-].CC(=O)[O-].CC(=O)[O-].CC(=O)[O-].[Pb+2]",
   "connectivity_smiles": "CC(=O)[O-].CC(=O)[O-].CC(=O)[O-].CC(=O)[O-].[Pb+2]",
   "inchikey": "ACKFDYCQCBEDNU-UHFFFAOYSA-J",
+  "iupac_name": "lead(2+) tetraacetate",
+  "common_name": "Lead tetraacetate",
   "formula": "C8H12O8Pb-2",
   "mw": "443"
  },
@@ -1144,6 +1470,8 @@
   "smiles": "CC(=CCCC(C)(C=C)OC(=O)C)C",
   "connectivity_smiles": "CC(=CCCC(C)(C=C)OC(=O)C)C",
   "inchikey": "UWKAYLJWKGQEPM-UHFFFAOYSA-N",
+  "iupac_name": "3,7-dimethylocta-1,6-dien-3-yl acetate",
+  "common_name": "Linalyl Acetate",
   "formula": "C12H20O2",
   "mw": "196.29"
  },
@@ -1151,6 +1479,8 @@
   "smiles": "CC(=CCCC(C)(C=C)O)C",
   "connectivity_smiles": "CC(=CCCC(C)(C=C)O)C",
   "inchikey": "CDOSHBSSFJOMGT-UHFFFAOYSA-N",
+  "iupac_name": "3,7-dimethylocta-1,6-dien-3-ol",
+  "common_name": "Linalool",
   "formula": "C10H18O",
   "mw": "154.25"
  },
@@ -1158,6 +1488,8 @@
   "smiles": "CCCCOC(=O)CC(CC(=O)OCCCC)(C(=O)OCCCC)OC(=O)C",
   "connectivity_smiles": "CCCCOC(=O)CC(CC(=O)OCCCC)(C(=O)OCCCC)OC(=O)C",
   "inchikey": "QZCLKYGREBVARF-UHFFFAOYSA-N",
+  "iupac_name": "tributyl 2-acetyloxypropane-1,2,3-tricarboxylate",
+  "common_name": "Acetyl Tributyl Citrate",
   "formula": "C20H34O8",
   "mw": "402.5"
  },
@@ -1165,6 +1497,8 @@
   "smiles": "CC(=O)Cl",
   "connectivity_smiles": "CC(=O)Cl",
   "inchikey": "WETWJCDKMRHUPV-UHFFFAOYSA-N",
+  "iupac_name": "acetyl chloride",
+  "common_name": "Acetyl chloride",
   "formula": "C2H3ClO",
   "mw": "78.50"
  },
@@ -1172,6 +1506,8 @@
   "smiles": "CC(=O)Br",
   "connectivity_smiles": "CC(=O)Br",
   "inchikey": "FXXACINHVKSMDR-UHFFFAOYSA-N",
+  "iupac_name": "acetyl bromide",
+  "common_name": "Acetyl bromide",
   "formula": "C2H3BrO",
   "mw": "122.95"
  },
@@ -1179,6 +1515,8 @@
   "smiles": "CCC(C)OC(=O)C",
   "connectivity_smiles": "CCC(C)OC(=O)C",
   "inchikey": "DCKVNWZUADLDEH-UHFFFAOYSA-N",
+  "iupac_name": "butan-2-yl acetate",
+  "common_name": "Sec-Butyl acetate",
   "formula": "C6H12O2",
   "mw": "116.16"
  },
@@ -1186,6 +1524,8 @@
   "smiles": "CCC(C)O",
   "connectivity_smiles": "CCC(C)O",
   "inchikey": "BTANRVKWQNVYAZ-UHFFFAOYSA-N",
+  "iupac_name": "butan-2-ol",
+  "common_name": "(+-)-2-Butanol",
   "formula": "C4H10O",
   "mw": "74.12"
  },
@@ -1193,6 +1533,8 @@
   "smiles": "O=[Se]=O",
   "connectivity_smiles": "O=[Se]=O",
   "inchikey": "JPJALAQPGMAKDF-UHFFFAOYSA-N",
+  "iupac_name": "selenium dioxide",
+  "common_name": "Selenium Dioxide",
   "formula": "O2Se",
   "mw": "110.97"
  },
@@ -1200,6 +1542,8 @@
   "smiles": "O=[Se](Cl)Cl",
   "connectivity_smiles": "O=[Se](Cl)Cl",
   "inchikey": "LIRMPIXWGWLNND-UHFFFAOYSA-N",
+  "iupac_name": null,
+  "common_name": "Selenium oxychloride",
   "formula": "Cl2OSe",
   "mw": "165.87"
  },
@@ -1207,6 +1551,8 @@
   "smiles": "F[Si](F)(F)F",
   "connectivity_smiles": "F[Si](F)(F)F",
   "inchikey": "ABTOQLMXBSRXSM-UHFFFAOYSA-N",
+  "iupac_name": "tetrafluorosilane",
+  "common_name": "Silicon tetrafluoride",
   "formula": "F4Si",
   "mw": "104.079"
  },
@@ -1214,6 +1560,8 @@
   "smiles": "CCCCCCCCO",
   "connectivity_smiles": "CCCCCCCCO",
   "inchikey": "KBPLFHHGFOOTCA-UHFFFAOYSA-N",
+  "iupac_name": "octan-1-ol",
+  "common_name": "1-Octanol",
   "formula": "C8H18O",
   "mw": "130.23"
  },
@@ -1221,6 +1569,8 @@
   "smiles": "C1=CC=C2C=C3C=CC=CC3=CC2=C1",
   "connectivity_smiles": "C1=CC=C2C=C3C=CC=CC3=CC2=C1",
   "inchikey": "MWPLVEDNUUSJAV-UHFFFAOYSA-N",
+  "iupac_name": "anthracene",
+  "common_name": "Anthracene",
   "formula": "C14H10",
   "mw": "178.23"
  },
@@ -1228,6 +1578,8 @@
   "smiles": "CC(=O)C=C",
   "connectivity_smiles": "CC(=O)C=C",
   "inchikey": "FUSUHKVFWTUUBE-UHFFFAOYSA-N",
+  "iupac_name": "but-3-en-2-one",
+  "common_name": "Methyl vinyl ketone",
   "formula": "C4H6O",
   "mw": "70.09"
  },
@@ -1235,6 +1587,8 @@
   "smiles": "[O-][O+]=O",
   "connectivity_smiles": "[O-][O+]=O",
   "inchikey": "CBENFWSGALASAD-UHFFFAOYSA-N",
+  "iupac_name": "ozone",
+  "common_name": "Ozone",
   "formula": "O3",
   "mw": "47.998"
  },
@@ -1242,6 +1596,8 @@
   "smiles": "N(=O)[O]",
   "connectivity_smiles": "N(=O)[O]",
   "inchikey": "JCXJVPUVTGWSNB-UHFFFAOYSA-N",
+  "iupac_name": null,
+  "common_name": "Nitrogen Dioxide",
   "formula": "NO2",
   "mw": "46.006"
  },
@@ -1249,6 +1605,8 @@
   "smiles": "O=[Os](=O)(=O)=O",
   "connectivity_smiles": "O=[Os](=O)(=O)=O",
   "inchikey": "VUVGYHUDAICLFK-UHFFFAOYSA-N",
+  "iupac_name": "tetraoxoosmium",
+  "common_name": "Osmium Tetroxide",
   "formula": "O4Os",
   "mw": "254.2"
  },
@@ -1256,6 +1614,8 @@
   "smiles": "C1=CC=C(C(=C1)C=O)O",
   "connectivity_smiles": "C1=CC=C(C(=C1)C=O)O",
   "inchikey": "SMQUZDBALVYZAC-UHFFFAOYSA-N",
+  "iupac_name": "2-hydroxybenzaldehyde",
+  "common_name": "Salicylaldehyde",
   "formula": "C7H6O2",
   "mw": "122.12"
  },
@@ -1263,6 +1623,8 @@
   "smiles": "CCOC(=O)CC(CC(=O)OCC)(C(=O)OCC)O",
   "connectivity_smiles": "CCOC(=O)CC(CC(=O)OCC)(C(=O)OCC)O",
   "inchikey": "DOOTYTYQINUNNV-UHFFFAOYSA-N",
+  "iupac_name": "triethyl 2-hydroxypropane-1,2,3-tricarboxylate",
+  "common_name": "Triethyl Citrate",
   "formula": "C12H20O7",
   "mw": "276.28"
  },
@@ -1270,6 +1632,8 @@
   "smiles": "CC(=O)O.CC(=O)[O-].[Na+]",
   "connectivity_smiles": "CC(=O)O.CC(=O)[O-].[Na+]",
   "inchikey": "BHZOKUMUHVTPBX-UHFFFAOYSA-M",
+  "iupac_name": "sodium;acetic acid;acetate",
+  "common_name": "Sodium Diacetate",
   "formula": "C4H7NaO4",
   "mw": "142.09"
  },
@@ -1277,6 +1641,8 @@
   "smiles": "[O-]Cl.[Na+]",
   "connectivity_smiles": "[O-]Cl.[Na+]",
   "inchikey": "SUKJFIGYRHOWBL-UHFFFAOYSA-N",
+  "iupac_name": "sodium hypochlorite",
+  "common_name": "Sodium Hypochlorite",
   "formula": "ClNaO",
   "mw": "74.44"
  },
@@ -1284,6 +1650,8 @@
   "smiles": "O=P(Cl)(Cl)Cl",
   "connectivity_smiles": "O=P(Cl)(Cl)Cl",
   "inchikey": "XHXFXVLFKHQFAL-UHFFFAOYSA-N",
+  "iupac_name": "phosphoryl trichloride",
+  "common_name": "Phosphorus oxychloride",
   "formula": "Cl3OP",
   "mw": "153.33"
  },
@@ -1291,6 +1659,8 @@
   "smiles": "C(=O)(Cl)Cl",
   "connectivity_smiles": "C(=O)(Cl)Cl",
   "inchikey": "YGYAWVDWMABLBF-UHFFFAOYSA-N",
+  "iupac_name": "carbonyl dichloride",
+  "common_name": "Phosgene",
   "formula": "CCl2O",
   "mw": "98.91"
  },
@@ -1298,6 +1668,8 @@
   "smiles": "S(Cl)Cl",
   "connectivity_smiles": "S(Cl)Cl",
   "inchikey": "FWMUJAIKEJWSSY-UHFFFAOYSA-N",
+  "iupac_name": "chloro thiohypochlorite",
+  "common_name": "Sulfur dichloride",
   "formula": "Cl2S",
   "mw": "102.97"
  },
@@ -1305,6 +1677,8 @@
   "smiles": "C1C2C(C(C1Cl)Cl)[C@]3(C(=C([C@@]2(C3(Cl)Cl)Cl)Cl)Cl)Cl",
   "connectivity_smiles": "C1C2C(C(C1Cl)Cl)C3(C(=C(C2(C3(Cl)Cl)Cl)Cl)Cl)Cl",
   "inchikey": "BIWJNBZANLAXMG-YQELWRJZSA-N",
+  "iupac_name": "(1R,7S)-1,3,4,7,8,9,10,10-octachlorotricyclo[5.2.1.02,6]dec-8-ene",
+  "common_name": "Chlordane",
   "formula": "C10H6Cl8",
   "mw": "409.8"
  },
@@ -1312,6 +1686,8 @@
   "smiles": "CN(C)C",
   "connectivity_smiles": "CN(C)C",
   "inchikey": "GETQZCLCWQTVFV-UHFFFAOYSA-N",
+  "iupac_name": "N,N-dimethylmethanamine",
+  "common_name": "Trimethylamine",
   "formula": "C3H9N",
   "mw": "59.11"
  },
@@ -1319,6 +1695,8 @@
   "smiles": "C1COC1=O",
   "connectivity_smiles": "C1COC1=O",
   "inchikey": "VEZXCJBBBCKRPI-UHFFFAOYSA-N",
+  "iupac_name": "oxetan-2-one",
+  "common_name": "Beta-Propiolactone",
   "formula": "C3H4O2",
   "mw": "72.06"
  },
@@ -1326,6 +1704,8 @@
   "smiles": "C1CC1",
   "connectivity_smiles": "C1CC1",
   "inchikey": "LVZWSLJZHVFIQJ-UHFFFAOYSA-N",
+  "iupac_name": "cyclopropane",
+  "common_name": "Cyclopropane",
   "formula": "C3H6",
   "mw": "42.08"
  },
@@ -1333,6 +1713,8 @@
   "smiles": "CS",
   "connectivity_smiles": "CS",
   "inchikey": "LSDPWZHWYPCBBB-UHFFFAOYSA-N",
+  "iupac_name": "methanethiol",
+  "common_name": "Methanethiol",
   "formula": "CH4S",
   "mw": "48.11"
  },
@@ -1340,6 +1722,8 @@
   "smiles": "CCCCCCCC(=O)O",
   "connectivity_smiles": "CCCCCCCC(=O)O",
   "inchikey": "WWZKQHOCKIZLMA-UHFFFAOYSA-N",
+  "iupac_name": "octanoic acid",
+  "common_name": "Octanoic Acid",
   "formula": "C8H16O2",
   "mw": "144.21"
  },
@@ -1347,6 +1731,8 @@
   "smiles": "CC1CCC(C(C1)OC(=O)C)C(C)C",
   "connectivity_smiles": "CC1CCC(C(C1)OC(=O)C)C(C)C",
   "inchikey": "XHXUANMFYXWVNG-UHFFFAOYSA-N",
+  "iupac_name": "(5-methyl-2-propan-2-ylcyclohexyl) acetate",
+  "common_name": "Menthyl acetate",
   "formula": "C12H22O2",
   "mw": "198.30"
  },
@@ -1354,6 +1740,8 @@
   "smiles": "S(SCl)Cl",
   "connectivity_smiles": "S(SCl)Cl",
   "inchikey": "PXJJSXABGXMUSU-UHFFFAOYSA-N",
+  "iupac_name": "chlorosulfanyl thiohypochlorite",
+  "common_name": "Sulfur monochloride",
   "formula": "Cl2S2",
   "mw": "135.0"
  },
@@ -1361,6 +1749,8 @@
   "smiles": "O=S(=O)(Cl)Cl",
   "connectivity_smiles": "O=S(=O)(Cl)Cl",
   "inchikey": "YBBRCQOCSYXUOC-UHFFFAOYSA-N",
+  "iupac_name": "sulfuryl dichloride",
+  "common_name": "Sulfuryl chloride",
   "formula": "Cl2O2S",
   "mw": "134.97"
  },
@@ -1368,6 +1758,8 @@
   "smiles": "CC(=O)OC(C)(C)C",
   "connectivity_smiles": "CC(=O)OC(C)(C)C",
   "inchikey": "WMOVHXAZOJBABW-UHFFFAOYSA-N",
+  "iupac_name": "tert-butyl acetate",
+  "common_name": "tert-Butyl acetate",
   "formula": "C6H12O2",
   "mw": "116.16"
  },
@@ -1375,6 +1767,8 @@
   "smiles": "CC(C)(C)C1=C(C=CC(=C1)O)O",
   "connectivity_smiles": "CC(C)(C)C1=C(C=CC(=C1)O)O",
   "inchikey": "BGNXCDMCOKJUMV-UHFFFAOYSA-N",
+  "iupac_name": "2-tert-butylbenzene-1,4-diol",
+  "common_name": "Tert-Butylhydroquinone",
   "formula": "C10H14O2",
   "mw": "166.22"
  },
@@ -1382,6 +1776,8 @@
   "smiles": "C[Si](Cl)(Cl)Cl",
   "connectivity_smiles": "C[Si](Cl)(Cl)Cl",
   "inchikey": "JLUFWMXJHAVVNN-UHFFFAOYSA-N",
+  "iupac_name": "trichloro(methyl)silane",
+  "common_name": "Trichloromethylsilane",
   "formula": "CH3Cl3Si",
   "mw": "149.47"
  },
@@ -1389,6 +1785,8 @@
   "smiles": "CC[Pb](CC)(CC)CC",
   "connectivity_smiles": "CC[Pb](CC)(CC)CC",
   "inchikey": "MRMOZBOQVYRSEM-UHFFFAOYSA-N",
+  "iupac_name": "tetraethylplumbane",
+  "common_name": "Tetraethyllead",
   "formula": "C8H20Pb",
   "mw": "323"
  },
@@ -1396,6 +1794,8 @@
   "smiles": "CCOP(=O)(OCC)OP(=O)(OCC)OCC",
   "connectivity_smiles": "CCOP(=O)(OCC)OP(=O)(OCC)OCC",
   "inchikey": "IDCBOTIENDVCBQ-UHFFFAOYSA-N",
+  "iupac_name": "diethoxyphosphoryl diethyl phosphate",
+  "common_name": "Tetraethyl Pyrophosphate",
   "formula": "C8H20O7P2",
   "mw": "290.19"
  },
@@ -1403,6 +1803,8 @@
   "smiles": "CCCCC=O",
   "connectivity_smiles": "CCCCC=O",
   "inchikey": "HGBOYTHUEUWSSQ-UHFFFAOYSA-N",
+  "iupac_name": "pentanal",
+  "common_name": "Pentanal",
   "formula": "C5H10O",
   "mw": "86.13"
  },
@@ -1410,6 +1812,8 @@
   "smiles": "C([N+](=O)[O-])([N+](=O)[O-])([N+](=O)[O-])[N+](=O)[O-]",
   "connectivity_smiles": "C([N+](=O)[O-])([N+](=O)[O-])([N+](=O)[O-])[N+](=O)[O-]",
   "inchikey": "NYTOUQBROMCLBJ-UHFFFAOYSA-N",
+  "iupac_name": "tetranitromethane",
+  "common_name": "Tetranitromethane",
   "formula": "CN4O8",
   "mw": "196.03"
  },
@@ -1417,6 +1821,8 @@
   "smiles": "CCCCN(CC)C(=O)SCCC",
   "connectivity_smiles": "CCCCN(CC)C(=O)SCCC",
   "inchikey": "SGEJQUSYQTVSIU-UHFFFAOYSA-N",
+  "iupac_name": "S-propyl N-butyl-N-ethylcarbamothioate",
+  "common_name": "Pebulate",
   "formula": "C10H21NOS",
   "mw": "203.35"
  },
@@ -1424,6 +1830,8 @@
   "smiles": "O=S(Cl)Cl",
   "connectivity_smiles": "O=S(Cl)Cl",
   "inchikey": "FYSNRJHAOHDILO-UHFFFAOYSA-N",
+  "iupac_name": "thionyl dichloride",
+  "common_name": "Thionyl Chloride",
   "formula": "Cl2OS",
   "mw": "118.97"
  },
@@ -1431,6 +1839,8 @@
   "smiles": "P(=S)(Cl)(Cl)Cl",
   "connectivity_smiles": "P(=S)(Cl)(Cl)Cl",
   "inchikey": "WQYSXVGEZYESBR-UHFFFAOYSA-N",
+  "iupac_name": "trichloro(sulfanylidene)-lambda5-phosphane",
+  "common_name": "Thiophosphoryl chloride",
   "formula": "Cl3PS",
   "mw": "169.4"
  },
@@ -1438,6 +1848,8 @@
   "smiles": "CC1=CC(=C(C=C1)C(C)C)O",
   "connectivity_smiles": "CC1=CC(=C(C=C1)C(C)C)O",
   "inchikey": "MGSRCZKZVOBKFT-UHFFFAOYSA-N",
+  "iupac_name": "5-methyl-2-propan-2-ylphenol",
+  "common_name": "Thymol",
   "formula": "C10H14O",
   "mw": "150.22"
  },
@@ -1445,6 +1857,8 @@
   "smiles": "CC1=CC(=C(C=C1C2=CC(=C(C=C2C)OI)C(C)C)C(C)C)OI",
   "connectivity_smiles": "CC1=CC(=C(C=C1C2=CC(=C(C=C2C)OI)C(C)C)C(C)C)OI",
   "inchikey": "SHOKWSLXDAIZPP-UHFFFAOYSA-N",
+  "iupac_name": "[4-(4-iodooxy-2-methyl-5-propan-2-ylphenyl)-5-methyl-2-propan-2-ylphenyl] hypoiodite",
+  "common_name": "Thymol Iodide",
   "formula": "C20H24I2O2",
   "mw": "550.2"
  },
@@ -1452,6 +1866,8 @@
   "smiles": "Cl[Ti](Cl)(Cl)Cl",
   "connectivity_smiles": "Cl[Ti](Cl)(Cl)Cl",
   "inchikey": "XJDNKRIXUMDJCW-UHFFFAOYSA-J",
+  "iupac_name": "tetrachlorotitanium",
+  "common_name": "Titanium Tetrachloride",
   "formula": "Cl4Ti",
   "mw": "189.7"
  },
@@ -1459,6 +1875,8 @@
   "smiles": "CCSC(=O)N1CCCCCC1",
   "connectivity_smiles": "CCSC(=O)N1CCCCCC1",
   "inchikey": "DEDOPGXGGQYYMW-UHFFFAOYSA-N",
+  "iupac_name": "S-ethyl azepane-1-carbothioate",
+  "common_name": "Molinate",
   "formula": "C9H17NOS",
   "mw": "187.30"
  },
@@ -1466,6 +1884,8 @@
   "smiles": "CC1=C(C=C(C=C1)N=C=O)N=C=O",
   "connectivity_smiles": "CC1=C(C=C(C=C1)N=C=O)N=C=O",
   "inchikey": "DVKJHBMWWAPEIU-UHFFFAOYSA-N",
+  "iupac_name": "2,4-diisocyanato-1-methylbenzene",
+  "common_name": "Toluene 2,4-Diisocyanate",
   "formula": "C9H6N2O2",
   "mw": "174.16"
  },
@@ -1473,6 +1893,8 @@
   "smiles": "CCCC(=O)OCC(COC(=O)CCC)OC(=O)CCC",
   "connectivity_smiles": "CCCC(=O)OCC(COC(=O)CCC)OC(=O)CCC",
   "inchikey": "UYXTWWCETRIEDR-UHFFFAOYSA-N",
+  "iupac_name": "2,3-di(butanoyloxy)propyl butanoate",
+  "common_name": "Tributyrin",
   "formula": "C15H26O6",
   "mw": "302.36"
  },
@@ -1480,6 +1902,8 @@
   "smiles": "CCl",
   "connectivity_smiles": "CCl",
   "inchikey": "NEHMKBQYUWJMIP-UHFFFAOYSA-N",
+  "iupac_name": "chloromethane",
+  "common_name": "Methyl Chloride",
   "formula": "CH3Cl",
   "mw": "50.49"
  },
@@ -1487,6 +1911,8 @@
   "smiles": "C1(=O)N(C(=O)N(C(=O)N1Cl)Cl)Cl",
   "connectivity_smiles": "C1(=O)N(C(=O)N(C(=O)N1Cl)Cl)Cl",
   "inchikey": "YRIZYWQGELRKNT-UHFFFAOYSA-N",
+  "iupac_name": "1,3,5-trichloro-1,3,5-triazinane-2,4,6-trione",
+  "common_name": "Trichloroisocyanuric Acid",
   "formula": "C3Cl3N3O3",
   "mw": "232.41"
  },
@@ -1494,6 +1920,8 @@
   "smiles": "CCCCC[Si](Cl)(Cl)Cl",
   "connectivity_smiles": "CCCCC[Si](Cl)(Cl)Cl",
   "inchikey": "KWDQAHIRKOXFAV-UHFFFAOYSA-N",
+  "iupac_name": "trichloro(pentyl)silane",
+  "common_name": "Trichloropentylsilane",
   "formula": "C5H11Cl3Si",
   "mw": "205.6"
  },
@@ -1501,6 +1929,8 @@
   "smiles": "C=C[Si](Cl)(Cl)Cl",
   "connectivity_smiles": "C=C[Si](Cl)(Cl)Cl",
   "inchikey": "GQIUQDDJKHLHTB-UHFFFAOYSA-N",
+  "iupac_name": "trichloro(ethenyl)silane",
+  "common_name": "Vinyltrichlorosilane",
   "formula": "C2H3Cl3Si",
   "mw": "161.48"
  },
@@ -1508,6 +1938,8 @@
   "smiles": "C1(=C(C(=C(C(=C1Cl)Cl)Cl)Cl)Cl)O",
   "connectivity_smiles": "C1(=C(C(=C(C(=C1Cl)Cl)Cl)Cl)Cl)O",
   "inchikey": "IZUPBVBPLAPZRR-UHFFFAOYSA-N",
+  "iupac_name": "2,3,4,5,6-pentachlorophenol",
+  "common_name": "Pentachlorophenol",
   "formula": "C6HCl5O",
   "mw": "266.3"
  },
@@ -1515,6 +1947,8 @@
   "smiles": "CCOP(OCC)OCC",
   "connectivity_smiles": "CCOP(OCC)OCC",
   "inchikey": "BDZBKCUKTQZUTL-UHFFFAOYSA-N",
+  "iupac_name": "triethyl phosphite",
+  "common_name": "Triethyl phosphite",
   "formula": "C6H15O3P",
   "mw": "166.16"
  },
@@ -1522,6 +1956,8 @@
   "smiles": "CC1(C2CCC(C2)C1=C)C",
   "connectivity_smiles": "CC1(C2CCC(C2)C1=C)C",
   "inchikey": "CRPUJAZIXJMDBK-UHFFFAOYSA-N",
+  "iupac_name": "2,2-dimethyl-3-methylidenebicyclo[2.2.1]heptane",
+  "common_name": "Camphene",
   "formula": "C10H16",
   "mw": "136.23"
  },
@@ -1529,6 +1965,8 @@
   "smiles": "CC1=C(C=C(C=C1)C(C)C)O",
   "connectivity_smiles": "CC1=C(C=C(C=C1)C(C)C)O",
   "inchikey": "RECUKUPTGUEGMW-UHFFFAOYSA-N",
+  "iupac_name": "2-methyl-5-propan-2-ylphenol",
+  "common_name": "Carvacrol",
   "formula": "C10H14O",
   "mw": "150.22"
  },
@@ -1536,6 +1974,8 @@
   "smiles": "OS(=O)(=O)Cl",
   "connectivity_smiles": "OS(=O)(=O)Cl",
   "inchikey": "XTHPWXDJESJLNJ-UHFFFAOYSA-N",
+  "iupac_name": "sulfurochloridic acid",
+  "common_name": "Chlorosulfonic acid",
   "formula": "ClHO3S",
   "mw": "116.53"
  },
@@ -1543,6 +1983,8 @@
   "smiles": "[O-]Cl.[O-]Cl.[Ca+2]",
   "connectivity_smiles": "[O-]Cl.[O-]Cl.[Ca+2]",
   "inchikey": "ZKQDCIXGCQPQNV-UHFFFAOYSA-N",
+  "iupac_name": "calcium dihypochlorite",
+  "common_name": "Calcium hypochlorite",
   "formula": "CaCl2O2",
   "mw": "142.98"
  },
@@ -1550,6 +1992,8 @@
   "smiles": "C(#N)Cl",
   "connectivity_smiles": "C(#N)Cl",
   "inchikey": "QPJDMGCKMHUXFD-UHFFFAOYSA-N",
+  "iupac_name": "carbononitridic chloride",
+  "common_name": "Cyanogen Chloride",
   "formula": "CClN",
   "mw": "61.47"
  },
@@ -1557,6 +2001,8 @@
   "smiles": "CCCCOC(=O)C1=CC=CC=C1C(=O)OCCCC",
   "connectivity_smiles": "CCCCOC(=O)C1=CC=CC=C1C(=O)OCCCC",
   "inchikey": "DOIRQSBPFJWKBE-UHFFFAOYSA-N",
+  "iupac_name": "dibutyl benzene-1,2-dicarboxylate",
+  "common_name": "Dibutyl Phthalate",
   "formula": "C16H22O4",
   "mw": "278.34"
  },
@@ -1564,6 +2010,8 @@
   "smiles": "CCOC(=O)C1=CC=CC=C1C(=O)OCC",
   "connectivity_smiles": "CCOC(=O)C1=CC=CC=C1C(=O)OCC",
   "inchikey": "FLKPEMZONWLCSK-UHFFFAOYSA-N",
+  "iupac_name": "diethyl benzene-1,2-dicarboxylate",
+  "common_name": "Diethyl Phthalate",
   "formula": "C12H14O4",
   "mw": "222.24"
  },
@@ -1571,6 +2019,8 @@
   "smiles": "CC(=O)[O-].CC(=O)[O-].[Ca+2]",
   "connectivity_smiles": "CC(=O)[O-].CC(=O)[O-].[Ca+2]",
   "inchikey": "VSGNNIFQASZAOI-UHFFFAOYSA-L",
+  "iupac_name": "calcium diacetate",
+  "common_name": "Calcium Acetate",
   "formula": "C4H6CaO4",
   "mw": "158.17"
  },
@@ -1578,6 +2028,8 @@
   "smiles": "C1=CC=C(C=C1)OC2=CC=CC=C2",
   "connectivity_smiles": "C1=CC=C(C=C1)OC2=CC=CC=C2",
   "inchikey": "USIUVYZYUHIAEV-UHFFFAOYSA-N",
+  "iupac_name": "phenoxybenzene",
+  "common_name": "Diphenyl Ether",
   "formula": "C12H10O",
   "mw": "170.21"
  },
@@ -1585,6 +2037,8 @@
   "smiles": "CCCCCCCCCCCCC1=CC=CC=C1",
   "connectivity_smiles": "CCCCCCCCCCCCC1=CC=CC=C1",
   "inchikey": "KWKXNDCHNDYVRT-UHFFFAOYSA-N",
+  "iupac_name": "dodecylbenzene",
+  "common_name": "Dodecylbenzene",
   "formula": "C18H30",
   "mw": "246.4"
  },
@@ -1592,6 +2046,8 @@
   "smiles": "CCCCCCCCCCCCCCCCCC(=O)OCCCC",
   "connectivity_smiles": "CCCCCCCCCCCCCCCCCC(=O)OCCCC",
   "inchikey": "ULBTUVJTXULMLP-UHFFFAOYSA-N",
+  "iupac_name": "butyl octadecanoate",
+  "common_name": "Butyl Stearate",
   "formula": "C22H44O2",
   "mw": "340.6"
  },
@@ -1599,6 +2055,8 @@
   "smiles": "CCOC=O",
   "connectivity_smiles": "CCOC=O",
   "inchikey": "WBJINCZRORDGAQ-UHFFFAOYSA-N",
+  "iupac_name": "ethyl formate",
+  "common_name": "Ethyl formate",
   "formula": "C3H6O2",
   "mw": "74.08"
  },
@@ -1606,6 +2064,8 @@
   "smiles": "CCOC1=C(C=CC(=C1)C=O)O",
   "connectivity_smiles": "CCOC1=C(C=CC(=C1)C=O)O",
   "inchikey": "CBOQJANXLMLOSS-UHFFFAOYSA-N",
+  "iupac_name": "3-ethoxy-4-hydroxybenzaldehyde",
+  "common_name": "Ethylvanillin",
   "formula": "C9H10O3",
   "mw": "166.17"
  },
@@ -1613,6 +2073,8 @@
   "smiles": "C(CC=O)CC=O",
   "connectivity_smiles": "C(CC=O)CC=O",
   "inchikey": "SXRSQZLOMIGNAQ-UHFFFAOYSA-N",
+  "iupac_name": "pentanedial",
+  "common_name": "Glutaraldehyde",
   "formula": "C5H8O2",
   "mw": "100.12"
  },
@@ -1620,6 +2082,8 @@
   "smiles": "CC(C)/C=C/CCCCC(=O)NCC1=CC(=C(C=C1)O)OC",
   "connectivity_smiles": "CC(C)C=CCCCCC(=O)NCC1=CC(=C(C=C1)O)OC",
   "inchikey": "YKPUWZUDDOIDPM-SOFGYWHQSA-N",
+  "iupac_name": "(E)-N-[(4-hydroxy-3-methoxyphenyl)methyl]-8-methylnon-6-enamide",
+  "common_name": "Capsaicin",
   "formula": "C18H27NO3",
   "mw": "305.4"
  },
@@ -1627,6 +2091,8 @@
   "smiles": "[P-3].[P-3].[Ca+2].[Ca+2].[Ca+2]",
   "connectivity_smiles": "[P-3].[P-3].[Ca+2].[Ca+2].[Ca+2]",
   "inchikey": "HMJZRBDFJAQGEY-UHFFFAOYSA-N",
+  "iupac_name": "tricalcium bis(phosphorus(3-))",
+  "common_name": "Calcium phosphide",
   "formula": "Ca3P2",
   "mw": "182.18"
  },
@@ -1634,6 +2100,8 @@
   "smiles": "CC(=O)C1=CC=CC=C1",
   "connectivity_smiles": "CC(=O)C1=CC=CC=C1",
   "inchikey": "KWOLFJPFCHCOCG-UHFFFAOYSA-N",
+  "iupac_name": "1-phenylethanone",
+  "common_name": "Acetophenone",
   "formula": "C8H8O",
   "mw": "120.15"
  },
@@ -1641,6 +2109,8 @@
   "smiles": "FCl(F)F",
   "connectivity_smiles": "FCl(F)F",
   "inchikey": "JOHWNGGYGAVMGU-UHFFFAOYSA-N",
+  "iupac_name": "trifluoro-lambda3-chlorane",
+  "common_name": "Chlorine trifluoride",
   "formula": "ClF3",
   "mw": "92.45"
  },
@@ -1648,6 +2118,8 @@
   "smiles": "C1=CC=C(C=C1)C(=O)CCl",
   "connectivity_smiles": "C1=CC=C(C=C1)C(=O)CCl",
   "inchikey": "IMACFCSSMIZSPP-UHFFFAOYSA-N",
+  "iupac_name": "2-chloro-1-phenylethanone",
+  "common_name": "2-Chloroacetophenone",
   "formula": "C8H7ClO",
   "mw": "154.59"
  },
@@ -1655,6 +2127,8 @@
   "smiles": "C(C(=O)Cl)Cl",
   "connectivity_smiles": "C(C(=O)Cl)Cl",
   "inchikey": "VGCXGMAHQTYDJK-UHFFFAOYSA-N",
+  "iupac_name": "2-chloroacetyl chloride",
+  "common_name": "Chloroacetyl chloride",
   "formula": "C2H2Cl2O",
   "mw": "112.94"
  },
@@ -1662,6 +2136,8 @@
   "smiles": "CC(C(=O)C)O",
   "connectivity_smiles": "CC(C(=O)C)O",
   "inchikey": "ROWKJAVDOGWPAT-UHFFFAOYSA-N",
+  "iupac_name": "3-hydroxybutan-2-one",
+  "common_name": "Acetoin",
   "formula": "C4H8O2",
   "mw": "88.11"
  },
@@ -1669,6 +2145,8 @@
   "smiles": "[O-2].[O-2].[Cl-].[Cl-].[Cr+6]",
   "connectivity_smiles": "[O-2].[O-2].[Cl-].[Cl-].[Cr+6]",
   "inchikey": "AKNPEMSZIKCOGC-UHFFFAOYSA-L",
+  "iupac_name": "chromium(6+);bis(oxygen(2-));dichloride",
+  "common_name": "Chromyl chloride",
   "formula": "Cl2CrO2",
   "mw": "154.90"
  },
@@ -1676,6 +2154,8 @@
   "smiles": "CC(=CCC/C(=C/C=O)/C)C",
   "connectivity_smiles": "CC(=CCCC(=CC=O)C)C",
   "inchikey": "WTEVQBCEXWBHNA-JXMROGBWSA-N",
+  "iupac_name": "(2E)-3,7-dimethylocta-2,6-dienal",
+  "common_name": "Citral",
   "formula": "C10H16O",
   "mw": "152.23"
  },
@@ -1683,6 +2163,8 @@
   "smiles": "COC(OC)OC",
   "connectivity_smiles": "COC(OC)OC",
   "inchikey": "PYOKUURKVVELLB-UHFFFAOYSA-N",
+  "iupac_name": "trimethoxymethane",
+  "common_name": "Trimethyl orthoformate",
   "formula": "C4H10O3",
   "mw": "106.12"
  },
@@ -1690,6 +2172,8 @@
   "smiles": "COP(OC)OC",
   "connectivity_smiles": "COP(OC)OC",
   "inchikey": "CYTQBVOFDCPGCX-UHFFFAOYSA-N",
+  "iupac_name": "trimethyl phosphite",
+  "common_name": "Trimethyl phosphite",
   "formula": "C3H9O3P",
   "mw": "124.08"
  },
@@ -1697,6 +2181,8 @@
   "smiles": "COC(=O)C1=CC=CC=C1N",
   "connectivity_smiles": "COC(=O)C1=CC=CC=C1N",
   "inchikey": "VAMXMNNIEUEQDV-UHFFFAOYSA-N",
+  "iupac_name": "methyl 2-aminobenzoate",
+  "common_name": "Methyl Anthranilate",
   "formula": "C8H9NO2",
   "mw": "151.16"
  },
@@ -1704,6 +2190,8 @@
   "smiles": "C[Si](C)(C)Cl",
   "connectivity_smiles": "C[Si](C)(C)Cl",
   "inchikey": "IJOOHPMOJXWVHK-UHFFFAOYSA-N",
+  "iupac_name": "chloro(trimethyl)silane",
+  "common_name": "Chlorotrimethylsilane",
   "formula": "C3H9ClSi",
   "mw": "108.64"
  },
@@ -1711,6 +2199,8 @@
   "smiles": "Cl[V](Cl)(Cl)Cl",
   "connectivity_smiles": "Cl[V](Cl)(Cl)Cl",
   "inchikey": "JTJFQBNJBPPZRI-UHFFFAOYSA-J",
+  "iupac_name": "tetrachlorovanadium",
+  "common_name": "Vanadium tetrachloride",
   "formula": "Cl4V",
   "mw": "192.7"
  },
@@ -1718,6 +2208,8 @@
   "smiles": "COC1=C(C=CC(=C1)C=O)O",
   "connectivity_smiles": "COC1=C(C=CC(=C1)C=O)O",
   "inchikey": "MWOOGOJBHIARFG-UHFFFAOYSA-N",
+  "iupac_name": "4-hydroxy-3-methoxybenzaldehyde",
+  "common_name": "Vanillin",
   "formula": "C8H8O3",
   "mw": "152.15"
  },
@@ -1725,6 +2217,8 @@
   "smiles": "CCCCCC1C(O1)C/C=C\\CCCCCCCC(=O)[O-]",
   "connectivity_smiles": "CCCCCC1C(O1)CC=CCCCCCCCC(=O)[O-]",
   "inchikey": "CCPPLLJZDQAOHD-FLIBITNWSA-M",
+  "iupac_name": "(Z)-11-(3-pentyloxiran-2-yl)undec-9-enoate",
+  "common_name": "Vernolate",
   "formula": "C18H31O3-",
   "mw": "295.4"
  },
@@ -1732,6 +2226,8 @@
   "smiles": "C=CBr",
   "connectivity_smiles": "C=CBr",
   "inchikey": "INLLPKCGLOXCIV-UHFFFAOYSA-N",
+  "iupac_name": "bromoethene",
+  "common_name": "Bromoethene",
   "formula": "C2H3Br",
   "mw": "106.95"
  },
@@ -1739,6 +2235,8 @@
   "smiles": "P(Cl)(Cl)Cl",
   "connectivity_smiles": "P(Cl)(Cl)Cl",
   "inchikey": "FAIAAWCVCHQXDN-UHFFFAOYSA-N",
+  "iupac_name": "trichlorophosphane",
+  "common_name": "Phosphorus trichloride",
   "formula": "Cl3P",
   "mw": "137.33"
  },
@@ -1746,6 +2244,8 @@
   "smiles": "COC=C",
   "connectivity_smiles": "COC=C",
   "inchikey": "XJRBAMWJDBPFIM-UHFFFAOYSA-N",
+  "iupac_name": "methoxyethene",
+  "common_name": "Methyl vinyl ether",
   "formula": "C3H6O",
   "mw": "58.08"
  },
@@ -1753,6 +2253,8 @@
   "smiles": "CC(=O)CCC1=CC(=C(C=C1)O)OC",
   "connectivity_smiles": "CC(=O)CCC1=CC(=C(C=C1)O)OC",
   "inchikey": "OJYLAHXKWMRDGS-UHFFFAOYSA-N",
+  "iupac_name": "4-(4-hydroxy-3-methoxyphenyl)butan-2-one",
+  "common_name": "Zingerone",
   "formula": "C11H14O3",
   "mw": "194.23"
  },
@@ -1760,6 +2262,8 @@
   "smiles": "CCCBr",
   "connectivity_smiles": "CCCBr",
   "inchikey": "CYNYIHKIEHGYOZ-UHFFFAOYSA-N",
+  "iupac_name": "1-bromopropane",
+  "common_name": "1-Bromopropane",
   "formula": "C3H7Br",
   "mw": "122.99"
  },
@@ -1767,6 +2271,8 @@
   "smiles": "CC(=O)CCl",
   "connectivity_smiles": "CC(=O)CCl",
   "inchikey": "BULLHNJGPPOUOX-UHFFFAOYSA-N",
+  "iupac_name": "1-chloropropan-2-one",
+  "common_name": "Chloroacetone",
   "formula": "C3H5ClO",
   "mw": "92.52"
  },
@@ -1774,6 +2280,8 @@
   "smiles": "CCCCCCl",
   "connectivity_smiles": "CCCCCCl",
   "inchikey": "SQCZQTSHSZLZIQ-UHFFFAOYSA-N",
+  "iupac_name": "1-chloropentane",
+  "common_name": "1-Chloropentane",
   "formula": "C5H11Cl",
   "mw": "106.59"
  },
@@ -1781,6 +2289,8 @@
   "smiles": "CCCCCCCCCCO",
   "connectivity_smiles": "CCCCCCCCCCO",
   "inchikey": "MWKFXSUHUHTGQN-UHFFFAOYSA-N",
+  "iupac_name": "decan-1-ol",
+  "common_name": "1-Decanol",
   "formula": "C10H22O",
   "mw": "158.28"
  },
@@ -1788,6 +2298,8 @@
   "smiles": "CCCCCCCCCCCCO",
   "connectivity_smiles": "CCCCCCCCCCCCO",
   "inchikey": "LQZZUXJYWNFBMV-UHFFFAOYSA-N",
+  "iupac_name": "dodecan-1-ol",
+  "common_name": "1-Dodecanol",
   "formula": "C12H26O",
   "mw": "186.33"
  },
@@ -1795,6 +2307,8 @@
   "smiles": "CCCCCCCO",
   "connectivity_smiles": "CCCCCCCO",
   "inchikey": "BBMCTIGTTCKYKF-UHFFFAOYSA-N",
+  "iupac_name": "heptan-1-ol",
+  "common_name": "Heptanol",
   "formula": "C7H16O",
   "mw": "116.20"
  },
@@ -1802,6 +2316,8 @@
   "smiles": "CCCCCCCCCCCO",
   "connectivity_smiles": "CCCCCCCCCCCO",
   "inchikey": "KJIOQYGWTQBHNH-UHFFFAOYSA-N",
+  "iupac_name": "undecan-1-ol",
+  "common_name": "1-Undecanol",
   "formula": "C11H24O",
   "mw": "172.31"
  },
@@ -1809,6 +2325,8 @@
   "smiles": "CC(CCl)Cl",
   "connectivity_smiles": "CC(CCl)Cl",
   "inchikey": "KNKRKFALVUDBJE-UHFFFAOYSA-N",
+  "iupac_name": "1,2-dichloropropane",
+  "common_name": "1,2-Dichloropropane",
   "formula": "C3H6Cl2",
   "mw": "112.98"
  },
@@ -1816,6 +2334,8 @@
   "smiles": "C1=CC(=C(C=C1Cl)Cl)Cl",
   "connectivity_smiles": "C1=CC(=C(C=C1Cl)Cl)Cl",
   "inchikey": "PBKONEOXTCPAFI-UHFFFAOYSA-N",
+  "iupac_name": "1,2,4-trichlorobenzene",
+  "common_name": "1,2,4-Trichlorobenzene",
   "formula": "C6H3Cl3",
   "mw": "181.4"
  },
@@ -1823,6 +2343,8 @@
   "smiles": "CN1CCC[C@H]1C2=CN=CC=C2",
   "connectivity_smiles": "CN1CCCC1C2=CN=CC=C2",
   "inchikey": "SNICXCGAKADSCV-JTQLQIEISA-N",
+  "iupac_name": "3-[(2S)-1-methylpyrrolidin-2-yl]pyridine",
+  "common_name": "Nicotine",
   "formula": "C10H14N2",
   "mw": "162.23"
  },
@@ -1830,6 +2352,8 @@
   "smiles": "C1=CC=C(C=C1)NC2=CC=CC=C2",
   "connectivity_smiles": "C1=CC=C(C=C1)NC2=CC=CC=C2",
   "inchikey": "DMBHHRLKUKUOEG-UHFFFAOYSA-N",
+  "iupac_name": "N-phenylaniline",
+  "common_name": "Diphenylamine",
   "formula": "C12H11N",
   "mw": "169.22"
  },
@@ -1837,6 +2361,8 @@
   "smiles": "C(C=CCl)Cl",
   "connectivity_smiles": "C(C=CCl)Cl",
   "inchikey": "UOORRWUZONOOLO-UHFFFAOYSA-N",
+  "iupac_name": "1,3-dichloroprop-1-ene",
+  "common_name": "1,3-Dichloropropene",
   "formula": "C3H4Cl2",
   "mw": "110.97"
  },
@@ -1844,6 +2370,8 @@
   "smiles": "C1=CC(=O)C=CC1=O",
   "connectivity_smiles": "C1=CC(=O)C=CC1=O",
   "inchikey": "AZQWKYJCGOJGHM-UHFFFAOYSA-N",
+  "iupac_name": "cyclohexa-2,5-diene-1,4-dione",
+  "common_name": "Quinone",
   "formula": "C6H4O2",
   "mw": "108.09"
  },
@@ -1851,6 +2379,8 @@
   "smiles": "N(F)(F)F",
   "connectivity_smiles": "N(F)(F)F",
   "inchikey": "GVGCUCJTUSOZKP-UHFFFAOYSA-N",
+  "iupac_name": null,
+  "common_name": "Nitrogen trifluoride",
   "formula": "F3N",
   "mw": "71.002"
  },
@@ -1858,6 +2388,8 @@
   "smiles": "C1=CC=C(C=C1)NN",
   "connectivity_smiles": "C1=CC=C(C=C1)NN",
   "inchikey": "HKOOXMFOFWEVGF-UHFFFAOYSA-N",
+  "iupac_name": "phenylhydrazine",
+  "common_name": "Phenylhydrazine",
   "formula": "C6H8N2",
   "mw": "108.14"
  },
@@ -1865,6 +2397,8 @@
   "smiles": "CCCCC(CC)CO",
   "connectivity_smiles": "CCCCC(CC)CO",
   "inchikey": "YIWUKEYIRIRTPP-UHFFFAOYSA-N",
+  "iupac_name": "2-ethylhexan-1-ol",
+  "common_name": "2-Ethylhexanol",
   "formula": "C8H18O",
   "mw": "130.23"
  },
@@ -1872,6 +2406,8 @@
   "smiles": "CCCCCC(=O)C",
   "connectivity_smiles": "CCCCCC(=O)C",
   "inchikey": "CATSNJVOTSVZJV-UHFFFAOYSA-N",
+  "iupac_name": "heptan-2-one",
+  "common_name": "2-Heptanone",
   "formula": "C7H14O",
   "mw": "114.19"
  },
@@ -1879,6 +2415,8 @@
   "smiles": "C=CC(=O)OCCO",
   "connectivity_smiles": "C=CC(=O)OCCO",
   "inchikey": "OMIGHNLMNHATMP-UHFFFAOYSA-N",
+  "iupac_name": "2-hydroxyethyl prop-2-enoate",
+  "common_name": "2-Hydroxyethyl acrylate",
   "formula": "C5H8O3",
   "mw": "116.11"
  },
@@ -1886,6 +2424,8 @@
   "smiles": "C1=CC=C2C=C(C=CC2=C1)N",
   "connectivity_smiles": "C1=CC=C2C=C(C=CC2=C1)N",
   "inchikey": "JBIJLHTVPXGSAM-UHFFFAOYSA-N",
+  "iupac_name": "naphthalen-2-amine",
+  "common_name": "2-Naphthylamine",
   "formula": "C10H9N",
   "mw": "143.18"
  },
@@ -1893,6 +2433,8 @@
   "smiles": "C1=CC=C(C(=C1)N)[N+](=O)[O-]",
   "connectivity_smiles": "C1=CC=C(C(=C1)N)[N+](=O)[O-]",
   "inchikey": "DPJCXCZTLWNFOH-UHFFFAOYSA-N",
+  "iupac_name": "2-nitroaniline",
+  "common_name": "2-Nitroaniline",
   "formula": "C6H6N2O2",
   "mw": "138.12"
  },
@@ -1900,6 +2442,8 @@
   "smiles": "C1=CC=C(C(=C1)[N+](=O)[O-])O",
   "connectivity_smiles": "C1=CC=C(C(=C1)[N+](=O)[O-])O",
   "inchikey": "IQUPABOKLQSFBK-UHFFFAOYSA-N",
+  "iupac_name": "2-nitrophenol",
+  "common_name": "2-Nitrophenol",
   "formula": "C6H5NO3",
   "mw": "139.11"
  },
@@ -1907,6 +2451,8 @@
   "smiles": "CC(C)[N+](=O)[O-]",
   "connectivity_smiles": "CC(C)[N+](=O)[O-]",
   "inchikey": "FGLBSLMDCBOPQK-UHFFFAOYSA-N",
+  "iupac_name": "2-nitropropane",
+  "common_name": "2-Nitropropane",
   "formula": "C3H7NO2",
   "mw": "89.09"
  },
@@ -1914,6 +2460,8 @@
   "smiles": "C1=CC(=C(C=C1[N+](=O)[O-])[N+](=O)[O-])N",
   "connectivity_smiles": "C1=CC(=C(C=C1[N+](=O)[O-])[N+](=O)[O-])N",
   "inchikey": "LXQOQPGNCGEELI-UHFFFAOYSA-N",
+  "iupac_name": "2,4-dinitroaniline",
+  "common_name": "2,4-Dinitroaniline",
   "formula": "C6H5N3O4",
   "mw": "183.12"
  },
@@ -1921,6 +2469,8 @@
   "smiles": "CC1=CC(=C(C(=C1)C(C)(C)C)O)C(C)(C)C",
   "connectivity_smiles": "CC1=CC(=C(C(=C1)C(C)(C)C)O)C(C)(C)C",
   "inchikey": "NLZUEZXRPGMBCV-UHFFFAOYSA-N",
+  "iupac_name": "2,6-ditert-butyl-4-methylphenol",
+  "common_name": "2,6-Di-tert-butyl-4-methylphenol",
   "formula": "C15H24O",
   "mw": "220.35"
  },
@@ -1928,6 +2478,8 @@
   "smiles": "COP(=O)(OC)OC(C(Cl)(Cl)Br)Br",
   "connectivity_smiles": "COP(=O)(OC)OC(C(Cl)(Cl)Br)Br",
   "inchikey": "BUYMVQAILCEWRR-UHFFFAOYSA-N",
+  "iupac_name": "(1,2-dibromo-2,2-dichloroethyl) dimethyl phosphate",
+  "common_name": "Naled",
   "formula": "C4H7Br2Cl2O4P",
   "mw": "380.78"
  },
@@ -1935,6 +2487,8 @@
   "smiles": "CCOC(=O)C1C(O1)(C)C2=CC=CC=C2",
   "connectivity_smiles": "CCOC(=O)C1C(O1)(C)C2=CC=CC=C2",
   "inchikey": "LQKRYVGRPXFFAV-UHFFFAOYSA-N",
+  "iupac_name": "ethyl 3-methyl-3-phenyloxirane-2-carboxylate",
+  "common_name": "Ethyl 3-methyl-3-phenylglycidate",
   "formula": "C12H14O3",
   "mw": "206.24"
  },
@@ -1942,6 +2496,8 @@
   "smiles": "C1(=C(C(=NC(=C1Cl)Cl)C(=O)O)Cl)N",
   "connectivity_smiles": "C1(=C(C(=NC(=C1Cl)Cl)C(=O)O)Cl)N",
   "inchikey": "NQQVFXUMIDALNH-UHFFFAOYSA-N",
+  "iupac_name": "4-amino-3,5,6-trichloropyridine-2-carboxylic acid",
+  "common_name": "Picloram",
   "formula": "C6H3Cl3N2O2",
   "mw": "241.5"
  },
@@ -1949,6 +2505,8 @@
   "smiles": "CC(=O)CC(C)(C)O",
   "connectivity_smiles": "CC(=O)CC(C)(C)O",
   "inchikey": "SWXVUIWOUIDPGS-UHFFFAOYSA-N",
+  "iupac_name": "4-hydroxy-4-methylpentan-2-one",
+  "common_name": "Diacetone Alcohol",
   "formula": "C6H12O2",
   "mw": "116.16"
  },
@@ -1956,6 +2514,8 @@
   "smiles": "CC(C)CC(C)OC(=O)C",
   "connectivity_smiles": "CC(C)CC(C)OC(=O)C",
   "inchikey": "CPIVYSAVIPTCCX-UHFFFAOYSA-N",
+  "iupac_name": "4-methylpentan-2-yl acetate",
+  "common_name": "4-Methyl-2-pentyl acetate",
   "formula": "C8H16O2",
   "mw": "144.21"
  },
@@ -1963,6 +2523,8 @@
   "smiles": "C1=CC(=CC=C1N)[N+](=O)[O-]",
   "connectivity_smiles": "C1=CC(=CC=C1N)[N+](=O)[O-]",
   "inchikey": "TYMLOMAKGOJONV-UHFFFAOYSA-N",
+  "iupac_name": "4-nitroaniline",
+  "common_name": "4-Nitroaniline",
   "formula": "C6H6N2O2",
   "mw": "138.12"
  },
@@ -1970,6 +2532,8 @@
   "smiles": "CC1=CC=C(C=C1)[N+](=O)[O-]",
   "connectivity_smiles": "CC1=CC=C(C=C1)[N+](=O)[O-]",
   "inchikey": "ZPTVNYMJQHSSEA-UHFFFAOYSA-N",
+  "iupac_name": "1-methyl-4-nitrobenzene",
+  "common_name": "4-Nitrotoluene",
   "formula": "C7H7NO2",
   "mw": "137.14"
  },
@@ -1977,6 +2541,8 @@
   "smiles": "CC(=C)C(=O)C",
   "connectivity_smiles": "CC(=C)C(=O)C",
   "inchikey": "ZGHFDIIVVIFNPS-UHFFFAOYSA-N",
+  "iupac_name": "3-methylbut-3-en-2-one",
+  "common_name": "Methyl isopropenyl ketone",
   "formula": "C5H8O",
   "mw": "84.12"
  },
@@ -1984,6 +2550,8 @@
   "smiles": "COP(=S)(OC)OC1=CC=C(C=C1)[N+](=O)[O-]",
   "connectivity_smiles": "COP(=S)(OC)OC1=CC=C(C=C1)[N+](=O)[O-]",
   "inchikey": "RLBIQVVOMOPOHC-UHFFFAOYSA-N",
+  "iupac_name": "dimethoxy-(4-nitrophenoxy)-sulfanylidene-lambda5-phosphane",
+  "common_name": "Methyl Parathion",
   "formula": "C8H10NO5PS",
   "mw": "263.21"
  },
@@ -1991,6 +2559,8 @@
   "smiles": "COC1=CC=C(C=C1)C(C2=CC=C(C=C2)OC)C(Cl)(Cl)Cl",
   "connectivity_smiles": "COC1=CC=C(C=C1)C(C2=CC=C(C=C2)OC)C(Cl)(Cl)Cl",
   "inchikey": "IAKOZHOLGAGEJT-UHFFFAOYSA-N",
+  "iupac_name": "1-methoxy-4-[2,2,2-trichloro-1-(4-methoxyphenyl)ethyl]benzene",
+  "common_name": "Methoxychlor",
   "formula": "C16H15Cl3O2",
   "mw": "345.6"
  },
@@ -1998,6 +2568,8 @@
   "smiles": "CCC(=O)C1=CC=CC=C1",
   "connectivity_smiles": "CCC(=O)C1=CC=CC=C1",
   "inchikey": "KRIOVPPHQSLHCZ-UHFFFAOYSA-N",
+  "iupac_name": "1-phenylpropan-1-one",
+  "common_name": "1-Phenyl-1-propanone",
   "formula": "C9H10O",
   "mw": "134.17"
  },
@@ -2005,6 +2577,8 @@
   "smiles": "CCC(=O)O",
   "connectivity_smiles": "CCC(=O)O",
   "inchikey": "XBDQKXXYIPTUBI-UHFFFAOYSA-N",
+  "iupac_name": "propanoic acid",
+  "common_name": "Propionic Acid",
   "formula": "C3H6O2",
   "mw": "74.08"
  },
@@ -2012,6 +2586,8 @@
   "smiles": "CCC=O",
   "connectivity_smiles": "CCC=O",
   "inchikey": "NBBJYMSMWIIQGU-UHFFFAOYSA-N",
+  "iupac_name": "propanal",
+  "common_name": "Propanal",
   "formula": "C3H6O",
   "mw": "58.08"
  },
@@ -2019,6 +2595,8 @@
   "smiles": "CC(=CC(=O)C)C",
   "connectivity_smiles": "CC(=CC(=O)C)C",
   "inchikey": "SHOJXDKTYKFBRD-UHFFFAOYSA-N",
+  "iupac_name": "4-methylpent-3-en-2-one",
+  "common_name": "Mesityl oxide",
   "formula": "C6H10O",
   "mw": "98.14"
  },
@@ -2026,6 +2604,8 @@
   "smiles": "CCCCCCCC/C=C\\CCCCCCCC(=O)[O-].CCCCCCCC/C=C\\CCCCCCCC(=O)[O-].[Hg+2]",
   "connectivity_smiles": "CCCCCCCCC=CCCCCCCCC(=O)[O-].CCCCCCCCC=CCCCCCCCC(=O)[O-].[Hg+2]",
   "inchikey": "PCWIWQHAGMGLFA-CVBJKYQLSA-L",
+  "iupac_name": "mercury(2+);bis((Z)-octadec-9-enoate)",
+  "common_name": "Mercury oleate",
   "formula": "C36H66HgO4",
   "mw": "763.5"
  },
@@ -2033,6 +2613,8 @@
   "smiles": "P(Cl)(Cl)(Cl)(Cl)Cl",
   "connectivity_smiles": "P(Cl)(Cl)(Cl)(Cl)Cl",
   "inchikey": "UHZYTMXLRWXGPK-UHFFFAOYSA-N",
+  "iupac_name": "pentachloro-lambda5-phosphane",
+  "common_name": "Phosphorus pentachloride",
   "formula": "Cl5P",
   "mw": "208.2"
  },
@@ -2040,6 +2622,8 @@
   "smiles": "[N+](=O)([O-])[O-].[Hg+]",
   "connectivity_smiles": "[N+](=O)([O-])[O-].[Hg+]",
   "inchikey": "DRXYRSRECMWYAV-UHFFFAOYSA-N",
+  "iupac_name": "mercury(1+) nitrate",
+  "common_name": "Mercurous nitrate",
   "formula": "HgNO3",
   "mw": "262.60"
  },
@@ -2047,6 +2631,8 @@
   "smiles": "CCC(=O)OC(=O)CC",
   "connectivity_smiles": "CCC(=O)OC(=O)CC",
   "inchikey": "WYVAMUWZEOHJOQ-UHFFFAOYSA-N",
+  "iupac_name": "propanoyl propanoate",
+  "common_name": "Propionic anhydride",
   "formula": "C6H10O3",
   "mw": "130.14"
  },
@@ -2054,6 +2640,8 @@
   "smiles": "CC1CCCCCCCCCCCCC(=O)C1",
   "connectivity_smiles": "CC1CCCCCCCCCCCCC(=O)C1",
   "inchikey": "ALHUZKCOMYUFRB-UHFFFAOYSA-N",
+  "iupac_name": "3-methylcyclopentadecan-1-one",
+  "common_name": "Muskone",
   "formula": "C16H30O",
   "mw": "238.41"
  },
@@ -2061,6 +2649,8 @@
   "smiles": "[NH4+].OP(=O)(O)[O-]",
   "connectivity_smiles": "[NH4+].OP(=O)(O)[O-]",
   "inchikey": "LFVGISIMTYGQHF-UHFFFAOYSA-N",
+  "iupac_name": "azanium dihydrogen phosphate",
+  "common_name": "Ammonium dihydrogen phosphate",
   "formula": "H6NO4P",
   "mw": "115.03"
  },
@@ -2068,6 +2658,8 @@
   "smiles": "[N]=O",
   "connectivity_smiles": "[N]=O",
   "inchikey": "MWUXSHHQAYIFBG-UHFFFAOYSA-N",
+  "iupac_name": "nitric oxide",
+  "common_name": "Nitric Oxide",
   "formula": "NO",
   "mw": "30.006"
  },
@@ -2075,6 +2667,8 @@
   "smiles": "C[C@@H]1CC[C@H](C(=O)C1)C(C)C",
   "connectivity_smiles": "CC1CCC(C(=O)C1)C(C)C",
   "inchikey": "NFLGAXVYCFJBMK-BDAKNGLRSA-N",
+  "iupac_name": "trans-(2S,5R)-5-methyl-2-propan-2-ylcyclohexan-1-one",
+  "common_name": "Menthone",
   "formula": "C10H18O",
   "mw": "154.25"
  },
@@ -2082,6 +2676,8 @@
   "smiles": "CCCCCCCCCCCCOS(=O)(=O)[O-].[Na+]",
   "connectivity_smiles": "CCCCCCCCCCCCOS(=O)(=O)[O-].[Na+]",
   "inchikey": "DBMJMQXJHONAFJ-UHFFFAOYSA-M",
+  "iupac_name": "sodium dodecyl sulfate",
+  "common_name": "Sodium Lauryl Sulfate",
   "formula": "C12H25NaO4S",
   "mw": "288.38"
  },
@@ -2089,6 +2685,8 @@
   "smiles": "C1=CC=C(C=C1)C2=CC=C(C=C2)N",
   "connectivity_smiles": "C1=CC=C(C=C1)C2=CC=C(C=C2)N",
   "inchikey": "DMVOXQPQNTYEKQ-UHFFFAOYSA-N",
+  "iupac_name": "4-phenylaniline",
+  "common_name": "4-Aminobiphenyl",
   "formula": "C12H11N",
   "mw": "169.22"
  },
@@ -2096,6 +2694,8 @@
   "smiles": "CI",
   "connectivity_smiles": "CI",
   "inchikey": "INQOMBQAUSQDDS-UHFFFAOYSA-N",
+  "iupac_name": "iodomethane",
+  "common_name": "Methyl iodide",
   "formula": "CH3I",
   "mw": "141.939"
  },
@@ -2103,6 +2703,8 @@
   "smiles": "C(C(Cl)Cl)Cl",
   "connectivity_smiles": "C(C(Cl)Cl)Cl",
   "inchikey": "UBOXGVDOUJQMTN-UHFFFAOYSA-N",
+  "iupac_name": "1,1,2-trichloroethane",
+  "common_name": "1,1,2-Trichloroethane",
   "formula": "C2H3Cl3",
   "mw": "133.40"
  },
@@ -2110,6 +2712,8 @@
   "smiles": "C=CC(=O)O",
   "connectivity_smiles": "C=CC(=O)O",
   "inchikey": "NIXOWILDQLNWCW-UHFFFAOYSA-N",
+  "iupac_name": "prop-2-enoic acid",
+  "common_name": "Acrylic Acid",
   "formula": "C3H4O2",
   "mw": "72.06"
  },
@@ -2117,6 +2721,8 @@
   "smiles": "CCC(C)C1=C(C(=CC(=C1)[N+](=O)[O-])[N+](=O)[O-])O",
   "connectivity_smiles": "CCC(C)C1=C(C(=CC(=C1)[N+](=O)[O-])[N+](=O)[O-])O",
   "inchikey": "OWZPCEFYPSAJFR-UHFFFAOYSA-N",
+  "iupac_name": "2-butan-2-yl-4,6-dinitrophenol",
+  "common_name": "Dinoseb",
   "formula": "C10H12N2O5",
   "mw": "240.21"
  },
@@ -2124,6 +2730,8 @@
   "smiles": "C(/C=C\\Cl)Cl",
   "connectivity_smiles": "C(C=CCl)Cl",
   "inchikey": "UOORRWUZONOOLO-UPHRSURJSA-N",
+  "iupac_name": "(Z)-1,3-dichloroprop-1-ene",
+  "common_name": "(Z)-1,3-Dichloropropene",
   "formula": "C3H4Cl2",
   "mw": "110.97"
  },
@@ -2131,6 +2739,8 @@
   "smiles": "C(/C=C/Cl)Cl",
   "connectivity_smiles": "C(C=CCl)Cl",
   "inchikey": "UOORRWUZONOOLO-OWOJBTEDSA-N",
+  "iupac_name": "(E)-1,3-dichloroprop-1-ene",
+  "common_name": "(E)-1,3-Dichloropropene",
   "formula": "C3H4Cl2",
   "mw": "110.97"
  },
@@ -2138,6 +2748,8 @@
   "smiles": "C=CC1=CC=CC=N1",
   "connectivity_smiles": "C=CC1=CC=CC=N1",
   "inchikey": "KGIGUEBEKRSTEW-UHFFFAOYSA-N",
+  "iupac_name": "2-ethenylpyridine",
+  "common_name": "2-Vinylpyridine",
   "formula": "C7H7N",
   "mw": "105.14"
  },
@@ -2145,6 +2757,8 @@
   "smiles": "C=CC1=CC=NC=C1",
   "connectivity_smiles": "C=CC1=CC=NC=C1",
   "inchikey": "KFDVPJUYSDEJTH-UHFFFAOYSA-N",
+  "iupac_name": "4-ethenylpyridine",
+  "common_name": "4-Vinylpyridine",
   "formula": "C7H7N",
   "mw": "105.14"
  },
@@ -2152,6 +2766,8 @@
   "smiles": "CCC(C)C1=C(C(=CC(=C1)[N+](=O)[O-])[N+](=O)[O-])OC(=O)C=C(C)C",
   "connectivity_smiles": "CCC(C)C1=C(C(=CC(=C1)[N+](=O)[O-])[N+](=O)[O-])OC(=O)C=C(C)C",
   "inchikey": "ZRDUSMYWDRPZRM-UHFFFAOYSA-N",
+  "iupac_name": "(2-butan-2-yl-4,6-dinitrophenyl) 3-methylbut-2-enoate",
+  "common_name": "Binapacryl",
   "formula": "C15H18N2O6",
   "mw": "322.31"
  },
@@ -2159,6 +2775,8 @@
   "smiles": "CCCCOC(=O)C1=CC(=O)CC(O1)(C)C",
   "connectivity_smiles": "CCCCOC(=O)C1=CC(=O)CC(O1)(C)C",
   "inchikey": "OKIJSNGRQAOIGZ-UHFFFAOYSA-N",
+  "iupac_name": "butyl 2,2-dimethyl-4-oxo-3H-pyran-6-carboxylate",
+  "common_name": "Butopyronoxyl",
   "formula": "C12H18O4",
   "mw": "226.27"
  },
@@ -2166,6 +2784,8 @@
   "smiles": "COC1=CC(=C(C=C1Cl)OC)Cl",
   "connectivity_smiles": "COC1=CC(=C(C=C1Cl)OC)Cl",
   "inchikey": "PFIADAMVCJPXSF-UHFFFAOYSA-N",
+  "iupac_name": "1,4-dichloro-2,5-dimethoxybenzene",
+  "common_name": "Chloroneb",
   "formula": "C8H8Cl2O2",
   "mw": "207.05"
  },
@@ -2173,6 +2793,8 @@
   "smiles": "C1=CC=C(C=C1)S(=O)(=O)C2=CC=C(C=C2)Cl",
   "connectivity_smiles": "C1=CC=C(C=C1)S(=O)(=O)C2=CC=C(C=C2)Cl",
   "inchikey": "OFCFYWOKHPOXKF-UHFFFAOYSA-N",
+  "iupac_name": "1-(benzenesulfonyl)-4-chlorobenzene",
+  "common_name": "Sulphenone",
   "formula": "C12H9ClO2S",
   "mw": "252.72"
  },
@@ -2180,6 +2802,8 @@
   "smiles": "C1(C(C(C(C(C1Cl)Cl)Cl)Cl)Cl)Cl",
   "connectivity_smiles": "C1(C(C(C(C(C1Cl)Cl)Cl)Cl)Cl)Cl",
   "inchikey": "JLYXXMFPNIAWKQ-UHFFFAOYSA-N",
+  "iupac_name": "1,2,3,4,5,6-hexachlorocyclohexane",
+  "common_name": "Hexachlorocyclohexane",
   "formula": "C6H6Cl6",
   "mw": "290.8"
  },
@@ -2187,6 +2811,8 @@
   "smiles": "C=C1C(C2(C(C(C1(C2(Cl)Cl)Cl)Cl)Cl)Cl)(CCl)CCl",
   "connectivity_smiles": "C=C1C(C2(C(C(C1(C2(Cl)Cl)Cl)Cl)Cl)Cl)(CCl)CCl",
   "inchikey": "OEJNXTAZZBRGDN-UHFFFAOYSA-N",
+  "iupac_name": "1,4,5,6,7,7-hexachloro-2,2-bis(chloromethyl)-3-methylidenebicyclo[2.2.1]heptane",
+  "common_name": "Toxaphene",
   "formula": "C10H8Cl8",
   "mw": "411.8"
  },
@@ -2194,6 +2820,8 @@
   "smiles": "C=CC(=C)Cl",
   "connectivity_smiles": "C=CC(=C)Cl",
   "inchikey": "YACLQRRMGMJLJV-UHFFFAOYSA-N",
+  "iupac_name": "2-chlorobuta-1,3-diene",
+  "common_name": "Chloroprene",
   "formula": "C4H5Cl",
   "mw": "88.53"
  },
@@ -2201,6 +2829,8 @@
   "smiles": "C1=CC=C2C(=C1)C=CC(=O)O2",
   "connectivity_smiles": "C1=CC=C2C(=C1)C=CC(=O)O2",
   "inchikey": "ZYGHJZDHTFUPRJ-UHFFFAOYSA-N",
+  "iupac_name": "chromen-2-one",
+  "common_name": "Coumarin",
   "formula": "C9H6O2",
   "mw": "146.14"
  },
@@ -2208,6 +2838,8 @@
   "smiles": "C1CCC=CC1",
   "connectivity_smiles": "C1CCC=CC1",
   "inchikey": "HGCIXCUEYOPUTN-UHFFFAOYSA-N",
+  "iupac_name": "cyclohexene",
+  "common_name": "Cyclohexene",
   "formula": "C6H10",
   "mw": "82.14"
  },
@@ -2215,6 +2847,8 @@
   "smiles": "C=[N+]=[N-]",
   "connectivity_smiles": "C=[N+]=[N-]",
   "inchikey": "YXHKONLOYHBTNS-UHFFFAOYSA-N",
+  "iupac_name": "diazomethane",
+  "common_name": "Diazomethane",
   "formula": "CH2N2",
   "mw": "42.040"
  },
@@ -2222,6 +2856,8 @@
   "smiles": "C(C(CBr)Br)Cl",
   "connectivity_smiles": "C(C(CBr)Br)Cl",
   "inchikey": "WBEJYOJJBDISQU-UHFFFAOYSA-N",
+  "iupac_name": "1,2-dibromo-3-chloropropane",
+  "common_name": "1,2-Dibromo-3-Chloropropane",
   "formula": "C3H5Br2Cl",
   "mw": "236.33"
  },
@@ -2229,6 +2865,8 @@
   "smiles": "CCOC(C)OCC",
   "connectivity_smiles": "CCOC(C)OCC",
   "inchikey": "DHKHKXVYLBGOIT-UHFFFAOYSA-N",
+  "iupac_name": "1,1-diethoxyethane",
+  "common_name": "Acetal",
   "formula": "C6H14O2",
   "mw": "118.17"
  },
@@ -2236,6 +2874,8 @@
   "smiles": "CCOS(=O)(=O)OCC",
   "connectivity_smiles": "CCOS(=O)(=O)OCC",
   "inchikey": "DENRZWYUOJLTMF-UHFFFAOYSA-N",
+  "iupac_name": "diethyl sulfate",
+  "common_name": "Diethyl Sulfate",
   "formula": "C4H10O4S",
   "mw": "154.19"
  },
@@ -2243,6 +2883,8 @@
   "smiles": "COC(=O)C1=CC=CC=C1C(=O)OC",
   "connectivity_smiles": "COC(=O)C1=CC=CC=C1C(=O)OC",
   "inchikey": "NIQCNGHVCWTJSM-UHFFFAOYSA-N",
+  "iupac_name": "dimethyl benzene-1,2-dicarboxylate",
+  "common_name": "Dimethyl Phthalate",
   "formula": "C10H10O4",
   "mw": "194.18"
  },
@@ -2250,6 +2892,8 @@
   "smiles": "CN1CN(C(=S)SC1)C",
   "connectivity_smiles": "CN1CN(C(=S)SC1)C",
   "inchikey": "QAYICIQNSGETAS-UHFFFAOYSA-N",
+  "iupac_name": "3,5-dimethyl-1,3,5-thiadiazinane-2-thione",
+  "common_name": "Dazomet",
   "formula": "C5H10N2S2",
   "mw": "162.3"
  },
@@ -2257,6 +2901,8 @@
   "smiles": "C(=O)O",
   "connectivity_smiles": "C(=O)O",
   "inchikey": "BDAGIHXWWSANSR-UHFFFAOYSA-N",
+  "iupac_name": "formic acid",
+  "common_name": "Formic Acid",
   "formula": "CH2O2",
   "mw": "46.025"
  },
@@ -2264,6 +2910,8 @@
   "smiles": "[C-]#[O+].[C-]#[O+].[C-]#[O+].[C-]#[O+].[Ni]",
   "connectivity_smiles": "[C-]#[O+].[C-]#[O+].[C-]#[O+].[C-]#[O+].[Ni]",
   "inchikey": "AWDHUGLHGCVIEG-UHFFFAOYSA-N",
+  "iupac_name": "carbon monoxide;nickel",
+  "common_name": "Nickel tetracarbonyl",
   "formula": "C4NiO4",
   "mw": "170.73"
  },
@@ -2271,6 +2919,8 @@
   "smiles": "[N+](=O)(O)[O-]",
   "connectivity_smiles": "[N+](=O)(O)[O-]",
   "inchikey": "GRYLNZFGIOXLOG-UHFFFAOYSA-N",
+  "iupac_name": "nitric acid",
+  "common_name": "Nitric Acid",
   "formula": "HNO3",
   "mw": "63.013"
  },
@@ -2278,6 +2928,8 @@
   "smiles": "C1=CC(=CC=C1[N+](=O)[O-])Cl",
   "connectivity_smiles": "C1=CC(=CC=C1[N+](=O)[O-])Cl",
   "inchikey": "CZGCEKJOLUNIFY-UHFFFAOYSA-N",
+  "iupac_name": "1-chloro-4-nitrobenzene",
+  "common_name": "1-Chloro-4-nitrobenzene",
   "formula": "C6H4ClNO2",
   "mw": "157.55"
  },
@@ -2285,6 +2937,8 @@
   "smiles": "C[Pb](C)(C)C",
   "connectivity_smiles": "C[Pb](C)(C)C",
   "inchikey": "XOOGZRUBTYCLHG-UHFFFAOYSA-N",
+  "iupac_name": "tetramethylplumbane",
+  "common_name": "Tetramethyllead",
   "formula": "C4H12Pb",
   "mw": "267"
  },
@@ -2292,6 +2946,8 @@
   "smiles": "CCOC(=O)C(C1=CC=CC=C1)SP(=S)(OC)OC",
   "connectivity_smiles": "CCOC(=O)C(C1=CC=CC=C1)SP(=S)(OC)OC",
   "inchikey": "XAMUDJHXFNRLCY-UHFFFAOYSA-N",
+  "iupac_name": "ethyl 2-dimethoxyphosphinothioylsulfanyl-2-phenylacetate",
+  "common_name": "Phenthoate",
   "formula": "C12H17O4PS2",
   "mw": "320.4"
  },
@@ -2299,6 +2955,8 @@
   "smiles": "CCNC(=O)CSP(=S)(OC)OC",
   "connectivity_smiles": "CCNC(=O)CSP(=S)(OC)OC",
   "inchikey": "DICRHEJCQXFJBY-UHFFFAOYSA-N",
+  "iupac_name": "2-dimethoxyphosphinothioylsulfanyl-N-ethylacetamide",
+  "common_name": "Ethoate-methyl",
   "formula": "C6H14NO3PS2",
   "mw": "243.3"
  },
@@ -2306,6 +2964,8 @@
   "smiles": "CCN(C1CCCCC1)C(=O)SCC",
   "connectivity_smiles": "CCN(C1CCCCC1)C(=O)SCC",
   "inchikey": "DFCAFRGABIXSDS-UHFFFAOYSA-N",
+  "iupac_name": "S-ethyl N-cyclohexyl-N-ethylcarbamothioate",
+  "common_name": "Cycloate",
   "formula": "C11H21NOS",
   "mw": "215.36"
  },
@@ -2313,6 +2973,8 @@
   "smiles": "CCSC(=O)N(CC(C)C)CC(C)C",
   "connectivity_smiles": "CCSC(=O)N(CC(C)C)CC(C)C",
   "inchikey": "BMTAFVWTTFSTOG-UHFFFAOYSA-N",
+  "iupac_name": "S-ethyl N,N-bis(2-methylpropyl)carbamothioate",
+  "common_name": "Butylate",
   "formula": "C11H23NOS",
   "mw": "217.37"
  },
@@ -2320,6 +2982,8 @@
   "smiles": "CCOP(=S)(CC)SC1=CC=CC=C1",
   "connectivity_smiles": "CCOP(=S)(CC)SC1=CC=CC=C1",
   "inchikey": "KVGLBTYUCJYMND-UHFFFAOYSA-N",
+  "iupac_name": "ethoxy-ethyl-phenylsulfanyl-sulfanylidene-lambda5-phosphane",
+  "common_name": "Fonofos",
   "formula": "C10H15OPS2",
   "mw": "246.3"
  },
@@ -2327,6 +2991,8 @@
   "smiles": "C(=O)(C(Cl)(Cl)Cl)C(Cl)(Cl)Cl",
   "connectivity_smiles": "C(=O)(C(Cl)(Cl)Cl)C(Cl)(Cl)Cl",
   "inchikey": "DOJXGHGHTWFZHK-UHFFFAOYSA-N",
+  "iupac_name": "1,1,1,3,3,3-hexachloropropan-2-one",
+  "common_name": "Hexachloroacetone",
   "formula": "C3Cl6O",
   "mw": "264.7"
  },
@@ -2334,6 +3000,8 @@
   "smiles": "CC1OC(OC(OC(O1)C)C)C",
   "connectivity_smiles": "CC1OC(OC(OC(O1)C)C)C",
   "inchikey": "GKKDCARASOJPNG-UHFFFAOYSA-N",
+  "iupac_name": "2,4,6,8-tetramethyl-1,3,5,7-tetraoxocane",
+  "common_name": "Metaldehyde",
   "formula": "C8H16O4",
   "mw": "176.21"
  },
@@ -2341,6 +3009,8 @@
   "smiles": "CCCCCCCCS(=O)C(C)CC1=CC2=C(C=C1)OCO2",
   "connectivity_smiles": "CCCCCCCCS(=O)C(C)CC1=CC2=C(C=C1)OCO2",
   "inchikey": "ATTZFSUZZUNHBP-UHFFFAOYSA-N",
+  "iupac_name": "5-(2-octylsulfinylpropyl)-1,3-benzodioxole",
+  "common_name": "Sulfoxide",
   "formula": "C18H28O3S",
   "mw": "324.5"
  },
@@ -2348,6 +3018,8 @@
   "smiles": "C1(=C(C(=C(C(=C1Cl)Cl)Cl)Cl)Cl)[N+](=O)[O-]",
   "connectivity_smiles": "C1(=C(C(=C(C(=C1Cl)Cl)Cl)Cl)Cl)[N+](=O)[O-]",
   "inchikey": "LKPLKUMXSAEKID-UHFFFAOYSA-N",
+  "iupac_name": "1,2,3,4,5-pentachloro-6-nitrobenzene",
+  "common_name": "Quintozene",
   "formula": "C6Cl5NO2",
   "mw": "295.3"
  },
@@ -2355,6 +3027,8 @@
   "smiles": "CCCOP(=S)(OCCC)OP(=S)(OCCC)OCCC",
   "connectivity_smiles": "CCCOP(=S)(OCCC)OP(=S)(OCCC)OCCC",
   "inchikey": "IIDFEIDMIKSJSV-UHFFFAOYSA-N",
+  "iupac_name": "dipropoxyphosphinothioyloxy-dipropoxy-sulfanylidene-lambda5-phosphane",
+  "common_name": "Aspon",
   "formula": "C12H28O5P2S2",
   "mw": "378.4"
  },
@@ -2362,6 +3036,8 @@
   "smiles": "CCCC[P+](CCCC)(CCCC)CC1=C(C=C(C=C1)Cl)Cl.[Cl-]",
   "connectivity_smiles": "CCCC[P+](CCCC)(CCCC)CC1=C(C=C(C=C1)Cl)Cl.[Cl-]",
   "inchikey": "IVHVNMLJNASKHW-UHFFFAOYSA-M",
+  "iupac_name": "tributyl-[(2,4-dichlorophenyl)methyl]phosphanium chloride",
+  "common_name": "Phosphon",
   "formula": "C19H32Cl3P",
   "mw": "397.8"
  },
@@ -2369,6 +3045,8 @@
   "smiles": "C(=O)(C(Cl)(Cl)Cl)O",
   "connectivity_smiles": "C(=O)(C(Cl)(Cl)Cl)O",
   "inchikey": "YNJBWRMUSHSURL-UHFFFAOYSA-N",
+  "iupac_name": "2,2,2-trichloroacetic acid",
+  "common_name": "Trichloroacetic Acid",
   "formula": "C2HCl3O2",
   "mw": "163.38"
  },
@@ -2376,6 +3054,8 @@
   "smiles": "CC1=CCC(CC1)C(=C)C",
   "connectivity_smiles": "CC1=CCC(CC1)C(=C)C",
   "inchikey": "XMGQYMWWDOXHJM-UHFFFAOYSA-N",
+  "iupac_name": "1-methyl-4-prop-1-en-2-ylcyclohexene",
+  "common_name": "1-Methyl-4-Prop-1-En-2-Ylcyclohexene",
   "formula": "C10H16",
   "mw": "136.23"
  },
@@ -2383,6 +3063,8 @@
   "smiles": "CC1=CC=CC=C1O",
   "connectivity_smiles": "CC1=CC=CC=C1O",
   "inchikey": "QWVGKYWNOKOFNN-UHFFFAOYSA-N",
+  "iupac_name": "2-methylphenol",
+  "common_name": "O-Cresol",
   "formula": "C7H8O",
   "mw": "108.14"
  },
@@ -2390,6 +3072,8 @@
   "smiles": "CC1=CC=C(C=C1)O",
   "connectivity_smiles": "CC1=CC=C(C=C1)O",
   "inchikey": "IWDCLRJOBJJRNH-UHFFFAOYSA-N",
+  "iupac_name": "4-methylphenol",
+  "common_name": "P-Cresol",
   "formula": "C7H8O",
   "mw": "108.14"
  },
@@ -2397,6 +3081,8 @@
   "smiles": "CC1=CC(=CC=C1)O",
   "connectivity_smiles": "CC1=CC(=CC=C1)O",
   "inchikey": "RLSSMJSEOOYNOY-UHFFFAOYSA-N",
+  "iupac_name": "3-methylphenol",
+  "common_name": "M-Cresol",
   "formula": "C7H8O",
   "mw": "108.14"
  },
@@ -2404,6 +3090,8 @@
   "smiles": "CCCCC(=O)CC",
   "connectivity_smiles": "CCCCC(=O)CC",
   "inchikey": "NGAZZOYFWWSOGK-UHFFFAOYSA-N",
+  "iupac_name": "heptan-3-one",
+  "common_name": "3-Heptanone",
   "formula": "C7H14O",
   "mw": "114.19"
  },
@@ -2411,6 +3099,8 @@
   "smiles": "CC(C)CCOC(=O)C",
   "connectivity_smiles": "CC(C)CCOC(=O)C",
   "inchikey": "MLFHJEHSLIIPHL-UHFFFAOYSA-N",
+  "iupac_name": "3-methylbutyl acetate",
+  "common_name": "Isoamyl Acetate",
   "formula": "C7H14O2",
   "mw": "130.18"
  },
@@ -2418,6 +3108,8 @@
   "smiles": "CCCCCCCCCCCCCCCCCC(=O)OCCO",
   "connectivity_smiles": "CCCCCCCCCCCCCCCCCC(=O)OCCO",
   "inchikey": "RFVNOJDQRGSOEL-UHFFFAOYSA-N",
+  "iupac_name": "2-hydroxyethyl octadecanoate",
+  "common_name": "Glycol monostearate",
   "formula": "C20H40O3",
   "mw": "328.5"
  },
@@ -2425,6 +3117,8 @@
   "smiles": "C1=CC=C(C=C1)C=CBr",
   "connectivity_smiles": "C1=CC=C(C=C1)C=CBr",
   "inchikey": "YMOONIIMQBGTDU-UHFFFAOYSA-N",
+  "iupac_name": "2-bromoethenylbenzene",
+  "common_name": "beta-Bromostyrene",
   "formula": "C8H7Br",
   "mw": "183.04"
  },
@@ -2432,6 +3126,8 @@
   "smiles": "C1=CC=C(C=C1)C(C#N)Br",
   "connectivity_smiles": "C1=CC=C(C=C1)C(C#N)Br",
   "inchikey": "XUHFBOUSHUEAQZ-UHFFFAOYSA-N",
+  "iupac_name": "2-bromo-2-phenylacetonitrile",
+  "common_name": "Bromobenzyl Cyanide",
   "formula": "C8H6BrN",
   "mw": "196.04"
  },
@@ -2439,6 +3135,8 @@
   "smiles": "CC(C)CCCCCCC=O",
   "connectivity_smiles": "CC(C)CCCCCCC=O",
   "inchikey": "WDMOXLRWVGEXJV-UHFFFAOYSA-N",
+  "iupac_name": "8-methylnonanal",
+  "common_name": "Isodecylaldehyde",
   "formula": "C10H20O",
   "mw": "156.26"
  },
@@ -2446,6 +3144,8 @@
   "smiles": "C=C(Cl)Cl",
   "connectivity_smiles": "C=C(Cl)Cl",
   "inchikey": "LGXVIGDEPROXKC-UHFFFAOYSA-N",
+  "iupac_name": "1,1-dichloroethene",
+  "common_name": "Vinylidene chloride",
   "formula": "C2H2Cl2",
   "mw": "96.94"
  },
@@ -2453,6 +3153,8 @@
   "smiles": "CCCCCCCC[Si](Cl)(Cl)Cl",
   "connectivity_smiles": "CCCCCCCC[Si](Cl)(Cl)Cl",
   "inchikey": "RCHUVCPBWWSUMC-UHFFFAOYSA-N",
+  "iupac_name": "trichloro(octyl)silane",
+  "common_name": "Octyltrichlorosilane",
   "formula": "C8H17Cl3Si",
   "mw": "247.7"
  },
@@ -2460,6 +3162,8 @@
   "smiles": "CCCCCCCCC[Si](Cl)(Cl)Cl",
   "connectivity_smiles": "CCCCCCCCC[Si](Cl)(Cl)Cl",
   "inchikey": "SSBOTKQTCWQWMG-UHFFFAOYSA-N",
+  "iupac_name": "trichloro(nonyl)silane",
+  "common_name": "Nonyltrichlorosilane",
   "formula": "C9H19Cl3Si",
   "mw": "261.7"
  },
@@ -2467,6 +3171,8 @@
   "smiles": "[H+].[H+].F[Si-2](F)(F)(F)(F)F",
   "connectivity_smiles": "[H+].[H+].F[Si-2](F)(F)(F)(F)F",
   "inchikey": "OHORFAFFMDIQRR-UHFFFAOYSA-P",
+  "iupac_name": "hexafluorosilicon(2-);hydron",
+  "common_name": "Fluorosilicic acid",
   "formula": "F6H2Si",
   "mw": "144.091"
  },
@@ -2474,6 +3180,8 @@
   "smiles": "CN(C)P(=O)(N(C)C)N(C)C",
   "connectivity_smiles": "CN(C)P(=O)(N(C)C)N(C)C",
   "inchikey": "GNOIPBMMFNIUFM-UHFFFAOYSA-N",
+  "iupac_name": "N-[bis(dimethylamino)phosphoryl]-N-methylmethanamine",
+  "common_name": "Hexamethylphosphoramide",
   "formula": "C6H18N3OP",
   "mw": "179.20"
  },
@@ -2481,6 +3189,8 @@
   "smiles": "CC1=CC=CC=C1N",
   "connectivity_smiles": "CC1=CC=CC=C1N",
   "inchikey": "RNVCVTLRINQCPJ-UHFFFAOYSA-N",
+  "iupac_name": "2-methylaniline",
+  "common_name": "O-Toluidine",
   "formula": "C7H9N",
   "mw": "107.15"
  },
@@ -2488,6 +3198,8 @@
   "smiles": "CC1=CC(=CC=C1)N",
   "connectivity_smiles": "CC1=CC(=CC=C1)N",
   "inchikey": "JJYPMNFTHPTTDI-UHFFFAOYSA-N",
+  "iupac_name": "3-methylaniline",
+  "common_name": "m-Toluidine",
   "formula": "C7H9N",
   "mw": "107.15"
  },
@@ -2495,6 +3207,8 @@
   "smiles": "CC1=CC=C(C=C1)N",
   "connectivity_smiles": "CC1=CC=C(C=C1)N",
   "inchikey": "RZXMPPFPUUCRFN-UHFFFAOYSA-N",
+  "iupac_name": "4-methylaniline",
+  "common_name": "p-Toluidine",
   "formula": "C7H9N",
   "mw": "107.15"
  },
@@ -2502,6 +3216,8 @@
   "smiles": "C1=CC=C(C(=C1)N)Cl",
   "connectivity_smiles": "C1=CC=C(C(=C1)N)Cl",
   "inchikey": "AKCRQHGQIJBRMN-UHFFFAOYSA-N",
+  "iupac_name": "2-chloroaniline",
+  "common_name": "2-Chloroaniline",
   "formula": "C6H6ClN",
   "mw": "127.57"
  },
@@ -2509,6 +3225,8 @@
   "smiles": "C1=CC(=CC(=C1)Cl)N",
   "connectivity_smiles": "C1=CC(=CC(=C1)Cl)N",
   "inchikey": "PNPCRKVUWYDDST-UHFFFAOYSA-N",
+  "iupac_name": "3-chloroaniline",
+  "common_name": "3-Chloroaniline",
   "formula": "C6H6ClN",
   "mw": "127.57"
  },
@@ -2516,6 +3234,8 @@
   "smiles": "C1=CC(=CC=C1N)Cl",
   "connectivity_smiles": "C1=CC(=CC=C1N)Cl",
   "inchikey": "QSNSCYSYFYORTR-UHFFFAOYSA-N",
+  "iupac_name": "4-chloroaniline",
+  "common_name": "4-Chloroaniline",
   "formula": "C6H6ClN",
   "mw": "127.57"
  },
@@ -2523,6 +3243,8 @@
   "smiles": "C=C1CC(=O)O1",
   "connectivity_smiles": "C=C1CC(=O)O1",
   "inchikey": "WASQWSOJHCZDFK-UHFFFAOYSA-N",
+  "iupac_name": "4-methylideneoxetan-2-one",
+  "common_name": "Diketene",
   "formula": "C4H4O2",
   "mw": "84.07"
  },
@@ -2530,6 +3252,8 @@
   "smiles": "C1=CC=C2C(=C1)C(=O)C3=CC=CC=C3C2=O",
   "connectivity_smiles": "C1=CC=C2C(=C1)C(=O)C3=CC=CC=C3C2=O",
   "inchikey": "RZVHIXYEVGDQDX-UHFFFAOYSA-N",
+  "iupac_name": "anthracene-9,10-dione",
+  "common_name": "Anthraquinone",
   "formula": "C14H8O2",
   "mw": "208.21"
  },
@@ -2537,6 +3261,8 @@
   "smiles": "C1=CC=C(C=C1)C(F)(F)F",
   "connectivity_smiles": "C1=CC=C(C=C1)C(F)(F)F",
   "inchikey": "GETTZEONDQJALK-UHFFFAOYSA-N",
+  "iupac_name": "trifluoromethylbenzene",
+  "common_name": "(Trifluoromethyl)benzene",
   "formula": "C7H5F3",
   "mw": "146.11"
  },
@@ -2544,6 +3270,8 @@
   "smiles": "C1=CC=C(C=C1)CC#N",
   "connectivity_smiles": "C1=CC=C(C=C1)CC#N",
   "inchikey": "SUSQOBVLVYHIEX-UHFFFAOYSA-N",
+  "iupac_name": "2-phenylacetonitrile",
+  "common_name": "Phenylacetonitrile",
   "formula": "C8H7N",
   "mw": "117.15"
  },
@@ -2551,6 +3279,8 @@
   "smiles": "C1=CC=C(C=C1)COCCO",
   "connectivity_smiles": "C1=CC=C(C=C1)COCCO",
   "inchikey": "CUZKCNWZBXLAJX-UHFFFAOYSA-N",
+  "iupac_name": "2-phenylmethoxyethanol",
+  "common_name": "2-(Benzyloxy) ethanol",
   "formula": "C9H12O2",
   "mw": "152.19"
  },
@@ -2558,6 +3288,8 @@
   "smiles": "C(#N)C#N",
   "connectivity_smiles": "C(#N)C#N",
   "inchikey": "JMANVNJQNLATNU-UHFFFAOYSA-N",
+  "iupac_name": "oxalonitrile",
+  "common_name": "Cyanogen",
   "formula": "C2N2",
   "mw": "52.03"
  },
@@ -2565,6 +3297,8 @@
   "smiles": "CCOC(=O)C(=O)OCC",
   "connectivity_smiles": "CCOC(=O)C(=O)OCC",
   "inchikey": "WYACBZDAHNBPPB-UHFFFAOYSA-N",
+  "iupac_name": "diethyl oxalate",
+  "common_name": "Diethyl Oxalate",
   "formula": "C6H10O4",
   "mw": "146.14"
  },
@@ -2572,6 +3306,8 @@
   "smiles": "CC(C)OP(=O)(OC(C)C)F",
   "connectivity_smiles": "CC(C)OP(=O)(OC(C)C)F",
   "inchikey": "MUCZHBLJLSDCSD-UHFFFAOYSA-N",
+  "iupac_name": "2-[fluoro(propan-2-yloxy)phosphoryl]oxypropane",
+  "common_name": "Diisopropyl Fluorophosphate",
   "formula": "C6H14FO3P",
   "mw": "184.15"
  },
@@ -2579,6 +3315,8 @@
   "smiles": "C1=CC=C2C(=C1)C=CC3=CC=CC=C32",
   "connectivity_smiles": "C1=CC=C2C(=C1)C=CC3=CC=CC=C32",
   "inchikey": "YNPNZTXNASCQKK-UHFFFAOYSA-N",
+  "iupac_name": "phenanthrene",
+  "common_name": "Phenanthrene",
   "formula": "C14H10",
   "mw": "178.23"
  },
@@ -2586,6 +3324,8 @@
   "smiles": "CC1=C(C(CCC1)(C)C)/C=C/C(=C/C=C/C(=C/C(=O)O)/C)/C",
   "connectivity_smiles": "CC1=C(C(CCC1)(C)C)C=CC(=CC=CC(=CC(=O)O)C)C",
   "inchikey": "SHGAZHPCJJPHSC-YCNIQYBTSA-N",
+  "iupac_name": "(2E,4E,6E,8E)-3,7-dimethyl-9-(2,6,6-trimethylcyclohexen-1-yl)nona-2,4,6,8-tetraenoic acid",
+  "common_name": "Retinoic Acid",
   "formula": "C20H28O2",
   "mw": "300.4"
  },
@@ -2593,6 +3333,8 @@
   "smiles": "CC1=CC=CC=C1[N+](=O)[O-]",
   "connectivity_smiles": "CC1=CC=CC=C1[N+](=O)[O-]",
   "inchikey": "PLAZTCDQAHEYBI-UHFFFAOYSA-N",
+  "iupac_name": "1-methyl-2-nitrobenzene",
+  "common_name": "2-Nitrotoluene",
   "formula": "C7H7NO2",
   "mw": "137.14"
  },
@@ -2600,6 +3342,8 @@
   "smiles": "CC#C",
   "connectivity_smiles": "CC#C",
   "inchikey": "MWWATHDPGQKSAR-UHFFFAOYSA-N",
+  "iupac_name": "prop-1-yne",
+  "common_name": "Propyne",
   "formula": "C3H4",
   "mw": "40.06"
  },
@@ -2607,6 +3351,8 @@
   "smiles": "C1=CC(=C(C2=C1C(=C(C(=C2Cl)Cl)Cl)Cl)Cl)Cl",
   "connectivity_smiles": "C1=CC(=C(C2=C1C(=C(C(=C2Cl)Cl)Cl)Cl)Cl)Cl",
   "inchikey": "CTLMCQOGOWNFHA-UHFFFAOYSA-N",
+  "iupac_name": "1,2,3,4,5,6-hexachloronaphthalene",
+  "common_name": "1,2,3,4,5,6-Hexachloronaphthalene",
   "formula": "C10H2Cl6",
   "mw": "334.8"
  },
@@ -2614,6 +3360,8 @@
   "smiles": "CCCSSCC=C",
   "connectivity_smiles": "CCCSSCC=C",
   "inchikey": "FCSSPCOFDUKHPV-UHFFFAOYSA-N",
+  "iupac_name": "1-(prop-2-enyldisulfanyl)propane",
+  "common_name": "Allyl propyl disulfide",
   "formula": "C6H12S2",
   "mw": "148.3"
  },
@@ -2621,6 +3369,8 @@
   "smiles": "O=Cl(=O)(=O)F",
   "connectivity_smiles": "O=Cl(=O)(=O)F",
   "inchikey": "XHFXMNZYIKFCPN-UHFFFAOYSA-N",
+  "iupac_name": "perchloryl fluoride",
+  "common_name": "Perchloryl fluoride",
   "formula": "ClFO3",
   "mw": "102.45"
  },
@@ -2628,6 +3378,8 @@
   "smiles": "CCC[N+](=O)[O-]",
   "connectivity_smiles": "CCC[N+](=O)[O-]",
   "inchikey": "JSZOAYXJRCEYSX-UHFFFAOYSA-N",
+  "iupac_name": "1-nitropropane",
+  "common_name": "1-Nitropropane",
   "formula": "C3H7NO2",
   "mw": "89.09"
  },
@@ -2635,6 +3387,8 @@
   "smiles": "C1=CC=C2C3=C4C(=CC2=C1)C=CC5=C4C(=CC=C5)C=C3",
   "connectivity_smiles": "C1=CC=C2C3=C4C(=CC2=C1)C=CC5=C4C(=CC=C5)C=C3",
   "inchikey": "FMMWHPNWAFZXNH-UHFFFAOYSA-N",
+  "iupac_name": "benzo[a]pyrene",
+  "common_name": "Benzo[a]pyrene",
   "formula": "C20H12",
   "mw": "252.3"
  },
@@ -2642,6 +3396,8 @@
   "smiles": "C(=O)C(Cl)(Cl)Cl",
   "connectivity_smiles": "C(=O)C(Cl)(Cl)Cl",
   "inchikey": "HFFLGKNGCAIQMO-UHFFFAOYSA-N",
+  "iupac_name": "2,2,2-trichloroacetaldehyde",
+  "common_name": "Chloral",
   "formula": "C2HCl3O",
   "mw": "147.38"
  },
@@ -2649,6 +3405,8 @@
   "smiles": "CCOP(=O)(CC)OCC",
   "connectivity_smiles": "CCOP(=O)(CC)OCC",
   "inchikey": "AATNZNJRDOVKDD-UHFFFAOYSA-N",
+  "iupac_name": "1-[ethoxy(ethyl)phosphoryl]oxyethane",
+  "common_name": "Diethyl ethylphosphonate",
   "formula": "C6H15O3P",
   "mw": "166.16"
  },
@@ -2656,6 +3414,8 @@
   "smiles": "C1=CC(=CC(=C1)[N+](=O)[O-])N",
   "connectivity_smiles": "C1=CC(=CC(=C1)[N+](=O)[O-])N",
   "inchikey": "XJCVRTZCHMZPBD-UHFFFAOYSA-N",
+  "iupac_name": "3-nitroaniline",
+  "common_name": "3-Nitroaniline",
   "formula": "C6H6N2O2",
   "mw": "138.12"
  },
@@ -2663,6 +3423,8 @@
   "smiles": "COC1=CC=C(C=C1)C=O",
   "connectivity_smiles": "COC1=CC=C(C=C1)C=O",
   "inchikey": "ZRSNZINYAWTAHE-UHFFFAOYSA-N",
+  "iupac_name": "4-methoxybenzaldehyde",
+  "common_name": "4-Methoxybenzaldehyde",
   "formula": "C8H8O2",
   "mw": "136.15"
  },
@@ -2670,6 +3432,8 @@
   "smiles": "C1C(O1)C2=CC=CC=C2",
   "connectivity_smiles": "C1C(O1)C2=CC=CC=C2",
   "inchikey": "AWMVMTVKBNGEAK-UHFFFAOYSA-N",
+  "iupac_name": "2-phenyloxirane",
+  "common_name": "Styrene Oxide",
   "formula": "C8H8O",
   "mw": "120.15"
  },
@@ -2677,6 +3441,8 @@
   "smiles": "C(C(=O)O)S",
   "connectivity_smiles": "C(C(=O)O)S",
   "inchikey": "CWERGRDVMFNCDR-UHFFFAOYSA-N",
+  "iupac_name": "2-sulfanylacetic acid",
+  "common_name": "Thioglycolic Acid",
   "formula": "C2H4O2S",
   "mw": "92.12"
  },
@@ -2684,6 +3450,8 @@
   "smiles": "CC(C)CCCCCOC(=O)CS",
   "connectivity_smiles": "CC(C)CCCCCOC(=O)CS",
   "inchikey": "RZBBHEJLECUBJT-UHFFFAOYSA-N",
+  "iupac_name": "6-methylheptyl 2-sulfanylacetate",
+  "common_name": "Isooctyl Thioglycolate",
   "formula": "C10H20O2S",
   "mw": "204.33"
  },
@@ -2691,6 +3459,8 @@
   "smiles": "CC(=O)NC1=CC=C(C=C1)S(=O)(=O)Cl",
   "connectivity_smiles": "CC(=O)NC1=CC=C(C=C1)S(=O)(=O)Cl",
   "inchikey": "GRDXCFKBQWDAJH-UHFFFAOYSA-N",
+  "iupac_name": "4-acetamidobenzenesulfonyl chloride",
+  "common_name": "N-Acetylsulfanilyl chloride",
   "formula": "C8H8ClNO3S",
   "mw": "233.67"
  },
@@ -2698,6 +3468,8 @@
   "smiles": "C=CC[Si](Cl)(Cl)Cl",
   "connectivity_smiles": "C=CC[Si](Cl)(Cl)Cl",
   "inchikey": "HKFSBKQQYCMCKO-UHFFFAOYSA-N",
+  "iupac_name": "trichloro(prop-2-enyl)silane",
+  "common_name": "Trichloro-2-propen-1-ylsilane",
   "formula": "C3H5Cl3Si",
   "mw": "175.51"
  },
@@ -2705,6 +3477,8 @@
   "smiles": "C1=CC=C(C=C1)P(Cl)Cl",
   "connectivity_smiles": "C1=CC=C(C=C1)P(Cl)Cl",
   "inchikey": "IMDXZWRLUZPMDH-UHFFFAOYSA-N",
+  "iupac_name": "dichloro(phenyl)phosphane",
+  "common_name": "Phenyl phosphorus dichloride",
   "formula": "C6H5Cl2P",
   "mw": "178.98"
  },
@@ -2712,6 +3486,8 @@
   "smiles": "CC(C)CCOCCC(C)C",
   "connectivity_smiles": "CC(C)CCOCCC(C)C",
   "inchikey": "AQZGPSLYZOOYQP-UHFFFAOYSA-N",
+  "iupac_name": "3-methyl-1-(3-methylbutoxy)butane",
+  "common_name": "Diisopentyl ether",
   "formula": "C10H22O",
   "mw": "158.28"
  },
@@ -2719,6 +3495,8 @@
   "smiles": "CNC1=CC=CC=C1C(=O)OC",
   "connectivity_smiles": "CNC1=CC=CC=C1C(=O)OC",
   "inchikey": "GVOWHGSUZUUUDR-UHFFFAOYSA-N",
+  "iupac_name": "methyl 2-(methylamino)benzoate",
+  "common_name": "Methyl N-methylanthranilate",
   "formula": "C9H11NO2",
   "mw": "165.19"
  },
@@ -2726,6 +3504,8 @@
   "smiles": "CCCC=O",
   "connectivity_smiles": "CCCC=O",
   "inchikey": "ZTQSAGDEMFDKMZ-UHFFFAOYSA-N",
+  "iupac_name": "butanal",
+  "common_name": "Butanal",
   "formula": "C4H8O",
   "mw": "72.11"
  },
@@ -2733,6 +3513,8 @@
   "smiles": "C1CCC(C1)O",
   "connectivity_smiles": "C1CCC(C1)O",
   "inchikey": "XCIXKGXIYUWCLL-UHFFFAOYSA-N",
+  "iupac_name": "cyclopentanol",
+  "common_name": "Cyclopentanol",
   "formula": "C5H10O",
   "mw": "86.13"
  },
@@ -2740,6 +3522,8 @@
   "smiles": "C1CCC(=O)C1",
   "connectivity_smiles": "C1CCC(=O)C1",
   "inchikey": "BGTOWKSIORTVQH-UHFFFAOYSA-N",
+  "iupac_name": "cyclopentanone",
+  "common_name": "Cyclopentanone",
   "formula": "C5H8O",
   "mw": "84.12"
  },
@@ -2747,6 +3531,8 @@
   "smiles": "CC(C)OC(=O)Cl",
   "connectivity_smiles": "CC(C)OC(=O)Cl",
   "inchikey": "IVRIRQXJSNCSPQ-UHFFFAOYSA-N",
+  "iupac_name": "propan-2-yl carbonochloridate",
+  "common_name": "Isopropyl chloroformate",
   "formula": "C4H7ClO2",
   "mw": "122.55"
  },
@@ -2754,6 +3540,8 @@
   "smiles": "CC(=O)OCC1=CC=CC=C1",
   "connectivity_smiles": "CC(=O)OCC1=CC=CC=C1",
   "inchikey": "QUKGYYKBILRGFE-UHFFFAOYSA-N",
+  "iupac_name": "benzyl acetate",
+  "common_name": "Benzyl acetate",
   "formula": "C9H10O2",
   "mw": "150.17"
  },
@@ -2761,6 +3549,8 @@
   "smiles": "CCC1CO1",
   "connectivity_smiles": "CCC1CO1",
   "inchikey": "RBACIKXCRWGCBB-UHFFFAOYSA-N",
+  "iupac_name": "2-ethyloxirane",
+  "common_name": "1,2-Epoxybutane",
   "formula": "C4H8O",
   "mw": "72.11"
  },
@@ -2768,6 +3558,8 @@
   "smiles": "C1COCCN1SC2=NC3=CC=CC=C3S2",
   "connectivity_smiles": "C1COCCN1SC2=NC3=CC=CC=C3S2",
   "inchikey": "MHKLKWCYGIBEQF-UHFFFAOYSA-N",
+  "iupac_name": "4-(1,3-benzothiazol-2-ylsulfanyl)morpholine",
+  "common_name": "2-(4-Morpholino)thiobenzothiazole",
   "formula": "C11H12N2OS2",
   "mw": "252.4"
  },
@@ -2775,6 +3567,8 @@
   "smiles": "CC(C)CCC(=O)C",
   "connectivity_smiles": "CC(C)CCC(=O)C",
   "inchikey": "FFWSICBKRCICMR-UHFFFAOYSA-N",
+  "iupac_name": "5-methylhexan-2-one",
+  "common_name": "5-Methyl-2-hexanone",
   "formula": "C7H14O",
   "mw": "114.19"
  },
@@ -2782,6 +3576,8 @@
   "smiles": "CCCCCCCCC1C(O1)CCCCCCCC(=O)OCCCC",
   "connectivity_smiles": "CCCCCCCCC1C(O1)CCCCCCCC(=O)OCCCC",
   "inchikey": "FEXXLIKDYGCVGJ-UHFFFAOYSA-N",
+  "iupac_name": "butyl 8-(3-octyloxiran-2-yl)octanoate",
+  "common_name": "Butyl 9,10-epoxystearate",
   "formula": "C22H42O3",
   "mw": "354.6"
  },
@@ -2789,6 +3585,8 @@
   "smiles": "CC(C)(C)OOC(=O)C1=CC=CC=C1",
   "connectivity_smiles": "CC(C)(C)OOC(=O)C1=CC=CC=C1",
   "inchikey": "GJBRNHKUVLOCEB-UHFFFAOYSA-N",
+  "iupac_name": "tert-butyl benzenecarboperoxoate",
+  "common_name": "tert-Butyl peroxybenzoate",
   "formula": "C11H14O3",
   "mw": "194.23"
  },
@@ -2796,6 +3594,8 @@
   "smiles": "C(=O)(C(F)(F)F)C(F)(F)F",
   "connectivity_smiles": "C(=O)(C(F)(F)F)C(F)(F)F",
   "inchikey": "VBZWSGALLODQNC-UHFFFAOYSA-N",
+  "iupac_name": "1,1,1,3,3,3-hexafluoropropan-2-one",
+  "common_name": "Hexafluoroacetone",
   "formula": "C3F6O",
   "mw": "166.02"
  },
@@ -2803,6 +3603,8 @@
   "smiles": "C1(=NC(=NC(=N1)Cl)Cl)Cl",
   "connectivity_smiles": "C1(=NC(=NC(=N1)Cl)Cl)Cl",
   "inchikey": "MGNCLNQXLYJVJD-UHFFFAOYSA-N",
+  "iupac_name": "2,4,6-trichloro-1,3,5-triazine",
+  "common_name": "Cyanuric chloride",
   "formula": "C3Cl3N3",
   "mw": "184.41"
  },
@@ -2810,6 +3612,8 @@
   "smiles": "CCC(C)C#CC=O",
   "connectivity_smiles": "CCC(C)C#CC=O",
   "inchikey": "PQNOIQPKCYIDJB-UHFFFAOYSA-N",
+  "iupac_name": "4-methylhex-2-ynal",
+  "common_name": "Methylcyclohexanol",
   "formula": "C7H10O",
   "mw": "110.15"
  },
@@ -2817,6 +3621,8 @@
   "smiles": "CC1CCCCC1=O",
   "connectivity_smiles": "CC1CCCCC1=O",
   "inchikey": "LFSAPCRASZRSKS-UHFFFAOYSA-N",
+  "iupac_name": "2-methylcyclohexan-1-one",
+  "common_name": "2-Methylcyclohexanone",
   "formula": "C7H12O",
   "mw": "112.17"
  },
@@ -2824,6 +3630,8 @@
   "smiles": "C1=CC2=C(C(=C1)Cl)C(=C(C(=C2Cl)Cl)Cl)Cl",
   "connectivity_smiles": "C1=CC2=C(C(=C1)Cl)C(=C(C(=C2Cl)Cl)Cl)Cl",
   "inchikey": "JRZKNHITLINYHV-UHFFFAOYSA-N",
+  "iupac_name": "1,2,3,4,5-pentachloronaphthalene",
+  "common_name": "Pentachloronaphthalene",
   "formula": "C10H3Cl5",
   "mw": "300.4"
  },
@@ -2831,6 +3639,8 @@
   "smiles": "C1=CC=C2C(=C1)C(=C(C(=C2Cl)Cl)Cl)Cl",
   "connectivity_smiles": "C1=CC=C2C(=C1)C(=C(C(=C2Cl)Cl)Cl)Cl",
   "inchikey": "NAQWICRLNQSPPW-UHFFFAOYSA-N",
+  "iupac_name": "1,2,3,4-tetrachloronaphthalene",
+  "common_name": "1,2,3,4-Tetrachloronaphthalene",
   "formula": "C10H4Cl4",
   "mw": "265.9"
  },
@@ -2838,6 +3648,8 @@
   "smiles": "CC1=CC(=CC=C1)[N+](=O)[O-]",
   "connectivity_smiles": "CC1=CC(=CC=C1)[N+](=O)[O-]",
   "inchikey": "QZYHIOPPLUPUJF-UHFFFAOYSA-N",
+  "iupac_name": "1-methyl-3-nitrobenzene",
+  "common_name": "3-Nitrotoluene",
   "formula": "C7H7NO2",
   "mw": "137.14"
  },
@@ -2845,6 +3657,8 @@
   "smiles": "CCC(/C=C/Cl)(C#C)O",
   "connectivity_smiles": "CCC(C=CCl)(C#C)O",
   "inchikey": "ZEHYJZXQEQOSON-AATRIKPKSA-N",
+  "iupac_name": "(E)-1-chloro-3-ethylpent-1-en-4-yn-3-ol",
+  "common_name": "Ethchlorvynol",
   "formula": "C7H9ClO",
   "mw": "144.60"
  },
@@ -2852,6 +3666,8 @@
   "smiles": "CCCCC1C(=O)N(N(C1=O)C2=CC=CC=C2)C3=CC=CC=C3",
   "connectivity_smiles": "CCCCC1C(=O)N(N(C1=O)C2=CC=CC=C2)C3=CC=CC=C3",
   "inchikey": "VYMDGNCVAMGZFE-UHFFFAOYSA-N",
+  "iupac_name": "4-butyl-1,2-diphenylpyrazolidine-3,5-dione",
+  "common_name": "Phenylbutazone",
   "formula": "C19H20N2O2",
   "mw": "308.4"
  },
@@ -2859,6 +3675,8 @@
   "smiles": "CCC1(C(=O)N(C(=O)O1)C)C",
   "connectivity_smiles": "CCC1(C(=O)N(C(=O)O1)C)C",
   "inchikey": "VQASKUSHBVDKGU-UHFFFAOYSA-N",
+  "iupac_name": "5-ethyl-3,5-dimethyl-1,3-oxazolidine-2,4-dione",
+  "common_name": "Paramethadione",
   "formula": "C7H11NO3",
   "mw": "157.17"
  },
@@ -2866,6 +3684,8 @@
   "smiles": "C1CN(CCN1C(=O)CCBr)C(=O)CCBr",
   "connectivity_smiles": "C1CN(CCN1C(=O)CCBr)C(=O)CCBr",
   "inchikey": "NJBFOOCLYDNZJN-UHFFFAOYSA-N",
+  "iupac_name": "3-bromo-1-[4-(3-bromopropanoyl)piperazin-1-yl]propan-1-one",
+  "common_name": "Pipobroman",
   "formula": "C10H16Br2N2O2",
   "mw": "356.05"
  },
@@ -2873,6 +3693,8 @@
   "smiles": "CCC(CC1=C(C(=C(C=C1I)I)N)I)C(=O)O",
   "connectivity_smiles": "CCC(CC1=C(C(=C(C=C1I)I)N)I)C(=O)O",
   "inchikey": "OIRFJRBSRORBCM-UHFFFAOYSA-N",
+  "iupac_name": "2-[(3-amino-2,4,6-triiodophenyl)methyl]butanoic acid",
+  "common_name": "Iopanoic Acid",
   "formula": "C11H12I3NO2",
   "mw": "570.93"
  },
@@ -2880,6 +3702,8 @@
   "smiles": "C[C@@H](CC1=CC=CC=C1)NC",
   "connectivity_smiles": "CC(CC1=CC=CC=C1)NC",
   "inchikey": "MYWUZJCMWCOHBA-VIFPVBQESA-N",
+  "iupac_name": "(2S)-N-methyl-1-phenylpropan-2-amine",
+  "common_name": "Methamphetamine",
   "formula": "C10H15N",
   "mw": "149.23"
  },
@@ -2887,6 +3711,8 @@
   "smiles": "CC1OC(OC(O1)C)C",
   "connectivity_smiles": "CC1OC(OC(O1)C)C",
   "inchikey": "SQYNKIJPMDEDEG-UHFFFAOYSA-N",
+  "iupac_name": "2,4,6-trimethyl-1,3,5-trioxane",
+  "common_name": "Paraldehyde",
   "formula": "C6H12O3",
   "mw": "132.16"
  },
@@ -2894,6 +3720,8 @@
   "smiles": "C/C(=C/CC[C@@]1(C2C[C@H]3C1([C@H]3C2)C)C)/CO",
   "connectivity_smiles": "CC(=CCCC1(C2CC3C1(C3C2)C)C)CO",
   "inchikey": "PDEQKAVEYSOLJX-RQGDDBKYSA-N",
+  "iupac_name": "(Z)-5-[(1S,3R,6R)-2,3-dimethyl-3-tricyclo[2.2.1.02,6]heptanyl]-2-methylpent-2-en-1-ol",
+  "common_name": "Alpha-Santalol",
   "formula": "C15H24O",
   "mw": "220.35"
  },
@@ -2901,6 +3729,8 @@
   "smiles": "C1=CC=C(C=C1)S(=O)(=O)[N-]Cl.[Na+]",
   "connectivity_smiles": "C1=CC=C(C=C1)S(=O)(=O)[N-]Cl.[Na+]",
   "inchikey": "KDNCILYKSYKEFJ-UHFFFAOYSA-N",
+  "iupac_name": "sodium benzenesulfonyl(chloro)azanide",
+  "common_name": "Chloramine B",
   "formula": "C6H5ClNNaO2S",
   "mw": "213.62"
  },
@@ -2908,6 +3738,8 @@
   "smiles": "CC1=CNC2=CC=CC=C12",
   "connectivity_smiles": "CC1=CNC2=CC=CC=C12",
   "inchikey": "ZFRKQXVRDFCRJG-UHFFFAOYSA-N",
+  "iupac_name": "3-methyl-1H-indole",
+  "common_name": "Skatole",
   "formula": "C9H9N",
   "mw": "131.17"
  },
@@ -2915,6 +3747,8 @@
   "smiles": "C1=CC2=C(C=CO2)C3=C1C=CC(=O)O3",
   "connectivity_smiles": "C1=CC2=C(C=CO2)C3=C1C=CC(=O)O3",
   "inchikey": "XDROKJSWHURZGO-UHFFFAOYSA-N",
+  "iupac_name": "furo[2,3-h]chromen-2-one",
+  "common_name": "Isopsoralen",
   "formula": "C11H6O3",
   "mw": "186.16"
  },
@@ -2922,6 +3756,8 @@
   "smiles": "C(C(CS)S)O",
   "connectivity_smiles": "C(C(CS)S)O",
   "inchikey": "WQABCVAJNWAXTE-UHFFFAOYSA-N",
+  "iupac_name": "2,3-bis(sulfanyl)propan-1-ol",
+  "common_name": "Dimercaprol",
   "formula": "C3H8OS2",
   "mw": "124.23"
  },
@@ -2929,6 +3765,8 @@
   "smiles": "C1(=C(C(C(=C1Cl)Cl)(Cl)Cl)Cl)Cl",
   "connectivity_smiles": "C1(=C(C(C(=C1Cl)Cl)(Cl)Cl)Cl)Cl",
   "inchikey": "VUNCWTMEJYMOOR-UHFFFAOYSA-N",
+  "iupac_name": "1,2,3,4,5,5-hexachlorocyclopenta-1,3-diene",
+  "common_name": "Hexachlorocyclopentadiene",
   "formula": "C5Cl6",
   "mw": "272.8"
  },
@@ -2936,6 +3774,8 @@
   "smiles": "CCOP(=S)(C1=CC=CC=C1)OC2=CC=C(C=C2)[N+](=O)[O-]",
   "connectivity_smiles": "CCOP(=S)(C1=CC=CC=C1)OC2=CC=C(C=C2)[N+](=O)[O-]",
   "inchikey": "AIGRXSNSLVJMEA-UHFFFAOYSA-N",
+  "iupac_name": "ethoxy-(4-nitrophenoxy)-phenyl-sulfanylidene-lambda5-phosphane",
+  "common_name": "Ethyl p-nitrophenyl benzenethiophosphonate",
   "formula": "C14H14NO4PS",
   "mw": "323.31"
  },
@@ -2943,6 +3783,8 @@
   "smiles": "CCC1=CC=CC=C1CC",
   "connectivity_smiles": "CCC1=CC=CC=C1CC",
   "inchikey": "KVNYFPKFSJIPBJ-UHFFFAOYSA-N",
+  "iupac_name": "1,2-diethylbenzene",
+  "common_name": "1,2-Diethylbenzene",
   "formula": "C10H14",
   "mw": "134.22"
  },
@@ -2950,6 +3792,8 @@
   "smiles": "CCC1=CC=C(C=C1)CC",
   "connectivity_smiles": "CCC1=CC=C(C=C1)CC",
   "inchikey": "DSNHSQKRULAAEI-UHFFFAOYSA-N",
+  "iupac_name": "1,4-diethylbenzene",
+  "common_name": "1,4-Diethylbenzene",
   "formula": "C10H14",
   "mw": "134.22"
  },
@@ -2957,6 +3801,8 @@
   "smiles": "CCCC[Sn](CCCC)(OC(=O)C)OC(=O)C",
   "connectivity_smiles": "CCCC[Sn](CCCC)(OC(=O)C)OC(=O)C",
   "inchikey": "JJLKTTCRRLHVGL-UHFFFAOYSA-L",
+  "iupac_name": "[acetyloxy(dibutyl)stannyl] acetate",
+  "common_name": "Dibutyltin diacetate",
   "formula": "C12H24O4Sn",
   "mw": "351.03"
  },
@@ -2964,6 +3810,8 @@
   "smiles": "C1=CC=C(C=C1)/C=C/COC(=O)C2=CC=CC=C2N",
   "connectivity_smiles": "C1=CC=C(C=C1)C=CCOC(=O)C2=CC=CC=C2N",
   "inchikey": "GABQNAFEZZDSCM-RMKNXTFCSA-N",
+  "iupac_name": "[(E)-3-phenylprop-2-enyl] 2-aminobenzoate",
+  "common_name": "Cinnamyl Anthranilate",
   "formula": "C16H15NO2",
   "mw": "253.29"
  },
@@ -2971,6 +3819,8 @@
   "smiles": "CC(C1=CC=CC=C1)O",
   "connectivity_smiles": "CC(C1=CC=CC=C1)O",
   "inchikey": "WAPNOHKVXSQRPX-UHFFFAOYSA-N",
+  "iupac_name": "1-phenylethanol",
+  "common_name": "1-Phenylethanol",
   "formula": "C8H10O",
   "mw": "122.16"
  },
@@ -2978,6 +3828,8 @@
   "smiles": "C1=CC=C2C(=C1)C=CO2",
   "connectivity_smiles": "C1=CC=C2C(=C1)C=CO2",
   "inchikey": "IANQTJSKSUMEQM-UHFFFAOYSA-N",
+  "iupac_name": "1-benzofuran",
+  "common_name": "Benzofuran",
   "formula": "C8H6O",
   "mw": "118.13"
  },
@@ -2985,6 +3837,8 @@
   "smiles": "CCC(C)(OO)OOC(C)(CC)OO",
   "connectivity_smiles": "CCC(C)(OO)OOC(C)(CC)OO",
   "inchikey": "WFUGQJXVXHBTEM-UHFFFAOYSA-N",
+  "iupac_name": "2-hydroperoxy-2-(2-hydroperoxybutan-2-ylperoxy)butane",
+  "common_name": "Methyl ethyl ketone peroxide",
   "formula": "C8H18O6",
   "mw": "210.22"
  },
@@ -2992,6 +3846,8 @@
   "smiles": "CC(C)CC(=O)OCC=C",
   "connectivity_smiles": "CC(C)CC(=O)OCC=C",
   "inchikey": "HOMAGVUCNZNWBC-UHFFFAOYSA-N",
+  "iupac_name": "prop-2-enyl 3-methylbutanoate",
+  "common_name": "Allyl isovalerate",
   "formula": "C8H14O2",
   "mw": "142.20"
  },
@@ -2999,6 +3855,8 @@
   "smiles": "CC1=CC[C@@H](CC1)C(=C)C",
   "connectivity_smiles": "CC1=CCC(CC1)C(=C)C",
   "inchikey": "XMGQYMWWDOXHJM-JTQLQIEISA-N",
+  "iupac_name": "(4R)-1-methyl-4-prop-1-en-2-ylcyclohexene",
+  "common_name": "(+)-Limonene",
   "formula": "C10H16",
   "mw": "136.23"
  },
@@ -3006,6 +3864,8 @@
   "smiles": "C1(=NC(=O)N(C(=O)N1Cl)Cl)[O-].[Na+]",
   "connectivity_smiles": "C1(=NC(=O)N(C(=O)N1Cl)Cl)[O-].[Na+]",
   "inchikey": "MSFGZHUJTJBYFA-UHFFFAOYSA-M",
+  "iupac_name": "sodium 1,5-dichloro-4,6-dioxo-1,3,5-triazin-2-olate",
+  "common_name": "Troclosene sodium",
   "formula": "C3Cl2N3NaO3",
   "mw": "219.94"
  },
@@ -3013,6 +3873,8 @@
   "smiles": "COC1=CC=CC=C1O",
   "connectivity_smiles": "COC1=CC=CC=C1O",
   "inchikey": "LHGVFZTZFXWLCP-UHFFFAOYSA-N",
+  "iupac_name": "2-methoxyphenol",
+  "common_name": "Guaiacol",
   "formula": "C7H8O2",
   "mw": "124.14"
  },
@@ -3020,6 +3882,8 @@
   "smiles": "C1=CC(=CC(=C1)[N+](=O)[O-])C(F)(F)F",
   "connectivity_smiles": "C1=CC(=CC(=C1)[N+](=O)[O-])C(F)(F)F",
   "inchikey": "WHNAMGUAXHGCHH-UHFFFAOYSA-N",
+  "iupac_name": "1-nitro-3-(trifluoromethyl)benzene",
+  "common_name": "m-(Trifluoromethyl)nitrobenzene",
   "formula": "C7H4F3NO2",
   "mw": "191.11"
  },
@@ -3027,6 +3891,8 @@
   "smiles": "C1=CC(=CC=C1C(F)(F)F)Cl",
   "connectivity_smiles": "C1=CC(=CC=C1C(F)(F)F)Cl",
   "inchikey": "QULYNCCPRWKEMF-UHFFFAOYSA-N",
+  "iupac_name": "1-chloro-4-(trifluoromethyl)benzene",
+  "common_name": "1-Chloro-4-(trifluoromethyl)benzene",
   "formula": "C7H4ClF3",
   "mw": "180.55"
  },
@@ -3034,6 +3900,8 @@
   "smiles": "COC1=CC=C(C=C1)OC",
   "connectivity_smiles": "COC1=CC=C(C=C1)OC",
   "inchikey": "OHBQPCCCRFSCAX-UHFFFAOYSA-N",
+  "iupac_name": "1,4-dimethoxybenzene",
+  "common_name": "1,4-Dimethoxybenzene",
   "formula": "C8H10O2",
   "mw": "138.16"
  },
@@ -3041,6 +3909,8 @@
   "smiles": "CC1=CC=C(C=C1)S(=O)(=O)[N-]Cl.[Na+]",
   "connectivity_smiles": "CC1=CC=C(C=C1)S(=O)(=O)[N-]Cl.[Na+]",
   "inchikey": "VDQQXEISLMTGAB-UHFFFAOYSA-N",
+  "iupac_name": "sodium chloro-(4-methylphenyl)sulfonylazanide",
+  "common_name": "Chloramine-T",
   "formula": "C7H7ClNNaO2S",
   "mw": "227.64"
  },
@@ -3048,6 +3918,8 @@
   "smiles": "C1=CC=C2C(=C1)C=C(C(=C2Cl)Cl)Cl",
   "connectivity_smiles": "C1=CC=C2C(=C1)C=C(C(=C2Cl)Cl)Cl",
   "inchikey": "QEPTXDCPBXMWJC-UHFFFAOYSA-N",
+  "iupac_name": "1,2,3-trichloronaphthalene",
+  "common_name": "Trichloronaphthalene",
   "formula": "C10H5Cl3",
   "mw": "231.5"
  },
@@ -3055,6 +3927,8 @@
   "smiles": "C1CC(=O)OC2=CC=CC=C21",
   "connectivity_smiles": "C1CC(=O)OC2=CC=CC=C21",
   "inchikey": "VMUXSMXIQBNMGZ-UHFFFAOYSA-N",
+  "iupac_name": "3,4-dihydrochromen-2-one",
+  "common_name": "Dihydrocoumarin",
   "formula": "C9H8O2",
   "mw": "148.16"
  },
@@ -3062,6 +3936,8 @@
   "smiles": "CC1=CC2=C(C=C1)OC(=O)C=C2",
   "connectivity_smiles": "CC1=CC2=C(C=C1)OC(=O)C=C2",
   "inchikey": "FXFYOPQLGGEACP-UHFFFAOYSA-N",
+  "iupac_name": "6-methylchromen-2-one",
+  "common_name": "6-Methylcoumarin",
   "formula": "C10H8O2",
   "mw": "160.17"
  },
@@ -3069,6 +3945,8 @@
   "smiles": "CC1(C(=O)N(C(=O)N1Cl)Cl)C",
   "connectivity_smiles": "CC1(C(=O)N(C(=O)N1Cl)Cl)C",
   "inchikey": "KEQGZUUPPQEDPF-UHFFFAOYSA-N",
+  "iupac_name": "1,3-dichloro-5,5-dimethylimidazolidine-2,4-dione",
+  "common_name": "1,3-Dichloro-5,5-dimethylhydantoin",
   "formula": "C5H6Cl2N2O2",
   "mw": "197.02"
  },
@@ -3076,6 +3954,8 @@
   "smiles": "CCCCCCOC(=O)C1=CC=CC=C1C(=O)OCCCCCC",
   "connectivity_smiles": "CCCCCCOC(=O)C1=CC=CC=C1C(=O)OCCCCCC",
   "inchikey": "KCXZNSGUUQJJTR-UHFFFAOYSA-N",
+  "iupac_name": "dihexyl benzene-1,2-dicarboxylate",
+  "common_name": "Dihexyl phthalate",
   "formula": "C20H30O4",
   "mw": "334.4"
  },
@@ -3083,6 +3963,8 @@
   "smiles": "COC1=C(C=C(C=C1)CC=C)OC",
   "connectivity_smiles": "COC1=C(C=C(C=C1)CC=C)OC",
   "inchikey": "ZYEMGPIYFIJGTP-UHFFFAOYSA-N",
+  "iupac_name": "1,2-dimethoxy-4-prop-2-enylbenzene",
+  "common_name": "Methyleugenol",
   "formula": "C11H14O2",
   "mw": "178.23"
  },
@@ -3090,6 +3972,8 @@
   "smiles": "C1=CC=C(C=C1)CCO",
   "connectivity_smiles": "C1=CC=C(C=C1)CCO",
   "inchikey": "WRMNZCZEMHIOCP-UHFFFAOYSA-N",
+  "iupac_name": "2-phenylethanol",
+  "common_name": "2-Phenylethanol",
   "formula": "C8H10O",
   "mw": "122.16"
  },
@@ -3097,6 +3981,8 @@
   "smiles": "CC1=CC=C(C=C1)C(C)(C)C",
   "connectivity_smiles": "CC1=CC=C(C=C1)C(C)(C)C",
   "inchikey": "QCWXDVFBZVHKLV-UHFFFAOYSA-N",
+  "iupac_name": "1-tert-butyl-4-methylbenzene",
+  "common_name": "4-tert-Butyltoluene",
   "formula": "C11H16",
   "mw": "148.24"
  },
@@ -3104,6 +3990,8 @@
   "smiles": "C1=CC=C(C=C1)CC(=O)O",
   "connectivity_smiles": "C1=CC=C(C=C1)CC(=O)O",
   "inchikey": "WLJVXDMOQOGPHL-UHFFFAOYSA-N",
+  "iupac_name": "2-phenylacetic acid",
+  "common_name": "Phenylacetic Acid",
   "formula": "C8H8O2",
   "mw": "136.15"
  },
@@ -3111,6 +3999,8 @@
   "smiles": "C1=CC=C(C=C1)/C=C/CO",
   "connectivity_smiles": "C1=CC=C(C=C1)C=CCO",
   "inchikey": "OOCCDEMITAIZTP-QPJJXVBHSA-N",
+  "iupac_name": "(E)-3-phenylprop-2-en-1-ol",
+  "common_name": "Cinnamyl Alcohol",
   "formula": "C9H10O",
   "mw": "134.17"
  },
@@ -3118,6 +4008,8 @@
   "smiles": "C(=O)[O-].C(=O)[O-].[Ca+2]",
   "connectivity_smiles": "C(=O)[O-].C(=O)[O-].[Ca+2]",
   "inchikey": "CBOCVOKPQGJKKJ-UHFFFAOYSA-L",
+  "iupac_name": "calcium diformate",
+  "common_name": "Calcium formate",
   "formula": "C2H2CaO4",
   "mw": "130.11"
  },
@@ -3125,6 +4017,8 @@
   "smiles": "[O-]S(=O)S(=O)(=O)[O-].[K+].[K+]",
   "connectivity_smiles": "[O-]S(=O)S(=O)(=O)[O-].[K+].[K+]",
   "inchikey": "RWPGFSMJFRPDDP-UHFFFAOYSA-L",
+  "iupac_name": null,
+  "common_name": "Potassium Metabisulfite",
   "formula": "K2O5S2",
   "mw": "222.33"
  },
@@ -3132,6 +4026,8 @@
   "smiles": "CCOC(=O)CBr",
   "connectivity_smiles": "CCOC(=O)CBr",
   "inchikey": "PQJJJMRNHATNKG-UHFFFAOYSA-N",
+  "iupac_name": "ethyl 2-bromoacetate",
+  "common_name": "Ethyl bromoacetate",
   "formula": "C4H7BrO2",
   "mw": "167.00"
  },
@@ -3139,6 +4035,8 @@
   "smiles": "C1C(O1)C=O",
   "connectivity_smiles": "C1C(O1)C=O",
   "inchikey": "IWYRWIUNAVNFPE-UHFFFAOYSA-N",
+  "iupac_name": "oxirane-2-carbaldehyde",
+  "common_name": "Glycidaldehyde",
   "formula": "C3H4O2",
   "mw": "72.06"
  },
@@ -3146,6 +4044,8 @@
   "smiles": "CCOC(=O)N(C)N=O",
   "connectivity_smiles": "CCOC(=O)N(C)N=O",
   "inchikey": "CAUBWLYZCDDYEF-UHFFFAOYSA-N",
+  "iupac_name": "ethyl N-methyl-N-nitrosocarbamate",
+  "common_name": "N-Nitroso-N-methylurethane",
   "formula": "C4H8N2O3",
   "mw": "132.12"
  },
@@ -3153,6 +4053,8 @@
   "smiles": "[NH4+].[OH-]",
   "connectivity_smiles": "[NH4+].[OH-]",
   "inchikey": "VHUUQVKOLVNVRT-UHFFFAOYSA-N",
+  "iupac_name": "azanium hydroxide",
+  "common_name": "Ammonium Hydroxide",
   "formula": "H5NO",
   "mw": "35.046"
  },
@@ -3160,6 +4062,8 @@
   "smiles": "CC1=CC=C(C=C1)C(C)C",
   "connectivity_smiles": "CC1=CC=C(C=C1)C(C)C",
   "inchikey": "HFPZCAJZSCWRBC-UHFFFAOYSA-N",
+  "iupac_name": "1-methyl-4-propan-2-ylbenzene",
+  "common_name": "P-Cymene",
   "formula": "C10H14",
   "mw": "134.22"
  },
@@ -3167,6 +4071,8 @@
   "smiles": "CCC(Cl)Cl",
   "connectivity_smiles": "CCC(Cl)Cl",
   "inchikey": "WIHMGGWNMISDNJ-UHFFFAOYSA-N",
+  "iupac_name": "1,1-dichloropropane",
+  "common_name": "1,1-Dichloropropane",
   "formula": "C3H6Cl2",
   "mw": "112.98"
  },
@@ -3174,6 +4080,8 @@
   "smiles": "CCC1=CN=C(C=C1)C",
   "connectivity_smiles": "CCC1=CN=C(C=C1)C",
   "inchikey": "NTSLROIKFLNUIJ-UHFFFAOYSA-N",
+  "iupac_name": "5-ethyl-2-methylpyridine",
+  "common_name": "5-Ethyl-2-methylpyridine",
   "formula": "C8H11N",
   "mw": "121.18"
  },
@@ -3181,6 +4089,8 @@
   "smiles": "C1=CC=C(C=C1)CC2=CC=CC=C2",
   "connectivity_smiles": "C1=CC=C(C=C1)CC2=CC=CC=C2",
   "inchikey": "CZZYITDELCSZES-UHFFFAOYSA-N",
+  "iupac_name": "benzylbenzene",
+  "common_name": "Diphenylmethane",
   "formula": "C13H12",
   "mw": "168.23"
  },
@@ -3188,6 +4098,8 @@
   "smiles": "CCCCCCCCCO",
   "connectivity_smiles": "CCCCCCCCCO",
   "inchikey": "ZWRUINPWMLAQRD-UHFFFAOYSA-N",
+  "iupac_name": "nonan-1-ol",
+  "common_name": "1-Nonanol",
   "formula": "C9H20O",
   "mw": "144.25"
  },
@@ -3195,6 +4107,8 @@
   "smiles": "CCCCCCCC=O",
   "connectivity_smiles": "CCCCCCCC=O",
   "inchikey": "NUJGJRNETVAIRJ-UHFFFAOYSA-N",
+  "iupac_name": "octanal",
+  "common_name": "Octanal",
   "formula": "C8H16O",
   "mw": "128.21"
  },
@@ -3202,6 +4116,8 @@
   "smiles": "CC(=O)C(C)(C)C",
   "connectivity_smiles": "CC(=O)C(C)(C)C",
   "inchikey": "PJGSXYOJTGTZAV-UHFFFAOYSA-N",
+  "iupac_name": "3,3-dimethylbutan-2-one",
+  "common_name": "Pinacolone",
   "formula": "C6H12O",
   "mw": "100.16"
  },
@@ -3209,6 +4125,8 @@
   "smiles": "C=C(CCl)Cl",
   "connectivity_smiles": "C=C(CCl)Cl",
   "inchikey": "FALCMQXTWHPRIH-UHFFFAOYSA-N",
+  "iupac_name": "2,3-dichloroprop-1-ene",
+  "common_name": "2,3-Dichloropropene",
   "formula": "C3H4Cl2",
   "mw": "110.97"
  },
@@ -3216,6 +4134,8 @@
   "smiles": "C(=O)C(Cl)Cl",
   "connectivity_smiles": "C(=O)C(Cl)Cl",
   "inchikey": "NWQWQKUXRJYXFH-UHFFFAOYSA-N",
+  "iupac_name": "2,2-dichloroacetaldehyde",
+  "common_name": "Dichloroacetaldehyde",
   "formula": "C2H2Cl2O",
   "mw": "112.94"
  },
@@ -3223,6 +4143,8 @@
   "smiles": "CC(C)C(=O)O",
   "connectivity_smiles": "CC(C)C(=O)O",
   "inchikey": "KQNPFQTWMSNSAP-UHFFFAOYSA-N",
+  "iupac_name": "2-methylpropanoic acid",
+  "common_name": "Isobutyric Acid",
   "formula": "C4H8O2",
   "mw": "88.11"
  },
@@ -3230,6 +4152,8 @@
   "smiles": "C1CCC(CC1)OC(=O)C2=CC=CC=C2C(=O)OC3CCCCC3",
   "connectivity_smiles": "C1CCC(CC1)OC(=O)C2=CC=CC=C2C(=O)OC3CCCCC3",
   "inchikey": "VOWAEIGWURALJQ-UHFFFAOYSA-N",
+  "iupac_name": "dicyclohexyl benzene-1,2-dicarboxylate",
+  "common_name": "Dicyclohexyl phthalate",
   "formula": "C20H26O4",
   "mw": "330.4"
  },
@@ -3237,6 +4161,8 @@
   "smiles": "CC1=C(C=CC=C1N=C=O)N=C=O",
   "connectivity_smiles": "CC1=C(C=CC=C1N=C=O)N=C=O",
   "inchikey": "RUELTTOHQODFPA-UHFFFAOYSA-N",
+  "iupac_name": "1,3-diisocyanato-2-methylbenzene",
+  "common_name": "Toluene 2,6-Diisocyanate",
   "formula": "C9H6N2O2",
   "mw": "174.16"
  },
@@ -3244,6 +4170,8 @@
   "smiles": "C1=CC=C(C(=C1)C#N)C#N",
   "connectivity_smiles": "C1=CC=C(C(=C1)C#N)C#N",
   "inchikey": "XQZYPMVTSDWCCE-UHFFFAOYSA-N",
+  "iupac_name": "benzene-1,2-dicarbonitrile",
+  "common_name": "Phthalonitrile",
   "formula": "C8H4N2",
   "mw": "128.13"
  },
@@ -3251,6 +4179,8 @@
   "smiles": "COC(=O)C1=CC=CC=C1",
   "connectivity_smiles": "COC(=O)C1=CC=CC=C1",
   "inchikey": "QPJVMBTYPHYUOC-UHFFFAOYSA-N",
+  "iupac_name": "methyl benzoate",
+  "common_name": "Methyl Benzoate",
   "formula": "C8H8O2",
   "mw": "136.15"
  },
@@ -3258,6 +4188,8 @@
   "smiles": "CC1=CC=CC=C1Cl",
   "connectivity_smiles": "CC1=CC=CC=C1Cl",
   "inchikey": "IBSQPLPBRSHTTG-UHFFFAOYSA-N",
+  "iupac_name": "1-chloro-2-methylbenzene",
+  "common_name": "2-Chlorotoluene",
   "formula": "C7H7Cl",
   "mw": "126.58"
  },
@@ -3265,6 +4197,8 @@
   "smiles": "CC1=CC(=C(C=C1)C)C",
   "connectivity_smiles": "CC1=CC(=C(C=C1)C)C",
   "inchikey": "GWHJZXXIDMPWGX-UHFFFAOYSA-N",
+  "iupac_name": "1,2,4-trimethylbenzene",
+  "common_name": "1,2,4-Trimethylbenzene",
   "formula": "C9H12",
   "mw": "120.19"
  },
@@ -3272,6 +4206,8 @@
   "smiles": "COC(=O)CCl",
   "connectivity_smiles": "COC(=O)CCl",
   "inchikey": "QABLOFMHHSOFRJ-UHFFFAOYSA-N",
+  "iupac_name": "methyl 2-chloroacetate",
+  "common_name": "Methyl chloroacetate",
   "formula": "C3H5ClO2",
   "mw": "108.52"
  },
@@ -3279,6 +4215,8 @@
   "smiles": "CC1=CC(=C(C=C1SC2=CC(=C(C=C2C)O)C(C)(C)C)C(C)(C)C)O",
   "connectivity_smiles": "CC1=CC(=C(C=C1SC2=CC(=C(C=C2C)O)C(C)(C)C)C(C)(C)C)O",
   "inchikey": "HXIQYSLFEXIOAV-UHFFFAOYSA-N",
+  "iupac_name": "2-tert-butyl-4-(5-tert-butyl-4-hydroxy-2-methylphenyl)sulfanyl-5-methylphenol",
+  "common_name": "Santonox",
   "formula": "C22H30O2S",
   "mw": "358.5"
  },
@@ -3286,6 +4224,8 @@
   "smiles": "CC(C)COC(=O)C(C)C",
   "connectivity_smiles": "CC(C)COC(=O)C(C)C",
   "inchikey": "RXGUIWHIADMCFC-UHFFFAOYSA-N",
+  "iupac_name": "2-methylpropyl 2-methylpropanoate",
+  "common_name": "Isobutyl isobutyrate",
   "formula": "C8H16O2",
   "mw": "144.21"
  },
@@ -3293,6 +4233,8 @@
   "smiles": "CC1=CCC(CC1)C(C)(C)O",
   "connectivity_smiles": "CC1=CCC(CC1)C(C)(C)O",
   "inchikey": "WUOACPNHFRMFPN-UHFFFAOYSA-N",
+  "iupac_name": "2-(4-methylcyclohex-3-en-1-yl)propan-2-ol",
+  "common_name": "Alpha-Terpineol",
   "formula": "C10H18O",
   "mw": "154.25"
  },
@@ -3300,6 +4242,8 @@
   "smiles": "C1=CC=C(C=C1)C(Cl)Cl",
   "connectivity_smiles": "C1=CC=C(C=C1)C(Cl)Cl",
   "inchikey": "CAHQGWAXKLQREW-UHFFFAOYSA-N",
+  "iupac_name": "dichloromethylbenzene",
+  "common_name": "Benzal chloride",
   "formula": "C7H6Cl2",
   "mw": "161.03"
  },
@@ -3307,6 +4251,8 @@
   "smiles": "CCOC(=O)NC1=CC=CC=C1",
   "connectivity_smiles": "CCOC(=O)NC1=CC=CC=C1",
   "inchikey": "LBKPGNUOUPTQKA-UHFFFAOYSA-N",
+  "iupac_name": "ethyl N-phenylcarbamate",
+  "common_name": "Ethyl N-phenylcarbamate",
   "formula": "C9H11NO2",
   "mw": "165.19"
  },
@@ -3314,6 +4260,8 @@
   "smiles": "CCCCCC1CCC(=O)O1",
   "connectivity_smiles": "CCCCCC1CCC(=O)O1",
   "inchikey": "OALYTRUKMRCXNH-UHFFFAOYSA-N",
+  "iupac_name": "5-pentyloxolan-2-one",
+  "common_name": "Gamma-Nonalactone",
   "formula": "C9H16O2",
   "mw": "156.22"
  },
@@ -3321,6 +4269,8 @@
   "smiles": "CC1=CC=C(C=C1)C=O",
   "connectivity_smiles": "CC1=CC=C(C=C1)C=O",
   "inchikey": "FXLOVSHXALFLKQ-UHFFFAOYSA-N",
+  "iupac_name": "4-methylbenzaldehyde",
+  "common_name": "4-Methylbenzaldehyde",
   "formula": "C8H8O",
   "mw": "120.15"
  },
@@ -3328,6 +4278,8 @@
   "smiles": "CC1=CC=C(C=C1)OC",
   "connectivity_smiles": "CC1=CC=C(C=C1)OC",
   "inchikey": "CHLICZRVGGXEOD-UHFFFAOYSA-N",
+  "iupac_name": "1-methoxy-4-methylbenzene",
+  "common_name": "4-Methylanisole",
   "formula": "C8H10O",
   "mw": "122.16"
  },
@@ -3335,6 +4287,8 @@
   "smiles": "C1CC(CCC1CO)CO",
   "connectivity_smiles": "C1CC(CCC1CO)CO",
   "inchikey": "YIMQCDZDWXUDCA-UHFFFAOYSA-N",
+  "iupac_name": "[4-(hydroxymethyl)cyclohexyl]methanol",
+  "common_name": "1,4-Cyclohexanedimethanol",
   "formula": "C8H16O2",
   "mw": "144.21"
  },
@@ -3342,6 +4296,8 @@
   "smiles": "CCC(=O)OCC",
   "connectivity_smiles": "CCC(=O)OCC",
   "inchikey": "FKRCODPIKNYEAC-UHFFFAOYSA-N",
+  "iupac_name": "ethyl propanoate",
+  "common_name": "Ethyl Propionate",
   "formula": "C5H10O2",
   "mw": "102.13"
  },
@@ -3349,6 +4305,8 @@
   "smiles": "CCCC(=O)OC(=O)CCC",
   "connectivity_smiles": "CCCC(=O)OC(=O)CCC",
   "inchikey": "YHASWHZGWUONAO-UHFFFAOYSA-N",
+  "iupac_name": "butanoyl butanoate",
+  "common_name": "Butyric anhydride",
   "formula": "C8H14O3",
   "mw": "158.19"
  },
@@ -3356,6 +4314,8 @@
   "smiles": "CCCCCC(=O)CC",
   "connectivity_smiles": "CCCCCC(=O)CC",
   "inchikey": "RHLVCLIPMVJYKS-UHFFFAOYSA-N",
+  "iupac_name": "octan-3-one",
+  "common_name": "3-Octanone",
   "formula": "C8H16O",
   "mw": "128.21"
  },
@@ -3363,6 +4323,8 @@
   "smiles": "CCCCC(=O)O",
   "connectivity_smiles": "CCCCC(=O)O",
   "inchikey": "NQPDZGIKBAWPEJ-UHFFFAOYSA-N",
+  "iupac_name": "pentanoic acid",
+  "common_name": "Pentanoic Acid",
   "formula": "C5H10O2",
   "mw": "102.13"
  },
@@ -3370,6 +4332,8 @@
   "smiles": "CCOC(=O)C1C(O1)C2=CC=CC=C2",
   "connectivity_smiles": "CCOC(=O)C1C(O1)C2=CC=CC=C2",
   "inchikey": "GOMAKLPNAAZVCJ-UHFFFAOYSA-N",
+  "iupac_name": "ethyl 3-phenyloxirane-2-carboxylate",
+  "common_name": "Ethyl 3-phenylglycidate",
   "formula": "C11H12O3",
   "mw": "192.21"
  },
@@ -3377,6 +4341,8 @@
   "smiles": "C1CC(=O)N(C1=O)Cl",
   "connectivity_smiles": "C1CC(=O)N(C1=O)Cl",
   "inchikey": "JRNVZBWKYDBUCA-UHFFFAOYSA-N",
+  "iupac_name": "1-chloropyrrolidine-2,5-dione",
+  "common_name": "Chlorosuccinimide",
   "formula": "C4H4ClNO2",
   "mw": "133.53"
  },
@@ -3384,6 +4350,8 @@
   "smiles": "COC1=CC=C(C=C1)CC=C",
   "connectivity_smiles": "COC1=CC=C(C=C1)CC=C",
   "inchikey": "ZFMSMUAANRJZFM-UHFFFAOYSA-N",
+  "iupac_name": "1-methoxy-4-prop-2-enylbenzene",
+  "common_name": "Estragole",
   "formula": "C10H12O",
   "mw": "148.20"
  },
@@ -3391,6 +4359,8 @@
   "smiles": "CC(OC)OC",
   "connectivity_smiles": "CC(OC)OC",
   "inchikey": "SPEUIVXLLWOEMJ-UHFFFAOYSA-N",
+  "iupac_name": "1,1-dimethoxyethane",
+  "common_name": "1,1-Dimethoxyethane",
   "formula": "C4H10O2",
   "mw": "90.12"
  },
@@ -3398,6 +4368,8 @@
   "smiles": "C12=C(C(=C(C(=C1Cl)Cl)Cl)Cl)C(=C(C(=C2Cl)Cl)Cl)Cl",
   "connectivity_smiles": "C12=C(C(=C(C(=C1Cl)Cl)Cl)Cl)C(=C(C(=C2Cl)Cl)Cl)Cl",
   "inchikey": "RTNLUFLDZOAXIC-UHFFFAOYSA-N",
+  "iupac_name": "1,2,3,4,5,6,7,8-octachloronaphthalene",
+  "common_name": "Octachloronaphthalene",
   "formula": "C10Cl8",
   "mw": "403.7"
  },
@@ -3405,6 +4377,8 @@
   "smiles": "C(CCl)CCl",
   "connectivity_smiles": "C(CCl)CCl",
   "inchikey": "YHRUOJUYPBUZOS-UHFFFAOYSA-N",
+  "iupac_name": "1,3-dichloropropane",
+  "common_name": "1,3-Dichloropropane",
   "formula": "C3H6Cl2",
   "mw": "112.98"
  },
@@ -3412,6 +4386,8 @@
   "smiles": "C1COC1",
   "connectivity_smiles": "C1COC1",
   "inchikey": "AHHWIHXENZJRFG-UHFFFAOYSA-N",
+  "iupac_name": "oxetane",
+  "common_name": "Oxetane",
   "formula": "C3H6O",
   "mw": "58.08"
  },
@@ -3419,6 +4395,8 @@
   "smiles": "CCCCCCCC(=O)OC",
   "connectivity_smiles": "CCCCCCCC(=O)OC",
   "inchikey": "JGHZJRVDZXSNKQ-UHFFFAOYSA-N",
+  "iupac_name": "methyl octanoate",
+  "common_name": "Methyl Octanoate",
   "formula": "C9H18O2",
   "mw": "158.24"
  },
@@ -3426,6 +4404,8 @@
   "smiles": "CCCCCCC(=O)C",
   "connectivity_smiles": "CCCCCCC(=O)C",
   "inchikey": "ZPVFWPFBNIEHGJ-UHFFFAOYSA-N",
+  "iupac_name": "octan-2-one",
+  "common_name": "2-Octanone",
   "formula": "C8H16O",
   "mw": "128.21"
  },
@@ -3433,6 +4413,8 @@
   "smiles": "CCCCCCCCCCCC(=O)OC",
   "connectivity_smiles": "CCCCCCCCCCCC(=O)OC",
   "inchikey": "UQDUPQYQJKYHQI-UHFFFAOYSA-N",
+  "iupac_name": "methyl dodecanoate",
+  "common_name": "Methyl Laurate",
   "formula": "C13H26O2",
   "mw": "214.34"
  },
@@ -3440,6 +4422,8 @@
   "smiles": "CCCCCCCCC(=O)O",
   "connectivity_smiles": "CCCCCCCCC(=O)O",
   "inchikey": "FBUKVWPVBMHYJY-UHFFFAOYSA-N",
+  "iupac_name": "nonanoic acid",
+  "common_name": "Nonanoic Acid",
   "formula": "C9H18O2",
   "mw": "158.24"
  },
@@ -3447,6 +4431,8 @@
   "smiles": "CCOCCOCCOC(=O)C",
   "connectivity_smiles": "CCOCCOCCOC(=O)C",
   "inchikey": "FPZWZCWUIYYYBU-UHFFFAOYSA-N",
+  "iupac_name": "2-(2-ethoxyethoxy)ethyl acetate",
+  "common_name": "2-(2-Ethoxyethoxy)ethyl acetate",
   "formula": "C8H16O4",
   "mw": "176.21"
  },
@@ -3454,6 +4440,8 @@
   "smiles": "CC(=CCCC(=O)C)C",
   "connectivity_smiles": "CC(=CCCC(=O)C)C",
   "inchikey": "UHEPJGULSIKKTP-UHFFFAOYSA-N",
+  "iupac_name": "6-methylhept-5-en-2-one",
+  "common_name": "6-Methyl-5-hepten-2-one",
   "formula": "C8H14O",
   "mw": "126.20"
  },
@@ -3461,6 +4449,8 @@
   "smiles": "CCCCCCCC/C=C\\CCCCCCCC(=O)OC",
   "connectivity_smiles": "CCCCCCCCC=CCCCCCCCC(=O)OC",
   "inchikey": "QYDYPVFESGNLHU-KHPPLWFESA-N",
+  "iupac_name": "methyl (Z)-octadec-9-enoate",
+  "common_name": "Methyl Oleate",
   "formula": "C19H36O2",
   "mw": "296.5"
  },
@@ -3468,6 +4458,8 @@
   "smiles": "C1=CC=C(C=C1)OCCO",
   "connectivity_smiles": "C1=CC=C(C=C1)OCCO",
   "inchikey": "QCDWFXQBSFUVSP-UHFFFAOYSA-N",
+  "iupac_name": "2-phenoxyethanol",
+  "common_name": "Phenoxyethanol",
   "formula": "C8H10O2",
   "mw": "138.16"
  },
@@ -3475,6 +4467,8 @@
   "smiles": "CCC1=CC=C(C=C1)O",
   "connectivity_smiles": "CCC1=CC=C(C=C1)O",
   "inchikey": "HXDOZKJGKXYMEW-UHFFFAOYSA-N",
+  "iupac_name": "4-ethylphenol",
+  "common_name": "4-Ethylphenol",
   "formula": "C8H10O",
   "mw": "122.16"
  },
@@ -3482,6 +4476,8 @@
   "smiles": "CCCCCCC(C)O",
   "connectivity_smiles": "CCCCCCC(C)O",
   "inchikey": "SJWFXCIHNDVPSH-UHFFFAOYSA-N",
+  "iupac_name": "octan-2-ol",
+  "common_name": "2-Octanol",
   "formula": "C8H18O",
   "mw": "130.23"
  },
@@ -3489,6 +4485,8 @@
   "smiles": "CCCCCCCCCCCCCC(=O)OC",
   "connectivity_smiles": "CCCCCCCCCCCCCC(=O)OC",
   "inchikey": "ZAZKJZBWRNNLDS-UHFFFAOYSA-N",
+  "iupac_name": "methyl tetradecanoate",
+  "common_name": "Methyl Myristate",
   "formula": "C15H30O2",
   "mw": "242.40"
  },
@@ -3496,6 +4494,8 @@
   "smiles": "C1C=CCC2C1C3CC=CCC3(O2)C=O",
   "connectivity_smiles": "C1C=CCC2C1C3CC=CCC3(O2)C=O",
   "inchikey": "XNYGOEGATLFFOX-UHFFFAOYSA-N",
+  "iupac_name": "4,5a,6,9,9a,9b-hexahydro-1H-dibenzofuran-4a-carbaldehyde",
+  "common_name": "2,3:4,5-Di(2-butenyl)tetrahydrofurfural",
   "formula": "C13H16O2",
   "mw": "204.26"
  },
@@ -3503,6 +4503,8 @@
   "smiles": "CC1(C2CCC(=C)C1C2)C",
   "connectivity_smiles": "CC1(C2CCC(=C)C1C2)C",
   "inchikey": "WTARULDDTDQWMU-UHFFFAOYSA-N",
+  "iupac_name": "6,6-dimethyl-2-methylidenebicyclo[3.1.1]heptane",
+  "common_name": "Beta-Pinene",
   "formula": "C10H16",
   "mw": "136.23"
  },
@@ -3510,6 +4512,8 @@
   "smiles": "CCCCCCOC(=O)C",
   "connectivity_smiles": "CCCCCCOC(=O)C",
   "inchikey": "AOGQPLXWSUTHQB-UHFFFAOYSA-N",
+  "iupac_name": "hexyl acetate",
+  "common_name": "Hexyl Acetate",
   "formula": "C8H16O2",
   "mw": "144.21"
  },
@@ -3517,6 +4521,8 @@
   "smiles": "C[C@@H]1CC[C@H]([C@@H](C1)O)C(C)C",
   "connectivity_smiles": "CC1CCC(C(C1)O)C(C)C",
   "inchikey": "NOOLISFMXDJSKH-KXUCPTDWSA-N",
+  "iupac_name": "(1R,2S,5R)-5-methyl-2-propan-2-ylcyclohexan-1-ol",
+  "common_name": "(-)-Menthol",
   "formula": "C10H20O",
   "mw": "156.26"
  },
@@ -3524,6 +4530,8 @@
   "smiles": "COC1=C(C=CC(=C1)[C@@H]2[C@H]3CO[C@@H]([C@H]3CO2)C4=CC5=C(C=C4)OCO5)O",
   "connectivity_smiles": "COC1=C(C=CC(=C1)C2C3COC(C3CO2)C4=CC5=C(C=C4)OCO5)O",
   "inchikey": "VBIRCRCPHNUJAS-AFHBHXEDSA-N",
+  "iupac_name": "4-[(3S,3aR,6S,6aR)-3-(1,3-benzodioxol-5-yl)-1,3,3a,4,6,6a-hexahydrofuro[3,4-c]furan-6-yl]-2-methoxyphenol",
+  "common_name": "Piperitol",
   "formula": "C20H20O6",
   "mw": "356.4"
  },
@@ -3531,6 +4539,8 @@
   "smiles": "C(C(=O)OC(=O)CCl)Cl",
   "connectivity_smiles": "C(C(=O)OC(=O)CCl)Cl",
   "inchikey": "PNVPNXKRAUBJGW-UHFFFAOYSA-N",
+  "iupac_name": "(2-chloroacetyl) 2-chloroacetate",
+  "common_name": "Chloroacetic anhydride",
   "formula": "C4H4Cl2O3",
   "mw": "170.98"
  },
@@ -3538,6 +4548,8 @@
   "smiles": "CCC(=O)OC",
   "connectivity_smiles": "CCC(=O)OC",
   "inchikey": "RJUFJBKOKNCXHH-UHFFFAOYSA-N",
+  "iupac_name": "methyl propanoate",
+  "common_name": "Methyl propionate",
   "formula": "C4H8O2",
   "mw": "88.11"
  },
@@ -3545,6 +4557,8 @@
   "smiles": "CC1=CCC(=C(C)C)CC1",
   "connectivity_smiles": "CC1=CCC(=C(C)C)CC1",
   "inchikey": "MOYAFQVGZZPNRA-UHFFFAOYSA-N",
+  "iupac_name": "1-methyl-4-propan-2-ylidenecyclohexene",
+  "common_name": "Terpinolene",
   "formula": "C10H16",
   "mw": "136.23"
  },
@@ -3552,6 +4566,8 @@
   "smiles": "C/C=C\\C",
   "connectivity_smiles": "CC=CC",
   "inchikey": "IAQRGUVFOMOMEM-ARJAWSKDSA-N",
+  "iupac_name": "(Z)-but-2-ene",
+  "common_name": "cis-2-BUTENE",
   "formula": "C4H8",
   "mw": "56.11"
  },
@@ -3559,6 +4575,8 @@
   "smiles": "CC(C(=O)O)Cl",
   "connectivity_smiles": "CC(C(=O)O)Cl",
   "inchikey": "GAWAYYRQGQZKCR-UHFFFAOYSA-N",
+  "iupac_name": "2-chloropropanoic acid",
+  "common_name": "2-Chloropropionic acid",
   "formula": "C3H5ClO2",
   "mw": "108.52"
  },
@@ -3566,6 +4584,8 @@
   "smiles": "CCCC(=O)OC",
   "connectivity_smiles": "CCCC(=O)OC",
   "inchikey": "UUIQMZJEGPQKFD-UHFFFAOYSA-N",
+  "iupac_name": "methyl butanoate",
+  "common_name": "Methyl butyrate",
   "formula": "C5H10O2",
   "mw": "102.13"
  },
@@ -3573,6 +4593,8 @@
   "smiles": "C/C=C/C",
   "connectivity_smiles": "CC=CC",
   "inchikey": "IAQRGUVFOMOMEM-ONEGZZNKSA-N",
+  "iupac_name": "(E)-but-2-ene",
+  "common_name": "trans-2-BUTENE",
   "formula": "C4H8",
   "mw": "56.11"
  },
@@ -3580,6 +4602,8 @@
   "smiles": "CC1=CSC=N1",
   "connectivity_smiles": "CC1=CSC=N1",
   "inchikey": "QMHIMXFNBOYPND-UHFFFAOYSA-N",
+  "iupac_name": "4-methyl-1,3-thiazole",
+  "common_name": "4-Methylthiazole",
   "formula": "C4H5NS",
   "mw": "99.16"
  },
@@ -3587,6 +4611,8 @@
   "smiles": "CCCCCCC(C)OC(=O)CCCCC(=O)OC(C)CCCCCC",
   "connectivity_smiles": "CCCCCCC(C)OC(=O)CCCCC(=O)OC(C)CCCCCC",
   "inchikey": "RTUMJAGKSDIHOW-UHFFFAOYSA-N",
+  "iupac_name": "dioctan-2-yl hexanedioate",
+  "common_name": "Diisooctyl Adipate",
   "formula": "C22H42O4",
   "mw": "370.6"
  },
@@ -3594,6 +4620,8 @@
   "smiles": "CC(C)C1=CC2=CC=CC=C2C=C1",
   "connectivity_smiles": "CC(C)C1=CC2=CC=CC=C2C=C1",
   "inchikey": "TVYVQNHYIHAJTD-UHFFFAOYSA-N",
+  "iupac_name": "2-propan-2-ylnaphthalene",
+  "common_name": "2-Isopropylnaphthalene",
   "formula": "C13H14",
   "mw": "170.25"
  },
@@ -3601,6 +4629,8 @@
   "smiles": "C1(=O)NC(=O)N(C(=O)N1Cl)Cl",
   "connectivity_smiles": "C1(=O)NC(=O)N(C(=O)N1Cl)Cl",
   "inchikey": "CEJLBZWIKQJOAT-UHFFFAOYSA-N",
+  "iupac_name": "1,3-dichloro-1,3,5-triazinane-2,4,6-trione",
+  "common_name": "Dichloroisocyanurate",
   "formula": "C3HCl2N3O3",
   "mw": "197.96"
  },
@@ -3608,6 +4638,8 @@
   "smiles": "C(C=CCCl)Cl",
   "connectivity_smiles": "C(C=CCCl)Cl",
   "inchikey": "FQDIANVAWVHZIR-UHFFFAOYSA-N",
+  "iupac_name": "1,4-dichlorobut-2-ene",
+  "common_name": "1,4-Dichloro-2-butene",
   "formula": "C4H6Cl2",
   "mw": "124.99"
  },
@@ -3615,6 +4647,8 @@
   "smiles": "CCCC(=O)Cl",
   "connectivity_smiles": "CCCC(=O)Cl",
   "inchikey": "DVECBJCOGJRVPX-UHFFFAOYSA-N",
+  "iupac_name": "butanoyl chloride",
+  "common_name": "Butyryl chloride",
   "formula": "C4H7ClO",
   "mw": "106.55"
  },
@@ -3622,6 +4656,8 @@
   "smiles": "CCCCCCC=O",
   "connectivity_smiles": "CCCCCCC=O",
   "inchikey": "FXHGMKSSBGDXIY-UHFFFAOYSA-N",
+  "iupac_name": "heptanal",
+  "common_name": "Heptanal",
   "formula": "C7H14O",
   "mw": "114.19"
  },
@@ -3629,6 +4665,8 @@
   "smiles": "CC(C)(C)C(=NOC(=O)NC)CSC",
   "connectivity_smiles": "CC(C)(C)C(=NOC(=O)NC)CSC",
   "inchikey": "FZSVSABTBYGOQH-UHFFFAOYSA-N",
+  "iupac_name": "[(3,3-dimethyl-1-methylsulfanylbutan-2-ylidene)amino] N-methylcarbamate",
+  "common_name": "Thiofanox",
   "formula": "C9H18N2O2S",
   "mw": "218.32"
  },
@@ -3636,6 +4674,8 @@
   "smiles": "C#CCO",
   "connectivity_smiles": "C#CCO",
   "inchikey": "TVDSBUOJIPERQY-UHFFFAOYSA-N",
+  "iupac_name": "prop-2-yn-1-ol",
+  "common_name": "Propargyl alcohol",
   "formula": "C3H4O",
   "mw": "56.06"
  },
@@ -3643,6 +4683,8 @@
   "smiles": "C1=CC(=C(C=C1C(F)(F)F)Cl)Cl",
   "connectivity_smiles": "C1=CC(=C(C=C1C(F)(F)F)Cl)Cl",
   "inchikey": "XILPLWOGHPSJBK-UHFFFAOYSA-N",
+  "iupac_name": "1,2-dichloro-4-(trifluoromethyl)benzene",
+  "common_name": "3,4-Dichlorobenzotrifluoride",
   "formula": "C7H3Cl2F3",
   "mw": "215.00"
  },
@@ -3650,6 +4692,8 @@
   "smiles": "CC(C)NC1=CC=CC=C1",
   "connectivity_smiles": "CC(C)NC1=CC=CC=C1",
   "inchikey": "FRCFWPVMFJMNDP-UHFFFAOYSA-N",
+  "iupac_name": "N-propan-2-ylaniline",
+  "common_name": "N-Isopropylaniline",
   "formula": "C9H13N",
   "mw": "135.21"
  },
@@ -3657,6 +4701,8 @@
   "smiles": "C(CCCN=C=O)CCN=C=O",
   "connectivity_smiles": "C(CCCN=C=O)CCN=C=O",
   "inchikey": "RRAMGCGOFNQTLD-UHFFFAOYSA-N",
+  "iupac_name": "1,6-diisocyanatohexane",
+  "common_name": "Hexamethylene diisocyanate",
   "formula": "C8H12N2O2",
   "mw": "168.19"
  },
@@ -3664,6 +4710,8 @@
   "smiles": "CC(C)CCCCCCCOP(=S)(OCCCCCCCC(C)C)[S-].CC(C)CCCCCCCOP(=S)(OCCCCCCCC(C)C)[S-].[Zn+2]",
   "connectivity_smiles": "CC(C)CCCCCCCOP(=S)(OCCCCCCCC(C)C)[S-].CC(C)CCCCCCCOP(=S)(OCCCCCCCC(C)C)[S-].[Zn+2]",
   "inchikey": "JTRDOXTXNZMWMG-UHFFFAOYSA-L",
+  "iupac_name": "zinc bis(bis(8-methylnonoxy)-sulfanylidene-sulfido-lambda5-phosphane)",
+  "common_name": "Zinc isodecyl phosphorodithioate",
   "formula": "C40H84O4P2S4Zn",
   "mw": "884.7"
  },
@@ -3671,6 +4719,8 @@
   "smiles": "CCCC(C)OC(=O)C",
   "connectivity_smiles": "CCCC(C)OC(=O)C",
   "inchikey": "GQKZRWSUJHVIPE-UHFFFAOYSA-N",
+  "iupac_name": "pentan-2-yl acetate",
+  "common_name": "2-Pentyl acetate",
   "formula": "C7H14O2",
   "mw": "130.18"
  },
@@ -3678,6 +4728,8 @@
   "smiles": "CC(CCl)Cl.C(C=CCl)Cl",
   "connectivity_smiles": "CC(CCl)Cl.C(C=CCl)Cl",
   "inchikey": "FLWMCWWTXIAPAH-UHFFFAOYSA-N",
+  "iupac_name": "1,2-dichloropropane;1,3-dichloroprop-1-ene",
+  "common_name": "1-Propene, 1,3-dichloro-, mixt. with 1,2-dichloropropane",
   "formula": "C6H10Cl4",
   "mw": "223.9"
  },
@@ -3685,6 +4737,8 @@
   "smiles": "C(C#N)Cl",
   "connectivity_smiles": "C(C#N)Cl",
   "inchikey": "RENMDAKOXSCIGH-UHFFFAOYSA-N",
+  "iupac_name": "2-chloroacetonitrile",
+  "common_name": "Chloroacetonitrile",
   "formula": "C2H2ClN",
   "mw": "75.50"
  },
@@ -3692,6 +4746,8 @@
   "smiles": "CCN=C=O",
   "connectivity_smiles": "CCN=C=O",
   "inchikey": "WUDNUHPRLBTKOJ-UHFFFAOYSA-N",
+  "iupac_name": "isocyanatoethane",
+  "common_name": "Ethyl isocyanate",
   "formula": "C3H5NO",
   "mw": "71.08"
  },
@@ -3699,6 +4755,8 @@
   "smiles": "C(#N)I",
   "connectivity_smiles": "C(#N)I",
   "inchikey": "WPBXOELOQKLBDF-UHFFFAOYSA-N",
+  "iupac_name": "carbononitridic iodide",
+  "common_name": "Cyanogen iodide",
   "formula": "CIN",
   "mw": "152.922"
  },
@@ -3706,6 +4764,8 @@
   "smiles": "CP(=O)(Cl)Cl",
   "connectivity_smiles": "CP(=O)(Cl)Cl",
   "inchikey": "SCLFRABIDYGTAZ-UHFFFAOYSA-N",
+  "iupac_name": "dichlorophosphorylmethane",
+  "common_name": "Methyl phosphonic dichloride",
   "formula": "CH3Cl2OP",
   "mw": "132.91"
  },
@@ -3713,6 +4773,8 @@
   "smiles": "CC1(CC(CC(C1)(C)CN=C=O)N=C=O)C",
   "connectivity_smiles": "CC1(CC(CC(C1)(C)CN=C=O)N=C=O)C",
   "inchikey": "NIMLQBUJDJZYEJ-UHFFFAOYSA-N",
+  "iupac_name": "5-isocyanato-1-(isocyanatomethyl)-1,3,3-trimethylcyclohexane",
+  "common_name": "Isophorone diisocyanate",
   "formula": "C12H18N2O2",
   "mw": "222.28"
  },
@@ -3720,6 +4782,8 @@
   "smiles": "[C]=O.[C]=O.[C]=O.[C]=O.[C]=O.[Fe]",
   "connectivity_smiles": "[C]=O.[C]=O.[C]=O.[C]=O.[C]=O.[Fe]",
   "inchikey": "FYOFOKCECDGJBF-UHFFFAOYSA-N",
+  "iupac_name": "formaldehyde;iron",
+  "common_name": "Iron pentacarbonyl",
   "formula": "C5FeO5",
   "mw": "195.90"
  },
@@ -3727,6 +4791,8 @@
   "smiles": "C1=CC=C(C=C1)[Si](Cl)(Cl)Cl.Cl.Cl",
   "connectivity_smiles": "C1=CC=C(C=C1)[Si](Cl)(Cl)Cl.Cl.Cl",
   "inchikey": "QFLNHKMRCRBGOY-UHFFFAOYSA-N",
+  "iupac_name": "trichloro(phenyl)silane;dihydrochloride",
+  "common_name": "Trichloro(dichlorophenyl)silane",
   "formula": "C6H7Cl5Si",
   "mw": "284.5"
  },
@@ -3734,6 +4800,8 @@
   "smiles": "CCOP(=O)(C#N)N(C)C",
   "connectivity_smiles": "CCOP(=O)(C#N)N(C)C",
   "inchikey": "PJVJTCIRVMBVIA-UHFFFAOYSA-N",
+  "iupac_name": "[dimethylamino(ethoxy)phosphoryl]formonitrile",
+  "common_name": "Tabun",
   "formula": "C5H11N2O2P",
   "mw": "162.13"
  },
@@ -3741,6 +4809,8 @@
   "smiles": "CC(C)OP(=O)(C)F",
   "connectivity_smiles": "CC(C)OP(=O)(C)F",
   "inchikey": "DYAHQFWOVKZOOW-UHFFFAOYSA-N",
+  "iupac_name": "2-[fluoro(methyl)phosphoryl]oxypropane",
+  "common_name": "Sarin",
   "formula": "C4H10FO2P",
   "mw": "140.09"
  },
@@ -3748,6 +4818,8 @@
   "smiles": "C(=C[As](Cl)Cl)Cl",
   "connectivity_smiles": "C(=C[As](Cl)Cl)Cl",
   "inchikey": "GIKLTQKNOXNBNY-UHFFFAOYSA-N",
+  "iupac_name": "dichloro(2-chloroethenyl)arsane",
+  "common_name": "Lewisite",
   "formula": "C2H2AsCl3",
   "mw": "207.31"
  },
@@ -3755,6 +4827,8 @@
   "smiles": "C1=CC=C2C(=C1)N=C(S2)SCSC#N",
   "connectivity_smiles": "C1=CC=C2C(=C1)N=C(S2)SCSC#N",
   "inchikey": "TUBQDCKAWGHZPF-UHFFFAOYSA-N",
+  "iupac_name": "1,3-benzothiazol-2-ylsulfanylmethyl thiocyanate",
+  "common_name": "2-(Thiocyanomethylthio)benzothiazole",
   "formula": "C9H6N2S3",
   "mw": "238.4"
  },
@@ -3762,6 +4836,8 @@
   "smiles": "CC1=CC(=C(C=C1)N)C.CC1=CC(=C(C=C1)C)N.CC1=C(C(=CC=C1)N)C.CC1=C(C(=CC=C1)C)N.CC1=C(C=C(C=C1)N)C.CC1=CC(=CC(=C1)N)C",
   "connectivity_smiles": "CC1=CC(=C(C=C1)N)C.CC1=CC(=C(C=C1)C)N.CC1=C(C(=CC=C1)N)C.CC1=C(C(=CC=C1)C)N.CC1=C(C=C(C=C1)N)C.CC1=CC(=CC(=C1)N)C",
   "inchikey": "CDULGHZNHURECF-UHFFFAOYSA-N",
+  "iupac_name": "2,3-dimethylaniline;2,4-dimethylaniline;2,5-dimethylaniline;2,6-dimethylaniline;3,4-dimethylaniline;3,5-dimethylaniline",
+  "common_name": "Xylidine",
   "formula": "C48H66N6",
   "mw": "727.1"
  },
@@ -3769,6 +4845,8 @@
   "smiles": "C1CCC(CC1)(C2=CC=CC=C2)N3CCCCC3",
   "connectivity_smiles": "C1CCC(CC1)(C2=CC=CC=C2)N3CCCCC3",
   "inchikey": "JTJMJGYZQZDUJJ-UHFFFAOYSA-N",
+  "iupac_name": "1-(1-phenylcyclohexyl)piperidine",
+  "common_name": "Phencyclidine",
   "formula": "C17H25N",
   "mw": "243.4"
  },
@@ -3776,6 +4854,8 @@
   "smiles": "C[C@@H]([C@@H](C1=CC=CC=C1)O)N",
   "connectivity_smiles": "CC(C(C1=CC=CC=C1)O)N",
   "inchikey": "DLNKOYKMWOXYQA-CBAPKCEASA-N",
+  "iupac_name": "(1R,2S)-2-amino-1-phenylpropan-1-ol",
+  "common_name": "Phenylpropanolamine",
   "formula": "C9H13NO",
   "mw": "151.21"
  },
@@ -3783,6 +4863,8 @@
   "smiles": "CCC1=CC=CC(=C1N(COCC)C(=O)CCl)C",
   "connectivity_smiles": "CCC1=CC=CC(=C1N(COCC)C(=O)CCl)C",
   "inchikey": "VTNQPKFIQCLBDU-UHFFFAOYSA-N",
+  "iupac_name": "2-chloro-N-(ethoxymethyl)-N-(2-ethyl-6-methylphenyl)acetamide",
+  "common_name": "Acetochlor",
   "formula": "C14H20ClNO2",
   "mw": "269.77"
  },
@@ -3790,6 +4872,8 @@
   "smiles": "C1=CC(=C(C=C1C(F)(F)F)Cl)OC2=CC(=C(C=C2)[N+](=O)[O-])C(=O)[O-].[Na+]",
   "connectivity_smiles": "C1=CC(=C(C=C1C(F)(F)F)Cl)OC2=CC(=C(C=C2)[N+](=O)[O-])C(=O)[O-].[Na+]",
   "inchikey": "RVULBHWZFCBODE-UHFFFAOYSA-M",
+  "iupac_name": "sodium 5-[2-chloro-4-(trifluoromethyl)phenoxy]-2-nitrobenzoate",
+  "common_name": "Acifluorfen sodium",
   "formula": "C14H6ClF3NNaO5",
   "mw": "383.64"
  },
@@ -3797,6 +4881,8 @@
   "smiles": "COC(=O)C1=C(C=CC(=C1)OC2=C(C=C(C=C2)Cl)Cl)[N+](=O)[O-]",
   "connectivity_smiles": "COC(=O)C1=C(C=CC(=C1)OC2=C(C=C(C=C2)Cl)Cl)[N+](=O)[O-]",
   "inchikey": "SUSRORUBZHMPCO-UHFFFAOYSA-N",
+  "iupac_name": "methyl 5-(2,4-dichlorophenoxy)-2-nitrobenzoate",
+  "common_name": "Bifenox",
   "formula": "C14H9Cl2NO5",
   "mw": "342.1"
  },
@@ -3804,6 +4890,8 @@
   "smiles": "CC1=C(C=CC=C1C2=CC=CC=C2)COC(=O)[C@@H]3[C@@H](C3(C)C)/C=C(/C(F)(F)F)\\Cl",
   "connectivity_smiles": "CC1=C(C=CC=C1C2=CC=CC=C2)COC(=O)C3C(C3(C)C)C=C(C(F)(F)F)Cl",
   "inchikey": "OMFRMAHOUUJSGP-IRHGGOMRSA-N",
+  "iupac_name": "trans-(2-methyl-3-phenylphenyl)methyl (1R,3R)-3-[(Z)-2-chloro-3,3,3-trifluoroprop-1-enyl]-2,2-dimethylcyclopropane-1-carboxylate",
+  "common_name": "Bifenthrin",
   "formula": "C23H22ClF3O2",
   "mw": "422.9"
  },
@@ -3811,6 +4899,8 @@
   "smiles": "CC1(C(C1C(=O)OC(C#N)C2=CC(=C(C=C2)F)OC3=CC=CC=C3)C=C(Cl)Cl)C",
   "connectivity_smiles": "CC1(C(C1C(=O)OC(C#N)C2=CC(=C(C=C2)F)OC3=CC=CC=C3)C=C(Cl)Cl)C",
   "inchikey": "QQODLKZGRKWIFG-UHFFFAOYSA-N",
+  "iupac_name": "[cyano-(4-fluoro-3-phenoxyphenyl)methyl] 3-(2,2-dichloroethenyl)-2,2-dimethylcyclopropane-1-carboxylate",
+  "common_name": "Cyfluthrin",
   "formula": "C22H18Cl2FNO3",
   "mw": "434.3"
  },
@@ -3818,6 +4908,8 @@
   "smiles": "CP(=O)(CCC(C(=O)[O-])N)O.[NH4+]",
   "connectivity_smiles": "CP(=O)(CCC(C(=O)[O-])N)O.[NH4+]",
   "inchikey": "ZBMRKNMTMPPMMK-UHFFFAOYSA-N",
+  "iupac_name": "azanium 2-amino-4-[hydroxy(methyl)phosphoryl]butanoate",
+  "common_name": "Glufosinate-Ammonium",
   "formula": "C5H15N2O4P",
   "mw": "198.16"
  },
@@ -3825,6 +4917,8 @@
   "smiles": "CC(C)C1(C(=O)NC(=N1)C2=C(C=CC=N2)C(=O)O)C",
   "connectivity_smiles": "CC(C)C1(C(=O)NC(=N1)C2=C(C=CC=N2)C(=O)O)C",
   "inchikey": "CLQMBPJKHLGMQK-UHFFFAOYSA-N",
+  "iupac_name": "2-(4-methyl-5-oxo-4-propan-2-yl-1H-imidazol-2-yl)pyridine-3-carboxylic acid",
+  "common_name": "Imazapyr",
   "formula": "C13H15N3O3",
   "mw": "261.28"
  },
@@ -3832,6 +4926,8 @@
   "smiles": "CC(C)C1(C(=O)NC(=N1)C2=NC3=CC=CC=C3C=C2C(=O)O)C",
   "connectivity_smiles": "CC(C)C1(C(=O)NC(=N1)C2=NC3=CC=CC=C3C=C2C(=O)O)C",
   "inchikey": "CABMTIJINOIHOD-UHFFFAOYSA-N",
+  "iupac_name": "2-(4-methyl-5-oxo-4-propan-2-yl-1H-imidazol-2-yl)quinoline-3-carboxylic acid",
+  "common_name": "Imazaquin",
   "formula": "C17H17N3O3",
   "mw": "311.33"
  },
@@ -3839,6 +4935,8 @@
   "smiles": "CCC(C)(CC)C1=NOC(=C1)NC(=O)C2=C(C=CC=C2OC)OC",
   "connectivity_smiles": "CCC(C)(CC)C1=NOC(=C1)NC(=O)C2=C(C=CC=C2OC)OC",
   "inchikey": "PMHURSZHKKJGBM-UHFFFAOYSA-N",
+  "iupac_name": "2,6-dimethoxy-N-[3-(3-methylpentan-3-yl)-1,2-oxazol-5-yl]benzamide",
+  "common_name": "Isoxaben",
   "formula": "C18H24N2O4",
   "mw": "332.4"
  },
@@ -3846,6 +4944,8 @@
   "smiles": "CCC(CC)NC1=C(C=C(C(=C1[N+](=O)[O-])C)C)[N+](=O)[O-]",
   "connectivity_smiles": "CCC(CC)NC1=C(C=C(C(=C1[N+](=O)[O-])C)C)[N+](=O)[O-]",
   "inchikey": "CHIFOSRWCNZCFN-UHFFFAOYSA-N",
+  "iupac_name": "3,4-dimethyl-2,6-dinitro-N-pentan-3-ylaniline",
+  "common_name": "Pendimethalin",
   "formula": "C13H19N3O4",
   "mw": "281.31"
  },
@@ -3853,6 +4953,8 @@
   "smiles": "CC1(C(=O)N(C(=O)O1)C2=CC(=CC(=C2)Cl)Cl)C=C",
   "connectivity_smiles": "CC1(C(=O)N(C(=O)O1)C2=CC(=CC(=C2)Cl)Cl)C=C",
   "inchikey": "FSCWZHGZWWDELK-UHFFFAOYSA-N",
+  "iupac_name": "3-(3,5-dichlorophenyl)-5-ethenyl-5-methyl-1,3-oxazolidine-2,4-dione",
+  "common_name": "Vinclozolin",
   "formula": "C12H9Cl2NO3",
   "mw": "286.11"
  },
@@ -3860,6 +4962,8 @@
   "smiles": "CC(C(C)(C)C)OP(=O)(C)F",
   "connectivity_smiles": "CC(C(C)(C)C)OP(=O)(C)F",
   "inchikey": "GRXKLBBBQUKJJZ-UHFFFAOYSA-N",
+  "iupac_name": "3-[fluoro(methyl)phosphoryl]oxy-2,2-dimethylbutane",
+  "common_name": "Soman",
   "formula": "C7H16FO2P",
   "mw": "182.17"
  },
@@ -3867,6 +4971,8 @@
   "smiles": "CC(CCC=C(C)C)CCO",
   "connectivity_smiles": "CC(CCC=C(C)C)CCO",
   "inchikey": "QMVPMAAFGQKVCJ-UHFFFAOYSA-N",
+  "iupac_name": "3,7-dimethyloct-6-en-1-ol",
+  "common_name": "Citronellol",
   "formula": "C10H20O",
   "mw": "156.26"
  },
@@ -3874,6 +4980,8 @@
   "smiles": "C1=CC=C(C=C1)C(=O)C2=CC=CC=C2",
   "connectivity_smiles": "C1=CC=C(C=C1)C(=O)C2=CC=CC=C2",
   "inchikey": "RWCCWEUUXYIKHB-UHFFFAOYSA-N",
+  "iupac_name": "diphenylmethanone",
+  "common_name": "Benzophenone",
   "formula": "C13H10O",
   "mw": "182.22"
  },
@@ -3881,6 +4989,8 @@
   "smiles": "C1N2CN3CN1C[N+](C2)(C3)CC=CCl.[Cl-]",
   "connectivity_smiles": "C1N2CN3CN1C[N+](C2)(C3)CC=CCl.[Cl-]",
   "inchikey": "UKHVLWKBNNSRRR-UHFFFAOYSA-M",
+  "iupac_name": "1-(3-chloroprop-2-enyl)-3,5,7-triaza-1-azoniatricyclo[3.3.1.13,7]decane chloride",
+  "common_name": "Quaternium 15",
   "formula": "C9H16Cl2N4",
   "mw": "251.15"
  },
@@ -3888,6 +4998,8 @@
   "smiles": "CCN(CC)C(=O)SCC1=CC=C(C=C1)Cl",
   "connectivity_smiles": "CCN(CC)C(=O)SCC1=CC=C(C=C1)Cl",
   "inchikey": "QHTQREMOGMZHJV-UHFFFAOYSA-N",
+  "iupac_name": "S-[(4-chlorophenyl)methyl] N,N-diethylcarbamothioate",
+  "common_name": "Thiobencarb",
   "formula": "C12H16ClNOS",
   "mw": "257.78"
  },
@@ -3895,6 +5007,8 @@
   "smiles": "CC1=NC(=NC(=N1)OC)NC(=O)NS(=O)(=O)C2=CC=CC=C2C(=O)OC",
   "connectivity_smiles": "CC1=NC(=NC(=N1)OC)NC(=O)NS(=O)(=O)C2=CC=CC=C2C(=O)OC",
   "inchikey": "RSMUVYRMZCOLBH-UHFFFAOYSA-N",
+  "iupac_name": "methyl 2-[(4-methoxy-6-methyl-1,3,5-triazin-2-yl)carbamoylsulfamoyl]benzoate",
+  "common_name": "Metsulfuron-methyl",
   "formula": "C14H15N5O6S",
   "mw": "381.37"
  },
@@ -3902,6 +5016,8 @@
   "smiles": "CC1=NC(=NC(=N1)OC)N(C)C(=O)NS(=O)(=O)C2=CC=CC=C2C(=O)OC",
   "connectivity_smiles": "CC1=NC(=NC(=N1)OC)N(C)C(=O)NS(=O)(=O)C2=CC=CC=C2C(=O)OC",
   "inchikey": "VLCQZHSMCYCDJL-UHFFFAOYSA-N",
+  "iupac_name": "methyl 2-[[(4-methoxy-6-methyl-1,3,5-triazin-2-yl)-methylcarbamoyl]sulfamoyl]benzoate",
+  "common_name": "Tribenuron-methyl",
   "formula": "C15H17N5O6S",
   "mw": "395.4"
  },
@@ -3909,6 +5025,8 @@
   "smiles": "CC(C)(C)C1=NN=C(S1)N(C)C(=O)NC",
   "connectivity_smiles": "CC(C)(C)C1=NN=C(S1)N(C)C(=O)NC",
   "inchikey": "HBPDKDSFLXWOAE-UHFFFAOYSA-N",
+  "iupac_name": "1-(5-tert-butyl-1,3,4-thiadiazol-2-yl)-1,3-dimethylurea",
+  "common_name": "Tebuthiuron",
   "formula": "C9H16N4OS",
   "mw": "228.32"
  },
@@ -3916,6 +5034,8 @@
   "smiles": "CCCCOCN(C1=C(C=CC=C1CC)CC)C(=O)CCl",
   "connectivity_smiles": "CCCCOCN(C1=C(C=CC=C1CC)CC)C(=O)CCl",
   "inchikey": "HKPHPIREJKHECO-UHFFFAOYSA-N",
+  "iupac_name": "N-(butoxymethyl)-2-chloro-N-(2,6-diethylphenyl)acetamide",
+  "common_name": "Butachlor",
   "formula": "C17H26ClNO2",
   "mw": "311.8"
  },
@@ -3923,6 +5043,8 @@
   "smiles": "C(C(=O)O)(Cl)Cl",
   "connectivity_smiles": "C(C(=O)O)(Cl)Cl",
   "inchikey": "JXTHNDFMNIQAHM-UHFFFAOYSA-N",
+  "iupac_name": "2,2-dichloroacetic acid",
+  "common_name": "Dichloroacetic Acid",
   "formula": "C2H2Cl2O2",
   "mw": "128.94"
  },
@@ -3930,6 +5052,8 @@
   "smiles": "CC(C)OC(=O)/C=C(\\C)/C=C/CC(C)CCCC(C)(C)OC",
   "connectivity_smiles": "CC(C)OC(=O)C=C(C)C=CCC(C)CCCC(C)(C)OC",
   "inchikey": "NFGXHKASABOEEW-LDRANXPESA-N",
+  "iupac_name": "propan-2-yl (2E,4E)-11-methoxy-3,7,11-trimethyldodeca-2,4-dienoate",
+  "common_name": "Methoprene",
   "formula": "C19H34O3",
   "mw": "310.5"
  },
@@ -3937,6 +5061,8 @@
   "smiles": "C(#N)N=C([S-])[S-].[Na+].[Na+]",
   "connectivity_smiles": "C(#N)N=C([S-])[S-].[Na+].[Na+]",
   "inchikey": "AZDIXEXNLJMBJO-UHFFFAOYSA-L",
+  "iupac_name": "disodium;cyanoiminomethanedithiolate",
+  "common_name": "Disodium cyanodithioimidocarbonate",
   "formula": "C2N2Na2S2",
   "mw": "162.15"
  },
@@ -3944,6 +5070,8 @@
   "smiles": "CC(C)OC(=O)NNC1=C(C=CC(=C1)C2=CC=CC=C2)OC",
   "connectivity_smiles": "CC(C)OC(=O)NNC1=C(C=CC(=C1)C2=CC=CC=C2)OC",
   "inchikey": "VHLKTXFWDRXILV-UHFFFAOYSA-N",
+  "iupac_name": "propan-2-yl N-(2-methoxy-5-phenylanilino)carbamate",
+  "common_name": "Bifenazate",
   "formula": "C17H20N2O3",
   "mw": "300.35"
  },
@@ -3951,6 +5079,8 @@
   "smiles": "CCOC1=NC(=CC2=NC(=NN21)S(=O)(=O)NC3=C(C=CC=C3Cl)C(=O)OC)F",
   "connectivity_smiles": "CCOC1=NC(=CC2=NC(=NN21)S(=O)(=O)NC3=C(C=CC=C3Cl)C(=O)OC)F",
   "inchikey": "BIKACRYIQSLICJ-UHFFFAOYSA-N",
+  "iupac_name": "methyl 3-chloro-2-[(5-ethoxy-7-fluoro-[1,2,4]triazolo[1,5-c]pyrimidin-2-yl)sulfonylamino]benzoate",
+  "common_name": "Cloransulam-Methyl",
   "formula": "C15H13ClFN5O5S",
   "mw": "429.8"
  },
@@ -3958,6 +5088,8 @@
   "smiles": "CC1CCCCN1CCCOC(=O)C2=CC(=C(C=C2)Cl)Cl",
   "connectivity_smiles": "CC1CCCCN1CCCOC(=O)C2=CC(=C(C=C2)Cl)Cl",
   "inchikey": "BZGLBXYQOMFXAU-UHFFFAOYSA-N",
+  "iupac_name": "3-(2-methylpiperidin-1-yl)propyl 3,4-dichlorobenzoate",
+  "common_name": "Piperalin",
   "formula": "C16H21Cl2NO2",
   "mw": "330.2"
  },
@@ -3965,6 +5097,8 @@
   "smiles": "C[N+]1(CCCCC1)C.[Cl-]",
   "connectivity_smiles": "C[N+]1(CCCCC1)C.[Cl-]",
   "inchikey": "VHOVSQVSAAQANU-UHFFFAOYSA-M",
+  "iupac_name": "1,1-dimethylpiperidin-1-ium chloride",
+  "common_name": "Mepiquat Chloride",
   "formula": "C7H16ClN",
   "mw": "149.66"
  },
@@ -3972,6 +5106,8 @@
   "smiles": "CC1=CC2=C(C(=C1)O)C(=O)C3=C(C2=O)C=C(C=C3O)O",
   "connectivity_smiles": "CC1=CC2=C(C(=C1)O)C(=O)C3=C(C2=O)C=C(C=C3O)O",
   "inchikey": "RHMXXJGYXNZAPX-UHFFFAOYSA-N",
+  "iupac_name": "1,3,8-trihydroxy-6-methylanthracene-9,10-dione",
+  "common_name": "Emodin",
   "formula": "C15H10O5",
   "mw": "270.24"
  },
@@ -3979,6 +5115,8 @@
   "smiles": "C(S(=O)(=O)C(Cl)(Cl)Cl)(Cl)(Cl)Cl",
   "connectivity_smiles": "C(S(=O)(=O)C(Cl)(Cl)Cl)(Cl)(Cl)Cl",
   "inchikey": "YBNLWIZAWPBUKQ-UHFFFAOYSA-N",
+  "iupac_name": "trichloro(trichloromethylsulfonyl)methane",
+  "common_name": "Bis(TRICHLOROMETHYL) SULFONE",
   "formula": "C2Cl6O2S",
   "mw": "300.8"
  },
@@ -3986,6 +5124,8 @@
   "smiles": "CCC(C)SP(=O)(OCC)SC(C)CC",
   "connectivity_smiles": "CCC(C)SP(=O)(OCC)SC(C)CC",
   "inchikey": "KXRPCFINVWWFHQ-UHFFFAOYSA-N",
+  "iupac_name": "2-[butan-2-ylsulfanyl(ethoxy)phosphoryl]sulfanylbutane",
+  "common_name": "Cadusafos",
   "formula": "C10H23O2PS2",
   "mw": "270.4"
  },
@@ -3993,6 +5133,8 @@
   "smiles": "C1=CC(=C(C=C1Cl)O)OC2=C(C=C(C=C2)Cl)Cl",
   "connectivity_smiles": "C1=CC(=C(C=C1Cl)O)OC2=C(C=C(C=C2)Cl)Cl",
   "inchikey": "XEFQLINVKFYRCS-UHFFFAOYSA-N",
+  "iupac_name": "5-chloro-2-(2,4-dichlorophenoxy)phenol",
+  "common_name": "Triclosan",
   "formula": "C12H7Cl3O2",
   "mw": "289.5"
  },
@@ -4000,6 +5142,8 @@
   "smiles": "CCCO[N+](=O)[O-]",
   "connectivity_smiles": "CCCO[N+](=O)[O-]",
   "inchikey": "JNTOKFNBDFMTIV-UHFFFAOYSA-N",
+  "iupac_name": "propyl nitrate",
+  "common_name": "n-PROPYL NITRATE",
   "formula": "C3H7NO3",
   "mw": "105.09"
  },
@@ -4007,6 +5151,8 @@
   "smiles": "COC(C(Cl)Cl)(F)F",
   "connectivity_smiles": "COC(C(Cl)Cl)(F)F",
   "inchikey": "RFKMCNOHBTXSMU-UHFFFAOYSA-N",
+  "iupac_name": "2,2-dichloro-1,1-difluoro-1-methoxyethane",
+  "common_name": "Methoxyflurane",
   "formula": "C3H4Cl2F2O",
   "mw": "164.96"
  },
@@ -4014,6 +5160,8 @@
   "smiles": "CCCCCCCCC=O",
   "connectivity_smiles": "CCCCCCCCC=O",
   "inchikey": "GYHFUZHODSMOHU-UHFFFAOYSA-N",
+  "iupac_name": "nonanal",
+  "common_name": "Nonanal",
   "formula": "C9H18O",
   "mw": "142.24"
  },
@@ -4021,6 +5169,8 @@
   "smiles": "[Li+].C(C(C(C(C(F)(F)S(=O)(=O)[O-])(F)F)(F)F)(F)F)(C(C(C(F)(F)F)(F)F)(F)F)(F)F",
   "connectivity_smiles": "[Li+].C(C(C(C(C(F)(F)S(=O)(=O)[O-])(F)F)(F)F)(F)F)(C(C(C(F)(F)F)(F)F)(F)F)(F)F",
   "inchikey": "XVCUGNWRDDNCRD-UHFFFAOYSA-M",
+  "iupac_name": "lithium 1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,8-heptadecafluorooctane-1-sulfonate",
+  "common_name": "Lithium (perfluorooctane)sulfonate",
   "formula": "C8F17LiO3S",
   "mw": "506.1"
  },
@@ -4028,6 +5178,8 @@
   "smiles": "C1=C(C=NC(=C1Cl)NC2=C(C=C(C(=C2[N+](=O)[O-])Cl)C(F)(F)F)[N+](=O)[O-])C(F)(F)F",
   "connectivity_smiles": "C1=C(C=NC(=C1Cl)NC2=C(C=C(C(=C2[N+](=O)[O-])Cl)C(F)(F)F)[N+](=O)[O-])C(F)(F)F",
   "inchikey": "UZCGKGPEKUCDTF-UHFFFAOYSA-N",
+  "iupac_name": "3-chloro-N-[3-chloro-2,6-dinitro-4-(trifluoromethyl)phenyl]-5-(trifluoromethyl)pyridin-2-amine",
+  "common_name": "Fluazinam",
   "formula": "C13H4Cl2F6N4O4",
   "mw": "465.09"
  },
@@ -4035,6 +5187,8 @@
   "smiles": "CCCCCCCCCCCCC1=C(C(=O)C2=CC=CC=C2C1=O)OC(=O)C",
   "connectivity_smiles": "CCCCCCCCCCCCC1=C(C(=O)C2=CC=CC=C2C1=O)OC(=O)C",
   "inchikey": "QDRXWCAVUNHOGA-UHFFFAOYSA-N",
+  "iupac_name": "(3-dodecyl-1,4-dioxonaphthalen-2-yl) acetate",
+  "common_name": "Acequinocyl",
   "formula": "C24H32O4",
   "mw": "384.5"
  },
@@ -4042,6 +5196,8 @@
   "smiles": "CCC1=NN(C(=C1Cl)C(=O)NCC2=CC=C(C=C2)C(C)(C)C)C",
   "connectivity_smiles": "CCC1=NN(C(=C1Cl)C(=O)NCC2=CC=C(C=C2)C(C)(C)C)C",
   "inchikey": "ZZYSLNWGKKDOML-UHFFFAOYSA-N",
+  "iupac_name": "N-[(4-tert-butylphenyl)methyl]-4-chloro-3-ethyl-1-methylpyrazole-5-carboxamide",
+  "common_name": "Tebufenpyrad",
   "formula": "C18H24ClN3O",
   "mw": "333.9"
  },
@@ -4049,6 +5205,8 @@
   "smiles": "CCCCOC(=O)[C@@H](C)OC1=CC=C(C=C1)OC2=C(C=C(C=C2)C#N)F",
   "connectivity_smiles": "CCCCOC(=O)C(C)OC1=CC=C(C=C1)OC2=C(C=C(C=C2)C#N)F",
   "inchikey": "TYIYMOAHACZAMQ-CQSZACIVSA-N",
+  "iupac_name": "butyl (2R)-2-[4-(4-cyano-2-fluorophenoxy)phenoxy]propanoate",
+  "common_name": "Cyhalofop-butyl",
   "formula": "C20H20FNO4",
   "mw": "357.4"
  },
@@ -4056,6 +5214,8 @@
   "smiles": "CS(=O)(=O)C1=C(C=CC(=C1)C(F)(F)F)C(=O)C2=C(ON=C2)C3CC3",
   "connectivity_smiles": "CS(=O)(=O)C1=C(C=CC(=C1)C(F)(F)F)C(=O)C2=C(ON=C2)C3CC3",
   "inchikey": "OYIKARCXOQLFHF-UHFFFAOYSA-N",
+  "iupac_name": "(5-cyclopropyl-1,2-oxazol-4-yl)-[2-methylsulfonyl-4-(trifluoromethyl)phenyl]methanone",
+  "common_name": "Isoxaflutole",
   "formula": "C15H12F3NO4S",
   "mw": "359.3"
  },
@@ -4063,6 +5223,8 @@
   "smiles": "CCOC1=C(C=CC(=C1)C(C)(C)C)C2COC(=N2)C3=C(C=CC=C3F)F",
   "connectivity_smiles": "CCOC1=C(C=CC(=C1)C(C)(C)C)C2COC(=N2)C3=C(C=CC=C3F)F",
   "inchikey": "IXSZQYVWNJNRAL-UHFFFAOYSA-N",
+  "iupac_name": "4-(4-tert-butyl-2-ethoxyphenyl)-2-(2,6-difluorophenyl)-4,5-dihydro-1,3-oxazole",
+  "common_name": "Etoxazole",
   "formula": "C21H23F2NO2",
   "mw": "359.4"
  },
@@ -4070,6 +5232,8 @@
   "smiles": "CCN(CC)CCOCC1=CC=C(C=C1)C.Cl",
   "connectivity_smiles": "CCN(CC)CCOCC1=CC=C(C=C1)C.Cl",
   "inchikey": "JNPUCJSASHXMFN-UHFFFAOYSA-N",
+  "iupac_name": "N,N-diethyl-2-[(4-methylphenyl)methoxy]ethanamine;hydrochloride",
+  "common_name": "N,N-Diethyl-2-(4-methylbenzyloxy)ethylamine hydrochloride",
   "formula": "C14H24ClNO",
   "mw": "257.80"
  },
@@ -4077,6 +5241,8 @@
   "smiles": "CCCCC(CC)COC(=O)COC1=C(C=C(C=C1)Cl)Cl",
   "connectivity_smiles": "CCCCC(CC)COC(=O)COC1=C(C=C(C=C1)Cl)Cl",
   "inchikey": "QZSFJRIWRPJUOH-UHFFFAOYSA-N",
+  "iupac_name": "2-ethylhexyl 2-(2,4-dichlorophenoxy)acetate",
+  "common_name": "2-Ethylhexyl (2,4-dichlorophenoxy)acetate",
   "formula": "C16H22Cl2O3",
   "mw": "333.2"
  },
@@ -4084,6 +5250,8 @@
   "smiles": "C(CC(CBr)(C#N)Br)C#N",
   "connectivity_smiles": "C(CC(CBr)(C#N)Br)C#N",
   "inchikey": "DHVLDKHFGIVEIP-UHFFFAOYSA-N",
+  "iupac_name": "2-bromo-2-(bromomethyl)pentanedinitrile",
+  "common_name": "1,2-Dibromo-2,4-dicyanobutane",
   "formula": "C6H6Br2N2",
   "mw": "265.93"
  },
@@ -4091,6 +5259,8 @@
   "smiles": "CCCCNC(=O)OCC#CI",
   "connectivity_smiles": "CCCCNC(=O)OCC#CI",
   "inchikey": "WYVVKGNFXHOCQV-UHFFFAOYSA-N",
+  "iupac_name": "3-iodoprop-2-ynyl N-butylcarbamate",
+  "common_name": "3-Iodo-2-propynyl butylcarbamate",
   "formula": "C8H12INO2",
   "mw": "281.09"
  },
@@ -4098,6 +5268,8 @@
   "smiles": "CCC(C)NC1=C(C=C(C=C1[N+](=O)[O-])C(C)(C)C)[N+](=O)[O-]",
   "connectivity_smiles": "CCC(C)NC1=C(C=C(C=C1[N+](=O)[O-])C(C)(C)C)[N+](=O)[O-]",
   "inchikey": "SPNQRCTZKIBOAX-UHFFFAOYSA-N",
+  "iupac_name": "N-butan-2-yl-4-tert-butyl-2,6-dinitroaniline",
+  "common_name": "Butralin",
   "formula": "C14H21N3O4",
   "mw": "295.33"
  },
@@ -4105,6 +5277,8 @@
   "smiles": "C(CBr)CBr",
   "connectivity_smiles": "C(CBr)CBr",
   "inchikey": "VEFLKXRACNJHOV-UHFFFAOYSA-N",
+  "iupac_name": "1,3-dibromopropane",
+  "common_name": "1,3-Dibromopropane",
   "formula": "C3H6Br2",
   "mw": "201.89"
  },
@@ -4112,6 +5286,8 @@
   "smiles": "CC(C)(C)C1=CC=C(C=C1)C(=O)CC(=O)C2=CC=C(C=C2)OC",
   "connectivity_smiles": "CC(C)(C)C1=CC=C(C=C1)C(=O)CC(=O)C2=CC=C(C=C2)OC",
   "inchikey": "XNEFYCZVKIDDMS-UHFFFAOYSA-N",
+  "iupac_name": "1-(4-tert-butylphenyl)-3-(4-methoxyphenyl)propane-1,3-dione",
+  "common_name": "Avobenzone",
   "formula": "C20H22O3",
   "mw": "310.4"
  },
@@ -4119,6 +5295,8 @@
   "smiles": "CCC(=O)OCCC1=CC=CC=C1",
   "connectivity_smiles": "CCC(=O)OCCC1=CC=CC=C1",
   "inchikey": "HVGZQCSMLUDISR-UHFFFAOYSA-N",
+  "iupac_name": "2-phenylethyl propanoate",
+  "common_name": "2-Phenylethyl propionate",
   "formula": "C11H14O2",
   "mw": "178.23"
  },
@@ -4126,6 +5304,8 @@
   "smiles": "CCOC1C(C2=C(O1)C=CC(=C2)OS(=O)(=O)C)(C)C",
   "connectivity_smiles": "CCOC1C(C2=C(O1)C=CC(=C2)OS(=O)(=O)C)(C)C",
   "inchikey": "IRCMYGHHKLLGHV-UHFFFAOYSA-N",
+  "iupac_name": "(2-ethoxy-3,3-dimethyl-2H-1-benzofuran-5-yl) methanesulfonate",
+  "common_name": "Ethofumesate",
   "formula": "C13H18O5S",
   "mw": "286.35"
  },
@@ -4133,6 +5313,8 @@
   "smiles": "FBr(F)(F)(F)F",
   "connectivity_smiles": "FBr(F)(F)(F)F",
   "inchikey": "XHVUVQAANZKEKF-UHFFFAOYSA-N",
+  "iupac_name": "pentafluoro-lambda5-bromane",
+  "common_name": "Bromine pentafluoride",
   "formula": "BrF5",
   "mw": "174.90"
  },
@@ -4140,6 +5322,8 @@
   "smiles": "C(=O)(C(F)(F)F)O",
   "connectivity_smiles": "C(=O)(C(F)(F)F)O",
   "inchikey": "DTQVDTLACAAQTR-UHFFFAOYSA-N",
+  "iupac_name": "2,2,2-trifluoroacetic acid",
+  "common_name": "Trifluoroacetic acid",
   "formula": "C2HF3O2",
   "mw": "114.02"
  },
@@ -4147,6 +5331,8 @@
   "smiles": "CC(=O)C=O",
   "connectivity_smiles": "CC(=O)C=O",
   "inchikey": "AIJULSRZWUXGPQ-UHFFFAOYSA-N",
+  "iupac_name": "2-oxopropanal",
+  "common_name": "Methylglyoxal",
   "formula": "C3H4O2",
   "mw": "72.06"
  },
@@ -4154,6 +5340,8 @@
   "smiles": "CC1COCC2=CC3=C(C=C12)C(C(C3(C)C)C)(C)C",
   "connectivity_smiles": "CC1COCC2=CC3=C(C=C12)C(C(C3(C)C)C)(C)C",
   "inchikey": "ONKNPOPIGWHAQC-UHFFFAOYSA-N",
+  "iupac_name": "4,6,6,7,8,8-hexamethyl-1,3,4,7-tetrahydrocyclopenta[g]isochromene",
+  "common_name": "Galaxolide",
   "formula": "C18H26O",
   "mw": "258.4"
  },
@@ -4161,6 +5349,8 @@
   "smiles": "CC1CC(C2=C(C1(C)C)C=C(C(=C2)C(=O)C)C)(C)C",
   "connectivity_smiles": "CC1CC(C2=C(C1(C)C)C=C(C(=C2)C(=O)C)C)(C)C",
   "inchikey": "DNRJTBAOUJJKDY-UHFFFAOYSA-N",
+  "iupac_name": "1-(3,5,5,6,8,8-hexamethyl-6,7-dihydronaphthalen-2-yl)ethanone",
+  "common_name": "Tonalide",
   "formula": "C18H26O",
   "mw": "258.4"
  },
@@ -4168,6 +5358,8 @@
   "smiles": "CC1=C(C(=CC=C1)C)C",
   "connectivity_smiles": "CC1=C(C(=CC=C1)C)C",
   "inchikey": "FYGHSUNMUKGBRK-UHFFFAOYSA-N",
+  "iupac_name": "1,2,3-trimethylbenzene",
+  "common_name": "1,2,3-Trimethylbenzene",
   "formula": "C9H12",
   "mw": "120.19"
  },
@@ -4175,6 +5367,8 @@
   "smiles": "CP(=O)(OC1CCCCC1)F",
   "connectivity_smiles": "CP(=O)(OC1CCCCC1)F",
   "inchikey": "SNTRKUOVAPUGAY-UHFFFAOYSA-N",
+  "iupac_name": "[fluoro(methyl)phosphoryl]oxycyclohexane",
+  "common_name": "Cyclosarin",
   "formula": "C7H14FO2P",
   "mw": "180.16"
  },
@@ -4182,6 +5376,8 @@
   "smiles": "CCCC/C=C\\CC/C=C\\CCCCCCOC(=O)C",
   "connectivity_smiles": "CCCCC=CCCC=CCCCCCCOC(=O)C",
   "inchikey": "BXJHOKLLMOYSRQ-QOXWLJPHSA-N",
+  "iupac_name": "[(7Z,11Z)-hexadeca-7,11-dienyl] acetate",
+  "common_name": "Gossyplure",
   "formula": "C18H32O2",
   "mw": "280.4"
  },
@@ -4189,6 +5385,8 @@
   "smiles": "CP(=O)(F)F",
   "connectivity_smiles": "CP(=O)(F)F",
   "inchikey": "PQIOSYKVBBWRRI-UHFFFAOYSA-N",
+  "iupac_name": "difluorophosphorylmethane",
+  "common_name": "Methylphosphonic difluoride",
   "formula": "CH3F2OP",
   "mw": "100.004"
  },
@@ -4196,6 +5394,8 @@
   "smiles": "CC1=C(C(=C(C(=C1[N+](=O)[O-])C(C)(C)C)[N+](=O)[O-])C)[N+](=O)[O-]",
   "connectivity_smiles": "CC1=C(C(=C(C(=C1[N+](=O)[O-])C(C)(C)C)[N+](=O)[O-])C)[N+](=O)[O-]",
   "inchikey": "XMWRWTSZNLOZFN-UHFFFAOYSA-N",
+  "iupac_name": "1-tert-butyl-3,5-dimethyl-2,4,6-trinitrobenzene",
+  "common_name": "Musk Xylene",
   "formula": "C12H15N3O6",
   "mw": "297.26"
  },
@@ -4203,6 +5403,8 @@
   "smiles": "CC1=C(C=C(C(=C1[N+](=O)[O-])OC)C(C)(C)C)[N+](=O)[O-]",
   "connectivity_smiles": "CC1=C(C=C(C(=C1[N+](=O)[O-])OC)C(C)(C)C)[N+](=O)[O-]",
   "inchikey": "SUAUILGSCPYJCS-UHFFFAOYSA-N",
+  "iupac_name": "1-tert-butyl-2-methoxy-4-methyl-3,5-dinitrobenzene",
+  "common_name": "Musk ambrette",
   "formula": "C12H16N2O5",
   "mw": "268.27"
  },
@@ -4210,6 +5412,8 @@
   "smiles": "CC1=C(C(=C(C(=C1[N+](=O)[O-])C(C)(C)C)[N+](=O)[O-])C)C(=O)C",
   "connectivity_smiles": "CC1=C(C(=C(C(=C1[N+](=O)[O-])C(C)(C)C)[N+](=O)[O-])C)C(=O)C",
   "inchikey": "WXCMHFPAUCOJIG-UHFFFAOYSA-N",
+  "iupac_name": "1-(4-tert-butyl-2,6-dimethyl-3,5-dinitrophenyl)ethanone",
+  "common_name": "Musk ketone",
   "formula": "C14H18N2O5",
   "mw": "294.30"
  },
@@ -4217,6 +5421,8 @@
   "smiles": "COC1=C(C=C(C=C1Br)Br)Br",
   "connectivity_smiles": "COC1=C(C=C(C=C1Br)Br)Br",
   "inchikey": "YXTRCOAFNXQTKL-UHFFFAOYSA-N",
+  "iupac_name": "1,3,5-tribromo-2-methoxybenzene",
+  "common_name": "2,4,6-Tribromoanisole",
   "formula": "C7H5Br3O",
   "mw": "344.83"
  },
@@ -4224,6 +5430,8 @@
   "smiles": "C#CC(=O)O",
   "connectivity_smiles": "C#CC(=O)O",
   "inchikey": "UORVCLMRJXCDCP-UHFFFAOYSA-N",
+  "iupac_name": "prop-2-ynoic acid",
+  "common_name": "Propiolic Acid",
   "formula": "C3H2O2",
   "mw": "70.05"
  },
@@ -4231,6 +5439,8 @@
   "smiles": "N=[N+]=[N-]",
   "connectivity_smiles": "N=[N+]=[N-]",
   "inchikey": "JUINSXZKUKVTMD-UHFFFAOYSA-N",
+  "iupac_name": null,
+  "common_name": "Hydrazoic acid",
   "formula": "HN3",
   "mw": "43.029"
  },
@@ -4238,6 +5448,8 @@
   "smiles": "CCOC(C)(C)C",
   "connectivity_smiles": "CCOC(C)(C)C",
   "inchikey": "NUMQCACRALPSHD-UHFFFAOYSA-N",
+  "iupac_name": "2-ethoxy-2-methylpropane",
+  "common_name": "Ethyl tert-butyl ether",
   "formula": "C6H14O",
   "mw": "102.17"
  },
@@ -4245,6 +5457,8 @@
   "smiles": "COC1=CN=C(N2C1=NC(=N2)NS(=O)(=O)C3=C(C=CC=C3OCC(F)F)C(F)(F)F)OC",
   "connectivity_smiles": "COC1=CN=C(N2C1=NC(=N2)NS(=O)(=O)C3=C(C=CC=C3OCC(F)F)C(F)(F)F)OC",
   "inchikey": "SYJGKVOENHZYMQ-UHFFFAOYSA-N",
+  "iupac_name": "2-(2,2-difluoroethoxy)-N-(5,8-dimethoxy-[1,2,4]triazolo[1,5-c]pyrimidin-2-yl)-6-(trifluoromethyl)benzenesulfonamide",
+  "common_name": "Penoxsulam",
   "formula": "C16H14F5N5O5S",
   "mw": "483.4"
  },
@@ -4252,6 +5466,8 @@
   "smiles": "COC1=CC(=NC(=N1)NC(=O)NS(=O)(=O)C2=C(C=CC(=C2)CNS(=O)(=O)C)C(=O)OC)OC",
   "connectivity_smiles": "COC1=CC(=NC(=N1)NC(=O)NS(=O)(=O)C2=C(C=CC(=C2)CNS(=O)(=O)C)C(=O)OC)OC",
   "inchikey": "NIFKBBMCXCMCAO-UHFFFAOYSA-N",
+  "iupac_name": "methyl 2-[(4,6-dimethoxypyrimidin-2-yl)carbamoylsulfamoyl]-4-(methanesulfonamidomethyl)benzoate",
+  "common_name": "Mesosulfuron-methyl",
   "formula": "C17H21N5O9S2",
   "mw": "503.5"
  },
@@ -4259,6 +5475,8 @@
   "smiles": "CN(C)C(=O)C1=C(C=C(C=C1)NC=O)S(=O)(=O)NC(=O)NC2=NC(=CC(=N2)OC)OC",
   "connectivity_smiles": "CN(C)C(=O)C1=C(C=C(C=C1)NC=O)S(=O)(=O)NC(=O)NC2=NC(=CC(=N2)OC)OC",
   "inchikey": "PXDNXJSDGQBLKS-UHFFFAOYSA-N",
+  "iupac_name": "2-[(4,6-dimethoxypyrimidin-2-yl)carbamoylsulfamoyl]-4-formamido-N,N-dimethylbenzamide",
+  "common_name": "Foramsulfuron",
   "formula": "C17H20N6O7S",
   "mw": "452.4"
  },
@@ -4266,6 +5484,8 @@
   "smiles": "C(C(OC(F)F)(F)F)(F)Cl",
   "connectivity_smiles": "C(C(OC(F)F)(F)F)(F)Cl",
   "inchikey": "JPGQOUSTVILISH-UHFFFAOYSA-N",
+  "iupac_name": "2-chloro-1-(difluoromethoxy)-1,1,2-trifluoroethane",
+  "common_name": "Enflurane",
   "formula": "C3H2ClF5O",
   "mw": "184.49"
  },
@@ -4273,6 +5493,8 @@
   "smiles": "[GeH4]",
   "connectivity_smiles": "[GeH4]",
   "inchikey": "QUZPNFFHZPRKJD-UHFFFAOYSA-N",
+  "iupac_name": "germane",
+  "common_name": "Germanium tetrahydride",
   "formula": "GeH4",
   "mw": "76.66"
  },
@@ -4280,6 +5502,8 @@
   "smiles": "CC1=CSC(=C1N([C@@H](C)COC)C(=O)CCl)C",
   "connectivity_smiles": "CC1=CSC(=C1N(C(C)COC)C(=O)CCl)C",
   "inchikey": "JLYFCTQDENRSOL-VIFPVBQESA-N",
+  "iupac_name": "2-chloro-N-(2,4-dimethylthiophen-3-yl)-N-[(2S)-1-methoxypropan-2-yl]acetamide",
+  "common_name": "Dimethenamid-P",
   "formula": "C12H18ClNO2S",
   "mw": "275.80"
  },
@@ -4287,6 +5511,8 @@
   "smiles": "CN\\1COCN(/C1=N/[N+](=O)[O-])CC2=CN=C(S2)Cl",
   "connectivity_smiles": "CN1COCN(C1=N[N+](=O)[O-])CC2=CN=C(S2)Cl",
   "inchikey": "NWWZPOKUUAIXIW-DHZHZOJOSA-N",
+  "iupac_name": "(NE)-N-[3-[(2-chloro-1,3-thiazol-5-yl)methyl]-5-methyl-1,3,5-oxadiazinan-4-ylidene]nitramide",
+  "common_name": "Thiamethoxam",
   "formula": "C8H10ClN5O3S",
   "mw": "291.72"
  },
@@ -4294,6 +5520,8 @@
   "smiles": "CCCCCC(C)(CC)C(=O)NC",
   "connectivity_smiles": "CCCCCC(C)(CC)C(=O)NC",
   "inchikey": "FDFPSNISSMYYDS-UHFFFAOYSA-N",
+  "iupac_name": "2-ethyl-N,2-dimethylheptanamide",
+  "common_name": "Methyl neodecanamide",
   "formula": "C11H23NO",
   "mw": "185.31"
  },
@@ -4301,6 +5529,8 @@
   "smiles": "C([C@@H]1[C@H]([C@@H]([C@H]([C@H](O1)O[C@H]([C@@H](CO)O)[C@@H]([C@H](CO)O)O)O)O)O)O",
   "connectivity_smiles": "C(C1C(C(C(C(O1)OC(C(CO)O)C(C(CO)O)O)O)O)O)O",
   "inchikey": "VQHSOMBJVWLPSR-WUJBLJFYSA-N",
+  "iupac_name": "(2S,3R,4R,5R)-4-[(2R,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxyhexane-1,2,3,5,6-pentol",
+  "common_name": "Maltitol",
   "formula": "C12H24O11",
   "mw": "344.31"
  },
@@ -4308,6 +5538,8 @@
   "smiles": "C1=C(OC(=C1)C=O)CO",
   "connectivity_smiles": "C1=C(OC(=C1)C=O)CO",
   "inchikey": "NOEGNKMFWQHSLB-UHFFFAOYSA-N",
+  "iupac_name": "5-(hydroxymethyl)furan-2-carbaldehyde",
+  "common_name": "5-(Hydroxymethyl)furfural",
   "formula": "C6H6O3",
   "mw": "126.11"
  },
@@ -4315,6 +5547,8 @@
   "smiles": "CCCCCC(=CC1=CC=CC=C1)C=O",
   "connectivity_smiles": "CCCCCC(=CC1=CC=CC=C1)C=O",
   "inchikey": "HMKKIXGYKWDQSV-UHFFFAOYSA-N",
+  "iupac_name": "2-benzylideneheptanal",
+  "common_name": "Amylcinnamaldehyde",
   "formula": "C14H18O",
   "mw": "202.29"
  },
@@ -4322,6 +5556,8 @@
   "smiles": "C1CCC(CC1)N=C=NC2CCCCC2",
   "connectivity_smiles": "C1CCC(CC1)N=C=NC2CCCCC2",
   "inchikey": "QOSSAOTZNIDXMA-UHFFFAOYSA-N",
+  "iupac_name": "N,N'-dicyclohexylmethanediimine",
+  "common_name": "Dicyclohexylcarbodiimide",
   "formula": "C13H22N2",
   "mw": "206.33"
  },
@@ -4329,6 +5565,8 @@
   "smiles": "CCC(COC(=O)C=C)(COC(=O)C=C)COC(=O)C=C",
   "connectivity_smiles": "CCC(COC(=O)C=C)(COC(=O)C=C)COC(=O)C=C",
   "inchikey": "DAKWPKUUDNSNPN-UHFFFAOYSA-N",
+  "iupac_name": "2,2-bis(prop-2-enoyloxymethyl)butyl prop-2-enoate",
+  "common_name": "Trimethylolpropane triacrylate",
   "formula": "C15H20O6",
   "mw": "296.31"
  },
@@ -4336,6 +5574,8 @@
   "smiles": "C(C(F)(F)F)(OC(F)F)F",
   "connectivity_smiles": "C(C(F)(F)F)(OC(F)F)F",
   "inchikey": "DPYMFVXJLLWWEU-UHFFFAOYSA-N",
+  "iupac_name": "2-(difluoromethoxy)-1,1,1,2-tetrafluoroethane",
+  "common_name": "Desflurane",
   "formula": "C3H2F6O",
   "mw": "168.04"
  },
@@ -4343,6 +5583,8 @@
   "smiles": "C1C[C@@H]2[C@H]3CCC[N@+]4([C@H]3[C@@H](CCC4)CN2C(=O)C1)[O-]",
   "connectivity_smiles": "C1CC2C3CCC[N+]4(C3C(CCC4)CN2C(=O)C1)[O-]",
   "inchikey": "XVPBINOPNYFXID-JARXUMMXSA-N",
+  "iupac_name": "(1R,2R,9S,13R,17S)-13-oxido-7-aza-13-azoniatetracyclo[7.7.1.02,7.013,17]heptadecan-6-one",
+  "common_name": "Oxymatrine",
   "formula": "C15H24N2O2",
   "mw": "264.36"
  },
@@ -4350,6 +5592,8 @@
   "smiles": "COC1=CC(=O)OC(C1)/C=C/C2=CC3=C(C=C2)OCO3",
   "connectivity_smiles": "COC1=CC(=O)OC(C1)C=CC2=CC3=C(C=C2)OCO3",
   "inchikey": "GTEXBOVBADJOQH-DUXPYHPUSA-N",
+  "iupac_name": "2-[(E)-2-(1,3-benzodioxol-5-yl)ethenyl]-4-methoxy-2,3-dihydropyran-6-one",
+  "common_name": "Kava Kava",
   "formula": "C15H14O5",
   "mw": "274.27"
  },
@@ -4357,6 +5601,8 @@
   "smiles": "C[C@@H]1CCC(=C(C)C)C(=O)C1",
   "connectivity_smiles": "CC1CCC(=C(C)C)C(=O)C1",
   "inchikey": "NZGWDASTMWDZIW-MRVPVSSYSA-N",
+  "iupac_name": "(5R)-5-methyl-2-propan-2-ylidenecyclohexan-1-one",
+  "common_name": "(+)-Pulegone",
   "formula": "C10H16O",
   "mw": "152.23"
  },
@@ -4364,6 +5610,8 @@
   "smiles": "CC(=O)CCC1=CC=C(C=C1)O",
   "connectivity_smiles": "CC(=O)CCC1=CC=C(C=C1)O",
   "inchikey": "NJGBTKGETPDVIK-UHFFFAOYSA-N",
+  "iupac_name": "4-(4-hydroxyphenyl)butan-2-one",
+  "common_name": "4-(4'-Hydroxyphenyl)-2-butanone",
   "formula": "C10H12O2",
   "mw": "164.20"
  },
@@ -4371,6 +5619,8 @@
   "smiles": "CC1=CC=C(C=C1)N(C)C",
   "connectivity_smiles": "CC1=CC=C(C=C1)N(C)C",
   "inchikey": "GYVGXEWAOAAJEU-UHFFFAOYSA-N",
+  "iupac_name": "N,N,4-trimethylaniline",
+  "common_name": "Dimethyl-p-toluidine",
   "formula": "C9H13N",
   "mw": "135.21"
  },
@@ -4378,6 +5628,8 @@
   "smiles": "CC(=CCC/C(=C\\CO)/C)C",
   "connectivity_smiles": "CC(=CCCC(=CCO)C)C",
   "inchikey": "GLZPCOQZEFWAFX-YFHOEESVSA-N",
+  "iupac_name": "(2Z)-3,7-dimethylocta-2,6-dien-1-ol",
+  "common_name": "Nerol",
   "formula": "C10H18O",
   "mw": "154.25"
  },
@@ -4385,6 +5637,8 @@
   "smiles": "C[C@@H]1CC[C@@H]2[C@]13CC[C@@]([C@H](C3)C2(C)C)(C)O",
   "connectivity_smiles": "CC1CCC2C13CCC(C(C3)C2(C)C)(C)O",
   "inchikey": "SVURIXNDRWRAFU-OGMFBOKVSA-N",
+  "iupac_name": "(1S,2R,5S,7R,8R)-2,6,6,8-tetramethyltricyclo[5.3.1.01,5]undecan-8-ol",
+  "common_name": "Cedrol",
   "formula": "C15H26O",
   "mw": "222.37"
  },
@@ -4392,6 +5646,8 @@
   "smiles": "C1=CC=C(C=C1)CCCO",
   "connectivity_smiles": "C1=CC=C(C=C1)CCCO",
   "inchikey": "VAJVDSVGBWFCLW-UHFFFAOYSA-N",
+  "iupac_name": "3-phenylpropan-1-ol",
+  "common_name": "Benzenepropanol",
   "formula": "C9H12O",
   "mw": "136.19"
  },
@@ -4399,6 +5655,8 @@
   "smiles": "CC/C=C\\CCO",
   "connectivity_smiles": "CCC=CCCO",
   "inchikey": "UFLHIIWVXFIJGU-ARJAWSKDSA-N",
+  "iupac_name": "(Z)-hex-3-en-1-ol",
+  "common_name": "3-Hexenol",
   "formula": "C6H12O",
   "mw": "100.16"
  },
@@ -4406,6 +5664,8 @@
   "smiles": "CC1=CCCC(C1/C=C/C(=O)C)(C)C",
   "connectivity_smiles": "CC1=CCCC(C1C=CC(=O)C)(C)C",
   "inchikey": "UZFLPKAIBPNNCA-BQYQJAHWSA-N",
+  "iupac_name": "(E)-4-(2,6,6-trimethylcyclohex-2-en-1-yl)but-3-en-2-one",
+  "common_name": "Alpha-Ionone",
   "formula": "C13H20O",
   "mw": "192.30"
  },
@@ -4413,6 +5673,8 @@
   "smiles": "C[C@@H]1CC(=O)C=C2[C@]1(C[C@@H](CC2)C(=C)C)C",
   "connectivity_smiles": "CC1CC(=O)C=C2C1(CC(CC2)C(=C)C)C",
   "inchikey": "WTOYNNBCKUYIKC-JMSVASOKSA-N",
+  "iupac_name": "(4R,4aS,6R)-4,4a-dimethyl-6-prop-1-en-2-yl-3,4,5,6,7,8-hexahydronaphthalen-2-one",
+  "common_name": "(+)-Nootkatone",
   "formula": "C15H22O",
   "mw": "218.33"
  },
@@ -4420,6 +5682,8 @@
   "smiles": "CC/C=C\\CC1=C(CCC1=O)C",
   "connectivity_smiles": "CCC=CCC1=C(CCC1=O)C",
   "inchikey": "XMLSXPIVAXONDL-PLNGDYQASA-N",
+  "iupac_name": "3-methyl-2-[(Z)-pent-2-enyl]cyclopent-2-en-1-one",
+  "common_name": "Jasmone",
   "formula": "C11H16O",
   "mw": "164.24"
  },
@@ -4427,6 +5691,8 @@
   "smiles": "CCOC(=O)/C=C(\\C)/C=C/C[C@@H](C)CCCC(C)C",
   "connectivity_smiles": "CCOC(=O)C=C(C)C=CCC(C)CCCC(C)C",
   "inchikey": "FYQGBXGJFWXIPP-OJROSNHMSA-N",
+  "iupac_name": "ethyl (2E,4E,7S)-3,7,11-trimethyldodeca-2,4-dienoate",
+  "common_name": "S-Hydroprene",
   "formula": "C17H30O2",
   "mw": "266.4"
  },
@@ -4434,6 +5700,8 @@
   "smiles": "CC(=O)C1=CC=C(C=C1)OC",
   "connectivity_smiles": "CC(=O)C1=CC=C(C=C1)OC",
   "inchikey": "NTPLXRHDUXRPNE-UHFFFAOYSA-N",
+  "iupac_name": "1-(4-methoxyphenyl)ethanone",
+  "common_name": "4'-Methoxyacetophenone",
   "formula": "C9H10O2",
   "mw": "150.17"
  },
@@ -4441,6 +5709,8 @@
   "smiles": "CC1=C(C(=O)C=CO1)O",
   "connectivity_smiles": "CC1=C(C(=O)C=CO1)O",
   "inchikey": "XPCTZQVDEJYUGT-UHFFFAOYSA-N",
+  "iupac_name": "3-hydroxy-2-methylpyran-4-one",
+  "common_name": "Maltol",
   "formula": "C6H6O3",
   "mw": "126.11"
  },
@@ -4448,6 +5718,8 @@
   "smiles": "CC1C(=O)C(=C(O1)C)O",
   "connectivity_smiles": "CC1C(=O)C(=C(O1)C)O",
   "inchikey": "INAXVXBDKKUCGI-UHFFFAOYSA-N",
+  "iupac_name": "4-hydroxy-2,5-dimethylfuran-3-one",
+  "common_name": "Furaneol",
   "formula": "C6H8O3",
   "mw": "128.13"
  },
@@ -4455,6 +5727,8 @@
   "smiles": "CCCOC(=O)C1=CN=C(C=C1)C(=O)OCCC",
   "connectivity_smiles": "CCCOC(=O)C1=CN=C(C=C1)C(=O)OCCC",
   "inchikey": "IITCWRFYJWUUPC-UHFFFAOYSA-N",
+  "iupac_name": "dipropyl pyridine-2,5-dicarboxylate",
+  "common_name": "Dipropyl isocinchomeronate",
   "formula": "C13H17NO4",
   "mw": "251.28"
  },
@@ -4462,6 +5736,8 @@
   "smiles": "CCC(=O)Cl",
   "connectivity_smiles": "CCC(=O)Cl",
   "inchikey": "RZWZRACFZGVKFM-UHFFFAOYSA-N",
+  "iupac_name": "propanoyl chloride",
+  "common_name": "Propionyl chloride",
   "formula": "C3H5ClO",
   "mw": "92.52"
  },
@@ -4469,6 +5745,8 @@
   "smiles": "CCOC(=O)CC1=CC=CC=C1",
   "connectivity_smiles": "CCOC(=O)CC1=CC=CC=C1",
   "inchikey": "DULCUDSUACXJJC-UHFFFAOYSA-N",
+  "iupac_name": "ethyl 2-phenylacetate",
+  "common_name": "Ethyl phenylacetate",
   "formula": "C10H12O2",
   "mw": "164.20"
  },
@@ -4476,6 +5754,8 @@
   "smiles": "COC(=O)CC1=CC=CC=C1",
   "connectivity_smiles": "COC(=O)CC1=CC=CC=C1",
   "inchikey": "CRZQGDNQQAALAY-UHFFFAOYSA-N",
+  "iupac_name": "methyl 2-phenylacetate",
+  "common_name": "Methyl phenylacetate",
   "formula": "C9H10O2",
   "mw": "150.17"
  },
@@ -4483,6 +5763,8 @@
   "smiles": "C1=CC=C(C=C1)COC(=O)C2=CC=CC=C2O",
   "connectivity_smiles": "C1=CC=C(C=C1)COC(=O)C2=CC=CC=C2O",
   "inchikey": "ZCTQGTTXIYCGGC-UHFFFAOYSA-N",
+  "iupac_name": "benzyl 2-hydroxybenzoate",
+  "common_name": "Benzyl Salicylate",
   "formula": "C14H12O3",
   "mw": "228.24"
  },
@@ -4490,6 +5772,8 @@
   "smiles": "C(=O)(C(F)(F)F)Cl",
   "connectivity_smiles": "C(=O)(C(F)(F)F)Cl",
   "inchikey": "PNQBEPDZQUOCNY-UHFFFAOYSA-N",
+  "iupac_name": "2,2,2-trifluoroacetyl chloride",
+  "common_name": "Trifluoroacetyl chloride",
   "formula": "C2ClF3O",
   "mw": "132.47"
  },
@@ -4497,6 +5781,8 @@
   "smiles": "CC(=O)C1=C2CCC(C2=CC(=C1)C(C)(C)C)(C)C",
   "connectivity_smiles": "CC(=O)C1=C2CCC(C2=CC(=C1)C(C)(C)C)(C)C",
   "inchikey": "IKTHMQYJOWTSJO-UHFFFAOYSA-N",
+  "iupac_name": "1-(6-tert-butyl-1,1-dimethyl-2,3-dihydroinden-4-yl)ethanone",
+  "common_name": "Celestolide",
   "formula": "C17H24O",
   "mw": "244.37"
  },
@@ -4504,6 +5790,8 @@
   "smiles": "CCOC(=O)CC(=O)OCC",
   "connectivity_smiles": "CCOC(=O)CC(=O)OCC",
   "inchikey": "IYXGSMUGOJNHAZ-UHFFFAOYSA-N",
+  "iupac_name": "diethyl propanedioate",
+  "common_name": "Diethyl Malonate",
   "formula": "C7H12O4",
   "mw": "160.17"
  },
@@ -4511,6 +5799,8 @@
   "smiles": "CC(COC)OC(=O)C",
   "connectivity_smiles": "CC(COC)OC(=O)C",
   "inchikey": "LLHKCFNBLRBOGN-UHFFFAOYSA-N",
+  "iupac_name": "1-methoxypropan-2-yl acetate",
+  "common_name": "Propylene glycol methyl ether acetate",
   "formula": "C6H12O3",
   "mw": "132.16"
  },
@@ -4518,6 +5808,8 @@
   "smiles": "CC1=CSC(=C1N(C(C)COC)C(=O)CCl)C",
   "connectivity_smiles": "CC1=CSC(=C1N(C(C)COC)C(=O)CCl)C",
   "inchikey": "JLYFCTQDENRSOL-UHFFFAOYSA-N",
+  "iupac_name": "2-chloro-N-(2,4-dimethylthiophen-3-yl)-N-(1-methoxypropan-2-yl)acetamide",
+  "common_name": "Dimethenamid",
   "formula": "C12H18ClNO2S",
   "mw": "275.80"
  },
@@ -4525,6 +5817,8 @@
   "smiles": "CC(=O)O[C@@H]1C[C@H]2CC[C@@]1(C2(C)C)C",
   "connectivity_smiles": "CC(=O)OC1CC2CCC1(C2(C)C)C",
   "inchikey": "KGEKLUUHTZCSIP-FOGDFJRCSA-N",
+  "iupac_name": "[(1R,2R,4R)-1,7,7-trimethyl-2-bicyclo[2.2.1]heptanyl] acetate",
+  "common_name": "Isobornyl acetate",
   "formula": "C12H20O2",
   "mw": "196.29"
  },
@@ -4532,6 +5826,8 @@
   "smiles": "CCCCCO[N+](=O)[O-]",
   "connectivity_smiles": "CCCCCO[N+](=O)[O-]",
   "inchikey": "HSNWZBCBUUSSQD-UHFFFAOYSA-N",
+  "iupac_name": "pentyl nitrate",
+  "common_name": "Amyl Nitrate",
   "formula": "C5H11NO3",
   "mw": "133.15"
  },
@@ -4539,6 +5835,8 @@
   "smiles": "CCCCCON=O",
   "connectivity_smiles": "CCCCCON=O",
   "inchikey": "CSDTZUBPSYWZDX-UHFFFAOYSA-N",
+  "iupac_name": "pentyl nitrite",
+  "common_name": "Pentyl nitrite",
   "formula": "C5H11NO2",
   "mw": "117.15"
  },
@@ -4546,6 +5844,8 @@
   "smiles": "N(Cl)(Cl)Cl",
   "connectivity_smiles": "N(Cl)(Cl)Cl",
   "inchikey": "QEHKBHWEUPXBCW-UHFFFAOYSA-N",
+  "iupac_name": null,
+  "common_name": "Nitrogen trichloride",
   "formula": "Cl3N",
   "mw": "120.36"
  },
@@ -4553,6 +5853,8 @@
   "smiles": "C1(=NC(=O)N(C(=O)N1Cl)Cl)[O-].O.O.[Na+]",
   "connectivity_smiles": "C1(=NC(=O)N(C(=O)N1Cl)Cl)[O-].O.O.[Na+]",
   "inchikey": "PYILKOIEIHHYGD-UHFFFAOYSA-M",
+  "iupac_name": "sodium;1,5-dichloro-4,6-dioxo-1,3,5-triazin-2-olate;dihydrate",
+  "common_name": "Sodium dichloroisocyanurate dihydrate",
   "formula": "C3H4Cl2N3NaO5",
   "mw": "255.97"
  }
