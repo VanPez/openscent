@@ -181,7 +181,9 @@
       <span>remaining <b id="tn">0</b></span>
       <span id="rate" style="color:var(--mut)"></span>
       <span style="margin-left:auto">
-        <label style="cursor:pointer"><input type="checkbox" id="bprod" checked>
+        <label style="cursor:pointer"><input type="checkbox" id="bprop" checked>
+        proposals first <b id="tprop"></b></label>
+        <label style="cursor:pointer;margin-left:12px"><input type="checkbox" id="bprod" checked>
         productive first <b id="tprod"></b></label></span>
     </div>
   </div>
@@ -260,9 +262,21 @@ var VOCAB = ["acid", "aldehydic", "almond", "amber", "ambery", "animal", "animal
   var _TAGW = new RegExp("\\b(" + VOCAB.join("|") + ")\\b", "i");
   function PRODUCTIVE(s){ return !!s && _NAME.test(s) && _TAGW.test(s); }
 
+  // PROPOSALS FIRST sorts ABOVE productive-first, and it has to, because the two do not
+  // agree about what is worth reading. PRODUCTIVE() needs a DIGIT in the compound name,
+  // so a proposal on `ambroxide` or `B-santalol` — trivially named, which is what
+  // perfumery molecules mostly are — sorts to the BOTTOM of a 3,651-row queue and is
+  // never seen. A staged proposal is by definition already judged worth reading; making
+  // the reviewer hunt for it wastes the pass that produced it.
+  //
+  // Same contract as productive-first: this REORDERS, it does not filter. Every row
+  // keeps its queue_order and the export keeps every row.
   function applyOrder(){
-    var on = $('bprod') && $('bprod').checked;
+    var on   = $('bprod') && $('bprod').checked;
+    var prop = $('bprop') && $('bprop').checked;
+    function isProp(r){ return !r.decision && !!r.proposed_decision; }
     rows.sort(function(a, b){
+      if(prop && isProp(a) !== isProp(b)) return isProp(a) ? -1 : 1;
       if(on && a.productive !== b.productive) return a.productive ? -1 : 1;
       return a.queue_order - b.queue_order;
     });
@@ -602,6 +616,7 @@ var VOCAB = ["acid", "aldehydic", "almond", "amber", "ambery", "animal", "animal
     if(cur){ var j = rows.indexOf(cur); if(j >= 0) i = j; }
     render();
   };
+  $('bprop').onchange = $('bprod').onchange;
 
   document.addEventListener('keydown', function(e){
     if(document.activeElement === $('rmol')){ if(e.key === 'Enter') $('rmol').blur(); return; }

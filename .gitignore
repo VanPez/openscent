@@ -50,3 +50,7 @@ NEW-CHAT-PROMPT.md
 # review.html backups — same reasoning as the *.py.bak-* rule above; the existing
 # pattern does not match a .html backup.
 *.html.bak-*
+
+# Overleaf PDF downloads. Same reasoning as *.zip above — a build artefact of
+# reports/openscent-paper.tex, stale the moment the .tex changes.
+openscent_paper*.pdf
