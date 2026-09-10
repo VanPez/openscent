@@ -1,8 +1,8 @@
 % =============================================================================
-% OpenScent — draft v1, 2026-09-09
+% OpenScent — draft v0.2, 2026-09-10
 % Set THIS file as the main document in Overleaf (not template.tex).
 % Content source: openscent/reports/paper-draft-v1.md
-% Every figure re-derived from pipeline/status.py on 2026-09-09 — re-run before
+% Every figure re-derived from pipeline/status.py on 2026-09-10 — re-run before
 % submission, several moved within the last week.
 % =============================================================================
 % `chemistry` is deliberately NOT enabled. It loads mhchem, chemfig, chemnum and
@@ -20,7 +20,7 @@
 \GenesisTitle{OpenScent: a permissively licensed structure--odour corpus}
 \GenesisSubtitle{Built by construction rather than by permission}
 \GenesisRunningTitle{OpenScent: a CC0 structure--odour corpus}
-\GenesisVersion{Draft 0.1}
+\GenesisVersion{Draft 0.2}
 \GenesisStatus{DRAFT}
 \GenesisDate{\today}
 \GenesisAuthors{Ivan Pezzini}                       % TODO authorship — see notes
@@ -63,18 +63,19 @@
       distinct documents, counted at passage level.
     }
     \AbstractResults{
-      The corpus contained 1{,}193 distinct molecules across a 67-term vocabulary, of
-      which 20 terms reached the threshold of 30 molecules with adjudication ongoing
-      (418 productive rows outstanding, a lower bound, targeting the terms nearest threshold). A
-      648-molecule subset
-      carrying 22 computed structural descriptors supported supervised prediction of
-      odour labels under five-fold stratified cross-validation, with areas under the
+      The corpus contained 1{,}265 distinct molecules across a 67-term vocabulary, of
+      which 22 terms reached the threshold of 30 molecules, at which point the review
+      queue was exhausted of rows capable of carrying a further term. A 648-molecule
+      subset carrying 22 computed structural descriptors supported supervised prediction
+      of odour labels under five-fold stratified cross-validation, with areas under the
       ROC curve of 0.93 for \emph{fatty} ($n=16$) and 0.87 for \emph{mint} ($n=24$).
-      Four negative results constrained the method: per-compound note tiers were absent
-      from 60 patents examined; 29 additional vocabulary candidates were refused for
-      insufficient molecular support; the pre-1930 literature was redundant with
-      existing sources for 27 of 30 compounds tested; and extraction at sentence scope
-      was identified as the binding recall constraint.
+      Five negative results constrained the method: per-compound note tiers were absent
+      from 60 patents examined; 29 vocabulary candidates were refused for insufficient
+      molecular support; the pre-1930 literature was redundant for 27 of 30 compounds
+      tested; sentence scope was the binding recall constraint; and the heuristic
+      ranking the review queue proved blind to trivially named compounds, so that the
+      term nearest threshold showed no reviewable rows while holding 182 unread
+      attestations.
     }
     \AbstractConclusion{
       A permissively licensed structure--odour corpus can be assembled by construction
@@ -157,13 +158,12 @@ this invariant across the corpus on each run and refused to report figures when 
 violated. A paraphrased or generated row is indistinguishable from an extracted one once
 written; per-row provenance is meaningful only when the recorded span can be located in
 the cited source. Text normalisation was consequently versioned and applied identically
-to source text and extracted spans, a comparison between differently normalised strings
-not constituting a verbatim check.
+to source text and spans, since comparing differently normalised strings is not a
+verbatim check.
 
 \textbf{Yield measurement before retrieval.} Before harvesting a classification, a
-200-document sample was retrieved and extraction yield measured, at a cost of
-approximately twenty minutes. This altered the decision three times
-(Table~\ref{tab:yield}).
+200-document sample was retrieved and extraction yield measured, at a cost of about
+twenty minutes. This altered the decision three times (Table~\ref{tab:yield}).
 
 \begin{table}[t]
 \caption{Sampled yield and the resulting retrieval decision.}
@@ -180,31 +180,29 @@ C11D~3/50           & 0.36 & declined \\
 \end{tabular}
 \end{table}
 
-Yield alone proved insufficient. C11D~3/50 (detergent perfumery) was sampled because it
-was expected to carry amber and musk descriptors, and yielded twice the rate of the
-declined food classification. Counting where its descriptors fell showed approximately
-70\,\% landing on vocabulary terms already well past threshold, while \emph{sandalwood}
-and \emph{animalic}, the two terms motivating the sample, did not occur. Target coverage
-is now measured alongside yield.
+Yield alone proved insufficient. C11D~3/50 (detergent perfumery) yielded twice the rate
+of the declined food classification, but approximately 70\,\% of its descriptors landed
+on terms already past threshold, and \emph{sandalwood} and \emph{animalic}, the two terms
+motivating the sample, did not occur at all. Target coverage is now measured alongside
+yield.
 
 \textbf{Adjudicated review.} A human decided every row against written rules; automated
 proposals were advisory and automatic rejection was disabled. Blind proposal accuracy,
 measured by withholding proposals on 30 rows, was 67\,\%; errors skewed towards rejecting
 valid rows. The rules were written after a blind evaluation disagreed on 14 of 98 rows
 and the disagreements proved to be two unwritten conventions applied in opposite
-directions. Three rules required the most deliberation: mixtures yield no row, including
-mixtures of stereoisomers of a single compound, since enantiomers may smell differently
-and the odour of a racemate is not that of either component; a compound named as a
-comparison is a reference point rather than a descriptor, whereas a plant or food named
-as a smell is a descriptor; and negation or comparison inverts the claim.
+directions. The rules are stated in full in the repository; the three requiring most
+deliberation concern mixtures, which yield no row even for stereoisomers of one compound
+since enantiomers may smell differently, compounds named as comparisons rather than as
+descriptors, and negation, which inverts the claim.
 
 \textbf{Independent attestation.} A vocabulary term was admitted only on appearing in at
 least 20 distinct documents with at least 30 attestations, an attestation being a
 distinct sentence. Four successive counters were required, each correcting the
 predecessor's blind spot: raw occurrences, document counts, a per-term boilerplate ratio,
-and finally passage-level counting. The admitted vocabulary comprises 67 terms with 119
-surface forms; the mapping from surface form to term is a human-written table and is the
-only point at which extracted text becomes a category.
+and passage-level counting. The admitted vocabulary comprises 67 terms with 119 surface
+forms; the surface-form mapping is a human-written table and is the only point at which
+extracted text becomes a category.
 
 \subsection{Statistical analysis}
 
@@ -220,13 +218,9 @@ One binary classification task was defined per label. Gradient-boosted decision 
 evaluated under five-fold stratified cross-validation, reporting area under the ROC curve.
 Labels with fewer than ten positive instances were excluded.
 
-\begin{GenesisProvenance}
-Corpus, ontology, extraction code and analysis scripts are at
-\url{https://github.com/VanPez/openscent}. Every row records its source document
-identifier, the verbatim source sentence, the extracted spans and a licence basis.
-All headline figures are computed by a single utility so that any quoted number can be
-regenerated rather than recalled.
-\end{GenesisProvenance}
+% GenesisProvenance box removed for v0.2: it duplicated Data and code availability
+% almost sentence for sentence (same repository, same per-row claim). Its one unique
+% statement — that headline figures come from a single utility — was moved there.
 
 % =============================================================================
 \section{Results}
@@ -234,27 +228,33 @@ regenerated rather than recalled.
 \subsection{Corpus}
 
 Harvesting produced 5{,}346 patent documents, of which 2{,}426 were represented in the
-review queue as 6{,}686 candidate rows. Of these, 955 were adjudicated by hand (627
-accepted, 326 rejected, 2 deferred). Together with 1{,}018 database records the corpus
-contained 1{,}193 distinct molecules.
+review queue. Extraction yielded 6{,}686 candidate rows, of which 21 were copies created
+during review, one sentence describing two compounds differently being adjudicated once
+per compound. The remaining 6{,}665 reduced to 4{,}634 distinct sentences: a sentence
+recurring across documents is one assertion, not several, and each row records how many
+documents carry it and which, the most repeated occurring in 24. Of the resulting rows
+1{,}065 were adjudicated by hand (703 accepted, 360 rejected, 2 deferred).
+Together with 1{,}018 database records over 651 compound identifiers, the corpus contained
+1{,}265 distinct molecules.
 
-Twenty of the 67 vocabulary terms reached the threshold of 30 molecules:
-\emph{acid, aromatic, citrus, earthy, fatty, floral, fresh, fruity, green, herbal, lily,
-mint, musk, musty, powdery, pungent, rose, spicy, sweet} and \emph{woody}. Five further
-terms lay within seven molecules of threshold: \emph{sandalwood} (28), \emph{amber} (28),
-\emph{camphoraceous} (27), \emph{animalic} (23) and \emph{aldehydic} (23).
+Twenty-two of the 67 vocabulary terms reached the threshold of 30 molecules:
+\emph{acid, aromatic, camphoraceous, citrus, earthy, fatty, floral, fresh, fruity, green,
+herbal, lily, mint, musk, musty, powdery, pungent, rose, sandalwood, spicy, sweet} and
+\emph{woody}. Three further terms lie within five molecules of threshold:
+\emph{amber} (28), \emph{animalic} (27) and \emph{aldehydic} (25).
 
-The design target was 60--100 terms at 30 molecules each. The corpus reached 20 at the
-census date, with adjudication incomplete: 418 of the 5{,}731 undecided rows satisfy the
-review queue's productivity criterion, carrying both a compound-like token and a
-vocabulary term, and they fall disproportionately on terms below threshold
-(\emph{aldehydic} 30 rows, \emph{camphoraceous} 16, \emph{sandalwood} 14, \emph{animalic}
-9). That count is a lower bound: the review interface tests against a hard-coded
-vocabulary of 110 surface forms while the ontology now holds 119, so rows carrying only
-one of the 46 unlisted forms are not counted. At the precision observed within the
-productive subset (0.82), these adjudications alone would be expected to carry several
-further terms past threshold without any additional source material. Twenty is therefore
-a census figure, not a ceiling.
+The design target was 60--100 terms at 30 molecules each. The corpus reached 22, and
+adjudication then stopped for want of admissible material rather than for want of effort.
+Of the 3{,}592 rows left undecided, none satisfies the review queue's productivity
+criterion of carrying both a compound-like token and a vocabulary term. The last 46 rows
+that did were adjudicated in a single sitting: 18 were accepted and 28 rejected, and no
+term crossed threshold, the accepted rows falling on terms needing between fifteen and
+twenty-six further molecules each.
+
+Twenty-two is therefore a ceiling for this material rather than a census figure. Further
+terms require additional sources; they are not recoverable by further adjudication of what
+has been collected. Two terms did cross earlier in that sitting, and how they were found
+is reported below as a negative result rather than as a method.
 
 \subsection{Structural signal}
 
@@ -290,11 +290,10 @@ sweet     & 149 & 0.619 \\
 \end{table}
 
 \begin{GenesisEvidence}
-Three qualifications belong with Table~\ref{tab:auc} and should not be separated from it.
-The result for \emph{chlorine} is determined by halogen count and serves as a pipeline
-check rather than a finding. Labels with 10--12 positive instances yield unstable
-cross-validated estimates at this sample size. The label \emph{aromatic} carries a
-semantic confound: the odour term and the structural property are distinct concepts that
+Three qualifications belong with Table~\ref{tab:auc}. \emph{Chlorine} is determined by
+halogen count and is a pipeline check rather than a finding; labels with 10--12 positives
+yield unstable estimates at this sample size; and \emph{aromatic} carries a semantic
+confound, the odour term and the structural property being distinct concepts that
 correlate, so part of that score is unearned. The substantive results are \emph{fatty}
 (0.925) and \emph{mint} (0.874), where chain length and lipophilicity track fattiness and
 mint labels concentrate within a narrow structural family.
@@ -312,7 +311,7 @@ public-domain sources, and that the resulting labels carry structure-dependent s
 The corpus is smaller than encumbered alternatives; its distinguishing property is that
 it may be used commercially, extended, and redistributed by anyone.
 
-The transferable content of this work is procedural, together with four results that
+The transferable content of this work is procedural, together with five results that
 constrain what the sources can be asked to supply.
 
 \textbf{Note tiers are absent from patent text.} Perfumery classifies materials as top,
@@ -324,39 +323,64 @@ from this literature nor recoverable by inference.
 
 \textbf{Vocabulary was not the binding constraint.} Twenty-nine further descriptor
 candidates passed an independence test and were nonetheless refused: the best supported
-reached 8 molecules against a threshold of 30. Admitting them would have converted 20 of
-67 into 20 of 95, leaving the numerator unchanged and the denominator worse.
+reached 8 molecules against a threshold of 30. Admitting them would have converted 22 of
+67 into 22 of 95, leaving the numerator unchanged and the denominator worse.
 
 \textbf{The pre-1930 literature was redundant rather than inconvenient.} Of 30 classic
 synthetics from that period, 27 already carried a database odour record; apparent misses
 were naming artefacts. Expired-copyright sources were dropped for redundancy, not for
 licensing.
 
-\textbf{Sentence scope is the binding recall constraint.} Three independent observations
+\textbf{Sentence scope is the binding recall constraint.} Four independent observations
 converge: a heading-matching rule was removed for producing rows naming no molecule; 345
-sentences carry descriptors whose compound is named in the preceding sentence; and the
-single standing recall failure in the evaluation set is of that form. Extraction at
-passage scope is the identified next step and is not yet implemented.
+sentences carry descriptors whose compound is named in the preceding sentence; the
+single standing recall failure in the evaluation set is of that form; and in the sample
+described below, anaphoric attribution was the largest single cause of rejection.
+Extraction at passage scope is the identified next step and is not yet implemented.
 
-\begin{GenesisInterpretation}
-Our results provide evidence that the licensing obstacle in structure--odour data is
-tractable by source selection rather than by negotiation. The observation that patent
-text supplies descriptors but not note tiers points towards a general limit: patent
-prose documents what a compound smells of, not how a perfumer would deploy it. These
-findings are consistent with the corpus remaining useful for descriptor prediction while
-being unsuitable, without further sources, for tasks requiring formulation semantics.
-\end{GenesisInterpretation}
+\textbf{A ranking heuristic was mistaken for a measure of what remained.} Candidate rows
+were ranked for review by a rule requiring both a vocabulary term and a compound-like
+token, the latter recognised by a digit within a chemical suffix. That is a reasonable
+ranking, since locants are ubiquitous in systematic nomenclature, and an unreasonable
+census, since perfumery materials are often named trivially --- \emph{santalol},
+\emph{ambroxide} --- and such names carry no digit. At one point \emph{sandalwood} stood
+one molecule below threshold with 182 undecided rows containing its surface form, every
+one scored zero by the ranking; the two rows that eventually carried it past threshold
+were among them.
+
+The correction was not a better ranking. A seeded sample of 25 of those rows yielded 1
+admissible row against 24 rejections, failing on anaphoric and composition-level
+attribution rather than on naming --- causes no token-shaped rule can detect --- so
+admitting trivial names would have surfaced the rejections and not the accepted rows.
+What worked was searching the undecided rows for the chemistry of the term in deficit.
+The general form of the failure is that a heuristic which orders work correctly will be
+read as measuring the work remaining, and the two are different quantities; a count of
+reviewable rows should be derived from the adjudication rules, not from the ranking.
+
+That patent text supplies descriptors but not note tiers points to a general limit:
+patent prose documents what a compound smells of, not how a perfumer would deploy it.
+The corpus should be expected to serve descriptor prediction and not, without further
+sources, tasks requiring formulation semantics.
 
 \begin{GenesisLimitations}
-Although encouraging, this study has limitations. Twenty of 67 vocabulary terms reached
-threshold against a design target of 60--100, with at least 418 productive adjudications
-outstanding. The patent-derived half of the corpus does
+Although encouraging, this study has limitations. Twenty-two of 67 vocabulary terms
+reached threshold against a design target of 60--100, and the collected material is
+exhausted of rows able to carry a further term, so the shortfall is a property of the
+sources rather than of incomplete adjudication. The patent-derived half of the corpus does
 not yet carry computed structures, so the analysis in Table~\ref{tab:auc} covers 648 of
-1{,}193 molecules. Molecules are matched between the two sources by name text rather than
-by structure, so stereochemical variants remain distinct entries. Whole-queue precision
-of the candidate filter is approximately 0.2; a figure of 0.82 recorded elsewhere in the
-project is precision within the productive subset and must not be read as the filter's
-precision. A text-containment audit identified 835 groups covering 1{,}035 documents,
+1{,}265 molecules. Molecules are matched between the two sources by name text rather than
+by structure, which makes the counts an upper bound twice over: stereochemical variants
+remain distinct entries, and a compound transcribed differently in two documents is
+counted twice. Optical character recognition of older scans is the main source of the
+latter, and an aggressive normalisation collapses 29 duplicate spellings across the
+corpus; no term at threshold falls below 30, so the figure of 22 is unaffected, but terms
+near threshold read high by one or two. Whole-queue precision of the candidate filter is
+approximately 0.2; a figure of 0.82 recorded elsewhere is precision within the productive
+subset and must not be read as the filter's, and the final 46 rows of that subset ran at
+0.39. Agreement between automated proposals and adjudication is 110 of 110 rows, but the
+proposal is visible to the adjudicator, so it measures confirmation rather than accuracy;
+the blind estimate is 67\,\%. A text-containment audit identified 835 groups covering
+1{,}035 documents,
 19.4\,\%, as the same disclosure published more than once, typically an application and
 its granted patent; this is an upper bound, since the detector admits era-specific
 template text as evidence. Redundancy does not inflate the molecule counts, which are
@@ -369,18 +393,23 @@ supports the corpus being fit for its stated purpose.
 % =============================================================================
 \section{Conclusion}
 
-A structure--odour corpus of 1{,}193 molecules across 20 vocabulary terms was assembled
+A structure--odour corpus of 1{,}265 molecules across 22 vocabulary terms was assembled
 entirely from public-domain sources and released without restriction. Its labels carry
-structure-dependent signal. The corpus is smaller than licence-encumbered alternatives,
-and unlike them it may be used, extended and redistributed by anyone.
+structure-dependent signal. Twenty-two terms against a design target of 60--100 is a
+result about the sources rather than about the procedure: the collected material has been
+adjudicated to exhaustion, and further terms require sources not yet identified. The
+corpus is smaller than licence-encumbered alternatives, and unlike them it may be used,
+extended and redistributed by anyone.
 
 % =============================================================================
 \section*{Data and code availability}
 
 Corpus and ontology are released under CC0~1.0; code under Apache-2.0. Repository:
 \url{https://github.com/VanPez/openscent}. Every row carries its source identifier, the
-verbatim source sentence and a licence basis, so that a challenge to any single source
-removes the affected rows rather than invalidating the corpus.
+verbatim source sentence, the extracted spans and a licence basis, so that a challenge to
+any single source removes the affected rows rather than invalidating the corpus. All
+headline figures are computed by a single utility, so that any quoted number can be
+regenerated rather than recalled.
 
 CC0 waives copyright, not patents. The corpus is built from patent text; the presence of
 a molecule in it says nothing about live patent claims covering that molecule or its use.
@@ -388,7 +417,23 @@ a molecule in it says nothing about live patent claims covering that molecule or
 % \PrintGenesisArtifactRecord
 
 \section*{Author contributions}
-% TODO CRediT statement. Mikhail Fedorov proposed the project; authorship unsettled.
+
+% OPEN QUESTION FOR M — this section is deliberately unfilled, and the question is put
+% here rather than in a covering note so that it travels with the manuscript.
+%
+% Mikhail Fedorov proposed the project, specified the 30-molecule threshold and the
+% 60--100 term target, and is the recipient of the feature table in Section 3.2. Whether
+% that constitutes authorship under CRediT, and under which roles, is his to state and
+% not ours to assume. The candidate reading is: M. Fedorov, Conceptualization and
+% Supervision; I. Pezzini, Data curation, Methodology, Software, Formal analysis,
+% Investigation and Writing.
+%
+% The related question is whether the structure--odour model belongs in this paper or in
+% GL1F; the two documents should not both claim it. This manuscript currently reports the
+% cross-validated signal as a negative control on label quality (Section 3.2) and makes
+% no modelling claim, which is compatible with either answer.
+\emph{[To be completed. See the note in the source; the CRediT allocation is an open
+question for M.\ Fedorov.]}
 
 \section*{Ethics, privacy, rights, and safety}
 
@@ -397,14 +442,38 @@ data, credentials or confidential material are present in the corpus or in any p
 artefact.
 
 \section*{Competing interests and funding}
-% TODO declare GenesisL1 relationship.
+
+The project was proposed by Mikhail Fedorov of GenesisL1, and a derived feature table of
+648 compounds has been supplied to GenesisL1 for use in a separate modelling effort.
+GenesisL1 has an interest in the availability of permissively licensed structure--odour
+data, which is the subject of this paper. The authors declare this relationship as a
+potential competing interest.
+
+No funding was received. The corpus and code are released under CC0~1.0 and Apache-2.0,
+and no party holds exclusive rights in either.
 
 \section*{Acknowledgements}
-% TODO
 
-\GenesisEndMatterNotice
+% NAME TO CONFIRM — the repository records only "Joe". Do not publish an invented surname.
+We thank Joe~[surname to confirm] for chemistry review, and specifically for identifying that the
+corpus conflates three distinct naming layers --- the verbatim source string, the common
+name and the systematic name --- a distinction now carried explicitly by the
+database-derived rows. Three questions from that review remain open: whether the 67-term
+vocabulary is defensible as a controlled vocabulary, whether the mappings of \emph{sandal}
+and \emph{camphor} onto \emph{sandalwood} and \emph{camphoraceous} are sound, and whether
+\emph{animalic}, \emph{aldehydic} and \emph{camphoraceous} are used here as a perfumer
+would use them.
 
+% \GenesisEndMatterNotice   % template's own instructional note — not ours to ship
+
+% Bibliography set tight so the three entries sit on the last text page rather than
+% opening a page of their own. natbib is loaded by the class with [numbers,sort&compress];
+% \bibsep is natbib's inter-entry skip and defaults to a full \itemsep.
+\begingroup
+\small
+\setlength{\bibsep}{0pt plus 0.3ex}
 \bibliographystyle{plainnat}
 \bibliography{references}
+\endgroup
 
 \end{document}
