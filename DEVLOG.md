@@ -4,47 +4,59 @@
 
 ---
 
-## RESUME HERE — state as of 2026-09-07
-
-**THE QUEUE IS PRODUCTIVE AGAIN — 5,731 rows to review.** `DESCR_COLON` (2026-09-07) added
-~88 sentences of the `Odor description of X: a, b, c` form. Reviewing is unblocked; the
-sourcing question is parked because both remaining options were measured and declined.
+## RESUME HERE — state as of 2026-09-10 (evening)
 
 **Run `python3 pipeline/status.py` FIRST and quote no number that did not come out of
 it.** On 2026-09-05 the headline was recomputed by hand three times in ten minutes and
-gave 20, then 11, then 15 tags — see that entry. `status.py` now owns it. Live figures:
+gave 20, then 11, then 15 tags — see that entry. `status.py` owns it. Live figures:
 
 ```
 5,346 patents (Hetzner /opt/openscent/corpus/raw/)
-6,686 review rows            (was 4,620 — re-extracted 2026-09-07)
-  955 decided · 627 approve · 326 reject · 2 skip · 5,731 undecided
-  patents    15 of 67 at the bar     541 molecules
+4,655 review rows   DEDUPED — sum(occurrences) = 6,686 candidates, nothing lost
+1,004 decided · 671 approve · 331 reject · 2 skip · 3,651 undecided
+  patents    16 of 67 at the bar     584 molecules
   pubchem     6 of 67                653 molecules
-  COMBINED   20 of 67 at the bar   1,193 molecules   (12 on 2026-08-20)
-  sandalwood 28 · amber 28 (need 2) · camphoraceous 27 · animalic 23 · aldehydic 23
+  COMBINED   20 of 67 at the bar   1,236 molecules   (12 on 2026-08-20)
+  sandalwood 29 (28 real, NEEDS 2) · camphoraceous 28 (needs 2) · amber 28 (26 real,
+  needs 4) · animalic 26 (needs 4) · aldehydic 23 (needs 7)
 ```
 
-**418 OF THE 5,731 UNDECIDED ROWS ARE PRODUCTIVE** — and `status.py` now computes this on
-every run, reading `review.html`'s own `PRODUCTIVE()` predicate rather than copying it. A
-FLOOR: `review.html` hard-codes 110 surface forms against the ontology's 119, so rows
-carrying only one of the 46 unlisted forms are invisible to it. They land on the short
-tags: `aldehydic` 30 rows, `camphoraceous` 16, `sandalwood` 14, `animalic` 9, `tobacco` 32.
-At 0.82 productive-subset precision that is ~342 approvals — **more tags from review alone,
-with no new material.**
+**THE NEAR-BAR COUNTS ARE INFLATED BY OCR SPELLINGS — `sandalwood` NEEDS 2, NOT 1.**
+Molecules are joined on name TEXT, so one compound scanned three ways counts three times:
+`14-oxobicyclo [10.4.0]hexadecane` / `14-oxobicyclo[10.4.0]hexadecane` /
+`14 oxobicyc1o[10.4.0]hexadecane`. Run `python3 pipeline/name_variants.py` — it prints
+status.py's number and a squashed one side by side and refuses to pick. **No tag at the
+bar falls below 30, so 20 of 67 is unaffected**, but `sandalwood` 29→28 and `amber` 28→26,
+which is the difference between one approval closing a tag and not. Fourth duplicate scope
+after family / same-document-sentence / entity-split (2026-09-07). NOT folded into
+`status.py` — that changes the definition of the headline and is Ivan's call.
 
-**~~0 PRODUCTIVE rows remain~~ WAS WRONG, and it drove two days of work.** It was 53 even
-before the 2026-09-07 re-extraction, not 0. That claim is what produced "the constraint is
-now material, not review time", the C11D 3/50 sample, and the whole sourcing hunt. Caught
-by Ivan asking, while reading the paper draft, why 20 of 67 was presented as final when
-thousands of rows were still unreviewed. The lesson is the project's own and was not
-applied here: **a number nobody recomputes is a number nobody has.**
+**`review.jsonl` IS NOW ONE ROW PER DISTINCT SENTENCE.** Ivan's 2026-09-10 export ran
+`review.html`'s `dedupe()`: 6,686 candidate rows → 4,655 sentences, each carrying
+`occurrences` and `sources`. 1,149 are multi-source; one sentence occurs in 24 patents.
+Verified as loss-free three ways (see that day's second entry). Weight by `occurrences`
+for candidate-level counts.
 
-**REVIEW IS THE HIGHEST-VALUE WORK AVAILABLE, and was wrongly marked blocked.** 418
-productive rows (2026-09-09, a FLOOR — `status.py` prints it every run now), targeting
-`aldehydic`, `camphoraceous`, `sandalwood` and `animalic`. Open `review.html`,
-productive-first, and work them. **Fix its hard-coded 110-form `VOCAB` first** — the
-ontology has 119, and 46 forms are invisible to the ordering, `sandal` and `animalistic`
-among them.
+**~~418 PRODUCTIVE ROWS WAITING~~ — IT WAS ~105, AND IT IS 49 NOW.** `status.py` counted
+CANDIDATES; the UI dedupes and counts SENTENCES. Of the 488 candidates, 299 were distinct
+and 194 of those had already been decided under a duplicate. **The UI was right and the
+script was wrong by 4.6x, and the script was believed for two days.**
+
+**418 IS STILL IN THE PAPER, THREE TIMES** — `openscent-paper.tex` lines 68, 248, 352 —
+and the paper is with Joe. "At least 418 productive adjudications outstanding" carried the
+argument that 20 of 67 is a census, not a ceiling. **At 49 that argument mostly fails**:
+review is close to exhausted as a source of new tags, and the honest §4 says the corpus
+needs new material. Fix before Joe quotes it back.
+
+**REVIEW IS NO LONGER THE UNLIMITED WIN IT LOOKED LIKE.** 49 productive rows remain, ~40
+approvals at 0.82 precision, aimed at `clean`, `lavender`, `patchouli`, `leather`, `hay`,
+`grapefruit`. Worth a sitting — `sandalwood` needs ONE molecule — but it does not get the
+corpus to 60 tags. **The sourcing question, parked since 2026-09-07 because both remaining
+options were measured and declined, is open again and is now the main question.**
+
+**PROPOSALS WORK.** First round 2026-09-10: 60 written, 54 landed, 54/54 agreement, zero
+non-verbatim spans. Do NOT quote 100% as accuracy — n=54, one export, reasoning visible.
+`propose.py status` accumulates the figure; let several rounds build it.
 
 **JOE IS THE CHEMISTRY REVIEWER** (2026-09-10) — Masters in biochemistry, offered
 unprompted after reading the paper. Three questions are with him: is 67 terms defensible,
@@ -68,6 +80,8 @@ OPSIN name->structure; that is what takes it to ~1,200 rows and adds actual perf
 **955 decided is 7 higher than the 948 actually carried** — 56 sentences appear more than
 once in the same document, so a decision made once is written onto each occurrence. Counted
 in sets, so tag counts are unaffected; do not compute precision from decision counts.
+*(Superseded 2026-09-10: the export deduped, so `review.jsonl` now holds one row per
+sentence and this inflation is gone. The general warning stands.)*
 
 **THE BAR COUNTS THE UNION OF TWO ROW SOURCES** — `review.jsonl` (approved only) and
 `pubchem-rows.jsonl` (no review gate). Patents alone 15, PubChem alone 6, together 20.
@@ -2938,3 +2952,124 @@ drafting one for ledger submission. If GL1F is the modelling paper and OpenScent
 it consumes, §3 here shrinks to a reference and four pages becomes easy; if not, the AUC
 table has to carry a results section alone, and 648 molecules with 10-positive tags is thin
 ground. Also unsettled: authorship, given Mikhail Fedorov proposed the project.
+
+---
+
+## 2026-09-10 (later) — the first proposal round landed 54/54, and it exposed that 418 was never 418
+
+### The round
+
+`propose.py export --n 60` → 60 hand-written proposals → `apply` → Ivan reviewed.
+
+```
+proposals written        60
+landed on a live row     54     (6 hit rows already decided; apply never overwrites a human)
+decided by Ivan          54
+agreement                54/54 = 100%
+                         47 approve, 7 reject
+```
+
+**100% is not an accuracy estimate and must not be quoted as one.** n=54, all from a
+single export, all read by the person who wrote the rules — and the proposals carried
+their `why` into the UI, so this measures agreement WITH VISIBLE REASONING, which is a
+different and easier thing than the blind 85.7% of 2026-08-25. What it does establish is
+that the span pre-fill works: zero non-verbatim spans, nothing dropped by `apply`'s
+containment check. The drag-selecting was the slow part and it is now gone.
+
+`propose.py status` accumulates this figure on every run. Let it accumulate over several
+independent exports before it means anything.
+
+### Where the corpus stands
+
+```
+decisions   671 approve · 331 reject · 2 skip · 3,651 undecided
+patents    16 of 67 at the bar     584 molecules   (was 15 / 541)
+pubchem     6 of 67                653 molecules
+COMBINED   20 of 67 at the bar   1,236 molecules   (was 1,193)
+within reach: sandalwood 29 (needs 1) · camphoraceous 28 · amber 28 · animalic 26 · aldehydic 23
+```
+
+`sandalwood` is **one molecule** from the bar. It has been within two for a week.
+
+### The finding: `review.jsonl` is 4,655 rows now, and nothing was lost
+
+The file went 6,686 → 4,655 in the export. **This is `review.html`'s `dedupe()`, working as
+designed, and it is not data loss** — checked three ways before writing this down:
+
+- every row carries `occurrences` and `sources`; **`sum(occurrences) = 6,686` exactly**
+- the working copy is a strict SUBSET of HEAD — 0 rows in it that were not in HEAD
+- of the 1,999 collapsed rows, **0 carried a decision**
+
+1,149 rows are multi-source; one sentence occurs in **24** patents. Provenance is on the
+surviving row, so precision can still be computed per-candidate or per-distinct-sentence.
+
+### The real finding: **418 productive rows was never 418. It was ~105.**
+
+`status.py` counts CANDIDATES. `review.html` dedupes first and counts SENTENCES. The same
+patent boilerplate copied across 24 documents is 24 rows to one and 1 to the other.
+
+```
+HEAD, productive + undecided:   488 candidates  ->  299 distinct sentences
+of those 299, already decided under a duplicate:   194
+genuinely unread:                                  105     <- what the UI showed Ivan
+after this round:                                   49
+```
+
+**The UI was right and `status.py` was wrong, by 4.6x.** That reconciles the gap left open
+yesterday — the page was not stale, it was correct, and the advice to hit Cmd+R was
+answering the wrong question.
+
+This is the **fifth** instance this week of one definition living in two places and
+drifting (harvest.py stale on Hetzner · PRODUCTIVE() re-implemented in status.py · VOCAB in
+four copies · odor_terms vs review.html · this). The new wrinkle: the previous four were
+caught by comparing the two copies. This one was caught because a screenshot of the UI
+disagreed with a script — **and the script was believed for two days**.
+
+**418 IS IN THE PAPER, THREE TIMES** — `openscent-paper.tex` lines 68, 248, 352 — and the
+paper is with Joe. It is not a small edit: the sentence "at least 418 productive
+adjudications outstanding" was the load-bearing argument that 20 of 67 is a census and not
+a ceiling. At 49 outstanding that argument is much weaker, and the honest version of §4 is
+that **review is close to exhausted as a source of new tags** and the corpus needs new
+material after all. That is a different paper conclusion, and it has to be made before Joe
+quotes the number back.
+
+*(Note what this does NOT overturn: "0 productive rows" was still wrong, `norm/2` was still
+worth what it cost, and DESCR_COLON still opened the queue. The error is in the SIZE of the
+opening, not its existence.)*
+
+### To fix, in order
+
+1. **`status.py` must dedupe before counting productive** — normalise the sentence, count
+   distinct, and report the candidate count beside it as a second number. Both are true;
+   only one is "rows waiting to be read".
+2. **Correct 418 in `openscent-paper.tex`** (3 places) and re-argue §4's census claim.
+3. **`DEVLOG` RESUME block** at the top of this file still says 418 / ~342 approvals /
+   5,731 undecided. Stale in the same breath as the entry warning about stale numbers.
+4. `README.md` census figures — re-derive from `status.py`, do not copy from here.
+
+### Still in the queue, unchanged
+
+- `build_csv.py` does not yet emit `iupac_name` / `common_name` — the columns are cached in
+  `smiles.json`, the join is on `cid`, and it is ten lines.
+- Nomenclature section for the paper (three naming layers, Blue Book citation).
+- `attest.py` over the collapsed duplicate groups — the 2026-09-07 audit's unfinished payload.
+- OPSIN on the patent side: structures + both name columns + InChIKey join. Takes the CSV to
+  ~1,190 rows and makes the `group_id` argument testable.
+- Vapour pressure from HSDB (needs a unit parser). Also: VP is missing from §2.3's variable
+  list in the paper — Ivan spotted it, it is not fixed.
+- Paper TODOs: authorship / CRediT, competing interests (the GenesisL1 relationship),
+  acknowledgements.
+- Awaiting M: does the model live in the OpenScent paper or in `GL1F.pdf`. Awaiting Joe:
+  three chemistry questions.
+
+### Uncommitted at time of writing
+
+`review.jsonl` (the deduped export + 54 decisions) · `propose.py` (VOCAB copy removed, now
+calls `status.productive_predicate()`) · `propose-in.jsonl` · `propose-batch.jsonl` ·
+`review.html` (VOCAB synced 110 → 156) · `sync_vocab.py` (new, untracked) ·
+`reports/call-brief-joe-20260909.md` (untracked) · one `review.html.bak-*`.
+
+Two untracked PDFs sit in the repo root — `iupac-compendium-of-chemical-terminology-2009.pdf`
+and `openscent_paper__3_.pdf`. **Do not commit them** (the IUPAC Gold Book is not ours to
+redistribute, and the paper PDF is a build artefact). They are not in `.gitignore` and
+should be, or moved out.

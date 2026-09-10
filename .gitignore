@@ -46,3 +46,7 @@ pipeline/heldout-key.json
 
 # session handoff note — useful locally, not part of the published work
 NEW-CHAT-PROMPT.md
+
+# review.html backups — same reasoning as the *.py.bak-* rule above; the existing
+# pattern does not match a .html backup.
+*.html.bak-*

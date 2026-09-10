@@ -41,7 +41,7 @@ a rule misapplied rather than a mystery — and so a systematic error shows up a
 `why` repeated, which is exactly how a model fails.
 """
 from __future__ import annotations
-import collections, json, pathlib, re, sys, time
+import collections, importlib.util, json, pathlib, re, sys, time
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 HERE = pathlib.Path(__file__).resolve().parent
@@ -88,21 +88,17 @@ def save(head, rows):
 # This must match the UI's definition exactly. An earlier hand-rolled approximation of it
 # estimated 64% productive where the UI's own rule says 22.5% — a proxy that disagrees
 # with the thing it proxies is worse than no proxy, because it reads as a measurement.
-VOCAB = ["acid", "aldehydic", "almond", "amber", "ambery", "animalic", "anise", "aniseed",
-         "apple", "aquatic", "aromatic", "balsamic", "banana", "berry", "blossom-type",
-         "burnt", "buttery", "camphor", "camphoraceous", "caramel", "cedarwood", "cheesy",
-         "cinnamon", "citrus", "citrus-like", "clove", "coconut", "creamy", "diffusive",
-         "dry", "earthy", "ether", "ethereal", "faecal", "fatty", "fish", "floral",
-         "flowery", "fresh", "fruity", "gardenia", "grassy", "green", "herbal", "honey",
-         "jasmin", "jasmine", "leafy", "leather", "leathery", "lemon", "lilac", "lily",
-         "liquorice", "marine", "medicinal", "metallic", "mint", "minty", "mossy",
-         "muguet", "musk", "musky", "nutty", "orange", "ozonic", "patchouli", "peach",
-         "pear", "phenolic", "pine", "pineapple", "powdery", "radiant", "resinous",
-         "roasted", "rose", "rosy", "sandalwood", "smoke", "smoky", "spicy", "sulfurous",
-         "sweet", "tenacious", "terpenic", "tobacco", "transparent", "tropical", "vanilla",
-         "vetiver", "violet", "watery", "waxy", "winey", "woody"]
-_NAME = re.compile(r"\b[a-z0-9\[\]\(\),'\-]*\d[a-z0-9\[\]\(\),'\-]*(?:ol|al|one|ate|ene|ane|oate)\b", re.I)
-_TAGW = re.compile(r"\b(" + "|".join(VOCAB) + r")\b", re.I)
+# NO LOCAL COPY ANY MORE, 2026-09-10. This block held 96 forms while review.html held
+# 110 and the ontology 119 — three lists, one of them under a comment promising they
+# matched. status.productive_predicate() PARSES the rule out of review.html, so there is
+# exactly one definition and it is the one the reviewer sees.
+_sp = importlib.util.spec_from_file_location("status", HERE / "status.py")
+_status = importlib.util.module_from_spec(_sp)
+_sp.loader.exec_module(_status)
+_PRODUCTIVE, VOCAB, _err = _status.productive_predicate()
+if _err:
+    raise SystemExit(f"cannot read PRODUCTIVE() from review.html: {_err}")
+
 
 # Sentences that cannot yield a row no matter what they contain. Filtering these is not
 # cherry-picking — they are the ones the first batch wasted itself on.
@@ -116,7 +112,7 @@ _DEAD = re.compile(
 
 
 def productive(s: str) -> bool:
-    return bool(s) and bool(_NAME.search(s)) and bool(_TAGW.search(s))
+    return _PRODUCTIVE(s)
 
 
 def cmd_export(n=150):
