@@ -57,16 +57,35 @@ for candidate-level counts.
 counted CANDIDATES; the UI dedupes and counts SENTENCES. The 49 were reviewed on
 2026-09-10 and the queue is now empty.
 
-**THE PAPER IS STALE IN MORE PLACES THAN THE THREE `418`s** — `openscent-paper.tex` lines
-68, 248, 352 — and it is with Joe. Also: `1,193` molecules is 1,265, `5,731` undecided is
-3,592, `20 of 67` is 22, and the per-tag productive breakdown at line 250 (`aldehydic 30
-rows, camphoraceous 16, sandalwood 14, animalic 9`) is now all zeroes. The census argument
-at line 258 — *"Twenty is therefore a census figure, not a ceiling"* — **cannot be carried
-by the queue any more, because the queue is empty.** Line 256's *"at the precision observed
-within the productive subset (0.82) these adjudications alone would be expected to carry
-several further terms past threshold"* fails on both halves: the 46 remaining rows ran at
-39% and carried **zero** terms. Preferred replacement is to make the ordering failure the
-paper's fifth negative result — see the 2026-09-10 (evening) entry.
+**~~THE PAPER IS STALE~~ — v0.2 IS CURRENT AS OF 2026-09-10 AND IS WITH M AND JOE.** Every
+figure re-derived from `status.py` and `name_variants.py`; the three `418`s, `1,193`,
+`5,731` and `955` are gone. The census argument was **replaced, not patched**: §3.1 now
+says twenty-two is a ceiling for this material, and the ordering failure became the
+paper's **fifth negative result**. Limitations gained the name-variant bound and the
+anchoring caveat (110/110 is confirmation, not accuracy; blind is 67%). **Re-derive before
+any further edit — the corpus moved twice in one day.**
+
+**What is still open IN THE PAPER, all deliberate:**
+
+- **`Joe~[surname to confirm]`** in the acknowledgements. An earlier draft carried an
+  invented surname; it was caught before sending. **Do not restore one from memory.**
+- **Author contributions is EMPTY on purpose.** The CRediT allocation and the question of
+  whether the model belongs here or in `GL1F.pdf` are put to M in a source comment, so
+  they travel with the manuscript rather than in a covering note.
+- **STILL FIVE PAGES against Joe's four-page spec**, by about fifteen lines: page 5 holds
+  the tail of the acknowledgements plus the references. Page 5 fell from 2,827 rendered
+  characters to 787 after the cuts. The remaining cut, if wanted, is the Evidence box
+  (~600 characters that partly restate the table). **Character arithmetic was used twice
+  in place of a compile and was wrong twice — compile it, do not estimate it.**
+- **The nomenclature section was never written.** Three naming layers, Blue Book P-1 for
+  the trivial/systematic/preferred distinction, and the open-access *Brief Guide* (PAC
+  92(3) 527–539, 2020) as the citation a reviewer can actually check in a minute.
+- VP is still missing from §2.3's variable list.
+
+**Overleaf compile note:** a `\label`/`\ref` pair added in v0.2 forced an extra latexmk
+pass and coincided with the free-plan timeout warning; it was removed and the label set is
+now identical to v0.1's. `chemistry` stays disabled — the class comment records that
+enabling it roughly triples compile time.
 
 **TAGS DO NOT CROSS FROM THE QUEUE ANY MORE. THEY CROSS FROM NEW MATERIAL.** The method
 that worked on 2026-09-10, and the only one that did: **when a tag is N molecules short,
