@@ -4,7 +4,48 @@
 
 ---
 
-## RESUME HERE — state as of 2026-09-10 (end of day)
+## RESUME HERE — state as of 2026-09-23 (evening)
+
+**READ THIS BEFORE THE 2026-09-10 BLOCK BELOW, WHICH IS WRONG IN ONE IMPORTANT WAY.**
+The 09-10 block says in capitals that **review is finished as a source of tags**. It is
+not, and that was the single largest error in this project. See the 2026-09-23 entry at
+the bottom. Live figures:
+
+```
+4,669 review rows · 820 approve · 561 reject · 2 skip · 3,286 undecided
+  patents    19 of 67 at the bar     730 molecules
+  pubchem     6 of 67                653 molecules
+  COMBINED   23 of 67 at the bar   1,379 molecules   (22 / 1,265 on 2026-09-10)
+  animalic 28 (needs 2) · aldehydic 26 (needs 4) · tobacco 23 (needs 7)
+review queue: 3,286 undecided, 0 PRODUCTIVE  <- THE ZERO IS THE BUG, NOT THE STATE
+```
+
+**`0 PRODUCTIVE` MEANS THE PREDICATE IS BLIND, NOT THAT THE QUEUE IS EMPTY.**
+`PRODUCTIVE()` needs a compound-like token **carrying a digit**. Santalol, ambroxide,
+caryophyllene and Hedione have no digit, so the whole trivially-named population sorts to
+the bottom and reads as zero. Measured **47% productive**. Four batches of 100 have been
+worked since: **+112 molecules, +1 tag (`amber`), 820 approvals.**
+
+**THE POOL QUERY IS NOW `pipeline/hedione_pool.py`** — it lived only in `/tmp` for four
+batches and had to be reconstructed from prose each chat. Read its docstring: it reports a
+different count from the old inline command (821, not 405) because the noise filter is
+looser, and **the 47% rate was measured on the tighter pool — do not extrapolate it.**
+
+**BATCH 4 IS STAGED BUT NOT EXPORTED** (30 approve / 8 split / 62 reject). It is in
+`review.jsonl` as `proposed_decision` only. Open `review.html`, tick "proposals first",
+work them, export. Three rows to look at: **US3580953A was rejected as a phantom** —
+`dihydro-[i-santalol` is OCR for dihydro-β-santalol, already in the corpus from
+US3673263A; **US20160326457A1** ("isononyl acetate") is a trade material and not one
+defined isomer, approved on the loose reading; **US4820389A** is a split whose *dimethyl*
+acetal half is definite and should stand.
+
+**THE ONE-CHAT-PER-BATCH RULE.** A 100-row batch costs enough context that the session
+compacts mid-work. Do one or two batches per chat, write the DEVLOG entry, and start a
+new one. The handoff lives in `NEW-CHAT-PROMPT.md` (gitignored).
+
+---
+
+## Superseded resume block — state as of 2026-09-10 (end of day)
 
 **Run `python3 pipeline/status.py` FIRST and quote no number that did not come out of
 it.** On 2026-09-05 the headline was recomputed by hand three times in ten minutes and
@@ -119,7 +160,10 @@ pass and coincided with the free-plan timeout warning; it was removed and the la
 now identical to v0.1's. `chemistry` stays disabled — the class comment records that
 enabling it roughly triples compile time.
 
-**TAGS DO NOT CROSS FROM THE QUEUE ANY MORE. THEY CROSS FROM NEW MATERIAL.** The method
+**~~TAGS DO NOT CROSS FROM THE QUEUE ANY MORE~~ — FALSE, CORRECTED 2026-09-23.** `amber`
+crossed from the queue on 2026-09-23 and 112 molecules came with it. The paragraph below
+is right about the METHOD (grep the undecided rows for the tag's own chemistry) and wrong
+about the population being exhausted. Keep the method, ignore the verdict. The method** The method
 that worked on 2026-09-10, and the only one that did: **when a tag is N molecules short,
 grep the UNDECIDED rows for that tag's own chemistry** (`santalol` → 31 rows → 4
 candidates, seconds) rather than trusting the productive predicate, which is a queue
@@ -3624,3 +3668,98 @@ an untested hypothesis, which is the shape of claim that produced 418. It can no
 measured across 5,346 documents, 4,849 candidate pairs, 1,124 explicitly anaphoric, ~25%
 admissible on two seeded samples, three terms recoverable, at the cost of introducing a
 resolved reference. Not yet written into the .tex.
+
+---
+
+## 2026-09-23 — the queue was not exhausted
+
+### What happened, in one line
+
+A perfumer's palette spreadsheet asked a casual question — are these common molecules in
+OpenScent? — and the answer exposed that the review queue had been declared finished on
+the strength of a **ranking heuristic mistaken for a measure of what remained**.
+
+### The chain
+
+Ivan uploaded `De Hekserij Scents.ods` out of curiosity. Hedione was not in the corpus.
+Hedione is one of the most-used materials in modern perfumery and appears in the patent
+set repeatedly — so its absence was not a gap in the sources, it was a gap in the REVIEW.
+Adjudicating the seven Hedione rows (3 approve / 4 reject) confirmed it: good rows had
+been sitting undecided at the bottom of the queue for weeks.
+
+**Why they sorted to the bottom.** `PRODUCTIVE()` requires a compound-like token carrying
+a **digit** plus a vocabulary term. `methyl dihydrojasmonate` has no digit. Neither does
+santalol, ambroxide, caryophyllene, pulegone, cineole or thujone. The predicate was
+written to ORDER a queue and was read as a MEASURE of what was left in it. When it
+returned 0 the conclusion drawn was "nothing productive remains" when the true statement
+was "nothing remains that this rule can see."
+
+**The measurement.** 1,281 undecided rows carry a vocabulary term and trivially-named
+chemistry with no digit. 713 of those carry no anaphora / composition / family marker.
+Sampled: **47% productive.** For comparison, the sandalwood sample on 2026-09-10 scored
+1-in-25, and THAT number was generalised into "review is finished" — into the DEVLOG and
+into the paper. Sandalwood is a marketing word that attracts composition prose; it is the
+worst corner of the population, not a representative one. **A 4% sample from the worst
+corner was used to write off a 47% population.**
+
+### Four batches of 100
+
+Random ordering from batch 2 onward. Batch 1 was ordered by below-bar tag count and that
+backfired — it concentrated eleven "experimental cigarettes" rows and six copies of the
+same norcamphor sentence into one sitting.
+
+| batch | approve | split | reject | agreement |
+|-------|---------|-------|--------|-----------|
+| 1 (tag-ordered) | 31 | 7 | 62 | 93/100 raw, 100/100 real |
+| 2 (random) | 37 | 1 | 61 | 99/99 real |
+| 3 (random) | 24 | 3 | 73 | 97/100 raw, 1 real disagreement (US3455997A, split→reject) |
+| 4 (random) | 30 | 8 | 62 | **staged, not yet exported** |
+
+**22 → 23 of 67 tags** (`amber` crossed). **1,265 → 1,379 molecules.** 703 → 820
+approvals. Verbatim invariant clean throughout; the staging script refuses to write if any
+span fails the substring check, and it has never had to.
+
+Agreement figures remain **anchored** — the proposal is on screen. 67% blind
+(2026-09-04) is still the number to quote.
+
+### `pipeline/hedione_pool.py`
+
+The pool query ran inline for four batches and was never saved, so every new chat
+reconstructed it from prose in this file. It is now a script, and its docstring is honest
+about the consequence: **the reconstructed filter is looser than the original**, so it
+reports 821 rows remaining where the old command would have said ~305. Worked rows are
+excluded by `decision` OR `proposed_decision`, so no row can be drawn twice and the seeds
+do not need to match history. But the 47% was measured on the tighter pool. Re-measure
+from the next batch's own yield; the four batches to date average 38% approve and are
+trending flat.
+
+### Also today
+
+- Read the last two weeks of the GenesisL1 Telegram chat. The IPFS work does not change
+  OpenScent's minting or storage posture — the corpus is CC0 text, and nothing in the
+  chain proposal touches how rows are produced or licensed.
+- `corpus/rows/` backups tidied.
+- The `dedupe()` provenance bug found on 2026-09-10 was **verified fixed in production**:
+  after a full round-trip, 4,634 non-split rows, `sum(occurrences)` 6,665, 1,149
+  multi-source, max 24 — all intact.
+
+### What this costs the paper — v0.3 IS NOW REQUIRED, NOT OPTIONAL
+
+§3.1 says adjudication **stopped for want of admissible material**. That is now **false**.
+The fifth negative result is still a real negative result but its conclusion is wrong in
+an interesting and more useful way: the failure was not that the ranking heuristic
+mis-ordered a queue, it is that **a heuristic built for ordering was read as a census, and
+the error was invisible because the heuristic's blind spot and the project's own sampling
+bias pointed the same way.** That is a better finding than the one in v0.2 and it should
+be written as such, not patched.
+
+Also outstanding in the .tex: the passage-scope measurement is still not in it, and every
+figure has moved again (23 of 67, 1,379 molecules, 820 approvals).
+
+### Still open, unchanged
+
+Haz-Map's licence (277 CIDs) · JECFA and a lawyer (1,052 CIDs) · `cmd_status`'s split
+miscount (~5 lines) · `named()` matching "natural" (366 wasted queue rows) · VP missing
+from §2.3 · the nomenclature section · **Joe's surname, still unconfirmed — an earlier
+draft carried an invented one and it must not be restored from memory** · M has been
+silent 13 days.
