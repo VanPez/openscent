@@ -4,44 +4,42 @@
 
 ---
 
-## RESUME HERE — state as of 2026-09-23 (evening)
+## RESUME HERE — state as of 2026-09-23 (night)
 
 **READ THIS BEFORE THE 2026-09-10 BLOCK BELOW, WHICH IS WRONG IN ONE IMPORTANT WAY.**
-The 09-10 block says in capitals that **review is finished as a source of tags**. It is
-not, and that was the single largest error in this project. See the 2026-09-23 entry at
-the bottom. Live figures:
+The 09-10 block says in capitals that **review is finished as a source of tags**. It was
+not — see the two 2026-09-23 entries at the bottom. Live figures:
 
 ```
-4,669 review rows · 820 approve · 561 reject · 2 skip · 3,286 undecided
-  patents    19 of 67 at the bar     730 molecules
+4,671 review rows · 875 approve · 754 reject · 2 skip · 3,040 undecided
+  patents    19 of 67 at the bar     778 molecules
   pubchem     6 of 67                653 molecules
-  COMBINED   23 of 67 at the bar   1,379 molecules   (22 / 1,265 on 2026-09-10)
-  animalic 28 (needs 2) · aldehydic 26 (needs 4) · tobacco 23 (needs 7)
-review queue: 3,286 undecided, 0 PRODUCTIVE  <- THE ZERO IS THE BUG, NOT THE STATE
+  COMBINED   24 of 67 at the bar   1,421 molecules   (23 / 1,379 that morning)
+  aldehydic 28 (needs 2) · apple 25 (needs 5) · tobacco 23 (needs 7) · chlorine 20 (needs 10)
+review queue: 3,040 undecided, 0 PRODUCTIVE  <- THE ZERO IS THE BUG, NOT THE STATE
 ```
 
 **`0 PRODUCTIVE` MEANS THE PREDICATE IS BLIND, NOT THAT THE QUEUE IS EMPTY.**
-`PRODUCTIVE()` needs a compound-like token **carrying a digit**. Santalol, ambroxide,
-caryophyllene and Hedione have no digit, so the whole trivially-named population sorts to
-the bottom and reads as zero. Measured **47% productive**. Four batches of 100 have been
-worked since: **+112 molecules, +1 tag (`amber`), 820 approvals.**
+`PRODUCTIVE()` needs a compound-like token carrying a digit; Hedione, santalol, ambroxide
+have none. Six batches have been worked from the population it cannot see. **`animalic`
+crossed in batch 6** — the first tag moved by a TARGETED draw.
 
-**THE POOL QUERY IS NOW `pipeline/hedione_pool.py`** — it lived only in `/tmp` for four
-batches and had to be reconstructed from prose each chat. Read its docstring: it reports a
-different count from the old inline command (821, not 405) because the noise filter is
-looser, and **the 47% rate was measured on the tighter pool — do not extrapolate it.**
+**NOTHING IS STAGED.** Batches 4, 5 and 6 are exported; `review.jsonl` has 0 pending
+proposals.
 
-**BATCH 4 IS STAGED BUT NOT EXPORTED** (30 approve / 8 split / 62 reject). It is in
-`review.jsonl` as `proposed_decision` only. Open `review.html`, tick "proposals first",
-work them, export. Three rows to look at: **US3580953A was rejected as a phantom** —
-`dihydro-[i-santalol` is OCR for dihydro-β-santalol, already in the corpus from
-US3673263A; **US20160326457A1** ("isononyl acetate") is a trade material and not one
-defined isomer, approved on the loose reading; **US4820389A** is a split whose *dimethyl*
-acetal half is definite and should stand.
+**THE WIDENED HEDIONE POOL IS NEARLY SPENT.** Batch 5 approved 10 of 100 (vs 38% for
+batches 1–4). `hedione_pool.py` reports 693 rows. A tighter noise filter (`NOISE2`, in
+`pipeline/target_pool.py`) lifts the out-of-sample rate only 26% → 29% — use it as a draw
+ORDER, not an exclusion. `target_pool.py` for animalic/aldehydic/apple now finds 1 row:
+**aldehydic and apple have no targeted rows left.**
 
-**THE ONE-CHAT-PER-BATCH RULE.** A 100-row batch costs enough context that the session
-compacts mid-work. Do one or two batches per chat, write the DEVLOG entry, and start a
-new one. The handoff lives in `NEW-CHAT-PROMPT.md` (gitignored).
+**BUG 4: `stage_batch.py`'s 110-char match key collides.** It put one batch-5 proposal on
+the wrong row and silently skipped two batch-6 rows. Fixed in `stage_batch6.py` (full
+sentence); **copy THAT file, not the template**, until the template is patched. Always run
+the post-apply check: every pending proposal on a batch sentence, every span a substring.
+
+**THE ONE-CHAT-PER-BATCH RULE.** Do one or two batches per chat, write the DEVLOG entry,
+and start a new one. The handoff lives in `NEW-CHAT-PROMPT.md` (gitignored).
 
 ---
 
@@ -3763,3 +3761,116 @@ miscount (~5 lines) · `named()` matching "natural" (366 wasted queue rows) · V
 from §2.3 · the nomenclature section · **Joe's surname, still unconfirmed — an earlier
 draft carried an invented one and it must not be restored from memory** · M has been
 silent 13 days.
+
+---
+
+## 2026-09-23 (night) — batches 4–6: the widened pool is spent, a targeted batch crossed `animalic`
+
+### What happened, in one line
+
+Batch 4 was exported, batch 5 measured the widened Hedione pool at **10%** approve, and a
+42-row batch aimed at the near-bar tags took **`animalic` over the bar: 23 → 24 of 67.**
+
+### Figures (all from `status.py`)
+
+```
+875 approve · 754 reject · 2 skip · 3,040 undecided   (4,671 rows)
+  patents    19 of 67 at the bar     778 molecules
+  pubchem     6 of 67                653 molecules
+  COMBINED   24 of 67 at the bar   1,421 molecules
+  aldehydic 28 (needs 2) · apple 25 (needs 5) · tobacco 23 (needs 7) · chlorine 20 (needs 10)
+verbatim invariant: clean
+```
+
+Molecules by export: 1,379 before batch 4 → 1,404 → 1,411 → 1,421.
+
+| batch | draw | approve | split | reject | Ivan vs proposal |
+|-------|------|---------|-------|--------|------------------|
+| 4 | hedione_pool, random | 30 | 8 | 62 | every A and R stood; of 8 splits, 2 split, **6 rejected whole** (incl. US4820389A) |
+| 5 | hedione_pool, seed 20260928 | 10 | 1 | 89 | 99/100; the patchoulione split was rejected whole |
+| 6 | **target_pool.py** (animalic/aldehydic/apple) | 11 | 0 | 31 | 42/42, borderlines included |
+
+Agreement is still ANCHORED (proposal on screen). 67% blind remains the number to quote.
+
+### The yield collapsed, and why
+
+Batch 5 approved **10 of 100** against a 38% mean for batches 1–4. The rows are mostly
+"the compound(s) of our invention", "It has…", composition prose and "as little as … will
+suffice to impart" boilerplate. Cause: batches 1–4 depleted the TIGHT pool the 47% was
+measured on, so what `hedione_pool.py`'s looser filter has left is disproportionately the
+rows the old filter never admitted. On the same current filter, batches 1–4's rows score
+26%, batch 5's 10%. The docstring warned not to extrapolate 47% × 821; this is the measured
+reason.
+
+### A tighter noise filter — measured, NOT adopted into hedione_pool.py
+
+Eight patterns (`NOISE2`, now in `pipeline/target_pool.py`): "of our/the present
+invention", "produced/prepared according to", "as little as / will suffice / formulations",
+sentence-initial It/Its/This/These/Such, "the/this/said ketone|acetal|…", "the trans/cis
+isomer", product contexts (cologne, detergent, soap, powder, linen, fabric…), "general
+formula / novel class / there is a need".
+
+| | n | approve rate | approves lost |
+|---|---|---|---|
+| batches 1–4 (OUT of sample) | 249 | 26% → **29%** | 5 of 65 |
+| batch 5 (IN sample — fitted here) | 100 | 10% → 22% | 2 of 10 |
+
+**The honest number is +3 points.** The in-sample 22% rests on 37 rows. The approves it
+loses are named-subject sentences carrying "prepared by the process of this invention"
+(dihydro-β-santalol, cyclohexadecenone-S) — so if used in `hedione_pool.py` it should be
+an ORDERING tier, not an exclusion. It would keep ~359 of the then-721 pool.
+
+### `pipeline/target_pool.py` — new
+
+Draws undecided rows carrying vocabulary for NAMED tags, across the whole queue (digit names
+included), filtered by `NOISE` + `NOISE2`, capped at 3 rows per patent. Default tags
+animalic/aldehydic/apple; tobacco left out because it clusters (batch 1's cigarette rows).
+It found 42. **After batch 6 it finds 1** — the targeted route for those three tags is
+spent at this filter. `tobacco chlorine` finds 13, all tobacco.
+
+### Bug 4 — the 110-character match key is not unique (FOUND TWICE, fixed only in copies)
+
+`stage_batch.py` matches batch rows to `review.jsonl` on `(source_id, first 110 chars of
+the normalised sentence)`. Patents repeat sentence openings.
+
+- **Batch 5:** row #48 (US20130236402A1) collided with a sibling sentence ("…fragrance
+  composition…" vs "…perfumed product…"). The reject landed on the WRONG ROW and the right
+  row was left unproposed. Caught only because the post-apply check compared proposals to
+  batch sentences; moved by hand (`review.jsonl.bak-20260923-b5fix`, atomic write). Both are
+  composition rejects, so no decision was affected.
+- **Batch 6:** rows #5 and #6 collided with an already-DECIDED sibling and were silently
+  "skipped". `stage_batch6.py` now keys on the FULL normalised sentence and all 42 matched.
+
+**The template `stage_batch.py` still has the bug.** Two lines: drop `[:110]` from both key
+expressions. And keep the post-apply check — every pending proposal must sit on a batch
+sentence, and every span must be a substring. It is the only reason #48 was caught.
+
+### Adjudication calls made this session, for the record
+
+- **Phantoms rejected, following batch 4:** US3580953A's second norcamphor spelling
+  (`3-endo methyl-B-exo(…)norcamphor`), `Allyl betaphenylpropionate`, `allyl
+  lbeta-phenylpropionate`. This is now the working rule — but the 2026-09-10 phantom pairs
+  went the other way (both halves approved), so **the policy is still Ivan's to settle.**
+- **Approved on the loose reading:** `Terpineol` (mixed isomers, like isononyl acetate),
+  `Indoflor` and `Dihydroverbetryle` (trade names — check they resolve), `β-damascenone`
+  from a shared "damascones" description, `menthol` from background clauses, `(-)-thujone`
+  from "odor attributed to the thujone content".
+- **Splits are now the weak proposal.** Across batches 4–5, 7 of 9 proposed splits were
+  rejected whole. When one half is a pointer ("the Example II material"), propose REJECT
+  rather than a split with one live half.
+- Descriptor extraction picks up `acid` from compound names, `soft`/`dry` from non-odour
+  senses, and substances (`menthol`, `salicylate`, `indole`, `cresol`). Check EXCL per row.
+
+### Files
+
+- New: `pipeline/target_pool.py`, `pipeline/stage_batch5.py`, `pipeline/stage_batch6.py`.
+- Backups: `corpus/rows/review.jsonl.bak-20260923-193805`, `-b5fix`, `-200654`.
+- `/tmp/batch.json` is sandbox-only and does not survive the chat. Re-draw, don't look for it.
+
+### What is left in review
+
+`hedione_pool.py` now reports **693** clean rows. At batch 5's yield that is ~7 batches of
+~10%; the tightened ordering would put ~4 batches at maybe 20–29% first (estimate, small
+samples). **aldehydic needs 2 and apple 5 with no targeted rows left** — crossing them needs
+a looser targeted draw, the tightened hedione batches, or another source (Haz-Map, JECFA,
+passage scope). Paper v0.3 remains required; every figure has moved again (24 of 67, 1,421).
