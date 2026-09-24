@@ -13,9 +13,9 @@ not — see the 2026-09-23 entries and the 2026-09-24 entry at the bottom. Live 
 ```
 4,675 review rows · 920 approve · 1,031 reject · 2 skip · 2,722 undecided
   patents    20 of 67 at the bar     813 molecules
-  pubchem     6 of 67                653 molecules
-  COMBINED   25 of 67 at the bar   1,454 molecules   (24 / 1,421 on 09-23)
-  tobacco 25 (needs 5) · apple 25 (needs 5) · chlorine 20 (needs 10)
+  pubchem     7 of 67                839 molecules   (HSDB Odor + CAMEO/OSHA/NIOSH, 09-24)
+  COMBINED   25 of 67 at the bar   1,639 molecules   (1,454 before the Physical Description ingest)
+  apple 27 (needs 3) · tobacco 25 (needs 5) · chlorine 21 (needs 9)
 review queue: 2,722 undecided, 0 PRODUCTIVE  <- THE ZERO IS THE BUG, NOT THE STATE
 ```
 
@@ -31,8 +31,13 @@ it in EXCL for any row whose molecule name contains it.
 **The Hedione pool is at 388 rows, only ~27 of them NOISE2-clean.** Batches 8–10 ran at
 10–13% approve even with NOISE2 ordering. Past the clean tier, expect lower.
 
-**Apple cannot plausibly cross from the review queue; tobacco is NOT ruled out.** Only 6
-undecided rows contain an apple form (needs 5; 11 after name_variants squash). Tobacco:
+**THE 212 CAMEO/OSHA/NIOSH COMPOUNDS ARE INGESTED** (`pipeline/pubchem_physdesc.py`, rows in
+`corpus/rows/pubchem-physdesc-rows.jsonl`, read by status.py): 185 new CIDs. Held rows are
+not counted until Ivan decides; all 25 are decided. **Haz-Map is REFUSED** (all rights
+reserved). JECFA stays refused. No usable PubChem heading is left unread.
+
+**Apple now needs 3, and cannot plausibly get them from the review queue**: 6 undecided
+rows contain an apple form (and name_variants' squash reads apple lower). Tobacco:
 **70** undecided rows contain the word — the 13 drawn in batch 7 were only those passing
 NOISE+NOISE2. Most of the other 57 are cigarette/pointer rows, but they were filtered, not
 adjudicated. (Corrected 2026-09-24 late — the first version of this block said both were
@@ -41,7 +46,8 @@ exhausted, the same filter-read-as-census error the paper is about.)
 **PAPER v0.3 IS WRITTEN** — `reports/openscent-paper.tex` (v0.2 kept as
 `openscent-paper-v0.2.tex`), Overleaf package `openscent-paper-v0.3.zip`. Compiles to 5
 pages in the sandbox with a Times substitute for newtx (v0.2 gave 5 there too, matching
-Overleaf). Recompile on Overleaf before sending.
+Overleaf). Recompile on Overleaf before sending. **Its figures are stale again (1,454 ->
+1,639 molecules) — Ivan wants the corpus finished before the next paper version.**
 
 **`/tmp/batch.json` is a stale file the sandbox cannot overwrite.** Draw with
 `--out /tmp/bN/batch.json` and point the staging copy at it.
@@ -4044,3 +4050,75 @@ same reason it failed for JECFA: the corpus stores the VERBATIM sentence. **Haz-
 CIDs are out** unless written permission is obtained (the notice names that route; not
 pursued). The swing vote is settled: of the Physical Description sources, only CAMEO +
 OSHA + NIOSH (212 new CIDs, US Gov) are usable, and they are still NOT ingested.
+
+---
+
+## 2026-09-24 (night) — CAMEO/OSHA/NIOSH ingested: 1,454 -> 1,639 molecules
+
+### What happened, in one line
+
+The 212 US-Government compounds measured on 2026-09-10 were ingested from the cached
+`Physical Description` pages: **185 new CIDs, 1,639 molecules**, still 25 of 67.
+
+### Figures (status.py)
+
+```
+  patents    20 of 67     813 molecules
+  pubchem     7 of 67     839 molecules
+  COMBINED   25 of 67   1,639 molecules
+  apple 27 (needs 3) · tobacco 25 (needs 5) · chlorine 21 (needs 9)
+verbatim invariant: clean
+```
+
+`pubchem_physdesc.py`: 796 rows (771 clean, 25 held), 477 CIDs of which 185 new to the
+PubChem rows. By source (clean): CAMEO 400, OSHA 191, NIOSH 180. Skipped: 4,643 records
+with no tag in an odour clause, 1,106 with no or several CIDs.
+
+### The licence basis, per source
+
+- **CAMEO** (NOAA/EPA). Its terms reserve DuPont clothing data, CAS numbers/synonyms/
+  formulas, NFPA ratings and AEGLs only — not the physical description. CAMEO text cites
+  (USCG …)/(NTP …)/(EPA …); any other citation is held (one: Acetyl iodide, Merck 11th ed.).
+  Residual risk, recorded: CAMEO's record NAMES may overlap CAS synonyms. Names are display
+  and join keys only; where the CID was already in our PubChem rows, HSDB's name is reused.
+- **OSHA** (DOL public-domain statement) and **NIOSH** Pocket Guide (CDC).
+- Checked per annotation on `SourceName`, never per heading.
+
+### What the extractor does that the probe did not
+
+The probe's clause gate was a yield estimator. The extractor takes tags ONLY from the odour
+clause (back from `odor/smell` to the nearest with/has/having/;/./start) and skips a span
+followed by colour/state/lustre words — built after sampling showed "an amber color and an
+odor" -> amber and "metallic luster and a sharp odor" -> metallic. Every span is asserted
+against the quote at its offset; status.py re-checks it.
+
+Held for review: negation in the clause, `acid` spans, mixture/solution/class records (on
+the record name AND the first sentence — CAMEO names "FORMALDEHYDE" a record whose text is
+formalin), non-Government citations. An early mixture regex matched commas and so held
+every locant ("2,4-…"); fixed before writing.
+
+### Ivan's decisions on the 25 held rows
+
+24 rejected (20 solutions/mixtures/"soluble compounds"/isomer blends; 2 "odorless or
+faint aromatic"; ferric chloride solution "hydrochloric acid odor"; acetyl iodide, Merck
+citation). 1 approved: 1,2,3-trichloropropane "a strong acid odor". Decisions live on the
+rows (`review_decision`, `review_note`) and `--write` carries them forward on re-run.
+
+### What it bought, honestly
+
+Molecules, not tags. The yield is a safety-datasheet register: pungent 284, aromatic 141,
+sweet 127, fruity 78, musty 29, camphoraceous 26. Near-bar: apple +2 (n-butyl and n-pentyl
+propionate, "apple-like"), chlorine +1 net. No tag crossed.
+
+### Where that leaves the corpus
+
+Every usable source measured to date is now in. Left: the review queue (Hedione pool 388,
+tobacco's 57 filtered rows, apple's 6), passage scope (not adopted), mapping more surface
+forms (`appley`), and new sources not yet identified (Ivan is looking for a full Hekserij
+list to compare against). Refused: JECFA, Haz-Map, non-US patents.
+
+### Files
+
+New: `pipeline/pubchem_physdesc.py`, `corpus/rows/pubchem-physdesc-rows.jsonl`.
+Changed: `pipeline/status.py` (reads PHYSDESC; prints held count). Committed da6d3eb
+before this entry.
