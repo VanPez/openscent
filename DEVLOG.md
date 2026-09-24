@@ -4,7 +4,32 @@
 
 ---
 
-## RESUME HERE — state as of 2026-09-24
+## RESUME HERE — state as of 2026-09-24 (afternoon)
+
+**READ THIS FIRST. The block below it ("morning") is superseded.** Live figures (status.py):
+
+```
+4,676 review rows · 1,145 approve · 1,153 reject · 2 skip · 2,376 undecided
+  patents    21 of 67 at the bar   1,010 molecules
+  pubchem     7 of 67                839 molecules
+  passage     0 of 67                  8 molecules   (passage scope, adopted 09-24)
+  COMBINED   27 of 67 at the bar   1,841 molecules
+  next: grapefruit 22 (needs 8) · leather, chlorine, balsamic 21 (needs 9) · pineapple, honey 20
+verbatim invariant: clean
+```
+
+**apple and tobacco crossed** — by PASSAGE SCOPE, not review (see the afternoon entry).
+**The review queue has been screened end to end** (screen-v1): the 2,376 undecided rows are
+what Claude screened OUT. They are NOT rejects and NOT exhausted in a strict sense — the
+audit found 0/50 misses, which bounds the miss rate at ~6% (95%), i.e. up to ~140 rows.
+
+**NOTHING IS STAGED.** 0 pending proposals. Passage rows: all 9 decided.
+
+**Open from today:** #810 (cis-4-heptenyl isobutyrate "grassy" half dropped — deliberate?);
+54 screen approves not staged for want of an ontology form (anise, blackcurrant, iris,
+caraway, "lilies of the valley", …) — measure which mappings pay before adding any.
+
+## Superseded resume block — 2026-09-24 (morning)
 
 **READ THIS BEFORE THE 2026-09-10 BLOCK BELOW, WHICH IS WRONG IN ONE IMPORTANT WAY.**
 The 09-10 block says in capitals that **review is finished as a source of tags**. It was
@@ -4122,3 +4147,93 @@ list to compare against). Refused: JECFA, Haz-Map, non-US patents.
 New: `pipeline/pubchem_physdesc.py`, `corpus/rows/pubchem-physdesc-rows.jsonl`.
 Changed: `pipeline/status.py` (reads PHYSDESC; prints held count). Committed da6d3eb
 before this entry.
+
+---
+
+## 2026-09-24 (afternoon) — tobacco/apple sweep, passage scope adopted, the queue screened: 25 -> 27 of 67, 1,639 -> 1,841
+
+### Figures (status.py, after Ivan's export 13:51)
+
+```
+1,145 approve · 1,153 reject · 2 skip · 2,376 undecided
+  patents 21 · pubchem 7 · passage 0 (8 molecules) · COMBINED 27 of 67, 1,841 molecules
+  crossed: apple, tobacco (both via passage scope)
+verbatim invariant: clean
+```
+
+### 1. Batch 11 — the tobacco/apple sweep (76 rows)
+
+Every undecided row carrying a tobacco/apple/`appley` form, drawn WITHOUT noise filter or
+per-patent cap (the point was to adjudicate the 57 filtered tobacco rows, not skip them).
+`pipeline/stage_batch11.py`, draw at /tmp/b11/batch.json. 4 approve / 72 reject, Ivan
+accepted all: alpha-damascone (apple), trans,trans-Δ-damascone (tobacco, rose, berry,
+appley), 1,1-dimethyl-4-acetyl-tetralin and 1,1,dimethyl-indan-3-carboxylic acid methyl
+ester (tobacco). **Result: apple 29 (needs 1), tobacco 28 (needs 2) — review could not
+cross either.** Ontology: `appley -> apple` added to odor_terms.tsv (Ivan approved).
+
+### 2. Passage scope — ADOPTED, narrow form
+
+Measured on Hetzner's dump (passage_probe.py --window 2, 4,849 pairs, copy at
+corpus/staging/pairs.jsonl). Read every anaphoric pair for the two tags: tobacco 37,
+apple 22; ~18% clean, close to 09-10's ~25%.
+
+- `pipeline/passage_rows.py` -> `corpus/rows/passage-rows.jsonl` (its own file). Each row
+  records antecedent + sentence; molecule verbatim in the antecedent, anaphor and
+  descriptors verbatim in the sentence; `link: "human-resolved"`; decisions kept on re-run.
+- `status.py`: counts a passage row only when `review_decision == "approve"`, prints a
+  `passage` line, checks the three verbatim conditions; **`--sentence-scope` drops the file
+  and returns the pre-09-24 guarantee.**
+- REVIEW-RULES.md: new "Passage scope" section. Narrow = window 1, the antecedent names
+  exactly one compound, the anaphor can only mean it; cosmetic-powder "It" is the powder.
+- 9 rows, Ivan "all as proposed": 8 approve, 1 reject (antecedent names two compounds).
+  Tobacco +3 (tetrahydroquinoxaline x2 patents, decamethyleneoxazole), apple +4 molecules.
+- **Known inflation:** the tetrahydroquinoxaline is spelled two ways by OCR and counts as
+  two molecules. Tobacco is at the bar either way; fix at linkage.
+
+### 3. screen-v1 — the whole undecided queue, approves only
+
+Ivan's call: Claude reads all 2,646 undecided rows and stages ONLY approves; everything
+else stays UNDECIDED (auto-reject stays off — only approvals count, so the cost is recall,
+not correctness). A seeded 50 of the screened-out rows (seed 20260924) were staged as
+proposed rejects so Ivan could measure the misses.
+
+- Files: `corpus/staging/screen/all.json` (the queue), `v01.py`..`v13.py` (verdicts per
+  chunk, with reasons and borderline notes), `screen-v1.jsonl` (one line per row: verdict +
+  why), `audit-sample.json`; staged by `pipeline/stage_screen1.py`. Every staged `why`
+  starts `[screen-v1]`.
+- Read: 274 approve-type, 30 same-document repeats, 2,342 screened out. Staged 220 (206 new
+  molecules, 1 split) + 50 audit; not staged: 54 approves with no ontology descriptor.
+- **Ivan's outcome: 219 approves accepted, the split (#810) approved as the acetate only
+  (isobutyrate half dropped — confirm), 13 rows with descriptors added by Ivan (mostly
+  unmapped words: thuya, vinegar, tonka, cassis, leafy…; he also re-added `rose` on the
+  rose-oxide analogue, which I had excluded as coming from the name). Audit: 0/50 flipped.**
+- **What the audit supports, and no more:** 0/50 bounds the screen's miss rate at ~6%
+  (rule of three, 95%). Over 2,342 screened-out rows that is up to ~140 rows. The paper
+  must report this tranche as a SCREEN with that bound, not as full review.
+- ~25 staged approves were BORDERLINE, mostly the "X imparts a … note to the formulation"
+  pattern (REVIEW-RULES' hard case); Ivan accepted them. That is now practice, not rule —
+  write it into REVIEW-RULES if it is to stay.
+- Rejected-but-noted cases worth remembering (all in screen-v1.jsonl): citral and anything
+  built on it is an E/Z mixture; names without locants (dimethyl-, diisopropyl-,
+  methyl-furyl) are families; bornylhexahydroguaiacol is called odorless by its own patent.
+
+### What did not work, honestly
+
+The screen fed molecules, not tags: no tag crossed from it. Every tag near the bar now
+(grapefruit 8, leather/chlorine/balsamic 9) has almost nothing left in the queue.
+
+### Left
+
+- #810 isobutyrate half; the 54 no-tag approves (measure ontology mappings first).
+- Screen tranche and passage rows into the paper: miss-rate bound, passage precision
+  measured separately (8/9 approved, n too small to quote as a rate).
+- Git: nothing committed today by Claude — Ivan to commit (commands in chat).
+
+### Files
+
+New: pipeline/stage_batch11.py, passage_rows.py, stage_screen1.py;
+corpus/rows/passage-rows.jsonl; corpus/staging/pairs.jsonl, screen/*.
+Changed: pipeline/status.py (passage + --sentence-scope), REVIEW-RULES.md,
+ontology/odor_terms.tsv (appley), corpus/rows/review.jsonl (Ivan's exports).
+Backups: review.jsonl.bak-20260924-1237*, -123853, -133509; corpus/staging/*.bak-*.
+

@@ -61,6 +61,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 REVIEW = ROOT / "corpus" / "rows" / "review.jsonl"
 PUBCHEM = ROOT / "corpus" / "rows" / "pubchem-rows.jsonl"
 PHYSDESC = ROOT / "corpus" / "rows" / "pubchem-physdesc-rows.jsonl"
+PASSAGE = ROOT / "corpus" / "rows" / "passage-rows.jsonl"   # passage scope, adopted 2026-09-24
 BAR = 30
 N_TAGS = 67
 
@@ -182,8 +183,33 @@ def main() -> int:
             if t and m:
                 pubchem[t].add(m)
 
+    # Passage-scope rows (passage_rows.py, adopted 2026-09-24, narrow form). A RESOLVED
+    # REFERENCE, not a sentence-scope claim: molecule verbatim in the antecedent, anaphor and
+    # descriptors verbatim in the odour sentence. Counted ONLY when Ivan has approved it, and
+    # left out entirely with --sentence-scope, which gives the pre-09-24 guarantee back.
+    passage = collections.defaultdict(set)
+    p_held = p_rows = 0
+    sentence_scope = "--sentence-scope" in sys.argv
+    if PASSAGE.exists() and not sentence_scope:
+        for r in jsonl(PASSAGE):
+            if r.get("review_decision") != "approve":
+                p_held += r.get("review_decision") is None
+                continue
+            p_rows += 1
+            ante, sent, mol = r.get("antecedent") or "", r.get("sentence") or "", (r.get("molecule") or "").strip()
+            if mol not in ante:
+                violations.append((r.get("source_id"), mol))
+            if (r.get("anaphor") or "") not in sent:
+                violations.append((r.get("source_id"), r.get("anaphor")))
+            for d in (r.get("descriptors") or []):
+                if d not in sent:
+                    violations.append((r.get("source_id"), d))
+                tag = surf.get(d.lower())
+                if tag and mol:
+                    passage[tag].add(norm(mol))
+
     combined = collections.defaultdict(set)
-    for d in (patents, pubchem):
+    for d in (patents, pubchem, passage):
         for t, s in d.items():
             combined[t].update(s)
 
@@ -196,8 +222,14 @@ def main() -> int:
         print(f"excluded    {sum(excluded.values())} pubchem rows retired  {dict(excluded)}")
     if held:
         print(f"held        {held} Physical Description rows awaiting Ivan's decision (not counted)")
+    if sentence_scope:
+        print("scope       SENTENCE ONLY — passage-rows.jsonl left out (--sentence-scope)")
+    elif p_held:
+        print(f"held        {p_held} passage rows awaiting Ivan's decision (not counted)")
     print()
-    for name, d in (("patents", patents), ("pubchem", pubchem), ("COMBINED", combined)):
+    for name, d in (("patents", patents), ("pubchem", pubchem), ("passage", passage), ("COMBINED", combined)):
+        if name == "passage" and sentence_scope:
+            continue
         mols = {m for s in d.values() for m in s}
         print(f"{name:<10}{len(bar(d)):>3} of {N_TAGS} at the bar   {len(mols):>5} molecules")
 

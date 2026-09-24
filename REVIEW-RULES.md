@@ -156,3 +156,34 @@ not the parent alcohol on its own. The parent is mentioned only to locate the de
 attributing the odour to it would name the wrong molecule. OPSIN will not parse the phrase,
 so linkage has to rewrite it (`…-5-yl acetate`), but that is normalisation of extracted
 text, not invention, and it happens after review.
+
+---
+
+## Passage scope (adopted 2026-09-24, narrow form)
+
+A **passage row** is the one sanctioned exception to "both in one sentence". The molecule
+is named in the sentence IMMEDIATELY BEFORE, and the odour sentence refers back to it
+with an anaphor. A person decided what the anaphor means, so the row asserts a
+**resolved reference**. That is a weaker claim than a sentence row, and it is kept
+apart: `corpus/rows/passage-rows.jsonl`, built by `pipeline/passage_rows.py`, left out by
+`status.py --sentence-scope`. Its precision is measured on its own and never borrowed
+from sentence rows.
+
+Anaphora in a sentence row is still a reject. The passage row is a separate record, not a
+rescue of the sentence row.
+
+| | |
+|---|---|
+| KEEP | PREV "…provides 1.76 g. of **X**." THIS "**This material** … having a tobacco-honey odor" |
+| KEEP | PREV "The **X** of the formula II also has a musk-like odour…" THIS "**This compound** also displays tobacco notes." |
+| REJECT | PREV "A cosmetic powder is prepared … with 0.25 g of X." THIS "**It** has an excellent … aroma" — *It* is the powder |
+| REJECT | PREV names TWO compounds — which one? |
+| REJECT | PREV is NMR/IR data, and the compound is named further back — window 1 only |
+| REJECT | THIS says "the compound of formula I" / "the ketone of this invention" — a pointer, whatever PREV says |
+
+The test: **with only these two sentences in front of you, could the anaphor refer to
+anything other than the one compound PREV names?** If yes, reject.
+
+Every other rule on this page applies unchanged: mixture, attribution, descriptors.
+Spans stay verbatim, each in its own sentence: molecule in the antecedent; anaphor and
+descriptors in the odour sentence.
