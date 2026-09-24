@@ -1,11 +1,9 @@
 % =============================================================================
-% OpenScent — draft v0.3, 2026-09-24
+% OpenScent — draft v0.2, 2026-09-10
 % Set THIS file as the main document in Overleaf (not template.tex).
-% v0.2 is kept as openscent-paper-v0.2.tex.
-% v0.3 retracts v0.2's claim that adjudication was exhausted (§3.1, §4, abstract,
-% limitations, conclusion) and adds the passage-scope measurement of 2026-09-10.
-% Every figure re-derived from pipeline/status.py on 2026-09-24 — re-run before
-% submission; review is still moving them.
+% Content source: openscent/reports/paper-draft-v1.md
+% Every figure re-derived from pipeline/status.py on 2026-09-10 — re-run before
+% submission, several moved within the last week.
 % =============================================================================
 % `chemistry` is deliberately NOT enabled. It loads mhchem, chemfig, chemnum and
 % chemmacros (cls lines 514-517), and this paper uses none of them — no \ce{}, no
@@ -22,7 +20,7 @@
 \GenesisTitle{OpenScent: a permissively licensed structure--odour corpus}
 \GenesisSubtitle{Built by construction rather than by permission}
 \GenesisRunningTitle{OpenScent: a CC0 structure--odour corpus}
-\GenesisVersion{Draft 0.3}
+\GenesisVersion{Draft 0.2}
 \GenesisStatus{DRAFT}
 \GenesisDate{\today}
 \GenesisAuthors{Ivan Pezzini}                       % TODO authorship — see notes
@@ -65,19 +63,19 @@
       distinct documents, counted at passage level.
     }
     \AbstractResults{
-      The corpus contained 1{,}454 distinct molecules across a 67-term vocabulary, of
-      which 25 terms reached the threshold of 30 molecules. A 648-molecule
+      The corpus contained 1{,}265 distinct molecules across a 67-term vocabulary, of
+      which 22 terms reached the threshold of 30 molecules, at which point the review
+      queue was exhausted of rows capable of carrying a further term. A 648-molecule
       subset carrying 22 computed structural descriptors supported supervised prediction
       of odour labels under five-fold stratified cross-validation, with areas under the
       ROC curve of 0.93 for \emph{fatty} ($n=16$) and 0.87 for \emph{mint} ($n=24$).
       Five negative results constrained the method: per-compound note tiers were absent
       from 60 patents examined; 29 vocabulary candidates were refused for insufficient
       molecular support; the pre-1930 literature was redundant for 27 of 30 compounds
-      tested; sentence scope limited recall, and relaxing it would admit about a
-      quarter of 1{,}124 anaphoric candidate pairs at the cost of changing what a row
-      asserts; and a heuristic built to order the review queue was read as a count of
-      what remained in it, so that an earlier version of this report declared review
-      exhausted while 1{,}281 rows the heuristic could not see were still undecided.
+      tested; sentence scope was the binding recall constraint; and the heuristic
+      ranking the review queue proved blind to trivially named compounds, so that the
+      term nearest threshold showed no reviewable rows while holding 182 unread
+      attestations.
     }
     \AbstractConclusion{
       A permissively licensed structure--odour corpus can be assembled by construction
@@ -202,7 +200,7 @@ descriptors, and negation, which inverts the claim.
 least 20 distinct documents with at least 30 attestations, an attestation being a
 distinct sentence. Four successive counters were required, each correcting the
 predecessor's blind spot: raw occurrences, document counts, a per-term boilerplate ratio,
-and passage-level counting. The admitted vocabulary comprises 67 terms with 120 surface
+and passage-level counting. The admitted vocabulary comprises 67 terms with 119 surface
 forms; the surface-form mapping is a human-written table and is the only point at which
 extracted text becomes a category.
 
@@ -230,49 +228,33 @@ Labels with fewer than ten positive instances were excluded.
 \subsection{Corpus}
 
 Harvesting produced 5{,}346 patent documents, of which 2{,}426 were represented in the
-review queue. Extraction yielded 6{,}665 candidate rows, which reduced to 4{,}634 distinct
-sentences: a sentence recurring across documents is one assertion, not several, and each
-row records how many documents carry it and which, the most repeated occurring in 24.
-Review added 41 copies, one per compound where a single sentence describes two or more
-compounds differently. Of the resulting 4{,}675 rows, 1{,}953 were adjudicated by hand
-(920 accepted, 1{,}031 rejected, 2 deferred). Together with 1{,}018 database records over
-651 compound identifiers, the corpus contained 1{,}454 distinct molecules.
+review queue. Extraction yielded 6{,}686 candidate rows, of which 21 were copies created
+during review, one sentence describing two compounds differently being adjudicated once
+per compound. The remaining 6{,}665 reduced to 4{,}634 distinct sentences: a sentence
+recurring across documents is one assertion, not several, and each row records how many
+documents carry it and which, the most repeated occurring in 24. Of the resulting rows
+1{,}065 were adjudicated by hand (703 accepted, 360 rejected, 2 deferred).
+Together with 1{,}018 database records over 651 compound identifiers, the corpus contained
+1{,}265 distinct molecules.
 
-Twenty-five of the 67 vocabulary terms reached the threshold of 30 molecules:
-\emph{acid, aldehydic, amber, animalic, aromatic, camphoraceous, citrus, earthy, fatty,
-floral, fresh, fruity, green, herbal, lily, mint, musk, musty, powdery, pungent, rose,
-sandalwood, spicy, sweet} and \emph{woody}. Two further terms lie five molecules below
-threshold: \emph{apple} and \emph{tobacco} (25 each).
+Twenty-two of the 67 vocabulary terms reached the threshold of 30 molecules:
+\emph{acid, aromatic, camphoraceous, citrus, earthy, fatty, floral, fresh, fruity, green,
+herbal, lily, mint, musk, musty, powdery, pungent, rose, sandalwood, spicy, sweet} and
+\emph{woody}. Three further terms lie within five molecules of threshold:
+\emph{amber} (28), \emph{animalic} (27) and \emph{aldehydic} (25).
 
-The design target was 60--100 terms at 30 molecules each. Draft~0.2 of this report
-stated that the corpus had reached 22 terms and that adjudication had then stopped for
-want of admissible material. That statement was wrong. At the time 3{,}592 rows were
-undecided, and 1{,}281 of them carried a vocabulary term together with a trivially named
-compound that the queue's ranking could not see; a sample of the 713 carrying no
-anaphora, composition or family marker was 47\,\% admissible. How the error arose is reported in Section~\ref{sec:heuristic} as a negative
-result.
+The design target was 60--100 terms at 30 molecules each. The corpus reached 22, and
+adjudication then stopped for want of admissible material rather than for want of effort.
+Of the 3{,}592 rows left undecided, none satisfies the review queue's productivity
+criterion of carrying both a compound-like token and a vocabulary term. The last 46 rows
+that did were adjudicated in a single sitting: 18 were accepted and 28 rejected, and no
+term crossed threshold, the accepted rows falling on terms needing between fifteen and
+twenty-six further molecules each.
 
-Adjudication resumed on that population in ten batches of between 13 and 100 rows, drawn
-from it at random or, in three cases, ordered towards terms near threshold.
-It raised the corpus from 22 to 24 terms (\emph{amber}, \emph{animalic}) and from
-1{,}265 to 1{,}454 molecules. Yield fell as the population was worked: the first four
-batches accepted 38\,\% of rows on average, the last three between 10 and 13\,\%, and 388
-rows of the population remain.
-
-The twenty-fifth term, \emph{aldehydic}, crossed by a change to the surface-form table
-rather than by adjudication, and is reported separately for that reason. The form
-\emph{aldehyde} had been refused as a mapping because two of its five uses in accepted
-rows were comparisons (``aldehyde- and thuyone-like''). It was admitted after those two
-uses were removed from their rows on re-adjudication, leaving three uses in which it
-describes the named compound. It is the only term whose crossing depends on a vocabulary
-decision taken after its count was known.
-
-What remains is bounded this time by the adjudication rules rather than by the ranking:
-a row can carry a term only if one of the term's surface forms occurs in its sentence.
-Six undecided rows contain a form of \emph{apple}, against five molecules needed, so that
-term is not plausibly recoverable from the collected material. Seventy contain
-\emph{tobacco}; most are smoking-product contexts or pointer constructions, and whether
-five admissible rows are among them is not claimed either way.
+Twenty-two is therefore a ceiling for this material rather than a census figure. Further
+terms require additional sources; they are not recoverable by further adjudication of what
+has been collected. Two terms did cross earlier in that sitting, and how they were found
+is reported below as a negative result rather than as a method.
 
 \subsection{Structural signal}
 
@@ -340,8 +322,7 @@ from this literature nor recoverable by inference.
 \textbf{Vocabulary was not the binding constraint.} Twenty-nine further descriptor
 candidates passed an independence test and were nonetheless refused: the best supported
 reached 8 molecules against a threshold of 30. Admitting them would have converted 22 of
-67, as the count then stood, into 22 of 95, leaving the numerator unchanged and the
-denominator worse.
+67 into 22 of 95, leaving the numerator unchanged and the denominator worse.
 
 \textbf{The pre-1930 literature was redundant rather than inconvenient.} Of 30 classic
 synthetics from that period, 27 already carried a database odour record; apparent misses
@@ -371,61 +352,31 @@ roughly five to one against. A corpus assembled by source selection is therefore
 constrained less by what has been written down than by what may lawfully be carried
 forward.
 
-\textbf{Sentence scope limits recall, and relaxing it has a measured price.} Four
-independent observations converge: a heading-matching rule was removed for producing rows
-naming no molecule; 345 sentences carry descriptors whose compound is named in the
-preceding sentence; the single standing recall failure in the evaluation set is of that
-form; and in the \emph{sandalwood} sample described below, anaphoric attribution was the
-largest single cause of rejection. Passage scope was then measured across all 5{,}346
-documents. Pairing each descriptor-bearing sentence with the one or two sentences before
-it gives 3{,}303 and 4{,}849 candidate pairs, of which 861 and 1{,}124 are explicitly
-anaphoric. Two seeded samples, of 20 and 12 pairs, put admissibility at about a quarter;
-most rejections were composition-level or family references that fail at any scope, and
-the second sentence of look-back reached mostly surfactant boilerplate and sampled lower
-than the first.
+\textbf{Sentence scope is the binding recall constraint.} Four independent observations
+converge: a heading-matching rule was removed for producing rows naming no molecule; 345
+sentences carry descriptors whose compound is named in the preceding sentence; the
+single standing recall failure in the evaluation set is of that form; and in the sample
+described below, anaphoric attribution was the largest single cause of rejection.
+Extraction at passage scope is the identified next step and is not yet implemented.
 
-Passage scope has not been adopted, because it changes what a row asserts. A sentence row
-records that a named compound is described in one sentence; a passage row records that a
-person decided what ``it'' denotes. The characteristic failure of patent extraction --- an
-accurate description bound to the wrong molecule, indistinguishable from a valid row --- is
-the one a resolved reference multiplies. If adopted, passage rows would record both
-sentences and which supplied each span, carry a flag marking the link as human-resolved,
-remain separable so that a sentence-scope corpus can be recovered unchanged, and have
-their precision measured separately rather than inherited.
+\textbf{A ranking heuristic was mistaken for a measure of what remained.} Candidate rows
+were ranked for review by a rule requiring both a vocabulary term and a compound-like
+token, the latter recognised by a digit within a chemical suffix. That is a reasonable
+ranking, since locants are ubiquitous in systematic nomenclature, and an unreasonable
+census, since perfumery materials are often named trivially --- \emph{santalol},
+\emph{ambroxide} --- and such names carry no digit. At one point \emph{sandalwood} stood
+one molecule below threshold with 182 undecided rows containing its surface form, every
+one scored zero by the ranking; the two rows that eventually carried it past threshold
+were among them.
 
-\textbf{A heuristic built to order the review queue was read as a count of what remained
-in it.}\label{sec:heuristic} Candidate rows were ranked for review by a rule requiring
-both a vocabulary term and a compound-like token, the latter recognised by a digit within
-a chemical suffix. That is a reasonable ranking, since locants are ubiquitous in
-systematic nomenclature, and an unreasonable census, since perfumery materials are often
-named trivially --- \emph{santalol}, \emph{ambroxide}, \emph{caryophyllene}, and Hedione
-(methyl dihydrojasmonate) --- and such names carry no digit. When the rule returned no
-further rows, adjudication was declared complete, and Draft~0.2 of this report said so.
-The error surfaced by accident: a perfumer's working palette listed Hedione, one of the
-most widely used materials in modern perfumery, and it was absent from the corpus
-although present in the patent text. Its rows had been sitting undecided at the bottom of
-the queue.
-
-The error was not visible from inside, because the one check made on it was biased in
-the same direction as the rule. Before completion was declared, the rows the ranking
-could not see were sampled: 25 rows carrying \emph{sandalwood}, the term then in deficit,
-yielded 1 admissible row, failing on anaphoric and composition-level attribution. But
-\emph{sandalwood} is a word that attracts composition and marketing prose, and those rows
-were the least productive corner of the unseen population rather than a representative
-part of it. Of the 1{,}281 undecided rows carrying a vocabulary term and a trivially
-named compound, 713 carried no anaphora, composition or family marker, and a sample of
-those was 47\,\% admissible. Resumed adjudication added two terms and 189 molecules. The ranking's blind spot and the sampling bias pointed the same
-way, so each appeared to confirm the other.
-
+The correction was not a better ranking. A seeded sample of 25 of those rows yielded 1
+admissible row against 24 rejections, failing on anaphoric and composition-level
+attribution rather than on naming --- causes no token-shaped rule can detect --- so
+admitting trivial names would have surfaced the rejections and not the accepted rows.
+What worked was searching the undecided rows for the chemistry of the term in deficit.
 The general form of the failure is that a heuristic which orders work correctly will be
-read as measuring the work remaining, and the two are different quantities. A count of
-reviewable rows should be derived from the adjudication rules, and a check on an
-exclusion should be drawn from the whole of what it excludes, not from the part that
-prompted the question. The bound given in Section~3.1 for the two terms nearest
-threshold is derived that way, and the lesson had to be applied a second time during this
-revision: a working note counted only rows passing a noise filter and recorded
-\emph{tobacco} as unreachable, when 57 further rows containing the word had been
-filtered out rather than adjudicated.
+read as measuring the work remaining, and the two are different quantities; a count of
+reviewable rows should be derived from the adjudication rules, not from the ranking.
 
 That patent text supplies descriptors but not note tiers points to a general limit:
 patent prose documents what a compound smells of, not how a perfumer would deploy it.
@@ -433,26 +384,23 @@ The corpus should be expected to serve descriptor prediction and not, without fu
 sources, tasks requiring formulation semantics.
 
 \begin{GenesisLimitations}
-Although encouraging, this study has limitations. Twenty-five of 67 vocabulary terms
-reached threshold against a design target of 60--100. Unlike Draft~0.2, this report does
-not call that figure a ceiling: 2{,}722 rows remain undecided, although the yield of the
-population now being worked has fallen to 10--13\,\% and the two terms nearest threshold
-are bounded as described in Section~3.1. One of the 25, \emph{aldehydic}, depends on a
-surface-form mapping admitted after its count was known. The patent-derived half of the
-corpus does not yet carry computed structures, so the analysis in Table~\ref{tab:auc}
-covers 648 of 1{,}454 molecules. Molecules are matched between the two sources by name
-text rather than by structure, which makes the counts an upper bound twice over:
-stereochemical variants remain distinct entries, and a compound transcribed differently
-in two documents is counted twice. Optical character recognition of older scans is the
-main source of the latter, and an aggressive normalisation, which over-merges by design,
-collapses 67 duplicate spellings across terms with at least ten molecules. No term at
-threshold falls below 30 under it, so the figure of 25 is unaffected, but terms near
-threshold read high: \emph{apple} falls from 25 to 19 and \emph{tobacco} from 25 to 24.
-Whole-queue precision of the candidate filter is approximately 0.2; a figure of 0.82
-recorded elsewhere is precision within the subset the ranking favoured and must not be
-read as the filter's. Agreement between automated proposals and adjudication is nearly
-complete in every batch, but the proposal is visible to the adjudicator, so it measures
-confirmation rather than accuracy; the blind estimate is 67\,\%. A text-containment audit identified 835 groups covering
+Although encouraging, this study has limitations. Twenty-two of 67 vocabulary terms
+reached threshold against a design target of 60--100, and the collected material is
+exhausted of rows able to carry a further term, so the shortfall is a property of the
+sources rather than of incomplete adjudication. The patent-derived half of the corpus does
+not yet carry computed structures, so the analysis in Table~\ref{tab:auc} covers 648 of
+1{,}265 molecules. Molecules are matched between the two sources by name text rather than
+by structure, which makes the counts an upper bound twice over: stereochemical variants
+remain distinct entries, and a compound transcribed differently in two documents is
+counted twice. Optical character recognition of older scans is the main source of the
+latter, and an aggressive normalisation collapses 29 duplicate spellings across the
+corpus; no term at threshold falls below 30, so the figure of 22 is unaffected, but terms
+near threshold read high by one or two. Whole-queue precision of the candidate filter is
+approximately 0.2; a figure of 0.82 recorded elsewhere is precision within the productive
+subset and must not be read as the filter's, and the final 46 rows of that subset ran at
+0.39. Agreement between automated proposals and adjudication is 110 of 110 rows, but the
+proposal is visible to the adjudicator, so it measures confirmation rather than accuracy;
+the blind estimate is 67\,\%. A text-containment audit identified 835 groups covering
 1{,}035 documents,
 19.4\,\%, as the same disclosure published more than once, typically an application and
 its granted patent; this is an upper bound, since the detector admits era-specific
@@ -466,16 +414,13 @@ supports the corpus being fit for its stated purpose.
 % =============================================================================
 \section{Conclusion}
 
-A structure--odour corpus of 1{,}454 molecules across 25 vocabulary terms was assembled
+A structure--odour corpus of 1{,}265 molecules across 22 vocabulary terms was assembled
 entirely from public-domain sources and released without restriction. Its labels carry
-structure-dependent signal. Twenty-five terms against a design target of 60--100 is, for
-the terms nearest threshold, a result about the sources: the rows that could carry them
-have been counted from the adjudication rules, and further terms will mostly require
-sources not yet admitted. An earlier version of this report reached the same kind of
-conclusion from a ranking heuristic, and was wrong by three terms and 189 molecules; the
-difference between the two is the most transferable result of the work. The corpus is
-smaller than licence-encumbered alternatives, and unlike them it may be used, extended
-and redistributed by anyone.
+structure-dependent signal. Twenty-two terms against a design target of 60--100 is a
+result about the sources rather than about the procedure: the collected material has been
+adjudicated to exhaustion, and further terms require sources not yet identified. The
+corpus is smaller than licence-encumbered alternatives, and unlike them it may be used,
+extended and redistributed by anyone.
 
 % =============================================================================
 \section*{Data and code availability}

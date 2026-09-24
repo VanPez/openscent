@@ -31,8 +31,17 @@ it in EXCL for any row whose molecule name contains it.
 **The Hedione pool is at 388 rows, only ~27 of them NOISE2-clean.** Batches 8–10 ran at
 10–13% approve even with NOISE2 ordering. Past the clean tier, expect lower.
 
-**Apple and tobacco cannot cross from the review queue.** Every undecided row carrying
-their vocabulary has been drawn. They need another source.
+**Apple cannot plausibly cross from the review queue; tobacco is NOT ruled out.** Only 6
+undecided rows contain an apple form (needs 5; 11 after name_variants squash). Tobacco:
+**70** undecided rows contain the word — the 13 drawn in batch 7 were only those passing
+NOISE+NOISE2. Most of the other 57 are cigarette/pointer rows, but they were filtered, not
+adjudicated. (Corrected 2026-09-24 late — the first version of this block said both were
+exhausted, the same filter-read-as-census error the paper is about.)
+
+**PAPER v0.3 IS WRITTEN** — `reports/openscent-paper.tex` (v0.2 kept as
+`openscent-paper-v0.2.tex`), Overleaf package `openscent-paper-v0.3.zip`. Compiles to 5
+pages in the sandbox with a Times substitute for newtx (v0.2 gave 5 there too, matching
+Overleaf). Recompile on Overleaf before sending.
 
 **`/tmp/batch.json` is a stale file the sandbox cannot overwrite.** Draw with
 `--out /tmp/bN/batch.json` and point the staging copy at it.
@@ -3917,8 +3926,9 @@ a scratch copy first, then applied (backups `*.bak-20260924-104333`).
 
 A tag counts only if its surface form is in the sentence. Undecided rows carrying
 aldehydic/apple/apples: 12 in total; loosening target_pool (drop NOISE2, raise the cap)
-gave 1 — the cap never binds (12 rows, 12 patents). Tobacco's 13 are now worked. **So
-neither loosening the filter nor more Hedione batches can cross apple or tobacco.** Queue
+gave 1 — the cap never binds (12 rows, 12 patents). Tobacco's 13 are now worked. **CORRECTION (same
+day): that is true of apple only. 70 undecided rows contain "tobacco"; the 13 were just
+the ones passing NOISE+NOISE2.** Queue
 residue for apple: #4263 α-damascone "green apple type" (behind NOISE), and US4198309A's
 "appley" (unmapped).
 
@@ -3969,3 +3979,68 @@ Tags from review are now a trickle; molecules still come at ~12/batch. The open 
 for apple/tobacco (Haz-Map licence, passage scope, the 212 CAMEO/OSHA/NIOSH compounds —
 still NOT ingested); (3) Paper v0.3 — required, and every figure has moved again
 (25 of 67, 1,454 molecules).
+
+---
+
+## 2026-09-24 (late) — Paper v0.3, and one more filter read as a census
+
+### What happened, in one line
+
+v0.3 written: §3.1's exhaustion claim retracted, the fifth negative result rewritten, the
+passage-scope measurement added, every figure refreshed from `status.py` (25 of 67, 1,454
+molecules). Compiled, not estimated: **5 pages**, same as v0.2.
+
+### The correction found while writing it
+
+The morning's log said apple AND tobacco could not cross from review. Deriving the bound
+from the rules for the paper (a row can carry a term only if a surface form is in its
+sentence) gave apple 6 undecided rows but **tobacco 70**. `target_pool.py` had only shown
+the 13 passing NOISE+NOISE2. Corrected in the RESUME block, the 09-24 entry and
+`NEW-CHAT-PROMPT.md`, and written into the paper as the second instance of the lesson.
+
+### What v0.3 changes
+
+- Abstract results + fifth negative result rewritten; 1,454 / 25 of 67.
+- §3.1: row accounting (6,665 candidates → 4,634 sentences, +41 split copies = 4,675;
+  1,953 decided), the retraction stated plainly, the ten batches and their falling yield
+  (38% → 10–13%), `aldehydic` reported separately as a mapping crossing, and the
+  rule-derived bound for apple/tobacco.
+- §4: passage scope as measured (3,303 / 4,849 pairs; 861 / 1,124 anaphoric; ~25% on
+  seeded samples of 20 and 12), not adopted, with the four conditions if it ever is. The
+  heuristic paragraph rewritten around Hedione and the biased sandalwood sample (1/25 vs
+  47% on the 713 unmarked rows).
+- Limitations: no longer called a ceiling; name_variants now 67 duplicate spellings
+  (was 29), no at-bar term drops, apple 25 → 19, tobacco 25 → 24 under the squash;
+  "110 of 110" replaced; 648 of 1,454.
+- Conclusion rewritten. Surface forms 119 → 120.
+
+### Not changed, flagged
+
+- "22 of 67 into 22 of 95" — 67 + 29 = 96. Arithmetic from v0.2, left as found; check it.
+- Joe's surname still a placeholder. CRediT still open for M.
+- The AUC table is the 648-compound PubChem subset, unchanged.
+- The sandbox build uses a Times shim for newtx (not installed here); page count matched
+  Overleaf for v0.2.
+
+### Files
+
+`reports/openscent-paper.tex` (v0.3), `reports/openscent-paper-v0.2.tex`,
+`openscent-paper-v0.3.zip` (Overleaf package), `openscent-paper-v0.3-preview.pdf`
+(sandbox build, substitute fonts).
+
+---
+
+## 2026-09-24 (evening) — Haz-Map licence: REFUSED
+
+Read from our own cache, not guessed: every Haz-Map annotation in
+`corpus/raw-pubchem/probe-physical-description-p*.json` (10,211 of them) carries PubChem's
+`LicenseNote`: "Copyright (c) 2022 Haz-Map(R). All rights reserved … may [not] be used for
+any purpose other than for personal use … reproduction, modification, storage in a
+retrieval system or retransmission … strictly prohibited without prior written
+permission." `LicenseURL` https://haz-map.com/About.
+
+That is incompatible with CC0 on its face, and the thin-copyright argument fails for the
+same reason it failed for JECFA: the corpus stores the VERBATIM sentence. **Haz-Map's 277
+CIDs are out** unless written permission is obtained (the notice names that route; not
+pursued). The swing vote is settled: of the Physical Description sources, only CAMEO +
+OSHA + NIOSH (212 new CIDs, US Gov) are usable, and they are still NOT ingested.

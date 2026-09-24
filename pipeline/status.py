@@ -60,6 +60,7 @@ import collections, importlib.util, json, pathlib, re, sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 REVIEW = ROOT / "corpus" / "rows" / "review.jsonl"
 PUBCHEM = ROOT / "corpus" / "rows" / "pubchem-rows.jsonl"
+PHYSDESC = ROOT / "corpus" / "rows" / "pubchem-physdesc-rows.jsonl"
 BAR = 30
 N_TAGS = 67
 
@@ -165,6 +166,22 @@ def main() -> int:
         if t and m:
             pubchem[t].add(m)
 
+    # Physical Description rows (pubchem_physdesc.py, 2026-09-24): CAMEO/OSHA/NIOSH only.
+    # A row held for review counts ONLY once Ivan has approved it — propose-only.
+    held = 0
+    if PHYSDESC.exists():
+        for r in jsonl(PHYSDESC):
+            if r.get("needs_review") and r.get("review_decision") != "approve":
+                held += r.get("review_decision") is None
+                continue
+            q, s = r.get("quote") or "", r.get("span") or ""
+            if s not in q:
+                violations.append((r.get("source_url"), s))
+            t = (r.get("tag") or "").strip()
+            m = norm(r.get("molecule_name") or "")
+            if t and m:
+                pubchem[t].add(m)
+
     combined = collections.defaultdict(set)
     for d in (patents, pubchem):
         for t, s in d.items():
@@ -177,6 +194,8 @@ def main() -> int:
     print(f"            {decisions['approve']} approvals of {sum(decisions.values())} rows")
     if excluded:
         print(f"excluded    {sum(excluded.values())} pubchem rows retired  {dict(excluded)}")
+    if held:
+        print(f"held        {held} Physical Description rows awaiting Ivan's decision (not counted)")
     print()
     for name, d in (("patents", patents), ("pubchem", pubchem), ("COMBINED", combined)):
         mols = {m for s in d.values() for m in s}
