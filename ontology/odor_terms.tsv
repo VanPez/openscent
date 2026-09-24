@@ -174,8 +174,12 @@ musklike	musk
 # HELD, not added: ambergris (3 mols, ONE patent, would read amber 31) and
 # camphery (3 mols, one patent). Each crosses a tag on a single document.
 # REJECTED as substances, not qualities: ambrette, musk-ambrette, ambrinol.
-# REJECTED: aldehyde — 4 docs, but 2 of 5 uses are comparisons ("aldehyde- and
-# thuyone-like", "pyrazine and aldehyde connotation") and it lands at 28 anyway.
+# ADDED 2026-09-24: aldehyde (was REJECTED: "2 of 5 uses are comparisons ... lands at
+# 28 anyway"). aldehydic now sits at 28, so the second reason expired. The two
+# comparison uses were trimmed from their rows instead (US6177400B1 "aldehyde- and
+# thuyone-like", US6872697B2 "pyrazine and aldehyde connotation"; pyrazine trimmed
+# too, a substance). Clean uses: US20140087988A1, US20150051133A1 x2.
 sandal	sandalwood
 camphor	camphoraceous
 animalistic	animalic
+aldehyde	aldehydic	# 2026-09-24, see note above

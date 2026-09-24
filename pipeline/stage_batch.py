@@ -16,9 +16,14 @@ run it, then `python3 pipeline/propose.py apply`.
 THE GUARANTEE: every span is substring-checked against its own sentence and the
 script REFUSES TO WRITE if any check fails. It has never had to. Do not weaken it.
 
-ROW MATCHING is on (source_id, first 110 chars of whitespace-normalised sentence),
-NOT on row index — propose.py keys on index and a split shifts every index behind
-it. Already-decided rows are skipped and reported, never overwritten.
+ROW MATCHING is on (source_id, FULL whitespace-normalised sentence), NOT on row
+index — propose.py keys on index and a split shifts every index behind it.
+Bug 4 (fixed 2026-09-24): this used to key on the first 110 chars, which collides
+(68 keys / 151 rows); it put a batch-5 proposal on the wrong row and skipped two
+batch-6 rows. The full sentence still repeats across split copies (34 keys, all
+parent/split_of pairs), so a key maps to a LIST: the match is the one undecided
+row; none undecided = skipped and reported; more than one = REFUSE.
+Already-decided rows are never overwritten.
 
 INPUT  /tmp/batch.json   (from pipeline/hedione_pool.py)
 OUTPUT pipeline/propose-batch.jsonl + propose-in.jsonl
@@ -33,8 +38,9 @@ for l in open('corpus/rows/review.jsonl',encoding='utf-8'):
     l=l.strip()
     if not l or l.startswith('{"_comment"'): continue
     rows.append(json.loads(l))
-idx={}
-for i,r in enumerate(rows): idx.setdefault((r['source_id'], re.sub(r'\s+',' ',r.get('sentence','')).strip()[:110]), i)
+def key(r): return (r['source_id'], re.sub(r'\s+',' ',r.get('sentence','')).strip())   # FULL sentence — bug 4
+idx=collections.defaultdict(list)
+for i,r in enumerate(rows): idx[key(r)].append(i)   # a list: split copies share their parent's sentence
 batch=json.load(open('/tmp/batch.json'))
 ANA="Anaphoric subject — no compound named here."; FAM="A family or formula class, not a definite compound."
 GEN="A general or background statement; nothing attributed to a compound."; TRUNC="Truncated before the odour claim completes."
@@ -130,10 +136,12 @@ EXCL={24:{'cedar','cedar wood'},46:{'eucalyptus'},90:{'fruity'} if False else se
 bo=[];inb=[];bad=[];skip=[]
 for i,r in enumerate(batch,1):
     dec,mols,why=D[i]
-    k=(r['source_id'], re.sub(r'\s+',' ',r['sentence']).strip()[:110])
+    k=key(r)
     if k not in idx: bad.append((i,'not found')); continue
-    n=idx[k]; row=rows[n]; s=row['sentence']
-    if row.get('decision'): skip.append(i); continue
+    open_=[n for n in idx[k] if not rows[n].get('decision')]
+    if not open_: skip.append(i); continue
+    if len(open_)>1: bad.append((i,f"AMBIGUOUS: {len(open_)} undecided rows share this sentence {open_}")); continue
+    n=open_[0]; row=rows[n]; s=row['sentence']
     descs=[]
     if dec=='A':
         seen=set()

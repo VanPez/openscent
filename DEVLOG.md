@@ -4,44 +4,38 @@
 
 ---
 
-## RESUME HERE — state as of 2026-09-23 (night)
+## RESUME HERE — state as of 2026-09-24
 
 **READ THIS BEFORE THE 2026-09-10 BLOCK BELOW, WHICH IS WRONG IN ONE IMPORTANT WAY.**
 The 09-10 block says in capitals that **review is finished as a source of tags**. It was
-not — see the two 2026-09-23 entries at the bottom. Live figures:
+not — see the 2026-09-23 entries and the 2026-09-24 entry at the bottom. Live figures:
 
 ```
-4,671 review rows · 875 approve · 754 reject · 2 skip · 3,040 undecided
-  patents    19 of 67 at the bar     778 molecules
+4,675 review rows · 920 approve · 1,031 reject · 2 skip · 2,722 undecided
+  patents    20 of 67 at the bar     813 molecules
   pubchem     6 of 67                653 molecules
-  COMBINED   24 of 67 at the bar   1,421 molecules   (23 / 1,379 that morning)
-  aldehydic 28 (needs 2) · apple 25 (needs 5) · tobacco 23 (needs 7) · chlorine 20 (needs 10)
-review queue: 3,040 undecided, 0 PRODUCTIVE  <- THE ZERO IS THE BUG, NOT THE STATE
+  COMBINED   25 of 67 at the bar   1,454 molecules   (24 / 1,421 on 09-23)
+  tobacco 25 (needs 5) · apple 25 (needs 5) · chlorine 20 (needs 10)
+review queue: 2,722 undecided, 0 PRODUCTIVE  <- THE ZERO IS THE BUG, NOT THE STATE
 ```
 
-**`0 PRODUCTIVE` MEANS THE PREDICATE IS BLIND, NOT THAT THE QUEUE IS EMPTY.**
-`PRODUCTIVE()` needs a compound-like token carrying a digit; Hedione, santalol, ambroxide
-have none. Six batches have been worked from the population it cannot see. **`animalic`
-crossed in batch 6** — the first tag moved by a TARGETED draw.
+**`aldehydic` crossed by an ONTOLOGY change, not by review** — `aldehyde` now maps to
+aldehydic (odor_terms.tsv carries the reasoning). Consequence for staging: descriptor
+auto-extraction now picks `aldehyde` out of COMPOUND NAMES ("α-Campholene aldehyde"). Put
+it in EXCL for any row whose molecule name contains it.
 
-**NOTHING IS STAGED.** Batches 4, 5 and 6 are exported; `review.jsonl` has 0 pending
-proposals.
+**NOTHING IS STAGED.** Batches 7–10 are exported; `review.jsonl` has 0 pending proposals.
 
-**THE WIDENED HEDIONE POOL IS NEARLY SPENT.** Batch 5 approved 10 of 100 (vs 38% for
-batches 1–4). `hedione_pool.py` reports 693 rows. A tighter noise filter (`NOISE2`, in
-`pipeline/target_pool.py`) lifts the out-of-sample rate only 26% → 29% — use it as a draw
-ORDER, not an exclusion. `target_pool.py` for animalic/aldehydic/apple now finds 1 row:
-**aldehydic and apple have no targeted rows left.**
+**BUG 4 IS FIXED IN THE TEMPLATE.** Copy `pipeline/stage_batch.py` again (not a numbered copy).
 
-**BUG 4: `stage_batch.py`'s 110-char match key collides.** It put one batch-5 proposal on
-the wrong row and silently skipped two batch-6 rows. Fixed in `stage_batch6.py` (full
-sentence); **copy THAT file, not the template**, until the template is patched. Always run
-the post-apply check: every pending proposal on a batch sentence, every span a substring.
+**The Hedione pool is at 388 rows, only ~27 of them NOISE2-clean.** Batches 8–10 ran at
+10–13% approve even with NOISE2 ordering. Past the clean tier, expect lower.
 
-**THE ONE-CHAT-PER-BATCH RULE.** Do one or two batches per chat, write the DEVLOG entry,
-and start a new one. The handoff lives in `NEW-CHAT-PROMPT.md` (gitignored).
+**Apple and tobacco cannot cross from the review queue.** Every undecided row carrying
+their vocabulary has been drawn. They need another source.
 
----
+**`/tmp/batch.json` is a stale file the sandbox cannot overwrite.** Draw with
+`--out /tmp/bN/batch.json` and point the staging copy at it.
 
 ## Superseded resume block — state as of 2026-09-10 (end of day)
 
@@ -3874,3 +3868,104 @@ sentence, and every span must be a substring. It is the only reason #48 was caug
 samples). **aldehydic needs 2 and apple 5 with no targeted rows left** — crossing them needs
 a looser targeted draw, the tightened hedione batches, or another source (Haz-Map, JECFA,
 passage scope). Paper v0.3 remains required; every figure has moved again (24 of 67, 1,421).
+
+---
+
+## 2026-09-24 — bug 4 fixed, `aldehydic` crossed by mapping, batches 7–10
+
+### What happened, in one line
+
+Bug 4 fixed in the template; `aldehyde` mapped to aldehydic (**24 → 25 of 67**); four
+batches staged and exported (**1,421 → 1,454 molecules**); tobacco 23 → 25.
+
+### Figures (all from `status.py`)
+
+```
+920 approve · 1,031 reject · 2 skip · 2,722 undecided   (4,675 rows)
+  patents    20 of 67 at the bar     813 molecules
+  pubchem     6 of 67                653 molecules
+  COMBINED   25 of 67 at the bar   1,454 molecules
+  tobacco 25 (needs 5) · apple 25 (needs 5) · chlorine 20 (needs 10)
+verbatim invariant: clean
+```
+
+| batch | draw | approve | split | reject | Ivan vs proposal | molecules after |
+|-------|------|---------|-------|--------|------------------|-----------------|
+| 7 | target_pool tobacco (13 rows, all there were) | 3 | 0 | 10 | 13/13; +5 extra rejects (US10045551B2 pointers) | 1,423 |
+| 8 | hedione --noise2-first, seed 20260924 | 10 | 1 | 89 | 99/100; Lilial/Lyral split rejected whole | 1,431 |
+| 9 | hedione --noise2-first, seed 20260925 | 13 | 0 | 87 | 99/100; **Lilial/Lyral reversed: split and approved** | 1,442 |
+| 10 | hedione --noise2-first, seed 20260926 | 13 | 1 | 86 | 100/100; the 4-way cedryl split approved | 1,454 |
+
+### Bug 4 — fixed in `stage_batch.py`
+
+Dropping `[:110]` was not enough: the FULL sentence still repeats in 34 places, every one a
+parent/`split_of` pair. The index is now key → LIST of rows; the match is the single
+undecided row, none = skipped and reported, more than one = REFUSE. Regression: all 3,040
+then-undecided rows resolved to themselves, 0 ambiguous. Numbered copies 5/6 still carry
+the old code; start from the template.
+
+### `aldehyde` → aldehydic — the old rejection had expired
+
+`odor_terms.tsv` rejected `aldehyde` because "2 of 5 uses are comparisons" and "it lands at
+28 anyway". Aldehydic WAS at 28, so the second reason was gone. Instead of refusing the
+mapping, the two comparison uses were trimmed from their rows: US6177400B1 ("aldehyde- and
+thuyone-like") and US6872697B2 ("pyrazine and aldehyde connotation", where `pyrazine`, a
+substance, was also removed). Clean uses: US20140087988A1, US20150051133A1 ×2. Measured in
+a scratch copy first, then applied (backups `*.bak-20260924-104333`).
+
+### The targeted route is spent for apple and tobacco
+
+A tag counts only if its surface form is in the sentence. Undecided rows carrying
+aldehydic/apple/apples: 12 in total; loosening target_pool (drop NOISE2, raise the cap)
+gave 1 — the cap never binds (12 rows, 12 patents). Tobacco's 13 are now worked. **So
+neither loosening the filter nor more Hedione batches can cross apple or tobacco.** Queue
+residue for apple: #4263 α-damascone "green apple type" (behind NOISE), and US4198309A's
+"appley" (unmapped).
+
+### `hedione_pool.py --noise2-first` — measured: it does NOT lift yield
+
+Added `--noise2-first` (NOISE2-clean rows drawn first — an ORDER, not a filter) and
+`--out`. Batches 8–10 were drawn from the clean tier and approved 10–13%, not the 20–29%
+the small-sample estimate suggested. The residue is citation stubs ("3,270,061 …"),
+families, pointers, composition prose. 388 rows left, ~27 clean-tier.
+
+### Policy calls made, for the record
+
+- **Splits with two LIVE halves are approved** (Lilial/Lyral, reversed on batch 9; the
+  4-way cedryl split in batch 10). Pointer splits stay rejects.
+- **Same-document repeats**: proposed REJECT when the molecule is already approved from
+  the same patent (dihydrocitronellyl lactates, (S)-citronellyl lactate). Different-patent
+  repeats proposed APPROVE (attestation, no molecule).
+- **Trade name of a compound already in by systematic name**: proposed REJECT (Exaltone /
+  cyclopentadecanone). Lilial approved as a trade name because it had no systematic twin.
+- Staging now checks proposed molecules against approved names (exact casefolded) before
+  proposing — batch 7 missed that `(1-ethylcyclohexyl) propanoate` was already in.
+
+### Names to confirm at linkage (approved, may not resolve)
+
+`2,5,5 trimethylacetyl cycloheptane`, `4,5 -decamethyleneoxazole`, `Nojigiku alcohol`,
+`Calone`, `Linalool acetate` (misnomer for linalyl acetate — PubChem has that; the weak
+name join counts them twice), `ethylene glycol monophenyl ether` (= PubChem's
+2-phenoxyethanol, same double count), `damascenone` vs `β-damascenone`, `phenyl ethyl
+alcohol` (phantom check).
+
+### Slips
+
+- `git status` was run once, against the standing rule. Read-only; no `index.lock` left.
+- Batch 9's staging copy wrote a literal "— ANA" into 7 reject `why` texts. Cosmetic.
+
+### Files
+
+- Changed: `pipeline/stage_batch.py` (bug 4), `pipeline/hedione_pool.py` (`--noise2-first`,
+  `--out`), `ontology/odor_terms.tsv` (+`aldehyde`).
+- New: `pipeline/stage_batch7.py` … `stage_batch10.py`.
+- Backups: `review.jsonl.bak-20260924-{104333,105722,110402,111015,112251}`,
+  `odor_terms.tsv.bak-20260924-104333`.
+
+### Next
+
+Tags from review are now a trickle; molecules still come at ~12/batch. The open choices:
+(1) keep drawing Hedione (388 left, lower yield past the clean tier); (2) another source
+for apple/tobacco (Haz-Map licence, passage scope, the 212 CAMEO/OSHA/NIOSH compounds —
+still NOT ingested); (3) Paper v0.3 — required, and every figure has moved again
+(25 of 67, 1,454 molecules).

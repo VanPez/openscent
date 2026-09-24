@@ -42,6 +42,9 @@ USAGE
     python3 pipeline/hedione_pool.py            # report pool size only
     python3 pipeline/hedione_pool.py 100        # draw 100, write /tmp/batch.json
     python3 pipeline/hedione_pool.py 100 --seed 20260923
+    python3 pipeline/hedione_pool.py 100 --noise2-first --out /tmp/b8/batch.json
+      (--noise2-first: NOISE2-clean rows first, an ORDER not a filter; --out: /tmp/batch.json
+       can be a stale unwritable file left by an earlier chat)
 
 Run from the openscent root. Measure before you fetch; this only reads.
 """
@@ -97,10 +100,23 @@ if __name__ == "__main__":
     if not args:
         sys.exit(0)
     k = min(int(args[0]), len(p))
+    out = pathlib.Path(sys.argv[sys.argv.index("--out") + 1]) if "--out" in sys.argv else pathlib.Path("/tmp/batch.json")
     random.seed(seed)
-    batch = random.sample(p, k)
-    pathlib.Path("/tmp/batch.json").write_text(
-        json.dumps(batch, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"drew {k} -> /tmp/batch.json  (seed {seed})")
+    if "--noise2-first" in sys.argv:
+        # ORDERING, not exclusion (DEVLOG 2026-09-23 night): rows that pass target_pool.NOISE2
+        # are drawn first, the rest only if the clean tier runs out. Nothing leaves the pool.
+        sp = importlib.util.spec_from_file_location("target_pool", ROOT / "pipeline/target_pool.py")
+        tp = importlib.util.module_from_spec(sp); sp.loader.exec_module(tp)
+        clean = [b for b in p if not tp.NOISE2.search(b["sentence"])]
+        rest = [b for b in p if tp.NOISE2.search(b["sentence"])]
+        print(f"NOISE2 tiers: {len(clean)} clean first, {len(rest)} after")
+        batch = random.sample(clean, min(k, len(clean)))
+        if len(batch) < k:
+            batch += random.sample(rest, k - len(batch))
+    else:
+        batch = random.sample(p, k)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(batch, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"drew {k} -> {out}  (seed {seed})")
     for i, b in enumerate(batch, 1):
         print(f"\n{i}. {b['source_id']}\n   {b['sentence'][:400]}")
