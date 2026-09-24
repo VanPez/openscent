@@ -1,0 +1,31 @@
+A={
+656:(["13-methyl-9-cyclopentadecen-15-olide"],set(),"Named, direct."),
+658:(["2,2,3a,7-Tetramethyl-octahydro-benzofuran"],set(),"Named, direct."),
+663:(["1,1-Diethyl-6-methyl-1,3,3a,4,5,7a-hexahydro-isobenzofuran"],set(),"Named, described."),
+664:(["1,1-Diethyl-5-methyl-1,3,3a,6,7,7a-hexahydro-isobenzofuran"],set(),"Named, described."),
+673:(["3-ethylphenol"],set(),"BORDERLINE: '3-ethylphenol is moreover described as being truffle-like'. The first 'truffle' is the black truffle it occurs in; the span is the same word."),
+692:(["3,7-dimethyl-6-decen-3-yl acetate"],set(),"Named in the same sentence as its odour description."),
+697:(["3,6,7-trimethyl-6-octen-3-yl acetate"],set(),"Named in the same sentence as its odour description."),
+702:(["7-methoxy-3,7-dimethyl-1-nonen-3-yl acetate"],set(),"Named in the same sentence as its odour description."),
+703:(["3,6,7-trimethyl-1-octen-3-yl acetate"],set(),"Named in the same sentence as its odour description."),
+704:(["3,7-dimethyl-1-decen-3-yl acetate"],set(),"Named in the same sentence as its odour description."),
+705:(["7-methoxy-3,7-dimethyl-1-decen-3-ol"],set(),"Named in the same sentence; 'rubber boat'."),
+706:(["7-methoxy-3,7-dimethyl-1-decen-3-yl acetate"],set(),"Named in the same sentence as its odour description."),
+707:(["7-methoxy-3,7-dimethyl-1-octen-3-yl acetate"],set(),"Named in the same sentence as its odour description."),
+720:(["2-n-pentyl cyclopentanone oxime"],set(),"Named, 'has green floral and fruity like odors'."),
+724:(["2,6-Dipropyl-5,6-dihydro-2H-thiopyran-3-carbaldehyde"],set(),"Named, described (1% in water)."),
+739:(["(R)-ziza-6(13)-en-12-yl acetate"],{"khusimone"},"Named, direct; khusimone is a comparison."),
+767:(["3,4,5,6,6-Pentamethylheptan-2-yl acetate"],set(),"Named, described."),
+768:(["5-Ethoxy-3-methylbenzofuran"],set(),"Named, described."),
+776:(["2-(2-Methyl-tetrahydro-thiophen-2-yl)-ethyl acetate"],set(),"Named, described."),
+777:(["2-[5-(1-Hydroxy-1-methyl-ethyl)-2-methyl-tetrahydro-thiophen-2-yl]-ethyl acetate"],{"weak"},"Named, described."),
+778:(["2-(5-Isopropenyl-2-methyl-tetrahydro-thiophen-2-yl)-ethyl acetate"],set(),"Named, described."),
+795:(["3,3′-dimethoxy-4,4′-dihydroxystilbene"],set(),"Named, 'possesses a vanilla-like odor'."),
+810:(["cis-4-heptenyl acetate","cis-4-heptenyl isobutyrate"],set(),"SPLIT (Arctander): acetate fresh/green/fruity/rose; isobutyrate grassy. Both halves live."),
+820:(["Mystikal®"],set(),"BORDERLINE: trade name, 'has this typical note of frankincense'. Resolve to its structure at linkage, or reject if it can't be."),
+858:(["1-[(4R)-4-methylcyclohexen-1-yl]ethanone"],set(),"'use of X to impart a ylang-ylang note' — the impart pattern; this sentence names the pure (4R) compound, not the mixture."),
+}
+SPLIT={810}
+REP={721:720,798:795}
+B={855:"Same compound as #858 but 'or a mixture which comprises' it — rejected in favour of #858.",
+   734:"(6Z)-non-6-enenitrile cucumber/melon — but said of 'flavor compositions that include' it."}

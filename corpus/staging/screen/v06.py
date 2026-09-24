@@ -1,0 +1,28 @@
+A={
+1094:(["dihydrosafrol"],set(),"Named, 'approximates very closely the true sassafras odor'. Safrol is a comparison. OCR runs the name into 'has'; the span is still a substring."),
+1103:(["3-tertiary-butyl-4-methoxy-5-nitro benzaldehyde"],set(),"Named product, 'having a strong musk odor'."),
+1108:(["2-p-menthyl carbinol"],set(),"Named, direct."),
+1132:(["A 2,5,5,9-tetramethyl octalyl-ethanol"],set(),"BORDERLINE: 'the corresponding alcohol, the Δ2,5,5,9-tetramethyl octalyl-ethanol (Formula VI)' — named but old nomenclature ('A' is OCR for Δ); check it resolves."),
+1136:(["5,5,8 ,8-tetramethyl 5,6,7,8-tetrahydro fi-naphthind'an-l-one"],set(),"Named product, musk-like. Heavy OCR in the span — normalise at linkage."),
+1162:(["A -2,5 ,5 ,9-tetramethyl octalyl-ethanol"],set(),"BORDERLINE: same sentence as #1132, other patent — attestation, same resolvability question."),
+1168:(["6-acetyl-1,1,2,4,4,7-hexamethyl-1,2,3,4- tetrahydronaphthalene"],set(),"Named product, 'a powerful odor of musk'."),
+1186:(["geranyl isobutyronitrile"],set(),"Named, '(trans-isomer)' — direct."),
+1202:(["4,6 dim'tro 5-ethyl 1,1,3,3 tetramethylindan"],set(),"Named product, musk-like. OCR 'dim'tro' = dinitro."),
+1213:(["Bis-oct-Z-en-l-ol ether"],set(),"Named, 'has a strong odour of hempseed' — only if hempseed maps."),
+1214:(["bis-non-2- en-l-ol-ether"],set(),"Named, 'the characteristic odour of fresh and unused linen'."),
+1229:(["6-oxa-l,1,2,3,3-pentamethyl-2;t3,5,6,7,8-hexahydro-1H-benz[ f] -indene"],set(),"Named in the claim, 'with musk odor'. Heavy OCR in the span."),
+1231:(["2-benzylpyromeconic acid"],{"acid"},"Named, 'has a slightly-sweet, floral odor itself'."),
+1236:(["l,l-dimethoxy-2,5- dimethyl-hexane"],set(),"Named product, direct."),
+1258:(["3-acetoxy-7-methyl-6-octen-l-yne"],set(),"Named product with its odour."),
+1261:(["trans-3,7-dimethyl- 5,7-octadiene-l-yl acetate"],set(),"Named, 'itself has a pleasant pearlike odor'."),
+1283:(["2,4 diethyl 4,4a,5,9b tetrahydroindeno[1,2-d]-mdioxin"],set(),"Named, 'possesses a rose odour'."),
+1292:(["2 hydroxy-4-isopropenyl-1-methylbicyclo[3.1.0] hexane acetate"],set(),"Named product, woody-camphoraceous."),
+}
+SPLIT=set(); REP={}
+B={1113:"di(methyl-furyl)-methyl-methane (lemon, flowery) — methylfuryl without locants, not definite. Rejected.",
+   1181:"diisopropyl-3,4-dihydrocoumarin (musk) — no locants for the isopropyls. Rejected.",
+   1165:"Tetramethyldodecahydronaphthofuran (amber) — no locants for the methyls. Rejected.",
+   1241:"acenaphthene 'mask-like' odor — OCR for musk-like, so no verbatim descriptor. Rejected.",
+   1274:"1-methyl-3-oxatricyclo[5.2.0.0 ]nonane (clean-camphor) — bridge locants lost in OCR. Rejected.",
+   1284:"bornylhexahydroguaiacol 'sandalwood type' — the next sentence of the patent says the pure compound is odorless. Rejected.",
+   1226:"methyl cycloundecene-carboxylate (woody, rosy) — double-bond position not given. Rejected."}
