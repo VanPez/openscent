@@ -62,6 +62,8 @@ REVIEW = ROOT / "corpus" / "rows" / "review.jsonl"
 PUBCHEM = ROOT / "corpus" / "rows" / "pubchem-rows.jsonl"
 PHYSDESC = ROOT / "corpus" / "rows" / "pubchem-physdesc-rows.jsonl"
 PASSAGE = ROOT / "corpus" / "rows" / "passage-rows.jsonl"   # passage scope, adopted 2026-09-24
+EXCLUSIONS = ROOT / "corpus" / "rows" / "exclusions.jsonl"  # retired approved rows, 2026-09-26
+TARGETED = ROOT / "corpus" / "rows" / "targeted-rows.jsonl"  # sentence rows found by gap search, 2026-09-26
 BAR = 30
 N_TAGS = 67
 
@@ -118,6 +120,16 @@ def productive_predicate():
     return productive, vocab, None
 
 
+def excluded_keys() -> set:
+    """(source_id, whitespace-normalised sentence) of approved rows RETIRED without touching
+    review.jsonl — Ivan's decisions stay his; the retirement is a separate, reasoned record.
+    First use 2026-09-26: sentences relaying a copyrighted reference work's descriptor wording
+    (Arctander, Fenaroli, Good Scents) — see pipeline/exclude_quotes.py."""
+    if not EXCLUSIONS.exists():
+        return set()
+    return {(r["source_id"], " ".join(r["sentence"].split())) for r in jsonl(EXCLUSIONS)}
+
+
 def jsonl(p: pathlib.Path):
     if not p.exists():
         sys.exit(f"missing {p} — status is not computable without both row sources")
@@ -133,12 +145,17 @@ def main() -> int:
     decisions = collections.Counter()
     unmapped = collections.Counter()
     violations = []
+    exkeys = excluded_keys()
+    retired = 0
 
     for r in jsonl(REVIEW):
         decisions[r.get("decision") or "undecided"] += 1
         if r.get("decision") != "approve":
             continue
         sent = r.get("sentence") or ""
+        if (r.get("source_id"), " ".join(sent.split())) in exkeys:
+            retired += 1
+            continue
         mols = [m.strip() for m in (r.get("molecules") or []) if m.strip()]
         for m in mols:
             if m not in sent:
@@ -208,8 +225,28 @@ def main() -> int:
                 if tag and mol:
                     passage[tag].add(norm(mol))
 
+    # Targeted rows (targeted_rows.py, 2026-09-26): ordinary SENTENCE-scope claims, found by
+    # searching for a missing compound rather than by the extractor — kept out of review.jsonl
+    # so merge_review.py never reports them as orphans. Counted only once Ivan has approved.
+    targeted = collections.defaultdict(set)
+    t_held = t_rows = 0
+    if TARGETED.exists():
+        for r in jsonl(TARGETED):
+            if r.get("review_decision") != "approve":
+                t_held += r.get("review_decision") is None
+                continue
+            t_rows += 1
+            sent, mol = r.get("sentence") or "", (r.get("molecule") or "").strip()
+            for v in [mol] + list(r.get("descriptors") or []):
+                if v not in sent:
+                    violations.append((r.get("source_id"), v))
+            for d in (r.get("descriptors") or []):
+                tag = surf.get(d.lower())
+                if tag and mol:
+                    targeted[tag].add(norm(mol))
+
     combined = collections.defaultdict(set)
-    for d in (patents, pubchem, passage):
+    for d in (patents, pubchem, passage, targeted):
         for t, s in d.items():
             combined[t].update(s)
 
@@ -220,14 +257,19 @@ def main() -> int:
     print(f"            {decisions['approve']} approvals of {sum(decisions.values())} rows")
     if excluded:
         print(f"excluded    {sum(excluded.values())} pubchem rows retired  {dict(excluded)}")
+    if retired:
+        print(f"retired     {retired} approved patent rows (corpus/rows/exclusions.jsonl: quoted copyrighted reference works)")
     if held:
         print(f"held        {held} Physical Description rows awaiting Ivan's decision (not counted)")
     if sentence_scope:
         print("scope       SENTENCE ONLY — passage-rows.jsonl left out (--sentence-scope)")
     elif p_held:
         print(f"held        {p_held} passage rows awaiting Ivan's decision (not counted)")
+    if t_held:
+        print(f"held        {t_held} targeted rows awaiting Ivan's decision (not counted)")
     print()
-    for name, d in (("patents", patents), ("pubchem", pubchem), ("passage", passage), ("COMBINED", combined)):
+    for name, d in (("patents", patents), ("pubchem", pubchem), ("passage", passage), ("targeted", targeted),
+                    ("COMBINED", combined)):
         if name == "passage" and sentence_scope:
             continue
         mols = {m for s in d.values() for m in s}

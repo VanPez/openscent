@@ -187,3 +187,21 @@ anything other than the one compound PREV names?** If yes, reject.
 Every other rule on this page applies unchanged: mixture, attribution, descriptors.
 Spans stay verbatim, each in its own sentence: molecule in the antecedent; anaphor and
 descriptors in the odour sentence.
+
+## Quoted reference works (adopted 2026-09-26)
+
+A US patent's own words are free; a copyrighted text the patent QUOTES is not. When the
+sentence relays the descriptor wording of a named reference work — **Arctander** (*Perfume and
+Flavor Chemicals*, 1969), **Fenaroli's Handbook**, **The Good Scents Company** — the row does
+not ship, whether or not the words are in quotation marks. A reference work *is* its
+descriptor wording.
+
+**Kept:** a patent restating a research finding in its own words ("Ohloff et al. have reported
+that 9-nordrimanol … produces an excellent amber odor"; "J. Agric. Food Chem., 2009 … has a
+leather-like, phenolic and ink-like odor"). A fact reported by a paper is not the paper's
+expression.
+
+Applied without touching `review.jsonl`: `pipeline/exclude_quotes.py` lists the sentences in
+`corpus/rows/exclusions.jsonl`, and `status.py` skips them ("retired"). First pass: 28
+sentences, 30 approved rows; 27 of 67 tags at the bar before and after. When reviewing,
+**reject** such a sentence outright.

@@ -103,13 +103,18 @@ def build():
         for v in corpus_variants(m):
             if v:
                 by_name.setdefault(norm(v), set()).update(tags)
+    exk = st.excluded_keys()          # retired rows (exclude_quotes.py) do not count as coverage
     for r in st.jsonl(st.REVIEW):
-        if r.get("decision") == "approve":
+        if r.get("decision") == "approve" and (r["source_id"], " ".join((r.get("sentence") or "").split())) not in exk:
             tags = {surf[d.lower()] for d in (r.get("descriptors") or []) if d.lower() in surf}
             for m in r.get("molecules") or []:
                 add(m, tags)
     if st.PASSAGE.exists():
         for r in st.jsonl(st.PASSAGE):
+            if r.get("review_decision") == "approve":
+                add(r["molecule"], {surf[d.lower()] for d in r["descriptors"] if d.lower() in surf})
+    if st.TARGETED.exists():            # targeted_rows.py, 2026-09-26
+        for r in st.jsonl(st.TARGETED):
             if r.get("review_decision") == "approve":
                 add(r["molecule"], {surf[d.lower()] for d in r["descriptors"] if d.lower() in surf})
     by_loose = {}

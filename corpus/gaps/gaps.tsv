@@ -58,6 +58,7 @@ cid	cas	products	shops	status	matched_by	corpus_tags
 16063567	141773-73-1	Helvetolide (Fir)	hekserij	gap		
 91388	25304-14-7	Herbac (IFF)	hekserij	gap		
 94569	54546-26-8	Herboxane (Giv)	hekserij	gap		
+5365976	79-78-7	Hexalon (IFF)	hekserij	gap		
 1550884	101-86-0	Hexyl cinnamal	hekserij	gap		
 9815980	118562-73-5	Hydroxyambran	hekserij	gap		
 26955	14901-07-6	Ionone beta | Ionona Beta	hekserij, olfatorium	gap		
@@ -113,6 +114,7 @@ cid	cas	products	shops	status	matched_by	corpus_tags
 3034463	27939-60-2	Trivertal aka Triplal	olfatorium	gap		
 163336	81782-77-6	Undecavertol (Giv) | Undecavertol	hekserij, olfatorium	gap		
 162268	37609-25-9	Velvione (Giv)	hekserij	gap		
+8419	120-14-9	Veratraldehyde	hekserij	gap		
 62900	39212-23-2	Whisky Lactone	olfatorium	gap		
 41270	54982-83-1	Zenolide (IFF)	hekserij	gap		
 7476	100-06-1	Acetanisole	hekserij	in corpus	pubchem CID	floral
@@ -167,7 +169,6 @@ cid	cas	products	shops	status	matched_by	corpus_tags
 1549026	105-87-3	Geranyl acetate	hekserij	in corpus	pubchem CID	floral, fruity, green, lavender, rose, sweet
 460	90-05-1	Guaiacol | Guaiacol	hekserij, olfatorium	in corpus	pubchem CID	aromatic, sweet
 102861	24851-98-7	Hedione (Fir) | Hedione HC (Fir) | Hedione | MDJ HC	hekserij, olfatorium	in corpus	name: Methyl dihydrojasmonate	floral, jasmine
-5365976	79-78-7	Hexalon (IFF)	hekserij	in corpus	name: Allyl ionone	floral, fruity, green, oily, sweet, woody
 8908	142-92-7	Hexyl acetate	hekserij	in corpus	pubchem CID	fruity, sweet
 7888	107-75-5	Hydroxycitronellal	hekserij	in corpus	name: Hydroxycitronellal	floral, lily, sweet
 798	120-72-9	Indol 10% in DPG | Indole	hekserij	in corpus	pubchem CID	jasmine
@@ -206,4 +207,3 @@ cid	cas	products	shops	status	matched_by	corpus_tags
 19309	3658-77-3	Strawberry furanone	hekserij	in corpus	pubchem CID	pineapple
 89440	1506-02-1	Tonalid | Tonalid	hekserij, olfatorium	in corpus	pubchem CID	musk
 1183	121-33-5	Vainillin	olfatorium	in corpus	pubchem CID	aromatic, vanilla
-8419	120-14-9	Veratraldehyde	hekserij	in corpus	name: Veratraldehyde	sweet, vanilla, warm, woody

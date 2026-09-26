@@ -184,3 +184,21 @@ sandal	sandalwood
 camphor	camphoraceous
 animalistic	animalic
 aldehyde	aldehydic	# 2026-09-24, see note above
+# ADDED 2026-09-26 (Ivan: "yes to all"). Forms already sitting in APPROVED rows' descriptors
+# with no mapping (status.py "unmapped"). Every use read before mapping (uses / docs):
+#   aniseed 7/1, anise 2/2, anis 3/2 -> anisic 12->26. NB aniseed is ONE document
+#     (US10045551B2); anisic stays below the bar, so no tag crosses on a single document.
+#   herb 5/2, herby 3/3 -> herbal · leafy 7/5, grassy 2/2 -> green · peppery 6/4 -> spicy
+#   camphery 1/1 -> camphoraceous (HELD 09-2x because it would cross the tag on one patent;
+#     camphoraceous has since passed the bar on other rows, so that reason expired)
+# NOT added: bare "pepper" — 1 of its 3 uses is "green pepper" (US4070308A), a vegetable
+#   note, and spicy is over the bar without it.
+aniseed	anisic
+anise	anisic
+anis	anisic
+herb	herbal
+herby	herbal
+leafy	green
+grassy	green
+peppery	spicy
+camphery	camphoraceous

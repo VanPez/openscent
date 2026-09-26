@@ -158,8 +158,9 @@ def match():
     for r in st.jsonl(st.PHYSDESC):
         if (not r.get("needs_review") or r.get("review_decision") == "approve") and r.get("molecule_cid"):
             by_cid.setdefault(str(r["molecule_cid"]), set()).add(r.get("tag"))
+    exk = st.excluded_keys()          # retired rows (exclude_quotes.py) do not count as coverage
     for r in st.jsonl(st.REVIEW):
-        if r.get("decision") == "approve":
+        if r.get("decision") == "approve" and (r["source_id"], " ".join((r.get("sentence") or "").split())) not in exk:
             tags = {surf[d.lower()] for d in (r.get("descriptors") or []) if d.lower() in surf}
             for m in r.get("molecules") or []:
                 by_name.setdefault(norm(m), set()).update(tags)
