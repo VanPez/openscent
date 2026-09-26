@@ -29,10 +29,13 @@ from __future__ import annotations
 import csv, importlib.util, json, os, pathlib, random, sys, time, urllib.error, urllib.parse, urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-HEK = ROOT / "corpus" / "hekserij"
+# --src <shop>: same pipeline for another shop's list (added 2026-09-26 for Olfatorium).
+# Reads corpus/<shop>/cas.tsv, caches in corpus/<shop>/pubchem-cache.json, writes <shop>-gaps.tsv.
+SRC = sys.argv[sys.argv.index("--src") + 1] if "--src" in sys.argv else "hekserij"
+HEK = ROOT / "corpus" / SRC
 CAS_TSV = HEK / "cas.tsv"
 CACHE = HEK / "pubchem-cache.json"
-OUT = HEK / "hekserij-gaps.tsv"
+OUT = HEK / f"{SRC}-gaps.tsv"
 PUG = "https://pubchem.ncbi.nlm.nih.gov/rest/pug"
 UA = "OpenScent/0.1 (research corpus; contact via github.com/VanPez)"
 DELAY = (1.0, 2.0)
@@ -82,10 +85,29 @@ def rows():
 def fetch():
     c = load_cache()
     cas = sorted({r["cas"] for r in rows() if r["cas"] and r["cas_valid"] == "yes"})
-    todo = [x for x in cas if x not in c["cid"]]
+    # --refetch: re-resolve every CAS (overwrites the cached CID lists; synonyms are keyed by
+    # CID and kept). Added 2026-09-26 after the xref-first run mapped vanillin to malonic acid.
+    todo = cas if "--refetch" in sys.argv else [x for x in cas if x not in c["cid"]]
     print(f"{len(cas)} CAS, {len(todo)} to resolve")
+    fails = 0
     for i, x in enumerate(todo, 1):
-        j = get_json(f"{PUG}/compound/name/{urllib.parse.quote(x)}/cids/JSON")
+        # NAME route first: PubChem ranks its answer, so CIDs[0] is the preferred compound.
+        # xref/RN only as a fallback: it returns CIDs in numeric order, NOT by relevance
+        # (2026-09-26, 121-33-5 vanillin -> [867 malonic acid, 1183 vanillin, ...]).
+        # A CAS that still fails is NOT cached (a re-run retries it); two failures in a row
+        # = PubChem is down for us, so stop instead of burning minutes per compound.
+        try:
+            j = get_json(f"{PUG}/compound/name/{urllib.parse.quote(x)}/cids/JSON", tries=4)
+            if not (j or {}).get("IdentifierList", {}).get("CID"):
+                j = get_json(f"{PUG}/compound/xref/RN/{urllib.parse.quote(x)}/cids/JSON", tries=4)
+        except (urllib.error.HTTPError, urllib.error.URLError) as e:
+            fails += 1
+            print(f"  skip {x}: {e}")
+            if fails >= 2:
+                save_cache(c)
+                sys.exit("PubChem busy two lookups in a row; progress saved. Re-run in 15-30 min.")
+            continue
+        fails = 0
         c["cid"][x] = (j or {}).get("IdentifierList", {}).get("CID", [])
         if i % 5 == 0:
             save_cache(c)
@@ -184,5 +206,5 @@ def match():
 
 if __name__ == "__main__":
     if not CAS_TSV.exists():
-        sys.exit("missing corpus/hekserij/cas.tsv")
+        sys.exit(f"missing {CAS_TSV.relative_to(ROOT)}")
     fetch() if "--fetch" in sys.argv else match()
