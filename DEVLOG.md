@@ -25,7 +25,11 @@ audit found 0/50 misses, which bounds the miss rate at ~6% (95%), i.e. up to ~14
 
 **NOTHING IS STAGED.** 0 pending proposals. Passage rows: all 9 decided.
 
-**Open from today:** #810 (cis-4-heptenyl isobutyrate "grassy" half dropped — deliberate?);
+**Hekserij comparison done (09-25/26, entry at the bottom):** 82 of 206 single-compound
+retail materials are in the corpus (~40%); the patents do not describe the gaps (probe:
+~1-2 admissible of 40 sampled). Not a source; a coverage statistic for the paper.
+
+**Open from 09-24:** #810 (cis-4-heptenyl isobutyrate "grassy" half dropped — deliberate?);
 54 screen approves not staged for want of an ontology form (anise, blackcurrant, iris,
 caraway, "lilies of the valley", …) — measure which mappings pay before adding any.
 
@@ -4236,4 +4240,75 @@ corpus/rows/passage-rows.jsonl; corpus/staging/pairs.jsonl, screen/*.
 Changed: pipeline/status.py (passage + --sentence-scope), REVIEW-RULES.md,
 ontology/odor_terms.tsv (appley), corpus/rows/review.jsonl (Ivan's exports).
 Backups: review.jsonl.bak-20260924-1237*, -123853, -133509; corpus/staging/*.bak-*.
+
+---
+
+## 2026-09-25/26 — De Hekserij palette vs the corpus: ~40% covered, and the patents will not close the gap
+
+### What was asked
+
+Ivan: compare a full De Hekserij (Dutch retail perfumery supplier) molecule list against
+the corpus, and look for admissible sources for what is missing.
+
+### The list (corpus/hekserij/)
+
+- Scraped 2026-09-25 from the shop's public WooCommerce Store API: 213 aroma chemicals + 4
+  isolates = 217 products. Kept ONLY name, CAS, INCI, URL — the shop's text is "All rights
+  reserved" and nothing from it enters the corpus (same footing as Haz-Map).
+- `cas.tsv`: 204 valid CAS (194 distinct); 2 CAS on the shop's own pages FAIL the checksum
+  (Celestolide 13171-000-1, PADMA 101-148-4) — every other transcription checksums, so the
+  copying is clean; 11 products have no CAS on the page; 11 flagged "not a single compound"
+  (naturals: oak moss, vetiverol, vetiveryl/guaiyl acetate, Hercolyn, rhodinol; mixtures by
+  REVIEW-RULES: citral, nerolidol isomers, Timbersilk, Vertofix, Silvanone Supra).
+- `raw.txt`, `hekserij-molecules.tsv`: the first, name-only pass (60 matches via a hand
+  synonym list) — superseded by the CAS join below.
+
+### The join — `pipeline/hekserij_link.py`
+
+CAS -> PubChem CID (PUG REST, run on the Mac; the sandbox gets empty PubChem responses) ->
+in corpus if the CID is in our PubChem rows OR a PubChem synonym / name / INCI equals an
+approved patent or passage molecule after status.norm(), else after a looser key (Greek
+letters spelled out, punctuation dropped; labelled `loose name`). First run died on
+503 ServerBusy at 100/194 -> exponential backoff added, cache saved every 5.
+Every synonym-route match was checked by hand with its rank in PubChem's list: ONE was wrong
+(γ-undecalactone matched via PubChem synonym "δ-undecalactone", a different compound) ->
+`BAD_SYNONYM`. PubChem synonym lists are polluted; do not trust deep synonyms blind.
+
+**Result (`hekserij-gaps.tsv`): 217 products · in corpus 82 · gap 107 (~103 distinct) · not a
+single compound 11 · unresolved 17** (11 CAS not in PubChem — captives like Javanol,
+Bacdanol, Florosa, Poivrol/Mahagonate, Clearwood; 6 with no CAS).
+So **~82 of 206 single-compound retail materials (~40%) are covered.** Upper bound on the gap:
+some "gaps" are in the corpus under OCR-damaged names (Hydroxyambran = 2-cyclododecylpropan-
+1-ol, approved in screen-v1 as "…propan-1-of").
+Gaps include very common materials: β-ionone, α-irone, hexyl cinnamal, cyclamen aldehyde,
+helional, bourgeonal, Cashmeran, Norlimbanol, Sandalore, Polysantol, the macrocyclic musks
+(Habanolide, Velvione, Muscenone, Helvetolide, pentadecalactone), safranal, ethyl maltol.
+
+### Do our own patents describe the gaps? — `pipeline/gap_probe.py`
+
+Three steps (names on Mac -> scan on Hetzner -> analyse on Mac). 986 search names for 103
+compounds (name, INCI, top-15 PubChem synonyms; generic words and database IDs dropped).
+Ceiling: 438 odour-context sentences mention a gap compound; 384 not after a comparison cue;
+65 compounds hit; 222 not already in review.jsonl.
+**Read, seeded sample of 40 (seed 20260926): 1, maybe 2 admissible.** The rest: the name used
+AS A DESCRIPTOR ("damascone note", "safranal-like", "bourgeonal and/or floral odour" — why
+"damascone" alone as a β-damascone synonym tops the list with 88), formulation tables with
+an odour word somewhere in the run-on sentence, co-ingredient lists, comparisons the cue
+regex misses ("superior to … Kephalis", "longer adhesion than Ambrocenide"), composition-
+level claims, NMR lines. Expected yield from the 222: ~5-10 rows, almost all on tags already
+at the bar; nothing aimed at grapefruit/leather/balsamic. **Not pursued.**
+
+### What it is good for
+
+A reproducible coverage statement for the paper: the fraction of a real hobbyist supplier's
+palette the corpus covers, and a precise picture of what is missing and why — modern captive
+trade materials and common esters that patents MENTION but do not DESCRIBE, whose public
+descriptions live in copyrighted references (Arctander, supplier sheets, Good Scents).
+
+### Files
+
+New: pipeline/hekserij_link.py, pipeline/gap_probe.py; corpus/hekserij/{raw.txt,
+cas_raw.txt, cas.tsv, hekserij-molecules.tsv, pubchem-cache.json, hekserij-gaps.tsv,
+gap-names.json, gap-probe.tsv}; corpus/staging/gap-hits.jsonl (ignored by git).
+Git: not committed by Claude.
 

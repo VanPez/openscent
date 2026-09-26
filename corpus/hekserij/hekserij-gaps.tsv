@@ -1,0 +1,218 @@
+type	name	cas	cas_valid	inci	single_compound	note	supplier	dilution	url	cid	status	matched_by	corpus_tags
+aroma	2,6-Nonadien-1-al	557-48-2	yes	NONADIENAL	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/26-nonadien-1-al/	643731	gap		
+aroma	Acetanisole	100-06-1	yes	METHOXYACETOPHENONE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/acetanisole/	7476	in corpus	pubchem CID	floral
+aroma	Acetophenone	98-86-2	yes	ACETOPHENONE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/acetophenone/	7410	in corpus	pubchem CID	pungent, sweet
+aroma	Aldehyde C10	112-31-2	yes	DECANAL	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/aldehyde-c10/	8175	in corpus	pubchem CID	citrus, fatty, floral, orange, sweet, waxy
+aroma	Aldehyde C10 10% in DPG	112-31-2	yes	DIPROPYLENE GLYCOL, DECANAL	yes			yes	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/aldehyde-c10-10-in-dpg/	8175	in corpus	pubchem CID	citrus, fatty, floral, orange, sweet, waxy
+aroma	Aldehyde C11 undecylene	112-45-8	yes	UNDECYLENAL	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/aldehyde-c11-undecylene/	8187	in corpus	patent name: undec-10-en-1-al	citrus, rose, waxy
+aroma	Aldehyde C12 Lauric	112-54-9	yes	LAURALDEHYDE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/aldehyde-c12-lauric/	8194	gap		
+aroma	Aldehyde C12 MNA	110-41-8	yes	METHYLUNDECANAL	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/aldehyde-c12-mna/	61031	gap		
+aroma	Aldehyde C14 peach	104-67-6	yes	GAMMA-UNDECALACTONE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/aldehyde-c14-peach/	7714	gap		
+aroma	Aldehyde C16 strawberry	77-83-8	yes	ETHYL METHYLPHENYLGLYCIDATE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/aldehyde-c16-strawberry/	6501	in corpus	pubchem CID	berry, fruity
+aroma	Aldehyde C18 coconut	104-61-0	yes		yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/aldehyde-c18-coconut/	7710	in corpus	pubchem CID	coconut
+aroma	Aldehyde C9	124-19-6	yes	NONANAL	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/aldehyde-c9/	31289	in corpus	pubchem CID	floral, green, orange, rose, waxy
+aroma	Allyl amyl glycolate	67634-00-8	yes	ISOAMYL ALLYLGLYCOLATE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/allyl-amyl-glycolate/	106729	gap		
+aroma	Alpha bisabolol (Bisabolife)	515-69-5	yes	BISABOLOL	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/alpha-bisabolol/	1549992	gap		
+aroma	alpha Damascone	24720-09-0	yes	ALPHA-DAMASCONE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/alpha-damascone/	5366077	in corpus	patent name: ALPHA-DAMASCONE	apple, green
+aroma	alpha Isomethyl ionone	127-51-5	yes	ALPHA-ISOMETHYL IONONE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/alpha-isomethyl-ionone/	5372174	gap		
+aroma	Amber xtreme (IFF)	476332-65-7	yes	HEPTAMETHYL DECAHYDROINDENOFURAN	yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/amber-xtreme-iff/	92030006	gap		
+aroma	Ambermax 10% in TEC (Giv)	929625-08-1	yes		yes		Givaudan	yes	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/ambermax-10-in-tec-giv/	68852524	gap		
+aroma	Ambrettolide (IFF)	28645-51-4	yes		yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/ambrettolide-iff/	5355293	in corpus	patent name: Oxacycloheptadec-10-en-2-one	musk
+aroma	Ambrocenide (Sym) 10% in DPG	211299-54-6	yes	PERFUME	yes		Symrise	yes	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/ambrocenide-sym-10-in-dpg/	66731260	gap		
+aroma	Ambroxide (Sym)	6790-58-5	yes	DODECAHYDRO-TETRAMETHYLNAPHTHOFURAN	yes		Symrise		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/ambroxide-sym/	10857465	in corpus	patent name: Ambroxide	animalic, camphoraceous, earthy, warm, woody
+aroma	Amyl cinnamal	122-40-7	yes	AMYL CINNAMAL	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/amyl-cinnamal/	31209	in corpus	pubchem CID	jasmine
+aroma	Amyl salicylate	2050-08-0	yes	AMYL SALICYLATE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/amyl-salicylate/	16299	gap		
+aroma	Anisaldehyde	123-11-5	yes	ANISALDEHYDE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/anisaldehyde/	31244	in corpus	pubchem CID	anisic, berry, creamy, fruity, hay, powdery, spicy, sweet, vanilla
+aroma	Aphermate (IFF)	25225-08-5	yes		yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/aphermate-iff/	91337	gap		
+aroma	Apo Patchone Coeur (IFF)	4621-04-9	yes		yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/apo-patchone-coeur-iff/	20739	gap		
+aroma	Auralva (IFF) aurantiol	89-43-0	yes	HYDROXYCITRONELLAL METHYL ANTHRANILATE	yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/aurantiol/	98118	gap		
+aroma	Aurantiol 50% in DPG	89-43-0	yes		yes			yes	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/aurantiol-50-dpg/	98118	gap		
+aroma	Azarbre (Giv)	68845-36-3	yes	DIETHYLDIMETHYLCYCLOHEXENONE	yes		Givaudan		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/azarbre-giv/	111384	gap		
+aroma	Bacdanol (IFF)	28219-61-6	yes		yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/bacdanol-iff/		no CAS / unresolved		
+aroma	Benzaldehyde	100-52-7	yes	BENZALDEHYDE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/benzaldehyde-adr/	240	in corpus	pubchem CID	nutty
+aroma	Benzyl acetate	140-11-4	yes	BENZYL ACETATE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/benzyl-acetate/	8785	in corpus	pubchem CID	floral, fresh, fruity, jasmine, lily, pear, sweet
+aroma	Benzyl alcohol	100-51-6	yes	BENZYL ALCOHOL	yes					244	in corpus	pubchem CID	aromatic
+aroma	Benzyl isoeugenol	120-11-6	yes	BENZYL ISOEUGENOL	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/benzyl-isoeugenol/	61046	gap		
+aroma	Benzyl propionate	122-63-4	yes	BENZYL PROPIONATE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/benzyl-propionate/	31219	gap		
+aroma	Benzyl salicylate	118-58-1	yes	BENZYL SALICYLATE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/benzyl-salicylate/	8363	in corpus	pubchem CID	sweet
+aroma	Benzylbenzoate	120-51-4	yes	BENZYL BENZOATE	yes					2345	in corpus	pubchem CID	aromatic, balsamic
+aroma	Bicyclononalactone	4430-31-3	yes		yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/bicyclononalactone/	20487	gap		
+aroma	Boisiris (Giv)	68845-00-1	yes	2-ETHOXY-2,6,6-TRIMETHYL-9-METHYLENEBICYCLO[3.3.1]NONANE	yes		Givaudan		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/boisiris-giv/	111376	gap		
+aroma	Bornafix (IFF)	128119-70-0	yes	2-METHYL-3-(1,7,7-TRIMETHYLBICYCLOHEPT-2-YLOXY)-PROPANOL	yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/bornafix-iff/	18955245	gap		
+aroma	Bornyl acetate	76-49-3	yes		yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/bornyl-acetate/	93009	gap		
+aroma	Bourgeonal (Giv)	18127-01-0	yes		yes		Givaudan		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/bourgeonal-giv/	64832	gap		
+aroma	Calone 1951 (Fir)	28940-11-6	yes	METHYL BENZODIOXEPINONE	yes		Firmenich		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/calone-1951-fir/	120101	in corpus	patent name: 7-Methyl-3,4-dihydro-2H-1,5-benzodioxepin-3-one	marine
+aroma	Canthoxal (IFF)	5462-06-6	yes	METHOXYHYDRATROPALDEHYDE	yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/canthoxal-iff/	64813	gap		
+aroma	Cashmeran (IFF)	33704-61-9	yes		yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/cashmeran-iff/	92292	gap		
+aroma	Cashmeran Velvet (IFF)	33704-61-9	yes		yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/cashmeran-velvet-iff/	92292	gap		
+aroma	Cedramber (IFF)	67874-81-1	yes	OCTAHYDRO-METHOXY-TETRAMETHYL-METHANOAZULENE	yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/cedramber-iff/	11085796	in corpus	patent name: Methyl cedryl ether	amber, woody
+aroma	Cedroxyde (Fir)	71735-79-0	yes		yes		Firmenich		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/cedroxyde-fir/		no CAS / unresolved		
+aroma	Cedryl Acetate (IFF)	77-54-3	yes	CEDRYL ACETATE	yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/cedryl-acetate-iff/	13918856	in corpus	patent name: CEDRYL ACETATE	woody
+aroma	Celestolide (IFF)	13171-000-1	INVALID on shop page	CELESTOLIDE	yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/celestolide/		no CAS / unresolved		
+aroma	Cetalor (IFF)	3738-00-9	yes	DODECAHYDRO-TETRAMETHYLNAPHTHOFURAN	yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/cetalor-iff/	107166	in corpus	loose name: (?)-Ambroxide	animalic, camphoraceous, earthy, warm, woody
+aroma	Cetalox (Fir)	3738-00-9	yes	DODECAHYDRO-TETRAMETHYLNAPHTHOFURAN	yes		Firmenich		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/cetalox-fir/	107166	in corpus	loose name: (?)-Ambroxide	animalic, camphoraceous, earthy, warm, woody
+aroma	Cinnamic alcohol	104-54-1	yes	CINNAMYL ALCOHOL	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/cinnamic-alcohol/	5315892	in corpus	pubchem CID	floral
+aroma	Cinnamic aldehyde	104-55-2	yes	CINNAMAL	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/cinnamic-aldehyde/	637511	in corpus	pubchem CID	pungent, spicy
+aroma	Cinnamyl acetate	103-54-8	yes	CINNAMYL ACETATE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/cinnamyl-acetate/	5282110	gap		
+aroma	cis Jasmone	488-10-8	yes	CIS JASMONE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/cis-jasmon/	1549018	in corpus	pubchem CID	citrus, floral, herbal, jasmine, woody
+aroma	cis-3-Hexenol	928-96-1	yes	3-HEXENOL	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/cis-3-hexenol/	5281167	in corpus	pubchem CID	fresh, green, pungent
+aroma	cis-3-Hexenyl acetate	3681-71-8	yes	CIS-3-HEXENYL ACETATE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/cis-3-hexenyl-acetate-adr/	5363388	gap		
+aroma	cis-3-Hexenyl Salicylate	65405-77-8	yes		yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/cis-3-hexenyl-salicylate/	6021887	gap		
+aroma	Citral	5392-40-5	yes	CITRAL	no	E/Z mixture (geranial/neral) — REVIEW-RULES mixture rule			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/citral/	638011	not a single compound	pubchem CID	lemon
+aroma	Citronellol	106-22-9	yes		yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/citronellol/	8842	in corpus	pubchem CID	fresh, rose
+aroma	Citronellyl Formate	105-85-1	yes	CITRONELYL FORMATE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/citronellyl-formate/	7778	gap		
+aroma	Clearwood (Fir)	84238-39-1	yes		yes		Firmenich		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/clearwood-fir/		no CAS / unresolved		
+aroma	Clonal (IFF)	2437-25-4	yes	DODECANENITRILE	yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/clonal-iff/	17092	gap		
+aroma	Coniferan Pure (IFF)	67874-72-0	yes		yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/coniferan-pure-iff/	62240	gap		
+aroma	Coumarin	91-64-5	yes	COUMARIN	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/coumarin/	323	in corpus	pubchem CID	hay, vanilla
+aroma	Coumarin 10% in DPG	91-64-5	yes		yes			yes	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/coumarin-10-in-dpg/	323	in corpus	pubchem CID	hay, vanilla
+aroma	Cyclamen aldehyde	103-95-7	yes	CYCLAMEN ALDEHYDE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/cyclamen-aldehyde/	517827	gap		
+aroma	Damascenone Total (Fir)	23696-85-7	yes		yes		Firmenich		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/damascenone-total-fir/	5366074	in corpus	loose name: beta-Damascenone	apple, fruity, rose
+aroma	Damascone beta	23726-91-2	yes		yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/damascone-beta/	5374527	gap		
+aroma	Datilat (Sym)	68039-69-0	yes	CYCLOHEXYLETHYL CROTONATE	yes		Symrise		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/datilat-sym/	107073	gap		
+aroma	Dihydro terpineol	498-81-7	yes	DIHYDRO-ALPHA-TERPINOL	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/dihydroterpineol/	10353	gap		
+aroma	Dihydrojasmone	1128-08-1	yes	DIHYDROJASMONE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/dihydrojasmone/	62378	gap		
+aroma	Dihydromyrcenol	18479-58-8	yes	2,6-DIMETHYL-7-OCTEN-2-OL	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/dihydromyrcenol/	29096	in corpus	patent name: Dihydromyrcenol	citrus, fresh, lavender
+aroma	Dimetol (Giv)	13254-34-7	yes	2,6-DIMETHYLHEPTANOL	yes		Givaudan		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/dimetol-giv/	83268	gap		
+aroma	DMBC	100-86-7	yes	DIMETHYLBENZYL CARBINOL	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/dmbc/	7531	in corpus	loose name: Benzyldimethylcarbinol	floral
+aroma	DMBC butyrate	10094-34-5	yes	DIMETHYL PHENETHYL BUTYRATE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/dmbc-butyrate-2/	24915	gap		
+aroma	Ebanol (Giv)	67801-20-1	yes		yes		Givaudan		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/ebanol-giv/	6437266	in corpus	patent name: Ebanol	sandalwood
+aroma	Edenolide (IFF)	478695-70-4	yes	PARFUM	yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/edenolide-iff/	57759198	gap		
+aroma	Ethyl acetoacetate	141-97-9	yes	ETHYL ACETOACETATE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/ethyl-acetoacetate/	8868	in corpus	pubchem CID	fruity, green
+aroma	Ethyl butyrate	105-54-4	yes	ETHYL BUTYRATE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/ethyl-butyrate-adr/	7762	in corpus	pubchem CID	pineapple
+aroma	Ethyl linalool	10339-55-6	yes	ETHYL LINALOOL	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/ethyl-linalool/	6433547	in corpus	patent name: Ethyl linalool	lavender
+aroma	Ethyl Maltol	4940-11-8	yes		yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/ethyl-maltol/	21059	gap		
+aroma	Ethyl safranate (Giv)	35044-59-8	yes	ETHYL 2,6,6-TRIMETHYLCYCLOHEXA-1,3-ENECARBOXYLATE	yes		Givaudan		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/ethyl-safranate/	118201	gap		
+aroma	Ethyl vanillin	121-32-4	yes	ETHYL VANILLIN	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/ethyl-vanillin/	8467	in corpus	pubchem CID	vanilla
+aroma	Ethylene brassylate	105-95-3	yes	ETHYLENE BRASSYLATE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/ethylene-brassylate/	61014	in corpus	patent name: Ethylene brassylate	amber
+aroma	Eugenol	97-53-0	yes	EUGENOL	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/eugenol/	3314	in corpus	pubchem CID	floral, spicy, warm
+aroma	Evernyl (Giv)	4707-47-5	yes	METHYL DIHYDROXY DIMETHYL BENZOATE	yes		Givaudan		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/methyl-atratate/	78435	gap		
+aroma	Farenal (Sym)	141-13-9	yes	TRIMETHYLUNDECENAL	yes		Symrise		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/farenal-sym/	98403	gap		
+aroma	Farnesol	4602-84-0	yes		yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/farnesol/	445070	in corpus	pubchem CID	citrus, floral, lime, oily
+aroma	Floralozone (IFF)	67634-15-5	yes		yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/floralozone-iff/	105513	gap		
+aroma	Florhydral (Giv)	125109-85-5	yes		yes		Givaudan		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/florhydral-giv/	86209	gap		
+aroma	Florosa (Giv)	63500-71-0	yes		yes		Givaudan		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/florosa-giv/		no CAS / unresolved		
+aroma	Fructone (IFF)	6413-10-1	yes		yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/fructone-iff/	80865	gap		
+aroma	Galaxolide 50% in IPM (IFF)		none on page		yes		IFF	yes	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/galaxolide-50-in-ipm-iff/		no CAS / unresolved		
+aroma	gamma Decalacton	706-14-9	yes		yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/gamma-decalacton/	12813	in corpus	patent name: gamma-Decalactone	creamy, peach
+aroma	gamma Octalactone	104-50-7	yes	GAMMA-OCTALACTONE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/gamma-octalactone/	7704	in corpus	patent name: GAMMA-OCTALACTONE	coconut
+aroma	Geraniol	106-24-1	yes	GERANIOL	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/geraniol/	637566	in corpus	pubchem CID	floral, geranium, rose, sweet
+aroma	Geranyl acetate	105-87-3	yes	GERANYL ACETATE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/geranyl-acetate/	1549026	in corpus	pubchem CID	floral, fruity, green, lavender, rose, sweet
+aroma	Guaiacol	90-05-1	yes	GUAIACOL	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/guaiacol/	460	in corpus	pubchem CID	aromatic, sweet
+aroma	Guaiyl acetate	94333-88-7	yes	BULNESIA SARMIENTOI EXTRACT ACETYLATED	no	acetylated guaiac wood oil (natural mixture)			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/guaiyl-acetate/		not a single compound		
+aroma	Habanolide (Fir)	34902-57-3	yes	OXACYCLOHEXADECENONE	yes		Firmenich		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/habanolide-fir/	12410118	gap		
+aroma	Hedione (Fir)	24851-98-7	yes	METHYLDIHYDROJASMONATE	yes		Firmenich		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/hedione-fir/	102861	in corpus	patent name: Methyl dihydrojasmonate	floral, jasmine
+aroma	Hedione HC (Fir)	24851-98-7	yes		yes		Firmenich		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/hedione-hc-fir/	102861	in corpus	patent name: Methyl dihydrojasmonate	floral, jasmine
+aroma	Helional (IFF)	1205-17-0	yes	METHYLENEDIOXYPHENYL METHYLPROPANAL	yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/helional-iff/	64805	gap		
+aroma	Helvetolide (Fir)	141773-73-1	yes	DIMETHYLCYCLOHEXYLETHOXY ISOBUTYLPROPANOATE	yes		Firmenich		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/helvetolide-fir/	16063567	gap		
+aroma	Herbac (IFF)	25304-14-7	yes	DIMETHYLCYCLOHEXYL METHYL KETONE	yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/herbac-iff/	91388	gap		
+aroma	Herboxane (Giv)	54546-26-8	yes	VALERALDEHYDE HEXYLENEGLYCOL ACETAL	yes		Givaudan		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/herboxane-giv/	94569	gap		
+aroma	Hercolyn DW	8050-15-5	yes		no	hydrogenated rosin ester (resin mixture)			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/hercolyn-dw/		not a single compound		
+aroma	Hexalon (IFF)	79-78-7	yes	ALLYL ALPHA-IONONE	yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/hexalon-iff/	5365976	in corpus	patent name: Allyl ionone	floral, fruity, green, oily, sweet, woody
+aroma	Hexyl acetate	142-92-7	yes	HEXYL ACETATE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/hexyl-acetate/	8908	in corpus	pubchem CID	fruity, sweet
+aroma	Hexyl cinnamal	101-86-0	yes	HEXYL CINNAMAL	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/hexyl-cinnamal/	1550884	gap		
+aroma	Hyacinth body No. 3 (IFF)	7493-57-4	yes	ACETALDEHYDE PHENETHYL PROPYL ACETAL	yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/hyacinth-body-no-3-iff/		no CAS / unresolved		
+aroma	Hydroxyambran	118562-73-5	yes	BETA-METHYL-CYCLODODECANETHANOL	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/hydroxyambran/	9815980	gap		
+aroma	Hydroxycitronellal	107-75-5	yes	HYDROXYCITRONELLAL	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/hydroxycitronellal/	7888	in corpus	patent name: Hydroxycitronellal	floral, lily, sweet
+aroma	Indol 10% in DPG	120-72-9	yes		yes			yes	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/indol-10-in-dpg/	798	in corpus	pubchem CID	jasmine
+aroma	Indole	120-72-9	yes	INDOLE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/indole/	798	in corpus	pubchem CID	jasmine
+aroma	Ionone alpha	127-41-3	yes	ALPHA-IONONE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/ionone-alpha/	5282108	in corpus	pubchem CID	balsamic, floral, sweet, violet, warm, woody
+aroma	Ionone beta	14901-07-6	yes	BETA-IONONE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/ionone-beta/	26955	gap		
+aroma	Irone alpha	79-69-6	yes	5-METHYL-ALPHA-IONONE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/irone-alpha/	5371002	gap		
+aroma	Iso E Super (IFF)		none on page		yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/iso-e-super-iff/		no CAS / unresolved		
+aroma	Isoamyl acetate	123-92-2	yes	ISOAMYL ACETATE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/isoamyl-acetate-nat/	31276	in corpus	pubchem CID	fruity, pear, sweet
+aroma	Isoamyl Isovalerate	659-70-1	yes	ISOAMYL ISOVALERATE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/isoamyl-isovalerate/	12613	gap		
+aroma	Isobutavan (Giv)	20665-85-4	yes	4-FORMYL-2-METHOXYPHENYL ISOBUTYRATE	yes		Givaudan		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/isobutavan-giv/	539829	gap		
+aroma	Isobutyl phenyl acetate	102-13-6	yes	ISOBUTYL PHENYLACETATE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/isobutyl-phenyl-acetate/	60998	gap		
+aroma	Isobutyl Quinoline (Sym)	68198-80-1	yes		yes		Symrise		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/isobutyl-quinoline-sym/	109640	gap		
+aroma	Isobutyl salicylate	87-19-4	yes	ISOBUTYL SALICYLATE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/isobutyl-salicylate/	6873	gap		
+aroma	Isoeugenol	97-54-1	yes		yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/isoeugenol/	853433	in corpus	pubchem CID	spicy
+aroma	Isoraldeine 95 (Giv) Methyl ionone	127-51-5	yes	ALPHA-ISOMETHYL IONONE	yes		Givaudan		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/isoraldeine-95-giv-methyl-ionone/	5372174	gap		
+aroma	Javanol (Giv)	198404-98-7	yes		yes		Givaudan		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/javanol-giv/		no CAS / unresolved		
+aroma	Kephalis (Giv)	36306-87-3	yes	KEPHALIS	yes		Givaudan		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/kephalis-giv/	118292	gap		
+aroma	Koavone (IFF)	81786-73-4	yes	PENTAMETHYLHEPTENONE	yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/koavone-iff/	20836197	gap		
+aroma	Liffarome (IFF)	67633-96-9	yes	CIS-3-HEXENYL METHYL CARBONATE	yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/liffarome-iff/	5365699	gap		
+aroma	Lilyflore (Fir)	285977-85-7	yes		yes		Firmenich		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/lilyflore-fir/	11367306	in corpus	loose name: 2,5-dimethyl-2-indanmethanol	floral, lily
+aroma	Linalool	78-70-6	yes	LINALOOL	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/linalool/	6549	in corpus	pubchem CID	camphoraceous, floral, fresh, lavender, lily, spicy, woody
+aroma	Linalyl acetate	115-95-7	yes	LINALYL ACETATE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/linalyl-acetate/	8294	in corpus	pubchem CID	floral, fruity, lavender, pear, sweet
+aroma	Lindenol (IFF)	98-55-5	yes	PERFUME	yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/lindenol-iff/	17100	in corpus	pubchem CID	floral
+aroma	Lyral (IFF)	31906-04-4	yes		yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/lyral-iff/	91604	in corpus	patent name: Lyral	floral, lily
+aroma	Macrolide Supra (Sym)	106-02-5	yes	PENTADECALACTONE	yes		Symrise		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/macrolide-supra-sym/	235414	gap		
+aroma	Magnolan (Sym)	27606-09-3	yes	2,4-DIMETHYL-4,4A,5,9B-TETRAHYDROINDENO-1,3-DIOXIN	yes		Symrise		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/magnolan-sym/	119674	in corpus	loose name: 4,4a,5,9b-Tetrahydro-2,4-dimethylindeno[1,2-d]-1,3-dioxin	floral, grapefruit, green
+aroma	Mahagonate (Sym)	68966-86-9	yes		yes		Symrise		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/mahagonate/		no CAS / unresolved		
+aroma	Majantol (Sym)	103694-68-4	yes	TRIMETHYLBENZENEPROPANOL	yes		Symrise		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/majantol/	175948	gap		
+aroma	Mayol (Fir)	13828-37-0	yes	P-MENTHAN-7-OL	yes		Firmenich		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/mayol-fir/	83763	gap		
+aroma	Melonal	106-72-9	yes	DIMETHYLHEPTENAL	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/melonal/	61016	gap		
+aroma	meta Cresol 1% in DPG		none on page		yes			yes	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/meta-cresol-1-in-dpg/		no CAS / unresolved		
+aroma	Methyl Acetophenone	122-00-9	yes		yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/methyl-acetophenone/	8500	in corpus	patent name: p-Methylacetophenone	floral, nutty
+aroma	Methyl anthranilate	134-20-3	yes	METHYL ANTHRANILATE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/methyl-anthranilate/	8635	in corpus	pubchem CID	floral
+aroma	Methyl benzoate	93-58-3	yes	METHYL BENZOATE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/methyl-benzoate/	7150	in corpus	pubchem CID	fruity
+aroma	Methyl Cinnamate	103-26-4	yes		yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/methyl-cinnamate/	637520	gap		
+aroma	Methyl Cyclopentenolone	80-71-7	yes	METHYLCYCLOPENTENOLONE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/methyl-cyclopentenolone/	6660	gap		
+aroma	Methyl Isoeugenol	93-16-3	yes		yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/methyl-isoeugenol/	637776	gap		
+aroma	Methyl Laitone 10% in DPG (Giv)		none on page		yes		Givaudan	yes	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/methyl-laitone-10-in-dpg-giv/		no CAS / unresolved		
+aroma	Methyl Pamplemousse (Giv)	67674-46-8	yes	DIMETHYL-4-ISOHEPTENAL DIMETHYL ACETAL	yes		Givaudan		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/methyl-pamplemousse-giv/	106766	gap		
+aroma	Methyl tuberate (Giv)	33673-62-0	yes	DIHYDRO-4-METHYL-5-PENTYLFURANONE	yes		Givaudan		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/methyl-tuberate-giv/	97707	gap		
+aroma	Muscenone (Fir)	82356-51-2	yes	METHYLCOPENTADECENONE	yes		Firmenich		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/muscenon/	57353762	gap		
+aroma	Musk ketone	81-14-1	yes	MUSK KETONE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/musk-ketone/	6669	in corpus	pubchem CID	animalic, musk, powdery, sweet
+aroma	Nectarate (IFF)	113889-23-9	yes		yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/nectarate-iff/	44153588	gap		
+aroma	Neononyl acetate (Sym)	58430-94-7	yes	TRIMETHYLHEXYL ACETATE	yes		Symrise		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/neononyl-acetate-sym/	42745	in corpus	pubchem CID	sweet
+aroma	Nerol	106-25-2	yes	NEROL	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/nerol/	643820	in corpus	pubchem CID	fresh, rose, sweet, wet
+aroma	Nerolidol	7212-44-4	yes	NEROLIDOL ISOMERS	no	"""nerolidol isomers"""			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/nerolidol/		not a single compound		
+aroma	Neryl acetate	141-12-8	yes	NERYL ACETATE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/neryl-acetate/	1549025	gap		
+aroma	Norlimbanol (Fir)	70788-30-6	yes		yes		Firmenich		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/norlimbanol/	116699	gap		
+aroma	Oak moss abs 5% in DPG		none on page		no	natural absolute		yes	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/oak-moss-abs-5-in-dpg/		not a single compound		
+aroma	Octacetal (IFF)	10022-28-3	yes		yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/octacetal-iff/	61431	gap		
+aroma	omega Pentadecalactone	106-02-5	yes	PENTADECALACTONE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/omega-pentadecalactone/	235414	gap		
+aroma	Orange Flower Ether (IFF)	14576-08-0	yes		yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/orange-flower-ether-iff/	85755	gap		
+aroma	Oranger Crystals	93-08-3	yes	2-ACETONAPHTHONE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/oranger-crystals/	7122	gap		
+aroma	OTBCHA	88-41-5	yes		yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/otbcha/	62334	in corpus	patent name: 2-tert-Butylcyclohexyl acetate	fruity, green, woody
+aroma	PADMA	101-148-4	INVALID on shop page		yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/padma/		no CAS / unresolved		
+aroma	Palisandin (Sym)	2986-54-1	yes		yes		Symrise		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/palisandin-sym/	76334	gap		
+aroma	para Anisyl acetate	104-21-2	yes	P-ANISYL ACETATE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/para-anisyl-acetate/	7695	gap		
+aroma	para Cresyl acetate	140-39-6	yes		yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/para-cresyl-acetate/	8797	gap		
+aroma	para Cresyl phenylacetate	101-94-0	yes	P-TOLYL PHENYL ACETATE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/para-cresyl-phenylacetate/	60997	gap		
+aroma	Phenirat (Sym)	103-60-6	yes	PHENOXYETHYL ISOBUTYRATE	yes		Symrise		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/phenirat-sym/	61005	gap		
+aroma	Phenoxyethanol	122-99-6	yes	PHENOXYETHANOL	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/phenoxyethanol/	31236	in corpus	pubchem CID	aromatic
+aroma	Phenyl ethyl alcohol	60-12-8	yes	PHENETYL ALCOHOL	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/phenyl-ethyl-alcohol/	6054	in corpus	pubchem CID	rose
+aroma	Phenyl propyl alcohol	122-97-4	yes		yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/phenyl-propyl-alcohol/	31234	in corpus	pubchem CID	balsamic, floral, sweet
+aroma	Phenylethyl acetate	103-45-7	yes	PHENETHYL ACETATE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/phenylethyl-acetate/	7654	gap		
+aroma	Phenylethyl phenylacetate	102-20-5	yes	PHENYLETHYL PHENYLACETATE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/phenylethyl-phenylacetate/	7601	gap		
+aroma	Piconia (IFF)	23787-90-8	yes	ISOLONGIFOLANONE	yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/piconia-iff/	90978	gap		
+aroma	Poivrol (Sym)	68966-86-9	yes	METHYL ISOPROPYL-METHYLBICYCLOOCTENE-2-CARBOXYLATE	yes		Symrise		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/poivrol-sym/		no CAS / unresolved		
+aroma	Polysantol (Fir)	107898-54-4	yes	TRIMETHYLCYCLOPENTENYL DIMETHYLISOPENTENOL	yes		Firmenich		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/polysantol-fir/	15984303	gap		
+aroma	PTBCHA (Vertenex type)	32210-23-4	yes	4-TERT-BUTYLCYCLOHEXYL ACETATE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/ptbcha-vertenex-type/	36081	in corpus	patent name: 4-TERT-BUTYLCYCLOHEXYL ACETATE	creamy, floral, soft, sweet, woody
+aroma	Raspberry ketone	5471-51-2	yes	RASPBERRY KETONE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/raspberry-ketone/	21648	in corpus	pubchem CID	fruity, sweet, warm
+aroma	Rhubofix (Fir)	41816-03-9	yes		yes		Firmenich		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/rhubofix-fir/	94522	gap		
+aroma	Romandolide (Fir)		none on page		yes		Firmenich		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/romandolide-fir/		no CAS / unresolved		
+aroma	Rosalin (Rose crystals)	90-17-5	yes		yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/rosalin-rose-crystals/	7007	in corpus	patent name: Rosacetol	chlorine, geranium, rose
+aroma	Rosalva (IFF)	13019-22-2	yes	DECENOL	yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/rosalva-iff/	25612	gap		
+aroma	Rosaphen (Sym)	25634-93-9	yes	2-METHYL 5-PHENYLPENTANOL	yes		Symrise		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/rosaphen-sym/	5463791	in corpus	patent name: 2-Methyl-5-phenylpentanol	waxy
+aroma	Safraleine (Giv)	54440-17-4	yes		yes		Givaudan		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/safraleine-giv/	10149036	gap		
+aroma	Safranal	116-26-7	yes	2,3-DIHYDRO-2,2,6-TRIMETHYLBENZALDEHYDE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/safranal/	61041	gap		
+aroma	Sandalore (Giv)	65113-99-7	yes		yes		Givaudan		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/sandalore-giv/	103212	gap		
+aroma	SantalIff (IFF)	28219-60-5	yes	2-METHYL-4-(2,2,3-TRIMETHYL-3-CYCLOPENTENYL)-2-BUTEN-1-OL	yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/santaliff-iff/	119897	gap		
+aroma	Scentenal (Fir)	86803-90-9	yes		yes		Firmenich		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/scentenal-fir/	163529	gap		
+aroma	Silvanone Supra (Giv)		none on page	CYCLOPENTADECANONE, ISOPROPYL MYRISTATE, HEXADECANOLACTONE	no	blend: cyclopentadecanone + IPM + hexadecanolactone	Givaudan		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/silvanone-supra-giv/		not a single compound		
+aroma	Silvial (Giv)	6658-48-6	yes	3-(P-CUMENYL)-2-METHYLPROPIONALDEHYDE	yes		Givaudan		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/silvial-giv/	110914	gap		
+aroma	Stemone (Giv)	22457-23-4	yes	ETHYL METHYL BUTYL KETOXIME	yes		Givaudan		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/stemone/	90787	gap		
+aroma	Strawberry furanone	3658-77-3	yes	DIMETHYLHYDROXYFURANONE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/strawberry-furanone-adr/	19309	in corpus	pubchem CID	pineapple
+aroma	Styrallyl acetate	93-92-5	yes	METHYLBENZYL ACETATE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/styrallyl-acetate/	62341	gap		
+aroma	Sylvamber (DRT)		none on page		yes		DRT		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/sylvamber-drt/		no CAS / unresolved		
+aroma	Terpinyl acetate	80-26-2	yes	A-TERPINYL ACETATE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/terpinyl-acetate/	111037	gap		
+aroma	Timbersilk (IFF)		none on page	TETRAMETHYL ACETYLOCTAHYDRONAPHTHALENES	no	isomer mixture (tetramethyl acetyloctahydronaphthalenes)	IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/timbersilk-iff/		not a single compound		
+aroma	Tonalid	1506-02-1	yes	ACETYL HEXAMETHYL TETRALIN	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/tonalid/	89440	in corpus	pubchem CID	musk
+aroma	Triplal (IFF)	68039-49-6	yes	2,4-DIMETHYL-3-CYCLOHEXENE CARBOXALDEHYDE	yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/triplal/	93375	gap		
+aroma	Undecavertol (Giv)	81782-77-6	yes	METHYL DECENOL	yes		Givaudan		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/undecavertol-giv/	163336	gap		
+aroma	Vanillin		none on page	VANILLIN	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/vanillin/		in corpus	patent name: Vanillin	floral, spicy, sweet, vanilla
+aroma	Vanillin 25% in DPG		none on page	DIPROPYLENE GLYCOL, VANILLIN	yes			yes	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/vanillin-25-in-dpg/		no CAS / unresolved		
+aroma	Velvione (Giv)	37609-25-9	yes	5-CYCLOHEXADECENONE	yes		Givaudan		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/velvione-giv/	162268	gap		
+aroma	Veratraldehyde	120-14-9	yes	VERATRALDEHYDE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/veratraldehyde/	8419	in corpus	patent name: Veratraldehyde	sweet, vanilla, warm, woody
+aroma	Vertofix coeur (IFF)	32388-55-9	yes	ACETYLCEDRENE	no	"made from cedrene, ""a mixture of several substances"" per shop"	IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/vertofix-coeur-iff/	16220111	not a single compound	patent name: Methyl cedryl ketone	musk, woody
+aroma	Vetiverol	84238-29-9	yes	VETIVEROL	no	vetiver oil isolate, ~80% vetiverol (mixture)			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/vetiverol/		not a single compound		
+aroma	Vetiveryl Acetate	62563-80-8	yes		no	acetylated vetiver oil (mixture)			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/vetiveryl-acetate/	8347	not a single compound		
+aroma	Zenolide (IFF)	54982-83-1	yes	ETHYLENE DODECANEDIOATE	yes		IFF		https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/zenolide-iff/	41270	gap		
+isolate	Anethole natural	104-46-1	yes	ANETHOLE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/isolate/anethole-natural/	637563	gap		
+isolate	Limonene D- (nat)	5989-27-5	yes	LIMONENE	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/isolate/limonene-d-adr/	440917	in corpus	pubchem CID	citrus, lemon
+isolate	Menthol (org)	2216-51-5	yes	MENTHOL	yes				https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/isolate/menthol/	16666	in corpus	pubchem CID	mint
+isolate	Rhodinol ex Citronella	141-25-3	yes		no	geraniol/citronellol fraction (mixture)			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/isolate/rhodinol-ex-citronella/	543323	not a single compound		

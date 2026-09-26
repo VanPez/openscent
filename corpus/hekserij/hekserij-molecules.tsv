@@ -1,0 +1,216 @@
+type	name	base	supplier	dilution	in_corpus	matched_as	corpus_tags	url
+aroma	2,6-Nonadien-1-al	2,6-nonadien-1-al		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/26-nonadien-1-al/
+aroma	Acetanisole	acetanisole		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/acetanisole/
+aroma	Acetophenone	acetophenone		False	yes	acetophenone	pungent, sweet	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/acetophenone/
+aroma	Aldehyde C10	aldehyde c10		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/aldehyde-c10/
+aroma	Aldehyde C10 10% in DPG	aldehyde c10		True	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/aldehyde-c10-10-in-dpg/
+aroma	Aldehyde C11 undecylene	aldehyde c11 undecylene		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/aldehyde-c11-undecylene/
+aroma	Aldehyde C12 Lauric	aldehyde c12 lauric		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/aldehyde-c12-lauric/
+aroma	Aldehyde C12 MNA	aldehyde c12 mna		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/aldehyde-c12-mna/
+aroma	Aldehyde C14 peach	aldehyde c14 peach		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/aldehyde-c14-peach/
+aroma	Aldehyde C16 strawberry	aldehyde c16 strawberry		False	yes	ethyl methylphenylglycidate	berry, fruity	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/aldehyde-c16-strawberry/
+aroma	Aldehyde C18 coconut	aldehyde c18 coconut		False	yes	gamma-nonalactone	coconut, creamy, fruity	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/aldehyde-c18-coconut/
+aroma	Aldehyde C9	aldehyde c9		False	yes	nonanal	floral, green, orange, rose, waxy	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/aldehyde-c9/
+aroma	Allyl amyl glycolate	allyl amyl glycolate		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/allyl-amyl-glycolate/
+aroma	Alpha bisabolol (Bisabolife)	alpha bisabolol		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/alpha-bisabolol/
+aroma	alpha Damascone	alpha damascone		False	yes	alpha-damascone	apple, green	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/alpha-damascone/
+aroma	alpha Isomethyl ionone	alpha isomethyl ionone		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/alpha-isomethyl-ionone/
+aroma	Amber xtreme (IFF)	amber xtreme	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/amber-xtreme-iff/
+aroma	Ambermax 10% in TEC (Giv)	ambermax	Givaudan	True	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/ambermax-10-in-tec-giv/
+aroma	Ambrettolide (IFF)	ambrettolide	IFF	False	yes	ambrettolide	animalic, musk	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/ambrettolide-iff/
+aroma	Ambrocenide (Sym) 10% in DPG	ambrocenide	Symrise	True	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/ambrocenide-sym-10-in-dpg/
+aroma	Ambroxide (Sym)	ambroxide	Symrise	False	yes	ambroxide; ambroxide	animalic, camphoraceous, earthy, warm, woody	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/ambroxide-sym/
+aroma	Amyl cinnamal	amyl cinnamal		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/amyl-cinnamal/
+aroma	Amyl salicylate	amyl salicylate		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/amyl-salicylate/
+aroma	Anisaldehyde	anisaldehyde		False	yes	p-anisaldehyde	anisic, berry, creamy, fruity, hay, powdery, spicy, sweet, vanilla	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/anisaldehyde/
+aroma	Aphermate (IFF)	aphermate	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/aphermate-iff/
+aroma	Apo Patchone Coeur (IFF)	apo patchone coeur	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/apo-patchone-coeur-iff/
+aroma	Auralva (IFF) aurantiol	auralva aurantiol	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/aurantiol/
+aroma	Aurantiol 50% in DPG	aurantiol		True	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/aurantiol-50-dpg/
+aroma	Azarbre (Giv)	azarbre	Givaudan	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/azarbre-giv/
+aroma	Bacdanol (IFF)	bacdanol	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/bacdanol-iff/
+aroma	Benzaldehyde	benzaldehyde		False	yes	benzaldehyde	nutty	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/benzaldehyde-adr/
+aroma	Benzyl acetate	benzyl acetate		False	yes	benzyl acetate	floral, fresh, fruity, jasmine, lily, pear, sweet	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/benzyl-acetate/
+aroma	Benzyl isoeugenol	benzyl isoeugenol		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/benzyl-isoeugenol/
+aroma	Benzyl propionate	benzyl propionate		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/benzyl-propionate/
+aroma	Benzyl salicylate	benzyl salicylate		False	yes	benzyl salicylate	sweet	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/benzyl-salicylate/
+aroma	Bicyclononalactone	bicyclononalactone		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/bicyclononalactone/
+aroma	Boisiris (Giv)	boisiris	Givaudan	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/boisiris-giv/
+aroma	Bornafix (IFF)	bornafix	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/bornafix-iff/
+aroma	Bornyl acetate	bornyl acetate		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/bornyl-acetate/
+aroma	Bourgeonal (Giv)	bourgeonal	Givaudan	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/bourgeonal-giv/
+aroma	Calone 1951 (Fir)	calone 1951	Firmenich	False	yes	calone	floral, green, marine	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/calone-1951-fir/
+aroma	Canthoxal (IFF)	canthoxal	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/canthoxal-iff/
+aroma	Cashmeran (IFF)	cashmeran	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/cashmeran-iff/
+aroma	Cashmeran Velvet (IFF)	cashmeran velvet	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/cashmeran-velvet-iff/
+aroma	Cedramber (IFF)	cedramber	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/cedramber-iff/
+aroma	Cedroxyde (Fir)	cedroxyde	Firmenich	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/cedroxyde-fir/
+aroma	Cedryl Acetate (IFF)	cedryl acetate	IFF	False	yes	cedryl acetate	woody	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/cedryl-acetate-iff/
+aroma	Celestolide (IFF)	celestolide	IFF	False	yes	celestolide	animalic, musk, sweet	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/celestolide/
+aroma	Cetalor (IFF)	cetalor	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/cetalor-iff/
+aroma	Cetalox (Fir)	cetalox	Firmenich	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/cetalox-fir/
+aroma	Cinnamic alcohol	cinnamic alcohol		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/cinnamic-alcohol/
+aroma	Cinnamic aldehyde	cinnamic aldehyde		False	yes	cinnamaldehyde	pungent, spicy	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/cinnamic-aldehyde/
+aroma	Cinnamyl acetate	cinnamyl acetate		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/cinnamyl-acetate/
+aroma	cis Jasmone	cis jasmone		False	yes	jasmone	citrus, floral, herbal, jasmine, woody	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/cis-jasmon/
+aroma	cis-3-Hexenol	cis-3-hexenol		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/cis-3-hexenol/
+aroma	cis-3-Hexenyl acetate	cis-3-hexenyl acetate		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/cis-3-hexenyl-acetate-adr/
+aroma	cis-3-Hexenyl Salicylate	cis-3-hexenyl salicylate		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/cis-3-hexenyl-salicylate/
+aroma	Citral	citral		False	yes	citral; citral	citrus, lemon	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/citral/
+aroma	Citronellol	citronellol		False	yes	citronellol	fresh, rose	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/citronellol/
+aroma	Citronellyl Formate	citronellyl formate		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/citronellyl-formate/
+aroma	Clearwood (Fir)	clearwood	Firmenich	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/clearwood-fir/
+aroma	Clonal (IFF)	clonal	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/clonal-iff/
+aroma	Coniferan Pure (IFF)	coniferan pure	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/coniferan-pure-iff/
+aroma	Coumarin	coumarin		False	yes	coumarin; coumarin	hay, vanilla	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/coumarin/
+aroma	Coumarin 10% in DPG	coumarin		True	yes	coumarin; coumarin	hay, vanilla	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/coumarin-10-in-dpg/
+aroma	Cyclamen aldehyde	cyclamen aldehyde		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/cyclamen-aldehyde/
+aroma	Damascenone Total (Fir)	damascenone total	Firmenich	False	yes	damascenone; β-damascenone	apple, floral, fruity, rose	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/damascenone-total-fir/
+aroma	Damascone beta	damascone beta		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/damascone-beta/
+aroma	Datilat (Sym)	datilat	Symrise	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/datilat-sym/
+aroma	Dihydro terpineol	dihydro terpineol		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/dihydroterpineol/
+aroma	Dihydrojasmone	dihydrojasmone		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/dihydrojasmone/
+aroma	Dihydromyrcenol	dihydromyrcenol		False	yes	dihydromyrcenol	citrus, fresh, lavender	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/dihydromyrcenol/
+aroma	Dimetol (Giv)	dimetol	Givaudan	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/dimetol-giv/
+aroma	DMBC	dmbc		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/dmbc/
+aroma	DMBC butyrate	dmbc butyrate		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/dmbc-butyrate-2/
+aroma	Ebanol (Giv)	ebanol	Givaudan	False	yes	ebanol	sandalwood	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/ebanol-giv/
+aroma	Edenolide (IFF)	edenolide	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/edenolide-iff/
+aroma	Ethyl acetoacetate	ethyl acetoacetate		False	yes	ethyl acetoacetate	fruity, green	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/ethyl-acetoacetate/
+aroma	Ethyl butyrate	ethyl butyrate		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/ethyl-butyrate-adr/
+aroma	Ethyl linalool	ethyl linalool		False	yes	ethyl linalool	lavender	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/ethyl-linalool/
+aroma	Ethyl Maltol	ethyl maltol		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/ethyl-maltol/
+aroma	Ethyl safranate (Giv)	ethyl safranate	Givaudan	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/ethyl-safranate/
+aroma	Ethyl vanillin	ethyl vanillin		False	yes	ethyl vanillin	sweet, vanilla	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/ethyl-vanillin/
+aroma	Ethylene brassylate	ethylene brassylate		False	yes	ethylene brassylate; ethylene brassylate	amber	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/ethylene-brassylate/
+aroma	Eugenol	eugenol		False	yes	eugenol	floral, spicy, warm	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/eugenol/
+aroma	Evernyl (Giv)	evernyl	Givaudan	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/methyl-atratate/
+aroma	Farenal (Sym)	farenal	Symrise	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/farenal-sym/
+aroma	Farnesol	farnesol		False	yes	farnesol	citrus, floral, lime, oily	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/farnesol/
+aroma	Floralozone (IFF)	floralozone	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/floralozone-iff/
+aroma	Florhydral (Giv)	florhydral	Givaudan	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/florhydral-giv/
+aroma	Florosa (Giv)	florosa	Givaudan	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/florosa-giv/
+aroma	Fructone (IFF)	fructone	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/fructone-iff/
+aroma	Galaxolide 50% in IPM (IFF)	galaxolide	IFF	True	yes	galaxolide; galaxolide	musk	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/galaxolide-50-in-ipm-iff/
+aroma	gamma Decalacton	gamma decalacton		False	yes	gamma-decalactone	creamy, peach	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/gamma-decalacton/
+aroma	gamma Octalactone	gamma octalactone		False	yes	gamma-octalactone	coconut	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/gamma-octalactone/
+aroma	Geraniol	geraniol		False	yes	geraniol	floral, geranium, rose, sweet	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/geraniol/
+aroma	Geranyl acetate	geranyl acetate		False	yes	geranyl acetate	floral, fruity, green, lavender, rose, sweet	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/geranyl-acetate/
+aroma	Guaiacol	guaiacol		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/guaiacol/
+aroma	Guaiyl acetate	guaiyl acetate		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/guaiyl-acetate/
+aroma	Habanolide (Fir)	habanolide	Firmenich	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/habanolide-fir/
+aroma	Hedione (Fir)	hedione	Firmenich	False	yes	methyl dihydrojasmonate	floral, jasmine	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/hedione-fir/
+aroma	Hedione HC (Fir)	hedione hc	Firmenich	False	yes	methyl dihydrojasmonate	floral, jasmine	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/hedione-hc-fir/
+aroma	Helional (IFF)	helional	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/helional-iff/
+aroma	Helvetolide (Fir)	helvetolide	Firmenich	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/helvetolide-fir/
+aroma	Herbac (IFF)	herbac	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/herbac-iff/
+aroma	Herboxane (Giv)	herboxane	Givaudan	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/herboxane-giv/
+aroma	Hercolyn DW	hercolyn dw		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/hercolyn-dw/
+aroma	Hexalon (IFF)	hexalon	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/hexalon-iff/
+aroma	Hexyl acetate	hexyl acetate		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/hexyl-acetate/
+aroma	Hexyl cinnamal	hexyl cinnamal		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/hexyl-cinnamal/
+aroma	Hyacinth body No. 3 (IFF)	hyacinth body no. 3	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/hyacinth-body-no-3-iff/
+aroma	Hydroxyambran	hydroxyambran		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/hydroxyambran/
+aroma	Hydroxycitronellal	hydroxycitronellal		False	yes	hydroxycitronellal	floral, lily, sweet	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/hydroxycitronellal/
+aroma	Indol 10% in DPG	indol		True	yes	indole	jasmine	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/indol-10-in-dpg/
+aroma	Indole	indole		False	yes	indole; indole	jasmine	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/indole/
+aroma	Ionone alpha	ionone alpha		False	yes	alpha-ionone	balsamic, floral, sweet, violet, warm, woody	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/ionone-alpha/
+aroma	Ionone beta	ionone beta		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/ionone-beta/
+aroma	Irone alpha	irone alpha		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/irone-alpha/
+aroma	Iso E Super (IFF)	iso e super	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/iso-e-super-iff/
+aroma	Isoamyl acetate	isoamyl acetate		False	yes	isoamyl acetate	fruity, pear, sweet	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/isoamyl-acetate-nat/
+aroma	Isoamyl Isovalerate	isoamyl isovalerate		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/isoamyl-isovalerate/
+aroma	Isobutavan (Giv)	isobutavan	Givaudan	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/isobutavan-giv/
+aroma	Isobutyl phenyl acetate	isobutyl phenyl acetate		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/isobutyl-phenyl-acetate/
+aroma	Isobutyl Quinoline (Sym)	isobutyl quinoline	Symrise	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/isobutyl-quinoline-sym/
+aroma	Isobutyl salicylate	isobutyl salicylate		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/isobutyl-salicylate/
+aroma	Isoeugenol	isoeugenol		False	yes	isoeugenol	spicy	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/isoeugenol/
+aroma	Isoraldeine 95 (Giv) Methyl ionone	isoraldeine 95 methyl ionone	Givaudan	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/isoraldeine-95-giv-methyl-ionone/
+aroma	Javanol (Giv)	javanol	Givaudan	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/javanol-giv/
+aroma	Kephalis (Giv)	kephalis	Givaudan	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/kephalis-giv/
+aroma	Koavone (IFF)	koavone	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/koavone-iff/
+aroma	Liffarome (IFF)	liffarome	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/liffarome-iff/
+aroma	Lilyflore (Fir)	lilyflore	Firmenich	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/lilyflore-fir/
+aroma	Linalool	linalool		False	yes	linalool	camphoraceous, floral, fresh, lavender, lily, spicy, woody	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/linalool/
+aroma	Linalyl acetate	linalyl acetate		False	yes	linalyl acetate	floral, fresh, fruity, lavender, pear, sweet	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/linalyl-acetate/
+aroma	Lindenol (IFF)	lindenol	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/lindenol-iff/
+aroma	Lyral (IFF)	lyral	IFF	False	yes	lyral; lyral	floral, lily	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/lyral-iff/
+aroma	Macrolide Supra (Sym)	macrolide supra	Symrise	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/macrolide-supra-sym/
+aroma	Magnolan (Sym)	magnolan	Symrise	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/magnolan-sym/
+aroma	Mahagonate (Sym)	mahagonate	Symrise	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/mahagonate/
+aroma	Majantol (Sym)	majantol	Symrise	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/majantol/
+aroma	Mayol (Fir)	mayol	Firmenich	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/mayol-fir/
+aroma	Melonal	melonal		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/melonal/
+aroma	meta Cresol 1% in DPG	meta cresol		True	yes	m-cresol	sweet	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/meta-cresol-1-in-dpg/
+aroma	Methyl Acetophenone	methyl acetophenone		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/methyl-acetophenone/
+aroma	Methyl anthranilate	methyl anthranilate		False	yes	methyl anthranilate	floral	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/methyl-anthranilate/
+aroma	Methyl benzoate	methyl benzoate		False	yes	methyl benzoate	dry, fruity	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/methyl-benzoate/
+aroma	Methyl Cinnamate	methyl cinnamate		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/methyl-cinnamate/
+aroma	Methyl Cyclopentenolone	methyl cyclopentenolone		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/methyl-cyclopentenolone/
+aroma	Methyl Isoeugenol	methyl isoeugenol		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/methyl-isoeugenol/
+aroma	Methyl Laitone 10% in DPG (Giv)	methyl laitone	Givaudan	True	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/methyl-laitone-10-in-dpg-giv/
+aroma	Methyl Pamplemousse (Giv)	methyl pamplemousse	Givaudan	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/methyl-pamplemousse-giv/
+aroma	Methyl tuberate (Giv)	methyl tuberate	Givaudan	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/methyl-tuberate-giv/
+aroma	Muscenone (Fir)	muscenone	Firmenich	False	yes	muscenone	powdery	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/muscenon/
+aroma	Musk ketone	musk ketone		False	yes	musk ketone; musk ketone	animalic, musk, powdery, sweet	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/musk-ketone/
+aroma	Nectarate (IFF)	nectarate	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/nectarate-iff/
+aroma	Neononyl acetate (Sym)	neononyl acetate	Symrise	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/neononyl-acetate-sym/
+aroma	Nerol	nerol		False	yes	nerol	apple, citrus, floral, fresh, fruity, rose, sweet, wet	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/nerol/
+aroma	Nerolidol	nerolidol		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/nerolidol/
+aroma	Neryl acetate	neryl acetate		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/neryl-acetate/
+aroma	Norlimbanol (Fir)	norlimbanol	Firmenich	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/norlimbanol/
+aroma	Oak moss abs 5% in DPG	oak moss abs		True	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/oak-moss-abs-5-in-dpg/
+aroma	Octacetal (IFF)	octacetal	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/octacetal-iff/
+aroma	omega Pentadecalactone	omega pentadecalactone		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/omega-pentadecalactone/
+aroma	Orange Flower Ether (IFF)	orange flower ether	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/orange-flower-ether-iff/
+aroma	Oranger Crystals	oranger crystals		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/oranger-crystals/
+aroma	OTBCHA	otbcha		False	yes	2-tert-butylcyclohexyl acetate	fruity, green, woody	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/otbcha/
+aroma	PADMA	padma		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/padma/
+aroma	Palisandin (Sym)	palisandin	Symrise	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/palisandin-sym/
+aroma	para Anisyl acetate	para anisyl acetate		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/para-anisyl-acetate/
+aroma	para Cresyl acetate	para cresyl acetate		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/para-cresyl-acetate/
+aroma	para Cresyl phenylacetate	para cresyl phenylacetate		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/para-cresyl-phenylacetate/
+aroma	Phenirat (Sym)	phenirat	Symrise	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/phenirat-sym/
+aroma	Phenoxyethanol	phenoxyethanol		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/phenoxyethanol/
+aroma	Phenyl ethyl alcohol	phenyl ethyl alcohol		False	yes	phenyl ethyl alcohol; phenylethyl alcohol; 2-phenylethanol; phenyl ethyl alcohol; β-phenylethyl alcohol	honey, rose, warm	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/phenyl-ethyl-alcohol/
+aroma	Phenyl propyl alcohol	phenyl propyl alcohol		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/phenyl-propyl-alcohol/
+aroma	Phenylethyl acetate	phenylethyl acetate		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/phenylethyl-acetate/
+aroma	Phenylethyl phenylacetate	phenylethyl phenylacetate		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/phenylethyl-phenylacetate/
+aroma	Piconia (IFF)	piconia	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/piconia-iff/
+aroma	Poivrol (Sym)	poivrol	Symrise	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/poivrol-sym/
+aroma	Polysantol (Fir)	polysantol	Firmenich	False	yes	polysantol	sandalwood	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/polysantol-fir/
+aroma	PTBCHA (Vertenex type)	ptbcha		False	yes	4-tert-butylcyclohexyl acetate	creamy, floral, soft, sweet, woody	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/ptbcha-vertenex-type/
+aroma	Raspberry ketone	raspberry ketone		False	yes	raspberry ketone; raspberry ketone	berry, fruity, sweet, warm	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/raspberry-ketone/
+aroma	Rhubofix (Fir)	rhubofix	Firmenich	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/rhubofix-fir/
+aroma	Romandolide (Fir)	romandolide	Firmenich	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/romandolide-fir/
+aroma	Rosalin (Rose crystals)	rosalin		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/rosalin-rose-crystals/
+aroma	Rosalva (IFF)	rosalva	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/rosalva-iff/
+aroma	Rosaphen (Sym)	rosaphen	Symrise	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/rosaphen-sym/
+aroma	Safraleine (Giv)	safraleine	Givaudan	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/safraleine-giv/
+aroma	Safranal	safranal		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/safranal/
+aroma	Sandalore (Giv)	sandalore	Givaudan	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/sandalore-giv/
+aroma	SantalIff (IFF)	santaliff	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/santaliff-iff/
+aroma	Scentenal (Fir)	scentenal	Firmenich	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/scentenal-fir/
+aroma	Silvanone Supra (Giv)	silvanone supra	Givaudan	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/silvanone-supra-giv/
+aroma	Silvial (Giv)	silvial	Givaudan	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/silvial-giv/
+aroma	Stemone (Giv)	stemone	Givaudan	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/stemone/
+aroma	Strawberry furanone	strawberry furanone		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/strawberry-furanone-adr/
+aroma	Styrallyl acetate	styrallyl acetate		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/styrallyl-acetate/
+aroma	Sylvamber (DRT)	sylvamber	DRT	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/sylvamber-drt/
+aroma	Terpinyl acetate	terpinyl acetate		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/terpinyl-acetate/
+aroma	Timbersilk (IFF)	timbersilk	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/timbersilk-iff/
+aroma	Tonalid	tonalid		False	yes	tonalide	musk	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/tonalid/
+aroma	Triplal (IFF)	triplal	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/triplal/
+aroma	Undecavertol (Giv)	undecavertol	Givaudan	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/undecavertol-giv/
+aroma	Vanillin	vanillin		False	yes	vanillin; vanillin	aromatic, floral, spicy, sweet, vanilla	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/vanillin/
+aroma	Vanillin 25% in DPG	vanillin		True	yes	vanillin; vanillin	aromatic, floral, spicy, sweet, vanilla	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/vanillin-25-in-dpg/
+aroma	Velvione (Giv)	velvione	Givaudan	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/velvione-giv/
+aroma	Veratraldehyde	veratraldehyde		False	yes	veratraldehyde	sweet, vanilla, warm, woody	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/veratraldehyde/
+aroma	Vertofix coeur (IFF)	vertofix coeur	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/vertofix-coeur-iff/
+aroma	Vetiverol	vetiverol		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/vetiverol/
+aroma	Vetiveryl Acetate	vetiveryl acetate		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/vetiveryl-acetate/
+aroma	Zenolide (IFF)	zenolide	IFF	False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/aroma-chemicals/zenolide-iff/
+isolate	Anethole natural	anethole natural		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/isolate/anethole-natural/
+isolate	Limonene D- (nat)	limonene d-		False	yes	limonene	lemon	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/isolate/limonene-d-adr/
+isolate	Menthol (org)	menthol		False	yes	menthol; menthol; l-menthol	fresh, mint	https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/isolate/menthol/
+isolate	Rhodinol ex Citronella	rhodinol ex citronella		False	no			https://eng.hekserij.nl/shop/fragrance-raw-material/search-by-type/isolate/rhodinol-ex-citronella/
