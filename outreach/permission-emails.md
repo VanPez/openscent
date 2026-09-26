@@ -62,7 +62,7 @@ handles product information or intellectual property. I'm happy to send the data
 documentation or a preview first.
 
 Kind regards,
-Ivan [surname]
+Ivan Pezzini
 OpenScent — github.com/VanPez
 
 ---
@@ -90,7 +90,7 @@ A short reply saying which licence you grant is all I need. Thank you either way
 catalogue has already been a great help.
 
 Kind regards,
-Ivan [surname]
+Ivan Pezzini
 OpenScent — github.com/VanPez
 
 ---
@@ -119,5 +119,5 @@ bajo CC0, o bajo CC BY 4.0 citando a Olfatorium como fuente en cada entrada.
 Con una respuesta breve indicando la licencia es suficiente. ¡Gracias en cualquier caso!
 
 Un saludo,
-Ivan [apellido]
+Ivan Pezzini
 OpenScent — github.com/VanPez
