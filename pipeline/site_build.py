@@ -100,6 +100,86 @@ def evidence_pools(st, surf, variants):
     return by_name, by_cid
 
 
+
+# ---------------------------------------------------------------- scent map
+# Display grouping ONLY — for colouring dots. Not part of the ontology and not a claim: the
+# map's positions come from the corpus tags alone; colour is a reading aid.
+FAMILIES = [
+    ("Floral", "#e0529c", ["floral", "rose", "lily", "jasmine", "geranium", "violet"]),
+    ("Fruity", "#f3722c", ["fruity", "apple", "pear", "berry", "pineapple", "peach", "juicy"]),
+    ("Citrus", "#e9b10c", ["citrus", "lemon", "lime", "orange", "grapefruit"]),
+    ("Green & herbal", "#43aa8b", ["green", "herbal", "lavender", "mint", "camphoraceous", "aromatic", "anisic", "hay", "eucalyptus"]),
+    ("Woody & earthy", "#8d6346", ["woody", "sandalwood", "cedar", "patchouli", "earthy", "dry", "musty"]),
+    ("Amber & musk", "#7b61ff", ["amber", "musk", "animalic", "powdery", "leather", "tobacco", "balsamic", "oriental"]),
+    ("Sweet & gourmand", "#b5651d", ["sweet", "vanilla", "honey", "creamy", "coconut", "nutty", "coffee"]),
+    ("Spicy & warm", "#d62828", ["spicy", "warm", "smoke"]),
+    ("Fresh & aldehydic", "#2fa6d6", ["fresh", "aldehydic", "waxy", "fatty", "oily", "marine", "watery", "clean", "metallic", "wet"]),
+    ("Sharp & other", "#6c757d", ["pungent", "acid", "chlorine", "soft", "neutral"]),
+]
+GENERIC = {"sweet", "fresh", "floral", "fruity", "pungent", "aromatic", "warm", "soft", "dry", "green"}
+
+
+def tsne(X, perplexity=12.0, iters=1000, seed=20260926):
+    """Exact t-SNE (van der Maaten & Hinton 2008) in numpy. Seeded: the page is reproducible."""
+    import numpy as np
+    rng = np.random.default_rng(seed)
+    n = X.shape[0]
+    Xn = X / np.maximum(np.linalg.norm(X, axis=1, keepdims=True), 1e-12)
+    D = np.clip(1 - Xn @ Xn.T, 0, 2)                      # cosine distance
+    P = np.zeros((n, n)); target = np.log(perplexity)
+    for i in range(n):
+        lo, hi, beta = 1e-20, 1e20, 1.0
+        d = np.delete(D[i], i)
+        for _ in range(60):
+            p = np.exp(-d * beta); sp = p.sum() or 1e-12
+            H = np.log(sp) + beta * (d * p).sum() / sp
+            if abs(H - target) < 1e-5:
+                break
+            if H > target: lo = beta; beta = beta * 2 if hi == 1e20 else (beta + hi) / 2
+            else: hi = beta; beta = (beta + lo) / 2
+        P[i, np.arange(n) != i] = p / sp
+    P = (P + P.T) / (2 * n); P = np.maximum(P, 1e-12)
+    Y = rng.normal(0, 1e-4, (n, 2)); V = np.zeros_like(Y); G = np.ones_like(Y)
+    for it in range(iters):
+        PP = P * (12 if it < 250 else 1)
+        sq = (Y ** 2).sum(1); num = 1 / (1 + sq[:, None] + sq[None, :] - 2 * Y @ Y.T); np.fill_diagonal(num, 0)
+        Q = np.maximum(num / num.sum(), 1e-12)
+        grad = 4 * (((PP - Q) * num)[:, :, None] * (Y[:, None, :] - Y[None, :, :])).sum(1)
+        mom = .5 if it < 250 else .8
+        G = (G + .2) * ((grad > 0) != (V > 0)) + G * .8 * ((grad > 0) == (V > 0)); G = np.maximum(G, .01)
+        V = mom * V - 200 * G * grad; Y = Y + V; Y -= Y.mean(0)
+    return Y
+
+
+def scent_map(mats):
+    import numpy as np
+    pts = [m for m in mats if m["tags"]]
+    tags = sorted({t for m in pts for t in m["tags"]})
+    ti = {t: i for i, t in enumerate(tags)}
+    X = np.zeros((len(pts), len(tags)))
+    for r, m in enumerate(pts):
+        for e in m["ev"]:
+            for t in e["tags"]:
+                X[r, ti[t]] += 1
+    X = np.sqrt(X)                                        # one very repeated tag must not drown the rest
+    Y = tsne(X)
+    # robust scaling: a few isolated materials (lone aldehydes) would otherwise squeeze the rest
+    # into the middle. 3rd-97th percentile spans the frame; outliers sit on its edge.
+    lo, hi = np.percentile(Y, 3, axis=0), np.percentile(Y, 97, axis=0)
+    Y = np.clip((Y - lo) / np.maximum(hi - lo, 1e-9), -0.04, 1.04)
+    Y = (Y + 0.04) / 1.08
+    fam_of = {t: k for k, (_, _, ts) in enumerate(FAMILIES) for t in ts}
+    out = []
+    for r, m in enumerate(pts):
+        score = collections.Counter()
+        for t, i in ti.items():
+            if X[r, i] and t in fam_of:
+                score[fam_of[t]] += X[r, i] * (.6 if t in GENERIC else 1)
+        f = score.most_common(1)[0][0] if score else len(FAMILIES) - 1
+        out.append({"cid": m["cid"], "x": round(float(Y[r, 0]), 4), "y": round(float(Y[r, 1]), 4), "f": f})
+    return {"fam": [[n, c] for n, c, _ in FAMILIES], "pts": out}
+
+
 def build():
     st, g = _load("status"), _load("gaps")
     link = g._load("link", ROOT / "pipeline" / "hekserij_link.py")
@@ -122,6 +202,8 @@ def build():
             names[cid] += g.shop_variants(r["name"]) + ([r["inci"]] if r.get("inci") else [])
             names[cid] += [s for s in cache["syn"].get(cid, []) if s.lower() not in bad]
 
+    cf = ROOT / "corpus" / "catalog" / "conformers.json"      # catalog.py --fetch-3d (Hetzner)
+    conf = json.loads(cf.read_text(encoding="utf-8")) if cf.exists() else {}
     mats, n_ev, missing = [], 0, []
     for r in csv.DictReader(open(ROOT / "corpus" / "catalog" / "materials.tsv", encoding="utf-8"), delimiter="\t"):
         cid = r["cid"]
@@ -148,18 +230,20 @@ def build():
             "vp": r["vapour_pressure"], "vp_src": r["vapour_pressure_source"],
             "bp": r["boiling_point"], "bp_src": r["boiling_point_source"],
             "described": described, "note": r["status_note"],
-            "tags": [t for t, _ in tagc.most_common()], "ev": found,
+            "tags": [t for t, _ in tagc.most_common()], "ev": found, "c3d": conf.get(cid) if conf else False,   # False = not fetched yet, None = PubChem has none
         })
     if missing:
         sys.exit(f"described in the catalogue but no evidence found for: {missing} — matching drifted from gaps.py")
     n_desc = sum(m["described"] for m in mats)
     data = {"fig": fig, "n": len(mats), "n_desc": n_desc, "n_ev": n_ev,
-            "built": datetime.date.today().isoformat(), "mats": mats}
+            "built": datetime.date.today().isoformat(), "mats": mats, "map": scent_map(mats)}
     page = TEMPLATE.replace("/*__DATA__*/null", json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"))
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(page, encoding="utf-8")
     print(f"{len(mats)} materials · {n_desc} described · {n_ev} evidence quotes · corpus {fig['molecules']} molecules, "
           f"{fig['tags_at_bar']}/{fig['tags']} tags at the bar")
+    print(f"3D conformers embedded: {sum(1 for m in mats if m['c3d'])} of {len(mats)}"
+          + ("" if conf else "  (none: run catalog.py --fetch-3d on Hetzner first)"))
     print(f"written -> {OUT.relative_to(ROOT)}  ({OUT.stat().st_size // 1024} KB)")
 
 
@@ -228,12 +312,26 @@ dd{margin:0;font-family:var(--mono);font-size:12px;word-break:break-all}dd.est{c
 .empty{border:1px solid rgba(154,106,20,.45);background:var(--amber-pale);padding:12px 14px;font-size:13.5px;color:#5b430f;margin-bottom:12px}
 .slot{border:1px dashed var(--line-strong);padding:12px 14px;font-size:13px;color:var(--mut);background:#fff}
 .slot b{font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink);display:block;margin-bottom:4px}
+.nav{display:flex;gap:4px}.nav a{font:600 12px var(--mono);text-decoration:none;color:var(--mut);padding:6px 12px;border-radius:999px;letter-spacing:.02em}
+.nav a:hover{background:rgba(7,17,29,.05);color:var(--ink)}.nav a.active{background:var(--blue);color:#fff}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.chip{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line-strong);background:#fff;padding:5px 10px;font-size:12.5px;cursor:pointer}
+.chip.off{opacity:.35}.chip .dot{width:11px;height:11px;border-radius:50%}.chip .n{font:10px var(--mono);color:var(--mut)}
+.mapbox{background:#fff;border:1px solid var(--line-strong);box-shadow:var(--shadow);border-top:3px solid var(--blue)}
+.mapbox svg{width:100%;height:auto;display:block}.mapbox circle{cursor:pointer;stroke:#fff;stroke-width:1.5}
+.mapbox circle:hover{stroke:var(--ink);stroke-width:2}
+.tip{position:fixed;z-index:20;pointer-events:none;background:#07111d;color:#eaf1ff;border-radius:8px;padding:9px 11px;font-size:12px;max-width:280px;box-shadow:0 10px 30px rgba(0,0,0,.28);display:none}
+.tip b{font-size:12.5px}.tip .f{font:10px var(--mono);color:#9db6e8;text-transform:uppercase;letter-spacing:.06em;margin:2px 0 5px}
+.v3d{background:#fff;border:1px solid var(--line-strong);height:260px;margin-bottom:6px;touch-action:none;cursor:grab}
+.v3d canvas{width:100%;height:100%;display:block}.v3d.none{display:grid;place-items:center;cursor:default;font:11px var(--mono);color:var(--faint);letter-spacing:.06em;text-transform:uppercase}
+.hint{font:11px var(--mono);color:var(--faint);margin-bottom:14px}
 footer{border-top:1px solid var(--line);margin-top:36px;padding-top:16px;color:var(--mut);font-size:12.5px;line-height:1.8}
 @media(max-width:760px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(3){border-left:0}.stat:nth-child(n+3){border-top:1px solid var(--line)}.dgrid{grid-template-columns:1fr}}
 @media(max-width:640px){.wrap,.topbar-in{padding-left:16px;padding-right:16px}h1{font-size:26px}.bar{position:static}.stats{grid-template-columns:1fr}.stat+.stat{border-left:0;border-top:1px solid var(--line)}}
 </style></head><body>
 <header class="topbar"><div class="topbar-in">
  <div class="brand"><div class="glyph">OS</div><div class="wordmark"><b>OpenScent</b><span>Odour corpus · materials</span></div></div>
+ <nav class="nav" id="nav"><a href="#materials" data-v="materials" class="active">Materials</a><a href="#map" data-v="map">Scent map</a></nav>
  <span class="badge proto" id="topbadge"></span>
 </div></header>
 <main class="wrap">
@@ -255,9 +353,18 @@ footer{border-top:1px solid var(--line);margin-top:36px;padding-top:16px;color:v
   <select id="tag"><option value="">Any tag</option></select>
   <span class="count" id="count"></span>
  </div>
- <div class="panel"><div class="scroll"><table>
+ <div class="panel" id="matpanel"><div class="scroll"><table>
   <thead><tr><th style="width:26%">Material</th><th>Formula</th><th class="num">MW</th><th class="num">XLogP3</th><th style="width:34%">Odour tags (from evidence)</th><th class="num">Quotes</th><th>Status</th></tr></thead>
   <tbody id="tb"></tbody></table></div></div>
+ <section id="mapview" style="display:none">
+  <div class="note"><b>How to read it.</b> Each dot is one of the preview materials that has odour evidence, placed only from
+   its corpus tags (t-SNE, cosine distance on tag counts): materials whose sources describe them alike sit close together.
+   The axes have no units. Colour is a broad family, a reading aid, not a claim. With <span id="mapn"></span> materials this
+   is illustrative, not a perceptual map. Click a dot to open its evidence.</div>
+  <div class="legend" id="legend"></div>
+  <div class="mapbox"><svg id="plot" viewBox="0 0 1000 640" preserveAspectRatio="xMidYMid meet"></svg></div>
+ </section>
+ <div class="tip" id="tip"></div>
  <footer id="foot"></footer>
 </main>
 <script>
@@ -293,7 +400,9 @@ const KIND={patent:"US patent",passage:"US patent · passage",hsdb:"US gov · Pu
 function detail(m){
  const pc=`<a href="https://pubchem.ncbi.nlm.nih.gov/compound/${m.cid}" target="_blank" rel="noopener">${m.cid}</a>`;
  const row=(k,v,cls="")=>v?`<dt>${k}</dt><dd class="${cls}">${v}</dd>`:"";
- const id=`<div><p class="h3">Identity &amp; properties</p><dl>
+ const v3=m.c3d?`<div class="v3d"><canvas id="v3d"></canvas></div><div class="hint">Drag to rotate · scroll to zoom · PubChem computed conformer</div>`
+  :`<div class="v3d none">${m.c3d===false?"3D not built into this preview yet":"No 3D conformer in PubChem"}</div><div class="hint">&nbsp;</div>`;
+ const id=`<div>${v3}<p class="h3">Identity &amp; properties</p><dl>
   ${row("PubChem CID",pc)}${row("CAS",esc(m.cas))}${row("Sold as",esc(m.trade))}${row("IUPAC",esc(m.iupac))}
   ${row("SMILES",esc(m.smiles))}${row("InChIKey",esc(m.inchikey))}${row("TPSA",esc(m.tpsa))}${row("H-bond d/a",m.hbd!==""?esc(m.hbd+" / "+m.hba):"")}
   ${row("Vapour pr.",m.vp?esc(m.vp)+`<br><span style="color:var(--faint)">${esc(m.vp_src)}</span>`:"",)}
@@ -327,6 +436,46 @@ function render(){
   <td class="num">${m.ev.length||"—"}</td>
   <td>${m.described?'<span class="badge ok">Described</span>':'<span class="badge proto">No public description</span>'}</td></tr>
   ${open===m.cid?detail(m):""}`).join("")||`<tr><td colspan="7" style="text-align:center;color:var(--mut);padding:24px">No materials match.</td></tr>`;
+ const cv=document.getElementById("v3d"),om=D.mats.find(m=>m.cid===open);
+ if(cv&&om&&om.c3d)mol3d(cv,om.c3d);
+}
+// ---- built-in 3D viewer: no library, no network. Ball-and-stick, depth-sorted, CPK-style colours.
+const EC={1:["#f4f6f8",.22],6:["#3c4652",.34],7:["#2f5bea",.34],8:["#d6453d",.34],9:["#5fbf8a",.3],15:["#e08a2b",.42],16:["#e2b32b",.42],17:["#1f9e5a",.4],35:["#a1401d",.44],53:["#7a3fa0",.48]};
+const shade=(h,f)=>"#"+[1,3,5].map(i=>Math.round(parseInt(h.slice(i,i+2),16)*f).toString(16).padStart(2,"0")).join("");
+function mol3d(cv,c){
+ const ctx=cv.getContext("2d"),dpr=window.devicePixelRatio||1,W=cv.clientWidth,H=cv.clientHeight;
+ cv.width=W*dpr;cv.height=H*dpr;ctx.scale(dpr,dpr);
+ const n=c.xyz.length,cen=[0,1,2].map(k=>c.xyz.reduce((s,p)=>s+p[k],0)/n),P=c.xyz.map(p=>p.map((v,k)=>v-cen[k]));
+ const R=Math.max(...P.map(p=>Math.hypot(p[0],p[1],p[2])))+.9;
+ let yaw=.6,pitch=-.35,zoom=1,auto=true,drag=null;
+ function draw(){
+  ctx.clearRect(0,0,W,H);
+  const s=Math.min(W,H)/(2*R)*zoom,cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);
+  const T=P.map(([x,y,z])=>{const x1=x*cy+z*sy,z1=-x*sy+z*cy;return [W/2+x1*s,H/2-(y*cp-z1*sp)*s,y*sp+z1*cp];});
+  const items=c.b.map(([a,b,o])=>({z:(T[a][2]+T[b][2])/2-.05,a,b,o}));T.forEach((p,i)=>items.push({z:p[2],i}));
+  items.sort((u,v)=>u.z-v.z);
+  for(const it of items){
+   if(it.i===undefined){
+    const A=T[it.a],B=T[it.b],dx=B[0]-A[0],dy=B[1]-A[1],L=Math.hypot(dx,dy)||1,nx=-dy/L,ny=dx/L;
+    const offs=it.o===2?[-2.4,2.4]:it.o===3?[-3.6,0,3.6]:[0];
+    const ca=(EC[c.el[it.a]]||["#b36bd6"])[0],cb=(EC[c.el[it.b]]||["#b36bd6"])[0];
+    for(const o of offs){const ax=A[0]+nx*o,ay=A[1]+ny*o,bx=B[0]+nx*o,by=B[1]+ny*o,mx=(ax+bx)/2,my=(ay+by)/2;
+     ctx.lineCap="round";ctx.lineWidth=offs.length>1?2.6:4.2;ctx.strokeStyle="rgba(7,17,29,.35)";
+     ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(bx,by);ctx.stroke();ctx.lineWidth-=1.6;
+     ctx.strokeStyle=shade(ca==="#f4f6f8"?"#c9d0d8":ca,1);ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(mx,my);ctx.stroke();
+     ctx.strokeStyle=shade(cb==="#f4f6f8"?"#c9d0d8":cb,1);ctx.beginPath();ctx.moveTo(mx,my);ctx.lineTo(bx,by);ctx.stroke();}
+   }else{
+    const [x,y]=T[it.i],[col,r]=EC[c.el[it.i]]||["#b36bd6",.38],rad=Math.max(2,r*s*.9);
+    const g=ctx.createRadialGradient(x-rad*.35,y-rad*.4,rad*.08,x,y,rad);g.addColorStop(0,"#ffffff");g.addColorStop(.3,col);g.addColorStop(1,shade(col,.55));
+    ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,rad,0,7);ctx.fill();ctx.lineWidth=.6;ctx.strokeStyle="rgba(7,17,29,.3)";ctx.stroke();
+   }
+  }
+ }
+ (function frame(){if(!cv.isConnected)return;if(auto)yaw+=.005;draw();requestAnimationFrame(frame);})();
+ cv.addEventListener("pointerdown",e=>{drag=[e.clientX,e.clientY];auto=false;cv.setPointerCapture(e.pointerId);cv.parentNode.style.cursor="grabbing";});
+ cv.addEventListener("pointermove",e=>{if(!drag)return;yaw+=(e.clientX-drag[0])*.01;pitch=Math.max(-1.5,Math.min(1.5,pitch+(e.clientY-drag[1])*.01));drag=[e.clientX,e.clientY];});
+ cv.addEventListener("pointerup",()=>{drag=null;cv.parentNode.style.cursor="grab";});
+ cv.addEventListener("wheel",e=>{e.preventDefault();zoom=Math.max(.5,Math.min(3,zoom*Math.exp(-e.deltaY*.0015)));},{passive:false});
 }
 $("#tb").addEventListener("click",e=>{const r=e.target.closest("tr.row");if(!r||e.target.closest("a"))return;open=open===r.dataset.cid?null:r.dataset.cid;render();});
 $("#q").addEventListener("input",render);$("#tag").addEventListener("change",render);
@@ -340,7 +489,33 @@ $("#foot").innerHTML=`<b>Licence.</b> OpenScent corpus data: CC0 1.0. Odour evid
  <b>Trademarks.</b> Trade names (Iso E Super®, Cashmeran®, Hedione®, Helional® and others) belong to their owners, including IFF,
  Givaudan, dsm-firmenich, Symrise and Kao, and are used only to identify materials.<br>
  Built ${D.built} from the corpus files · ${fmt(D.n_ev)} quotes · preview, not the release.`;
-render();
+// ---- scent map
+const MP=D.map,byCid=Object.fromEntries(D.mats.map(m=>[m.cid,m])),hidden=new Set();
+$("#mapn").textContent=MP.pts.length;
+function drawMap(){
+ const pad=40,W=1000,H=640;
+ $("#plot").innerHTML=MP.pts.filter(p=>!hidden.has(p.f)).map(p=>`<circle cx="${(pad+p.x*(W-2*pad)).toFixed(1)}" cy="${(pad+(1-p.y)*(H-2*pad)).toFixed(1)}" r="8" fill="${MP.fam[p.f][1]}" data-cid="${p.cid}"></circle>`).join("");
+ const cnt=MP.fam.map((_,i)=>MP.pts.filter(p=>p.f===i).length);
+ $("#legend").innerHTML=MP.fam.map(([n,c],i)=>cnt[i]?`<span class="chip${hidden.has(i)?" off":""}" data-f="${i}"><span class="dot" style="background:${c}"></span>${esc(n)} <span class="n">${cnt[i]}</span></span>`:"").join("");
+}
+$("#legend").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;const f=+c.dataset.f;hidden.has(f)?hidden.delete(f):hidden.add(f);drawMap();});
+const tip=$("#tip");
+$("#plot").addEventListener("mousemove",e=>{const c=e.target.closest("circle");if(!c){tip.style.display="none";return;}
+ const m=byCid[c.dataset.cid],p=MP.pts.find(x=>x.cid===m.cid);
+ tip.innerHTML=`<b>${esc(m.name)}</b><div class="f">${esc(MP.fam[p.f][0])}</div>${m.tags.map(esc).join(", ")}`;
+ tip.style.display="block";tip.style.left=Math.min(e.clientX+14,innerWidth-300)+"px";tip.style.top=(e.clientY+14)+"px";});
+$("#plot").addEventListener("mouseleave",()=>tip.style.display="none");
+$("#plot").addEventListener("click",e=>{const c=e.target.closest("circle");if(!c)return;tip.style.display="none";
+ $("#q").value="";filt="all";$("#tag").value="";document.querySelectorAll("#seg button").forEach(x=>x.classList.toggle("on",x.dataset.f==="all"));
+ open=c.dataset.cid;show("materials");const r=document.querySelector(`tr.row[data-cid="${open}"]`);if(r)r.scrollIntoView({block:"center"});});
+function show(v){
+ const map=v==="map";$("#mapview").style.display=map?"":"none";
+ for(const id of ["#matpanel"])$(id).style.display=map?"none":"";$(".bar").style.display=map?"none":"";
+ document.querySelectorAll("#nav a").forEach(a=>a.classList.toggle("active",a.dataset.v===v));
+ if(map)drawMap();else render();
+}
+$("#nav").addEventListener("click",e=>{const a=e.target.closest("a");if(!a)return;e.preventDefault();show(a.dataset.v);history.replaceState(null,"","#"+a.dataset.v);});
+show(location.hash==="#map"?"map":"materials");
 </script></body></html>
 """
 

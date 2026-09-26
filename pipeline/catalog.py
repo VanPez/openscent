@@ -31,6 +31,7 @@ the corpus is untouched by anything here.
 
 USAGE
   python3 pipeline/catalog.py --fetch     # NETWORK (Hetzner): -> corpus/catalog/pubchem-props.json
+  python3 pipeline/catalog.py --fetch-3d  # NETWORK (Hetzner): -> corpus/catalog/conformers.json
   python3 pipeline/catalog.py             # offline: -> corpus/catalog/materials.tsv
 """
 from __future__ import annotations
@@ -134,6 +135,39 @@ def fetch():
     print("done")
 
 
+CONF = CAT / "conformers.json"
+
+
+def fetch_3d():
+    """PubChem's computed 3D conformer per CID, stored compactly for the preview's built-in viewer.
+
+    WHY FETCH ONCE (2026-09-26): the aroma-index viewer downloads the conformer from PubChem on
+    every click. When PubChem throttled Ivan's IP, every 3D box went blank. Stored here, the page
+    needs no network at all. Conformers are computed by PubChem (NCBI): public domain.
+    404 = PubChem has no 3D conformer (too flexible, too large, salts/mixtures) -> stored as null."""
+    cids = [r["cid"] for r in csv.DictReader(open(GAPS, encoding="utf-8"), delimiter="\t")]
+    c = json.loads(CONF.read_text(encoding="utf-8")) if CONF.exists() else {}
+    todo = [x for x in cids if x not in c]
+    print(f"{len(cids)} compounds; 3D conformers to fetch {len(todo)}")
+    for i, cid in enumerate(todo, 1):
+        j = get_json(f"{PUG}/compound/cid/{cid}/record/JSON?record_type=3d")
+        comp = ((j or {}).get("PC_Compounds") or [None])[0]
+        if not comp:
+            c[cid] = None
+        else:
+            conf = comp["coords"][0]["conformers"][0]
+            bonds = comp.get("bonds", {})
+            c[cid] = {"el": comp["atoms"]["element"],
+                      "xyz": [[round(a, 3), round(b, 3), round(z, 3)] for a, b, z in
+                              zip(conf["x"], conf["y"], conf.get("z", [0] * len(conf["x"])))],
+                      "b": [[a - 1, b - 1, o] for a, b, o in zip(bonds.get("aid1", []), bonds.get("aid2", []),
+                                                              bonds.get("order", [1] * len(bonds.get("aid1", []))))]}
+        if i % 10 == 0 or i == len(todo):
+            tmp = CONF.with_suffix(".json.tmp"); tmp.write_text(json.dumps(c, separators=(",", ":")), encoding="utf-8")
+            os.replace(tmp, CONF); print(f"  {i}/{len(todo)}")
+    print(f"done: {sum(1 for v in c.values() if v)} with 3D, {sum(1 for v in c.values() if v is None)} without")
+
+
 def build():
     spec = importlib.util.spec_from_file_location("g", ROOT / "pipeline" / "gaps.py")
     g = importlib.util.module_from_spec(spec); spec.loader.exec_module(g)
@@ -220,4 +254,9 @@ def build():
 
 
 if __name__ == "__main__":
-    fetch() if "--fetch" in sys.argv else build()
+    if "--fetch-3d" in sys.argv:
+        fetch_3d()
+    elif "--fetch" in sys.argv:
+        fetch()
+    else:
+        build()
