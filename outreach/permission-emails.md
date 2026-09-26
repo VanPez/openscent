@@ -1,8 +1,25 @@
-# Permission requests — odour descriptors for the 118 materials without a public description
+# Permission requests — odour descriptors for the 114 materials without a public description
 
-Attachment for every email: `materials-without-public-description.csv` (material, maker as
-labelled by the retailer, CAS, PubChem CID, IUPAC name). For a manufacturer, filter it to
-their rows before attaching.
+## Who gets what
+
+| to | channel (official) | attach / paste |
+|---|---|---|
+| **Symrise** | email **aroma.molecules@symrise.com** (the Aroma Molecules page's own contact) | `symrise.csv` (7) |
+| **IFF** | form **iff.com/scent/contact** → Solutions: *Scent Ingredients* | no attachment field: paste the 25 names (below) |
+| **Givaudan** | form **givaudan.com/contact** (linked from the Fragrance Ingredients Business page) | no attachment field: paste the 18 names |
+| **dsm-firmenich** | form **firmenich.com/contact** | no attachment field: paste the 5 names |
+| De Hekserij, Olfatorium | your contacts | `materials-without-public-description.csv` (all 114) |
+
+Manufacturers get ONLY their own materials: asking IFF about Givaudan's captives would
+muddy a yes. The shops get the full list (they sell most of it). No named individuals: a
+licence grant has to come from someone entitled to give it, and the official channel routes
+it there (the email asks them to forward it to whoever handles product information or IP).
+
+Paste-in lists (maker as labelled by the retailer):
+- **IFF (25):** Amber Xtreme, Aphermate, Apo Patchone, Auralva, Bornafix, Canthoxal, Cashmeran, Clonal, Coniferan, Edenolide, Floralozone, Fructone, Helional, Herbac, Hexalon, Koavone, Liffarome, Nectarate, Octacetal, Orange Flower Ether, Piconia, Rosalva, SantalIff, Triplal, Zenolide
+- **Givaudan (18):** alpha-Isomethyl ionone, Ambermax, Azarbre, Boisiris, Bourgeonal, Dimetol, Ethyl safranate, Evernyl, Florhydral, Herboxane, Isobutavan, Kephalis, Methyl Pamplemousse, Methyl tuberate, Safraleine, Silvial, Stemone, Velvione
+- **dsm-firmenich (5):** Habanolide, Helvetolide, Mayol, Rhubofix, Scentenal
+- **Symrise (7, in the attachment):** Datilat, Farenal, Isobutyl Quinoline, Macrolide Supra, Majantol, Palisandin, Phenirat
 
 What we ask for is deliberately small: **the short descriptor words** a supplier already
 publishes for a material ("woody, amber, velvety"), not marketing copy. What we need from a
@@ -19,8 +36,7 @@ official general, press or R&D/open-innovation contact, not a personal address f
 
 ## 1. Manufacturers (IFF, Givaudan, dsm-firmenich, Symrise)
 
-Numbers from the attachment: Givaudan 20, IFF 25, Symrise 8, dsm-firmenich 5. Several
-unlabelled materials on the list are also theirs.
+For the three forms, drop "(list attached)" and paste the names after the first paragraph.
 
 **Subject:** Permission request: short odour descriptors for an open research dataset
 
@@ -41,7 +57,9 @@ dataset? Ideally under CC0; if you prefer attribution, under CC BY 4.0, with [Co
 credited as the source on every entry.
 
 A one-line reply stating which licence you grant, from someone able to grant it, is all I
-need. I'm happy to send the dataset documentation or a preview first.
+need. If this is not the right desk, I'd be grateful if you could forward it to whoever
+handles product information or intellectual property. I'm happy to send the dataset
+documentation or a preview first.
 
 Kind regards,
 Ivan [surname]
@@ -60,7 +78,7 @@ Dear De Hekserij team,
 
 I'm building OpenScent, an open dataset linking fragrance molecules to odour descriptors,
 released into the public domain (CC0) for research. I use your aroma chemical range as a
-reference for which materials perfumers actually work with, and 118 common materials,
+reference for which materials perfumers actually work with, and 114 common materials,
 many of them from your shop, have no odour description in any public-domain source (list
 attached).
 
@@ -90,7 +108,7 @@ Hola, equipo de Olfatorium:
 Estoy desarrollando OpenScent, un conjunto de datos abierto que relaciona moléculas
 aromáticas con sus descriptores olfativos. Se publicará en dominio público (CC0) para la
 investigación sobre la predicción del olor. Uso vuestro catálogo como referencia de las
-materias primas con las que trabajan los perfumistas, y 118 materiales habituales,
+materias primas con las que trabajan los perfumistas, y 114 materiales habituales,
 muchos de ellos disponibles en vuestra tienda, no tienen ninguna descripción olfativa en
 fuentes de dominio público (adjunto la lista).
 

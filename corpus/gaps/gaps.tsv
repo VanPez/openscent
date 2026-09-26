@@ -10,7 +10,6 @@ cid	cas	products	shops	status	matched_by	corpus_tags
 5372174	127-51-5	alpha Isomethyl ionone | Isoraldeine 95 (Giv) Methyl ionone	hekserij	gap		
 92030006	476332-65-7	Amber xtreme (IFF)	hekserij	gap		
 68852524	929625-08-1	Ambermax 10% in TEC (Giv) | Ambermax 10% TEC	hekserij, olfatorium	gap		
-66731260	211299-54-6	Ambrocenide (Sym) 10% in DPG | Ambrocenide 10% DPG	hekserij, olfatorium	gap		
 16299	2050-08-0	Amyl salicylate | Amyl Salicylate	hekserij, olfatorium	gap		
 637563	104-46-1	Anethole natural	hekserij	gap		
 91337	25225-08-5	Aphermate (IFF)	hekserij	gap		
@@ -35,7 +34,6 @@ cid	cas	products	shops	status	matched_by	corpus_tags
 7778	105-85-1	Citronellyl Formate	hekserij	gap		
 17092	2437-25-4	Clonal (IFF)	hekserij	gap		
 62240	67874-72-0	Coniferan Pure (IFF)	hekserij	gap		
-517827	103-95-7	Cyclamen aldehyde	hekserij	gap		
 5374527	23726-91-2	Damascone beta	hekserij	gap		
 107073	68039-69-0	Datilat (Sym)	hekserij	gap		
 10353	498-81-7	Dihydro terpineol	hekserij	gap		
@@ -102,7 +100,6 @@ cid	cas	products	shops	status	matched_by	corpus_tags
 10149036	54440-17-4	Safraleine (Giv) | Safranal (Safraleine)	hekserij, olfatorium	gap		
 61041	116-26-7	Safranal	hekserij	gap		
 57483300	131766-73-9	Sagecete	olfatorium	gap		
-103212	65113-99-7	Sandalore (Giv)	hekserij	gap		
 119897	28219-60-5	SantalIff (IFF) | Sandalmysore Core	hekserij, olfatorium	gap		
 163529	86803-90-9	Scentenal (Fir)	hekserij	gap		
 110914	6658-48-6	Silvial (Giv) | Silvial	hekserij, olfatorium	gap		
@@ -112,7 +109,6 @@ cid	cas	products	shops	status	matched_by	corpus_tags
 119832	144020-22-4	Trimofix	olfatorium	gap		
 93375	68039-49-6	Triplal (IFF)	hekserij	gap		
 3034463	27939-60-2	Trivertal aka Triplal	olfatorium	gap		
-163336	81782-77-6	Undecavertol (Giv) | Undecavertol	hekserij, olfatorium	gap		
 162268	37609-25-9	Velvione (Giv)	hekserij	gap		
 8419	120-14-9	Veratraldehyde	hekserij	gap		
 62900	39212-23-2	Whisky Lactone	olfatorium	gap		
@@ -127,6 +123,7 @@ cid	cas	products	shops	status	matched_by	corpus_tags
 31289	124-19-6	Aldehyde C9	hekserij	in corpus	pubchem CID	floral, green, orange, rose, waxy
 5366077	24720-09-0	alpha Damascone	hekserij	in corpus	name: ALPHA-DAMASCONE	apple, green
 5355293	28645-51-4	Ambrettolide (IFF) | Ambrettolide	hekserij, olfatorium	in corpus	name: Ambrettolide	animalic, musk
+66731260	211299-54-6	Ambrocenide (Sym) 10% in DPG | Ambrocenide 10% DPG	hekserij, olfatorium	in corpus	name: AMbrocenide	woody
 10857465	6790-58-5	Ambroxide (Sym) | Ambroxan | Ambroxan KAO	hekserij, olfatorium	in corpus	name: Ambroxide	animalic, camphoraceous, earthy, warm, woody
 31209	122-40-7	Amyl cinnamal	hekserij	in corpus	pubchem CID	jasmine
 31244	123-11-5	Anisaldehyde	hekserij	in corpus	pubchem CID	anisic, berry, creamy, fruity, hay, powdery, spicy, sweet, vanilla
@@ -151,6 +148,7 @@ cid	cas	products	shops	status	matched_by	corpus_tags
 638011	5392-40-5	Citral	olfatorium	in corpus	pubchem CID	lemon
 8842	106-22-9	Citronellol	hekserij	in corpus	pubchem CID	fresh, rose
 323	91-64-5	Coumarin | Coumarin 10% in DPG | Cumarina	hekserij, olfatorium	in corpus	pubchem CID	hay, vanilla
+517827	103-95-7	Cyclamen aldehyde	hekserij	in corpus	name: Cyclamen aldehyde	lily
 5366074	23696-85-7	Damascenone Total (Fir)	hekserij	in corpus	loose name: beta-Damascenone	apple, fruity, rose
 29096	18479-58-8	Dihydromyrcenol | Dihydromircenol	hekserij, olfatorium	in corpus	name: Dihydromyrcenol	citrus, fresh, lavender
 7531	100-86-7	DMBC	hekserij	in corpus	loose name: Benzyldimethylcarbinol	floral
@@ -204,6 +202,8 @@ cid	cas	products	shops	status	matched_by	corpus_tags
 7007	90-17-5	Rosalin (Rose crystals)	hekserij	in corpus	name: Rosacetol	chlorine, geranium, rose
 5463791	25634-93-9	Rosaphen (Sym)	hekserij	in corpus	name: 2-Methyl-5-phenylpentanol	waxy
 27866	16409-43-1	Rose Oxide	olfatorium	in corpus	loose name: cis Rose oxide	geranium, green, mint
+103212	65113-99-7	Sandalore (Giv)	hekserij	in corpus	name: 3-methyl-5-(2,2,3-trimethylcyclopent-3-en-1-yl)pentan-2-ol	sandalwood
 19309	3658-77-3	Strawberry furanone	hekserij	in corpus	pubchem CID	pineapple
 89440	1506-02-1	Tonalid | Tonalid	hekserij, olfatorium	in corpus	pubchem CID	musk
+163336	81782-77-6	Undecavertol (Giv) | Undecavertol	hekserij, olfatorium	in corpus	name: 4-Methyl-3-decen-5-ol	fresh, fruity, green, violet
 1183	121-33-5	Vainillin	olfatorium	in corpus	pubchem CID	aromatic, vanilla
