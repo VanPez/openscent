@@ -256,9 +256,10 @@ TEMPLATE = r"""<!DOCTYPE html>
   calls; links go out to Google Patents (US patents) and PubChem / NOAA CAMEO (government sources).
   RULE: every odour word shown is a verbatim substring of the quoted source (highlighted in place).
   DESIGN: GenesisL1 family (THEME.md). Single file, system fonts, no external assets.
+  LOGO: aromatic ring with scent rising (2026-09-26), inline here and in docs/logo.svg.
 -->
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OpenScent — Materials Preview</title><style>
+<title>OpenScent — Materials Preview</title><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cg%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M9.5%209.2%20L13.8%2011.7%20L13.8%2016.7%20L9.5%2019.2%20L5.2%2016.7%20L5.2%2011.7%20Z%22%20stroke%3D%22%2307111d%22%20stroke-width%3D%221.5%22/%3E%3Ccircle%20cx%3D%229.5%22%20cy%3D%2214.2%22%20r%3D%222.3%22%20stroke%3D%22%23245cff%22%20stroke-width%3D%221.3%22/%3E%3Cpath%20d%3D%22M13.8%2011.7%20C15.9%2010.6%2014.7%208.4%2016.7%207.2%20C18.7%206%2017.7%203.8%2019.9%202.8%22%20stroke%3D%22%23245cff%22%20stroke-width%3D%221.5%22/%3E%3Cpath%20d%3D%22M16.9%2013.2%20C18.5%2012.4%2017.7%2010.8%2019.3%209.9%20C20.7%209.1%2020.2%207.7%2021.6%207%22%20stroke%3D%22%23245cff%22%20stroke-width%3D%221.1%22%20opacity%3D%22.5%22/%3E%3C/g%3E%3C/svg%3E"><style>
 :root{--paper:#f5f7f9;--card:#fff;--ink:#07111d;--mut:#687383;--faint:#718196;--line:#dce4ee;--line-strong:rgba(29,52,78,.3);
  --blue:#245cff;--blue-deep:#1647d9;--blue-pale:#eef3ff;--amber:#9a6a14;--amber-pale:#fdf6e9;--teal:#0f8f7f;--red:#bc4b47;
  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
@@ -268,7 +269,7 @@ a{color:var(--blue)}
 .topbar{position:sticky;top:0;z-index:5;min-height:72px;border-bottom:1px solid rgba(7,17,29,.1);background:rgba(255,255,255,.94);backdrop-filter:blur(6px)}
 .topbar-in{max-width:var(--page);margin:0 auto;padding:10px 28px;min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:12px}
-.glyph{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:#fff;border:1px solid var(--line-strong);font:600 13px var(--mono)}
+.glyph{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:#fff;border:1px solid var(--line-strong)}
 .wordmark b{font-size:17px;font-weight:700;letter-spacing:-.01em;display:block}
 .wordmark span{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--mut);text-transform:uppercase}
 .badge{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border:1px solid var(--line-strong);color:var(--mut);background:#fff;white-space:nowrap}
@@ -330,7 +331,7 @@ footer{border-top:1px solid var(--line);margin-top:36px;padding-top:16px;color:v
 @media(max-width:640px){.wrap,.topbar-in{padding-left:16px;padding-right:16px}h1{font-size:26px}.bar{position:static}.stats{grid-template-columns:1fr}.stat+.stat{border-left:0;border-top:1px solid var(--line)}}
 </style></head><body>
 <header class="topbar"><div class="topbar-in">
- <div class="brand"><div class="glyph">OS</div><div class="wordmark"><b>OpenScent</b><span>Odour corpus · materials</span></div></div>
+ <div class="brand"><div class="glyph"><svg width="24" height="24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 9.2 L13.8 11.7 L13.8 16.7 L9.5 19.2 L5.2 16.7 L5.2 11.7 Z" stroke="#07111d" stroke-width="1.5"/><circle cx="9.5" cy="14.2" r="2.3" stroke="#245cff" stroke-width="1.3"/><path d="M13.8 11.7 C15.9 10.6 14.7 8.4 16.7 7.2 C18.7 6 17.7 3.8 19.9 2.8" stroke="#245cff" stroke-width="1.5"/><path d="M16.9 13.2 C18.5 12.4 17.7 10.8 19.3 9.9 C20.7 9.1 20.2 7.7 21.6 7" stroke="#245cff" stroke-width="1.1" opacity=".5"/></g></svg></div><div class="wordmark"><b>OpenScent</b><span>Odour corpus · materials</span></div></div>
  <nav class="nav" id="nav"><a href="#materials" data-v="materials" class="active">Materials</a><a href="#map" data-v="map">Scent map</a></nav>
  <span class="badge proto" id="topbadge"></span>
 </div></header>
