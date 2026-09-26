@@ -34,7 +34,7 @@ USAGE
   python3 pipeline/catalog.py             # offline: -> corpus/catalog/materials.tsv
 """
 from __future__ import annotations
-import csv, importlib.util, json, os, pathlib, random, re, sys, time, urllib.error, urllib.parse, urllib.request
+import csv, difflib, importlib.util, json, os, pathlib, random, re, sys, time, urllib.error, urllib.parse, urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CAT = ROOT / "corpus" / "catalog"
@@ -163,6 +163,15 @@ def build():
             # common_name: the first label a perfumer would search for (Hekserij's English
             # label comes first). A generic name like "Ionone beta" is a fact, not a claim.
             common = common or v[0]
+        # Olfatorium-only materials carry Spanish shop labels ("Vainillin", "Acetato de Bencilo").
+        # There, a short PubChem title ("Vanillin") is the better display name. 2026-09-26.
+        # Narrowly: only a near-spelling of the PubChem title is a shop's local spelling of the
+        # same name ("Vainillin" ~ "Vanillin"). Trade names (Cedramber, Habanolide) and industry
+        # labels ("Aldehyde C-11 MOA") are far from the title and stay as they are.
+        t = c.get("Title", "")
+        if "hekserij" not in r["shops"] and t and lz(t) != lz(common) \
+                and difflib.SequenceMatcher(None, lz(t), lz(common)).ratio() >= 0.9:
+            common = t
             if (g.SUPPLIER.search(prod) or lz(v[0]) in known) and lz(v[0]) != lz(c.get("Title", "")) \
                     and lz(v[0]) not in {lz(t) for t in trade}:
                 trade.append(v[0])
