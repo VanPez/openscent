@@ -4,9 +4,43 @@
 
 ---
 
-## RESUME HERE — state as of 2026-09-24 (afternoon)
+## RESUME HERE — state as of 2026-09-26 (end of day)
 
-**READ THIS FIRST. The block below it ("morning") is superseded.** Live figures (status.py):
+**READ THIS FIRST. The 09-24 blocks below it are superseded.** Live figures (status.py):
+
+```
+4,676 review rows · 1,146 approve · 1,158 reject · 2 skip · 2,370 undecided
+retired    30 approved patent rows (exclusions.jsonl: quoted copyrighted reference works)
+  patents    21 of 67 at the bar     993 molecules
+  pubchem     7 of 67                839 molecules
+  passage     0 of 67                  8 molecules
+  targeted    0 of 67                  5 molecules   (new file, 09-26)
+  COMBINED   27 of 67 at the bar   1,829 molecules
+  next: anisic 27 (needs 3) · grapefruit 22 · leather, chlorine, balsamic 21 · pineapple 20
+verbatim invariant: clean · review queue: 0 PRODUCTIVE
+```
+
+**NOTHING IS STAGED.** All 6 proposals of 09-26 decided; all 5 targeted rows decided.
+
+**Plan agreed 09-26: freeze at ~27 of 67, then the paper.** Sources are exhausted for the
+near-bar tags (queue screened, origin probe: patents dry for the gaps). Rule decisions still
+open and deliberately NOT adopted: table scope, wider anaphor scope (each would recover ~4
+compounds). Permission emails go out **Monday 09-28** (outreach/, see the 09-26 entry);
+any licensed descriptors become a separate, labelled v1.1 layer — never mixed in.
+
+**Before sending the emails:** host docs/preview.html publicly (recommended: a small public
+repo `openscent-preview` with GitHub Pages — the openscent repo is private), then add the link
+line to the four drafts; Ivan fills in his surname and the two shop addresses.
+
+**PubChem throttles Ivan's IP** (09-26, ServerBusy for hours while Hetzner worked). ALL
+PubChem traffic goes through Hetzner. Do not run PubChem fetches on the Mac.
+
+**Open, older:** #810 (cis-4-heptenyl isobutyrate "grassy" half dropped — deliberate?) — now
+moot: the row is retired as an Arctander quote. Known bugs 1-3 of the handoff still open.
+
+## Superseded resume block — 2026-09-24 (afternoon)
+
+Live figures then (status.py):
 
 ```
 4,676 review rows · 1,145 approve · 1,153 reject · 2 skip · 2,376 undecided
@@ -4312,3 +4346,104 @@ cas_raw.txt, cas.tsv, hekserij-molecules.tsv, pubchem-cache.json, hekserij-gaps.
 gap-names.json, gap-probe.tsv}; corpus/staging/gap-hits.jsonl (ignored by git).
 Git: not committed by Claude.
 
+---
+
+## 2026-09-26 — the gap measured to the bottom; quoted references retired; a catalogue and a face
+
+A long day. In order of consequence.
+
+### 1. Olfatorium — a second retail list (`corpus/olfatorium/`)
+
+Scraped from the shop's WooCommerce Store API like Hekserij: 185 products (101 aroma chemicals,
+84 naturals/CO2/resins/absolutes). Kept name + CAS only. **Descriptors: no window** — the shop's
+terms reserve all rights and its synthetics page says some descriptions "no son nuestras,
+proceden de diversas fuentes" (third-party text by its own admission). Two shop CAS typos
+fixed and flagged (1222-05-05 -> 1222-05-5 Galaxolide, 14901-07-06 -> 14901-07-6 β-ionone).
+`hekserij_link.py` got `--src <shop>`, `--refetch`, name-route-first lookup and a 2-failures stop.
+**Lesson:** PubChem `xref/RN` returns CIDs in NUMERIC order, not by relevance — vanillin's CAS
+gave CID 867 (malonic acid) first. Name route first, xref only as fallback.
+PubChem 503'd Ivan's IP for hours (throttling, not an outage — Hetzner worked throughout);
+every PubChem step since runs on Hetzner.
+
+### 2. One gap list — `pipeline/gaps.py`, `corpus/gaps/`
+
+Both shops merged per CID (208 distinct single compounds). Linker fixes: supplier codes and
+dilutions stripped, "Trade (IUPAC)" spans split (Norlimbanol was approved as "Timberol (…)"),
+names from every shop carried per CID. Muscenone and Norlimbanol turned out covered.
+**Origin probe** (`--xrefs`, `--plan`, `--probe`): PubChem links every gap compound to US
+patents — **median 251 of them already held**; for 41 the earliest granted US patent is held.
+So documents are not the gap. Read 274 held earliest patents + a pilot of 71 fetched ones
+(`corpus/raw-origin/`, 1961+ only — PubChem's text-mining puts Iso E Super in an 1895 patent):
+**pilot yield ~1 usable sentence in 71 documents** -> the other ~190 not fetched. Held patents
+describe some trade compounds under OCR-damaged names or anaphors (Kephalis "4 l-ethoxyvinyl)-
+3,3,5,5-…", Boisiris "The ethyl ether…", Evernyl "The material…") — table/wider-anaphor scope
+would recover ~4; not adopted.
+
+### 3. Rows from the probe — `pipeline/targeted_rows.py`, `corpus/rows/targeted-rows.jsonl`
+
+5 sentence-scope rows whose sentences the extractor had dropped: cyclamen aldehyde (lily),
+Sandalore (sandalwood), Undecavertol (its own clause only: fruity/fresh/green/violet),
+Ambrocenide (woody, borderline — no verb) and limonenal (fresh, citrus) from US7601682B2, a
+document outside the class walk. **Separate file on purpose:** rows the extractor never produced
+would show up as ORPHANS in merge_review.py forever. status.py counts them on a "targeted"
+line. Decided by Ivan: all as proposed.
+
+### 4. Quoted reference works retired — `pipeline/exclude_quotes.py`, `corpus/rows/exclusions.jsonl`
+
+The patent is public domain; a copyrighted text it QUOTES is not. **30 approved rows (28
+sentences)** relayed Arctander (1969), Fenaroli's Handbook or Good Scents wording ("Arctander
+states that butylidene acetone has a powerful, grassy, green pungent odor…"). Retired WITHOUT
+touching review.jsonl (Ivan's decisions stay his); status.excluded_keys() skips them; gaps.py and
+hekserij_link.py honour it. **Kept:** patents restating a research finding in their own words
+(Ohloff et al. "have reported…", J. Agric. Food Chem. …) — 37 such rows read and kept. Measured
+first: **27 of 67 before and after.** Rule written into REVIEW-RULES.md. Side effect: Hexalon
+and veratraldehyde became gaps (only described via Arctander/Fenaroli). #810's row is one of
+the retired ones.
+
+### 5. Ontology forms (odor_terms.tsv) — every use read first
+
+aniseed, anise, anis -> anisic (12 -> 26; aniseed is one document, US10045551B2 — anisic stays
+below the bar, so no tag crosses on one patent); herb, herby -> herbal; leafy, grassy -> green;
+peppery -> spicy; camphery -> camphoraceous (HELD in Sept for crossing on one patent — that
+reason expired). **Bare "pepper" NOT added:** 1 of 3 uses is "green pepper" (a vegetable).
+review.html VOCAB +7 (incl. aldehyde, appley — status.py's VOCAB warning is gone).
+That made 5 undecided rows "productive": all non-rows, proposed reject, decided. Plus
+4-methoxybenzyl isobutyrate ("pronounced odour of anise") approved -> **anisic 27**.
+
+### 6. Materials catalogue — `pipeline/catalog.py`, `corpus/catalog/`
+
+All 208 compounds, described or not: identity + PubChem-computed properties (public domain),
+measured VP/BP/logP **only** from US-government sources (HSDB, CAMEO, OSHA, DOE PAC, NIOSH —
+HMDB, JECFA, Haz-Map, ICSC, SangsterLogP, DrugBank dropped), corpus status. No shop column (EU
+database right). **Finding for the paper:** measured data sit on the described compounds —
+VP 45/92 described vs 2/116 gaps (09-26 counts). Common commercial materials are dark in public
+data generally, not only in ours. Now: **94 described · 114 no admissible description.**
+`--fetch-3d`: PubChem 3D conformers, 206/208 (none for Rhubofix, Scentenal).
+
+### 7. Preview page — `docs/preview.html` (built by `pipeline/site_build.py`)
+
+GenesisL1 family design (THEME.md), single file, no external assets. The 208 materials with
+every quote behind every tag (odour words highlighted in place, links to Google Patents /
+PubChem / CAMEO), an empty labelled "Licensed descriptors" slot on the undescribed ones (the
+pitch for the emails), a built-in canvas 3D viewer (conformers embedded — the aroma-index
+viewer fetches from PubChem per click and went blank when Ivan was throttled), and a scent-map
+tab (94 materials with evidence, seeded numpy t-SNE on sqrt tag counts, robust scaling;
+colour families are a display aid, not ontology). Header figures read from status.py at build
+time. Logo: aromatic ring with scent rising (docs/logo.svg). Guard in site_build: a material
+the catalogue calls described but with no evidence found aborts the build (it caught the
+Timberol split once).
+
+### 8. Outreach — `outreach/`
+
+permission-emails.md: manufacturer draft (IFF form, Givaudan form, dsm-firmenich form,
+Symrise aroma.molecules@symrise.com), Hekserij (EN), Olfatorium (ES); asks for short descriptor
+words under CC0, CC BY 4.0 as fallback. Per-maker lists (iff 25, givaudan 18, symrise 7,
+dsm-firmenich 5 — maker as labelled by the retailer) + full list of 114 for the shops.
+Official channels only, no named individuals. **Send Monday.**
+
+### Files
+
+New: pipeline/{gaps,catalog,exclude_quotes,targeted_rows,site_build}.py; corpus/{olfatorium,
+gaps,catalog}/; corpus/rows/{exclusions,targeted-rows}.jsonl; docs/{preview.html,logo.svg};
+outreach/. Changed: status.py (retired + targeted lines), hekserij_link.py, odor_terms.tsv,
+review.html (VOCAB), REVIEW-RULES.md, .gitignore. All committed by Ivan.
