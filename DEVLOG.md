@@ -28,12 +28,19 @@ open and deliberately NOT adopted: table scope, wider anaphor scope (each would 
 compounds). Permission emails go out **Monday 09-28** (outreach/, see the 09-26 entry);
 any licensed descriptors become a separate, labelled v1.1 layer — never mixed in.
 
+**PLAN CHANGED 09-27 evening (Mike's feedback — see the last entry):** OpenScent will be published
+on GenesisL1 as its own MolNFT v2 contract (unchunked, everything on-chain), data CC0 in the token's
+licence field + a suggested citation. **Before minting:** freeze v1.0 and resolve the ~990 patent-only
+molecule NAMES to structures (SMILES) — a token needs a molecule, not a name. Waiting on Mike's
+reference MolNFT contract. **Money:** only NEW work can be restricted (model/inference, tokens, own
+panel data, services) — build those in a PRIVATE repo from the start.
+
 **Emails are READY (09-27):** preview live at https://vanpez.github.io/openscent/ (GitHub Pages,
 master /docs), linked in all three drafts, signed Ivan Pezzini. outreach/ and the shop lists
 (corpus/hekserij, corpus/olfatorium) are now LOCAL ONLY (gitignored; still in git history).
 Shop addresses go straight into "To:" — Ivan has them.
 
-**The preview gained spec-sheet fields and tag filtering on 09-28 (entry at the bottom)** —
+**The preview gained spec-sheet fields and tag filtering on 09-27 (later entry at the bottom)** —
 that is the version the emails link to. Rebuild order after any data change:
 `catalog.py` -> `site_build.py` (both offline; PubChem fetches only via Hetzner).
 
@@ -4484,7 +4491,7 @@ review.html (VOCAB), REVIEW-RULES.md, .gitignore. All committed by Ivan.
 
 ---
 
-## 2026-09-28 — the preview becomes a spec sheet; a tag is a filter
+## 2026-09-27 (later) — the preview becomes a spec sheet; a tag is a filter
 
 Prompted by an Instagram one-pager (scentree.co, coumarin): could OpenScent carry the same
 fields? Their card is theirs (compilation, wording) and not a source; the FIELDS are facts, so
@@ -4521,3 +4528,66 @@ each was taken from a source we may use, with the source shown next to every val
 
 Files: pipeline/catalog.py, pipeline/site_build.py, corpus/catalog/{materials.tsv,
 pubchem-props.json, eu-allergens.tsv, README.md}, docs/preview.html. Committed and pushed by Ivan.
+
+---
+
+## 2026-09-27 (evening) — Mike's feedback: GenesisL1 on the page, OpenScent on-chain, and what can earn
+
+**Mike's review of the preview** (Telegram, 17:21–17:5x): looks good; but (1) GenesisL1 is absent
+and nothing anchors the data to the project — publish the corpus on GenesisL1 as MolNFTs, render
+from chain, mention GenesisL1; an on-chain dataset is reusable by other dapps, and small molecules
+matter beyond scent (docking, drug candidates); (2) the UI is not mobile, not SEO-friendly, and
+could be far more attractive with a perfumer aesthetic. Joe: combine forces to render orbitals of
+these small molecules.
+
+**Done the same evening (live, checked):**
+- Page: "A GenesisL1 project ↗" in the header, project named in the hero label, an "On-chain" note
+  in the intro box and the footer (planned MolNFT publication, "will be", not "is"), meta
+  description + Open Graph tags (first SEO step; the content is still JS-rendered — full SEO needs
+  pre-rendered HTML / per-material pages, part of the redesign).
+- Mobile: below 760 px the table becomes cards (name + status, formula/MW/XLogP3/quotes line, tags),
+  detail stacks. Checked at 375 px in the built-in browser with mobile emulation: no horizontal
+  overflow, 3D viewer and specs readable. (Claude in Chrome could not resize the maximised window.)
+- Emails (local): all three now DISCLOSE that the corpus will also be published on the GenesisL1
+  blockchain "as a permanent public record (one entry per molecule, technically an NFT)" and that
+  released descriptors could be published the same way. Reason: MolNFTs are tradeable tokens; a
+  company granting CC0 "for research" must not discover that later. Honesty over odds.
+- Sizes sent to Mike: SMILES max 59 B (musk ketone), median 23; InChI max 133 B; largest 3D
+  conformer 52 atoms (Helvetolide) ≈ 0.9 KB compact binary / ≈ 4.8 KB SDF, median ≈ 0.56 KB;
+  evidence quotes median ≈ 150 B/molecule, max ≈ 1.5 KB, whole corpus ≈ 260 KB. Caveat stated:
+  only ≈ 840 of 1,829 corpus molecules have a PubChem structure today.
+
+**Mike's answers (the mint):**
+- No testnet: test the contract locally (Remix, Foundry/Hardhat) and deploy when it works — that is
+  our dry run.
+- MolNFT is a FORMAT, not one contract: v1 = data on IPFS, v2 = data on-chain (chunked for large
+  data, unchunked for small). Ours: **v2 unchanged/unchunked, everything on-chain**. Ivan deploys
+  his own "OpenScent MolNFT" contract and mints into it; keys stay local. Reference contract to come.
+- A licence field in the token; can be upgradable. His own caveat: you can only license what you
+  added — public-domain patent data stays public domain.
+
+**The licence and money question (Ivan: "never throw away opportunities"):**
+- The corpus data already published on GitHub is **CC0 — irrevocable** for those versions; the
+  code already published is **Apache-2.0** (a licence; Ivan keeps the copyright, can relicense or
+  close FUTURE versions). The repo was public before this weekend (licensing entry 09-05); CC0 was the
+  project's premise from day one (Mike's proposal, README, paper). Not going private: it would not
+  undo CC0, would break Pages, and would look odd. Not legal advice.
+- What remains Ivan's to license or sell: all NEW work — structure resolution and the v1.0 release
+  build, the model / paid inference (GL1F supports paid calls), the MolNFT tokens he mints and owns,
+  his own panel data (blind sessions, BLiNK), services and custom integrations, grants. Rule from
+  now on: **build the paid layers in a private repo** and publish only by choice.
+- Descriptors donated by companies go into the FREE, open part — never a paid layer (that would be
+  taking a donation and selling it). The drafts need no change for this.
+- Reply to Mike (sent): tokens carry CC0 + a suggested citation to OpenScent and GenesisL1 (a
+  request under CC0, not a requirement); anything new of Ivan's own may be licensed separately;
+  asked his view on monetising via the model/inference side.
+- Mike also suggested sharing the code ("consider sharing codes under license you want") — already
+  public under Apache-2.0 in pipeline/; worth a standalone, documented repo for the patent odour
+  extractor after the freeze.
+
+**Next, in order:** (1) send the emails (Ivan's timing); (2) resolve patent names -> structures
+(OPSIN / PubChem name lookup via Hetzner), the real prerequisite for minting; (3) freeze v1.0;
+(4) Mike's reference contract -> local test -> deploy OpenScent MolNFT v2 -> mint (dry run first,
+keys local); (5) redesign (own identity, mobile, SEO pre-rendering) and render from chain;
+(6) paper. Keep the healing/drug angle OFF the page and out of the emails — OpenScent claims only
+what a source says.
