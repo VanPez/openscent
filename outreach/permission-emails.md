@@ -58,12 +58,15 @@ credited as the source on every entry.
 
 A one-line reply stating which licence you grant, from someone able to grant it, is all I
 need. If this is not the right desk, I'd be grateful if you could forward it to whoever
-handles product information or intellectual property. I'm happy to send the dataset
-documentation or a preview first.
+handles product information or intellectual property.
+
+You can see what the dataset looks like here: https://vanpez.github.io/openscent/preview.html
+Your materials appear there with an empty slot where licensed descriptors would be shown,
+credited to [Company].
 
 Kind regards,
 Ivan Pezzini
-OpenScent — github.com/VanPez
+OpenScent — github.com/VanPez/openscent
 
 ---
 
@@ -86,12 +89,16 @@ Your product pages describe many of them. Would you allow the short descriptor w
 descriptions you wrote yourselves (not text taken from manufacturers) to be included,
 ideally under CC0, or under CC BY 4.0 with De Hekserij credited on every entry?
 
+You can see what the dataset looks like here: https://vanpez.github.io/openscent/preview.html
+Materials without a public description show an empty slot where licensed words would
+appear, credited to their source.
+
 A short reply saying which licence you grant is all I need. Thank you either way. Your
 catalogue has already been a great help.
 
 Kind regards,
 Ivan Pezzini
-OpenScent — github.com/VanPez
+OpenScent — github.com/VanPez/openscent
 
 ---
 
@@ -116,8 +123,12 @@ fuentes de dominio público (adjunto la lista).
 escrito vosotros mismos (no las que, como indicáis, proceden de otras fuentes)? Idealmente
 bajo CC0, o bajo CC BY 4.0 citando a Olfatorium como fuente en cada entrada.
 
+Podéis ver cómo es el conjunto de datos aquí: https://vanpez.github.io/openscent/preview.html
+Los materiales sin descripción pública muestran un espacio vacío donde aparecerían las
+palabras licenciadas, citando la fuente.
+
 Con una respuesta breve indicando la licencia es suficiente. ¡Gracias en cualquier caso!
 
 Un saludo,
 Ivan Pezzini
-OpenScent — github.com/VanPez
+OpenScent — github.com/VanPez/openscent
