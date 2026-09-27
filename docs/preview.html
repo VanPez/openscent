@@ -51,6 +51,8 @@ td.num{font-family:var(--mono);text-align:right;white-space:nowrap}th.num{text-a
 .nm b{font-weight:600}.nm small{display:block;color:var(--faint);font-size:12px}
 .tag{display:inline-block;font:10px var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;margin:0 4px 4px 0;border:1px solid rgba(15,143,127,.4);color:var(--teal);background:rgba(15,143,127,.06)}
 .detail td{background:#fbfcfd;padding:18px}
+.tag.click{cursor:pointer}.tag.click:hover{background:rgba(15,143,127,.16);border-color:var(--teal)}
+.tag.on{background:var(--teal);color:#fff;border-color:var(--teal)}
 .src{font:9.5px var(--mono);letter-spacing:.06em;color:var(--faint);border:1px solid var(--line);padding:0 4px;margin-left:4px;white-space:nowrap}
 .allerg{border:1px solid rgba(154,106,20,.45);background:var(--amber-pale);color:#5b430f;font-size:12.5px;padding:8px 10px;margin-bottom:10px}
 .allerg span{font:10.5px var(--mono);color:var(--amber)}
@@ -178,7 +180,7 @@ function detail(m){
    they appear here, credited to the licensor and kept apart from the patent-derived tags.</div>`;
  }else{
   ev=`<p class="h3">Evidence · ${m.ev.length} quote${m.ev.length>1?"s":""}</p>`+m.ev.map(e=>`<div class="ev ${e.kind==="passage"?"passage":""}">
-   <div class="evh"><span class="badge">${KIND[e.kind]||e.kind}</span>${srcLink(e)}${e.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div>
+   <div class="evh"><span class="badge">${KIND[e.kind]||e.kind}</span>${srcLink(e)}${e.tags.map(x=>tagChip(x)).join("")}</div>
    ${e.kind==="passage"?`<div class="ante">↳ antecedent: “${hl(e.ante,[],e.mol)}”</div>`:""}
    <div class="q">“${hl(e.quote,e.descs,e.kind==="passage"?e.anaphor:e.mol)}”</div></div>`).join("");
  }
@@ -193,7 +195,7 @@ function render(){
  $("#tb").innerHTML=rows.map(m=>`<tr class="row${open===m.cid?" open":""}" data-cid="${m.cid}">
   <td class="nm"><b>${esc(m.name)}</b>${m.allergen?'<span class="al" title="EU fragrance allergen (labelling)">allergen</span>':""}<small>${esc(m.trade&&m.trade!==m.name?m.trade:m.title)}</small></td>
   <td style="font-family:var(--mono);font-size:12.5px">${esc(m.formula)}</td><td class="num">${esc(m.mw)}</td><td class="num">${esc(m.xlogp)}</td>
-  <td>${m.tags.map(x=>`<span class="tag">${esc(x)}</span>`).join("")||'<span style="color:var(--faint)">—</span>'}</td>
+  <td>${m.tags.map(x=>tagChip(x)).join("")||'<span style="color:var(--faint)">—</span>'}</td>
   <td class="num">${m.ev.length||"—"}</td>
   <td>${m.described?'<span class="badge ok">Described</span>':'<span class="badge proto">No public description</span>'}</td></tr>
   ${open===m.cid?detail(m):""}`).join("")||`<tr><td colspan="7" style="text-align:center;color:var(--mut);padding:24px">No materials match.</td></tr>`;
@@ -238,7 +240,12 @@ function mol3d(cv,c){
  cv.addEventListener("pointerup",()=>{drag=null;cv.parentNode.style.cursor="grab";});
  cv.addEventListener("wheel",e=>{e.preventDefault();zoom=Math.max(.5,Math.min(3,zoom*Math.exp(-e.deltaY*.0015)));},{passive:false});
 }
-$("#tb").addEventListener("click",e=>{const r=e.target.closest("tr.row");if(!r||e.target.closest("a"))return;open=open===r.dataset.cid?null:r.dataset.cid;render();});
+// clicking a tag filters the list to materials carrying it; clicking the active tag clears it
+function tagChip(x){return `<span class="tag click${x===$("#tag").value?" on":""}" data-tag="${esc(x)}" title="Show materials tagged ${esc(x)}">${esc(x)}</span>`;}
+function setTag(x){$("#tag").value=$("#tag").value===x?"":x;open=null;render();
+ const p=$("#matpanel");if(p&&p.scrollIntoView)p.scrollIntoView({block:"start",behavior:"smooth"});}
+$("#tb").addEventListener("click",e=>{const tg=e.target.closest(".tag[data-tag]");if(tg){setTag(tg.dataset.tag);return;}
+ const r=e.target.closest("tr.row");if(!r||e.target.closest("a"))return;open=open===r.dataset.cid?null:r.dataset.cid;render();});
 $("#q").addEventListener("input",render);$("#tag").addEventListener("change",render);
 $("#seg").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;filt=b.dataset.f;
  document.querySelectorAll("#seg button").forEach(x=>x.classList.toggle("on",x===b));render();});
