@@ -281,7 +281,11 @@ TEMPLATE = r"""<!DOCTYPE html>
   LOGO: aromatic ring with scent rising (2026-09-26), inline here and in docs/logo.svg.
 -->
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OpenScent — Materials Preview</title><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cg%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M9.5%209.2%20L13.8%2011.7%20L13.8%2016.7%20L9.5%2019.2%20L5.2%2016.7%20L5.2%2011.7%20Z%22%20stroke%3D%22%2307111d%22%20stroke-width%3D%221.5%22/%3E%3Ccircle%20cx%3D%229.5%22%20cy%3D%2214.2%22%20r%3D%222.3%22%20stroke%3D%22%23245cff%22%20stroke-width%3D%221.3%22/%3E%3Cpath%20d%3D%22M13.8%2011.7%20C15.9%2010.6%2014.7%208.4%2016.7%207.2%20C18.7%206%2017.7%203.8%2019.9%202.8%22%20stroke%3D%22%23245cff%22%20stroke-width%3D%221.5%22/%3E%3Cpath%20d%3D%22M16.9%2013.2%20C18.5%2012.4%2017.7%2010.8%2019.3%209.9%20C20.7%209.1%2020.2%207.7%2021.6%207%22%20stroke%3D%22%23245cff%22%20stroke-width%3D%221.1%22%20opacity%3D%22.5%22/%3E%3C/g%3E%3C/svg%3E"><style>
+<title>OpenScent — Materials Preview</title>
+<meta name="description" content="OpenScent: an open (CC0) odour corpus by GenesisL1. Common perfumery materials with every odour word quoted verbatim from US patents and US-government data, plus identifiers, measured properties, EU allergen status and 3D structures.">
+<meta property="og:title" content="OpenScent — what common perfumery materials smell like, and who said so">
+<meta property="og:description" content="Open odour corpus: every descriptor traceable to a public-domain source. A GenesisL1 project.">
+<meta property="og:type" content="website"><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cg%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M9.5%209.2%20L13.8%2011.7%20L13.8%2016.7%20L9.5%2019.2%20L5.2%2016.7%20L5.2%2011.7%20Z%22%20stroke%3D%22%2307111d%22%20stroke-width%3D%221.5%22/%3E%3Ccircle%20cx%3D%229.5%22%20cy%3D%2214.2%22%20r%3D%222.3%22%20stroke%3D%22%23245cff%22%20stroke-width%3D%221.3%22/%3E%3Cpath%20d%3D%22M13.8%2011.7%20C15.9%2010.6%2014.7%208.4%2016.7%207.2%20C18.7%206%2017.7%203.8%2019.9%202.8%22%20stroke%3D%22%23245cff%22%20stroke-width%3D%221.5%22/%3E%3Cpath%20d%3D%22M16.9%2013.2%20C18.5%2012.4%2017.7%2010.8%2019.3%209.9%20C20.7%209.1%2020.2%207.7%2021.6%207%22%20stroke%3D%22%23245cff%22%20stroke-width%3D%221.1%22%20opacity%3D%22.5%22/%3E%3C/g%3E%3C/svg%3E"><style>
 :root{--paper:#f5f7f9;--card:#fff;--ink:#07111d;--mut:#687383;--faint:#718196;--line:#dce4ee;--line-strong:rgba(29,52,78,.3);
  --blue:#245cff;--blue-deep:#1647d9;--blue-pale:#eef3ff;--amber:#9a6a14;--amber-pale:#fdf6e9;--teal:#0f8f7f;--red:#bc4b47;
  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
@@ -355,17 +359,31 @@ dd{margin:0;font-family:var(--mono);font-size:12px;word-break:break-all}dd.est{c
 .v3d canvas{width:100%;height:100%;display:block}.v3d.none{display:grid;place-items:center;cursor:default;font:11px var(--mono);color:var(--faint);letter-spacing:.06em;text-transform:uppercase}
 .hint{font:11px var(--mono);color:var(--faint);margin-bottom:14px}
 footer{border-top:1px solid var(--line);margin-top:36px;padding-top:16px;color:var(--mut);font-size:12.5px;line-height:1.8}
+.tr{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.gl1{font:600 12px var(--mono);letter-spacing:.02em;color:var(--ink);text-decoration:none;border:1px solid var(--line-strong);border-radius:999px;padding:6px 12px;background:#fff}
+.gl1:hover{border-color:var(--blue);color:var(--blue)}
+@media(max-width:760px){
+ .scroll table{min-width:0}thead{display:none}
+ tr.row{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;padding:12px 14px;border-top:1px solid var(--line)}
+ tr.row td{border:0;padding:0;background:none!important;font-size:12.5px}
+ tr.row.open{background:var(--blue-pale)}
+ tr.row td.nm{flex:1 1 60%;order:0}tr.row td.st{order:1;margin-left:auto}
+ tr.row td.fx,tr.row td.num{order:2;text-align:left}tr.row td:nth-child(5){order:3;flex-basis:100%}
+ tr.row td[data-l]::before{content:attr(data-l) " ";font:10px var(--mono);color:var(--faint);text-transform:uppercase;letter-spacing:.06em}
+ tr.detail{display:block}tr.detail td{display:block;padding:14px}
+ .bar input{min-width:0;flex-basis:100%}.bar select{flex:1}.seg{flex-wrap:wrap}
+}
 @media(max-width:760px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(3){border-left:0}.stat:nth-child(n+3){border-top:1px solid var(--line)}.dgrid{grid-template-columns:1fr}}
-@media(max-width:640px){.wrap,.topbar-in{padding-left:16px;padding-right:16px}h1{font-size:26px}.bar{position:static}.stats{grid-template-columns:1fr}.stat+.stat{border-left:0;border-top:1px solid var(--line)}}
+@media(max-width:640px){#topbadge{display:none}.gl1{font-size:11px;padding:5px 10px}.wrap,.topbar-in{padding-left:16px;padding-right:16px}h1{font-size:26px}.bar{position:static}.stats{grid-template-columns:1fr}.stat+.stat{border-left:0;border-top:1px solid var(--line)}}
 </style></head><body>
 <header class="topbar"><div class="topbar-in">
  <div class="brand"><div class="glyph"><svg width="24" height="24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 9.2 L13.8 11.7 L13.8 16.7 L9.5 19.2 L5.2 16.7 L5.2 11.7 Z" stroke="#07111d" stroke-width="1.5"/><circle cx="9.5" cy="14.2" r="2.3" stroke="#245cff" stroke-width="1.3"/><path d="M13.8 11.7 C15.9 10.6 14.7 8.4 16.7 7.2 C18.7 6 17.7 3.8 19.9 2.8" stroke="#245cff" stroke-width="1.5"/><path d="M16.9 13.2 C18.5 12.4 17.7 10.8 19.3 9.9 C20.7 9.1 20.2 7.7 21.6 7" stroke="#245cff" stroke-width="1.1" opacity=".5"/></g></svg></div><div class="wordmark"><b>OpenScent</b><span>Odour corpus · materials</span></div></div>
  <nav class="nav" id="nav"><a href="#materials" data-v="materials" class="active">Materials</a><a href="#map" data-v="map">Scent map</a></nav>
- <span class="badge proto" id="topbadge"></span>
+ <div class="tr"><span class="badge proto" id="topbadge"></span><a class="gl1" href="https://genesisl1.com" target="_blank" rel="noopener">A GenesisL1 project ↗</a></div>
 </div></header>
 <main class="wrap">
  <section class="hero">
-  <div class="lab"><span class="dash"></span>CC0 odour corpus · preview</div>
+  <div class="lab"><span class="dash"></span>CC0 odour corpus · a GenesisL1 project · preview</div>
   <h1>What common perfumery materials smell like, and who said so</h1>
   <p class="sub">Every odour word here is quoted, word for word, from a public-domain source: a US patent or a US-government
    database. Click a material to see the sentences behind its tags. Materials with no public-domain description are
@@ -375,7 +393,9 @@ footer{border-top:1px solid var(--line);margin-top:36px;padding-top:16px;color:v
  <div class="note"><b>This preview</b> shows the 208 commercial perfumery materials used as a reference list, not the whole
   corpus. The corpus itself ships as CC0 data files (molecule → tag rows, each with its source quote and location).
   Descriptors from manufacturers or retailers are <b>not</b> used; if a rights holder releases theirs, they appear in a
-  separate, labelled slot.</div>
+  separate, labelled slot. <b>On-chain:</b> OpenScent is a GenesisL1 project. Once frozen, the corpus will also be
+  published on the GenesisL1 blockchain as MolNFTs, one token per molecule carrying its odour tags and the quotes behind
+  them, so it stays permanently citable and reusable by other applications.</div>
  <div class="bar">
   <input id="q" type="search" placeholder="Search name, trade name, CAS, formula, tag…" autocomplete="off">
   <div class="seg" id="seg"><button data-f="all" class="on">All</button><button data-f="desc">Described</button><button data-f="none">No public description</button></div>
@@ -465,10 +485,10 @@ function render(){
  $("#count").textContent=`${rows.length} of ${D.n}`;
  $("#tb").innerHTML=rows.map(m=>`<tr class="row${open===m.cid?" open":""}" data-cid="${m.cid}">
   <td class="nm"><b>${esc(m.name)}</b>${m.allergen?'<span class="al" title="EU fragrance allergen (labelling)">allergen</span>':""}<small>${esc(m.trade&&m.trade!==m.name?m.trade:m.title)}</small></td>
-  <td style="font-family:var(--mono);font-size:12.5px">${esc(m.formula)}</td><td class="num">${esc(m.mw)}</td><td class="num">${esc(m.xlogp)}</td>
+  <td class="fx" style="font-family:var(--mono);font-size:12.5px">${esc(m.formula)}</td><td class="num" data-l="MW">${esc(m.mw)}</td><td class="num" data-l="XLogP3">${esc(m.xlogp)}</td>
   <td>${m.tags.map(x=>tagChip(x)).join("")||'<span style="color:var(--faint)">—</span>'}</td>
-  <td class="num">${m.ev.length||"—"}</td>
-  <td>${m.described?'<span class="badge ok">Described</span>':'<span class="badge proto">No public description</span>'}</td></tr>
+  <td class="num qn" data-l="Quotes">${m.ev.length||"—"}</td>
+  <td class="st">${m.described?'<span class="badge ok">Described</span>':'<span class="badge proto">No public description</span>'}</td></tr>
   ${open===m.cid?detail(m):""}`).join("")||`<tr><td colspan="7" style="text-align:center;color:var(--mut);padding:24px">No materials match.</td></tr>`;
  const cv=document.getElementById("v3d"),om=D.mats.find(m=>m.cid===open);
  if(cv&&om&&om.c3d)mol3d(cv,om.c3d);
@@ -527,6 +547,8 @@ $("#foot").innerHTML=`<b>Licence.</b> OpenScent corpus data: CC0 1.0. Odour evid
  Regulation (EC) 1223/2009 Annex III and Regulation (EU) 2023/1545 (EUR-Lex); later bans are not tracked.<br>
  <b>Method.</b> Extract, never generate: every tag rests on a verbatim quote reviewed by a person, and every odour word shown is
  highlighted where it sits in that quote.<br>
+ <b>GenesisL1.</b> OpenScent is a <a href="https://genesisl1.com" target="_blank" rel="noopener">GenesisL1</a> project.
+ Planned: the frozen corpus published on-chain as MolNFTs; this page will then read it from the chain.<br>
  <b>Trademarks.</b> Trade names (Iso E Super®, Cashmeran®, Hedione®, Helional® and others) belong to their owners, including IFF,
  Givaudan, dsm-firmenich, Symrise and Kao, and are used only to identify materials.<br>
  Built ${D.built} from the corpus files · ${fmt(D.n_ev)} quotes · preview, not the release.`;
