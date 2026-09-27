@@ -3344,6 +3344,14 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1177/",
 "allowed": false
 }
+],
+"density": [
+{
+"value": "0.850-0.870",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1177/",
+"allowed": false
+}
 ]
 },
 "30914": {
@@ -3352,6 +3360,14 @@
 "value": "188 °C",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/822/",
+"allowed": false
+}
+],
+"melting_point": [
+{
+"value": "75 - 77 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0031861",
 "allowed": false
 }
 ],
@@ -3386,6 +3402,22 @@
 "allowed": false
 }
 ],
+"melting_point": [
+{
+"value": "44.5 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0033933",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "0.826-0.836",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/262/",
+"allowed": false
+}
+],
 "vapour_pressure": [
 {
 "value": "0.01 [mmHg]",
@@ -3403,6 +3435,14 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/650/",
 "allowed": false
 }
+],
+"density": [
+{
+"value": "0.822-0.830",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/650/",
+"allowed": false
+}
 ]
 },
 "7714": {
@@ -3413,9 +3453,34 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/448/",
 "allowed": false
 }
+],
+"density": [
+{
+"value": "0.942-0.945",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/448/",
+"allowed": false
+}
 ]
 },
-"106729": {},
+"106729": {
+"flash_point": [
+{
+"value": "154 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20628",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "0.941 at 68 °F (NTP, 1992) - Less dense than water; will float",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20628",
+"allowed": true
+}
+]
+},
 "1549992": {},
 "5372174": {
 "boiling_point": [
@@ -3427,6 +3492,14 @@
 },
 {
 "value": "238 °C",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/669/",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "0.925-0.934",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/669/",
 "allowed": false
@@ -3455,6 +3528,14 @@
 ]
 },
 "637563": {
+"appearance": [
+{
+"value": "White crystals",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1427",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "454.1 °F at 760 mmHg (NTP, 1992)",
@@ -3470,6 +3551,60 @@
 },
 {
 "value": "234-239.5 °C",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/192/",
+"allowed": false
+}
+],
+"melting_point": [
+{
+"value": "70.4 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/19819",
+"allowed": true
+},
+{
+"value": "21.3 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1427",
+"allowed": true
+},
+{
+"value": "Liquid Molar Volume = 0.1507 cu m/kmol; Heat of Fusion @ Melting Point = 1.60E+7 J/kmol",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1427",
+"allowed": true
+}
+],
+"flash_point": [
+{
+"value": "195 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/19819",
+"allowed": true
+},
+{
+"value": "90.1 °C",
+"source": "Haz-Map, Information on Hazardous Chemicals and Occupational Diseases",
+"url": "",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "0.9882 (NTP, 1992) - Less dense than water; will float",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/19819",
+"allowed": true
+},
+{
+"value": "0.9878 @ 20 °C/4 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1427",
+"allowed": true
+},
+{
+"value": "0.983-0.988",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/192/",
 "allowed": false
@@ -3511,6 +3646,14 @@
 "allowed": false
 }
 ],
+"density": [
+{
+"value": "1.028-1.033",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/753/",
+"allowed": false
+}
+],
 "logp_measured": [
 {
 "value": "2.570",
@@ -3530,6 +3673,14 @@
 },
 {
 "value": "293-298 °C",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1157/",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "1.089-1.096",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1157/",
 "allowed": false
@@ -3561,6 +3712,20 @@
 "allowed": false
 }
 ],
+"density": [
+{
+"value": "0.981-0.985",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1386/",
+"allowed": false
+},
+{
+"value": "0.981-0.987",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1842/",
+"allowed": false
+}
+],
 "vapour_pressure": [
 {
 "value": "0.6 [mmHg]",
@@ -3586,6 +3751,22 @@
 "allowed": false
 }
 ],
+"melting_point": [
+{
+"value": "-4 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0030941",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "0.825-0.832",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/633/",
+"allowed": false
+}
+],
 "vapour_pressure": [
 {
 "value": "0.06 [mmHg]",
@@ -3606,6 +3787,14 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/182/",
 "allowed": false
 }
+],
+"density": [
+{
+"value": "1.047-1.054",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/182/",
+"allowed": false
+}
 ]
 },
 "5363388": {
@@ -3622,12 +3811,28 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/253/",
 "allowed": false
 }
+],
+"density": [
+{
+"value": "0.896-0.901",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/253/",
+"allowed": false
+}
 ]
 },
 "6021887": {
 "boiling_point": [
 {
 "value": "271  °CC",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/2294/",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "1.052 - 1.067",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/2294/",
 "allowed": false
@@ -3644,6 +3849,14 @@
 },
 {
 "value": "235 °C",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/299/",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "0.890-0.903",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/299/",
 "allowed": false
@@ -3677,6 +3890,14 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1453/",
 "allowed": false
 }
+],
+"density": [
+{
+"value": "0.946-0.952",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1453/",
+"allowed": false
+}
 ]
 },
 "5374527": {
@@ -3699,6 +3920,14 @@
 "allowed": false
 }
 ],
+"melting_point": [
+{
+"value": "32.00 to 35.00 °C. @ 760.00 mm Hg",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0034717",
+"allowed": false
+}
+],
 "logp_measured": [
 {
 "value": "3.220",
@@ -3712,6 +3941,14 @@
 "boiling_point": [
 {
 "value": "79 °C (0.19 mm Hg)",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1195/",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "0.911-0.917",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1195/",
 "allowed": false
@@ -3733,6 +3970,14 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1645/",
 "allowed": false
 }
+],
+"density": [
+{
+"value": "0.960-0.971",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1645/",
+"allowed": false
+}
 ]
 },
 "57759198": {},
@@ -3740,6 +3985,14 @@
 "boiling_point": [
 {
 "value": "289.00 to 290.00 °C. @ 760.00 mm Hg",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0031735",
+"allowed": false
+}
+],
+"melting_point": [
+{
+"value": "90 - 91 °C",
 "source": "Human Metabolome Database (HMDB)",
 "url": "http://www.hmdb.ca/metabolites/HMDB0031735",
 "allowed": false
@@ -3774,6 +4027,14 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1947/",
 "allowed": false
 }
+],
+"density": [
+{
+"value": "1.083-1.091 (20 °C)",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1947/",
+"allowed": false
+}
 ]
 },
 "1213": {
@@ -3796,6 +4057,14 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/2228/",
 "allowed": false
 }
+],
+"density": [
+{
+"value": "1.158-1.169",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/2228/",
+"allowed": false
+}
 ]
 },
 "16063567": {},
@@ -3809,10 +4078,34 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/566/",
 "allowed": false
 }
+],
+"melting_point": [
+{
+"value": "4 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0031736",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "0.950-0.961",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/566/",
+"allowed": false
+}
 ]
 },
 "9815980": {},
 "26955": {
+"appearance": [
+{
+"value": "Colorless to pale, straw-colored liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8269",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "284 °F at 18 mmHg (NTP, 1992)",
@@ -3828,6 +4121,42 @@
 },
 {
 "value": "Pale yellow to yellow liquid; Specific gravity: 0.933-0.937 25/25 °C; Boiling point: 126-128 °C at 12 mm Hg /mixed ionone isomers/",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8269",
+"allowed": true
+}
+],
+"melting_point": [
+{
+"value": "-35 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8269",
+"allowed": true
+}
+],
+"flash_point": [
+{
+"value": "greater than 235 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20530",
+"allowed": true
+},
+{
+"value": "> 113 °C (> 235 °F) - closed cup",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8269",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "0.9462 (NTP, 1992) - Less dense than water; will float",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20530",
+"allowed": true
+},
+{
+"value": "0.9461 at 20/4 °C",
 "source": "Hazardous Substances Data Bank (HSDB)",
 "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8269",
 "allowed": true
@@ -3870,6 +4199,22 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/336/",
 "allowed": false
 }
+],
+"melting_point": [
+{
+"value": "< 25 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0035631",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "0.932-0.939",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/336/",
+"allowed": false
+}
 ]
 },
 "108242": {},
@@ -3883,6 +4228,14 @@
 },
 {
 "value": "192 °C",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/297/",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "0.851 - 0.857",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/297/",
 "allowed": false
@@ -3903,6 +4256,14 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/879/",
 "allowed": false
 }
+],
+"density": [
+{
+"value": "1.110-1.136",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/879/",
+"allowed": false
+}
 ]
 },
 "60998": {
@@ -3915,6 +4276,14 @@
 },
 {
 "value": "247 °C",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/946/",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "0.984-0.988",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/946/",
 "allowed": false
@@ -3932,6 +4301,22 @@
 },
 {
 "value": "260 °C",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/760/",
+"allowed": false
+}
+],
+"melting_point": [
+{
+"value": "-6 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0036432",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "1.062-1.069",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/760/",
 "allowed": false
@@ -3959,6 +4344,14 @@
 "allowed": false
 }
 ],
+"melting_point": [
+{
+"value": "52 - 53 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0034455",
+"allowed": false
+}
+],
 "logp_measured": [
 {
 "value": "6.100",
@@ -3977,12 +4370,28 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1882/",
 "allowed": false
 }
+],
+"density": [
+{
+"value": "0.912-0.920 (20 °C)",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1882/",
+"allowed": false
+}
 ]
 },
 "61016": {
 "boiling_point": [
 {
 "value": "116-124 °C (100 mm Hg)",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/370/",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "0.845-0.854",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/370/",
 "allowed": false
@@ -4024,6 +4433,14 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1275/",
 "allowed": false
 }
+],
+"density": [
+{
+"value": "1.047-1.053",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1275/",
+"allowed": false
+}
 ]
 },
 "106766": {
@@ -4046,6 +4463,14 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/287/",
 "allowed": false
 }
+],
+"density": [
+{
+"value": "0.905-0.914",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/287/",
+"allowed": false
+}
 ]
 },
 "61431": {
@@ -4058,6 +4483,14 @@
 },
 {
 "value": "185 °C; 60 °C (15 mm Hg)",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/801/",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "0.841-0.851",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/801/",
 "allowed": false
@@ -4087,6 +4520,14 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/797/",
 "allowed": false
 }
+],
+"melting_point": [
+{
+"value": "56 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0032412",
+"allowed": false
+}
 ]
 },
 "76334": {},
@@ -4104,6 +4545,22 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/736/",
 "allowed": false
 }
+],
+"melting_point": [
+{
+"value": "84 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0033761",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "1.104-1.111",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/736/",
+"allowed": false
+}
 ]
 },
 "8797": {
@@ -4116,6 +4573,14 @@
 },
 {
 "value": "208-212 °C",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/578/",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "1.044-1.052",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/578/",
 "allowed": false
@@ -4159,6 +4624,14 @@
 "allowed": false
 }
 ],
+"melting_point": [
+{
+"value": "76 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0041564",
+"allowed": false
+}
+],
 "logp_measured": [
 {
 "value": "3.790",
@@ -4194,6 +4667,22 @@
 "allowed": false
 }
 ],
+"melting_point": [
+{
+"value": "-31.1 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0033945",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "1.030-1.034",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/922/",
+"allowed": false
+}
+],
 "logp_measured": [
 {
 "value": "2.30",
@@ -4223,6 +4712,22 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/932/",
 "allowed": false
 }
+],
+"melting_point": [
+{
+"value": "28 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0035009",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "1.079-1.082",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/932/",
+"allowed": false
+}
 ]
 },
 "90978": {},
@@ -4246,6 +4751,14 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/2024/",
 "allowed": false
 }
+],
+"density": [
+{
+"value": "1.015-1.025",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/2024/",
+"allowed": false
+}
 ]
 },
 "61041": {
@@ -4258,6 +4771,22 @@
 },
 {
 "value": "70 °C (1 mm Hg);",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/910/",
+"allowed": false
+}
+],
+"melting_point": [
+{
+"value": "< 25 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0036061",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "0.968-0.980 (20 °C)",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/910/",
 "allowed": false
@@ -4300,6 +4829,20 @@
 "allowed": false
 }
 ],
+"density": [
+{
+"value": "1.024-1.040",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/874/",
+"allowed": false
+},
+{
+"value": "1.020-1.035",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/790/",
+"allowed": false
+}
+],
 "logp_measured": [
 {
 "value": "2.3",
@@ -4323,6 +4866,14 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/353/",
 "allowed": false
 }
+],
+"density": [
+{
+"value": "0.953-0.962",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/353/",
+"allowed": false
+}
 ]
 },
 "119832": {},
@@ -4331,6 +4882,14 @@
 "boiling_point": [
 {
 "value": "99-101 °C (30 mm Hg)",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1878/",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "0.932-0.940 (20 °C)",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1878/",
 "allowed": false
@@ -4347,10 +4906,38 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/427/",
 "allowed": false
 }
+],
+"density": [
+{
+"value": "1.442-1.446",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/427/",
+"allowed": false
+}
 ]
 },
 "41270": {},
 "7476": {
+"appearance": [
+{
+"value": "Crystalline solid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8319",
+"allowed": true
+},
+{
+"value": "Colorless to pale-yellow fused solid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8319",
+"allowed": true
+},
+{
+"value": "Yellowish-white crystals",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8319",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "254 °C",
@@ -4369,6 +4956,36 @@
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/730/",
 "allowed": false
+}
+],
+"melting_point": [
+{
+"value": "38.2 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8319",
+"allowed": true
+},
+{
+"value": "38 - 39 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0032570",
+"allowed": false
+}
+],
+"flash_point": [
+{
+"value": "138 °C (280 °F) - open cup",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8319",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "1.0818 g/cu cm at 41 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8319",
+"allowed": true
 }
 ],
 "vapour_pressure": [
@@ -4407,6 +5024,26 @@
 ]
 },
 "7410": {
+"appearance": [
+{
+"value": "Colorless liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/969",
+"allowed": true
+},
+{
+"value": "Liquid. Forms laminar crystals at low temperature.",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/969",
+"allowed": true
+},
+{
+"value": "Monoclinic prisms or plates",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/969",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "395.1 °F at 760 mmHg (USCG, 1999)",
@@ -4442,13 +5079,151 @@
 "value": "395.1 °F",
 "source": "Occupational Safety and Health Administration (OSHA)",
 "url": "https://www.osha.gov/chemicaldata/777",
-"allowed": false
+"allowed": true
 },
 {
 "value": "202 °C @760 [mm Hg]",
 "source": "PAC Chemical Database, U.S. Department of Energy",
 "url": "https://emhub1.energy.gov/pacteel/search#98-86-2",
+"allowed": true
+}
+],
+"melting_point": [
+{
+"value": "67.5 °F (USCG, 1999)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/7421",
+"allowed": true
+},
+{
+"value": "19.4 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/969",
+"allowed": true
+},
+{
+"value": "20 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0033910",
 "allowed": false
+},
+{
+"value": "20 °C",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=1156",
+"allowed": false
+},
+{
+"value": "67.5 °F",
+"source": "Occupational Safety and Health Administration (OSHA)",
+"url": "https://www.osha.gov/chemicaldata/777",
+"allowed": true
+},
+{
+"value": "19.7 °C",
+"source": "PAC Chemical Database, U.S. Department of Energy",
+"url": "https://emhub1.energy.gov/pacteel/search#98-86-2",
+"allowed": true
+}
+],
+"flash_point": [
+{
+"value": "180 °F (USCG, 1999)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/7421",
+"allowed": true
+},
+{
+"value": "105 °C",
+"source": "Haz-Map, Information on Hazardous Chemicals and Occupational Diseases",
+"url": "",
+"allowed": false
+},
+{
+"value": "76 °C (169 °F) - closed cup",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/969",
+"allowed": true
+},
+{
+"value": "170 °F (77 °C) - closed cup",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/969",
+"allowed": true
+},
+{
+"value": "170.6 °F (77 °C) - closed cup; 180 °F (82.2 °C) - open cup",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/969",
+"allowed": true
+},
+{
+"value": "82 °C - open cup",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/969",
+"allowed": true
+},
+{
+"value": "77 °C c.c.",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=1156",
+"allowed": false
+},
+{
+"value": "180 °F",
+"source": "Occupational Safety and Health Administration (OSHA)",
+"url": "https://www.osha.gov/chemicaldata/777",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "1.028 at 68 °F (USCG, 1999) - Denser than water; will sink",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/7421",
+"allowed": true
+},
+{
+"value": "1.0281 g/cu cm at 20 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/969",
+"allowed": true
+},
+{
+"value": "Density: 1.033 at 15 °C/15 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/969",
+"allowed": true
+},
+{
+"value": "1.03 g/cm³",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=1156",
+"allowed": false
+},
+{
+"value": "Relative density of the vapour/air-mixture at 20 °C (air = 1): 1",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=1156",
+"allowed": false
+},
+{
+"value": "1.022-1.028",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/732/",
+"allowed": false
+},
+{
+"value": "1.028",
+"source": "Occupational Safety and Health Administration (OSHA)",
+"url": "https://www.osha.gov/chemicaldata/777",
+"allowed": true
+},
+{
+"value": "1.026 @ 20°C",
+"source": "PAC Chemical Database, U.S. Department of Energy",
+"url": "https://emhub1.energy.gov/pacteel/search#98-86-2",
+"allowed": true
 }
 ],
 "vapour_pressure": [
@@ -4474,7 +5249,7 @@
 "value": "0.2 [mm Hg] @20 °C",
 "source": "PAC Chemical Database, U.S. Department of Energy",
 "url": "https://emhub1.energy.gov/pacteel/search#98-86-2",
-"allowed": false
+"allowed": true
 }
 ],
 "logp_measured": [
@@ -4502,9 +5277,37 @@
 "url": "",
 "allowed": false
 }
+],
+"odour_threshold": [
+{
+"value": "Odor Threshold Low: 0.17 [ppm] Odor Threshold High: 0.6 [ppm] Odor Threshold avg = 0.5 ppm. [CHEMINFO] mp = 20.5 °C",
+"source": "Haz-Map, Information on Hazardous Chemicals and Occupational Diseases",
+"url": "",
+"allowed": false
+},
+{
+"value": "0.8347 mg/cu m (odor low) 2.9460 (odor high)",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/969",
+"allowed": true
+},
+{
+"value": "65.0 ppm/water",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/969",
+"allowed": true
+}
 ]
 },
 "8130": {
+"appearance": [
+{
+"value": "Oily colorless liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/6026",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "307 °F at 760 mmHg (NTP, 1992)",
@@ -4526,6 +5329,66 @@
 },
 {
 "value": "153 °C",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/632/",
+"allowed": false
+}
+],
+"melting_point": [
+{
+"value": "-45 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/11981",
+"allowed": true
+},
+{
+"value": "-43.3 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/6026",
+"allowed": true
+},
+{
+"value": "Heat of fusion = 2.3585X10+7 J/kmol at melting point",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/6026",
+"allowed": true
+},
+{
+"value": "-43.3 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0031475",
+"allowed": false
+}
+],
+"flash_point": [
+{
+"value": "95 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/11981",
+"allowed": true
+},
+{
+"value": "48 °C (closed cup)",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/6026",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "0.8495 at 68 °F (NTP, 1992) - Less dense than water; will float",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/11981",
+"allowed": true
+},
+{
+"value": "0.82162 g/cu cm at 25 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/6026",
+"allowed": true
+},
+{
+"value": "0.814-0.819",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/632/",
 "allowed": false
@@ -4553,6 +5416,14 @@
 ]
 },
 "8175": {
+"appearance": [
+{
+"value": "Colorless to light-yellow liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/288",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "404 to 410 °F at 760 mmHg (USCG, 1999)",
@@ -4576,7 +5447,79 @@
 "value": "208.5 °C @760 [mm Hg]",
 "source": "PAC Chemical Database, U.S. Department of Energy",
 "url": "https://emhub1.energy.gov/pacteel/search#112-31-2",
+"allowed": true
+}
+],
+"melting_point": [
+{
+"value": "64 °F (USCG, 1999)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/8495",
+"allowed": true
+},
+{
+"value": "-3.9 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/288",
+"allowed": true
+},
+{
+"value": "Liquid Molar Volume = 0.190278 cu m/kmol; IG Heat of Formation = -3.2589X10+8 J/kmol; Heat Fusion at Melting Point = 3.45X10+7 J/kmol",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/288",
+"allowed": true
+},
+{
+"value": "-5 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0011623",
 "allowed": false
+},
+{
+"value": "-5 °C",
+"source": "PAC Chemical Database, U.S. Department of Energy",
+"url": "https://emhub1.energy.gov/pacteel/search#112-31-2",
+"allowed": true
+}
+],
+"flash_point": [
+{
+"value": "185 °F (USCG, 1999)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/8495",
+"allowed": true
+},
+{
+"value": "83 °C (181  °F) Closed cup",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/288",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "0.83 at 59 °F (USCG, 1999) - Less dense than water; will float",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/8495",
+"allowed": true
+},
+{
+"value": "0.830 g/cu cm at 15 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/288",
+"allowed": true
+},
+{
+"value": "0.823-0.832",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/259/",
+"allowed": false
+},
+{
+"value": "0.830 @ 15°C",
+"source": "PAC Chemical Database, U.S. Department of Energy",
+"url": "https://emhub1.energy.gov/pacteel/search#112-31-2",
+"allowed": true
 }
 ],
 "vapour_pressure": [
@@ -4596,7 +5539,7 @@
 "value": "0.103 [mm Hg] @25 °C",
 "source": "PAC Chemical Database, U.S. Department of Energy",
 "url": "https://emhub1.energy.gov/pacteel/search#112-31-2",
-"allowed": false
+"allowed": true
 }
 ]
 },
@@ -4614,9 +5557,25 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/656/",
 "allowed": false
 }
+],
+"density": [
+{
+"value": "0.840-0.850",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/656/",
+"allowed": false
+}
 ]
 },
 "6501": {
+"appearance": [
+{
+"value": "COLORLESS TO PALE-YELLOW LIQUID",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1150",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "522 to 527 °F at 760 mmHg (NTP, 1992)",
@@ -4642,9 +5601,51 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1567/",
 "allowed": false
 }
+],
+"flash_point": [
+{
+"value": "greater than 200 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20689",
+"allowed": true
+},
+{
+"value": "134 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1150",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "1.104 to 1.123 at 68 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20689",
+"allowed": true
+},
+{
+"value": "1.0442 @ 20 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1150",
+"allowed": true
+},
+{
+"value": "1.086-1.096",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1567/",
+"allowed": false
+}
 ]
 },
 "7710": {
+"appearance": [
+{
+"value": "Colorless to slightly yellow liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5360",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "BP: 134 °C at 12 mm Hg",
@@ -4664,9 +5665,31 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/44/",
 "allowed": false
 }
+],
+"density": [
+{
+"value": "0.958-0.966 at 25 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5360",
+"allowed": true
+},
+{
+"value": "0.958-0.966",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/44/",
+"allowed": false
+}
 ]
 },
 "31289": {
+"appearance": [
+{
+"value": "Colorless liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/7229",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "374 to 378 °F at 760 mmHg (NTP, 1992)",
@@ -4685,6 +5708,60 @@
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/271/",
 "allowed": false
+}
+],
+"melting_point": [
+{
+"value": "145 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20803",
+"allowed": true
+},
+{
+"value": "-19.3 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/7229",
+"allowed": true
+}
+],
+"flash_point": [
+{
+"value": "182 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20803",
+"allowed": true
+},
+{
+"value": "64 °C (147 °F) - closed cup",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/7229",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "0.8264 at 72 °F (NTP, 1992) - Less dense than water; will float",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20803",
+"allowed": true
+},
+{
+"value": "0.8264 g/cu cm at 22 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/7229",
+"allowed": true
+},
+{
+"value": "0.820-0.830",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/271/",
+"allowed": false
+},
+{
+"value": "0.820-0.830 @25 °C",
+"source": "PAC Chemical Database, U.S. Department of Energy",
+"url": "https://emhub1.energy.gov/pacteel/search#124-19-6",
+"allowed": true
 }
 ],
 "vapour_pressure": [
@@ -4710,6 +5787,14 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/2162/",
 "allowed": false
 }
+],
+"density": [
+{
+"value": "0.937-0.943",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/2162/",
+"allowed": false
+}
 ]
 },
 "5355293": {
@@ -4727,6 +5812,14 @@
 "allowed": false
 }
 ],
+"density": [
+{
+"value": "0.949-0.957",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1969/",
+"allowed": false
+}
+],
 "logp_measured": [
 {
 "value": "6.510",
@@ -4738,6 +5831,14 @@
 },
 "10857465": {},
 "31209": {
+"appearance": [
+{
+"value": "Clear, yellow, oily liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8003",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "284 °C",
@@ -4747,6 +5848,20 @@
 },
 {
 "value": "284-287 °C",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/565/",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "0.9711 g/cu cm at 20 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8003",
+"allowed": true
+},
+{
+"value": "0.962-0.969",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/565/",
 "allowed": false
@@ -4762,6 +5877,20 @@
 ]
 },
 "31244": {
+"appearance": [
+{
+"value": "Oily liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/2641",
+"allowed": true
+},
+{
+"value": "Colorless to pale yellow liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/2641",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "255 °C",
@@ -4777,6 +5906,42 @@
 },
 {
 "value": "248 °C",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/783/",
+"allowed": false
+}
+],
+"melting_point": [
+{
+"value": "0 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/2641",
+"allowed": true
+},
+{
+"value": "0 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0029686",
+"allowed": false
+}
+],
+"flash_point": [
+{
+"value": "116 °C (241 °F) - closed cup",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/2641",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "1.1191 g/cu cm at 15 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/2641",
+"allowed": true
+},
+{
+"value": "1.115-1.123",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/783/",
 "allowed": false
@@ -4818,9 +5983,63 @@
 ]
 },
 "91497": {
+"appearance": [
+{
+"value": "Colorless crystals from ethanol",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/7514",
+"allowed": true
+},
+{
+"value": "Viscous liquid[ECHA; Search for Chemicals. 1,3,4,6,7,8-hexahydro-4,6,6,7,8,8-hexmethylindeno",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/7514",
+"allowed": true
+},
+{
+"value": "Almost colorless viscous liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/7514",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "BP: 128 °C at 0.8 mm Hg",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/7514",
+"allowed": true
+}
+],
+"melting_point": [
+{
+"value": "57-58 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/7514",
+"allowed": true
+},
+{
+"value": "MP: -10 to 0 °C (mixture of isomers)",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/7514",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "1.0054 at 20 °C/4 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/7514",
+"allowed": true
+},
+{
+"value": "Density: 0.99 to 1.017 g/cu cm at 20 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/7514",
+"allowed": true
+},
+{
+"value": "Crystal density: 1.087 g/cu cm",
 "source": "Hazardous Substances Data Bank (HSDB)",
 "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/7514",
 "allowed": true
@@ -4850,6 +6069,20 @@
 ]
 },
 "240": {
+"appearance": [
+{
+"value": "Strongly refractive liquid, becoming yellowish on keeping",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/388",
+"allowed": true
+},
+{
+"value": "Colorless or yellowish, strongly refractive volatile oil",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/388",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "354 °F at 760 mmHg (NTP, 1992)",
@@ -4885,7 +6118,97 @@
 "value": "179 °C @760 [mm Hg]",
 "source": "PAC Chemical Database, U.S. Department of Energy",
 "url": "https://emhub1.energy.gov/pacteel/search#100-52-7",
+"allowed": true
+}
+],
+"melting_point": [
+{
+"value": "-15 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/216",
+"allowed": true
+},
+{
+"value": "-57.12 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/388",
+"allowed": true
+},
+{
+"value": "-26 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0006115",
 "allowed": false
+},
+{
+"value": "-26 °C",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=0102",
+"allowed": false
+},
+{
+"value": "-57.1 °C",
+"source": "PAC Chemical Database, U.S. Department of Energy",
+"url": "https://emhub1.energy.gov/pacteel/search#100-52-7",
+"allowed": true
+}
+],
+"flash_point": [
+{
+"value": "148 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/216",
+"allowed": true
+},
+{
+"value": "145 °F, 63 °C (Closed cup)",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/388",
+"allowed": true
+},
+{
+"value": "73.9 °C (Open cup)",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/388",
+"allowed": true
+},
+{
+"value": "63 °C c.c.",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=0102",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "1.046 at 68 °F (USCG, 1999) - Denser than water; will sink",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/216",
+"allowed": true
+},
+{
+"value": "1.050 at 15 °C/4 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/388",
+"allowed": true
+},
+{
+"value": "Relative density (water = 1): 1.05",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=0102",
+"allowed": false
+},
+{
+"value": "1.040-1.047",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/321/",
+"allowed": false
+},
+{
+"value": "1.041 @25 °C",
+"source": "PAC Chemical Database, U.S. Department of Energy",
+"url": "https://emhub1.energy.gov/pacteel/search#100-52-7",
+"allowed": true
 }
 ],
 "vapour_pressure": [
@@ -4917,7 +6240,7 @@
 "value": "0.127 [mm Hg] @25 °C",
 "source": "PAC Chemical Database, U.S. Department of Energy",
 "url": "https://emhub1.energy.gov/pacteel/search#100-52-7",
-"allowed": false
+"allowed": true
 }
 ],
 "logp_measured": [
@@ -4948,6 +6271,14 @@
 ]
 },
 "8785": {
+"appearance": [
+{
+"value": "WATER-WHITE LIQUID",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/2851",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "419.9 °F at 760 mmHg (NTP, 1992)",
@@ -4989,13 +6320,109 @@
 "value": "419.9 °F",
 "source": "Occupational Safety and Health Administration (OSHA)",
 "url": "https://www.osha.gov/chemicaldata/258",
-"allowed": false
+"allowed": true
 },
 {
 "value": "213 °C @760 [mm Hg]",
 "source": "PAC Chemical Database, U.S. Department of Energy",
 "url": "https://emhub1.energy.gov/pacteel/search#140-11-4",
+"allowed": true
+}
+],
+"melting_point": [
+{
+"value": "-60.7 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/17803",
+"allowed": true
+},
+{
+"value": "-51 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/2851",
+"allowed": true
+},
+{
+"value": "-51.3 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0031310",
 "allowed": false
+},
+{
+"value": "-51 °C",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=1331",
+"allowed": false
+},
+{
+"value": "-60.7 °F",
+"source": "Occupational Safety and Health Administration (OSHA)",
+"url": "https://www.osha.gov/chemicaldata/258",
+"allowed": true
+}
+],
+"flash_point": [
+{
+"value": "195 °F (NFPA, 2010)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/17803",
+"allowed": true
+},
+{
+"value": "90 °C (closed cup)",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/2851",
+"allowed": true
+},
+{
+"value": "90 °C c.c.",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=1331",
+"allowed": false
+},
+{
+"value": "195 °F",
+"source": "Occupational Safety and Health Administration (OSHA)",
+"url": "https://www.osha.gov/chemicaldata/258",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "1.04 (USCG, 1999) - Denser than water; will sink",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/17803",
+"allowed": true
+},
+{
+"value": "1.050 @ 25 °C/4 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/2851",
+"allowed": true
+},
+{
+"value": "Relative density (water = 1): 1.1",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=1331",
+"allowed": false
+},
+{
+"value": "1.049-1.059",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/318/",
+"allowed": false
+},
+{
+"value": "1.04",
+"source": "Occupational Safety and Health Administration (OSHA)",
+"url": "https://www.osha.gov/chemicaldata/258",
+"allowed": true
+},
+{
+"value": "1.05 @25 °C",
+"source": "PAC Chemical Database, U.S. Department of Energy",
+"url": "https://emhub1.energy.gov/pacteel/search#140-11-4",
+"allowed": true
 }
 ],
 "vapour_pressure": [
@@ -5027,13 +6454,13 @@
 "value": "1 mmHg at 113 °F",
 "source": "Occupational Safety and Health Administration (OSHA)",
 "url": "https://www.osha.gov/chemicaldata/258",
-"allowed": false
+"allowed": true
 },
 {
 "value": "0.177 [mm Hg] @25 °C",
 "source": "PAC Chemical Database, U.S. Department of Energy",
 "url": "https://emhub1.energy.gov/pacteel/search#140-11-4",
-"allowed": false
+"allowed": true
 }
 ],
 "logp_measured": [
@@ -5064,6 +6491,14 @@
 ]
 },
 "244": {
+"appearance": [
+{
+"value": "Water-white liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/46",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "401 °F at 760 mmHg (NTP, 1992)",
@@ -5105,13 +6540,157 @@
 "value": "401 °F",
 "source": "Occupational Safety and Health Administration (OSHA)",
 "url": "https://www.osha.gov/chemicaldata/36",
-"allowed": false
+"allowed": true
 },
 {
 "value": "205.31 °C @760 [mm Hg]",
 "source": "PAC Chemical Database, U.S. Department of Energy",
 "url": "https://emhub1.energy.gov/pacteel/search#100-51-6",
+"allowed": true
+}
+],
+"melting_point": [
+{
+"value": "4.5 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/8317",
+"allowed": true
+},
+{
+"value": "-15..2 °C, 258 K, 5 °F",
+"source": "DrugBank",
+"url": "https://go.drugbank.com/drugs/DB06770",
 "allowed": false
+},
+{
+"value": "-15.2 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/46",
+"allowed": true
+},
+{
+"value": "-15.2 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0003119",
+"allowed": false
+},
+{
+"value": "-15 °C",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=0833",
+"allowed": false
+},
+{
+"value": "4.5 °F",
+"source": "Occupational Safety and Health Administration (OSHA)",
+"url": "https://www.osha.gov/chemicaldata/36",
+"allowed": true
+},
+{
+"value": "-15.4 °C",
+"source": "PAC Chemical Database, U.S. Department of Energy",
+"url": "https://emhub1.energy.gov/pacteel/search#100-51-6",
+"allowed": true
+}
+],
+"flash_point": [
+{
+"value": "213 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/8317",
+"allowed": true
+},
+{
+"value": "93 °C",
+"source": "Haz-Map, Information on Hazardous Chemicals and Occupational Diseases",
+"url": "",
+"allowed": false
+},
+{
+"value": "213 °F (closed cup); 220 °F (open cup)",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/46",
+"allowed": true
+},
+{
+"value": "220 °F (105 °C) (open cup)",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/46",
+"allowed": true
+},
+{
+"value": "200 °F (93 °C) (closed cup)",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/46",
+"allowed": true
+},
+{
+"value": "96 °C (205 °F) (Closed cup)",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/46",
+"allowed": true
+},
+{
+"value": "93 °C c.c.",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=0833",
+"allowed": false
+},
+{
+"value": "213 °F",
+"source": "Occupational Safety and Health Administration (OSHA)",
+"url": "https://www.osha.gov/chemicaldata/36",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "1.05 at 1515 °F (USCG, 1999) - Denser than water; will sink",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/8317",
+"allowed": true
+},
+{
+"value": "1.0419 g/cu cm at 24 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/46",
+"allowed": true
+},
+{
+"value": "Percent in saturated air at 20 °C: 0.02; density of saturated air: 1.0005 (air = 1)",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/46",
+"allowed": true
+},
+{
+"value": "Liquid heat capacity = 0.520 BTU/lb-F at 68 °F; Liquid thermal conductivity = 1.088 BTU-in/hr-sq ft-F at 70 °F; Saturated vapor density = 0.00161 lb/cu ft at 180 °F; Ideal gas heat capacity = 0.276 BTU/lb-F at 60 °F",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/46",
+"allowed": true
+},
+{
+"value": "Relative density (water = 1): 1.04",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=0833",
+"allowed": false
+},
+{
+"value": "1.040-1.050",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/310/",
+"allowed": false
+},
+{
+"value": "1.05",
+"source": "Occupational Safety and Health Administration (OSHA)",
+"url": "https://www.osha.gov/chemicaldata/36",
+"allowed": true
+},
+{
+"value": "1.0419 @ 24°C",
+"source": "PAC Chemical Database, U.S. Department of Energy",
+"url": "https://emhub1.energy.gov/pacteel/search#100-51-6",
+"allowed": true
 }
 ],
 "vapour_pressure": [
@@ -5143,7 +6722,7 @@
 "value": "0.1 mmHg@68 °F",
 "source": "Occupational Safety and Health Administration (OSHA)",
 "url": "https://www.osha.gov/chemicaldata/36",
-"allowed": false
+"allowed": true
 }
 ],
 "logp_measured": [
@@ -5177,9 +6756,37 @@
 "url": "",
 "allowed": false
 }
+],
+"odour_threshold": [
+{
+"value": "Odor Threshold Low: 5.5 [ppm] Odor threshold from CHEMINFO",
+"source": "Haz-Map, Information on Hazardous Chemicals and Occupational Diseases",
+"url": "",
+"allowed": false
+},
+{
+"value": "5.5 ppm",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/46",
+"allowed": true
+}
 ]
 },
 "8363": {
+"appearance": [
+{
+"value": "Thick liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8387",
+"allowed": true
+},
+{
+"value": "Colorless liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8387",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "406 °F at 26 mmHg (NTP, 1992)",
@@ -5212,6 +6819,60 @@
 "allowed": false
 }
 ],
+"melting_point": [
+{
+"value": "75 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/19875",
+"allowed": true
+},
+{
+"value": "24 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8387",
+"allowed": true
+},
+{
+"value": "23.4 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0029818",
+"allowed": false
+}
+],
+"flash_point": [
+{
+"value": "180 °C (356 °F) - closed cup",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8387",
+"allowed": true
+},
+{
+"value": ">212 °F (>100 °C) - closed cup",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8387",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "1.175 at 68 °F (NTP, 1992) - Denser than water; will sink",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/19875",
+"allowed": true
+},
+{
+"value": "1.175 g/m cu at 20 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8387",
+"allowed": true
+},
+{
+"value": "1.173-1.183",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/754/",
+"allowed": false
+}
+],
 "vapour_pressure": [
 {
 "value": "7.8X10-5 mm Hg at 25 °C /OECD Guideline 104 (Vapour Pressure Curve)/",
@@ -5222,6 +6883,32 @@
 ]
 },
 "2345": {
+"appearance": [
+{
+"value": "Leaflets or oily liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/208",
+"allowed": true
+},
+{
+"value": "Water-white liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/208",
+"allowed": true
+},
+{
+"value": "Colorless, oily liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/208",
+"allowed": true
+},
+{
+"value": "Clear, colorless liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/208",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "323.5 °C",
@@ -5263,7 +6950,85 @@
 "value": "324 °C @760 [mm Hg]",
 "source": "PAC Chemical Database, U.S. Department of Energy",
 "url": "https://emhub1.energy.gov/pacteel/search#120-51-4",
+"allowed": true
+}
+],
+"melting_point": [
+{
+"value": "21 °C",
+"source": "DrugBank",
+"url": "https://go.drugbank.com/drugs/DB00676",
 "allowed": false
+},
+{
+"value": "19 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/208",
+"allowed": true
+},
+{
+"value": "21 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0014814",
+"allowed": false
+},
+{
+"value": "21 °C",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=0390",
+"allowed": false
+}
+],
+"flash_point": [
+{
+"value": "148 °C",
+"source": "Haz-Map, Information on Hazardous Chemicals and Occupational Diseases",
+"url": "",
+"allowed": false
+},
+{
+"value": "158 °C (316 °F) - closed cup",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/208",
+"allowed": true
+},
+{
+"value": "298 °F (148 °C) - closed cup",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/208",
+"allowed": true
+},
+{
+"value": "148 °C",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=0390",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "1.1121 g/cu cm at 25 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/208",
+"allowed": true
+},
+{
+"value": "Relative density (water = 1): 1.1",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=0390",
+"allowed": false
+},
+{
+"value": "1.113-1.121",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/309/",
+"allowed": false
+},
+{
+"value": "1.116 @25 °C",
+"source": "PAC Chemical Database, U.S. Department of Energy",
+"url": "https://emhub1.energy.gov/pacteel/search#120-51-4",
+"allowed": true
 }
 ],
 "vapour_pressure": [
@@ -5283,7 +7048,7 @@
 "value": "0.00022 [mm Hg] @25 °C",
 "source": "PAC Chemical Database, U.S. Department of Energy",
 "url": "https://emhub1.energy.gov/pacteel/search#120-51-4",
-"allowed": false
+"allowed": true
 }
 ],
 "logp_measured": [
@@ -5320,6 +7085,14 @@
 ]
 },
 "6184": {
+"appearance": [
+{
+"value": "Colorless liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/560",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "262 °F at 760 mmHg (USCG, 1999)",
@@ -5349,7 +7122,85 @@
 "value": "131 °C @760 [mm Hg]",
 "source": "PAC Chemical Database, U.S. Department of Energy",
 "url": "https://emhub1.energy.gov/pacteel/search#66-25-1",
+"allowed": true
+}
+],
+"melting_point": [
+{
+"value": "-58.2 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/560",
+"allowed": true
+},
+{
+"value": "Heat of Fusion at Melting Point = 1.89X10+7 J/kmol",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/560",
+"allowed": true
+},
+{
+"value": "-56 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0005994",
 "allowed": false
+},
+{
+"value": "-56.3 °C",
+"source": "PAC Chemical Database, U.S. Department of Energy",
+"url": "https://emhub1.energy.gov/pacteel/search#66-25-1",
+"allowed": true
+}
+],
+"flash_point": [
+{
+"value": "90 °F (USCG, 1999)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/845",
+"allowed": true
+},
+{
+"value": "25 °C (77 °F) - closed cup",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/560",
+"allowed": true
+},
+{
+"value": "90 °F (32 °C) Open cup",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/560",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "0.83 at 68 °F (USCG, 1999) - Less dense than water; will float",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/845",
+"allowed": true
+},
+{
+"value": "0.8335 g/cu cm at 20 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/560",
+"allowed": true
+},
+{
+"value": "Bulk density = 6.9 wt/gal at 20 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/560",
+"allowed": true
+},
+{
+"value": "0.808-0.817",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/273/",
+"allowed": false
+},
+{
+"value": "0.8335 @ 20°C",
+"source": "PAC Chemical Database, U.S. Department of Energy",
+"url": "https://emhub1.energy.gov/pacteel/search#66-25-1",
+"allowed": true
 }
 ],
 "vapour_pressure": [
@@ -5375,7 +7226,7 @@
 "value": "11.3 [mm Hg] @25 °C",
 "source": "PAC Chemical Database, U.S. Department of Energy",
 "url": "https://emhub1.energy.gov/pacteel/search#66-25-1",
-"allowed": false
+"allowed": true
 }
 ],
 "logp_measured": [
@@ -5400,6 +7251,20 @@
 ]
 },
 "454": {
+"appearance": [
+{
+"value": "Colorless liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5147",
+"allowed": true
+},
+{
+"value": "Colorless to light yellow liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5147",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "171 °C",
@@ -5417,7 +7282,79 @@
 "value": "163.4 °C @760 [mm Hg]",
 "source": "PAC Chemical Database, U.S. Department of Energy",
 "url": "https://emhub1.energy.gov/pacteel/search#124-13-0",
+"allowed": true
+}
+],
+"melting_point": [
+{
+"value": "-23 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5147",
+"allowed": true
+},
+{
+"value": "Liquid Molar Volume = 0.15704 cu m/kmol; IG Heat of Formation = -2.8464X10+8 J/kmol; Heat of Fusion at Melting Point = 2.613X10+7 J/kmol",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5147",
+"allowed": true
+},
+{
+"value": "-23 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0001140",
 "allowed": false
+},
+{
+"value": "-23 °C",
+"source": "PAC Chemical Database, U.S. Department of Energy",
+"url": "https://emhub1.energy.gov/pacteel/search#124-13-0",
+"allowed": true
+}
+],
+"flash_point": [
+{
+"value": "125 °F (USCG, 1999)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/4108",
+"allowed": true
+},
+{
+"value": "125 °F (52 °C)",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5147",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "0.82 to 0.83 (USCG, 1999)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/4108",
+"allowed": true
+},
+{
+"value": "0.8211 g/cu cm at  20 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5147",
+"allowed": true
+},
+{
+"value": "Density: 0.820-0.830",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5147",
+"allowed": true
+},
+{
+"value": "0.810-0.830",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/269/",
+"allowed": false
+},
+{
+"value": "0.821 @ 20°C",
+"source": "PAC Chemical Database, U.S. Department of Energy",
+"url": "https://emhub1.energy.gov/pacteel/search#124-13-0",
+"allowed": true
 }
 ],
 "vapour_pressure": [
@@ -5437,7 +7374,7 @@
 "value": "1.18 [mm Hg] @25 °C",
 "source": "PAC Chemical Database, U.S. Department of Energy",
 "url": "https://emhub1.energy.gov/pacteel/search#124-13-0",
-"allowed": false
+"allowed": true
 }
 ],
 "logp_measured": [
@@ -5460,9 +7397,45 @@
 "11085796": {},
 "13918856": {},
 "61585": {
+"appearance": [
+{
+"value": "Almost white crystals",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8415",
+"allowed": true
+},
+{
+"value": "Solid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8415",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "BP: 304.5 °C at 101.325 kPa",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8415",
+"allowed": true
+}
+],
+"melting_point": [
+{
+"value": "78.5 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8415",
+"allowed": true
+},
+{
+"value": "77.2 - 77.9 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0031867",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "1.06 at 21 °C",
 "source": "Hazardous Substances Data Bank (HSDB)",
 "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8415",
 "allowed": true
@@ -5499,9 +7472,37 @@
 "url": "http://www.hmdb.ca/metabolites/HMDB0036831",
 "allowed": false
 }
+],
+"melting_point": [
+{
+"value": "75 - 76 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0036831",
+"allowed": false
+}
 ]
 },
 "5315892": {
+"appearance": [
+{
+"value": "NEEDLES OR CRYSTAL MASS",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5011",
+"allowed": true
+},
+{
+"value": "WHITE TO YELLOWISH SOLID",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5011",
+"allowed": true
+},
+{
+"value": "WHITE NEEDLES FROM PETROLEUM ETHER",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5011",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "250.0 °C @ 760 MM HG",
@@ -5522,6 +7523,42 @@
 "allowed": false
 }
 ],
+"melting_point": [
+{
+"value": "33 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5011",
+"allowed": true
+},
+{
+"value": "33 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0029698",
+"allowed": false
+}
+],
+"flash_point": [
+{
+"value": "126 °C",
+"source": "Haz-Map, Information on Hazardous Chemicals and Occupational Diseases",
+"url": "",
+"allowed": false
+},
+{
+"value": "126 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5011",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "1.0397 @ 35 °C/35 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5011",
+"allowed": true
+}
+],
 "logp_measured": [
 {
 "value": "1.700",
@@ -5538,6 +7575,20 @@
 ]
 },
 "637511": {
+"appearance": [
+{
+"value": "Yellowish oily liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/209",
+"allowed": true
+},
+{
+"value": "GREENISH-YELLOW LIQUID",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/209",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "253 °C @ 760 MM HG (SLIGHT DECOMP)",
@@ -5553,6 +7604,48 @@
 },
 {
 "value": "248-250 °C",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/692/",
+"allowed": false
+}
+],
+"melting_point": [
+{
+"value": "-7.5 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/209",
+"allowed": true
+},
+{
+"value": "-7.5 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0003441",
+"allowed": false
+}
+],
+"flash_point": [
+{
+"value": "160 °F",
+"source": "Haz-Map, Information on Hazardous Chemicals and Occupational Diseases",
+"url": "",
+"allowed": false
+},
+{
+"value": "120 °C closed cup",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/209",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "1.048-1.052 at 25 °C/25 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/209",
+"allowed": true
+},
+{
+"value": "1.046-1.053",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/692/",
 "allowed": false
@@ -5585,9 +7678,37 @@
 "url": "",
 "allowed": false
 }
+],
+"odour_threshold": [
+{
+"value": "50-750 ppb",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/209",
+"allowed": true
+}
 ]
 },
 "1549018": {
+"appearance": [
+{
+"value": "Oil",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8273",
+"allowed": true
+},
+{
+"value": "Yellow oil",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8273",
+"allowed": true
+},
+{
+"value": "Pale yellow, viscous liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8273",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "285 °C",
@@ -5607,9 +7728,39 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1046/",
 "allowed": false
 }
+],
+"flash_point": [
+{
+"value": "107 °C (225 °F) - closed cup",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8273",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "0.9437 g/cu cm at 22 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8273",
+"allowed": true
+},
+{
+"value": "0.934-0.950",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1046/",
+"allowed": false
+}
 ]
 },
 "5281167": {
+"appearance": [
+{
+"value": "Colorless liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8267",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "156-157 °C",
@@ -5635,9 +7786,39 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/379/",
 "allowed": false
 }
+],
+"flash_point": [
+{
+"value": "Flash Point: 130 °F/ 54 °C/closed cup/",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8267",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "0.846 at 22/15 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8267",
+"allowed": true
+},
+{
+"value": "0.846-0.850",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/379/",
+"allowed": false
+}
 ]
 },
 "638011": {
+"appearance": [
+{
+"value": "Mobile pale yellow liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/993",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "444 °F at 760 mmHg (Decomposes) (NTP, 1992)",
@@ -5665,6 +7846,66 @@
 },
 {
 "value": "228 °C",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1234/",
+"allowed": false
+}
+],
+"melting_point": [
+{
+"value": "Melting point <-10 °C.",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/993",
+"allowed": true
+}
+],
+"flash_point": [
+{
+"value": "215 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/17122",
+"allowed": true
+},
+{
+"value": "195 °F (91 °C) (CLOSED CUP)",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/993",
+"allowed": true
+},
+{
+"value": "82 °C c.c.",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=1725",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "0.891 to 0.897 at 59 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/17122",
+"allowed": true
+},
+{
+"value": "0.891-0.897 at 15 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/993",
+"allowed": true
+},
+{
+"value": "Density: 0.885 to 0.891 at 25 °C/25 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/993",
+"allowed": true
+},
+{
+"value": "0.9 g/cm³",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=1725",
+"allowed": false
+},
+{
+"value": "0.885-0.891",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1234/",
 "allowed": false
@@ -5709,9 +7950,25 @@
 "url": "",
 "allowed": false
 }
+],
+"odour_threshold": [
+{
+"value": "Aroma threshold values: Detection: 28 to 120 ppb; alpha-citral, 32 to 460 ppb; beta citral, 30 to 460 ppb.",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/993",
+"allowed": true
+}
 ]
 },
 "8842": {
+"appearance": [
+{
+"value": "Colorless oily liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/6805",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "224 °C",
@@ -5727,6 +7984,28 @@
 },
 {
 "value": "225 °C",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1228/",
+"allowed": false
+}
+],
+"melting_point": [
+{
+"value": "<-20 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/6805",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "0.8550 g/cu cm at 20 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/6805",
+"allowed": true
+},
+{
+"value": "0.850-0.860",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1228/",
 "allowed": false
@@ -5762,6 +8041,26 @@
 ]
 },
 "323": {
+"appearance": [
+{
+"value": "Orthorhombic, rectangular plates",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1623",
+"allowed": true
+},
+{
+"value": "Colorless, crystals, flakes, or powder",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1623",
+"allowed": true
+},
+{
+"value": "White crystals",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1623",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "568 °F at 760 mmHg (NTP, 1992)",
@@ -5786,6 +8085,78 @@
 "source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
 "url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=1105",
 "allowed": false
+}
+],
+"melting_point": [
+{
+"value": "154 to 158 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20052",
+"allowed": true
+},
+{
+"value": "71 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1623",
+"allowed": true
+},
+{
+"value": "71 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0001218",
+"allowed": false
+},
+{
+"value": "68-70 °C",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=1105",
+"allowed": false
+}
+],
+"flash_point": [
+{
+"value": "304 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20052",
+"allowed": true
+},
+{
+"value": "150 °C",
+"source": "Haz-Map, Information on Hazardous Chemicals and Occupational Diseases",
+"url": "",
+"allowed": false
+},
+{
+"value": "150 °C",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=1105",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "0.935 at 68 °F (NTP, 1992) - Less dense than water; will float",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20052",
+"allowed": true
+},
+{
+"value": "0.935 @ 20 °C/4 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1623",
+"allowed": true
+},
+{
+"value": "0.94 g/cm³",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=1105",
+"allowed": false
+},
+{
+"value": "0.935 @25 °C",
+"source": "PAC Chemical Database, U.S. Department of Energy",
+"url": "https://emhub1.energy.gov/pacteel/search#91-64-5",
+"allowed": true
 }
 ],
 "vapour_pressure": [
@@ -5861,6 +8232,14 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/341/",
 "allowed": false
 }
+],
+"density": [
+{
+"value": "0.945-0.952 (20 °C)",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/341/",
+"allowed": false
+}
 ]
 },
 "29096": {},
@@ -5868,6 +8247,22 @@
 "boiling_point": [
 {
 "value": "214-216 °C",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1642/",
+"allowed": false
+}
+],
+"melting_point": [
+{
+"value": "24 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0031570",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "0.972-0.977",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1642/",
 "allowed": false
@@ -5882,9 +8277,25 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/2236/",
 "allowed": false
 }
+],
+"density": [
+{
+"value": "0.896-0.906 at 20 °CC",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/2236/",
+"allowed": false
+}
 ]
 },
 "8868": {
+"appearance": [
+{
+"value": "COLORLESS LIQUID",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/402",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "363 °F at 760 mmHg (USCG, 1999)",
@@ -5920,7 +8331,85 @@
 "value": "180.8 °C @760 [mm Hg]",
 "source": "PAC Chemical Database, U.S. Department of Energy",
 "url": "https://emhub1.energy.gov/pacteel/search#141-97-9",
+"allowed": true
+}
+],
+"melting_point": [
+{
+"value": "less than -112 °F (USCG, 1999)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/8629",
+"allowed": true
+},
+{
+"value": "-45 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/402",
+"allowed": true
+},
+{
+"value": "-45 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0031216",
 "allowed": false
+},
+{
+"value": "-45 °C",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=1024",
+"allowed": false
+}
+],
+"flash_point": [
+{
+"value": "135 °F (USCG, 1999)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/8629",
+"allowed": true
+},
+{
+"value": "184 °F CC (84.4 °C)",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/402",
+"allowed": true
+},
+{
+"value": "70 °C c.c.",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=1024",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "1.028 at 68 °F (USCG, 1999) - Denser than water; will sink",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/8629",
+"allowed": true
+},
+{
+"value": "1.0282 AT 20 °C/4 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/402",
+"allowed": true
+},
+{
+"value": "Relative density (water = 1): 1.021",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=1024",
+"allowed": false
+},
+{
+"value": "1.022-1.027",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/472/",
+"allowed": false
+},
+{
+"value": "1.0282 @ 20°C",
+"source": "PAC Chemical Database, U.S. Department of Energy",
+"url": "https://emhub1.energy.gov/pacteel/search#141-97-9",
+"allowed": true
 }
 ],
 "vapour_pressure": [
@@ -5946,7 +8435,7 @@
 "value": "0.78 [mm Hg] @25 °C",
 "source": "PAC Chemical Database, U.S. Department of Energy",
 "url": "https://emhub1.energy.gov/pacteel/search#141-97-9",
-"allowed": false
+"allowed": true
 }
 ],
 "logp_measured": [
@@ -5977,6 +8466,14 @@
 ]
 },
 "7762": {
+"appearance": [
+{
+"value": "Colorless liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/406",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "250 °F at 760 mmHg (USCG, 1999)",
@@ -5998,6 +8495,66 @@
 },
 {
 "value": "121 °C",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/314/",
+"allowed": false
+}
+],
+"melting_point": [
+{
+"value": "-135 °F (USCG, 1999)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/673",
+"allowed": true
+},
+{
+"value": "-97 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/406",
+"allowed": true
+},
+{
+"value": "-93.3 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0033889",
+"allowed": false
+}
+],
+"flash_point": [
+{
+"value": "75 °F (USCG, 1999)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/673",
+"allowed": true
+},
+{
+"value": "75 °F (24 °C) Closed cup",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/406",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "0.879 at 68 °F (USCG, 1999) - Less dense than water; will float",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/673",
+"allowed": true
+},
+{
+"value": "0.8735 g/cu cm at 25 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/406",
+"allowed": true
+},
+{
+"value": "Density of saturated air: 1.08 (Air = 1)",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/406",
+"allowed": true
+},
+{
+"value": "0.870-0.877",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/314/",
 "allowed": false
@@ -6028,6 +8585,26 @@
 },
 "6433547": {},
 "8467": {
+"appearance": [
+{
+"value": "Fine, crystalline needles",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/945",
+"allowed": true
+},
+{
+"value": "White or slightly yellowish crystals",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/945",
+"allowed": true
+},
+{
+"value": "Colorless flakes",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/945",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "285 °C",
@@ -6046,6 +8623,34 @@
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/776/",
 "allowed": false
+}
+],
+"melting_point": [
+{
+"value": "171 to 172 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20398",
+"allowed": true
+},
+{
+"value": "76.7 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/945",
+"allowed": true
+},
+{
+"value": "76 - 78 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0029665",
+"allowed": false
+}
+],
+"flash_point": [
+{
+"value": "145 °C (293 °F) - closed cup",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/945",
+"allowed": true
 }
 ],
 "vapour_pressure": [
@@ -6097,9 +8702,39 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1119/",
 "allowed": false
 }
+],
+"melting_point": [
+{
+"value": "0 - 7 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0040459",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "1.040-1.045",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1119/",
+"allowed": false
+}
 ]
 },
 "3314": {
+"appearance": [
+{
+"value": "Colorless or pale yellow liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/210",
+"allowed": true
+},
+{
+"value": "CRYSTALS FROM HEXANE",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/210",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "489 °F at 760 mmHg (NTP, 1992)",
@@ -6115,6 +8750,60 @@
 },
 {
 "value": "256 °C",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1520/",
+"allowed": false
+}
+],
+"melting_point": [
+{
+"value": "15.4 to 15.6 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20399",
+"allowed": true
+},
+{
+"value": "-9.2 to -9.1 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/210",
+"allowed": true
+},
+{
+"value": "-12.00 to -10.00 °C. @ 760.00 mm Hg",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0005809",
+"allowed": false
+}
+],
+"flash_point": [
+{
+"value": "219 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20399",
+"allowed": true
+},
+{
+"value": ">212 °F (>100 °C) (closed cup)",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/210",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "1.0652 at 68 °F (NTP, 1992) - Denser than water; will sink",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20399",
+"allowed": true
+},
+{
+"value": "1.0652 g/cu cm at 20 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/210",
+"allowed": true
+},
+{
+"value": "1.064-1.070",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1520/",
 "allowed": false
@@ -6168,6 +8857,20 @@
 ]
 },
 "445070": {
+"appearance": [
+{
+"value": "Colorless liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/445",
+"allowed": true
+},
+{
+"value": "Slightly yellow liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/445",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "230 to 235 °F at 760 mmHg (NTP, 1992)",
@@ -6206,6 +8909,52 @@
 "allowed": false
 }
 ],
+"melting_point": [
+{
+"value": "< 25 °C",
+"source": "DrugBank",
+"url": "https://go.drugbank.com/drugs/DB02509",
+"allowed": false
+},
+{
+"value": "< 25 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0004305",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "0.8846 at 68 °F (NTP, 1992) - Less dense than water; will float",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20400",
+"allowed": true
+},
+{
+"value": "0.8871 at 20 °C/4 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/445",
+"allowed": true
+},
+{
+"value": "Sp gr: 0.884-0.891",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/445",
+"allowed": true
+},
+{
+"value": "0.884-0.889",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1239/",
+"allowed": false
+},
+{
+"value": "0.8871 @ 20°C",
+"source": "PAC Chemical Database, U.S. Department of Energy",
+"url": "https://emhub1.energy.gov/pacteel/search#4602-84-0",
+"allowed": true
+}
+],
 "vapour_pressure": [
 {
 "value": "0.0000394 [mmHg]",
@@ -6226,6 +8975,14 @@
 },
 {
 "value": "281 °C",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/452/",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "0.950-0.955",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/452/",
 "allowed": false
@@ -6268,9 +9025,31 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/41/",
 "allowed": false
 }
+],
+"density": [
+{
+"value": "0.970-0.980",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/41/",
+"allowed": false
+}
 ]
 },
 "637566": {
+"appearance": [
+{
+"value": "Colorless to pale-yellow, liquid oil",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/484",
+"allowed": true
+},
+{
+"value": "Oily liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/484",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "446 °F at 760 mmHg (NTP, 1992)",
@@ -6297,6 +9076,66 @@
 "allowed": false
 }
 ],
+"melting_point": [
+{
+"value": "less than 5 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20432",
+"allowed": true
+},
+{
+"value": "-15 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/484",
+"allowed": true
+},
+{
+"value": "< -15 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0035155",
+"allowed": false
+}
+],
+"flash_point": [
+{
+"value": "108 °C (226 °F) - closed cup",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/484",
+"allowed": true
+},
+{
+"value": ">212 °F (>100 °C) (closed cup)",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/484",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "0.8894 at 68 °F (NTP, 1992) - Less dense than water; will float",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20432",
+"allowed": true
+},
+{
+"value": "0.8894 g/cu cm at 20 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/484",
+"allowed": true
+},
+{
+"value": "Density: 0.870-0.890 at 15 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/484",
+"allowed": true
+},
+{
+"value": "0.870-0.885",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1232/",
+"allowed": false
+}
+],
 "vapour_pressure": [
 {
 "value": "0.03 [mmHg]",
@@ -6318,9 +9157,25 @@
 "url": "http://www.hmdb.ca/metabolites/HMDB0035155",
 "allowed": false
 }
+],
+"odour_threshold": [
+{
+"value": "Aroma threshold values: Detection: 4 to 75 ppb.",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/484",
+"allowed": true
+}
 ]
 },
 "1549026": {
+"appearance": [
+{
+"value": "Clear, colorless liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/586",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "468 °F at 760 mmHg (NTP, 1992)",
@@ -6342,6 +9197,48 @@
 },
 {
 "value": "240-245 °C",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/625/",
+"allowed": false
+}
+],
+"melting_point": [
+{
+"value": "< 25 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0035157",
+"allowed": false
+}
+],
+"flash_point": [
+{
+"value": "greater than 200 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20433",
+"allowed": true
+},
+{
+"value": ">212 °F (>100 °C) closed cup",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/586",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "0.907 at 77 °F (NTP, 1992) - Less dense than water; will float",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20433",
+"allowed": true
+},
+{
+"value": "0.9174 at 15 °C/15 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/586",
+"allowed": true
+},
+{
+"value": "0.900-0.914",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/625/",
 "allowed": false
@@ -6374,9 +9271,43 @@
 "url": "http://www.hmdb.ca/metabolites/HMDB0035157",
 "allowed": false
 }
+],
+"odour_threshold": [
+{
+"value": "Odor Threshold Low: 0.009 [ppm] Odor Threshold High: 0.46 [ppm] Odor threshold (detection) = 9 - 460 ppb",
+"source": "Haz-Map, Information on Hazardous Chemicals and Occupational Diseases",
+"url": "",
+"allowed": false
+},
+{
+"value": "Aroma threshold values: Detection: 9 to 460 ppb",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/586",
+"allowed": true
+}
 ]
 },
 "460": {
+"appearance": [
+{
+"value": "Faintly yellowish, limpid, oily liquid or yellow crystals",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/4241",
+"allowed": true
+},
+{
+"value": "White or slightly yellow crystalline mass or colorless to yellowish, very refractive liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/4241",
+"allowed": true
+},
+{
+"value": "Hexagonal prisms",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/4241",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "399 to 403 °F at 760 mmHg (NTP, 1992)",
@@ -6392,6 +9323,60 @@
 },
 {
 "value": "203-206 °C",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/591/",
+"allowed": false
+}
+],
+"melting_point": [
+{
+"value": "SOLIDIFIES at 82.4 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20611",
+"allowed": true
+},
+{
+"value": "32 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/4241",
+"allowed": true
+},
+{
+"value": "28 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0001398",
+"allowed": false
+}
+],
+"flash_point": [
+{
+"value": "180 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20611",
+"allowed": true
+},
+{
+"value": "180 °F (open cup)",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/4241",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "1.13 at 70.5 °F (NTP, 1992) - Denser than water; will sink",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20611",
+"allowed": true
+},
+{
+"value": "1.1287 g/cu cm at 21 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/4241",
+"allowed": true
+},
+{
+"value": "1.129-1.140",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/591/",
 "allowed": false
@@ -6436,12 +9421,28 @@
 "url": "",
 "allowed": false
 }
+],
+"odour_threshold": [
+{
+"value": "Odor threshold = 0.001-0.002 ppm (recognition)",
+"source": "Haz-Map, Information on Hazardous Chemicals and Occupational Diseases",
+"url": "",
+"allowed": false
+}
 ]
 },
 "102861": {
 "boiling_point": [
 {
 "value": "109-112 °C (0.2 mm Hg)",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1876/",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "0.997-1.008 (20 °C)",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1876/",
 "allowed": false
@@ -6456,9 +9457,33 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/668/",
 "allowed": false
 }
+],
+"melting_point": [
+{
+"value": "< 25 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0029704",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "0.926-0.935",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/668/",
+"allowed": false
+}
 ]
 },
 "8908": {
+"appearance": [
+{
+"value": "Colorless liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5641",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "334.4 to 338 °F at 760 mmHg (USCG, 1999)",
@@ -6480,6 +9505,66 @@
 },
 {
 "value": "168-172 °C",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/248/",
+"allowed": false
+}
+],
+"melting_point": [
+{
+"value": "-112 °F (USCG, 1999)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/6713",
+"allowed": true
+},
+{
+"value": "-80.9 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5641",
+"allowed": true
+},
+{
+"value": "-81 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0029980",
+"allowed": false
+}
+],
+"flash_point": [
+{
+"value": "99 °F (USCG, 1999)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/6713",
+"allowed": true
+},
+{
+"value": "45 °C",
+"source": "Haz-Map, Information on Hazardous Chemicals and Occupational Diseases",
+"url": "",
+"allowed": false
+},
+{
+"value": "113 °F (45 °C) (Closed cup)",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5641",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "0.876 (USCG, 1999) - Less dense than water; will float",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/6713",
+"allowed": true
+},
+{
+"value": "0.8779 g/cu cm at 15 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5641",
+"allowed": true
+},
+{
+"value": "0.868-0.872",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/248/",
 "allowed": false
@@ -6522,9 +9607,43 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/466/",
 "allowed": false
 }
+],
+"density": [
+{
+"value": "0.918-0.923",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/466/",
+"allowed": false
+}
 ]
 },
 "798": {
+"appearance": [
+{
+"value": "LEAFLETS (WATER, PETROLEUM), CRYSTALS (ETHER)",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/599",
+"allowed": true
+},
+{
+"value": "Colorless to yellowish scales, turning red on exposure to light and air.",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/599",
+"allowed": true
+},
+{
+"value": "WHITE CRYSTALLINE SOLID",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/599",
+"allowed": true
+},
+{
+"value": "Colorless, shiny flakes",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/599",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "254 °C",
@@ -6543,6 +9662,40 @@
 "source": "Human Metabolome Database (HMDB)",
 "url": "http://www.hmdb.ca/metabolites/HMDB0000738",
 "allowed": false
+}
+],
+"melting_point": [
+{
+"value": "52.5 °C",
+"source": "DrugBank",
+"url": "https://go.drugbank.com/drugs/DB04532",
+"allowed": false
+},
+{
+"value": "52 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/599",
+"allowed": true
+},
+{
+"value": "Heat of Formation= 1.5660X10+8 J/kmol; Heat of Fusion at the Melting Point= 9.0000X10+6 J/kmol",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/599",
+"allowed": true
+},
+{
+"value": "52.5 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0000738",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "1.22 g/cu cm at 25 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/599",
+"allowed": true
 }
 ],
 "vapour_pressure": [
@@ -6587,6 +9740,14 @@
 ]
 },
 "5282108": {
+"appearance": [
+{
+"value": "Colorless to slightly yellow liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8268",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "258 °C at 760 mm Hg",
@@ -6602,6 +9763,28 @@
 },
 {
 "value": "237 °C",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/667/",
+"allowed": false
+}
+],
+"flash_point": [
+{
+"value": "118 °C (244 °F) - closed cup",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8268",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "0.9319 at 20/4 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8268",
+"allowed": true
+},
+{
+"value": "0.927-0.933",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/667/",
 "allowed": false
@@ -6625,6 +9808,14 @@
 ]
 },
 "31276": {
+"appearance": [
+{
+"value": "Colorless neutral liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1818",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "288 °F at 760 mmHg (NTP, 1992)",
@@ -6660,16 +9851,154 @@
 "value": "288 °F",
 "source": "Occupational Safety and Health Administration (OSHA)",
 "url": "https://www.osha.gov/chemicaldata/180",
-"allowed": false
+"allowed": true
 },
 {
 "value": "142.5 °C @760 [mm Hg]",
 "source": "PAC Chemical Database, U.S. Department of Energy",
 "url": "https://emhub1.energy.gov/pacteel/search#123-92-2",
-"allowed": false
+"allowed": true
 },
 {
 "value": "288 °F",
+"source": "The National Institute for Occupational Safety and Health (NIOSH)",
+"url": "https://www.cdc.gov/niosh/npg/npgd0347.html",
+"allowed": true
+}
+],
+"melting_point": [
+{
+"value": "-109.3 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/8743",
+"allowed": true
+},
+{
+"value": "-78.5 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1818",
+"allowed": true
+},
+{
+"value": "-78.5 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0031528",
+"allowed": false
+},
+{
+"value": "-79 °C",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=0356",
+"allowed": false
+},
+{
+"value": "-109 °F",
+"source": "Occupational Safety and Health Administration (OSHA)",
+"url": "https://www.osha.gov/chemicaldata/180",
+"allowed": true
+},
+{
+"value": "-78.5 °C",
+"source": "PAC Chemical Database, U.S. Department of Energy",
+"url": "https://emhub1.energy.gov/pacteel/search#123-92-2",
+"allowed": true
+},
+{
+"value": "-109 °F",
+"source": "The National Institute for Occupational Safety and Health (NIOSH)",
+"url": "https://www.cdc.gov/niosh/npg/npgd0347.html",
+"allowed": true
+}
+],
+"flash_point": [
+{
+"value": "77 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/8743",
+"allowed": true
+},
+{
+"value": "77 °F",
+"source": "Haz-Map, Information on Hazardous Chemicals and Occupational Diseases",
+"url": "",
+"allowed": false
+},
+{
+"value": "Flash point, closed cup: 92 °F (33 °C); open cup: 100 °F (38 °C).",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1818",
+"allowed": true
+},
+{
+"value": "25 °C closed cup",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1818",
+"allowed": true
+},
+{
+"value": "25 °C c.c.",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=0356",
+"allowed": false
+},
+{
+"value": "77 °F",
+"source": "Occupational Safety and Health Administration (OSHA)",
+"url": "https://www.osha.gov/chemicaldata/180",
+"allowed": true
+},
+{
+"value": "77 °F",
+"source": "The National Institute for Occupational Safety and Health (NIOSH)",
+"url": "https://www.cdc.gov/niosh/npg/npgd0347.html",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "0.876 at 59 °F (USCG, 1999) - Less dense than water; will float",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/8743",
+"allowed": true
+},
+{
+"value": "0.876 at 15 °C/4 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1818",
+"allowed": true
+},
+{
+"value": "DENSITY OF SATURATED AIR 1.03 (AIR= 1)",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1818",
+"allowed": true
+},
+{
+"value": "Relative density (water = 1): 0.87",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=0356",
+"allowed": false
+},
+{
+"value": "0.868-0.878",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/307/",
+"allowed": false
+},
+{
+"value": "0.876 at 59 °F",
+"source": "Occupational Safety and Health Administration (OSHA)",
+"url": "https://www.osha.gov/chemicaldata/180",
+"allowed": true
+},
+{
+"value": "0.876 @ 15°C",
+"source": "PAC Chemical Database, U.S. Department of Energy",
+"url": "https://emhub1.energy.gov/pacteel/search#123-92-2",
+"allowed": true
+},
+{
+"value": "0.87",
 "source": "The National Institute for Occupational Safety and Health (NIOSH)",
 "url": "https://www.cdc.gov/niosh/npg/npgd0347.html",
 "allowed": true
@@ -6704,13 +10033,13 @@
 "value": "4 mmHg",
 "source": "Occupational Safety and Health Administration (OSHA)",
 "url": "https://www.osha.gov/chemicaldata/180",
-"allowed": false
+"allowed": true
 },
 {
 "value": "5.6 [mm Hg] @25 °C",
 "source": "PAC Chemical Database, U.S. Department of Energy",
 "url": "https://emhub1.energy.gov/pacteel/search#123-92-2",
-"allowed": false
+"allowed": true
 },
 {
 "value": "4 mmHg",
@@ -6744,9 +10073,37 @@
 "url": "",
 "allowed": false
 }
+],
+"odour_threshold": [
+{
+"value": "Odor Threshold Low: 0.0034 [ppm] Odor Threshold High: 209.0 [ppm] Detection odor threshold from AIHA (mean = 0.22 ppm)",
+"source": "Haz-Map, Information on Hazardous Chemicals and Occupational Diseases",
+"url": "",
+"allowed": false
+},
+{
+"value": "Air: 0.025 ul/L; Water: 0.017 mg/L; odor safety class A, A= More than 90% of distracted persons perceive warning of TLV concn in the air.",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1818",
+"allowed": true
+},
+{
+"value": "... The odor of isoamyl acetate is assumed to be detectable below the permissible exposure limit (100 ppm).",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1818",
+"allowed": true
+}
 ]
 },
 "853433": {
+"appearance": [
+{
+"value": "Oily liquid; easily becomes somewhat yellow",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8044",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "511 °F at 760 mmHg (NTP, 1992)",
@@ -6768,6 +10125,66 @@
 },
 {
 "value": "266 °C",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1269/",
+"allowed": false
+}
+],
+"melting_point": [
+{
+"value": "14 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20539",
+"allowed": true
+},
+{
+"value": "-10 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8044",
+"allowed": true
+},
+{
+"value": "-10 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0005802",
+"allowed": false
+}
+],
+"flash_point": [
+{
+"value": "235 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20539",
+"allowed": true
+},
+{
+"value": "235 °F",
+"source": "Haz-Map, Information on Hazardous Chemicals and Occupational Diseases",
+"url": "",
+"allowed": false
+},
+{
+"value": ">212 °F(>100 °C)(closed cup)",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8044",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "1.08 at 77 °F (NTP, 1992) - Denser than water; will sink",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20539",
+"allowed": true
+},
+{
+"value": "1.080 g/cu cm at 25 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8044",
+"allowed": true
+},
+{
+"value": "1.079-1.085",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1269/",
 "allowed": false
@@ -6817,6 +10234,20 @@
 "22096564": {},
 "11367306": {},
 "440917": {
+"appearance": [
+{
+"value": "Oil",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/4186",
+"allowed": true
+},
+{
+"value": "Colorless liquid or oil",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/4186",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "348 to 349 °F at 760 mmHg (NTP, 1992)",
@@ -6846,7 +10277,97 @@
 "value": "178 °C @760 [mm Hg]",
 "source": "PAC Chemical Database, U.S. Department of Energy",
 "url": "https://emhub1.energy.gov/pacteel/search#5989-27-5",
+"allowed": true
+}
+],
+"melting_point": [
+{
+"value": "-142.4 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20568",
+"allowed": true
+},
+{
+"value": "-74 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/4186",
+"allowed": true
+},
+{
+"value": "-90 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0003375",
 "allowed": false
+},
+{
+"value": "-74 °C",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=0918",
+"allowed": false
+},
+{
+"value": "-74.35 °C",
+"source": "PAC Chemical Database, U.S. Department of Energy",
+"url": "https://emhub1.energy.gov/pacteel/search#5989-27-5",
+"allowed": true
+}
+],
+"flash_point": [
+{
+"value": "119 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20568",
+"allowed": true
+},
+{
+"value": "48 °C",
+"source": "Haz-Map, Information on Hazardous Chemicals and Occupational Diseases",
+"url": "",
+"allowed": false
+},
+{
+"value": "48 °C (closed cup)",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/4186",
+"allowed": true
+},
+{
+"value": "48 °C c.c.",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=0918",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "0.8411 at 68 °F (NTP, 1992) - Less dense than water; will float",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20568",
+"allowed": true
+},
+{
+"value": "0.8411 at 20 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/4186",
+"allowed": true
+},
+{
+"value": "Relative density (water = 1): 0.84",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=0918",
+"allowed": false
+},
+{
+"value": "0.838-0.843",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1325/",
+"allowed": false
+},
+{
+"value": "0.84 @ 20°C",
+"source": "PAC Chemical Database, U.S. Department of Energy",
+"url": "https://emhub1.energy.gov/pacteel/search#5989-27-5",
+"allowed": true
 }
 ],
 "vapour_pressure": [
@@ -6878,7 +10399,7 @@
 "value": "1.98 [mm Hg] @25 °C",
 "source": "PAC Chemical Database, U.S. Department of Energy",
 "url": "https://emhub1.energy.gov/pacteel/search#5989-27-5",
-"allowed": false
+"allowed": true
 }
 ],
 "logp_measured": [
@@ -6903,6 +10424,20 @@
 ]
 },
 "6549": {
+"appearance": [
+{
+"value": "Colorless liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/645",
+"allowed": true
+},
+{
+"value": "Colorless to pale yellow liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/645",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "198 °C",
@@ -6924,6 +10459,66 @@
 },
 {
 "value": "198 °C",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/357/",
+"allowed": false
+}
+],
+"melting_point": [
+{
+"value": "Freezing point: below -74 °C /OECD Guideline 102 (Melting point / Melting Range)/",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/645",
+"allowed": true
+},
+{
+"value": "< 25 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0036100",
+"allowed": false
+}
+],
+"flash_point": [
+{
+"value": "78 °C (172 °F) - closed cup",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/645",
+"allowed": true
+},
+{
+"value": "160 °F (71 °C) (closed cup)",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/645",
+"allowed": true
+},
+{
+"value": "75 °C",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=0912",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "0.865 at 15 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/645",
+"allowed": true
+},
+{
+"value": "Density: 0.870 g/cu cm at 15 °C/4 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/645",
+"allowed": true
+},
+{
+"value": "Relative density (water = 1): 0.9",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=0912",
+"allowed": false
+},
+{
+"value": "0.858-0.867",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/357/",
 "allowed": false
@@ -6974,9 +10569,31 @@
 "url": "",
 "allowed": false
 }
+],
+"odour_threshold": [
+{
+"value": "Odor Threshold Low: 1.0 [ppm]",
+"source": "Haz-Map, Information on Hazardous Chemicals and Occupational Diseases",
+"url": "",
+"allowed": false
+},
+{
+"value": "... Nasal pungency ... with a threshold of ~ 320 ppm ... Olfactory threshold ... at about 1 ppm.",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/645",
+"allowed": true
+}
 ]
 },
 "8294": {
+"appearance": [
+{
+"value": "Clear, colorless, oily liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/644",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "221 °C",
@@ -6998,6 +10615,54 @@
 },
 {
 "value": "220 °C",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/360/",
+"allowed": false
+}
+],
+"melting_point": [
+{
+"value": "< 25 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0039522",
+"allowed": false
+}
+],
+"flash_point": [
+{
+"value": "94 °C (201 °F) - closed cup",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/644",
+"allowed": true
+},
+{
+"value": "185 °F (85 °C) (closed cup)",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/644",
+"allowed": true
+},
+{
+"value": "85 °C c.c.",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=1716",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "0.895 g/cu cm at 20 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/644",
+"allowed": true
+},
+{
+"value": "Relative density (water = 1): 0.9",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=1716",
+"allowed": false
+},
+{
+"value": "0.895-0.914",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/360/",
 "allowed": false
@@ -7048,9 +10713,31 @@
 "url": "",
 "allowed": false
 }
+],
+"odour_threshold": [
+{
+"value": "Odor Threshold Low: 6.06 [ppm] Odor threshold from CHEMINFO",
+"source": "Haz-Map, Information on Hazardous Chemicals and Occupational Diseases",
+"url": "",
+"allowed": false
+}
 ]
 },
 "17100": {
+"appearance": [
+{
+"value": "Colorless solid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5316",
+"allowed": true
+},
+{
+"value": "Pure alpha-isomer is white, crystalline powder",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5316",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "218-221 °C",
@@ -7060,6 +10747,34 @@
 },
 {
 "value": "217 °C",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/352/",
+"allowed": false
+}
+],
+"melting_point": [
+{
+"value": "35-40 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5316",
+"allowed": true
+},
+{
+"value": "Viscous at room temperature; mp: 40-41 °C /d-isomer/; congealing point: +2 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5316",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "0.935 at 20 °C/20 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5316",
+"allowed": true
+},
+{
+"value": "0.930-0.936",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/352/",
 "allowed": false
@@ -7104,12 +10819,28 @@
 "url": "",
 "allowed": false
 }
+],
+"odour_threshold": [
+{
+"value": "Aroma threshold values: Detection: 280-350 ppb",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5316",
+"allowed": true
+}
 ]
 },
 "91604": {},
 "119674": {},
 "16220111": {},
 "16666": {
+"appearance": [
+{
+"value": "Crystals or granules",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5662",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "421 °F at 760 mmHg (NTP, 1992)",
@@ -7131,6 +10862,60 @@
 },
 {
 "value": "212 °C ((-)-isomer 216.5)",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/432/",
+"allowed": false
+}
+],
+"melting_point": [
+{
+"value": "100 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20591",
+"allowed": true
+},
+{
+"value": "43 °C",
+"source": "DrugBank",
+"url": "https://go.drugbank.com/drugs/DB00825",
+"allowed": false
+},
+{
+"value": "41-43 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5662",
+"allowed": true
+},
+{
+"value": "43 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0003352",
+"allowed": false
+}
+],
+"flash_point": [
+{
+"value": "196 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20591",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "0.904 at 59 °F (NTP, 1992) - Less dense than water; will float",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20591",
+"allowed": true
+},
+{
+"value": "0.890",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5662",
+"allowed": true
+},
+{
+"value": "0.901 (20 °C); 0.891 (30 °C)",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/432/",
 "allowed": false
@@ -7186,6 +10971,22 @@
 "allowed": false
 }
 ],
+"melting_point": [
+{
+"value": "28 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0032608",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "0.999-1.010",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/787/",
+"allowed": false
+}
+],
 "vapour_pressure": [
 {
 "value": "0.22 [mmHg]",
@@ -7210,6 +11011,32 @@
 ]
 },
 "8635": {
+"appearance": [
+{
+"value": "Crystals",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1008",
+"allowed": true
+},
+{
+"value": "Pale-yellow liquid with bluish fluorescence",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1008",
+"allowed": true
+},
+{
+"value": "Colorless to pale-yellow liquid or crystals with bluish fluorescence",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1008",
+"allowed": true
+},
+{
+"value": "Colorless to pale yellow liquid or solid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1008",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "493 °F at 760 mmHg (NTP, 1992)",
@@ -7231,6 +11058,66 @@
 },
 {
 "value": "256 °C",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1525/",
+"allowed": false
+}
+],
+"melting_point": [
+{
+"value": "75 to 77 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20617",
+"allowed": true
+},
+{
+"value": "24.4 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1008",
+"allowed": true
+},
+{
+"value": "24 - 25 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0029703",
+"allowed": false
+}
+],
+"flash_point": [
+{
+"value": "220 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20617",
+"allowed": true
+},
+{
+"value": "Above 212 °F (> 100 °C)",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1008",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "1.1682 at 50 °F (NTP, 1992) - Denser than water; will sink",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20617",
+"allowed": true
+},
+{
+"value": "1.168 at 20 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1008",
+"allowed": true
+},
+{
+"value": "Density: 1.1682 g/cu cm at 10 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1008",
+"allowed": true
+},
+{
+"value": "1.161-1.169",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1525/",
 "allowed": false
@@ -7272,6 +11159,20 @@
 ]
 },
 "7150": {
+"appearance": [
+{
+"value": "Colorless, transparent liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5283",
+"allowed": true
+},
+{
+"value": "Liquid...colorless, oily",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5283",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "388 to 390 °F at 760 mmHg (NTP, 1992)",
@@ -7307,7 +11208,91 @@
 "value": "199.6 °C @760 [mm Hg]",
 "source": "PAC Chemical Database, U.S. Department of Energy",
 "url": "https://emhub1.energy.gov/pacteel/search#93-58-3",
+"allowed": true
+}
+],
+"melting_point": [
+{
+"value": "10 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/3894",
+"allowed": true
+},
+{
+"value": "-12.35 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5283",
+"allowed": true
+},
+{
+"value": "-12.3 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0033968",
 "allowed": false
+},
+{
+"value": "-12 °C",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=1187",
+"allowed": false
+},
+{
+"value": "-12.5 °C",
+"source": "PAC Chemical Database, U.S. Department of Energy",
+"url": "https://emhub1.energy.gov/pacteel/search#93-58-3",
+"allowed": true
+}
+],
+"flash_point": [
+{
+"value": "181 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/3894",
+"allowed": true
+},
+{
+"value": "181 °F (83 °C) (Closed cup)",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5283",
+"allowed": true
+},
+{
+"value": "83 °C c.c.",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=1187",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "1.0888 at 68 °F (USCG, 1999) - Denser than water; will sink",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/3894",
+"allowed": true
+},
+{
+"value": "1.0837 g/cu cm at 25 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5283",
+"allowed": true
+},
+{
+"value": "Relative density (water = 1): 1.09 (20 °C)",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=1187",
+"allowed": false
+},
+{
+"value": "1.082-1.089",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/789/",
+"allowed": false
+},
+{
+"value": "1.082 @25 °C",
+"source": "PAC Chemical Database, U.S. Department of Energy",
+"url": "https://emhub1.energy.gov/pacteel/search#93-58-3",
+"allowed": true
 }
 ],
 "vapour_pressure": [
@@ -7339,7 +11324,7 @@
 "value": "1 [mm Hg] @39 °C",
 "source": "PAC Chemical Database, U.S. Department of Energy",
 "url": "https://emhub1.energy.gov/pacteel/search#93-58-3",
-"allowed": false
+"allowed": true
 }
 ],
 "logp_measured": [
@@ -7371,6 +11356,50 @@
 },
 "57353762": {},
 "6669": {
+"appearance": [
+{
+"value": "Yellow crystals",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/7694",
+"allowed": true
+}
+],
+"melting_point": [
+{
+"value": "274.1 to 277.7 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/20717",
+"allowed": true
+},
+{
+"value": "135.5 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/7694",
+"allowed": true
+},
+{
+"value": "135.5 - 136 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0031865",
+"allowed": false
+}
+],
+"flash_point": [
+{
+"value": ">168 °C (>334 °F) - closed cup",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/7694",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "Relative density: 0.73 g/cu cm",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/7694",
+"allowed": true
+}
+],
 "vapour_pressure": [
 {
 "value": "3.00X10-7 mm Hg at 25 °C",
@@ -7396,6 +11425,20 @@
 },
 "42745": {},
 "643820": {
+"appearance": [
+{
+"value": "Colorless oily liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8262",
+"allowed": true
+},
+{
+"value": "Liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8262",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "225 °C",
@@ -7417,6 +11460,60 @@
 },
 {
 "value": "227 °C",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1233/",
+"allowed": false
+}
+],
+"melting_point": [
+{
+"value": "<-15 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8262",
+"allowed": true
+},
+{
+"value": "Crystals; mp: 118 °C /Nerol tetrabromide/",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8262",
+"allowed": true
+},
+{
+"value": "Needles from petroleum ether; mp: 84-86 °C /Nerol allophanate/",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8262",
+"allowed": true
+},
+{
+"value": "< -15 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0005812",
+"allowed": false
+}
+],
+"flash_point": [
+{
+"value": "Flash Point: 107.78 °C /226 °F (closed cup)",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8262",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "9.8756 g/cu cm at 20 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8262",
+"allowed": true
+},
+{
+"value": "Density: 0.8813 at 15 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8262",
+"allowed": true
+},
+{
+"value": "0.875-0.880",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1233/",
 "allowed": false
@@ -7455,6 +11552,20 @@
 "62334": {},
 "108312": {},
 "31236": {
+"appearance": [
+{
+"value": "Oily liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5595",
+"allowed": true
+},
+{
+"value": "Colorless liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5595",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "473.4 °F at 760 mmHg (NTP, 1992)",
@@ -7502,7 +11613,103 @@
 "value": "242 °C @760 [mm Hg]",
 "source": "PAC Chemical Database, U.S. Department of Energy",
 "url": "https://emhub1.energy.gov/pacteel/search#122-99-6",
+"allowed": true
+}
+],
+"melting_point": [
+{
+"value": "57 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/17818",
+"allowed": true
+},
+{
+"value": "13",
+"source": "DrugBank",
+"url": "https://go.drugbank.com/drugs/DB11304",
 "allowed": false
+},
+{
+"value": "14 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5595",
+"allowed": true
+},
+{
+"value": "11-13 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0041607",
+"allowed": false
+},
+{
+"value": "14 °C",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=0538",
+"allowed": false
+},
+{
+"value": "14 °C",
+"source": "PAC Chemical Database, U.S. Department of Energy",
+"url": "https://emhub1.energy.gov/pacteel/search#122-99-6",
+"allowed": true
+}
+],
+"flash_point": [
+{
+"value": "250 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/17818",
+"allowed": true
+},
+{
+"value": "Flash point equals 250 °F",
+"source": "Haz-Map, Information on Hazardous Chemicals and Occupational Diseases",
+"url": "",
+"allowed": false
+},
+{
+"value": "260 °F (127 °C) (Closed cup)",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5595",
+"allowed": true
+},
+{
+"value": "127 °C c.c.",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=0538",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "1.104 (USCG, 1999) - Denser than water; will sink",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/17818",
+"allowed": true
+},
+{
+"value": "1.1094 at 20 °C/20 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5595",
+"allowed": true
+},
+{
+"value": "Bulk density: 9.2 lb/gal",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5595",
+"allowed": true
+},
+{
+"value": "Relative density (water = 1): 1.1",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=0538",
+"allowed": false
+},
+{
+"value": "1.11 @ 20°C",
+"source": "PAC Chemical Database, U.S. Department of Energy",
+"url": "https://emhub1.energy.gov/pacteel/search#122-99-6",
+"allowed": true
 }
 ],
 "vapour_pressure": [
@@ -7534,7 +11741,7 @@
 "value": "0.03 [mm Hg] @25 °C",
 "source": "PAC Chemical Database, U.S. Department of Energy",
 "url": "https://emhub1.energy.gov/pacteel/search#122-99-6",
-"allowed": false
+"allowed": true
 }
 ],
 "logp_measured": [
@@ -7565,6 +11772,14 @@
 ]
 },
 "6054": {
+"appearance": [
+{
+"value": "COLORLESS, VISCOUS LIQUID",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5002",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "218.2 °C",
@@ -7592,6 +11807,72 @@
 },
 {
 "value": "219-221 °C",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/920/",
+"allowed": false
+}
+],
+"melting_point": [
+{
+"value": "-27 °C",
+"source": "DrugBank",
+"url": "https://go.drugbank.com/drugs/DB02192",
+"allowed": false
+},
+{
+"value": "-27 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5002",
+"allowed": true
+},
+{
+"value": "-25.8 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0033944",
+"allowed": false
+},
+{
+"value": "-27 °C",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=0936",
+"allowed": false
+}
+],
+"flash_point": [
+{
+"value": "102 °C",
+"source": "Haz-Map, Information on Hazardous Chemicals and Occupational Diseases",
+"url": "",
+"allowed": false
+},
+{
+"value": "205 °F (96 °C) (Closed cup)",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5002",
+"allowed": true
+},
+{
+"value": "102 °C c.c.",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=0936",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "1.0202 AT 20 °C/4 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5002",
+"allowed": true
+},
+{
+"value": "1.02 g/cm³",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=0936",
+"allowed": false
+},
+{
+"value": "1.017-1.020",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/920/",
 "allowed": false
@@ -7648,9 +11929,31 @@
 "url": "",
 "allowed": false
 }
+],
+"odour_threshold": [
+{
+"value": "Odor Threshold Low: 7.02 [ppm] [Hawley] Odor threshold (detection) from CHEMINFO",
+"source": "Haz-Map, Information on Hazardous Chemicals and Occupational Diseases",
+"url": "",
+"allowed": false
+}
 ]
 },
 "31234": {
+"appearance": [
+{
+"value": "Colorless liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8266",
+"allowed": true
+},
+{
+"value": "Slightly viscous, colorless liquid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8266",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "241 °C",
@@ -7672,6 +11975,42 @@
 },
 {
 "value": "235-236 °C",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/171/",
+"allowed": false
+}
+],
+"melting_point": [
+{
+"value": "<-18 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8266",
+"allowed": true
+},
+{
+"value": "< -18 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0033962",
+"allowed": false
+}
+],
+"flash_point": [
+{
+"value": "Flash Point: 212 °F/ 100 °C/ closed cup",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8266",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "0.995 g/cu cm at 25 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8266",
+"allowed": true
+},
+{
+"value": "0.993-1.002",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/171/",
 "allowed": false
@@ -7709,6 +12048,14 @@
 "15984303": {},
 "36081": {},
 "21648": {
+"appearance": [
+{
+"value": "Colorless crystals",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8163",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "Decomposes",
@@ -7726,6 +12073,20 @@
 "value": "decomposes",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/601/",
+"allowed": false
+}
+],
+"melting_point": [
+{
+"value": "82.5 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8163",
+"allowed": true
+},
+{
+"value": "82.5 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0033723",
 "allowed": false
 }
 ]
@@ -7746,15 +12107,51 @@
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1246/",
 "allowed": false
 }
+],
+"density": [
+{
+"value": "0.873-0.877",
+"source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+"url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/1246/",
+"allowed": false
+}
 ]
 },
 "19309": {
+"appearance": [
+{
+"value": "Beige powder",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8322",
+"allowed": true
+},
+{
+"value": "Colorless crystals",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8322",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "216 °C",
 "source": "Hazardous Substances Data Bank (HSDB)",
 "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8322",
 "allowed": true
+}
+],
+"melting_point": [
+{
+"value": "77-79 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8322",
+"allowed": true
+},
+{
+"value": "77 - 78 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0040594",
+"allowed": false
 }
 ],
 "vapour_pressure": [
@@ -7775,9 +12172,39 @@
 ]
 },
 "89440": {
+"appearance": [
+{
+"value": "White to off-white crystalline solid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/7515",
+"allowed": true
+},
+{
+"value": "Solid",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/7515",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "The boiling temperature at atmospheric pressure is 326 +/- 4 °C.",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/7515",
+"allowed": true
+}
+],
+"melting_point": [
+{
+"value": "54.5 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/7515",
+"allowed": true
+}
+],
+"density": [
+{
+"value": "The relative density will be between the bulk density and its density in molten form: 600 < D < 960 kg/cu m",
 "source": "Hazardous Substances Data Bank (HSDB)",
 "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/7515",
 "allowed": true
@@ -7807,6 +12234,20 @@
 ]
 },
 "1183": {
+"appearance": [
+{
+"value": "White crystalline needles from water",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1027",
+"allowed": true
+},
+{
+"value": "White or off-white nonhygroscopic crystalline powder",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1027",
+"allowed": true
+}
+],
 "boiling_point": [
 {
 "value": "545 °F at 760 mmHg (NTP, 1992)",
@@ -7836,6 +12277,66 @@
 "value": "285 °C",
 "source": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
 "url": "http://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-flav/details/en/c/819/",
+"allowed": false
+}
+],
+"melting_point": [
+{
+"value": "178 to 181 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/21211",
+"allowed": true
+},
+{
+"value": "81-83 °C",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1027",
+"allowed": true
+},
+{
+"value": "81.5 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0012308",
+"allowed": false
+},
+{
+"value": "81-83 °C",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=1740",
+"allowed": false
+}
+],
+"flash_point": [
+{
+"value": "153 °C (307 °F) - closed cup",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1027",
+"allowed": true
+},
+{
+"value": "153 °C c.c.",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=1740",
+"allowed": false
+}
+],
+"density": [
+{
+"value": "1.056 at 68 °F (NTP, 1992) - Denser than water; will sink",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/21211",
+"allowed": true
+},
+{
+"value": "1.056",
+"source": "Hazardous Substances Data Bank (HSDB)",
+"url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1027",
+"allowed": true
+},
+{
+"value": "1.06 g/cm³",
+"source": "ILO-WHO International Chemical Safety Cards (ICSCs)",
+"url": "https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=1740",
 "allowed": false
 }
 ],
@@ -7916,7 +12417,29 @@
 "value": "281 °C @760 [mm Hg]",
 "source": "PAC Chemical Database, U.S. Department of Energy",
 "url": "https://emhub1.energy.gov/pacteel/search#120-14-9",
+"allowed": true
+}
+],
+"melting_point": [
+{
+"value": "108 to 109 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/21217",
+"allowed": true
+},
+{
+"value": "58 °C",
+"source": "Human Metabolome Database (HMDB)",
+"url": "http://www.hmdb.ca/metabolites/HMDB0032138",
 "allowed": false
+}
+],
+"flash_point": [
+{
+"value": "greater than 230 °F (NTP, 1992)",
+"source": "CAMEO Chemicals",
+"url": "https://cameochemicals.noaa.gov/chemical/21217",
+"allowed": true
 }
 ],
 "logp_measured": [

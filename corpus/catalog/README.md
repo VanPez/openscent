@@ -21,7 +21,9 @@ and measurable rather than silent.
 | `cid`, `pubchem_title`, `iupac_name`, `formula`, `mw`, `exact_mass`, `xlogp3`, `tpsa`, `hbd`, `hba`, `rotatable_bonds`, `smiles`, `inchikey`, `inchi` | computed by PubChem (NCBI) | US-government work, public domain |
 | `cas` | CAS Registry Numbers, as stated by the suppliers and checksum-validated | identifiers (facts) |
 | `commercial_names` | names the material is sold under, kept only if PubChem lists the name as a synonym or the supplier marked it with the maker's code | names only, used nominatively |
-| `vapour_pressure`, `boiling_point`, `logp_measured` (+ `_source`) | PubChem experimental properties, **only** where the depositing source is a US-government database (HSDB, CAMEO, NIOSH, EPA, NTP, FDA…); copied verbatim with the source named | public domain; values from other depositors are dropped |
+| `ec_number`, `fema_number` | as PubChem lists them among the synonyms ("EINECS 202-086-7", "FEMA No. 3107"); EC check digits validated | identifiers (facts) |
+| `vapour_pressure`, `boiling_point`, `logp_measured`, `density`, `melting_point`, `flash_point`, `odour_threshold`, `appearance` (+ `_source`, value *i* ↔ source *i*) | PubChem experimental properties, **only** where the depositing source is a US-government database (HSDB, NOAA CAMEO, OSHA, NIOSH, DOE PAC, EPA, NTP, FDA…); copied verbatim with the source named | public domain; values from other depositors (JECFA, HMDB, ICSC, Haz-Map…) are dropped |
+| `eu_allergen` | `eu-allergens.tsv`: every CAS number in Regulation (EU) 2023/1545's Annex and in entries 67–92 of Annex III of Regulation (EC) 1223/2009, read from EUR-Lex | EU legislation, reuse permitted; a labelling duty, not a safety verdict; later bans not tracked |
 | `descriptor_status`, `corpus_tags`, `status_note` | the OpenScent corpus | CC0 |
 
 No supplier's odour descriptions, prices or catalogue text are included, and the catalogue does

@@ -31,6 +31,7 @@ the corpus is untouched by anything here.
 
 USAGE
   python3 pipeline/catalog.py --fetch     # NETWORK (Hetzner): -> corpus/catalog/pubchem-props.json
+                                          #   add --refetch-measured to redo the experimental pages
   python3 pipeline/catalog.py --fetch-3d  # NETWORK (Hetzner): -> corpus/catalog/conformers.json
   python3 pipeline/catalog.py             # offline: -> corpus/catalog/materials.tsv
 """
@@ -50,7 +51,10 @@ UA = "OpenScent/0.1 (research corpus; github.com/VanPez)"
 COMPUTED = ["Title", "IUPACName", "MolecularFormula", "MolecularWeight", "ExactMass", "SMILES",
             "InChI", "InChIKey", "XLogP", "TPSA", "HBondDonorCount", "HBondAcceptorCount", "RotatableBondCount"]
 COMPUTED_OLD = [p if p != "SMILES" else "IsomericSMILES" for p in COMPUTED]
-MEASURED = {"Vapor Pressure": "vapour_pressure", "Boiling Point": "boiling_point", "LogP": "logp_measured"}
+MEASURED = {"Vapor Pressure": "vapour_pressure", "Boiling Point": "boiling_point", "LogP": "logp_measured",
+            # added 2026-09-28 (the fields of a perfumer's spec sheet), same source rule:
+            "Density": "density", "Melting Point": "melting_point", "Flash Point": "flash_point",
+            "Odor Threshold": "odour_threshold", "Color/Form": "appearance"}
 # US-government sources only (17 U.S.C. 105). Anything else is dropped, however useful.
 ALLOWED = re.compile(r"Hazardous Substances Data Bank|HSDB|ChemIDplus|CAMEO Chemicals|NIOSH|"
                      r"\bEPA\b|Environmental Protection Agency|National Toxicology Program|"
@@ -112,7 +116,9 @@ def fetch():
             row["SMILES"] = row.get("SMILES") or row.pop("IsomericSMILES", "")
             p["computed"][str(row["CID"])] = row
         save(p)
-    todo = [c for c in cids if c not in p["measured"]]
+    # --refetch-measured: redo the PubChem experimental pages (needed once, 2026-09-28, when
+    # MEASURED grew: the first fetch kept only VP / BP / logP and discarded the rest).
+    todo = cids if "--refetch-measured" in sys.argv else [c for c in cids if c not in p["measured"]]
     print(f"measured properties (US-government sources only) for {len(todo)}")
     for i, cid in enumerate(todo, 1):
         j = get_json(f"{VIEW}/{cid}/JSON?heading=" + urllib.parse.quote("Experimental Properties"))
@@ -168,6 +174,27 @@ def fetch_3d():
     print(f"done: {sum(1 for v in c.values() if v)} with 3D, {sum(1 for v in c.values() if v is None)} without")
 
 
+def ec_valid(ec: str) -> bool:
+    """EC (EINECS/ELINCS) numbers carry a check digit: weights 1..6 on the first six digits, mod 11."""
+    d = re.sub(r"\D", "", ec)
+    return len(d) == 7 and sum((i + 1) * int(x) for i, x in enumerate(d[:6])) % 11 == int(d[6])
+
+
+def identifiers(syns):
+    """EC and FEMA numbers as PubChem lists them among the synonyms ("EINECS 202-086-7",
+    "FEMA No. 2381"). No fetch: the synonym cache already holds them. Several EC numbers for one
+    CID are real (isomers, mixtures) and are all kept, in PubChem's order; bad checksums dropped."""
+    ec, fema = [], []
+    for x in syns:
+        m = re.match(r"(?:EINECS|EC)\s*(\d{3}-\d{3}-\d)$", x)
+        if m and ec_valid(m.group(1)) and m.group(1) not in ec:
+            ec.append(m.group(1))
+        m = re.match(r"FEMA\s*(?:No\.?|Number)?\s*(\d{4})\b", x, re.I)
+        if m and m.group(1) not in fema:
+            fema.append(m.group(1))
+    return {"ec_number": " | ".join(ec), "fema_number": " | ".join(fema)}
+
+
 def build():
     spec = importlib.util.spec_from_file_location("g", ROOT / "pipeline" / "gaps.py")
     g = importlib.util.module_from_spec(spec); spec.loader.exec_module(g)
@@ -179,6 +206,13 @@ def build():
     syn = {}
     for shop in g.SHOPS:
         syn.update(json.loads((ROOT / "corpus" / shop / "pubchem-cache.json").read_text(encoding="utf-8"))["syn"])
+    allerg = {}                                  # corpus/catalog/eu-allergens.tsv, 2026-09-28
+    af = CAT / "eu-allergens.tsv"
+    if af.exists():
+        for line in af.read_text(encoding="utf-8").splitlines():
+            if line and not line.startswith(("#", "cas\t")):
+                c_, src_ = line.split("\t", 1)
+                allerg[c_] = src_
     rows, dropped = [], {}
     for r in csv.DictReader(open(GAPS, encoding="utf-8"), delimiter="\t"):
         cid = r["cid"]
@@ -197,18 +231,20 @@ def build():
             # common_name: the first label a perfumer would search for (Hekserij's English
             # label comes first). A generic name like "Ionone beta" is a fact, not a claim.
             common = common or v[0]
+            if (g.SUPPLIER.search(prod) or lz(v[0]) in known) and lz(v[0]) != lz(c.get("Title", "")) \
+                    and lz(v[0]) not in {lz(x) for x in trade}:
+                trade.append(v[0])
         # Olfatorium-only materials carry Spanish shop labels ("Vainillin", "Acetato de Bencilo").
-        # There, a short PubChem title ("Vanillin") is the better display name. 2026-09-26.
         # Narrowly: only a near-spelling of the PubChem title is a shop's local spelling of the
         # same name ("Vainillin" ~ "Vanillin"). Trade names (Cedramber, Habanolide) and industry
         # labels ("Aldehyde C-11 MOA") are far from the title and stay as they are.
+        # (2026-09-28: this block had slipped INSIDE the loop's trade-name test on 09-26, which
+        # emptied commercial_names for most materials. Restored.)
         t = c.get("Title", "")
         if "hekserij" not in r["shops"] and t and lz(t) != lz(common) \
                 and difflib.SequenceMatcher(None, lz(t), lz(common)).ratio() >= 0.9:
             common = t
-            if (g.SUPPLIER.search(prod) or lz(v[0]) in known) and lz(v[0]) != lz(c.get("Title", "")) \
-                    and lz(v[0]) not in {lz(t) for t in trade}:
-                trade.append(v[0])
+        ids = identifiers(syn.get(cid, []))
         m = p["measured"].get(cid, {})
         meas = {}
         for key in MEASURED.values():
@@ -216,8 +252,11 @@ def build():
             for e in m.get(key, []):
                 if not ALLOWED.search(e["source"]):
                     dropped[e["source"]] = dropped.get(e["source"], 0) + 1
-            meas[key] = " || ".join(dict.fromkeys(e["value"] for e in ok if e["value"]))
-            meas[key + "_source"] = " || ".join(dict.fromkeys(e["source"] for e in ok))
+            # value i belongs to source i (2026-09-28: the two lists used to be de-duplicated
+            # separately, which misaligned them as soon as one source gave two values)
+            pairs = list(dict.fromkeys((e["value"], e["source"]) for e in ok if e["value"]))
+            meas[key] = " || ".join(v for v, _ in pairs)
+            meas[key + "_source"] = " || ".join(src for _, src in pairs)
         if r["status"] == "in corpus":
             dstat = "described in the corpus"
             why = r["matched_by"]
@@ -235,7 +274,8 @@ def build():
             "hbd": c.get("HBondDonorCount", ""), "hba": c.get("HBondAcceptorCount", ""),
             "rotatable_bonds": c.get("RotatableBondCount", ""),
             "smiles": c.get("SMILES", ""), "inchikey": c.get("InChIKey", ""), "inchi": c.get("InChI", ""),
-            **meas,
+            **ids, **meas,
+            "eu_allergen": next((allerg[c_] for c_ in r["cas"].split(", ") if c_ in allerg), ""),
             "descriptor_status": dstat, "corpus_tags": r["corpus_tags"], "status_note": why,
         })
     rows.sort(key=lambda x: (x["descriptor_status"] != "described in the corpus", (x["common_name"] or x["pubchem_title"]).lower()))
@@ -245,8 +285,8 @@ def build():
     n_desc = sum(r["descriptor_status"] == "described in the corpus" for r in rows)
     has = lambda k: sum(1 for r in rows if r[k])
     print(f"{len(rows)} compounds · described {n_desc} · no admissible description {len(rows) - n_desc}")
-    print(f"computed properties {has('mw')} · measured VP {has('vapour_pressure')} · BP {has('boiling_point')} "
-          f"· logP {has('logp_measured')} (US-government sources only)")
+    print(f"computed properties {has('mw')} · EC {has('ec_number')} · FEMA {has('fema_number')} · EU allergen {has('eu_allergen')}")
+    print("measured (US-government sources only): " + " · ".join(f"{k} {has(k)}" for k in MEASURED.values()))
     if dropped:
         print("measured values DROPPED for their source: " + ", ".join(f"{s or '?'} {n}" for s, n in
               sorted(dropped.items(), key=lambda kv: -kv[1])[:12]))

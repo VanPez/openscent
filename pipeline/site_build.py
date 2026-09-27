@@ -180,6 +180,28 @@ def scent_map(mats):
     return {"fam": [[n, c] for n, c, _ in FAMILIES], "pts": out}
 
 
+SPEC = [("appearance", "Appearance"), ("density", "Density"), ("melting_point", "Melting pt."),
+        ("boiling_point", "Boiling pt."), ("flash_point", "Flash pt."), ("vapour_pressure", "Vapour pr."),
+        ("logp_measured", "log Kow"), ("odour_threshold", "Odour thr.")]
+SRC_SHORT = [("Hazardous Substances", "HSDB"), ("CAMEO", "CAMEO"), ("Department of Energy", "DOE PAC"),
+             ("OSHA", "OSHA"), ("Occupational Safety", "OSHA"), ("NIOSH", "NIOSH"), ("EPA", "EPA"), ("NTP", "NTP")]
+
+
+def spec_fields(r):
+    """measured values from materials.tsv, value i paired with source i, at most 2 per field"""
+    out = {}
+    for key, _ in SPEC:
+        vals, srcs = r.get(key, ""), r.get(key + "_source", "")
+        if not vals:
+            continue
+        pairs = []
+        for v, sname in zip(vals.split(" || "), srcs.split(" || ")):
+            short = next((b for a, b in SRC_SHORT if a in sname), sname[:12])
+            pairs.append([v[:140] + ("…" if len(v) > 140 else ""), short])
+        out[key] = pairs[:2]
+    return out
+
+
 def build():
     st, g = _load("status"), _load("gaps")
     link = g._load("link", ROOT / "pipeline" / "hekserij_link.py")
@@ -227,8 +249,8 @@ def build():
             "cid": cid, "name": r["common_name"], "title": r["pubchem_title"], "trade": r["commercial_names"],
             "cas": r["cas"], "iupac": r["iupac_name"], "formula": r["formula"], "mw": r["mw"], "xlogp": r["xlogp3"],
             "tpsa": r["tpsa"], "hbd": r["hbd"], "hba": r["hba"], "smiles": r["smiles"], "inchikey": r["inchikey"],
-            "vp": r["vapour_pressure"], "vp_src": r["vapour_pressure_source"],
-            "bp": r["boiling_point"], "bp_src": r["boiling_point_source"],
+            "ec": r.get("ec_number", ""), "fema": r.get("fema_number", ""), "allergen": r.get("eu_allergen", ""),
+            "spec": spec_fields(r),
             "described": described, "note": r["status_note"],
             "tags": [t for t, _ in tagc.most_common()], "ev": found, "c3d": conf.get(cid) if conf else False,   # False = not fetched yet, None = PubChem has none
         })
@@ -237,7 +259,7 @@ def build():
     n_desc = sum(m["described"] for m in mats)
     data = {"fig": fig, "n": len(mats), "n_desc": n_desc, "n_ev": n_ev,
             "built": datetime.date.today().isoformat(), "mats": mats, "map": scent_map(mats)}
-    page = TEMPLATE.replace("/*__DATA__*/null", json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"))
+    page = TEMPLATE.replace("/*__SPEC__*/null", json.dumps(SPEC)).replace("/*__DATA__*/null", json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"))
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(page, encoding="utf-8")
     print(f"{len(mats)} materials · {n_desc} described · {n_ev} evidence quotes · corpus {fig['molecules']} molecules, "
@@ -300,6 +322,10 @@ td.num{font-family:var(--mono);text-align:right;white-space:nowrap}th.num{text-a
 .nm b{font-weight:600}.nm small{display:block;color:var(--faint);font-size:12px}
 .tag{display:inline-block;font:10px var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;margin:0 4px 4px 0;border:1px solid rgba(15,143,127,.4);color:var(--teal);background:rgba(15,143,127,.06)}
 .detail td{background:#fbfcfd;padding:18px}
+.src{font:9.5px var(--mono);letter-spacing:.06em;color:var(--faint);border:1px solid var(--line);padding:0 4px;margin-left:4px;white-space:nowrap}
+.allerg{border:1px solid rgba(154,106,20,.45);background:var(--amber-pale);color:#5b430f;font-size:12.5px;padding:8px 10px;margin-bottom:10px}
+.allerg span{font:10.5px var(--mono);color:var(--amber)}
+.nm .al{font:9.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--amber);border:1px solid rgba(154,106,20,.45);background:var(--amber-pale);padding:1px 5px;margin-left:6px;vertical-align:2px}
 .dgrid{display:grid;grid-template-columns:minmax(260px,340px) 1fr;gap:22px}
 dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:13px}dt{font:10px var(--mono);text-transform:uppercase;letter-spacing:.09em;color:var(--mut);padding-top:3px}
 dd{margin:0;font-family:var(--mono);font-size:12px;word-break:break-all}dd.est{color:var(--faint)}
@@ -397,6 +423,7 @@ function srcLink(e){
  if(e.kind==="patent"||e.kind==="passage")return `<a href="https://patents.google.com/patent/${encodeURIComponent(e.src)}/en" target="_blank" rel="noopener">${esc(e.src)}</a>`;
  return e.url?`<a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.src)}</a>`:esc(e.src);
 }
+const SPEC=/*__SPEC__*/null;
 const KIND={patent:"US patent",passage:"US patent · passage",hsdb:"US gov · PubChem",physdesc:"US gov · safety data"};
 function detail(m){
  const pc=`<a href="https://pubchem.ncbi.nlm.nih.gov/compound/${m.cid}" target="_blank" rel="noopener">${m.cid}</a>`;
@@ -405,10 +432,14 @@ function detail(m){
   :`<div class="v3d none">${m.c3d===false?"3D not built into this preview yet":"No 3D conformer in PubChem"}</div><div class="hint">&nbsp;</div>`;
  const id=`<div>${v3}<p class="h3">Identity &amp; properties</p><dl>
   ${row("PubChem CID",pc)}${row("CAS",esc(m.cas))}${row("Sold as",esc(m.trade))}${row("IUPAC",esc(m.iupac))}
-  ${row("SMILES",esc(m.smiles))}${row("InChIKey",esc(m.inchikey))}${row("TPSA",esc(m.tpsa))}${row("H-bond d/a",m.hbd!==""?esc(m.hbd+" / "+m.hba):"")}
-  ${row("Vapour pr.",m.vp?esc(m.vp)+`<br><span style="color:var(--faint)">${esc(m.vp_src)}</span>`:"",)}
-  ${row("Boiling pt.",m.bp?esc(m.bp)+`<br><span style="color:var(--faint)">${esc(m.bp_src)}</span>`:"")}
-  ${!m.vp&&!m.bp?`<dt>Measured</dt><dd class="est">none in a US-government source</dd>`:""}
+  ${row("EC / EINECS",esc(m.ec))}${row("FEMA",esc(m.fema))}
+  ${row("SMILES",esc(m.smiles))}${row("InChIKey",esc(m.inchikey))}${row("Formula",esc(m.formula))}${row("Mol. weight",esc(m.mw)+" g/mol")}
+  ${row("XLogP3",m.xlogp!==""?esc(m.xlogp)+` <span class="src">computed</span>`:"")}${row("TPSA",esc(m.tpsa))}
+ </dl>
+ ${m.allergen?`<div class="allerg" style="margin-top:14px">EU fragrance allergen · must be labelled above 0.001 % (leave-on) / 0.01 % (rinse-off)<br><span>${esc(m.allergen)}</span></div>`:""}
+ <p class="h3" style="margin-top:16px">Measured · US-government sources</p>
+ <dl>${SPEC.map(([k,l])=>m.spec[k]?row(l,m.spec[k].map(([v,s])=>`${esc(v)} <span class="src">${esc(s)}</span>`).join("<br>")):"").join("")}
+  ${Object.keys(m.spec).length?"":`<dt>Measured</dt><dd class="est">none in a US-government source</dd>`}
  </dl></div>`;
  let ev;
  if(!m.ev.length){
@@ -431,7 +462,7 @@ function render(){
   (!q||[m.name,m.title,m.trade,m.cas,m.formula,m.iupac,m.tags.join(" ")].join(" ").toLowerCase().includes(q)));
  $("#count").textContent=`${rows.length} of ${D.n}`;
  $("#tb").innerHTML=rows.map(m=>`<tr class="row${open===m.cid?" open":""}" data-cid="${m.cid}">
-  <td class="nm"><b>${esc(m.name)}</b><small>${esc(m.trade&&m.trade!==m.name?m.trade:m.title)}</small></td>
+  <td class="nm"><b>${esc(m.name)}</b>${m.allergen?'<span class="al" title="EU fragrance allergen (labelling)">allergen</span>':""}<small>${esc(m.trade&&m.trade!==m.name?m.trade:m.title)}</small></td>
   <td style="font-family:var(--mono);font-size:12.5px">${esc(m.formula)}</td><td class="num">${esc(m.mw)}</td><td class="num">${esc(m.xlogp)}</td>
   <td>${m.tags.map(x=>`<span class="tag">${esc(x)}</span>`).join("")||'<span style="color:var(--faint)">—</span>'}</td>
   <td class="num">${m.ev.length||"—"}</td>
@@ -484,7 +515,9 @@ $("#seg").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)
  document.querySelectorAll("#seg button").forEach(x=>x.classList.toggle("on",x===b));render();});
 $("#foot").innerHTML=`<b>Licence.</b> OpenScent corpus data: CC0 1.0. Odour evidence is quoted from US patents (not subject to copyright)
  and US-government databases (HSDB via PubChem, NOAA CAMEO, OSHA, NIOSH). Patents that quote copyrighted reference books are excluded.
- Identity and computed properties: PubChem (NCBI). Measured properties only from US-government sources.<br>
+ Identity and computed properties: PubChem (NCBI); EC and FEMA numbers as listed there. Measured properties only from
+ US-government sources (HSDB, NOAA CAMEO, OSHA, NIOSH, DOE PAC), each value shown with its source. EU allergen status:
+ Regulation (EC) 1223/2009 Annex III and Regulation (EU) 2023/1545 (EUR-Lex); later bans are not tracked.<br>
  <b>Method.</b> Extract, never generate: every tag rests on a verbatim quote reviewed by a person, and every odour word shown is
  highlighted where it sits in that quote.<br>
  <b>Trademarks.</b> Trade names (Iso E Super®, Cashmeran®, Hedione®, Helional® and others) belong to their owners, including IFF,
