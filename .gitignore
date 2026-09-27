@@ -71,3 +71,6 @@ corpus/raw-pubchem/probe-*.json
 # worth keeping is the analysis, not the pairs.
 pairs.jsonl
 pairs-*.jsonl
+outreach/
+corpus/hekserij/
+corpus/olfatorium/
