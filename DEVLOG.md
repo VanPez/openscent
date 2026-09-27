@@ -33,6 +33,10 @@ master /docs), linked in all three drafts, signed Ivan Pezzini. outreach/ and th
 (corpus/hekserij, corpus/olfatorium) are now LOCAL ONLY (gitignored; still in git history).
 Shop addresses go straight into "To:" — Ivan has them.
 
+**The preview gained spec-sheet fields and tag filtering on 09-28 (entry at the bottom)** —
+that is the version the emails link to. Rebuild order after any data change:
+`catalog.py` -> `site_build.py` (both offline; PubChem fetches only via Hetzner).
+
 **Noted for AFTER the emails, not before:** a visual rework of the preview with OpenScent's own
 identity (see the 09-27 entry). The GenesisL1 look stays until the emails are out.
 
@@ -4477,3 +4481,43 @@ review.html (VOCAB), REVIEW-RULES.md, .gitignore. All committed by Ivan.
   (tags and cards coloured by family), the scent map as the hero on the first screen, motion
   limited to the rotating molecule. Alternative: a dark "night lab" with glowing family colours.
   Mock up both side by side before touching the page. Footer keeps "a GenesisL1 project".
+
+---
+
+## 2026-09-28 — the preview becomes a spec sheet; a tag is a filter
+
+Prompted by an Instagram one-pager (scentree.co, coumarin): could OpenScent carry the same
+fields? Their card is theirs (compilation, wording) and not a source; the FIELDS are facts, so
+each was taken from a source we may use, with the source shown next to every value.
+
+- **EC/EINECS and FEMA numbers** — from the PubChem synonym cache, no fetch (`identifiers()` in
+  catalog.py; EC check digit validated). EC 188/208, FEMA 118/208. Coumarin 202-086-7, as on
+  the card.
+- **Measured fields extended** (`MEASURED` + `--refetch-measured`, one Hetzner run, ~210 requests):
+  density 54, melting point 48, flash point 47, appearance ("Color/Form") 56, odour threshold 9 —
+  alongside VP 47, BP 56, measured log Kow 41. US-government sources only (HSDB, CAMEO, OSHA,
+  NIOSH, DOE PAC); JECFA, HMDB, ICSC, Haz-Map, SangsterLogP, DrugBank still dropped.
+  **Bug fixed:** values and sources were de-duplicated separately and could misalign; now stored
+  as pairs (value i <-> source i). NB coumarin density: government sources say 0.935; the
+  Instagram card's 1.247 appears in none of them.
+- **EU fragrance allergens** — `corpus/catalog/eu-allergens.tsv`: every CAS number in the Annex
+  of Regulation (EU) 2023/1545 (148) and in entries 67–92 of Annex III of Regulation (EC)
+  1223/2009 (the original 26), read from EUR-Lex in Chrome (web_fetch gets an empty page there).
+  170 distinct CAS, all checksum-valid. **35 of the 208 materials are listed** (incl. Iso E
+  Super, MCK, Majantol, damascones, vanillin). A labelling duty, not a safety verdict; later
+  bans (Lilial, Lyral -> Annex II) are NOT tracked — said in the README and the page footer.
+- **Bug of 09-26 found and fixed:** the "Vainillin -> Vanillin" display-name patch had slipped
+  the trade-name test inside the wrong `if`, emptying `commercial_names` for most materials.
+  Restored: 109 materials with trade names again.
+- **Preview** (`site_build.py`): each material's panel now has Identity (CAS, EC, FEMA, SMILES,
+  InChIKey, formula, MW, XLogP3 computed, TPSA), an EU-allergen note where listed, and
+  "Measured · US-government sources" with up to two values per field, each tagged HSDB/CAMEO/…;
+  "none in a US-government source" when empty. An "allergen" mark next to the name in the table.
+- **Click a tag to filter** — any odour tag (in the table or in an evidence quote) sets the tag
+  filter; clicking the active tag clears it; the active tag is highlighted in every row.
+  Single tag for now; AND-combining two tags is a small next step if wanted.
+- Live and checked in Chrome: https://vanpez.github.io/openscent/ (fatty -> 3 of 208: heptanal,
+  decanal, octanal; allergen mark on 35).
+
+Files: pipeline/catalog.py, pipeline/site_build.py, corpus/catalog/{materials.tsv,
+pubchem-props.json, eu-allergens.tsv, README.md}, docs/preview.html. Committed and pushed by Ivan.
