@@ -28,9 +28,13 @@ open and deliberately NOT adopted: table scope, wider anaphor scope (each would 
 compounds). Permission emails go out **Monday 09-28** (outreach/, see the 09-26 entry);
 any licensed descriptors become a separate, labelled v1.1 layer — never mixed in.
 
-**Before sending the emails:** host docs/preview.html publicly (recommended: a small public
-repo `openscent-preview` with GitHub Pages — the openscent repo is private), then add the link
-line to the four drafts; Ivan fills in his surname and the two shop addresses.
+**Emails are READY (09-27):** preview live at https://vanpez.github.io/openscent/ (GitHub Pages,
+master /docs), linked in all three drafts, signed Ivan Pezzini. outreach/ and the shop lists
+(corpus/hekserij, corpus/olfatorium) are now LOCAL ONLY (gitignored; still in git history).
+Shop addresses go straight into "To:" — Ivan has them.
+
+**Noted for AFTER the emails, not before:** a visual rework of the preview with OpenScent's own
+identity (see the 09-27 entry). The GenesisL1 look stays until the emails are out.
 
 **PubChem throttles Ivan's IP** (09-26, ServerBusy for hours while Hetzner worked). ALL
 PubChem traffic goes through Hetzner. Do not run PubChem fetches on the Mac.
@@ -4447,3 +4451,29 @@ New: pipeline/{gaps,catalog,exclude_quotes,targeted_rows,site_build}.py; corpus/
 gaps,catalog}/; corpus/rows/{exclusions,targeted-rows}.jsonl; docs/{preview.html,logo.svg};
 outreach/. Changed: status.py (retired + targeted lines), hekserij_link.py, odor_terms.tsv,
 review.html (VOCAB), REVIEW-RULES.md, .gitignore. All committed by Ivan.
+
+---
+
+## 2026-09-27 — preview live; repo hygiene; a redesign noted, not started
+
+- **The repo was public all along.** The 09-26 entry assumed VanPez/openscent was private and
+  proposed a separate `openscent-preview` repo. Wrong: it is public (as is the corpus). GitHub
+  Pages now serves `docs/` from master: **https://vanpez.github.io/openscent/** (docs/index.html
+  forwards to preview.html). Checked live in Chrome: header figures, search, Cashmeran's detail
+  (3D conformer, amber "no public-domain description", empty licensed slot), scent map.
+- **Emails:** link line added to all three drafts (EN manufacturers, Hekserij, ES Olfatorium);
+  signature "Ivan Pezzini" (confirmed by Ivan — not taken from the Mac's user folder name);
+  signature link now github.com/VanPez/openscent. Send Monday 09-28.
+- **Kept off GitHub from now on** (`.gitignore`, `git rm --cached`, files kept locally):
+  `outreach/` (strategy notes the recipients could read) and `corpus/hekserij/`,
+  `corpus/olfatorium/` (the shops' product lists — EU database right, the same reason the
+  catalogue has no shop column). Earlier commits still contain them; not rewriting history.
+  NB gaps.py / catalog.py / site_build.py need those folders locally to rebuild.
+- **Redesign — decided to wait until after the emails.** Ivan finds the GenesisL1 family style
+  "a bit boring" and does not want the typical AI violet. Direction proposed (not started):
+  keep the structure (evidence-first, verbatim highlights, licensed slot, 3D, scent map), change
+  the skin to OpenScent's own identity — warm paper + deep ink with one earthy accent (vetiver /
+  oakmoss green), serif headings with mono for data, colour carried by the scent-family palette
+  (tags and cards coloured by family), the scent map as the hero on the first screen, motion
+  limited to the rotating molecule. Alternative: a dark "night lab" with glowing family colours.
+  Mock up both side by side before touching the page. Footer keeps "a GenesisL1 project".
