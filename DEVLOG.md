@@ -35,7 +35,11 @@ molecule NAMES to structures (SMILES) — a token needs a molecule, not a name. 
 reference MolNFT contract. **Money:** only NEW work can be restricted (model/inference, tokens, own
 panel data, services) — build those in a PRIVATE repo from the start.
 
-**Emails are READY (09-27):** preview live at https://vanpez.github.io/openscent/ (GitHub Pages,
+**EMAILS SENT 2026-09-28** (6 of 6, from openscent.data@gmail.com — log with channels and a
+reply column at the top of outreach/permission-emails.md, local only). **Follow up once if
+nothing by ~2026-10-12.** Any "yes" -> separate licensed layer in the FREE part.
+
+**Emails were READY (09-27):** preview live at https://vanpez.github.io/openscent/ (GitHub Pages,
 master /docs), linked in all three drafts, signed Ivan Pezzini. outreach/ and the shop lists
 (corpus/hekserij, corpus/olfatorium) are now LOCAL ONLY (gitignored; still in git history).
 Shop addresses go straight into "To:" — Ivan has them.
@@ -4591,3 +4595,57 @@ these small molecules.
 keys local); (5) redesign (own identity, mobile, SEO pre-rendering) and render from chain;
 (6) paper. Keep the healing/drug angle OFF the page and out of the emails — OpenScent claims only
 what a source says.
+
+---
+
+## 2026-09-27 (late) – 09-28 — monetisation settled, the roadmap read, the emails sent
+
+**Mike's two monetisation options** (Telegram, 27 Sept 18:21): you can SELL, you cannot RESTRICT
+free use of what is public. (1) Everything public as MolNFT v2, no monetisation. (2) 10–20% public
+as a sample, the rest as CIPMolNFT (encrypted NFT, unlocked by the buyer) sold on a marketplace.
+**Decision — hybrid:** option 1 for the corpus (already CC0 on GitHub; selling encrypted copies of
+free data would cheat buyers and break the paper's premise and the emails' promise; CIPNFT v1 also
+has a known decrypt-then-refund weakness, hardening planned). Option 2's MECHANISM reserved for
+genuinely new, own data (perfumer panel descriptions, e.g. BLiNK sessions): public sample +
+CIPMolNFT. Plus the model / paid inference as the second income line. Reply sent to Mike.
+
+**GenesisL1 roadmap** (https://roadmap.genesisl1.com, 27 Sept) — where OpenScent fits:
+- Data: MolNFT v1/v2 live (PDB, AlphaFold, HLA, 1M+ structures). OpenScent adds a new data class:
+  small molecules + a perceptual property + a verifiable source per claim. CIPNFT live
+  (ML-KEM-768 + XChaCha20-Poly1305, recipient-bound) — the sealed-sale route for own data.
+- Compute: GL1F live (GBDT as Model NFTs, byte-identical in Python/C++/EVM) = exactly the
+  planned OpenScent model format. GL1AI in development (Model NFTs with licence + fee split,
+  x402 paid inference in L1, OpenAI-compatible API, sealed models via CIPNFT) = the "data free,
+  model paid" route built into the stack.
+- Apps: PEPTL in development (docking against MolNFT structures read from chain state).
+  Odorant–olfactory-receptor docking against AlphaFold receptor models already on-chain is a
+  natural future experiment — research only, kept OFF the page and out of the emails. COLLAB
+  (scientific DAOs) — a possible home for a perfumer panel pooling data and income.
+- Mike (same evening): once deployed, OpenScent is "one more building block … reusable on-chain
+  as a native web3 object". Joe: combine forces to render orbitals of these small molecules.
+- Added to the plan: the OpenScent model as a GL1F Model NFT; receptor docking as future work in
+  the paper.
+
+**New sender address:** `openscent.data@gmail.com` — a project-only account, so licence grants
+(the legal record) land in one mailbox and OpenScent stays separate from BLiNK, Formentera Essence
+and Massivan. Not from the FE domain: a fragrance brand asking houses for their descriptors reads
+as a commercial request. Creating it: Google first offered to attach Gmail to the Massivan Google
+account (declined — "neues Google-Konto" instead); SMS verification failed on 27 Sept (weak
+signal), worked the next day. Display name "Ivan Pezzini (OpenScent)"; signature: name, "OpenScent:
+open odour data, a GenesisL1 project", preview and GitHub links.
+
+**The six requests, sent 28 Sept:**
+| to | channel | sent |
+|---|---|---|
+| Symrise | aroma.molecules@symrise.com | full email + symrise.csv (7) |
+| IFF | iff.com/scent/contact (Scent Ingredients) | full text, 25 names inline |
+| Givaudan | givaudan.com/contact chatbot ("potential supplier/business partner" -> "sustainable services/solutions") | SHORT version (~450-char box), 18 materials, "full list on request"; they answer only "if it meets a business need" |
+| dsm-firmenich | firmenich.com/contact -> Perfumery & Beauty -> Ingredient-related request | full text, 5 names inline |
+| De Hekserij | Ivan's contact | full email + list of 114 |
+| Olfatorium | Ivan's contact | full email (ES) + list of 114 |
+All disclose the GenesisL1 on-chain publication ("technically an NFT"). **Follow up once,
+politely, ~2026-10-12.**
+
+**Next:** resolve the ~990 patent-only names to structures (the prerequisite for v1.0 and the
+mint); Mike's reference MolNFT v2 contract; redesign later. Ivan moves to Claude Code after
+6 Oct — entry point ~/Documents/GenesisL1/CLAUDE.md.
