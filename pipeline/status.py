@@ -53,6 +53,33 @@ sides, which the patent rows do not have — so treat the combined figure as an 
 bound on distinct molecules, and the per-tag counts as slightly conservative (a tag
 splitting one molecule across two spellings counts it twice only if both spellings
 were approved, which review should have caught).
+
+THE HEADLINE IS NOW BY STRUCTURE (2026-10-03, Ivan's decision, "option A")
+--------------------------------------------------------------------------
+The paragraph above was right and was waiting for its fix. structures.py now gives the
+patent-side names a structure (corpus/structures/names.jsonl), and the PubChem side has had
+InChIKeys since smiles.json. So the headline counts DISTINCT STRUCTURES (full InChIKey,
+stereo kept — enantiomers can smell different, REVIEW-RULES), and the old name-text count is
+printed BESIDE it, not instead of it. A third column, connectivity only (first InChIKey
+block), is the lower bound that merges enantiomers.
+
+What changed when it was first run: 27 of 67 tags by name text became 26 by structure —
+`apple` had 34 names but 26 distinct structures (six OCR spellings of one compound, plus
+three duplicate pairs). That is the 09-05 lesson once more: a count is only as good as its
+definition of "one molecule".
+
+Rules that keep the structure count honest:
+  * a name is MERGED with another only when structures.py trusts its structure
+    (verbatim / pubchem / repaired+witness / rewritten / flat). PROVISIONAL, PUBCHEM-CHECK,
+    REWRITE-CHECK and unresolved names stay as separate names — an unconfirmed structure must
+    never be the reason two molecules become one.
+  * a PubChem row is identified by its CID's InChIKey, not by its (shouting) name.
+  * names.jsonl is GENERATED. If a patent-side name has no record in it (rows changed since
+    structures.py last ran) it counts as its own name and a warning says how many.
+  * no names.jsonl at all: the headline falls back to name text, loudly.
+
+Only this file's headline changed. gaps.py, gap_probe.py, hekserij_link.py and hedione_pool.py
+still count name text for their own purposes; they use this module's helpers, not its output.
 """
 from __future__ import annotations
 import collections, importlib.util, json, pathlib, re, sys
@@ -64,8 +91,38 @@ PHYSDESC = ROOT / "corpus" / "rows" / "pubchem-physdesc-rows.jsonl"
 PASSAGE = ROOT / "corpus" / "rows" / "passage-rows.jsonl"   # passage scope, adopted 2026-09-24
 EXCLUSIONS = ROOT / "corpus" / "rows" / "exclusions.jsonl"  # retired approved rows, 2026-09-26
 TARGETED = ROOT / "corpus" / "rows" / "targeted-rows.jsonl"  # sentence rows found by gap search, 2026-09-26
+STRUCT = ROOT / "corpus" / "structures" / "names.jsonl"          # structures.py --merge (2026-10-03)
+STRUCT_PC = ROOT / "corpus" / "structures" / "pubchem-names.json"  # Hetzner stage 2: also holds CID InChIKeys
+SMILES_CACHE = ROOT / "corpus" / "raw-pubchem" / "smiles.json"
+# structures.py trust classes whose structure is safe to MERGE two names on.
+MERGE_TRUST = {"verbatim", "pubchem", "repaired+witness", "rewritten", "flat"}
 BAR = 30
 N_TAGS = 67
+
+
+def load_identity():
+    """-> (patent: name_key -> InChIKey for trusted names, patent_known: every name_key in names.jsonl,
+    pubchem: CID -> InChIKey) or None when names.jsonl is absent."""
+    if not STRUCT.exists():
+        return None
+    pat, known = {}, set()
+    for line in STRUCT.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        r = json.loads(line)
+        known.add(r["key"])
+        if r.get("trust") in MERGE_TRUST and r.get("inchikey"):
+            pat[r["key"]] = r["inchikey"]
+    pc = {}
+    if SMILES_CACHE.exists():
+        for cid, v in json.loads(SMILES_CACHE.read_text(encoding="utf-8")).items():
+            if v.get("inchikey"):
+                pc[int(cid)] = v["inchikey"]
+    if STRUCT_PC.exists():
+        for cid, v in json.loads(STRUCT_PC.read_text(encoding="utf-8")).get("cids", {}).items():
+            if v.get("inchikey"):
+                pc.setdefault(int(cid), v["inchikey"])
+    return pat, known, pc
 
 
 def load_tags() -> dict[str, str]:
@@ -142,6 +199,7 @@ def main() -> int:
     surf = load_tags()
     patents = collections.defaultdict(set)
     pubchem = collections.defaultdict(set)
+    name2cid = collections.defaultdict(set)     # PubChem-side name text -> CIDs, for the structure join
     decisions = collections.Counter()
     unmapped = collections.Counter()
     violations = []
@@ -183,6 +241,8 @@ def main() -> int:
         m = norm(r.get("molecule_name") or "")
         if t and m:
             pubchem[t].add(m)
+            if r.get("molecule_cid"):
+                name2cid[m].add(r["molecule_cid"])
 
     # Physical Description rows (pubchem_physdesc.py, 2026-09-24): CAMEO/OSHA/NIOSH only.
     # A row held for review counts ONLY once Ivan has approved it — propose-only.
@@ -199,6 +259,8 @@ def main() -> int:
             m = norm(r.get("molecule_name") or "")
             if t and m:
                 pubchem[t].add(m)
+                if r.get("molecule_cid"):
+                    name2cid[m].add(r["molecule_cid"])
 
     # Passage-scope rows (passage_rows.py, adopted 2026-09-24, narrow form). A RESOLVED
     # REFERENCE, not a sentence-scope claim: molecule verbatim in the antecedent, anaphor and
@@ -245,13 +307,53 @@ def main() -> int:
                 if tag and mol:
                     targeted[tag].add(norm(mol))
 
-    combined = collections.defaultdict(set)
+    combined = collections.defaultdict(set)         # NAME TEXT — the pre-2026-10-03 definition
     for d in (patents, pubchem, passage, targeted):
         for t, s in d.items():
             combined[t].update(s)
 
+    # ---- the same sets, re-identified by STRUCTURE. Only the identity of a molecule changes.
+    ident = load_identity()
+    stale = 0
+    if ident:
+        pat_ik, known, pc_ik = ident
+        stale = len({m for d in (patents, passage, targeted) for s_ in d.values() for m in s_} - known)
+
+        def ik_of(name, source):
+            if source == "pubchem":
+                iks = {pc_ik[c] for c in name2cid.get(name, ()) if c in pc_ik}
+                return min(iks) if iks else None
+            return pat_ik.get(name)
+
+        def remap(d, source, level):
+            out = collections.defaultdict(set)
+            for t, s_ in d.items():
+                for m in s_:
+                    k = ik_of(m, source)
+                    out[t].add(("ik:" + (k if level == "full" else k[:14])) if k else "name:" + m)
+            return out
+
+        def views(level):
+            v = {"patents": remap(patents, "patent", level), "pubchem": remap(pubchem, "pubchem", level),
+                 "passage": remap(passage, "patent", level), "targeted": remap(targeted, "patent", level)}
+            c = collections.defaultdict(set)
+            for d in v.values():
+                for t, s_ in d.items():
+                    c[t].update(s_)
+            v["COMBINED"] = c
+            return v
+        full, flat = views("full"), views("flat")
+        name_view = {"patents": patents, "pubchem": pubchem, "passage": passage, "targeted": targeted,
+                     "COMBINED": combined}
+    else:
+        full = flat = None
+
     def bar(d):
         return sorted(t for t, s in d.items() if len(s) >= BAR)
+
+    headline = full["COMBINED"] if full else combined      # what every figure below the table uses
+    name_combined = combined
+    combined = headline
 
     print(f"decisions   {dict(decisions)}")
     print(f"            {decisions['approve']} approvals of {sum(decisions.values())} rows")
@@ -268,21 +370,51 @@ def main() -> int:
     if t_held:
         print(f"held        {t_held} targeted rows awaiting Ivan's decision (not counted)")
     print()
-    for name, d in (("patents", patents), ("pubchem", pubchem), ("passage", passage), ("targeted", targeted),
-                    ("COMBINED", combined)):
-        if name == "passage" and sentence_scope:
-            continue
-        mols = {m for s in d.values() for m in s}
-        print(f"{name:<10}{len(bar(d)):>3} of {N_TAGS} at the bar   {len(mols):>5} molecules")
+    if not full:
+        print(f"!! {STRUCT.relative_to(ROOT)} missing — the headline below is NAME TEXT, the old and weaker definition.")
+        print("   Run pipeline/structures.py (needs Java + OPSIN) and --merge.\n")
+        for name, d in (("patents", patents), ("pubchem", pubchem), ("passage", passage), ("targeted", targeted),
+                        ("COMBINED", combined)):
+            if name == "passage" and sentence_scope:
+                continue
+            mols = {m for s_ in d.values() for m in s_}
+            print(f"{name:<10}{len(bar(d)):>3} of {N_TAGS} at the bar   {len(mols):>5} molecules")
+    else:
+        print(f"{'':<10}{'BY STRUCTURE (headline)':<30}{'connectivity only':<26}{'name text (old)'}")
+        print(f"{'':<10}{'full InChIKey, stereo kept':<30}{'enantiomers merged':<26}{'one spelling = one name'}")
+        for name in ("patents", "pubchem", "passage", "targeted", "COMBINED"):
+            if name == "passage" and sentence_scope:
+                continue
+            cells = []
+            for v, unit in ((full, "molecules"), (flat, "molecules"), (name_view, "names")):
+                d = v[name]
+                mols = {m for s_ in d.values() for m in s_}
+                cells.append(f"{len(bar(d)):>3} of {N_TAGS}  {len(mols):>5} {unit}")
+            print(f"{name:<10}{cells[0]:<30}{cells[1]:<26}{cells[2]}")
+        if stale:
+            print(f"\n!! {stale} patent-side name(s) have no record in names.jsonl — rows changed since structures.py last ran."
+                  "\n   They count as their own molecule until it is re-run (python3 pipeline/structures.py; --merge).")
+        multi = sum(1 for c in name2cid.values() if len({pc_ik.get(x) for x in c if x in pc_ik}) > 1)
+        if multi:
+            print(f"\nnote        {multi} PubChem-side name(s) map to CIDs with different structures; the lowest InChIKey is used")
 
     at = bar(combined)
     print(f"\nAT THE BAR ({len(at)}):\n  {', '.join(at)}")
+    if full:
+        by_name = set(bar(name_combined))
+        lost, gained = sorted(by_name - set(at)), sorted(set(at) - by_name)
+        if lost or gained:
+            print(f"  (by name text the list would differ: also {lost or '-'}; not {gained or '-'})")
+        fl = set(bar(flat["COMBINED"]))
+        if fl != set(at):
+            print(f"  (connectivity only: {sorted(set(at) - fl) or '-'} drop, {sorted(fl - set(at)) or '-'} added)")
 
-    near = sorted(((len(s), t) for t, s in combined.items() if BAR - 10 <= len(s) < BAR), reverse=True)
+    near = sorted(((len(s_), t) for t, s_ in combined.items() if BAR - 10 <= len(s_) < BAR), reverse=True)
     if near:
         print("\nwithin reach:")
         for n, t in near:
-            print(f"  {t:<14}{n:>4}   needs {BAR - n}")
+            by = f"   (name text {len(name_combined.get(t, ()))})" if full and len(name_combined.get(t, ())) != n else ""
+            print(f"  {t:<14}{n:>4}   needs {BAR - n}{by}")
 
     left = N_TAGS - len(at)
     need = sum(BAR - len(combined.get(t, ())) for t in surf.values() if len(combined.get(t, ())) < BAR)

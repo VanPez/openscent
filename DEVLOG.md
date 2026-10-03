@@ -52,12 +52,12 @@ last two entries):** 807 of 995 patent-side names now have a structure in `corpu
 someone looks (12 repaired without a witness, 6 PubChem trade/generic names). Ivan decided all 19
 flagged "not a definite structure" names: 10 REJECTED in `review.jsonl` (backup
 `review.jsonl.bak-20261003-132153`), 1 merged (two compounds, one description), 8 rewritten at the
-structure layer only. status.py now: **1,136 approve · 1,168 reject · patents 983 · COMBINED 1,819 ·
-27 of 67 at the bar, same 27 tags** (by NAME TEXT, which is what status.py counts). **By STRUCTURE the
-figure is 26 of 67: `apple` falls from 34 names to 26 distinct structures** — six OCR spellings of one
-norcamphor alcohol and three other duplicate pairs were counting as separate molecules. Tobacco sits
-exactly on 30 by structure. Whether status.py should adopt structure identity changes the number the
-project quotes: Ivan's call. Next: that call, then freeze v1.0.
+structure layer only. **status.py's HEADLINE IS NOW BY STRUCTURE (Ivan, 10-03, "option A"): 26 of 67 tags at
+the bar, 1,745 distinct molecules (full InChIKey); 1,710 by connectivity only (enantiomers merged); name
+text, printed beside it, is 27 of 67 / 1,819 names.** `apple` fell out: 34 names but 26 distinct structures
+(six OCR spellings of one norcamphor alcohol + three duplicate pairs). Tobacco sits exactly on 30. Also now:
+1,136 approve · 1,168 reject. **Quote the structure figure; never the old 27 without saying "by name
+text".** Next: freeze v1.0 at 26 of 67 (apple needs 4 more; sources are exhausted for the near-bar tags).
 
 **Emails were READY (09-27):** preview live at https://vanpez.github.io/openscent/ (GitHub Pages,
 master /docs), linked in all three drafts, signed Ivan Pezzini. outreach/ and the shop lists
@@ -4939,3 +4939,42 @@ linkage (`...-5-yl acetate`), which was NOT done.
 3. 194 names without structure and without a flag: OCR garbage and systematic names OPSIN cannot parse. Not chased.
 4. `pubchem_smiles.py` docstring ("RUN FROM THE MAC") still not edited.
 5. Next: freeze v1.0 -> Mike's reference MolNFT v2 contract. Permission-email follow-up ~2026-10-12.
+
+---
+
+## 2026-10-03 (evening) — status.py now counts by structure (Ivan: option A)
+
+**Decision.** After the apple finding Ivan chose option A: make structure identity the headline and print
+the name-text count beside it. Recorded here because it changes the number the project quotes.
+
+**What `pipeline/status.py` does now** (full account in its docstring):
+- Headline = distinct structures by FULL InChIKey (stereo kept; enantiomers can smell different). Beside it:
+  connectivity only (first InChIKey block, enantiomers merged) and the old name-text count.
+- Names merge only when structures.py trusts the structure (verbatim / pubchem / repaired+witness / rewritten /
+  flat). PROVISIONAL, PUBCHEM-CHECK, REWRITE-CHECK and unresolved names stay separate — an unconfirmed
+  structure never makes two molecules one. PubChem rows are identified by CID -> InChIKey.
+- Reads `corpus/structures/names.jsonl` (generated). A patent-side name missing from it counts as its own molecule
+  and a warning says how many; no names.jsonl at all falls back to name text, loudly.
+- The choice of level (full InChIKey as headline) was Claude's; Ivan said "option A" without naming a level.
+  Both levels give 26 of 67 today, so it only matters for the molecule totals and for borderline tags.
+
+**Figures (status.py, 2026-10-03 evening).**
+```
+              by structure (full)     connectivity only      name text (old)
+patents        21 of 67   921           21 of 67   896         21 of 67   983
+pubchem         7 of 67   837            7 of 67   829          7 of 67   839
+passage         0 of 67     7            0 of 67     7          0 of 67     8
+targeted        0 of 67     5            0 of 67     5          0 of 67     5
+COMBINED       26 of 67  1745           26 of 67  1710         27 of 67  1819
+within reach (structure): anisic 27 · apple 26 · grapefruit 22 · leather 21 · chlorine 21
+```
+(`--sentence-scope` still works: 25 of 67 there, by all three definitions.) The at-the-bar list loses only `apple`.
+
+**Other changes.** `structures.py` no longer carries its own recount (two definitions of "one molecule" is the
+09-05 failure); `--merge` points to status.py. `gaps.py`, `gap_probe.py`, `hekserij_link.py` and
+`hedione_pool.py` still count NAME TEXT for their own purposes (they import status.py's helpers, not its output) —
+their near-bar figures will not match the headline until someone ports them. Open, not done.
+
+**Not committed.** status.py, structures.py and this DEVLOG are edited but uncommitted. The workspace
+`~/Documents/GenesisL1/CLAUDE.md` still says "27 of 67" in its OpenScent one-screen section (stale as of today;
+that file is Ivan's, not edited).

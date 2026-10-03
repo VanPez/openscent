@@ -436,18 +436,6 @@ def pubchem_side_missing_cids() -> list[int]:
                    if r.get("molecule_cid") and not sm.get(str(r["molecule_cid"]), {}).get("inchikey")})
 
 
-def pubchem_side_inchikeys() -> dict[int, str]:
-    sm = json.loads(SMILES_CACHE.read_text(encoding="utf-8"))
-    extra = json.loads(PC_OUT.read_text(encoding="utf-8"))["cids"] if PC_OUT.exists() else {}
-    out = {}
-    for r in pubchem_side_rows():
-        c = r.get("molecule_cid")
-        k = (sm.get(str(c)) or {}).get("inchikey") or (extra.get(str(c)) or {}).get("inchikey")
-        if c and k:
-            out[c] = k
-    return out
-
-
 # PubChem's name match is a synonym match, and a depositor's synonym can be wrong or generic. These
 # were read against the PubChem title/IUPAC name on 2026-10-03 (Claude's reading — Ivan or Joe can
 # overrule, and the reason is stored with the record). VETO: the structure is wrong for the span,
@@ -573,47 +561,7 @@ def merge() -> None:
     print(f"\n== STILL WITHOUT A STRUCTURE: {len(unresolved)} names, {sum(o['rows'] for o in unresolved)} rows")
     for o in sorted(unresolved, key=lambda o: o["key"]):
         print(f"    {'[' + ','.join(o['flags']) + '] ' if o['flags'] else ''}{o['spellings'][0]!r}")
-    recount(out)
-
-
-def recount(out: list) -> None:
-    """Tags at the bar if molecules are counted by STRUCTURE instead of name text. Replicates
-    status.py's COMBINED (self-check printed) and changes only the identity of a molecule."""
-    BAR = 30
-    ik = pubchem_side_inchikeys()
-    usable = {"verbatim", "pubchem", "repaired+witness", "rewritten", "flat"}      # never merge on an unverified structure
-    mode = {"names": lambda nm, k: nm,
-            "stereo": lambda nm, k: k if k else nm,
-            "flat": lambda nm, k: k[:14] if k else nm}
-    comb = {m: collections.defaultdict(set) for m in mode}
-    for o in out:
-        k = o["inchikey"] if o["trust"] in usable else None
-        for t in o["tags"]:
-            for m, f in mode.items():
-                comb[m][t].add(f("name:" + o["key"], k))
-    for r in pubchem_side_rows():
-        tag, nm, cid = (r.get("tag") or "").strip(), " ".join((r.get("molecule_name") or "").lower().split()), r.get("molecule_cid")
-        if not (tag and nm):
-            continue
-        k = ik.get(cid)
-        for m, f in mode.items():
-            comb[m][tag].add(f("name:" + nm, k) if m == "names" else f("cid:%s" % cid, k))
-    print("\n== TAGS AT THE BAR (>= 30), counting molecules three ways")
-    base = None
-    for m in ("names", "stereo", "flat"):
-        at = sorted(t for t, s in comb[m].items() if len(s) >= BAR)
-        total = len(set().union(*comb[m].values()))
-        if m == "names":
-            base = set(at)
-            print(f"  names   (status.py's way)   {len(at)} of 67 · {total} molecules   <- must equal status.py's COMBINED line")
-        else:
-            lost, gained = sorted(base - set(at)), sorted(set(at) - base)
-            print(f"  {m:<7}{'(full InChIKey)' if m == 'stereo' else '(connectivity only)':<20}{len(at)} of 67 · {total} molecules"
-                  f"   lost {lost or '-'} · gained {gained or '-'}")
-    print("  closest to the bar, by structure (flat):")
-    for t, s in sorted(comb["flat"].items(), key=lambda kv: -len(kv[1])):
-        if 24 <= len(s) <= 33:
-            print(f"      {t:<14}{len(s):>3}   (by names {len(comb['names'][t])})")
+    print("\nstructure-based tag counts: python3 pipeline/status.py (it owns that definition since 2026-10-03)")
 
 
 if __name__ == "__main__":
