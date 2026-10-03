@@ -45,6 +45,11 @@ resolved VERBATIM, grouped by the same squash name_variants.py uses. Agreement i
 disagreement is listed. The check only covers names that have a witness; the report says how
 many do not.
 
+A second kind of witness is the patent's own text (corpus/structures/text-witnesses.json, curated
+by hand from the raw patents on Hetzner, 2026-10-03): a spelling of the same compound printed
+elsewhere in the SAME patent. It is resolved by the same repair chain and lifts the name to
+repaired+witness only if it gives the same structure ("text" in the report).
+
 NAMES THAT ARE NOT A DEFINITE STRUCTURE
 ---------------------------------------
 Some approved rows name two molecules or a choice ("(E/Z)-...", "8/9-methylene...", "A or B",
@@ -256,8 +261,40 @@ REWRITE_RAW = {
          "CID 104471 and has no record for the earlier reading. Joe (2026-10-03) called the earlier reading wrong and "
          "proposed this one; Ivan asked for it to be applied (2026-10-03). The compound has no stereocentre, so nothing is "
          "lost by a flat structure", None),
+    "l,l-diethoxy-3-pentyl-5-isobutyl-4-hexene":
+        ("1,1-diethoxy-2-pentyl-5-isobutyl-4-hexene",
+         "US3584010A contradicts itself: Example 10 starts from '2-pentyl-5-isobutyl-4-hexen-1-al' (ethanol + "
+         "orthoformate, i.e. the diethyl acetal), and an acetal keeps the skeleton, so the pentyl stays on C2 — the same "
+         "pattern as Examples 3-6 (2,5-dimethyl-4-hexen-1-al -> 1,1-diethoxy-2,5-dimethyl-4-hexene) — but the product "
+         "is printed '3-pentyl'. The span stays verbatim; Ivan (2026-10-03) chose the 2-pentyl structure. PubChem has "
+         "a record for this isomer (CID 154113870) and none for the 3-pentyl reading", None),
+    "2,6,6-trimethyl-l-[ l-hydroxybutyl]-cyclohex- 2-ene":
+        ("2,6,6-trimethyl-1-(1-hydroxybutyl)cyclohex-1-ene",
+         "US3892809A makes and uses the 1-ene alcohol (Examples 5 and 11a: '2,6,6-trimethyl-1-[1-hydroxybutyl]-"
+         "cyclohex-1-ene'); the only 2-ene alcohols it makes carry a second ring OH. The '2' in 'cyclohex- 2-ene' (odour "
+         "sentence) is read as an OCR slip or typo for '1'. Claude's reading, chosen by Ivan (2026-10-03); the span "
+         "itself says 2-ene and PubChem has both alcohols, so nothing outside the patent decides it", None),
+    "6,7-dihydro-1,l,2, 3,3-pentamethyl-4(5H)-indanone":
+        ("6,7-dihydro-1,1,2,3,3-pentamethyl-4(5H)-indanone",
+         "OCR repair (l->1). The name is printed once in US3847993A (the summary), so there is no second spelling; "
+         "the structure is pinned by the patent's own chemistry instead: the ketone is the product of the allylic "
+         "oxidation of 4,5,6,7-tetrahydro-1,1,2,3,3-pentamethylindane, a name the patent prints clean in claim 7 and "
+         "four examples, and the process claim puts the carbonyl on a carbon allylic to the ring double bond (C4 and "
+         "C7 are equivalent here). Hand-authorised by Ivan (2026-10-03); same structure OPSIN gave the repaired name, "
+         "Joe's SMILES and PubChem agree with it", None),
 }
-REWRITE ={" ".join(k.lower().split()): v for k, v in REWRITE_RAW.items()}
+REWRITE = {" ".join(k.lower().split()): v for k, v in REWRITE_RAW.items()}
+
+# Text witnesses (curated 2026-10-03, Ivan): for an OCR-repaired name, a spelling of the SAME compound printed elsewhere in
+# the SAME patent's text. The spelling is resolved by the same repair chain as the name and the name is lifted from
+# PROVISIONAL to repaired+witness only if it gives the same structure. Unlike REWRITE this confirms a reading, never changes it.
+TEXT_WITNESS = OUT_DIR / "text-witnesses.json"
+
+
+def load_text_witnesses() -> dict:
+    if not TEXT_WITNESS.exists():
+        return {}
+    return {" ".join(w["raw"].split()): w for w in json.loads(TEXT_WITNESS.read_text(encoding="utf-8"))["witnesses"]}
 
 
 # ---------------------------------------------------------------- flags
@@ -360,6 +397,20 @@ def run() -> None:
             if w:
                 o["witness"] = "agree" if all(g["inchikey"][:14] == o["inchikey"][:14] for g in w) else "DISAGREE"
 
+    # text witnesses: a second spelling from the patent's own text, resolved the same way, must give the same structure
+    twit = load_text_witnesses()
+    todo_tw = [o for o in out if o["tier"] in ("formatting", "ocr") and o["inchikey"] and o["witness"] is None
+               and " ".join(o["raw"].split()) in twit]
+    if todo_tw:
+        spell = {id(o): repair(" ".join(twit[" ".join(o["raw"].split())]["spelling"].split()), FORMATTING + OCR)[0] for o in todo_tw}
+        got = resolve_batch(java, list(spell.values()))
+        for o in todo_tw:
+            w, s = twit[" ".join(o["raw"].split())], spell[id(o)]
+            same = s in got and got[s][1][:14] == o["inchikey"][:14]
+            o["text_witness"] = {"patent": w["patent"], "spelling": w["spelling"], "where": w["where"], "resolved": s if s in got else None}
+            if s in got:
+                o["witness"] = "text" if same else "DISAGREE"
+
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     OUT.write_text("".join(json.dumps(o, ensure_ascii=False) + "\n" for o in out), encoding="utf-8")
     print(f"wrote {OUT.relative_to(ROOT)}  ({len(out)} lines)")
@@ -379,7 +430,7 @@ def report(out=None) -> None:
     print(f"  connectivity block (flat)       {len({o['inchikey'][:14] for o in res})}")
     w = collections.Counter(o["witness"] for o in out if o["tier"] in ("formatting", "ocr"))
     print("\n== REPAIR CHECK (repaired names vs another VERBATIM spelling of the same molecule)")
-    print(f"  agree {w['agree']} · DISAGREE {w['DISAGREE']} · no witness {w[None]}")
+    print(f"  agree {w['agree']} · text-witnessed {w['text']} · DISAGREE {w['DISAGREE']} · no witness {w[None]}")
     for o in out:
         if o["witness"] == "DISAGREE":
             print(f"    DISAGREE  {o['raw']!r}  ->  {o['attempt']!r}")
@@ -553,7 +604,7 @@ def merge() -> None:
                       "PUBCHEM-CHECK" if t == "pubchem" and o.get("check_note") else
                       "pubchem" if t == "pubchem" else
                       "flat" if t == "stereo_dropped" else
-                      "repaired+witness" if t in ("formatting", "ocr") and o.get("witness") == "agree" else
+                      "repaired+witness" if t in ("formatting", "ocr") and o.get("witness") in ("agree", "text") else
                       "PROVISIONAL" if t in ("formatting", "ocr") else "none")
     FINAL.write_text("".join(json.dumps(o, ensure_ascii=False) + "\n" for o in out), encoding="utf-8")
     print(f"wrote {FINAL.relative_to(ROOT)}")

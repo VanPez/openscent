@@ -53,8 +53,8 @@ someone looks (12 repaired without a witness, 6 PubChem trade/generic names). Iv
 flagged "not a definite structure" names: 10 REJECTED in `review.jsonl` (backup
 `review.jsonl.bak-20261003-132153`), 1 merged (two compounds, one description), 8 rewritten at the
 structure layer only. **status.py's HEADLINE IS NOW BY STRUCTURE (Ivan, 10-03, "option A"): 26 of 67 tags at
-the bar, 1,744 distinct molecules (full InChIKey; 1,745 before the A5 rewrite, 10-03 night); 1,709 by connectivity only
-(enantiomers merged; 1,710 before); name
+the bar, 1,741 distinct molecules (full InChIKey; 1,745 before the A5 rewrite and the witness step, 10-03 night); 1,706
+by connectivity only (enantiomers merged; 1,710 before); name
 text, printed beside it, is 27 of 67 / 1,819 names.** `apple` fell out: 34 names but 26 distinct structures
 (six OCR spellings of one norcamphor alcohol + three duplicate pairs). Tobacco sits exactly on 30. Also now:
 1,136 approve · 1,168 reject. **Quote the structure figure; never the old 27 without saying "by name
@@ -66,7 +66,11 @@ repairs and 6 PUBCHEM-CHECK names. **A5 is human-confirmed wrong** (OCR "Z" is a
 AI-assisted: he put his own focus only on A1 and A5, so those 16 are still unconfirmed by a human; A1's name is
 open, B3's chain-length doubt is open. **A5 rewrite APPLIED later 10-03 (Ivan's OK)** as a
 REWRITE entry in `structures.py` — see the last entry. Also open: Joe's catalogue page (not opened); Joe's IUPAC <-> SMILES converter idea (Ivan: "let me
-think about it"). **Later 10-03:** the PubChem half of Ivan's promise is DONE — Joe's SMILES = the corpus structure for
+think about it"). **Witness hunt + Ivan's decisions, APPLIED (10-03 night, last two entries): 8 names text-witnessed
+(`corpus/structures/text-witnesses.json` -> repaired+witness), A11 rewritten to the 2-pentyl structure (two earlier
+patents of its family already print 2-pentyl), A3 rewritten to the 1-ene (Claude's reading, Ivan's choice — the one to
+revisit if wrong). A8 rewritten too (last entry): no PROVISIONAL names remain; the 6 PUBCHEM-CHECK names are the
+remaining set-aside group.** **Later 10-03:** the PubChem half of Ivan's promise is DONE — Joe's SMILES = the corpus structure for
 all 11 A items other than A5 (A11 by graph check only: it is in no PubChem record), A5 closed (CID 104471), B1–B6
 each resolve to one PubChem record; flags on B3/B4/B5/B6 in the last entry (B4 carries stereo the patent never states).
 The 367d288 / c10f806 commits are pushed, so the "not committed" note in the evening entry no longer holds.
@@ -5131,3 +5135,112 @@ within-reach list are unchanged; verbatim invariant clean.
 
 **Still PROVISIONAL (11):** A1–A4 and A6–A12. A1/A6 are one compound; none has a witness; Joe's OKs on them are
 AI-assisted; PubChem and the graph check agree with the reading but not with the patent's intent.
+
+---
+
+## 2026-10-03 (night, witness hunt) — the eleven PROVISIONAL names read against their own patents
+
+**Question (Ivan):** drop the eleven to keep human confirmation for the whole corpus? **Answer given: no.** Dropping
+removes 10 approved sentence rows + 1 passage row (A9), takes the headline from 26 to 25 of 67 (`tobacco` falls out: it
+sits exactly on 30 and rests on A2 alone) and 1,744 to 1,733 molecules (simulated with status.py's own logic; nothing
+changed). The doubt is about the structure bound to the name, not the row. Instead: keep the rows, keep the names
+out of the mint until confirmed, and look for witnesses. Ivan said yes to the hunt.
+
+**Method.** Read-only, on Hetzner: OCR-tolerant regex search of each source patent's raw text
+(`/opt/openscent/corpus/raw/<id>.txt`) for other spellings of the name. No change to any corpus file. Evidence with
+quotes: `outreach/witness-hunt-2026-10-03.md` (local). Four alternates looked up in PubChem through
+`pubchem_smiles_check.py`.
+
+**Eight names are WITNESSED in their own patent** (the same compound printed with a cleaner spelling elsewhere):
+A2 (US3705158A: hyphenated spellings + Example III), A1 and A6 (US3510510A: the 2-one, via its 2-hydroxy route),
+A4 (US3580954A: 19 mentions), A7 (US3928248A: title + body), A9 (US2849491A: the claim itself), A10 (US2800511A:
+claim 2), A12 (US3870800A: Example XII). **A8 is corroborated indirectly:** the ketone is named once, but the
+patent prints its substrate `4,5,6,7-tetrahydro-1,1,2,3,3-pentamethylindane` clean (claim 7 + four examples) and
+its process claim puts the carbonyl allylic to the ring double bond.
+
+**Two names are NOT confirmed, and one is contradicted:**
+- **A11 (US3584010A) — CONTRADICTED by its own patent.** Example 10 starts from
+  `2-pentyl-5-isobutyl-4-hexen-1-al` and makes the diethyl acetal; an acetal keeps the skeleton, so the product has the
+  pentyl on C2 (the same pattern as Examples 3–6), but the text says `1,1-diethoxy-3-pentyl-…`. The corpus structure
+  (and Joe's SMILES, which only copies the name) has the pentyl on C3. PubChem has a record for the 2-pentyl isomer
+  (CID 154113870) and none for the 3-pentyl reading. Either the patent's locant is a typo or an OCR slip; the span in
+  the corpus stays verbatim. Claude's reading: the 3-pentyl structure is probably wrong. Ivan's call: a REWRITE to the
+  2-pentyl structure (precedent: the THP ether, "the patent's own route confirms the structure"), hold it out, or reject.
+- **A3 (US3892809A) — no witness, and a doubt.** The alcohol this patent makes and uses is the 1-ene (Examples 5, 11a:
+  `…-1-[1-hydroxybutyl]-cyclohex-1-ene`); the 2-ene alcohols it makes carry a second ring OH. The single
+  "cyclohex- 2-ene" in the odour sentence may be OCR or a typo for 1-ene. PubChem has both alcohols, so it does not
+  decide. Held as read (2-ene) until Ivan chooses.
+
+**Consequences.** `tobacco`'s 30th molecule (A2) now rests on a witnessed name. Nothing applied: `names.jsonl`,
+`structures.py`, `review.jsonl` untouched, trust unchanged (still 11 PROVISIONAL). **Open policy question for Ivan:**
+`structures.py`'s witness check only compares corpus names with each other, so a witness found in the patent TEXT has
+no field to live in; options are a new `text_witness` field that lifts trust to `repaired+witness`, or a REWRITE entry
+per name (the existing hand-authorised route). Also open: the A11 and A3 decisions above.
+
+---
+
+## 2026-10-03 (night, witnesses applied) — A11 and A3 rewritten, text witnesses added (Ivan: "rewrite / 1-ene / add text witness")
+
+**Ivan's three decisions on the witness hunt.** (1) A11: rewrite to the 2-pentyl structure. (2) A3: read as the 1-ene.
+(3) Record text witnesses with a new mechanism.
+
+**A11 -> `1,1-diethoxy-2-pentyl-5-isobutyl-4-hexene`** (REWRITE entry in `structures.py`, reason stored with it). It is
+now independently confirmed twice over: the corpus already holds this compound under TWO other spellings in the two
+earlier patents of the same family, `US3381039A` (`1,l-diethoxy-2-pentyl-5-isobutyl-4hexene`) and `US3493621A`
+(`1,1 diethoxy 2 pentyl 5 isobutyl 4 hexene`, verbatim) — both say 2-pentyl. `US3584010A`'s "3-pentyl" was the odd one
+out. The existing witness check could not link them (it groups by a squashed name, and 3 vs 2 differs); my same-patent
+grep missed them for the same reason. The three names now share one structure, `CDHONGXMXOYBBS`.
+
+**A3 -> `2,6,6-trimethyl-1-(1-hydroxybutyl)cyclohex-1-ene`** (REWRITE entry). This is Claude's reading of the patent
+chosen by Ivan, NOT a confirmed one: the span says 2-ene, the patent's own alcohol is the 1-ene (Examples 5, 11a), and
+PubChem has both alcohols. No other corpus name shares the new structure (`JDSFVZWODKVXAB`). If the 2-ene was right
+after all, this row is the one to revisit.
+
+**Text witnesses (new).** `corpus/structures/text-witnesses.json` (curated by hand, 8 entries: A1, A2, A4, A6, A7, A9,
+A10, A12): per name, a spelling of the same compound printed elsewhere in the SAME patent, copied as printed. Each
+spelling was checked to occur in its patent's raw text on Hetzner. `structures.py` resolves the spelling with the same
+repair chain as the name and sets `witness: "text"` (and a `text_witness` record) only if it gives the same structure;
+trust then becomes `repaired+witness`, which status.py already merges on. A disagreement would show as DISAGREE and lift
+nothing (0 occurred). Unlike a REWRITE it confirms a reading and never changes it. A8 is deliberately NOT in the file:
+its evidence is indirect (the patent prints the substrate, the ketone once).
+
+**Rule/code changes in `structures.py`:** two REWRITE entries; `load_text_witnesses()`; the text-witness step in `run()`;
+the trust rule accepts `witness in ("agree", "text")`; report line `agree 8 · text-witnessed 8 · DISAGREE 0 · no witness 1`.
+`names.jsonl` changed in exactly 10 rows (the 8 witnessed names, A11, A3); `review.jsonl` untouched.
+
+**By trust now (distinct names):** verbatim 683 · pubchem 69 · repaired+witness 16 · rewritten 17 · flat 15 ·
+PUBCHEM-CHECK 6 · REWRITE-CHECK 0 · **PROVISIONAL 1 (A8)** · none 188.
+
+**Figures (status.py, run after).** Still 26 of 67, same at-the-bar list (`tobacco` stays: A2 is now witnessed).
+```
+              by structure (full)     connectivity only      name text (old)
+patents        21 of 67   917           21 of 67   892         21 of 67   983
+COMBINED       26 of 67  1741           26 of 67  1706         27 of 67  1819
+```
+Before this step: patents 920 / 895, combined 1,744 / 1,709; name text unchanged. The drop is three merges: A1 and A6
+(one compound, now both trusted), A4 joining its cleanly spelled sibling (`2-methyl-5-bromopentyl tetrahydropyranyl
+ether`), and A11 joining its two sibling spellings. Verbatim invariant clean.
+
+**Open.** A8 was the last PROVISIONAL name (indirect evidence only) — closed by a REWRITE in the next entry. The 6
+PUBCHEM-CHECK names are unchanged (B4's stereo, B3/B5/B6 flags).
+
+---
+
+## 2026-10-03 (night, last) — A8 rewritten; no PROVISIONAL names remain (Ivan: "A8 rewrite")
+
+**A8** (`6,7-dihydro-1,l,2, 3,3-pentamethyl-4(5H)-indanone`, US3847993A) got a REWRITE entry in `structures.py` to
+`6,7-dihydro-1,1,2,3,3-pentamethyl-4(5H)-indanone` — the same structure OPSIN gave the repaired name, so its
+InChIKey is unchanged (`MIZGSAALSYARKU`). What changes is the basis: the name is printed once in the patent, so the
+structure is pinned by the patent's own chemistry (the ketone is the allylic-oxidation product of the clean-printed
+substrate `4,5,6,7-tetrahydro-1,1,2,3,3-pentamethylindane`, claim 7 + four examples), hand-authorised by Ivan.
+Trust PROVISIONAL -> rewritten. `names.jsonl` and `names-opsin.jsonl`: one row each; `review.jsonl` untouched.
+
+**By trust now (distinct names):** verbatim 683 · pubchem 69 · repaired+witness 16 · rewritten 18 · flat 15 ·
+PUBCHEM-CHECK 6 · REWRITE-CHECK 0 · **PROVISIONAL 0** · none 188. status.py unchanged: 26 of 67, 1,741 molecules by
+structure, 1,706 by connectivity, 1,819 by name text (A8 merges with nothing). Verbatim invariant clean.
+
+**What "no PROVISIONAL" means, and does not.** Every repaired name now has a second spelling from the corpus, a text
+witness from its own patent, or a hand-authorised rewrite with a stored reason. It does not mean a chemist checked them
+all: Joe's own review covered A1 and A5, his other OKs were AI-assisted, and the witnesses show the patent spells the
+compound that way, not that the patent meant it (A5 and A11 were exactly that failure and were caught by reading the
+patents). The 6 PUBCHEM-CHECK names are the remaining set-aside group.

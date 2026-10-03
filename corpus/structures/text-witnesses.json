@@ -1,0 +1,61 @@
+{
+ "_comment": "Text witnesses for OCR-repaired names (structures.py). Each entry: a name as extracted (raw) and a SPELLING of the same compound printed elsewhere in the SAME patent's text, found 2026-10-03 by reading the raw patent text on Hetzner (corpus/raw/<patent>.txt; OCR-tolerant search; the spelling is copied as printed, OCR noise and all). structures.py resolves the spelling with the same repair chain and lifts the name from PROVISIONAL to repaired+witness ONLY if it gives the same structure. This is not a hand-authorised rewrite: the name's own reading is unchanged, it is only confirmed. Ivan chose this mechanism 2026-10-03. A8 is deliberately absent: its evidence is indirect (the patent prints the substrate, not the ketone twice). It was closed by a hand-authorised REWRITE in structures.py instead.",
+ "witnesses": [
+  {
+   "item": "A1",
+   "raw": "(+)-4-isopropenyl-1- methylbicyclo[3.l.O]hexan-2-one",
+   "patent": "US3510510A",
+   "spelling": "4-isopropenyl-l-methylbicyclo[3.1.0] hexan-2-one",
+   "where": "description: 'oxidized ... to form the novel ketone' (the 2-hydroxy compound's oxidation)"
+  },
+  {
+   "item": "A6",
+   "raw": "4- isopropenyl-l-methylbicyclo[3.1.0]hexan-2-one",
+   "patent": "US3510510A",
+   "spelling": "4-isopropenyl-l-methylbicyclo[3.1.0] hexan-2-one",
+   "where": "description: 'oxidized ... to form the novel ketone' (the 2-hydroxy compound's oxidation)"
+  },
+  {
+   "item": "A2",
+   "raw": "2,3-dimethyl 4a,5,6,7,8,8a hexahydroquinoxaline",
+   "patent": "US3705158A",
+   "spelling": "2,3-dimethyl-4a,5,6, 7,8,8a-hexahydroquinoxaline",
+   "where": "description: 'reaction of 1,2-diaminocyclohexane with diacetyl will provide ...'; also Example III"
+  },
+  {
+   "item": "A4",
+   "raw": "2-rnethyl-5-bromopentyl tetrahydropyranyl ether",
+   "patent": "US3580954A",
+   "spelling": "2-methyl-5-bromopentyl tetrahydropyranyl ether",
+   "where": "description, step 4: 'Reacting 2-methyl-5-bromopentyl tetrahydropyranyl ether with a mixture prepared from 3-methylnorcamphor'; 19 mentions"
+  },
+  {
+   "item": "A7",
+   "raw": "4-(2,6,6-trimethyl-l,3-cyclohexadien-l-yl)-2- butanol",
+   "patent": "US3928248A",
+   "spelling": "4-(2,6,6-trimethyl-1,3-cyclohexadien-1-yl)-2- butanol",
+   "where": "description; also the title"
+  },
+  {
+   "item": "A9",
+   "raw": "6,8- dirnethyl-5-nonen-2-one",
+   "patent": "US2849491A",
+   "spelling": "6,8-dimethyl-5-nonen-2-one",
+   "where": "the claim: 'I claim: 6,8-dimethyl-5-nonen-2-one'"
+  },
+  {
+   "item": "A10",
+   "raw": "7-formyl l,l,4,4,6-pentamethyl 1,2,3,4-tetrahydronaphthalene",
+   "patent": "US2800511A",
+   "spelling": "7 formyl 1,1,4,4,6 pentamethyl l,2,3,4 tetrahydronaphthalene",
+   "where": "claim 2 (the claim writes the plural, '...tetrahydronaphthalenes')"
+  },
+  {
+   "item": "A12",
+   "raw": "l,l-diethoxy-4-(methylthio)butane",
+   "patent": "US3870800A",
+   "spelling": "1,1-diethoxy-4-(methylthio)butane",
+   "where": "Example XII title and four more mentions"
+  }
+ ]
+}
