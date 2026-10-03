@@ -74,3 +74,6 @@ pairs-*.jsonl
 outreach/
 corpus/hekserij/
 corpus/olfatorium/
+
+# OPSIN jar and other downloaded tools (pipeline/structures.py documents URL + sha256)
+pipeline/tools/

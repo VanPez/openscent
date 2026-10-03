@@ -4,7 +4,7 @@
 
 ---
 
-## RESUME HERE — state as of 2026-09-26 (end of day)
+## RESUME HERE — state as of 2026-09-26 (end of day), amended through 2026-10-03
 
 **READ THIS FIRST. The 09-24 blocks below it are superseded.** Live figures (status.py):
 
@@ -38,6 +38,26 @@ panel data, services) — build those in a PRIVATE repo from the start.
 **EMAILS SENT 2026-09-28** (6 of 6, from openscent.data@gmail.com — log with channels and a
 reply column at the top of outreach/permission-emails.md, local only). **Follow up once if
 nothing by ~2026-10-12.** Any "yes" -> separate licensed layer in the FREE part.
+
+**2026-09-30 (log — TG group read, see the last entry):** nothing in the GenesisL1 group
+addresses OpenScent. M's focus is GL1F Crypto (browser-only GBDT model studio; Model NFTs;
+burned fees: 1 L1 deploy + 0.001 L1 per byte + 1 L1 listing), shipping "in a few days", and he
+asked to keep molecular topics out for now -> the reference MolNFT v2 contract is probably not
+imminent (Claude's inference). No corpus or pipeline change; status.py 09-30 is identical to the
+figures above. Next step unchanged: names -> structures, report-only dry run first.
+
+**2026-10-03 (log — names resolved to structures; Ivan's decisions on the flagged names applied; see the
+last two entries):** 807 of 995 patent-side names now have a structure in `corpus/structures/names.jsonl`
+(OPSIN offline + PubChem via Hetzner + 14 hand-authorised rewrites); 18 of those are set aside until
+someone looks (12 repaired without a witness, 6 PubChem trade/generic names). Ivan decided all 19
+flagged "not a definite structure" names: 10 REJECTED in `review.jsonl` (backup
+`review.jsonl.bak-20261003-132153`), 1 merged (two compounds, one description), 8 rewritten at the
+structure layer only. status.py now: **1,136 approve · 1,168 reject · patents 983 · COMBINED 1,819 ·
+27 of 67 at the bar, same 27 tags** (by NAME TEXT, which is what status.py counts). **By STRUCTURE the
+figure is 26 of 67: `apple` falls from 34 names to 26 distinct structures** — six OCR spellings of one
+norcamphor alcohol and three other duplicate pairs were counting as separate molecules. Tobacco sits
+exactly on 30 by structure. Whether status.py should adopt structure identity changes the number the
+project quotes: Ivan's call. Next: that call, then freeze v1.0.
 
 **Emails were READY (09-27):** preview live at https://vanpez.github.io/openscent/ (GitHub Pages,
 master /docs), linked in all three drafts, signed Ivan Pezzini. outreach/ and the shop lists
@@ -4649,3 +4669,273 @@ politely, ~2026-10-12.**
 **Next:** resolve the ~990 patent-only names to structures (the prerequisite for v1.0 and the
 mint); Mike's reference MolNFT v2 contract; redesign later. Ivan moves to Claude Code after
 6 Oct — entry point ~/Documents/GenesisL1/CLAUDE.md.
+
+---
+
+## 2026-09-30 — the GenesisL1 group read (09-29/30): what M announced, and what it means for the mint
+
+No pipeline work this session. `status.py` re-run 09-30 matches the RESUME block: 4,676 review
+rows · 1,146 approve · 1,158 reject · 2 skip · 2,370 undecided; COMBINED 27 of 67 at the bar,
+1,829 molecules; verbatim invariant clean.
+
+Ivan asked for the public GenesisL1 Telegram group to be read first (about 500 messages in two
+days). Claude read all 711 messages from Tue 09-29 00:00 to Wed 09-30 13:23 (browser local time;
+images, video and reactions not read). **Nothing in it addresses Ivan, vanpe, OpenScent or the
+reference MolNFT contract.** The only related item: M linking molnft.org/hla ("30k+ structures
+with one 3090"). Everything below is what M and others *said in a public chat* — not checked
+against docs or chain, and M himself called the fees "initial".
+
+### M's announcements (the weight of this entry)
+
+1. **GL1F Crypto — the dapp that ships first.** M (09-29): the "first mass-adoption dapp" comes
+   "in a few days"; the topic of "this week and next week". Browser-only and serverless: pick a
+   question (his example: will TAO rise 3% in 3 h without a 1% retrace, 15-min Binance candles),
+   dataset built in about a minute, one-click GBDT training (no heuristic search, walk-forward),
+   backtest with fees, slippage and leverage, then deploy as a Model NFT — "the smart contract
+   becomes the model". At launch: Binance perps, Hyperliquid perps, Coinbase spot; 212 features
+   (a 48-feature "optimal" preset); features can be added later without redeploying contracts;
+   an agent/LLM API is planned. His demo model found no edge (his words: 7 trades in September
+   2026, -4.6% vs +43.5% buy and hold) — shown on purpose. Nothing leaves the device unless you
+   deploy.
+2. **Why on-chain.** GL1F is a deterministic integer GBDT engine, bit-identical in JS, Python,
+   C++ and the EVM. The chain cannot prove a model is *good*; it can run the exact model on the
+   exact input so anyone can reproduce the exact output. This is the format the OpenScent model
+   is planned in (09-28 entry).
+3. **Fee schedule for GL1F models (late Mon 09-28).** Deploy 1 L1; weights 0.001 L1 per byte
+   (a 100 kB model burns about 100 L1); marketplace listing 1 L1; creating a subscription plan
+   1 L1 each. All burned. The admin adjusts fees but does not collect them, and becomes a
+   community multisig soon after deploy. Fees track the L1 price (lower when it rises). Stated
+   purpose: spam and chain-bloat prevention, "NOT a monetary interest". For scale, M compared
+   app.molnft.org ("largest smart contract in blockchain history", 50 GB) with roughly 500k
+   standard 100 kB models for the same chain state.
+4. **Model owners' options:** free, tips, or subscription plans (his example: 1 day = 1 L1,
+   1 month = 100 L1); the model is an NFT and can be sold. **v2 adds private models:** buy/sell
+   only (no inference plans), a separate market, stored on-chain but usable only by the owner
+   and whoever gets a view key.
+5. **CIPNFT (pointer only):** cipnft.com and the whitepaper in the GenesisL1/cipnft repo —
+   "store and trade data with post-quantum privacy", meant for IP. M's PEPTL example: design a
+   peptide, dock it, save the result on-chain public or private, timestamped, with selective
+   disclosure by view key.
+6. **GL1AI is a different product** — non-deterministic, Python sidecar inference. M's
+   framing: TAO is for training, L1 is for inference; TAO hardware owners could become GL1AI
+   operators. The GL1F paper "will go to the journal soon".
+7. **A bioinformatics runtime on GL1F is next after crypto:** M named a structure-aligner
+   algorithm using GBDT and protein-stability models. He also asked Joe (09-29 evening) to keep
+   the topic on crypto models: "later we will indeed be back to molecular models".
+8. **Positioning statements** (M, with a pointer to the genesisl1.com insights article on
+   decentralisation): the chain carries fundamental scientific data and commitments, no
+   personal or patient data, institutions keep custody; no VC, team or founder allocation.
+   For the paper or README quote the article or whitepaper, not the chat.
+
+### What it means for OpenScent (Claude's reading — labelled as such)
+
+- **Order of operations.** The reference MolNFT v2 contract is probably not imminent while GL1F
+  Crypto is the focus. That is an inference from M's stated focus, not something he said about
+  the contract. Structure resolution and the v1.0 freeze do not depend on it and can proceed.
+- **Money.** The GL1F fee schedule is for *models*. Nothing was said about what an unchunked
+  MolNFT v2 mint costs. Ask M when the reference contract arrives: gas and any per-byte charge
+  for minting the corpus, token by token.
+- **Model income line** (09-28 entry) fits the stack as described: Model NFT, sold, tipped or
+  subscribed. **Sealed route** for genuinely new own data (panel sessions) fits CIPNFT as M
+  described it — consistent with the 09-28 hybrid decision.
+- Fee figures will move ("initial", adjusted with the L1 price). Do not put any of them in a
+  public OpenScent text.
+
+### Joe, am Rand
+
+Joe kept the chemistry-visual thread going: a SMILES-to-image page (app.lcserve.com/molecule)
+on 09-29, a remark that a "pro version" for in-silico organic chemistry would be paid in L1, and
+a Hückel / delocalised-pi post today. It sits beside his standing offer to render orbitals for
+OpenScent molecules. Nothing agreed; nothing for OpenScent to do yet. (His nginx gRPC work,
+grpc.lcserve.net, is infra, not OpenScent.)
+
+### Not logged here
+
+Validator and infra items (explorer / gRPC endpoint reports on 09-30, the utsa explorer URL
+change, the cosmos chain-registry chain.json, JLO offering FirstBlock commissions to the LP),
+the wL1-sent-to-Keplr losses and the bridge fix M agreed to, Cosmobot and L1 tipping, the
+no-paid-listings notice, price talk. INFRA.md not touched — Ivan's call.
+
+### How the read was done (for next time)
+
+- Claude in Chrome on web.telegram.org/a, the group opened by name; the tab was closed after.
+- Older messages load only on a *real* wheel scroll; setting `scrollTop` from JS does nothing in
+  a background tab. The DOM keeps a sliding window (about 150 messages), so text was collected
+  during the scroll and re-read with `get_page_text`.
+- The JS tool's output filter blocked text containing URL query strings ("cookie/query string
+  data"): strip `?...` from URLs before printing.
+- On web.telegram.org/a, `#root` is the `<body>` element itself. Never `.remove()` it (done once
+  by mistake, restored at once; move its children instead).
+
+### Open / carried
+
+- **Next, unchanged:** resolve patent-only names to structures (OPSIN, PubChem fallback on
+  Hetzner), report-only dry run first. Not started.
+- **Follow up the six permission emails ~2026-10-12.** No replies logged as of this entry
+  (`outreach/permission-emails.md` unchanged).
+- `pipeline/pubchem_smiles.py` says "RUN FROM THE MAC" in its docstring — contradicts the
+  Hetzner-only PubChem rule (09-26 throttling). Fix the line before anyone runs it. Not edited.
+- Still waiting on Mike's reference MolNFT v2 contract.
+
+---
+
+## 2026-10-03 — patent names resolved to structures (dry run; nothing in the corpus changed)
+
+**What was done.** The ~990 patent-only molecule NAMES were resolved to structures, report-only.
+`review.jsonl`, `passage-rows.jsonl` and `targeted-rows.jsonl` were only READ. `status.py` output is
+identical to the 09-26/09-30 figures (1,146 approve · 27 of 67 at the bar · 1,829 combined).
+The result is a new file nothing else reads yet: `corpus/structures/names.jsonl`.
+
+**Tools (downloaded with Ivan's OK).** OPSIN 2.9.0 CLI jar (14.3 MB, `pipeline/tools/`, gitignored;
+URL + sha256 in the `structures.py` docstring) and `brew install openjdk@21` (keg-only). Offline.
+PubChem ran on Hetzner as always.
+
+**Scripts.** `pipeline/structures.py` (`--todo`, `--merge`, `--report`) and
+`pipeline/structures_pubchem.py` (stage 2, Hetzner). Outputs in `corpus/structures/`:
+`names-opsin.jsonl`, `pubchem-todo.json`, `pubchem-names.json`, `names.jsonl`.
+
+**Result — 1,005 distinct names (1,018 spellings), by how each got its structure:**
+
+```
+verbatim            682   OPSIN reads the span as extracted
+pubchem              69   PubChem name match (Hetzner), all matched records one skeleton
+repaired+witness      8   spacing/OCR repair, confirmed by another spelling of the same molecule
+flat                 16   OPSIN could not read the stereo (alpha/beta) — structure is flat
+PUBCHEM-CHECK         6   generic or trade name, kept but marked (see check_note)
+PROVISIONAL          12   repaired, no second spelling to confirm — never merged with another name
+none                212   no structure (18 of them flagged as not a definite structure)
+```
+
+793 of 1,005 names have a structure; 775 if the PROVISIONAL (12) and PUBCHEM-CHECK (6) names are set
+aside until someone has looked at them.
+
+**Checks.**
+- OPSIN vs PubChem, same names (80-name seeded sample of verbatim-resolved names): 41 compared,
+  41 same structure, 0 different; PubChem had no match for 39 (systematic names it does not know).
+- Repairs vs another VERBATIM spelling: 8 agree, 0 disagree, 12 have no witness.
+- **One repair was WRONG:** `4,7 dihydro-Z-isopentyl- 2-methyl-l,3-dioxepin` — OPSIN reads the OCR
+  "Z" (for "2") as a stereodescriptor and puts the isopentyl on the wrong carbon. Caught by reading
+  all 20 repairs by eye, not by any automatic check. That is why repaired names without a witness
+  are PROVISIONAL. Same lesson as 07-31: a valid-looking structure bound to the wrong molecule.
+- **Two PubChem hits were WRONG** and are VETOED in `structures.py` (reason stored with each):
+  `cyclohexal` -> Cyclobarbital; `l-isomer` -> lactic acid (a fragment, not a name). Six more
+  (`Terpineol`, `Cineole`, `pinoacetaldehyde`, `Nojigiku alcohol`, `Methoxyelgenol`, `terranol`)
+  are PUBCHEM-CHECK. These are Claude's reading of the PubChem title/IUPAC name; Ivan or Joe can
+  overrule. The PubChem route is a synonym match: trade names are its weak spot.
+- No two spellings of one key resolve to different structures; no squash-group (name_variants
+  style) contains members with different structures.
+
+**Duplicates.** Among the 718 names OPSIN resolved: 669 distinct full InChIKeys, 648 distinct
+connectivity blocks (57 flat structures reached by more than one name). Figures from the OPSIN
+stage, before PubChem.
+
+**Recount, molecules by structure instead of name text (`structures.py --merge`).** The name-text
+count reproduces status.py exactly (27 of 67, 1,829) — the self-check. By full InChIKey: 27 of 67,
+1,762 molecules; by connectivity only: 27 of 67, 1,727. No tag crosses the bar either way.
+Closest by connectivity: aldehydic 33 (names 33) · apple 31 (names 34) · tobacco **30** (names 31) ·
+anisic 27. Tobacco sits exactly on the bar. The join is complete: all 837 PubChem-half CIDs have an
+InChIKey (the 186 gap was closed by the Hetzner re-run Ivan approved later on 10-03).
+
+**Names that are not a definite structure (REVIEW-RULES: a definite structure, or no row).**
+19 flagged, none deleted or resolved around — Ivan's call whether the rows stay: `(E/Z)-...` (2),
+`8/9-methylene...` and `spiro(4.5)-7/6-...` (locant choice), `oxacyclohexadec-(12 or 13)-...` and
+`A or B` (choice), `...; and ...` (two names), `alkyl` families (3), `(4E,4Z)-...` (contradictory
+stereo), and "X of Y" derivative phrases (`acetate ester of ...`, `tetrahydropyranyl ether of ...`)
+which REVIEW-RULES says to rewrite at linkage, not done here. The rewrite candidates stay open.
+
+**The 19 flagged names, shown to Ivan in full 10-03 (span + source sentence).** None is touched; the
+decision is Ivan's. Effect if ALL 19 were dropped (counting by name, status.py way): no tag at the bar
+falls below it (sandalwood 41->39, musk 97->94, woody 197->192, herbal 67->64 ...); `pineapple`, in
+reach at 20, would go to 19. Reading the sentences: #1, #2 and #5 name a SINGLE compound with an E/Z
+ratio label or a contradictory descriptor; #3 is two prior-art compounds, odour attributed to both;
+#13-#15 are families (`alkyl`); #19 is not two names (the `;` is OCR for a comma) — a repair candidate,
+not a family; the derivative phrases (#6-#12) are REVIEW-RULES "X of Y" and need the rewrite at
+linkage (`...-5-yl acetate`), which was NOT done.
+
+**Left open / not done.**
+1. **DONE 10-03 (later):** the 186 PubChem-half CIDs without an InChIKey (added by the 09-24 Physical
+   Description ingest; `raw-pubchem/smiles.json` holds 651 of 837 live CIDs) were fetched on Hetzner
+   after Ivan said "rerun" (the first attempt had been denied by the permission classifier; it was
+   not worked around). Their properties live in `corpus/structures/pubchem-names.json` ("cids"), NOT
+   in `smiles.json`, which is untouched. The recount above is on the complete join.
+2. 194 names without a structure and without a flag: OCR garbage, and systematic names OPSIN cannot
+   parse. Not chased — measure which repair classes pay before adding rules.
+3. The PROVISIONAL (12) and PUBCHEM-CHECK (6) lists want Ivan's or Joe's eyes before minting.
+4. Stereo: names without stereo resolve to flat structures; that is what the span says, not a loss.
+5. `pubchem_smiles.py` docstring ("RUN FROM THE MAC") still not edited.
+6. Next after this: Ivan reads the flagged list and the two check lists -> freeze v1.0 -> Mike's
+   reference MolNFT v2 contract. Permission-email follow-up still ~2026-10-12.
+
+---
+
+## 2026-10-03 (later) — Ivan decided the 19 flagged names; structure layer finished
+
+**Ivan's decisions, one by one (numbers = the table shown to him).**
+
+| # | span (short) | Ivan | what was done |
+|---|---|---|---|
+| 1, 2 | `(E/Z)-2,4,7-trimethylocta-2,6-dien-1-ol`, `(E/Z)-9-hydroxy-5,9-dimethyldec-4-enal` | reject | rows rejected |
+| 3 | `... or ...` (two prior-art compounds) | reject | rejected |
+| 4 | `oxacyclohexadec-(12 or 13)-en-2-one` | reject | rejected |
+| 5 | `[(4E,4Z)-5-methoxy-3-methyl-4-pentenyl]-benzene` | reject | rejected |
+| 6 | `acetate ester of 1,5-dimethylcyclooct-1-en-5-ol` | rewrite | `1,5-dimethylcyclooct-1-en-5-yl acetate` |
+| 7 | `ethyl ether of allo-ocimenol` | **identify** | see below; then Ivan: **reject** |
+| 8 | `ethylester of 6-methyl-bicyclo[2.2.1]hept-2-en-5-carboxylic acid` | rewrite | `ethyl 6-methylbicyclo[2.2.1]hept-2-ene-5-carboxylate` |
+| 9 | `formate of 1,5-dimethylbicyclo[3,2,1]octan-8-ol` | rewrite | `1,5-dimethylbicyclo[3.2.1]octan-8-yl formate` |
+| 10-12 | `tetrahydropyranyl ether of 3-endo-methyl-3-exo(...)norcamphor`, three spellings | unite | one structure: `3-methyl-3-[4-methyl-5-(oxan-2-yloxy)pentyl]bicyclo[2.2.1]heptan-2-one` (flat; endo/exo not expressed) — the three keys share ONE InChIKey |
+| 13-15 | `alkyl` families | reject | rejected |
+| 16 | `1-spiro(4.5)-7/6-decen-7-yl-4 penten-1-one` | "correct" | read as "fix the name to the real structure" (Claude's reading; Ivan can overrule): `1-(spiro[4.5]dec-7-en-7-yl)pent-4-en-1-one` |
+| 17 | `8/9-methylenecyclohexadecanone` | reject | rejected |
+| 18 | `A; and B` (two compounds, one description) | split + approve | one row, `molecules` = both names, approved once |
+| 19 | OCR-damaged isochroman name | repair | `6-oxa-1,1,2,3,3-pentamethyl-2,3,5,6,7,8-hexahydro-1H-benz[f]indene` |
+
+**Evidence for the three that needed it (all read from the patent text on Hetzner, read-only).**
+- **#7 identified:** US2867668A defines "the mixture of the two isomers I and II above is herein referred to
+  as allo-ocimenol" (conjugated dienols, C10H18O; from the printed formula one has R = methyl on the carbinol
+  and ethyl on the alkene carbon, the other the reverse — 2,6-dimethylocta-3,5-dien-2-ol and
+  3,7-dimethylocta-4,6-dien-3-ol). The ethyl ether formed when the hydrochloride was solvolysed in ethanol,
+  so it is the ether of a mixture -> mixture rule. Ivan chose reject.
+- **#16:** PubChem's record for the trademark (CID 15405344, title `1-spiro(4.5)Dec-7-en-7-yl-4-penten-1-one`) has
+  the SAME InChIKey as OPSIN's reading of the rewrite (`WPFFGMCNILGTEA-UHFFFAOYSA-N`). The patent's "7/6" is a
+  slip for "7-en-7-yl". 6-en-7-yl and 7-en-8-yl parse too and give different keys — only the PubChem record
+  decides, so the cross-check is stored with the record (`rewrite_pubchem: agree`).
+- **#19:** the SAME patent (US3360530A) prints the compound correctly in Example 15(b)
+  (`6-oxa-1,1,2,3,3 pentamethyl 2,3,5,6,7,8 hexahydro-1H-benz[f]-indene`); the claim's `2;t3` is OCR for `2,3`.
+  The resolved structure is a benzo-fused tetrahydropyran, matching the claim's "tricyclic isochroman".
+
+**What changed where.**
+- `corpus/rows/review.jsonl`: 11 lines (10 rejects, 1 merge), by `pipeline/apply_flag_decisions.py --write` after
+  Ivan confirmed review.html was closed. Rejects follow review.html's own convention (molecules / molecule /
+  descriptors emptied) and keep the old values in a new `review_note` field. Every other line is byte-identical;
+  git shows 11 changed lines. Backup: `review.jsonl.bak-20261003-132153` (gitignored; delete only after a commit).
+- `pipeline/structures.py`: new tier **rewrite** (table `REWRITE`, with reason and optional PubChem
+  cross-check per entry). The corpus span never changes. `--todo` keeps the PubChem cross-check sample stable.
+- `pipeline/structures_pubchem.py`: optional `[in.json [out.json]]` arguments, and an `"extra"` list.
+- Hetzner: one more run of stage 2 (the `Spirogalbanone` lookup), read-only on PubChem.
+
+**Figures (all computed 2026-10-03, after the changes AND after the six alcohol spellings below).**
+- status.py: 1,136 approve · 1,168 reject · 2 skip · 2,370 undecided; patents 983 molecules; COMBINED 27 of 67
+  at the bar, **1,819** molecules (was 1,829); the same 27 tags at the bar; verbatim invariant clean.
+- names.jsonl: 995 distinct names. Structure by route: verbatim 683 · pubchem 69 · repaired+witness 8 ·
+  rewritten 14 · flat 15 · PUBCHEM-CHECK 6 · PROVISIONAL 12 · none 188 (0 of them flagged). 807 have a structure,
+  18 of which are set aside (PROVISIONAL + PUBCHEM-CHECK).
+- **By structure instead of name text: 26 of 67 at the bar, not 27 — `apple` drops out.** 1,745 molecules by full
+  InChIKey, 1,710 by connectivity. Closest by connectivity: aldehydic 33 · tobacco **30** · anisic 27 ·
+  apple **26** (34 by names). Apple's 28 patent-side names are 20 distinct structures: the six spellings of the
+  un-ethered norcamphor alcohol are one compound (US3580954A/US3644505A/US3624106A, same family), plus three
+  duplicate pairs (`3-hydroxy-6-cyclohexylidene-1-hexene` / `...-l-hexene`, `3-hydroxy-7-isobutyl-1,6-octadiene`
+  spaced two ways, `allyl beta-phenylpropionate` spaced two ways). Apple had crossed the bar only by PASSAGE scope
+  (09-24 entry); by structure it needs 4 more. status.py is NOT changed — it still counts name text (its docstring
+  says "an upper bound"); folding structure identity into it changes the number the project quotes: Ivan's call.
+- OPSIN vs PubChem on the same names: 41 compared, 41 the same structure.
+
+**Open.**
+1. **DONE 10-03 (last step):** the six spellings of the un-ethered alcohol
+   (`3-endo-methyl-3-exo(4'-methyl-5'-hydroxypentyl)norcamphor`) are rewritten to one structure,
+   `3-methyl-3-(5-hydroxy-4-methylpentyl)bicyclo[2.2.1]heptan-2-one` (flat), at Ivan's request. That is what
+   took `apple` below the bar by structure (see Figures). The nine norcamphor names now stand for 2 structures.
+2. PROVISIONAL (12) and PUBCHEM-CHECK (6): Ivan saw the lists and said ok; nobody has confirmed them by a
+   second source. They are marked in `names.jsonl` and never merged with another name.
+3. 194 names without structure and without a flag: OCR garbage and systematic names OPSIN cannot parse. Not chased.
+4. `pubchem_smiles.py` docstring ("RUN FROM THE MAC") still not edited.
+5. Next: freeze v1.0 -> Mike's reference MolNFT v2 contract. Permission-email follow-up ~2026-10-12.
