@@ -921,6 +921,34 @@
    "raw": "Thuj one",
    "reading": "1-isopropyl-4-methylbicyclo[3.1.0]hexan-3-one",
    "why": "spacing typo of thujone (3-thujanone). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "N1",
+   "strength": "S",
+   "raw": "FRUITATE",
+   "reading": "ethyl octahydro-1H-4,7-methanoindene-3a-carboxylate",
+   "why": "trade name; 16 other patents in the corpus define 'FRUITATE (3aS,4S,7R,7aS)-ethyl octahydro-1H-4,7-methanoindene-3a-carboxylate' (CAS 80623-07-0 is also listed); stereo dropped (flat). Approved by Ivan 2026-10-03 (the four proposals after the corpus-wide definition search)"
+  },
+  {
+   "id": "N2",
+   "strength": "S",
+   "raw": "KARANAL",
+   "reading": "5-(butan-2-yl)-2-(2,4-dimethylcyclohex-3-en-1-yl)-5-methyl-1,3-dioxane",
+   "why": "trade name; 12+ other patents in the corpus define 'KARANAL 5-(sec-butyl)-2-(2,4-dimethylcyclohex-3-en-1-yl)-5-methyl-1,3-dioxane' (CAS 117933-89-8). Approved by Ivan 2026-10-03 (the four proposals after the corpus-wide definition search)"
+  },
+  {
+   "id": "N3",
+   "strength": "S",
+   "raw": "Neobutenone",
+   "reading": "1-(5,5-dimethylcyclohex-1-en-1-yl)pent-4-en-1-one",
+   "why": "trade name; 12+ other patents in the corpus define 'Neobutenone 1-(5,5-dimethyl-1-cyclohexen-1-yl)-4-penten-1-one, origin Firmenich SA'. Approved by Ivan 2026-10-03 (the four proposals after the corpus-wide definition search)"
+  },
+  {
+   "id": "N4",
+   "strength": "S",
+   "raw": "torreyal",
+   "reading": "9-(furan-3-yl)-2,6-dimethylnona-2,6-dienal",
+   "why": "US3654309A names it in its own Example 14: '9-(3-furyl)-2,6-dimethyl-2,6-nonadienal (torreyal)'; E/Z not stated (flat). Approved by Ivan 2026-10-03 (the four proposals after the corpus-wide definition search)"
   }
  ]
 }

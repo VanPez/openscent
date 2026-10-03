@@ -54,7 +54,7 @@ flagged "not a definite structure" names: 10 REJECTED in `review.jsonl` (backup
 `review.jsonl.bak-20261003-132153`), 1 merged (two compounds, one description), 8 rewritten at the
 structure layer only. **status.py's HEADLINE IS NOW BY STRUCTURE (Ivan, 10-03, "option A"): 24 of 67 tags at
 the bar after the 10-03 night rewrites (26 before them: tobacco and sandalwood fell to 29 when their name-only units
-resolved and merged), 1,712 distinct molecules (full InChIKey); 1,673 by connectivity only (enantiomers merged); name
+resolved and merged), 1,710 distinct molecules (full InChIKey); 1,671 by connectivity only (enantiomers merged); name
 text, printed beside it, is 27 of 67 / 1,819 names.** `apple` fell out: 34 names but 26 distinct structures
 (six OCR spellings of one norcamphor alcohol + three duplicate pairs). Tobacco sits exactly on 30. Also now:
 1,136 approve · 1,168 reject. **Quote the structure figure; never the old 27 without saying "by name
@@ -78,12 +78,12 @@ each resolve to one PubChem record; flags on B3/B4/B5/B6 in the last entry (B4 c
 The 367d288 / c10f806 commits are pushed, so the "not committed" note in the evening entry no longer holds.
 
 **2026-10-03 (log — structures for the unresolved names; see the last two entries):** names without a structure went from 188
-to 52. Ivan approved 136 hand-authorised rewrites in all (31 for the four lost tags, then 105 of the strong and medium
+to 48. Ivan approved 140 hand-authorised rewrites in all (31 for the four lost tags, 4 trade names found by the definition search, then 105 of the strong and medium
 readings for the rest), kept in `corpus/structures/rewrites.json` (curated data, each with its reason; `structures.py` loads
-it). By trust: verbatim 683 · pubchem 69 · repaired+witness 16 · rewritten 154 · flat 15 · PUBCHEM-CHECK 6 · none 52.
-The 52: not definite structures (mixtures, two compounds, no locants), names impossible or inconsistent as written, obsolete
+it). By trust: verbatim 683 · pubchem 69 · repaired+witness 16 · rewritten 158 · flat 15 · PUBCHEM-CHECK 6 · none 48.
+The 48: not definite structures (mixtures, two compounds, no locants), names impossible or inconsistent as written, obsolete
 ring nomenclature, trade names with no definition found, plus the held ones (cyclohomocitral x2, hydrindacene x2,
-`6,7,8-Decene-1ol`) and 2 vetoed. Counting only names with a trusted structure the corpus is 1,654 molecules by structure
+`6,7,8-Decene-1ol`) and 2 vetoed. Counting only names with a trusted structure the corpus is 1,656 molecules by structure
 and also 24 of 67 tags. Several rewrites are Claude's derivations (flagged "medium" in their reason) — the first place to look
 if a structure is ever questioned.
 
@@ -5383,3 +5383,35 @@ structures. Verbatim invariant clean.
 definition search for ~20 trade names (FRUITATE, KARANAL, Neobutenone, Spicatone, drimanols, …) was still running on Hetzner when
 this was committed; if it finds definitions they become new proposals for Ivan. Leftovers on Hetzner: `/tmp` files of mine
 (`pubchem_smiles_check.py`, `cir.py`, `hunt*.py`, `rest-*.json`, `tagrec*`), and `/opt/openscent` has three small JSON files.
+
+---
+
+## 2026-10-03 (night, after the push) — the trade-name definition search finished: 4 new proposals, not applied
+
+The bracket-tolerant, corpus-wide search for ~20 trade names (running on Hetzner when `8bddadc` was committed) found definitions
+for four, all strong: **FRUITATE** = ethyl octahydro-1H-4,7-methanoindene-3a-carboxylate (16 patents, CAS 80623-07-0),
+**KARANAL** = 5-(sec-butyl)-2-(2,4-dimethylcyclohex-3-en-1-yl)-5-methyl-1,3-dioxane (12+ patents, CAS 117933-89-8),
+**Neobutenone** = 1-(5,5-dimethylcyclohex-1-en-1-yl)pent-4-en-1-one (12+ patents), **torreyal** = 9-(3-furyl)-2,6-dimethyl-2,6-
+nonadienal (US3654309A's own Example 14). All parse in OPSIN. **Muscenone** is held: the corpus defines it as a 4-/5-ene mixture
+(24 patents) and as the single (Z)-5-ene (17 patents). No definition for Spicatone, petal, huminol, lanceol, patchoulione,
+8-drimanol, 9-nordrimanol, dihydrocyclol, dehydrorhodinol, Dihydronorpatchoulinol, Epoxytamariscol, Hydroxysinensal,
+nortetrapatchoulol, 4-caronone, geranylnitrile, iso-pulegone. **Nothing applied** (Ivan's approval covered the table of the 105, not
+these); proposals appended to `outreach/rest-readings-2026-10-03.md`. This entry is uncommitted.
+
+---
+
+## 2026-10-03 (night, very last) — the four trade-name rewrites applied (Ivan: "yes")
+
+FRUITATE, KARANAL, Neobutenone and torreyal are now entries 137-140 of `corpus/structures/rewrites.json` (readings as in the entry
+above). `structures.py` and `--merge` re-run: `names.jsonl` changed in exactly 4 rows (none -> rewritten), `review.jsonl`
+untouched. **KARANAL and Neobutenone merged into structures the corpus already held under verbatim spellings**
+(`2-(2,4-dimethylcyclohex-3-en-1-yl)-5-methyl-5-(1-methylpropyl)-1,3-dioxane` and `1-(5,5-dimethyl-1-cyclohexen-1-yl)-4-penten-1-one`,
+both OPSIN-parsed verbatim) — an independent confirmation of the trade-name definitions. By trust: verbatim 683 · pubchem 69 ·
+repaired+witness 16 · rewritten 158 · flat 15 · PUBCHEM-CHECK 6 · PROVISIONAL 0 · none 48.
+
+**Figures (status.py, run after).** 24 of 67 (same list); COMBINED 1,710 molecules by structure, 1,671 by connectivity, 1,819 by
+name text; patents 889 / 860. Counting only names with a trusted structure (54 names dropped): 1,656 molecules by structure,
+1,617 by connectivity, also 24 of 67. Verbatim invariant clean. RESUME block updated to these figures.
+
+**Open.** The 48 names without a structure (not definite, impossible as written, obsolete nomenclature, no definition found;
+Muscenone held as a mixture). Uncommitted: `rewrites.json`, `names*.jsonl`, this and the previous DEVLOG entry.
