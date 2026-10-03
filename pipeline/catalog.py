@@ -52,7 +52,7 @@ COMPUTED = ["Title", "IUPACName", "MolecularFormula", "MolecularWeight", "ExactM
             "InChI", "InChIKey", "XLogP", "TPSA", "HBondDonorCount", "HBondAcceptorCount", "RotatableBondCount"]
 COMPUTED_OLD = [p if p != "SMILES" else "IsomericSMILES" for p in COMPUTED]
 MEASURED = {"Vapor Pressure": "vapour_pressure", "Boiling Point": "boiling_point", "LogP": "logp_measured",
-            # added 2026-09-28 (the fields of a perfumer's spec sheet), same source rule:
+            # added 2026-09-27 (the fields of a perfumer's spec sheet), same source rule:
             "Density": "density", "Melting Point": "melting_point", "Flash Point": "flash_point",
             "Odor Threshold": "odour_threshold", "Color/Form": "appearance"}
 # US-government sources only (17 U.S.C. 105). Anything else is dropped, however useful.
@@ -116,7 +116,7 @@ def fetch():
             row["SMILES"] = row.get("SMILES") or row.pop("IsomericSMILES", "")
             p["computed"][str(row["CID"])] = row
         save(p)
-    # --refetch-measured: redo the PubChem experimental pages (needed once, 2026-09-28, when
+    # --refetch-measured: redo the PubChem experimental pages (needed once, 2026-09-27, when
     # MEASURED grew: the first fetch kept only VP / BP / logP and discarded the rest).
     todo = cids if "--refetch-measured" in sys.argv else [c for c in cids if c not in p["measured"]]
     print(f"measured properties (US-government sources only) for {len(todo)}")
@@ -206,7 +206,7 @@ def build():
     syn = {}
     for shop in g.SHOPS:
         syn.update(json.loads((ROOT / "corpus" / shop / "pubchem-cache.json").read_text(encoding="utf-8"))["syn"])
-    allerg = {}                                  # corpus/catalog/eu-allergens.tsv, 2026-09-28
+    allerg = {}                                  # corpus/catalog/eu-allergens.tsv, 2026-09-27
     af = CAT / "eu-allergens.tsv"
     if af.exists():
         for line in af.read_text(encoding="utf-8").splitlines():
@@ -238,7 +238,7 @@ def build():
         # Narrowly: only a near-spelling of the PubChem title is a shop's local spelling of the
         # same name ("Vainillin" ~ "Vanillin"). Trade names (Cedramber, Habanolide) and industry
         # labels ("Aldehyde C-11 MOA") are far from the title and stay as they are.
-        # (2026-09-28: this block had slipped INSIDE the loop's trade-name test on 09-26, which
+        # (2026-09-27: this block had slipped INSIDE the loop's trade-name test on 09-26, which
         # emptied commercial_names for most materials. Restored.)
         t = c.get("Title", "")
         if "hekserij" not in r["shops"] and t and lz(t) != lz(common) \
@@ -252,7 +252,7 @@ def build():
             for e in m.get(key, []):
                 if not ALLOWED.search(e["source"]):
                     dropped[e["source"]] = dropped.get(e["source"], 0) + 1
-            # value i belongs to source i (2026-09-28: the two lists used to be de-duplicated
+            # value i belongs to source i (2026-09-27: the two lists used to be de-duplicated
             # separately, which misaligned them as soon as one source gave two values)
             pairs = list(dict.fromkeys((e["value"], e["source"]) for e in ok if e["value"]))
             meas[key] = " || ".join(v for v, _ in pairs)

@@ -5,8 +5,11 @@ pubchem_smiles.py — structures for the PubChem rows. The missing half of a fea
     python3 pipeline/pubchem_smiles.py            # fetch, cache, report
     python3 pipeline/pubchem_smiles.py --status   # what is cached, no network
 
-RUN FROM THE MAC. PubChem is not reachable from the Hetzner box or from Claude's sandbox;
-pubchem.py has always run here and this follows it.
+RUN IT FROM HETZNER, NEVER FROM THE MAC. PubChem throttles Ivan's home IP (ServerBusy for hours
+on 2026-09-26) and every PubChem fetch has gone through the Hetzner box since; Hetzner reaches
+PubChem fine (structures_pubchem.py ran there on 2026-10-03). It needs corpus/rows/pubchem-rows.jsonl
+next to it and writes corpus/raw-pubchem/smiles.json — scp both ways, as structures_pubchem.py does.
+(This line used to say the opposite: that PubChem was only reachable from the Mac. Corrected 2026-10-03.)
 
 WHY THIS EXISTS
 ---------------
