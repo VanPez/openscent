@@ -59,6 +59,15 @@ text, printed beside it, is 27 of 67 / 1,819 names.** `apple` fell out: 34 names
 1,136 approve · 1,168 reject. **Quote the structure figure; never the old 27 without saying "by name
 text".** Next: freeze v1.0 at 26 of 67 (apple needs 4 more; sources are exhausted for the near-bar tags).
 
+**2026-10-03 (log — Joe's review of the 18 set-aside names; see the last entry):** Ivan sent Joe the 12 PROVISIONAL
+repairs and 6 PUBCHEM-CHECK names. **A5 is human-confirmed wrong** (OCR "Z" is a "2"; correct compound is the
+2-isopentyl-2-methyl-4,7-dihydro-1,3-dioxepin already in `names.jsonl`). Joe's other OKs (A2–A4, A6–A12, B1–B6) are
+AI-assisted: he put his own focus only on A1 and A5, so those 16 are still unconfirmed by a human; A1's name is
+open, B3's chain-length doubt is open. **Nothing applied yet** — the A5 correction (a REWRITE in `structures.py`)
+waits for Ivan's OK. Also open: diff Joe's SMILES list against `names.jsonl`; check the rest against Joe's catalogue
+and PubChem (Ivan told Joe he would); Joe's IUPAC <-> SMILES converter idea (Ivan: "let me think about it").
+The 367d288 / c10f806 commits are pushed, so the "not committed" note in the evening entry no longer holds.
+
 **Emails were READY (09-27):** preview live at https://vanpez.github.io/openscent/ (GitHub Pages,
 master /docs), linked in all three drafts, signed Ivan Pezzini. outreach/ and the shop lists
 (corpus/hekserij, corpus/olfatorium) are now LOCAL ONLY (gitignored; still in git history).
@@ -4937,7 +4946,7 @@ linkage (`...-5-yl acetate`), which was NOT done.
 2. PROVISIONAL (12) and PUBCHEM-CHECK (6): Ivan saw the lists and said ok; nobody has confirmed them by a
    second source. They are marked in `names.jsonl` and never merged with another name.
 3. 194 names without structure and without a flag: OCR garbage and systematic names OPSIN cannot parse. Not chased.
-4. `pubchem_smiles.py` docstring ("RUN FROM THE MAC") still not edited.
+4. `pubchem_smiles.py` docstring ("RUN FROM THE MAC") still not edited. **DONE later 10-03 in `c10f806`.**
 5. Next: freeze v1.0 -> Mike's reference MolNFT v2 contract. Permission-email follow-up ~2026-10-12.
 
 ---
@@ -4975,6 +4984,71 @@ within reach (structure): anisic 27 · apple 26 · grapefruit 22 · leather 21 �
 `hedione_pool.py` still count NAME TEXT for their own purposes (they import status.py's helpers, not its output) —
 their near-bar figures will not match the headline until someone ports them. Open, not done.
 
-**Not committed.** status.py, structures.py and this DEVLOG are edited but uncommitted. The workspace
+**Was uncommitted when written; committed and pushed afterwards (`367d288`, 11:37 UTC).** The workspace
 `~/Documents/GenesisL1/CLAUDE.md` still says "27 of 67" in its OpenScent one-screen section (stale as of today;
 that file is Ivan's, not edited).
+
+---
+
+## 2026-10-03 (night) — Joe's review of the 18 names: A5 confirmed wrong; nothing else confirmed by a human
+
+**What was asked.** Ivan sent Joe the 18 set-aside names on Telegram at 11:49 UTC: 12 PROVISIONAL repairs (A1–A12)
+and 6 PUBCHEM-CHECK trade/generic names (B1–B6), "ok / wrong (+ the right name) / can't tell" for each. The draft is
+`outreach/joe-review-18-names-2026-10-03.md` (local only, gitignored). Joe replied between 14:47 and 15:21 UTC.
+Everything below is from that chat (read 10-03); Claude's own comments are marked.
+
+**What Joe said.**
+- **A5 is wrong.** His replacement is `CC(C)CCC1(C)OCC=CCO1` (2-isopentyl-2-methyl-4,7-dihydro-1,3-dioxepin). By
+  reading, that is the compound `names.jsonl` already holds under two verbatim spellings
+  (`2-(3-methylbutyl)-2-methyl-4,7-dihydro-1,3-dioxepin`, `4,7-dihydro-2-isopentyl-2-methyl-1,3-dioxepin`, both
+  InChIKey `FFANAZFONFVGKZ-UHFFFAOYSA-N`). Not checked mechanically (no RDKit in the Mac's python3). The wrong
+  repair on file is InChIKey `QISJTHUWIHNVLJ-UHFFFAOYSA-N`. He adds: the ring C=C is cis, and the ketal carbon is
+  symmetric, so there is no stereocentre and the flat SMILES loses nothing.
+- **A1: "not sure".** The structure he rendered is the one we have (A1 = A6). His doubt is the name: he would
+  count the C=O as C1. *Claude's reading, not verified by a second source:* bicyclo numbering starts at a bridgehead,
+  so "2-one" stands. He did not say the structure was wrong.
+- **A2, A3, A4, A6, A7 "correct I think"; "everything seems fine except A5".** But at 15:08 UTC he said he used AI
+  and put his own deep focus **only on A1 and A5**. So this is NOT a human confirmation. His SMILES + formula list
+  for A1–A12 is AI-assisted too, and has not been diffed against `names.jsonl`.
+- **B1–B6: "I think all your B's are ok".** Only B1 and B2 got reasoning: B1 he assumes alpha ("might be trivial so
+  that it can be left aside… can't tell for sure"); B2 he says 1,8-cineole by a numbering argument. B3 (propanal
+  record vs the name's acetaldehyde) was not addressed; B4–B6 got the blanket OK only. *Claude, from memory,
+  unverified:* his "no enantiomer" for terpineol is true of the carbinol carbon only; alpha-terpineol is chiral at
+  ring C4. The flat row is unaffected.
+- He proposes building an IUPAC <-> SMILES converter with the catalogue ("Let's develop…", 15:21 UTC). His sketch,
+  15:28: a big catalogue of functional group -> SMILES fragments plus a priority function that checks the heaviest
+  atom — "the core idea of chemical nomenclature… it will be complicated". Ivan's answer, 15:26: interesting, "let me
+  think about it" — not a commitment. Joe also offered (in German) to keep explaining the chemistry basics.
+
+**Thread, for provenance.** 15:07 UTC: the thanks + B1–B6 question went out from Ivan's Telegram, typed by Claude in
+Chrome on Ivan's approval of the draft. 15:26 UTC: Ivan's second thanks, in his own wording, sent by Ivan (he pasted
+the later messages to Claude as a screenshot). Ivan told Joe he would take A5 and check the rest against the
+catalogue and PubChem.
+
+**State of the 18, after Joe.**
+
+| | |
+|---|---|
+| A5 | human-confirmed wrong |
+| A1 | structure not contested; name unconfirmed |
+| A2–A4, A6–A12 | AI-assisted OK only |
+| B1–B6 | soft OK; B3's chain-length question open; B4–B6 still depositor synonyms |
+
+**Nothing applied.** `names.jsonl`, `structures.py` and `review.jsonl` are untouched; the A5 row still carries the
+wrong repair (PROVISIONAL).
+
+**Open.**
+1. **A5, on Ivan's OK:** add a REWRITE entry in `structures.py` mapping the A5 name to the 2-isopentyl-2-methyl
+   structure, re-run `structures.py` and `status.py`. The wrong repair is currently its own molecule, so the totals
+   may move; re-run, do not predict.
+2. Diff Joe's A1–A12 SMILES against `names.jsonl` (needs an environment with RDKit or InChIKey tooling), and
+   check the rest against Joe's catalogue (`app.lcserve.com/catalogue?smiles=`) and PubChem — what Ivan told Joe
+   he would do.
+3. B3 and B4–B6: a second source, or leave them marked.
+4. The converter idea: Ivan told Joe "let me think about it" (15:26 UTC). Joe expects it to be complicated.
+5. Unchanged: freeze v1.0; permission-email follow-up ~2026-10-12.
+
+**Corrections to the entries above.** The "Not committed" line was true when written and is fixed above. Open item
+4 of "structure layer finished" (`pubchem_smiles.py` docstring) was done in `c10f806` (11:43 UTC): the docstring now
+says all PubChem traffic goes through Hetzner; the same commit corrected the allergen/catalogue dates in comments.
+No logic changed.
