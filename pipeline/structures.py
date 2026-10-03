@@ -285,6 +285,13 @@ REWRITE_RAW = {
 }
 REWRITE = {" ".join(k.lower().split()): v for k, v in REWRITE_RAW.items()}
 
+# More hand-authorised rewrites live in corpus/structures/rewrites.json (curated data, same meaning as REWRITE_RAW: a span
+# stays verbatim, the rewrite only decides which structure it stands for; each carries its reason). Added 2026-10-03.
+REWRITE_FILE = OUT_DIR / "rewrites.json"
+if REWRITE_FILE.exists():
+    for _w in json.loads(REWRITE_FILE.read_text(encoding="utf-8"))["rewrites"]:
+        REWRITE[" ".join(_w["raw"].lower().split())] = (_w["reading"], _w["why"], None)
+
 # Text witnesses (curated 2026-10-03, Ivan): for an OCR-repaired name, a spelling of the SAME compound printed elsewhere in
 # the SAME patent's text. The spelling is resolved by the same repair chain as the name and the name is lifted from
 # PROVISIONAL to repaired+witness only if it gives the same structure. Unlike REWRITE this confirms a reading, never changes it.

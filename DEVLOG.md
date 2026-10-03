@@ -52,13 +52,15 @@ last two entries):** 807 of 995 patent-side names now have a structure in `corpu
 someone looks (12 repaired without a witness, 6 PubChem trade/generic names). Ivan decided all 19
 flagged "not a definite structure" names: 10 REJECTED in `review.jsonl` (backup
 `review.jsonl.bak-20261003-132153`), 1 merged (two compounds, one description), 8 rewritten at the
-structure layer only. **status.py's HEADLINE IS NOW BY STRUCTURE (Ivan, 10-03, "option A"): 26 of 67 tags at
-the bar, 1,741 distinct molecules (full InChIKey; 1,745 before the A5 rewrite and the witness step, 10-03 night); 1,706
-by connectivity only (enantiomers merged; 1,710 before); name
+structure layer only. **status.py's HEADLINE IS NOW BY STRUCTURE (Ivan, 10-03, "option A"): 24 of 67 tags at
+the bar after the 10-03 night rewrites (26 before them: tobacco and sandalwood fell to 29 when their name-only units
+resolved and merged), 1,712 distinct molecules (full InChIKey); 1,673 by connectivity only (enantiomers merged); name
 text, printed beside it, is 27 of 67 / 1,819 names.** `apple` fell out: 34 names but 26 distinct structures
 (six OCR spellings of one norcamphor alcohol + three duplicate pairs). Tobacco sits exactly on 30. Also now:
 1,136 approve · 1,168 reject. **Quote the structure figure; never the old 27 without saying "by name
-text".** Next: freeze v1.0 at 26 of 67 (apple needs 4 more; sources are exhausted for the near-bar tags).
+text".** Next: freeze v1.0 (now 24 of 67 on the headline and also 24 counting only names with a trusted structure;
+tobacco and sandalwood need 1 more each on the headline, 3 and 4 on the trusted-only count; apple and anisic need 4;
+sources are exhausted for the near-bar tags).
 
 **2026-10-03 (log — Joe's review of the 18 set-aside names; see the last entry):** Ivan sent Joe the 12 PROVISIONAL
 repairs and 6 PUBCHEM-CHECK names. **A5 is human-confirmed wrong** (OCR "Z" is a "2"; correct compound is the
@@ -74,6 +76,16 @@ remaining set-aside group.** **Later 10-03:** the PubChem half of Ivan's promise
 all 11 A items other than A5 (A11 by graph check only: it is in no PubChem record), A5 closed (CID 104471), B1–B6
 each resolve to one PubChem record; flags on B3/B4/B5/B6 in the last entry (B4 carries stereo the patent never states).
 The 367d288 / c10f806 commits are pushed, so the "not committed" note in the evening entry no longer holds.
+
+**2026-10-03 (log — structures for the unresolved names; see the last two entries):** names without a structure went from 188
+to 52. Ivan approved 136 hand-authorised rewrites in all (31 for the four lost tags, then 105 of the strong and medium
+readings for the rest), kept in `corpus/structures/rewrites.json` (curated data, each with its reason; `structures.py` loads
+it). By trust: verbatim 683 · pubchem 69 · repaired+witness 16 · rewritten 154 · flat 15 · PUBCHEM-CHECK 6 · none 52.
+The 52: not definite structures (mixtures, two compounds, no locants), names impossible or inconsistent as written, obsolete
+ring nomenclature, trade names with no definition found, plus the held ones (cyclohomocitral x2, hydrindacene x2,
+`6,7,8-Decene-1ol`) and 2 vetoed. Counting only names with a trusted structure the corpus is 1,654 molecules by structure
+and also 24 of 67 tags. Several rewrites are Claude's derivations (flagged "medium" in their reason) — the first place to look
+if a structure is ever questioned.
 
 **Emails were READY (09-27):** preview live at https://vanpez.github.io/openscent/ (GitHub Pages,
 master /docs), linked in all three drafts, signed Ivan Pezzini. outreach/ and the shop lists
@@ -5244,3 +5256,130 @@ witness from its own patent, or a hand-authorised rewrite with a stored reason. 
 all: Joe's own review covered A1 and A5, his other OKs were AI-assisted, and the witnesses show the patent spells the
 compound that way, not that the patent meant it (A5 and A11 were exactly that failure and were caught by reading the
 patents). The 6 PUBCHEM-CHECK names are the remaining set-aside group.
+
+---
+
+## 2026-10-03 (night, tag recovery check) — which unresolved names could bring back the four tags
+
+**Why.** Minting only trusted structures (drop the 188 names with no structure + the 6 PUBCHEM-CHECK) would give 22 of 67
+tags at the bar, not 26 (simulation with status.py's own logic; not saved in the repo): `aldehydic`, `animalic`,
+`sandalwood`, `tobacco` fall out. Ivan wants structures for the 188 and to stay at 26.
+
+**Per tag (mintable count by structure -> needs -> unresolved names carrying the tag).**
+- `animalic` 29 -> needs 1 -> 5 names. Two are typo repairs of macrolides (`oxacyclohepadec` -> `heptadec`;
+  `oxacyclopent-7-en` has lost its ring size — the ring size is a GUESS until the patent text, US6255276B1, shows it).
+- `aldehydic` 26 -> needs 4 -> 7 names. Four look fixable: trailing comma; `acid nitrile` -> nitrile; `2-keto-…-dioxane-(1,4)`
+  -> 1,4-dioxan-2-one; primed-locant name. Three are unclear (`4-[(1,5-dimethylhexyl)oxy]` is a fragment, `6,7,8-Decene-1ol`,
+  `Dihydroverbetryle`).
+- `tobacco` 24 -> needs 6 -> 6 names, but they are only 5 compounds (two spellings of the cyclohomocitral enol
+  propionate): **cannot reach 30 from its own names; at best 29.** One more tobacco molecule must come from elsewhere.
+- `sandalwood` 18 -> needs 12 -> 19 names (incl. the PUBCHEM-CHECK `Methoxyelgenol`). Claude's grouping gives about 12
+  distinct compounds (Polysantol = the `(-)-(E)-3,3-dimethyl-5-(2',2',3'-trimethylcyclopentenyl)-4-penten-2-ol` names, from
+  memory and unverified; Javanol-type cyclopropyl-methanols; the dihydro-santalols; the hydrindacene ketone with 5+ patents):
+  **zero slack** — every one must resolve to a new, distinct structure.
+
+**OPSIN trial on 20 proposed readings (offline, nothing applied):** 14 parse (macrolides, nitrile, dioxanone, tetrahydro-
+quinoxaline, indane ester, enol propionate, cyclopropyl-methanols, butoxy-cyclohexene, pentanol, propanol). 6 do not:
+the primed-locant cyclopentenyl names (`2',2',3'-trimethyl-3'-cyclopenten-1'-yl`; dropping the primes is the likely fix),
+and `as-hydrindacene`. Every reading here is Claude's proposal; none has a witness or a REWRITE yet.
+
+**Open.** Decide how far to go: (a) prepare readings + patent-text witnesses for the ~37 names on these four tags and
+let Ivan approve in bulk (the A1–A12 pattern); (b) a second name resolver for trade names PubChem does not know
+(Indoflor, pyralone, Polysantol…), run from Hetzner; (c) a source for the one missing `tobacco` molecule. Nothing applied;
+`names.jsonl`, `structures.py` untouched.
+
+---
+
+## 2026-10-03 (night, readings prepared) — 37 unresolved names on the four tags: proposals, not applied
+
+**Done (Ivan: "1 and 2 first").** For the 37 names without a structure that carry `animalic`, `aldehydic`, `tobacco` or
+`sandalwood`: read each source patent's raw text on Hetzner for other spellings and definitions, proposed a reading,
+parsed it with OPSIN (all parse), and ran a second resolver (NCI CIR, via Hetzner; new, Ivan OK'd) plus PubChem name
+lookups. **Nothing applied** — `names.jsonl`, `structures.py`, `review.jsonl` untouched. Full table:
+`outreach/tag-recovery-readings-2026-10-03.md` (local); raw answers `outreach/tagrec-*`.
+
+**What the evidence looks like.** Of the 37 names: 27 strong, 4 medium-strong (A3 perhydro-decalone, the two dihydro-β-santalol
+spellings, the butoxy-cyclohexene), 6 held / excluded / Ivan's call (the decene mixture, the two cyclohomocitral spellings, the
+two hydrindacene spellings, Methoxyelgenol). Strong means: the same patent prints a cleaner spelling (typos,
+OCR "S"=5/8, stray commas, truncated spans), or defines the trade name itself (Polysantol, Dihydroverbetryle,
+3-normethyldihydro-β-santalol), or other patents in the corpus define it (pyralone = 6-(sec-butyl)quinoline; Indoflor =
+4,4a,5,9b-tetrahydroindeno[1,2-d][1,3]dioxine; Indoflor CAS 18096-62-3). CIR agrees with OPSIN on all 24 systematic readings
+but is largely OPSIN-based for such names, so it is NOT an independent check; it resolved only δ-damascone among the trade
+names (PubChem agrees, and lists "trans-delta-damascone" as a synonym). Raw patent text contains HTML entities (`&#39;`
+for apostrophes), which broke my first regexes for primed names — noted for future searches.
+
+**Held or excluded:** (1) `6,7,8-Decene-1ol` is a mixture of three positional isomers in its own Example — not a definite
+structure (Ivan: reject the row?). (2) `trans beta-cyclohomocitral enol propionate` (3 spellings): the enol ester needs
+the acetaldehyde, but the same patents' ingredient list defines beta-cyclohomocitral as a carboxaldehyde — conflict, held.
+(3) `4-acetyl-3,3,8,8-tetramethyl-as-hydrindacene` (5 patents): OPSIN reads it literally, but that puts the acetyl next to a
+gem-dimethyl while the prior art is the 1,1,6,6 isomer — held.
+
+**Forecast (scratch copy, mintable-only).** Applying all proposed readings except the held ones: 24 of 67 tags at the bar.
+`animalic` and `aldehydic` come back; `tobacco` reaches 28 (needs 2), `sandalwood` 26 (27 with the hydrindacene; needs 3-4).
+So 26 of 67 is not reachable for the mintable set from these names alone; four of the proposed structures
+(2,3-dimethyl-5,6,7,8-tetrahydroquinoxaline, Polysantol, the Javanol-type cyclopropyl-methanol, 3-normethyldihydro-β-santalol)
+already exist in the corpus under other spellings.
+
+**Open.** Ivan to approve / amend the table; then the readings become REWRITE entries and structures.py/status.py are re-run.
+`pipeline/pubchem_smiles_check.py` is committed; the CIR script was throwaway (scratchpad).
+
+---
+
+## 2026-10-03 (night, 31 rewrites applied; the rest prepared) — Ivan: "I approve / accept / go on with the remaining ones"
+
+**Applied (Ivan approved the 37-name table, except the held ones).** 31 names get a REWRITE: all of animalic's five,
+aldehydic's six, tobacco's four and sandalwood's sixteen. New file `corpus/structures/rewrites.json` (curated data, each entry
+with its reason) and a loader in `structures.py` that merges it into `REWRITE` (a rewrite outranks the OCR repair, as
+before). `names.jsonl` changed in exactly 31 rows (none -> rewritten); `review.jsonl` untouched. **Caught before applying:**
+my substring match for the sandalwood alcohol `6-methyl-4-(2′,2′,3′-trimethyl-3′-cyclopenten-1′-yl)-2-cyclohexen-1-ol` also hit
+the KETONE name `…-2-cyclohexen-1-one`; removed from the file, the ketone is a separate name (now proposed on its own).
+
+**By trust (distinct names):** verbatim 683 · pubchem 69 · repaired+witness 16 · rewritten 49 · flat 15 · PUBCHEM-CHECK 6 ·
+PROVISIONAL 0 · none 157. **Figures (status.py, run after):** 24 of 67 at the bar (tobacco 29 and sandalwood 29 now fall
+just short on the headline); 1,731 molecules by structure, 1,696 by connectivity, 1,819 by name text. Mintable only
+(names without a trusted structure dropped, simulation, not saved): also 24 of 67 — `animalic` 34 and `aldehydic` 32 are
+back at the bar; `tobacco` 27 (needs 3), `sandalwood` 26 (needs 4), `apple` 25, `anisic` 24; 1,568 molecules by structure.
+Verbatim invariant clean. The 26 of 67 headline is therefore not reachable for the mintable set from these names.
+
+**The remaining 150 names (157 minus the 5 held and 2 vetoed).** Method: typographic repair ladder + OPSIN (resolves 8),
+PubChem name lookups with Greek letters spelled out (158 queries, Hetzner), a same-patent search for better spellings
+(difflib-ranked candidates, Hetzner), and a corpus-wide search for trade-name definitions (Hetzner). Machine evidence found for
+only 46 of 150, and the same-patent hits were often a neighbouring compound, not the same one — so each reading was judged by
+hand. **105 readings proposed: 65 strong, 40 medium; 45 names left without one; all 105 parse in OPSIN.** Table:
+`outreach/rest-readings-2026-10-03.md` (local), raw evidence `outreach/rest-*.json`, `outreach/tagrest-*`. **Nothing applied.**
+Forecast if all 105 are applied (scratch copy): headline and mintable both stay at 24 of 67; mintable molecules 1,568 -> 1,654
+(84 new distinct structures; 16 names merge into 14 structures already in the corpus); `anisic` and `apple` reach 26.
+Left without a reading: not-definite names (mixtures, two compounds, no locants), names impossible or inconsistent as written
+(e.g. `(4,4,6-trimethyl-1,3-cyclohexadien-1-yl)methyl isobutyrate` puts two methyls and a double bond on C4), obsolete ring
+nomenclature (naphthindanones, as-hydrindacenones), and trade names with no definition found. A second corpus-wide definition
+search (bracket-tolerant) for ~20 trade names was still running when this was written.
+
+**Open.** Ivan to approve the S group (and review the M group); then the readings go into `rewrites.json`, structures.py and
+status.py are re-run. Not applied yet: `T1` cyclohomocitral (2 spellings), the hydrindacene (2), `6,7,8-Decene-1ol` (reject?),
+`Methoxyelgenol` and the other five PUBCHEM-CHECK names. Uncommitted: `rewrites.json`, `names*.jsonl`, `structures.py`, this entry.
+
+---
+
+## 2026-10-03 (night, last) — 105 readings applied (Ivan: "approve strong and medium group, commit and push for today")
+
+**Applied.** All 105 proposed readings (65 strong, 40 medium) are now entries in `corpus/structures/rewrites.json`
+(136 entries in all, each with its evidence and "Approved by Ivan 2026-10-03"; strength kept as a field). `structures.py` and
+`structures.py --merge` re-run offline: `names.jsonl` changed in exactly 105 rows (none -> rewritten), every entry took effect,
+`review.jsonl` untouched. By trust: verbatim 683 · pubchem 69 · repaired+witness 16 · rewritten 154 · flat 15 ·
+PUBCHEM-CHECK 6 · PROVISIONAL 0 · none 52.
+
+**Figures (status.py, run after; match the forecast).**
+```
+              by structure (full)     connectivity only      name text (old)
+patents        20 of 67   891           20 of 67   862         21 of 67   983
+COMBINED       24 of 67  1712           24 of 67  1673         27 of 67  1819
+```
+Still 24 of 67; `tobacco` and `sandalwood` 29 (need 1), `apple` and `anisic` 26 (need 4). Counting only names with a trusted
+structure (simulation, not saved): 24 of 67, 1,654 molecules by structure, 1,615 by connectivity; `tobacco` 27 (needs 3),
+`sandalwood` 26 (needs 4). Of the 105 names, 16 merged into 14 structures already in the corpus; 84 are new distinct
+structures. Verbatim invariant clean.
+
+**Not applied / still open.** The 52 names without a structure (see the RESUME summary). A corpus-wide, bracket-tolerant
+definition search for ~20 trade names (FRUITATE, KARANAL, Neobutenone, Spicatone, drimanols, …) was still running on Hetzner when
+this was committed; if it finds definitions they become new proposals for Ivan. Leftovers on Hetzner: `/tmp` files of mine
+(`pubchem_smiles_check.py`, `cir.py`, `hunt*.py`, `rest-*.json`, `tagrec*`), and `/opt/openscent` has three small JSON files.

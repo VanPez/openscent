@@ -1,0 +1,926 @@
+{
+ "_comment": "Hand-authorised rewrites (Ivan) for names OPSIN cannot read as extracted: the SPAN in the corpus stays verbatim, this only decides which structure the name stands for. structures.py loads these into REWRITE (a rewrite outranks the OCR repair). Each carries its reason. Added 2026-10-03.",
+ "rewrites": [
+  {
+   "id": "A1",
+   "raw": "15-methyl-oxacyclohepadec-12-en-2-one",
+   "reading": "15-methyl-oxacycloheptadec-12-en-2-one",
+   "why": "the span has a typo ('hepadec'); US6255276B1 prints '15-methyl-oxacycloheptadec-12-en-2-one' in its list of odorants and names its Example product that way. Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "A2",
+   "raw": "8,15-dimethyl-oxacyclopent-7-en-2-one",
+   "reading": "8,15-dimethyl-oxacyclopentadec-7-en-2-one",
+   "why": "the span has lost its ring size ('oxacyclopent'); US6255276B1's list prints '8,15-dimethyl-oxacyclopentadec-7-en-2-one' (the Example shares the truncation). Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "A3",
+   "raw": "6α-tert-butyl-perhydro-3α-methyl-4aβH,8aαH-2-naphthalenone",
+   "reading": "6-tert-butyl-3-methyl-octahydronaphthalen-2(1H)-one",
+   "why": "standard translation of '6a-tert-butyl-perhydro-3a-methyl-4aH,8aH-2-naphthalenone' (a decalone); alpha/beta relative stereo dropped, so the structure is flat. No second spelling in US20080280809A1. Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "A4",
+   "raw": "Cyclohexadecenone-S",
+   "reading": "cyclohexadec-5-en-1-one",
+   "why": "the '-S' is OCR of '-5': US3923699A's claim and US3929893A print 'cyclohexadecenone-5'; made by oxy-Cope of 1,2-divinylcyclododecanol; E/Z not stated, so flat. PubChem has cyclohexadec-5-en-1-one. Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "A5",
+   "raw": "Indoflor",
+   "reading": "4,4a,5,9b-tetrahydroindeno[1,2-d][1,3]dioxine",
+   "why": "trade name; other patents in the corpus define 'INDOFLOR (4,4a,5,9b-tetrahydroindeno[1,2-d][1,3]dioxine)' (US10537868B2 and others) and list CAS 18096-62-3 as 'Indeno[1,2-d]-1,3-dioxin, 4,4a,5,9b-tetrahydro-' (US10336966B2). Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "B1",
+   "raw": "(-)-(1'R)-4-(2',2',3'-trimethyl-3'-cyclopenten-1'-yl)-4-penten-1-al",
+   "reading": "4-(2,2,3-trimethylcyclopent-3-en-1-yl)pent-4-enal",
+   "why": "OPSIN fails on the prime marks and the '(-)-(1'R)' prefix; US5696075A prints the compound with (+)-(1'S) and (-)-(1'R) forms. Prime marks, rotation sign and the 1'R descriptor dropped, so flat. PubChem has the flat compound. Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "B2",
+   "raw": "(4E)-2,4-dimethyl-5-(4-methylphenyl)-4-pentenal,",
+   "reading": "(4E)-2,4-dimethyl-5-(4-methylphenyl)-4-pentenal",
+   "why": "the span carries the sentence's trailing comma; US20110200546A1 prints the name 23 times without it. PubChem has it. Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "B3",
+   "raw": "2-keto-6-hexyl-dioxane-(1,4)",
+   "reading": "6-hexyl-1,4-dioxan-2-one",
+   "why": "old-style name ('2-keto-6-hexyl-dioxane-(1,4)') used throughout US3952016A; standard translation. PubChem has the compound. Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "B4",
+   "raw": "4-[(1,5-dimethylhexyl)oxy]",
+   "reading": "4-[(1,5-dimethylhexyl)oxy]butanal",
+   "why": "the extracted span stops at the bracket; the sentence in US20100132249A1 continues '...oxy]butanal' and its table lists 4-[(1,5-dimethylhexyl)oxy]butanal as aldehydic. The corpus span stays verbatim. Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "B6",
+   "raw": "Dihydroverbetryle",
+   "reading": "3,5,7-trimethyloctanenitrile",
+   "why": "trade name defined in US20100279917A1: '3,5,7-trimethyloctane nitrile (V): (Dihydroverbetryle)'. PubChem has the compound. Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "B7",
+   "raw": "trans-5-cyclohexyl-3-methyl-2-penten-1-oic acid nitrile",
+   "reading": "5-cyclohexyl-3-methylpent-2-enenitrile",
+   "why": "'...-penten-1-oic acid nitrile' is the nitrile of the acid (US4193934A's class naming); the patent makes a 2:3 cis/trans mixture, so 'trans' is dropped (flat). PubChem has the compound. Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "T2",
+   "raw": "1,1,Dimethyl-indan-3-carboxylic acid methyl ester",
+   "reading": "methyl 1,1-dimethylindane-3-carboxylate",
+   "why": "the span has a stray comma ('1,1,Dimethyl'); US4406828A prints '1,1-Dimethyl-indan-3-carboxylic acid methyl ester' three times without it. Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "T3",
+   "raw": "2,3-dimethyl-5,6,7, S-tetrahydroquinoxaline",
+   "reading": "2,3-dimethyl-5,6,7,8-tetrahydroquinoxaline",
+   "why": "OCR 'S' for '8'; US3748145A prints '2,3-dimethyl-5,6,7,8-tetrahydroquinoxaline' (tobacco-honey aroma). PubChem has it. Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "T4",
+   "raw": "pyralone",
+   "reading": "6-(butan-2-yl)quinoline",
+   "why": "trade name; six other patents in the corpus define 'PYRALONE (6-(sec-butyl)quinoline)' (US10537868B2, US10722857B2, US11060050B2, US11103435B2, US12065630B2, US12251454B2). Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "T5",
+   "raw": "trans, trans-Δ-damascone",
+   "reading": "1-(2,6,6-trimethylcyclohex-3-en-1-yl)but-2-en-1-one",
+   "why": "'Delta' is OCR of delta; PubChem lists 'delta-Damascone' and 'trans-delta-damascone' (CID 5365916) for this structure and NCI CIR agrees; trans,trans descriptors dropped, so flat. Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "S1",
+   "raw": "(-)-(E)-3,3-dimethyl-5-(2′,2′,3′-trimethyl-3′-cyclopenten-1′-yl)-4-penten-2-ol",
+   "reading": "3,3-dimethyl-5-(2,2,3-trimethylcyclopent-3-en-1-yl)pent-4-en-2-ol",
+   "why": "US20230126581A1 and US12492356B2 define 'Polysantol' as 3,3-dimethyl-5-(2',2',3'-trimethyl-3'-cyclopenten-1'-yl)-4-penten-2-ol; prime marks, (-) and (E) dropped so the three spellings merge (flat). Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "S1",
+   "raw": "(−)-(E)-3,3-dimethyl-5-(2′,2′,3′-trimethyl-3′-cyclopenten-1′-yl)-4-penten-2-ol",
+   "reading": "3,3-dimethyl-5-(2,2,3-trimethylcyclopent-3-en-1-yl)pent-4-en-2-ol",
+   "why": "US20230126581A1 and US12492356B2 define 'Polysantol' as 3,3-dimethyl-5-(2',2',3'-trimethyl-3'-cyclopenten-1'-yl)-4-penten-2-ol; prime marks, (-) and (E) dropped so the three spellings merge (flat). Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "S1",
+   "raw": "Polysantol",
+   "reading": "3,3-dimethyl-5-(2,2,3-trimethylcyclopent-3-en-1-yl)pent-4-en-2-ol",
+   "why": "US20230126581A1 and US12492356B2 define 'Polysantol' as 3,3-dimethyl-5-(2',2',3'-trimethyl-3'-cyclopenten-1'-yl)-4-penten-2-ol; prime marks, (-) and (E) dropped so the three spellings merge (flat). Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "S2",
+   "raw": "1,2-dimethyl-4-(2′,2′,3′-trimethyl-3′-cyclopenten-1′-yl)-2-cyclohexen-1-ol",
+   "reading": "1,2-dimethyl-4-(2,2,3-trimethylcyclopent-3-en-1-yl)cyclohex-2-en-1-ol",
+   "why": "OPSIN fails only on the prime marks of the cyclopentenyl substituent; US20060281648A1 and US20090081140A1 print the name as extracted. Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "S3",
+   "raw": "6-methyl-4-(2′,2′,3′-trimethyl-3′-cyclopenten-1′-yl)-2-cyclohexen-1-ol",
+   "reading": "6-methyl-4-(2,2,3-trimethylcyclopent-3-en-1-yl)cyclohex-2-en-1-ol",
+   "why": "prime marks dropped; US20090081140A1 lists the compound's stereoisomers, so flat. Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "S4",
+   "raw": "1-methyl-2-[(2,2,3-trimethylcyclopentyl)methyl]cyclopropyl]methanol",
+   "reading": "[1-methyl-2-[(2,2,3-trimethylcyclopentyl)methyl]cyclopropyl]methanol",
+   "why": "the spans lack the opening bracket (extraction cut); US20150353461A1 and US10407378B2 cite the same compound (US 2010/0069508); the (1R) spelling is dropped to flat so both merge. Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "S4",
+   "raw": "1-methyl-2-[[(1R)-2,2,3-trimethylcyclopentyl]methyl]cyclopropyl]methanol",
+   "reading": "[1-methyl-2-[(2,2,3-trimethylcyclopentyl)methyl]cyclopropyl]methanol",
+   "why": "the spans lack the opening bracket (extraction cut); US20150353461A1 and US10407378B2 cite the same compound (US 2010/0069508); the (1R) spelling is dropped to flat so both merge. Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "S5",
+   "raw": "1-methyl-2-(1,2,2-trimethyl-bicyclo- 3.1.0!hex-3-ylmethyl)cyclopropyl!methanol",
+   "reading": "[1-methyl-2-(1,2,2-trimethylbicyclo[3.1.0]hex-3-ylmethyl)cyclopropyl]methanol",
+   "why": "'!' is OCR of brackets in US5929291A, whose Example 4 makes the compound; US20220220051A1 prints it with stray hyphens and ties it to Javanol/Pashminol. Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "S5",
+   "raw": "[1-methyl-2-(1,2,2-trimethyl-bicyclo[3.1.0]hex-3-yl-methyl-)cyclopropyl-]methanol",
+   "reading": "[1-methyl-2-(1,2,2-trimethylbicyclo[3.1.0]hex-3-ylmethyl)cyclopropyl]methanol",
+   "why": "'!' is OCR of brackets in US5929291A, whose Example 4 makes the compound; US20220220051A1 prints it with stray hyphens and ties it to Javanol/Pashminol. Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "S6",
+   "raw": "2,3-dimethyl-5-(2,2,3-trimethyl-3-cyclopent-1-yl)-2-pentanol",
+   "reading": "2,3-dimethyl-5-(2,2,3-trimethylcyclopent-3-en-1-yl)-2-pentanol",
+   "why": "the span lost 'en'; US4149020A prints '2,3-dimethyl-5-(2,2,3-trimethyl-3-cyclopenten-1-yl)-2-pentanol' 19 times. Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "S7",
+   "raw": "2-methyl-3-methylene alpha-(1-methylethenyl) bicyclo(2.2.1) heptane-2-endo-propanol",
+   "reading": "2-methyl-3-methylene-alpha-(1-methylethenyl)bicyclo[2.2.1]heptane-2-propanol",
+   "why": "US4000050A prints both the endo and exo propanol 18 times; endo/exo not expressed, so the two names merge (flat). Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "S7",
+   "raw": "2-methyl-3-methylene-alpha(1-methylethenyl) bicyclo-(2.2.1) heptane-2-exo-propanol",
+   "reading": "2-methyl-3-methylene-alpha-(1-methylethenyl)bicyclo[2.2.1]heptane-2-propanol",
+   "why": "US4000050A prints both the endo and exo propanol 18 times; endo/exo not expressed, so the two names merge (flat). Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "S8",
+   "raw": "3-Normethyldihydro-B-santalol",
+   "reading": "2-methylene-3-(4-methyl-5-hydroxypentyl)bicyclo[2.2.1]heptane",
+   "why": "US3673261A defines '3-normethyldihydro-B-santalol' with exactly this bicyclic name (exo dropped, flat). Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "S9",
+   "raw": "Dihydro-B-santalol",
+   "reading": "2-methylene-3-methyl-3-(4-methyl-5-hydroxypentyl)bicyclo[2.2.1]heptane",
+   "why": "'B' and 'p' are OCR of beta. Claude's derivation from the patents' own process (US3673263A, US3673266A, US3662007A): the ketone 3-methyl-3-(5-hydroxy-4-methylpentyl)norcamphor, already in the corpus, methylenated with a Wittig/organometallic reagent. The patents never print the product's systematic name; it is the 3-methyl analogue of the normethyl compound US3673261A defines. Flat. Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "S9",
+   "raw": "Dihydro-p-santalol",
+   "reading": "2-methylene-3-methyl-3-(4-methyl-5-hydroxypentyl)bicyclo[2.2.1]heptane",
+   "why": "'B' and 'p' are OCR of beta. Claude's derivation from the patents' own process (US3673263A, US3673266A, US3662007A): the ketone 3-methyl-3-(5-hydroxy-4-methylpentyl)norcamphor, already in the corpus, methylenated with a Wittig/organometallic reagent. The patents never print the product's systematic name; it is the 3-methyl analogue of the normethyl compound US3673261A defines. Flat. Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "S10",
+   "raw": "4-acetyl-1-n-butoxy-3,3,5,5-tetramethylcyclo 1 hexene",
+   "reading": "4-acetyl-1-butoxy-3,3,5,5-tetramethylcyclohex-1-ene",
+   "why": "'cyclo 1 hexene' is cyclohex-1-ene; US3578715A describes enol ethers of the ring ketone of 4-acetyl-3,3,5,5-tetramethylcyclohexanone (Claude's reading of the patent's chemistry; printed once). Approved by Ivan 2026-10-03 (readings table of that date)"
+  },
+  {
+   "id": "S1",
+   "strength": "S",
+   "raw": "(1S,1′R)-2-[1-(3′,3′-dimethyl-1′-cyclohexyl)ethoxy]-2-methylpropyl 2-propenoate",
+   "reading": "2-[1-(3,3-dimethylcyclohexyl)ethoxy]-2-methylpropyl prop-2-enoate",
+   "why": "typographic: prime marks and stereodescriptors dropped (flat). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S2",
+   "strength": "S",
+   "raw": "(E)-α-damascone",
+   "reading": "1-(2,6,6-trimethylcyclohex-2-en-1-yl)but-2-en-1-one",
+   "why": "PubChem name lookup 'alpha-damascone' (Greek spelled out) gives this structure; E dropped (flat). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S3",
+   "strength": "S",
+   "raw": "(E)-β-damascenone",
+   "reading": "1-(2,6,6-trimethylcyclohexa-1,3-dien-1-yl)but-2-en-1-one",
+   "why": "PubChem 'beta-damascenone' gives this structure; E dropped (flat). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S4",
+   "strength": "S",
+   "raw": "1- -methyl 4 isohexylhexahydrobenzaldehyde",
+   "reading": "1-methyl-4-(4-methylpentyl)cyclohexane-1-carbaldehyde",
+   "why": "US2842598A prints '1-methyl-4-isohexylhexahydrobenzaldehyde' 4 times; isohexyl = 4-methylpentyl. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S5",
+   "strength": "S",
+   "raw": "2,2-dimethyl-3-(2-(2-methyl-3-methylene bicyclo(2,2,1)hept-2-(exo)-yl)ethyl)-oxirane",
+   "reading": "2,2-dimethyl-3-[2-(2-methyl-3-methylidenebicyclo[2.2.1]hept-2-yl)ethyl]oxirane",
+   "why": "typographic: brackets/commas; exo dropped (flat). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S6",
+   "strength": "S",
+   "raw": "2,3a,4,5,5aβ,6,7,8,9,9a-Decahydro-3aα,6,6,7α,9aα-pentamethylnaphtho[2,1-b]furan",
+   "reading": "2,3a,4,5,5a,6,7,8,9,9a-decahydro-3a,6,6,7,9a-pentamethylnaphtho[2,1-b]furan",
+   "why": "typographic: alpha/beta stereo marks dropped (flat). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S7",
+   "strength": "S",
+   "raw": "2,6,6-trimethyl-1-l1acetoxy-but-3- enyl]-cyclohex-1-ene",
+   "reading": "1-(2,6,6-trimethylcyclohex-1-en-1-yl)but-3-en-1-yl acetate",
+   "why": "US3892809A prints '2,6,6-trimethyl-1-[1-acetoxy-but-3-enyl]-cyclohex-1-ene' repeatedly (OCR 'l1' for '[1'). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S8",
+   "strength": "S",
+   "raw": "2,6-dimethyl-3-mercapto-heptanone-4",
+   "reading": "3-mercapto-2,6-dimethylheptan-4-one",
+   "why": "US4070308A prints '2,6-dimethyl-3-mercapto-4-heptanone'. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S9",
+   "strength": "S",
+   "raw": "2-(cyclododecyl)propan-1-of",
+   "reading": "2-(cyclododecyl)propan-1-ol",
+   "why": "US6444637B1 prints '2-(cyclododecyl)propan-1-ol' 8 times; OCR 'of' for 'ol'. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S10",
+   "strength": "S",
+   "raw": "2-[1-(3,3)-dimethylcyclohexyl)-1-methylethoxy]-2-oxoethyl propionate",
+   "reading": "2-[1-(3,3-dimethylcyclohexyl)-1-methylethoxy]-2-oxoethyl propanoate",
+   "why": "US20050182273A1 prints it without the stray ')' 4 times. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S11",
+   "strength": "S",
+   "raw": "2-methyl-2-(4-methylhex-3-en-1-yl)cyclopropyl)methanol",
+   "reading": "[2-methyl-2-(4-methylhex-3-en-1-yl)cyclopropyl]methanol",
+   "why": "the span lacks the opening bracket; US20240407983A1 prints '(2-methyl-2-(4-methylhex-3-en-1-yl)cyclopropyl)methanol'. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S12",
+   "strength": "S",
+   "raw": "2-methyl-4-(2',2',3'-trimethyl-3'-cyclopenten-1'-yl)-4-pentenenitrile",
+   "reading": "2-methyl-4-(2,2,3-trimethylcyclopent-3-en-1-yl)pent-4-enenitrile",
+   "why": "typographic: prime marks dropped. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S13",
+   "strength": "S",
+   "raw": "2-n.butyl-4,4,6-trimethyl-1,3-dioxane",
+   "reading": "2-butyl-4,4,6-trimethyl-1,3-dioxane",
+   "why": "typographic ('n.butyl'). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S14",
+   "strength": "S",
+   "raw": "2α,5,5,8a α-tetramethyl-3,5,6,7,8,8a-hexahydro-1(2H)-naphthalenone",
+   "reading": "2,5,5,8a-tetramethyl-3,5,6,7,8,8a-hexahydro-1(2H)-naphthalenone",
+   "why": "US20080214419A1 prints the flat name; alpha marks dropped. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S15",
+   "strength": "S",
+   "raw": "3-(4-tert-butyl-2-methyl-1-phenyl)propanal",
+   "reading": "3-(4-tert-butyl-2-methylphenyl)propanal",
+   "why": "typographic ('1-phenyl'). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S16",
+   "strength": "S",
+   "raw": "3-(5-tert-butyl-2-methyl-1-phenyl)propanal",
+   "reading": "3-(5-tert-butyl-2-methylphenyl)propanal",
+   "why": "typographic ('1-phenyl'). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S17",
+   "strength": "S",
+   "raw": "3-ethoxy-4-hydroxy benzaldehyde o-methyl oxime",
+   "reading": "3-ethoxy-4-hydroxybenzaldehyde O-methyloxime",
+   "why": "spacing. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S18",
+   "strength": "S",
+   "raw": "3-methyl-2-oxo-ethylpentanoate",
+   "reading": "ethyl 3-methyl-2-oxopentanoate",
+   "why": "word order. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S19",
+   "strength": "S",
+   "raw": "4,6 dim'tro 5-ethyl 1,1,3,3 tetramethylindan",
+   "reading": "5-ethyl-1,1,3,3-tetramethyl-4,6-dinitro-2,3-dihydro-1H-indene",
+   "why": "US3283016A prints '4,6-dinitro-5-ethyl-1,1,3,3-tetramethylindan'; OCR 'dim'tro' = dinitro. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S20",
+   "strength": "S",
+   "raw": "4,6,8-trimethyl-non-3-en-5-ol (Ig)",
+   "reading": "4,6,8-trimethylnon-3-en-5-ol",
+   "why": "trailing label '(Ig)' (a formula number) removed. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S21",
+   "strength": "S",
+   "raw": "4-( 2,6,6-trimethyll ,3-cyclohexadienl -y] )-2- butanol",
+   "reading": "4-(2,6,6-trimethylcyclohexa-1,3-dien-1-yl)butan-2-ol",
+   "why": "OCR-damaged spelling of the A7 compound (same family, floral). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S22",
+   "strength": "S",
+   "raw": "4-methyl-6-butyl-α-pyrone",
+   "reading": "6-butyl-4-methyl-2H-pyran-2-one",
+   "why": "alpha-pyrone = 2H-pyran-2-one. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S23",
+   "strength": "S",
+   "raw": "4-methylthio)butanol",
+   "reading": "4-(methylsulfanyl)butan-1-ol",
+   "why": "the span lacks the opening bracket; US3904556A prints '4-(methylthio)butanol'. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S24",
+   "strength": "S",
+   "raw": "4.8-dimethyl-7-nonen-2-one",
+   "reading": "4,8-dimethylnon-7-en-2-one",
+   "why": "typographic: '.' for ','. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S25",
+   "strength": "S",
+   "raw": "6,7,8,9-Tetrahydro- 7,7,8,9,9-pentamethyl-5H- cyclopcnta[H]quinazoline",
+   "reading": "7,7,8,9,9-pentamethyl-6,7,8,9-tetrahydro-5H-cyclopenta[h]quinazoline",
+   "why": "US20150057206A1 prints '6,7,8,9-tetrahydro-7,7,8,9,9-pentamethyl-5H-cyclopenta[h]quinazoline'; OCR 'cyclopcnta'. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S26",
+   "strength": "S",
+   "raw": "6-i-butyl-α-pyrone",
+   "reading": "6-(2-methylpropyl)-2H-pyran-2-one",
+   "why": "alpha-pyrone = 2H-pyran-2-one. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S27",
+   "strength": "S",
+   "raw": "6-methyl-4-(2′,2′,3′-trimethyl-3′-cyclopenten-1′-yl)-2-cyclohexen-1-one",
+   "reading": "6-methyl-4-(2,2,3-trimethylcyclopent-3-en-1-yl)cyclohex-2-en-1-one",
+   "why": "typographic: prime marks dropped (the ketone analogue of the alcohol already rewritten). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S28",
+   "strength": "S",
+   "raw": "6-methyl-6-(1′,2′,4′-trimethylpent-2′-enyloxy)hept-4-en-3-one",
+   "reading": "6-methyl-6-[(1,2,4-trimethylpent-2-en-1-yl)oxy]hept-4-en-3-one",
+   "why": "typographic: prime marks dropped. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S29",
+   "strength": "S",
+   "raw": "6-propyl-α-pyrone",
+   "reading": "6-propyl-2H-pyran-2-one",
+   "why": "alpha-pyrone = 2H-pyran-2-one. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S30",
+   "strength": "S",
+   "raw": "6α-isopropyl-perhydro-1α,3β-dimethyl-4aβH,8aαH-2-naphthalenone",
+   "reading": "6-isopropyl-1,3-dimethyl-octahydronaphthalen-2(1H)-one",
+   "why": "same family as the 6-tert-butyl decalone already rewritten; alpha/beta dropped (flat). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S31",
+   "strength": "S",
+   "raw": "7,7-dimethyl-6-methylene-tricyclo[6.7.1.0 1 ,5 ] undecan-2-one",
+   "reading": "7,7-dimethyl-6-methylenetricyclo[6.2.1.0(1,5)]undecan-2-one",
+   "why": "US4142997A prints [6.2.1.0 1,5] ~10 times; [6.7.1.0] would be 16 atoms, not undecane. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S32",
+   "strength": "S",
+   "raw": "7-heptylbenzo[b][1,4]dioxapin-3-one",
+   "reading": "7-heptylbenzo[b][1,4]dioxepin-3-one",
+   "why": "'dioxapin' is a typo of dioxepin; sister names of the same family resolve verbatim (e.g. 7-(2-ethylbutyl)benzo[b][1,4]dioxepin-3-one). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S33",
+   "strength": "S",
+   "raw": "acetate geranyl",
+   "reading": "3,7-dimethylocta-2,6-dien-1-yl acetate",
+   "why": "inverted word order: geranyl acetate (flat). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S34",
+   "strength": "S",
+   "raw": "ambrinol",
+   "reading": "2,5,5-trimethyl-1,2,3,4,4a,5,6,7-octahydronaphthalen-2-ol",
+   "why": "two other patents in the corpus define ambrinol as 1,2,3,4,4a,5,6,7-octahydro-2,5,5-trimethyl-naphthalene-2-ol. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S35",
+   "strength": "S",
+   "raw": "Bicyclo[3.2.1]octan-2-one, 3-butyl",
+   "reading": "3-butylbicyclo[3.2.1]octan-2-one",
+   "why": "inverted CAS-style order. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S36",
+   "strength": "S",
+   "raw": "Bicyclo[3.2.1]octan-2-one, 3-pentyl",
+   "reading": "3-pentylbicyclo[3.2.1]octan-2-one",
+   "why": "inverted CAS-style order. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S37",
+   "strength": "S",
+   "raw": "Bicyclo[3.3.ljnon-2-en-9-one",
+   "reading": "bicyclo[3.3.1]non-2-en-9-one",
+   "why": "US3524884A prints 'bicyclo[3.3.1]non-2-en-9-one' 4 times. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S38",
+   "strength": "S",
+   "raw": "bicyclo[4.1.1.]oct-2-en-8-one",
+   "reading": "bicyclo[4.1.1]oct-2-en-8-one",
+   "why": "typographic: stray period in the descriptor. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S39",
+   "strength": "S",
+   "raw": "bicyclo[5.1.1.]non-2-en-9- one",
+   "reading": "bicyclo[5.1.1]non-2-en-9-one",
+   "why": "typographic. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S40",
+   "strength": "S",
+   "raw": "bicyclo[5.1.1.]nonan-9-one",
+   "reading": "bicyclo[5.1.1]nonan-9-one",
+   "why": "typographic. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S41",
+   "strength": "S",
+   "raw": "cis-(2R,4R)-dihydrorose oxide",
+   "reading": "4-methyl-2-(2-methylpropyl)oxane",
+   "why": "dihydrorose oxide = 2-isobutyl-4-methyltetrahydropyran; stereo dropped. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S42",
+   "strength": "S",
+   "raw": "cis-(2S,4R)-rose oxide",
+   "reading": "4-methyl-2-(2-methylprop-1-en-1-yl)oxane",
+   "why": "rose oxide; stereo dropped. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S43",
+   "strength": "S",
+   "raw": "Cis-4a,5,6,7,8,8a-hexahydro-3,4a5,5,8apentamethyl-2( lH)-naphthalenone",
+   "reading": "4a,5,6,7,8,8a-hexahydro-3,4a,5,5,8a-pentamethyl-2(1H)-naphthalenone",
+   "why": "US3914314A prints 'cis-4a,5,6,7,8,8a-hexahydro-3,4a,5,5,8a-pentamethyl-2(1H)-naphthalenone'; cis dropped (flat). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S44",
+   "strength": "S",
+   "raw": "cis-5-phenyl-3-methyl-2-penten-1-oic acid nitrile",
+   "reading": "3-methyl-5-phenylpent-2-enenitrile",
+   "why": "US4193934A class naming ('-penten-1-oic acid nitrile' = nitrile); cis dropped. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S45",
+   "strength": "S",
+   "raw": "Cis-fi-bergamotene",
+   "reading": "6-methyl-2-methylidene-6-(4-methylpent-3-en-1-yl)bicyclo[3.1.1]heptane",
+   "why": "'fi'/'fl' = OCR of beta; PubChem has one record for cis-beta-bergamotene; stereo dropped. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S46",
+   "strength": "S",
+   "raw": "Cis-fl-bergamotene",
+   "reading": "6-methyl-2-methylidene-6-(4-methylpent-3-en-1-yl)bicyclo[3.1.1]heptane",
+   "why": "as above. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S47",
+   "strength": "S",
+   "raw": "Ethyl 4,8-cyclo dodecadiene-lcarboxylate",
+   "reading": "ethyl cyclododeca-4,8-diene-1-carboxylate",
+   "why": "OCR/spacing. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S48",
+   "strength": "S",
+   "raw": "hex-5-enyl-2-methyl butyrate",
+   "reading": "hex-5-en-1-yl 2-methylbutanoate",
+   "why": "ester name order. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S49",
+   "strength": "S",
+   "raw": "high cis-2-methyl-3-pentenoic acid",
+   "reading": "2-methylpent-3-enoic acid",
+   "why": "US3931306A prints 'cis-2-methyl-3-pentenoic acid' 7 times; 'high cis' = a cis-rich mixture, so flat. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S50",
+   "strength": "S",
+   "raw": "l,1-diethoxy- 5,9 dime'thyl-9- methoxy-4-decene",
+   "reading": "1,1-diethoxy-5,9-dimethyl-9-methoxydec-4-ene",
+   "why": "US3584010A prints '1,1-diethoxy-5,9-dimethyl-9-methoxy-4-decene' (Example 12). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S51",
+   "strength": "S",
+   "raw": "l,2,3,4,6,7,8,9,10,11,12,13- dodecahydrocyclo-deca[blquinoxaline",
+   "reading": "1,2,3,4,6,7,8,9,10,11,12,13-dodecahydrocyclodeca[b]quinoxaline",
+   "why": "US3754934A prints '1,2,3,4,6,7,8,9,10,11,12,13-dodecahydrocyclodeca[b]quinoxaline'. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S52",
+   "strength": "S",
+   "raw": "lmethyl-3-isohexylhexahydrobenzaldehyde",
+   "reading": "1-methyl-3-(4-methylpentyl)cyclohexane-1-carbaldehyde",
+   "why": "US2842598A prints '1-methyl-3-isohexylhexahydrobenzaldehyde'. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S53",
+   "strength": "S",
+   "raw": "methyl-1-ethynycyclohexyl carbonate",
+   "reading": "methyl 1-ethynylcyclohexyl carbonate",
+   "why": "typographic ('ethynycyclohexyl'). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S54",
+   "strength": "S",
+   "raw": "methyl-3.3-dimethyl-bicyclo[2.2.1]heptane-2-carboxylate",
+   "reading": "methyl 3,3-dimethylbicyclo[2.2.1]heptane-2-carboxylate",
+   "why": "typographic. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S55",
+   "strength": "S",
+   "raw": "muscone (3-methylcyclopentadecanone-1)",
+   "reading": "3-methylcyclopentadecan-1-one",
+   "why": "the parenthesis gives the structure; PubChem 'muscone' agrees; (3R) dropped (flat). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S56",
+   "strength": "S",
+   "raw": "N-(2-furfuryl)-pyrrole",
+   "reading": "1-(furan-2-ylmethyl)-1H-pyrrole",
+   "why": "furfuryl = furan-2-ylmethyl. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S57",
+   "strength": "S",
+   "raw": "Octan-Z-one oxime",
+   "reading": "octan-2-one oxime",
+   "why": "OCR: Z = 2. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S58",
+   "strength": "S",
+   "raw": "PELARGENE",
+   "reading": "2-methyl-4-methylidene-6-phenyloxane",
+   "why": "22 other patents in the corpus define PELARGENE as 2-methyl-4-methylene-6-phenyltetrahydro-2H-pyran. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S59",
+   "strength": "S",
+   "raw": "S(4-hydroxy-1-isopropyl-4-methylhexyl) thioacetate",
+   "reading": "S-(4-hydroxy-4-methyl-1-propan-2-ylhexyl) ethanethioate",
+   "why": "typographic. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S60",
+   "strength": "S",
+   "raw": "Timberol (1-(2,2,6-Trimethyl-cyclohexyl)-hexan-3-ol)",
+   "reading": "1-(2,2,6-trimethylcyclohexyl)hexan-3-ol",
+   "why": "the parenthesis gives the structure; PubChem 'Timberol' agrees. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S61",
+   "strength": "S",
+   "raw": "trans, E-1-crotonoyl-2,2,6-trimethylcyclohexane",
+   "reading": "1-(2,2,6-trimethylcyclohexyl)but-2-en-1-one",
+   "why": "crotonoyl = but-2-enoyl; stereo dropped. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S62",
+   "strength": "S",
+   "raw": "trans-5-phenyl-3-methyl-2-penten-1-oic acid nitrile",
+   "reading": "3-methyl-5-phenylpent-2-enenitrile",
+   "why": "US4193934A class naming; trans dropped. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S63",
+   "strength": "S",
+   "raw": "tridecen-2-nitrile",
+   "reading": "tridec-2-enenitrile",
+   "why": "word order; PubChem has tridec-2-enenitrile. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S64",
+   "strength": "S",
+   "raw": "α-Campholene aldehyde",
+   "reading": "2-(2,2,3-trimethylcyclopent-3-en-1-yl)acetaldehyde",
+   "why": "PubChem 'alpha-Campholene aldehyde' gives this structure. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "S65",
+   "strength": "S",
+   "raw": "β-damascenone",
+   "reading": "1-(2,6,6-trimethylcyclohexa-1,3-dien-1-yl)but-2-en-1-one",
+   "why": "PubChem 'beta-damascenone' gives this structure (flat). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M66",
+   "strength": "M",
+   "raw": "(R)-dihydrocitronellyl lactate",
+   "reading": "3,7-dimethyloctyl 2-hydroxypropanoate",
+   "why": "dihydrocitronellyl = 3,7-dimethyloctyl; (R) dropped (flat). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M67",
+   "strength": "M",
+   "raw": "(S)-dihydrocitronellyl lactate",
+   "reading": "3,7-dimethyloctyl 2-hydroxypropanoate",
+   "why": "dihydrocitronellyl = 3,7-dimethyloctyl; (S) dropped (flat). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M68",
+   "strength": "M",
+   "raw": "1(7)-p-menthen-9-al",
+   "reading": "2-(4-methylidenecyclohexyl)propanal",
+   "why": "p-menthane numbering: 1(7)-ene = exocyclic methylene on C1, 9-al = CHO on the C8 side chain (Claude's derivation). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M69",
+   "strength": "M",
+   "raw": "1,1,2,3,3-pentamethylhexahydro-4(5H)-indanone",
+   "reading": "1,1,2,3,3-pentamethyloctahydro-4H-inden-4-one",
+   "why": "saturated analogue of the A8 ketone (hexahydro-4(5H)-indanone); US3767713A also prints the related hexahydro-4-indanol. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M70",
+   "strength": "M",
+   "raw": "1,5-Methano-1H-inden-1-ol, octahydro-7A,8,8-trimethyl",
+   "reading": "7a,8,8-trimethyloctahydro-1H-1,5-methanoinden-1-ol",
+   "why": "CAS-inverted name: '1,5-Methano-1H-inden-1-ol, octahydro-7a,8,8-trimethyl-' reordered. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M71",
+   "strength": "M",
+   "raw": "1,l,2,3,3-pentamethylhexahydro-4(5H)-indanone",
+   "reading": "1,1,2,3,3-pentamethyloctahydro-4H-inden-4-one",
+   "why": "as above; OCR l for 1. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M72",
+   "strength": "M",
+   "raw": "1-acetyl cyclohexanyl acetate",
+   "reading": "1-acetylcyclohexyl acetate",
+   "why": "spacing / 'cyclohexanyl' = cyclohexyl. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M73",
+   "strength": "M",
+   "raw": "1-ethoxy-4-(1-ethoxyvinyl)-3,3,5,5-tetramethylcyclo-1-hexene",
+   "reading": "1-ethoxy-4-(1-ethoxyethenyl)-3,3,5,5-tetramethylcyclohex-1-ene",
+   "why": "'cyclo-1-hexene' = cyclohex-1-ene; same family as the 4-acetyl-3,3,5,5-tetramethylcyclohexanone enol ethers of US3948815A / US3953471A. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M74",
+   "strength": "M",
+   "raw": "1-ethoxy-4-acetyl-3,3,5,5-tetramethylcyclo-1-hexene",
+   "reading": "4-acetyl-1-ethoxy-3,3,5,5-tetramethylcyclohex-1-ene",
+   "why": "as the butoxy analogue already rewritten (US3578715A family). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M75",
+   "strength": "M",
+   "raw": "1-phenylpenten-4-one-1",
+   "reading": "5-phenylpent-4-en-2-one",
+   "why": "old style: 1-phenyl-pent-1-en-4-one. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M76",
+   "strength": "M",
+   "raw": "13-methyl-9-cyclopentadecen-15-olide",
+   "reading": "14-methyl-oxacyclohexadec-10-en-2-one",
+   "why": "macrolide numbering conversion: 15-olide ring = oxacyclohexadecan-2-one, chain C(n) -> ring C(n+1) (Claude's derivation). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M77",
+   "strength": "M",
+   "raw": "2,4 diethyl 4,4a,5,9b tetrahydroindeno[1,2-d]-mdioxin",
+   "reading": "2,4-diethyl-4,4a,5,9b-tetrahydroindeno[1,2-d][1,3]dioxine",
+   "why": "'m-dioxin' = 1,3-dioxin; same family as Indoflor (US3496193A). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M78",
+   "strength": "M",
+   "raw": "2,4-dimethyl-6-npropyl-3-cyclohexene carbaldehyde",
+   "reading": "2,4-dimethyl-6-propylcyclohex-3-ene-1-carbaldehyde",
+   "why": "typographic ('npropyl', 'cyclohexene carbaldehyde'); the patent's neighbour prints a 3,5-dimethyl isomer, locants taken as extracted. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M79",
+   "strength": "M",
+   "raw": "2,6,6-trimethyl- 1 -hydroxyl -butyrylcyclohexane",
+   "reading": "1-(1-hydroxy-2,6,6-trimethylcyclohexyl)butan-1-one",
+   "why": "US3892809A prints the 2-ene analogue '2,6,6-trimethyl-1-hydroxy-1-butyryl-cyclohex-2-ene' throughout; 'hydroxyl -butyryl' = 1-hydroxy-1-butyryl. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M80",
+   "strength": "M",
+   "raw": "2,6-dimethyl-3-mercapto-heptanol-4",
+   "reading": "3-mercapto-2,6-dimethylheptan-4-ol",
+   "why": "old-style locant ('heptanol-4' = heptan-4-ol); US4070308A names its ketone '2,6-dimethyl-3-mercapto-4-heptanone'. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M81",
+   "strength": "M",
+   "raw": "2- methyl-6- (4'-methyl-3'-cyclohexen-1-yl)-5-hepten 2 01",
+   "reading": "2-methyl-6-(4-methylcyclohex-3-en-1-yl)hept-5-en-2-ol",
+   "why": "OCR: '2 01' = '2-ol'; primes dropped. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M82",
+   "strength": "M",
+   "raw": "2-(l,5-dimethylbicyclo[2.l.l]hexyl-2)ethanol",
+   "reading": "2-(1,5-dimethylbicyclo[2.1.1]hex-2-yl)ethanol",
+   "why": "OCR l/1; old locant 'hexyl-2' = hex-2-yl. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M83",
+   "strength": "M",
+   "raw": "2-benzylpyromeconic acid",
+   "reading": "2-benzyl-3-hydroxy-4H-pyran-4-one",
+   "why": "pyromeconic acid = 3-hydroxy-4-pyrone (trivial name translation). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M84",
+   "strength": "M",
+   "raw": "2α,6,5,5,8aβ-pentamethyl-3,5,6,7,8,8a-hexahydro-1(2H)-naphthalenone",
+   "reading": "2,5,5,6,8a-pentamethyl-3,5,6,7,8,8a-hexahydro-1(2H)-naphthalenone",
+   "why": "alpha/beta dropped, locants reordered (the extracted order '6,5,5' is a transposition). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M85",
+   "strength": "M",
+   "raw": "3(l0)-caren-4-olacetate",
+   "reading": "7,7-dimethyl-3-methylidenebicyclo[4.1.0]hept-4-yl acetate",
+   "why": "caran numbering: 3(10)-ene = exocyclic methylene on C3, 4-ol acetate; US3510510A makes '4-acyloxy-3(10)-carenes'. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M86",
+   "strength": "M",
+   "raw": "4,5-decamethylene-pyrimidine",
+   "reading": "5,6,7,8,9,10,11,12,13,14-decahydrocyclododeca[d]pyrimidine",
+   "why": "decamethylene bridge on C4-C5 of pyrimidine = fused cyclododecane ring (Claude's derivation). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M87",
+   "strength": "M",
+   "raw": "4,6-diethylceeyclohex-2-en-1-one",
+   "reading": "4,6-diethylcyclohex-2-en-1-one",
+   "why": "typo 'ceeyclohex'; no second spelling found. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M88",
+   "strength": "M",
+   "raw": "4-(2,2,C-3,T-6-tetramethyl-R-1-cyclohexyl)-3-buten-2-one",
+   "reading": "4-(2,2,3,6-tetramethylcyclohexyl)but-3-en-2-one",
+   "why": "relative-stereo codes (c/t/r) dropped (flat). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M89",
+   "strength": "M",
+   "raw": "4-acetyl-1-isobutoxy-3,3,5,5-tetramethylcyclo 1 hexene",
+   "reading": "4-acetyl-1-(2-methylpropoxy)-3,3,5,5-tetramethylcyclohex-1-ene",
+   "why": "as above (isobutoxy). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M90",
+   "strength": "M",
+   "raw": "4-methoxy-6,7-dihydro'-5H-Z-methyl-cyclopenta-[dl-pyrimidine",
+   "reading": "4-methoxy-2-methyl-6,7-dihydro-5H-cyclopenta[d]pyrimidine",
+   "why": "OCR: 'Z-' = 2-, '[dl' = '[d]'; no second spelling found. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M91",
+   "strength": "M",
+   "raw": "4-methyl-delta-hexylactone",
+   "reading": "4,6-dimethyloxan-2-one",
+   "why": "delta-hexalactone = 6-methyloxan-2-one; 4-methyl added. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M92",
+   "strength": "M",
+   "raw": "5-acetyl-2,3,3a,4,7,7a hexahydro 4,7-methanoidene",
+   "reading": "5-acetyl-2,3,3a,4,7,7a-hexahydro-4,7-methano-1H-indene",
+   "why": "'methanoidene' = methanoindene; spacing. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M93",
+   "strength": "M",
+   "raw": "5-acetyl-2,3,3a,4,7,7ahexahydro-4,7-methanoindene",
+   "reading": "5-acetyl-2,3,3a,4,7,7a-hexahydro-4,7-methano-1H-indene",
+   "why": "spacing. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M94",
+   "strength": "M",
+   "raw": "6-oxa-1,1,2,3,3,8-hexamethyl-2,3,5,6,7,8-hexahydrolH-benz [f] -indene",
+   "reading": "6-oxa-1,1,2,3,3,8-hexamethyl-2,3,5,6,7,8-hexahydro-1H-benz[f]indene",
+   "why": "OCR ('lH'), spacing; same pattern as the 6-oxa pentamethyl rewrite already in the corpus. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M95",
+   "strength": "M",
+   "raw": "8-methylthio-pmenthan-3-one",
+   "reading": "5-methyl-2-[2-(methylsulfanyl)propan-2-yl]cyclohexan-1-one",
+   "why": "p-menthane numbering: C8 is the isopropyl carbon; the patent prints '1-methylthio' elsewhere — taken as the 8-position (8-mercapto-p-menthan-3-one is the known grapefruit mercaptan). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M96",
+   "strength": "M",
+   "raw": "bis-non-2- en-l-ol-ether",
+   "reading": "1-(non-2-en-1-yloxy)non-2-ene",
+   "why": "'bis-non-2-en-1-ol ether' = the symmetrical ether of non-2-en-1-ol (Claude's reading). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M97",
+   "strength": "M",
+   "raw": "cis-3-hexenal-ethyl-cis-3-hexenyl acetal",
+   "reading": "1-ethoxy-1-(hex-3-en-1-yloxy)hex-3-ene",
+   "why": "mixed acetal of cis-3-hexenal with ethanol and cis-3-hexenol; Z dropped (flat). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M98",
+   "strength": "M",
+   "raw": "Cyclohexanbutanol, 4-(hydroxymethyl)-alpha, alpha-dimethyl-",
+   "reading": "5-[4-(hydroxymethyl)cyclohexyl]-2-methylpentan-2-ol",
+   "why": "CAS-inverted name: alpha = the carbinol carbon (Claude's derivation). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M99",
+   "strength": "M",
+   "raw": "geranyl thio acetate",
+   "reading": "S-(3,7-dimethylocta-2,6-dien-1-yl) ethanethioate",
+   "why": "geranyl thioacetate (S-ester). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M100",
+   "strength": "M",
+   "raw": "geranylnitrile",
+   "reading": "3,7-dimethylocta-2,6-dienenitrile",
+   "why": "geranyl nitrile read as geranonitrile (the C10 nitrile); the alternative 'geranyl cyanide' (C11) is possible. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M101",
+   "strength": "M",
+   "raw": "iso-pulegone",
+   "reading": "5-methyl-2-(prop-1-en-2-yl)cyclohexan-1-one",
+   "why": "isopulegone = 2-isopropenyl-5-methylcyclohexanone (trivial name). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M102",
+   "strength": "M",
+   "raw": "l-ethoxy-4-( 1ethoxyvinyl )-3 ,3 ,5 ,S-tetramethylcyclo-l-hexene",
+   "reading": "1-ethoxy-4-(1-ethoxyethenyl)-3,3,5,5-tetramethylcyclohex-1-ene",
+   "why": "as above; OCR l/1, S/5, spaces. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M103",
+   "strength": "M",
+   "raw": "Octahydro-9,9-dimethyl-1,6-methanonaphthalene-1-(2H)-ol",
+   "reading": "9,9-dimethyloctahydro-1H-1,6-methanonaphthalen-1-ol",
+   "why": "CAS-style: '1-(2H)-ol' reordered. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M104",
+   "strength": "M",
+   "raw": "tetrahydro-5-isopropyl-2-methyl-2-thiophene acetonitrile",
+   "reading": "2-[2-methyl-5-(propan-2-yl)thiolan-2-yl]acetonitrile",
+   "why": "reordered name. Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  },
+  {
+   "id": "M105",
+   "strength": "M",
+   "raw": "Thuj one",
+   "reading": "1-isopropyl-4-methylbicyclo[3.1.0]hexan-3-one",
+   "why": "spacing typo of thujone (3-thujanone). Approved by Ivan 2026-10-03 (strong and medium groups of the readings table of that date)"
+  }
+ ]
+}
