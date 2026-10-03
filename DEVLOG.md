@@ -53,7 +53,8 @@ someone looks (12 repaired without a witness, 6 PubChem trade/generic names). Iv
 flagged "not a definite structure" names: 10 REJECTED in `review.jsonl` (backup
 `review.jsonl.bak-20261003-132153`), 1 merged (two compounds, one description), 8 rewritten at the
 structure layer only. **status.py's HEADLINE IS NOW BY STRUCTURE (Ivan, 10-03, "option A"): 26 of 67 tags at
-the bar, 1,745 distinct molecules (full InChIKey); 1,710 by connectivity only (enantiomers merged); name
+the bar, 1,744 distinct molecules (full InChIKey; 1,745 before the A5 rewrite, 10-03 night); 1,709 by connectivity only
+(enantiomers merged; 1,710 before); name
 text, printed beside it, is 27 of 67 / 1,819 names.** `apple` fell out: 34 names but 26 distinct structures
 (six OCR spellings of one norcamphor alcohol + three duplicate pairs). Tobacco sits exactly on 30. Also now:
 1,136 approve · 1,168 reject. **Quote the structure figure; never the old 27 without saying "by name
@@ -63,9 +64,11 @@ text".** Next: freeze v1.0 at 26 of 67 (apple needs 4 more; sources are exhauste
 repairs and 6 PUBCHEM-CHECK names. **A5 is human-confirmed wrong** (OCR "Z" is a "2"; correct compound is the
 2-isopentyl-2-methyl-4,7-dihydro-1,3-dioxepin already in `names.jsonl`). Joe's other OKs (A2–A4, A6–A12, B1–B6) are
 AI-assisted: he put his own focus only on A1 and A5, so those 16 are still unconfirmed by a human; A1's name is
-open, B3's chain-length doubt is open. **Nothing applied yet** — the A5 correction (a REWRITE in `structures.py`)
-waits for Ivan's OK. Also open: diff Joe's SMILES list against `names.jsonl`; check the rest against Joe's catalogue
-and PubChem (Ivan told Joe he would); Joe's IUPAC <-> SMILES converter idea (Ivan: "let me think about it").
+open, B3's chain-length doubt is open. **A5 rewrite APPLIED later 10-03 (Ivan's OK)** as a
+REWRITE entry in `structures.py` — see the last entry. Also open: Joe's catalogue page (not opened); Joe's IUPAC <-> SMILES converter idea (Ivan: "let me
+think about it"). **Later 10-03:** the PubChem half of Ivan's promise is DONE — Joe's SMILES = the corpus structure for
+all 11 A items other than A5 (A11 by graph check only: it is in no PubChem record), A5 closed (CID 104471), B1–B6
+each resolve to one PubChem record; flags on B3/B4/B5/B6 in the last entry (B4 carries stereo the patent never states).
 The 367d288 / c10f806 commits are pushed, so the "not committed" note in the evening entry no longer holds.
 
 **Emails were READY (09-27):** preview live at https://vanpez.github.io/openscent/ (GitHub Pages,
@@ -5034,16 +5037,16 @@ catalogue and PubChem.
 | A2–A4, A6–A12 | AI-assisted OK only |
 | B1–B6 | soft OK; B3's chain-length question open; B4–B6 still depositor synonyms |
 
-**Nothing applied.** `names.jsonl`, `structures.py` and `review.jsonl` are untouched; the A5 row still carries the
-wrong repair (PROVISIONAL).
+**Nothing applied at this point** (until the A5 rewrite in the last entry). `names.jsonl`, `structures.py` and
+`review.jsonl` were untouched; the A5 row still carried the wrong repair (PROVISIONAL).
 
 **Open.**
-1. **A5, on Ivan's OK:** add a REWRITE entry in `structures.py` mapping the A5 name to the 2-isopentyl-2-methyl
-   structure, re-run `structures.py` and `status.py`. The wrong repair is currently its own molecule, so the totals
-   may move; re-run, do not predict.
-2. Diff Joe's A1–A12 SMILES against `names.jsonl` (needs an environment with RDKit or InChIKey tooling), and
-   check the rest against Joe's catalogue (`app.lcserve.com/catalogue?smiles=`) and PubChem — what Ivan told Joe
-   he would do.
+1. **A5 — DONE later 10-03 night, see the last entry.** (Was: on Ivan's OK, add a REWRITE entry in
+   `structures.py` mapping the A5 name to the 2-isopentyl-2-methyl structure, re-run `structures.py` and
+   `status.py`; the totals may move, re-run, do not predict.)
+2. **DONE later 10-03 (next entry):** Joe's A1–A12 SMILES diffed against `names.jsonl`, and the 18 checked against
+   PubChem — what Ivan told Joe he would do. **Not done:** Joe's catalogue page (the built-in browser would not
+   open it).
 3. B3 and B4–B6: a second source, or leave them marked.
 4. The converter idea: Ivan told Joe "let me think about it" (15:26 UTC). Joe expects it to be complicated.
 5. Unchanged: freeze v1.0; permission-email follow-up ~2026-10-12.
@@ -5052,3 +5055,79 @@ wrong repair (PROVISIONAL).
 4 of "structure layer finished" (`pubchem_smiles.py` docstring) was done in `c10f806` (11:43 UTC): the docstring now
 says all PubChem traffic goes through Hetzner; the same commit corrected the allergen/catalogue dates in comments.
 No logic changed.
+
+---
+
+## 2026-10-03 (night, later) — Joe's SMILES and the 18 names checked against PubChem
+
+**What was done** (Ivan told Joe he would check the rest against the catalogue and PubChem). New script
+`pipeline/pubchem_smiles_check.py` (stdlib; runs on Hetzner like `structures_pubchem.py`): 38 lookups — corpus SMILES
+and Joe's SMILES for A1–A12 (three variants for A5), name + SMILES for B1–B6. Raw answers and a table are in
+`outreach/joe-check-*` (local only: they quote a private chat). Also a throwaway skeleton-isomorphism check
+(element + connectivity, networkx; not committed) because the Mac and Hetzner have no RDKit.
+
+**A1–A4, A6–A12 (11 items): Joe's SMILES and the corpus SMILES are the same structure.** PubChem connectivity blocks
+are identical for 10 (A11 is not in PubChem); the graph check agrees for all 11, with bond orders for A11. Joe's
+stated formulas equal PubChem's for the 10 (A11's is consistent by hand count), and PubChem's systematic names line
+up with the repaired patent names. What this is: two readings of the SAME repaired name (OPSIN; Joe's AI-assisted
+SMILES) agreeing, plus the compound being registered. It does NOT test that the repair is what the patent meant —
+A5 was exactly that failure. A11 has no PubChem record under either spelling: the weakest of the 12. A1/A6: the only
+same-connectivity record is the (1S,4S,5S) isomer; the corpus row stays flat.
+
+**A5, closed mechanically.** Joe's replacement and the spelling already in `names.jsonl` are one PubChem record (CID
+104471, block FFANAZFONFVGKZ). The repair on file (QISJTHUWIHNVLJ) is in PubChem under no spelling, and Joe's "wrong"
+SMILES is the same graph as it. This replaces "not checked mechanically" in the entry above.
+
+**B1–B6: PubChem agrees with itself, which is weaker than it looks.** Each name resolves to ONE CID, the name sits in
+that CID's synonym list, and the corpus structure's connectivity matches the record — all one depositor's data, not a
+second source. CAS numbers for an independent check: B1 98-55-5 (its synonyms also carry the generic 8006-39-1),
+B2 470-82-6, B3 33885-51-7 (EINECS 251-717-2), B4 55925-49-0, B5 41890-92-0, B6 88644-30-8. Flags, Claude's reading
+and unverified:
+- **B3:** PubChem's own synonyms read the record as a 3-carbon propionaldehyde ("…-2-norpinenepropionaldehyde").
+  Nothing in it supports a C2 aldehyde; why the trade name says "aceta-" is unexplained.
+- **B4:** the record is the (1S,2R,4S) isomer, one of 8 same-connectivity records. The patent states no stereo, yet
+  the row carries it (full InChIKey `CFXJOMGPUADAJE-XHNCKOQMSA-N`) and `status.py` counts by full InChIKey. Ivan's
+  call whether this row should be flat. The other five B rows are flat.
+- **B5:** the CID's synonyms include both "Methoxyelgenol" and "Dihydromethoxyelgenol". If those are two trade grades,
+  the bare name may not be this saturated alcohol.
+- **B6:** PubChem's computed name ("…-9-ol") and its synonym ("…-8a-ol") read differently; Claude's hand-parse of the
+  SMILES fits the 8a-ol name.
+- **B1/B2:** PubChem folds the generic names into alpha-terpineol and 1,8-cineole ("p-Cineole" is among 2758's
+  synonyms). Consistent with Joe's "1,8".
+
+**Not done.** Joe's catalogue page: the built-in browser refused to open `app.lcserve.com`; not retried or routed
+around. Nothing was applied to `names.jsonl`, `structures.py` or `review.jsonl` by this check. New file
+`pipeline/pubchem_smiles_check.py`.
+
+---
+
+## 2026-10-03 (night, last) — A5 rewritten (Ivan: "rewrite A5")
+
+**Why.** Joe called the mechanical A5 repair wrong; the check above closed it mechanically (his replacement and the
+existing corpus spelling are one PubChem record, CID 104471; the repair on file is in PubChem under no spelling).
+Ivan asked for the rewrite.
+
+**What changed in `pipeline/structures.py`.**
+- A REWRITE entry: `4,7 dihydro-Z-isopentyl- 2-methyl-l,3-dioxepin` -> `4,7-dihydro-2-isopentyl-2-methyl-1,3-dioxepin`,
+  with the reason (the "Z-" is OCR for "2-"; no PubChem cross-check name needed, done by hand above).
+- **A rule change, not just a table entry:** names that have a REWRITE are now held back from the formatting and OCR
+  passes. Before, the rewrite step only saw names the OCR pass had failed on, so a REWRITE could never override an
+  OCR reading that was valid but wrong — which is exactly A5. Verbatim readings still win. The other 14 rewrites
+  are unaffected (all 14 resolved only at the rewrite step already).
+- `structures.py` and `structures.py --merge` re-run (offline; no PubChem traffic). `names-opsin.jsonl` and
+  `names.jsonl` each changed by ONE line (the A5 row: tier ocr -> rewrite, `QISJTHUWIHNVLJ` -> `FFANAZFONFVGKZ`,
+  PROVISIONAL -> rewritten). By tier: ocr 19 -> 18, rewrite 14 -> 15; by trust: PROVISIONAL 12 -> 11, rewritten
+  14 -> 15. `review.jsonl` untouched.
+
+**Figures (status.py, run after the change).** The A5 name now shares its structure with the two verbatim spellings, so
+it stops being its own molecule:
+```
+              by structure (full)     connectivity only      name text (old)
+patents        21 of 67   920           21 of 67   895         21 of 67   983
+COMBINED       26 of 67  1744           26 of 67  1709         27 of 67  1819
+```
+Before: 921 / 896 patents and 1,745 / 1,710 combined; name text unchanged. Still 26 of 67; the at-the-bar list and the
+within-reach list are unchanged; verbatim invariant clean.
+
+**Still PROVISIONAL (11):** A1–A4 and A6–A12. A1/A6 are one compound; none has a witness; Joe's OKs on them are
+AI-assisted; PubChem and the graph check agree with the reading but not with the patent's intent.

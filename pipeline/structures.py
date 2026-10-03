@@ -247,8 +247,17 @@ REWRITE_RAW = {
          "the sentence names the trademark Spirogalbanone(R); '7/6' is a locant ambiguity in the patent's own "
          "spelling. The structure is pinned to the PubChem record for the trademark (cross-check below)",
          "Spirogalbanone"),
+    "4,7 dihydro-Z-isopentyl- 2-methyl-l,3-dioxepin":
+        ("4,7-dihydro-2-isopentyl-2-methyl-1,3-dioxepin",
+         "OCR: 'Z-' is '2-' (both isopentyl and methyl sit on ring atom 2, the ketal carbon). The mechanical repair "
+         "read 'Z' as a stereodescriptor and put the isopentyl on ring C4 — a valid but wrong structure. The corpus "
+         "holds the correct compound under two verbatim spellings of other patents ('2-(3-methylbutyl)-2-methyl-4,7-"
+         "dihydro-1,3-dioxepin', '4,7-dihydro-2-isopentyl-2-methyl-1,3-dioxepin'), same InChIKey; PubChem has it as "
+         "CID 104471 and has no record for the earlier reading. Joe (2026-10-03) called the earlier reading wrong and "
+         "proposed this one; Ivan asked for it to be applied (2026-10-03). The compound has no stereocentre, so nothing is "
+         "lost by a flat structure", None),
 }
-REWRITE = {" ".join(k.lower().split()): v for k, v in REWRITE_RAW.items()}
+REWRITE ={" ".join(k.lower().split()): v for k, v in REWRITE_RAW.items()}
 
 
 # ---------------------------------------------------------------- flags
@@ -303,8 +312,13 @@ def run() -> None:
 
     left = settle(sorted(raws), collapse, "verbatim")
     print(f"  verbatim        {len(raws) - len(left):>5}")
+    # A hand-authorised rewrite outranks the mechanical repairs: hold those names back from the formatting and OCR
+    # passes, or an OCR reading that is valid but wrong would win (A5, 2026-10-03: "Z-" read as a stereodescriptor).
+    held = [r for r in left if " ".join(r.lower().split()) in REWRITE]
+    left = [r for r in left if r not in held]
     n = len(left); left = settle(left, fmt, "formatting"); print(f"  formatting      {n - len(left):>5}")
     n = len(left); left = settle(left, ocr, "ocr"); print(f"  ocr             {n - len(left):>5}")
+    left += held
     def rewrite_of(r):
         v = REWRITE.get(" ".join(r.lower().split()))
         return (v[0], ["REWRITE"]) if v else (None, [])
