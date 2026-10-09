@@ -6,17 +6,19 @@
 
 ## RESUME HERE — state as of 2026-09-26 (end of day), amended through 2026-10-09
 
-**READ THIS FIRST. The 09-24 blocks below it are superseded.** Live figures (status.py):
+**READ THIS FIRST. The 09-24 blocks below it are superseded.** Live figures (status.py, re-run 2026-10-09; the 09-26
+figures this block used to show — 27 of 67, 1,829 molecules — are now the by-name-text count):
 
 ```
-4,676 review rows · 1,146 approve · 1,158 reject · 2 skip · 2,370 undecided
+4,676 review rows · 1,136 approve · 1,168 reject · 2 skip · 2,370 undecided
 retired    30 approved patent rows (exclusions.jsonl: quoted copyrighted reference works)
-  patents    21 of 67 at the bar     993 molecules
-  pubchem     7 of 67                839 molecules
-  passage     0 of 67                  8 molecules
-  targeted    0 of 67                  5 molecules   (new file, 09-26)
-  COMBINED   27 of 67 at the bar   1,829 molecules
-  next: anisic 27 (needs 3) · grapefruit 22 · leather, chlorine, balsamic 21 · pineapple 20
+           BY STRUCTURE (headline)    connectivity only      name text (old)
+  patents    20 of 67    889 molecules   20 of 67    860 molecules   21 of 67    983 names
+  pubchem     7 of 67    837 molecules    7 of 67    829 molecules    7 of 67    839 names
+  passage     0 of 67      6 molecules    0 of 67      6 molecules    0 of 67      8 names
+  targeted    0 of 67      5 molecules    0 of 67      5 molecules    0 of 67      5 names
+  COMBINED   24 of 67  1,710 molecules   24 of 67  1,671 molecules   27 of 67  1,819 names
+  next: tobacco 29 (needs 1) · sandalwood 29 (needs 1) · apple 26, anisic 26 (need 4) · grapefruit 22 (needs 8)
 verbatim invariant: clean · review queue: 0 PRODUCTIVE
 ```
 
@@ -91,6 +93,20 @@ if a structure is ever questioned.
 re-run, so every figure above is still the 10-03 one. M (10-08), on a bio runtime for molecular data that plugs into MolNFT:
 "Would be nice to get openscent block there as well when it's done". Nothing about the reference MolNFT v2 contract. The GL1F
 model fees in the 09-30 entry are superseded (see the last entry). **Permission-email follow-up is due ~2026-10-12.**
+
+**2026-10-09 (log, later — status check; waiting; converter parked; see the last entry):** `status.py` re-run today; the
+block at the top is current. Ivan has heard from none of the six permission requests, so **v1.0 is NOT frozen: wait for
+the follow-up round (~Mon 10-12).** A "yes" could add licensed descriptors (separate labelled layer, never mixed in);
+whether they would count toward any of the 67 tags is not decided. Joe's IUPAC <-> SMILES converter idea moves to a
+NEW chat; nothing built, handoff in the last entry.
+
+**2026-10-09 (log, evening — converter brainstorm, see the last entry):** no pipeline or corpus change; nothing built,
+nothing sent to Joe. Joe's site (app.lcserve.com) and his Telegram thread (09-28 to 10-06) were read. His "catalogue" is
+a 63-rule functional-group SMARTS detector (structure -> groups), not a name or fragment database; his name -> SMILES
+page already exists (OPSIN + RDKit). **Not decided** (Ivan: "not yet, just log"); Claude's recommendation: finish, freeze
+and mint OpenScent first, keep any converter OUT of OpenScent (separate repo, OpenScent corpus as its benchmark), reply to
+Joe and run a read-only scratch benchmark meanwhile. Message to Joe NOT drafted yet. Next step unchanged: follow-up
+emails ~10-12, then freeze.
 
 **Emails were READY (09-27):** preview live at https://vanpez.github.io/openscent/ (GitHub Pages,
 master /docs), linked in all three drafts, signed Ivan Pezzini. outreach/ and the shop lists
@@ -5446,3 +5462,113 @@ said in a public chat, not checked against docs or chain. Only the OpenScent-rel
 
 **Due in 3 days:** follow up once on the 09-28 permission emails if nothing has come back (~10-12).
 Uncommitted: `DEVLOG.md` (this entry and the RESUME paragraph).
+
+---
+
+## 2026-10-09 (later) — status check; the freeze waits for the follow-up emails; the converter goes to a new chat
+
+No pipeline work; nothing in the corpus changed. `status.py` re-run today: the figures are now in the RESUME block
+(24 of 67 by structure, 1,710 molecules; by name text 27 of 67 / 1,819 names; 1,136 approve · 1,168 reject · 2 skip ·
+2,370 undecided; verbatim invariant clean). Within reach: tobacco 29 and sandalwood 29 (each needs 1), apple 26 and
+anisic 26 (need 4), grapefruit 22 (needs 8); 43 tags are below the bar. Git: `master` level with `origin/master` as of the
+last fetch (not re-fetched); the only untracked file is `openscent-paper-v0.3-preview.pdf`.
+
+**Decision (Ivan, 10-09): wait for the follow-up emails before freezing v1.0.** He has heard back from none of the six
+requests of 09-28 (the local log's reply column is all "—"; the inbox itself is the authority). A "yes" could add
+descriptors for some of the 114 materials; per the 09-26 and 09-28 entries that is a separate, labelled layer in the FREE
+part, never mixed into the extracted corpus. Whether such descriptors would count toward any of the 67 tags is NOT decided
+— settle that rule before a reply arrives, not after. The follow-up is still due ~Mon 10-12, once, politely.
+
+**The converter (Joe's idea) — parked for a fresh chat; nothing built.** Handoff, everything below was read this session:
+
+- **Joe's proposal** (10-03 night entry): an IUPAC <-> SMILES converter built with his catalogue — a large catalogue of
+  functional group -> SMILES fragments plus a priority function that checks the heaviest atom ("the core idea of chemical
+  nomenclature"); he expects it to be complicated. Ivan told him "let me think about it" on 10-03 and chose on 10-09 to take
+  it up in a new chat. Joe's catalogue page was never opened (the built-in browser would not load it).
+- **What the repo already has:** OPSIN 2.9.0 (`pipeline/tools/opsin-cli-2.9.0-jar-with-dependencies.jar`, offline; downloaded
+  10-03, not committed), Java at /usr/bin/java, and `pipeline/structures.py` — the name -> structure pipeline with its
+  trust tiers (verbatim / formatting / ocr / rewrite / ...), writing `corpus/structures/names.jsonl`; the hand rewrites sit in
+  `corpus/structures/rewrites.json`. **RDKit is not installed** in the default python (/opt/anaconda3), checked 10-09.
+- **Claude's reading, not discussed with Joe:** OPSIN already does name -> SMILES, so the open direction is SMILES -> name.
+  Whether Joe means both directions, and what it is for, is the first question for the new chat. Possible uses for
+  OpenScent: a round-trip check on the structure layer (name -> SMILES -> name -> SMILES) and readable IUPAC names for
+  MolNFT tokens. Not checked: whether any offline name generator is available.
+- **Rule before any code: where it lives.** Licences are one-way (CLAUDE.md). If it is to be shared with Joe or published,
+  say so and choose the licence first; if it could ever be paid or restricted, start it in a PRIVATE repo.
+
+**Corrections to the entries above.** The 10-09 entry's "Uncommitted: DEVLOG.md" is stale: that entry was committed
+(`c24aa09`). The RESUME code block still showed the 09-26 figures (27 of 67 / 1,829); refreshed.
+
+**Open.** Follow-up emails ~10-12; freeze v1.0 after them; the 48 names without a structure (10-03 figure, not re-run);
+Joe's 16 AI-assisted OKs still unconfirmed by a human; A3's 1-ene reading (revisit if wrong); Mike's reference MolNFT v2
+contract; M's "openscent block" in the bio runtime (10-08) — what it would be is unknown. Uncommitted: `DEVLOG.md` (this
+entry and the RESUME changes).
+
+---
+
+## 2026-10-09 (evening) — the converter: what exists, what Joe actually has, and where it should live
+
+No pipeline work; nothing in the corpus changed; nothing built; nothing sent to anyone. Ivan asked for a brainstorm on Joe's
+IUPAC <-> SMILES converter idea (shared repo with Joe, message to Joe once there is an idea) and then said "not yet, just
+log". Everything below was read or computed this session; the web findings are from page reads, not independent tests.
+**Joe's site, read in the built-in browser (it opened this time; the 10-03 refusal did not recur).** `app.lcserve.com`,
+titled "Quantum Orbitals · Integrated Workbench". Tabs: Overview, Catalogue, 3D molecule, 3Dmol viewer, Sequence <-> SMILES,
+Name -> SMILES, Superposition studio, Molecular overlap, Pauli, Docs.
+- **`/catalogue`** = SMILES in -> RDKit.js drawing -> **63 functional-group SMARTS rules** (`/data/functional_groups.json`),
+  each with a note on orbital character and reaction families; nine preset molecules (citric acid, aspirin, glycerol ...).
+  It runs structure -> groups. It has no prefixes, suffixes, seniority order or locants, so it cannot build a name. Not a
+  compound database and not a functional-group -> SMILES fragment table.
+- **`/name-to-smiles`** = OPSIN + RDKit, server-side, with a 2D check. Its own text says it is a parser, not a synonym
+  database, and that a successful parse "does not prove that an OCR-corrupted patent name was repaired correctly" — so it
+  was built with our workflow in mind. Same job our `structures.py` does offline.
+- **`/sequence`** = peptide one-letter sequence <-> SMILES. The rest are orbital / 3D tools.
+- No licence, repo link or open-source statement on any page seen. Whether his code or data can be shared is unknown.
+
+**Joe's private Telegram thread (09-28 to 10-06) was also read** (read only, nothing sent). **Nothing from it is recorded in
+this public file** — Ivan's decision, 10-09: private chat content stays out of the public repo. Details are in the local-only
+`outreach/joe-thread-20261009.md` (gitignored). The only thing it adds here: Joe's `/name-to-smiles` page was shared
+with Ivan on 10-04, and the converter and shared-repo question is still open.
+
+**Landscape (searched 10-09; page reads, not tested).**
+- Name -> structure: OPSIN, MIT, Java 8+ (already in our pipeline).
+- Structure -> name, now has open rule-based tools: **Openclatura** (lamalab-org, MIT, beta, RDKit; stereodescriptor edge
+  cases "incomplete"; reports OPSIN round-trip 100 / 99.76 / 97.70 % on QM9 / PubChem / ZINC22, sample sizes not stated)
+  and **NISPO** (arXiv 2607.26113, Runcie / Imrie / Deane, oxpig; code written by an AI agent loop; reports 98.1 %
+  round-trip on 103 M PubChem molecules; **software licence not checked**). **STOUT V2** is neural (trained with OpenEye
+  Lexichem under an academic licence; its authors still call deterministic tools the gold standard).
+- "Round-trip" = OPSIN parses the generated name back to the same structure. It is not a chemist's check that the name is
+  correct, and all of it is on clean PubChem-style names, not patent text.
+
+**Computed today from `corpus/structures/names.jsonl`:** 995 records; trust verbatim 683 · rewritten 158 · pubchem 69 ·
+repaired+witness 16 · flat 15 · PUBCHEM-CHECK 6 · none 48. The 48 unresolved names touch 33 tags; **tobacco 2,
+sandalwood 2, apple 0, anisic 0, grapefruit 0.** The four tobacco / sandalwood ones look like two spellings of one compound
+each (cyclohomocitral enol propionate; 4-acetyl-3,3,8,8-tetramethyl-as-hydrindacene — obsolete ring nomenclature). Each is
+one of the two tags' missing "1"; they can be settled by a hand rewrite on Ivan's OK (the existing route, 158 so far), so
+**a converter is not on the freeze's critical path.** Not verified: whether those two structures would be right.
+
+**Claude's recommendation (NOT decided by Ivan).**
+1. Finish, freeze and mint OpenScent first. The freeze waits on the ~10-12 follow-up emails and the mint on Mike's
+   reference contract; neither depends on a converter, and a mint cannot be undone.
+2. Keep any converter out of OpenScent: it generates, OpenScent extracts; it involves Joe, possibly a paid product, and
+   Mike's chain plans; licences are one-way. Separate repo, code MIT or Apache-2.0, data CC0, public from the start unless
+   anything is to be paid (then a private repo from day one). OpenScent's 995 name records are its natural benchmark.
+3. Meanwhile, low risk and read-only: reply to Joe (he has waited since 10-03) with questions — format, size and licence of
+   his catalogue, whether his code can be open, whether it is tied to the paid version — and, as a scratch benchmark, run
+   Openclatura over the corpus names. Neither touches the corpus.
+4. Reframed scope if pursued: (a) name -> SMILES repair layer for OCR / obsolete / trivial names (the gap Joe's page
+   disclaims), (b) SMILES -> name by wrapping Openclatura plus an OPSIN check, no new generator unless the benchmark shows a
+   gap. Generated names are computed metadata and must be labelled so.
+
+**Open questions for Ivan.** Is the aim OpenScent's own unresolved names, or something broader on the chain side (which
+would need Mike)? Where does the repo live (Ivan's account, a GenesisL1 org, Joe's)? When Mike's
+contract arrives: does MolNFT v2 have a name field? (If so, readable names are generated metadata.)
+
+**Corrections to the entries above.** The 10-09 handoff says "Java at /usr/bin/java": that is only the macOS stub, `java`
+reports "Unable to locate a Java Runtime", so **OPSIN cannot run on the Mac now** (not on this machine until a JDK is
+installed; Hetzner not checked). RDKit is still not installed (checked again). The "Joe's catalogue page was never opened"
+items are closed by this entry (opened and described above). That 10-09 entry's "Uncommitted" line is superseded.
+
+**Open.** Follow-up emails ~10-12; freeze v1.0 after them; decide the converter's scope, home and licence; reply to Joe (not
+drafted); install JDK + RDKit before any OPSIN or Openclatura run; the 48 unresolved names (figure computed today); Joe's
+16 AI-assisted OKs still unconfirmed by a human; A3's 1-ene reading; Mike's reference MolNFT v2 contract; M's "openscent
+block" (10-08). Uncommitted: `DEVLOG.md` (this entry and the RESUME paragraph).
