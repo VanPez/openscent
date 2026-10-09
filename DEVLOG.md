@@ -4,7 +4,7 @@
 
 ---
 
-## RESUME HERE — state as of 2026-09-26 (end of day), amended through 2026-10-03
+## RESUME HERE — state as of 2026-09-26 (end of day), amended through 2026-10-09
 
 **READ THIS FIRST. The 09-24 blocks below it are superseded.** Live figures (status.py):
 
@@ -86,6 +86,11 @@ ring nomenclature, trade names with no definition found, plus the held ones (cyc
 `6,7,8-Decene-1ol`) and 2 vetoed. Counting only names with a trusted structure the corpus is 1,656 molecules by structure
 and also 24 of 67 tags. Several rewrites are Claude's derivations (flagged "medium" in their reason) — the first place to look
 if a structure is ever questioned.
+
+**2026-10-09 (log — GenesisL1 group read 10-03 to 10-09, see the last entry):** no pipeline work; `status.py` was not
+re-run, so every figure above is still the 10-03 one. M (10-08), on a bio runtime for molecular data that plugs into MolNFT:
+"Would be nice to get openscent block there as well when it's done". Nothing about the reference MolNFT v2 contract. The GL1F
+model fees in the 09-30 entry are superseded (see the last entry). **Permission-email follow-up is due ~2026-10-12.**
 
 **Emails were READY (09-27):** preview live at https://vanpez.github.io/openscent/ (GitHub Pages,
 master /docs), linked in all three drafts, signed Ivan Pezzini. outreach/ and the shop lists
@@ -5415,3 +5420,29 @@ name text; patents 889 / 860. Counting only names with a trusted structure (54 n
 
 **Open.** The 48 names without a structure (not definite, impossible as written, obsolete nomenclature, no definition found;
 Muscenone held as a mixture). Uncommitted: `rewrites.json`, `names*.jsonl`, this and the previous DEVLOG entry.
+
+---
+
+## 2026-10-09 — GenesisL1 group read (10-03 to 10-09): the items that relate to OpenScent
+
+No pipeline work. `status.py` was not re-run; the RESUME figures are the 10-03 ones.
+
+Ivan had the last six days of the public GenesisL1 Telegram group read (1,475 messages, Sat 10-03 00:05 to Fri 10-09 12:26,
+browser local time; main group only; images, files, video and reactions not read, links not opened). Everything below is what people
+said in a public chat, not checked against docs or chain. Only the OpenScent-related items are logged here.
+
+- **M, Thu 10-08, 12:14:** a bio runtime is "in work", the same concept as Crypto GL1F but for molecular data, optionally plugged
+  into MolNFT so the data stays on GenesisL1. At 12:17: "Would be nice to get openscent block there as well when it's done".
+  The screenshots he posted around it were not read, so what the "block" would be is unknown.
+- **M, Tue 10-06, 19:30 (MolNFT explained):** v1 = standard NFT anchoring data on IPFS; v2 = everything on chain (app.molnft.org,
+  the PDB, about 1 million molecules, read-only for other dapps). "Later" researchers will be able to add their own molecular data
+  and deploy their own MolNFT contracts for their own pipelines; CIPNFT sits on top for things like drug designs for patent
+  claims. No date for any of it.
+- **The reference MolNFT v2 contract** the mint waits on is not mentioned, so the 09-30 inference (not imminent) is neither
+  confirmed nor refuted.
+- **GL1F model fees (corrects item 3 of the 09-30 entry):** GL1F Crypto launched Mon 10-05. On 10-06 M stated 10 L1 per registry
+  add, 0.0001 L1 per byte, optional marketplace listing 10 L1 (the 09-30 entry had 1 L1, 0.001 L1 per byte, 1 L1). The OpenScent
+  model is planned in GL1F (09-28 entry).
+
+**Due in 3 days:** follow up once on the 09-28 permission emails if nothing has come back (~10-12).
+Uncommitted: `DEVLOG.md` (this entry and the RESUME paragraph).
