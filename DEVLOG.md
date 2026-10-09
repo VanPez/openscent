@@ -106,7 +106,8 @@ a 63-rule functional-group SMARTS detector (structure -> groups), not a name or 
 page already exists (OPSIN + RDKit). **Not decided** (Ivan: "not yet, just log"); Claude's recommendation: finish, freeze
 and mint OpenScent first, keep any converter OUT of OpenScent (separate repo, OpenScent corpus as its benchmark), reply to
 Joe and run a read-only scratch benchmark meanwhile. Message to Joe NOT drafted yet. Next step unchanged: follow-up
-emails ~10-12, then freeze.
+emails ~10-12, then freeze. **Rule (Ivan, 10-09): this repo is public — private chat content stays out of every tracked
+file** (details of the Joe thread: local-only `outreach/joe-thread-20261009.md`; see the last entry).
 
 **Emails were READY (09-27):** preview live at https://vanpez.github.io/openscent/ (GitHub Pages,
 master /docs), linked in all three drafts, signed Ivan Pezzini. outreach/ and the shop lists
@@ -5572,3 +5573,23 @@ items are closed by this entry (opened and described above). That 10-09 entry's 
 drafted); install JDK + RDKit before any OPSIN or Openclatura run; the 48 unresolved names (figure computed today); Joe's
 16 AI-assisted OKs still unconfirmed by a human; A3's 1-ene reading; Mike's reference MolNFT v2 contract; M's "openscent
 block" (10-08). Uncommitted: `DEVLOG.md` (this entry and the RESUME paragraph).
+
+---
+
+## 2026-10-09 (night) — rule: private chat content stays out of the public repo
+
+No pipeline or corpus change; nothing built; nothing sent to Joe. **Rule (Ivan, 10-09):** this repo is public, so
+`DEVLOG.md` and every other tracked file hold conclusions, decisions and facts about public things only. Quotes or summaries
+of private chats (Joe's or anyone's) and personal remarks go in local-only `outreach/` (gitignored) or are left out; scan a
+diff for chat content before any push. **Applied:** the 10-09 evening entry records only what Joe's public site does; the
+thread itself is summarised only in `outreach/joe-thread-20261009.md`.
+
+**Not covered by that fix, and left as is on Ivan's decision ("let's leave it"):** earlier entries are untouched.
+Whether to redact them, or rewrite history, is NOT decided and not planned (details in the local note).
+
+**Git.** `origin/master` = `20fad88` as of this entry. The previous entry's "Uncommitted" line is stale: that entry is
+committed. A local-only backup branch exists (not pushed); the incident record is in the local note, not here.
+
+**Open.** Unchanged: follow-up emails ~10-12; freeze v1.0 after them; the converter's scope, home and licence; reply to Joe
+(not drafted); JDK + RDKit install before any OPSIN or Openclatura run; Mike's reference MolNFT v2 contract. Uncommitted:
+`DEVLOG.md` (this entry and one RESUME sentence).
