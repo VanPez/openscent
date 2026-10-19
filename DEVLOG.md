@@ -137,6 +137,20 @@ v1.0 figures (COMBINED: 24 of 67 tags, 1,708 molecules by structure; 1,710 befor
 1,739; tobacco is the tag that would cross); `--with-licensed` counts it into COMBINED, `--no-licensed` ignores it. The preview
 leads with the v1.0 figures. De Hekserij declined for now. **Later that night: Java was found (it IS installed, keg-only), the two held names (tobacco, sandalwood) were resolved on Ivan's approval, and the headline did NOT rise: tobacco and sandalwood are at 28 and each need 2, not 1 (last entry).** Committed and pushed 10-19.
 
+**2026-10-19 (log — the 44 name-keyed leftovers counted; see the last entry):** the headline is NOT inflated: with all 50 name-keyed
+identities removed (44 unresolved + 6 PUBCHEM-CHECK), v1.0 is still 24 of 67 tags; mintable molecules (structure-keyed) are 1,658 of
+the 1,708 (1,619 with enantiomers merged). Spelling duplicates among the 44: none firm; 3 duplicate an already-resolved compound
+(they inflate the molecule count only). **Correction: sandalwood needs 3, not 2** (its 28 includes one PUBCHEM-CHECK name). Counting
+only structures from verbatim or PubChem-resolved names, the headline is 22 of 67 (aldehydic and animalic drop). Nothing in the
+corpus or `names.jsonl` changed.
+
+**2026-10-19 (log — paper v0.4, 4 pages; see the last entry):** `reports/openscent-paper.tex` is now **v0.4**: compressed from 5 pages
+(v0.3) to 4 and refreshed to the 10-19 state (1,708 molecules, 24 of 67 terms, by structure). Test compile with tectonic (real newtx):
+4 pages, last page 725 words; Ivan compiles it on Overleaf himself (`openscent-paper-v0.4.zip`, gitignored build artefact). The 2,370
+"undecided" rows were reworded in the paper as screened out by the model and left undecided, NOT rejected and not human-read (all 2,370
+were in the 09-24 screen: 2,287 screened out, 53 with no ontology descriptor, 30 repeats). v0.3 kept as `reports/openscent-paper-v0.3.tex`.
+Figures carried unchanged from v0.3 (not re-derived) are listed in the .tex header.
+
 **Emails were READY (09-27):** preview live at https://vanpez.github.io/openscent/ (GitHub Pages,
 master /docs), linked in all three drafts, signed Ivan Pezzini. outreach/ and the shop lists
 (corpus/hekserij, corpus/olfatorium) are now LOCAL ONLY (gitignored; still in git history).
@@ -5879,3 +5893,78 @@ Uncommitted: `DEVLOG.md` (the 10-12, 10-13 and 10-19 entries), `pipeline/status.
   inflated by name-keyed leftovers, i.e. the true MINTABLE headline (not computed); freeze v1.0 (week of 19 Oct); a reply to Joe
   (not drafted); the layer's label and its later form; De Hekserij revisit (their renewed set, 2026-27); RDKit; Mike's reference
   MolNFT v2 contract; the converter's scope, home and licence.
+
+### Later 10-19 (late) — the 44 name-keyed leftovers: counted; the headline is not inflated
+
+Answers the first "Open" item of the entry above. Read-only: no row, `names.jsonl`, `rewrites.json` or script in the project changed.
+
+- **Method.** A scratch copy of `status.py` (ROOT hard-coded, plus a dump of the per-tag identity sets behind `full[...]`); its printed
+  output is identical to the real script's (checked by diff). The copy is not kept in the project. Names and trust classes from
+  `corpus/structures/names.jsonl`; sentences from `review.jsonl`. Near-matches by normalised-string similarity (difflib), then read
+  against their source sentences.
+- **Name-keyed leftovers in v1.0 COMBINED:** 50 of 1,708 identities = the 44 unresolved names (trust `none`) + the 6 PUBCHEM-CHECK
+  names (cineole, methoxyelgenol, nojigiku alcohol, pinoacetaldehyde, terpineol, terranol). No other name-keyed identity exists.
+  Structure-keyed: **1,658 molecules** (1,619 with enantiomers merged).
+- **Tag headline: unchanged.** With all 50 removed, 24 of 67 tags are still at the bar. Thinnest at-bar tags on structure-keyed
+  members alone: aldehydic 32, animalic 34, acid 36, powdery 39, amber 40. So the leftovers inflate the molecule count, not the tag
+  count. None of the 44 carries tobacco, sandalwood, apple, anisic, grapefruit, leather or chlorine: resolving them cannot move the
+  near-bar tags.
+- **Spelling duplicates among the 44:** none firm. One near pair, `8-oxoethyl epicamphene hydrate` (US3679756A) and
+  `S-ethenyl-epi-camphene hydrate` (US3662008A), kept apart: different patents and odours, and "oxoethyl" is a real substituent.
+  `(E,Z)-7,8-cyclohexadecenone` is not treated as a twin of the resolved `(Z)-7-cyclohexadecen-1-one` (same patent, US20050137120A1,
+  but the name reads as a mixture of 7- and 8-isomers); the as-hydrindacen-3-one and naphthindan-3-one musks differ in their substituents.
+- **Three of the 44 duplicate an already-resolved name** (so they inflate the 1,708, and share no near-bar tag):
+  `paramenth-3-en-2-one` (US3686097A) = `para-menth-3-en-2-one` (US3560571A), hyphen only, both mint + sweet: certain;
+  `4-caronone` ~ `4-caranone`, US3560571A prints both, both herbal: likely;
+  `octahydrodimethylmethanonapthalenol` ~ `octahydro-9,9-dimethyl-1,6-methanonaphthalene-1-(2H)-ol`, both US3996169A, tags differ
+  (dry/earthy/fresh/fruity vs patchouli): probable, only the two sentences read, not the patent. **Not applied**; a spelling rewrite in
+  `rewrites.json` (the existing route) would merge them, on Ivan's OK. It would not change any figure above.
+- **Correction: sandalwood needs 3, not 2.** The 28 printed by `status.py` includes methoxyelgenol, a PUBCHEM-CHECK name keyed by its
+  text; on structure-keyed members it is 27. Tobacco has no name-keyed member: 28, needs 2.
+- **Sensitivity (the real soft spot).** Counting only structures from verbatim or PubChem-resolved names (plus PubChem-source rows),
+  the headline is **22 of 67**: aldehydic and animalic fall below 30. 136 of the 1,658 structures rest only on rewritten,
+  repaired+witness or flat names. Not a defect; the figure to have in hand when the freeze is decided.
+- **Open.** Freeze v1.0 (week of 19 Oct); apply or drop the three spelling rewrites; a reply to Joe (not drafted); the layer's label
+  and its later form; De Hekserij revisit (2026-27); RDKit; Mike's reference MolNFT v2 contract; the converter's scope, home and
+  licence.
+
+## 2026-10-19 (late) — paper v0.4: compressed to 4 pages and refreshed
+
+Ivan: the paper had not been updated for a month and was too long (Joe asked for four pages on 09-08; v0.3 was five). Overleaf is the
+compile target; this Mac had no LaTeX, so tectonic was installed with Homebrew (Ivan's OK) for a test compile only.
+
+### What changed (`reports/openscent-paper.tex`, v0.4; v0.3 kept as `openscent-paper-v0.3.tex`)
+
+- **Length.** v0.3 compiled to 5 pages with the real font (last page 806 words); v0.4 compiles to 4 (last page 725 words after the
+  rewording below). Cuts: the yield table and the AUC table became sentences; the Discussion items, the Limitations paragraph and
+  the back matter were shortened; the Aims list was folded into the introduction.
+- **Figures re-derived 10-19** (status.py and the row files): 4,676 review rows over 4,634 distinct sentences (42 per-compound copies);
+  1,136 approved, 1,168 rejected, 2 skipped, 2,370 undecided; 1,018 HSDB records over 651 compounds + 772 CAMEO/OSHA/NIOSH records
+  (401/191/180) -> 837 compounds (186 new); 8 accepted passage rows (9 rows in the file), 5 targeted rows; 30 retired quoted-reference rows;
+  **1,708 molecules, 24 of 67 terms at the bar**, 1,658 with a resolved structure; 130 surface forms (v0.3 said 120); name-resolution
+  classes for the 995 patent-side names (683 / 69 / 15 / 16 / 162 / 44 / 6). v0.3's "41 copies" is 42 now and its "185 new CIDs"
+  (09-24 entry) is 186 on this count.
+- **New text.** Molecule identity by structure (Methods); the narrow passage scope; the model screen with its 0-of-50 audit; "Names are
+  not molecules" as a sixth result (27 terms by name text against 24 by structure; apple 34 names, 26 structures); Limitations now carry the
+  22-of-67 figure (structures read directly from the name or PubChem only; 136 of 1,658 structures rest on rewrites, repairs or
+  stereo-free readings) and the 50 name-keyed molecules.
+- **Left out on purpose:** the Olfatorium layer (v1.0 is CC0 only); the Hekserij coverage statistic (about 40% on 09-26, not re-derived);
+  the three open questions from Joe's review (still in the v0.3 source).
+- **Carried, NOT re-derived:** 5,346 documents; the 200-document yield sample; blind accuracy 67%, 14 of 98, 60 patents, 56%;
+  29 candidates / 8 molecules; 27 of 30; the Physical Description measurement (124,132 / 2,923 / 1,461 / 72% / 212); 345 sentences and the
+  passage-pair counts (3,303 / 4,849 / 861 / 1,124; samples of 20 and 12); the 1,281 / 713 / 47% sample; the ten batches (38% -> 10-13%);
+  precision 0.2 / 0.82; 835 groups / 1,035 documents / 19.4%; the 0-of-50 screen audit; the whole AUC analysis (648 compounds; RDKit is not
+  installed, so it could not be re-run, and the Limitations say so).
+
+### The 2,370, and a wording fix
+
+Ivan read "2,370 undecided" in the paper as unfinished review. Checked against `corpus/staging/screen/screen-v1.jsonl`: all 2,370 undecided rows
+were in the 09-24 screen (2,287 screened-out, 53 "approve-no-tag", 30 repeats). They are undecided only because auto-reject is off; none was
+rejected and none was read by a human. The paper now says so in Results and Limitations (the audit bounds the screen's miss rate near 6%).
+
+### Open
+
+Ivan's Overleaf compile of v0.4 (page count there); Joe's surname, CRediT for M, the "Draft 0.4" label; the 53 approve-no-tag rows (ontology
+mappings: measure which pay); the AUC analysis re-run on the 837 + patent structures (needs RDKit); whether to add the retailer coverage
+statistic; freeze v1.0 (week of 19 Oct); apply or drop the three spelling rewrites (previous entry); a reply to Joe (not drafted); Mike's
+reference MolNFT v2 contract.
