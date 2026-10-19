@@ -14,13 +14,13 @@ figures this block used to show — 27 of 67, 1,829 molecules — are now the by
 retired    30 approved patent rows (exclusions.jsonl: quoted copyrighted reference works)
 licensed   136 approved descriptor-word rows (licensed/olfatorium-rows.jsonl; Olfatorium, CC BY 4.0) — NOT in COMBINED
            BY STRUCTURE (headline)    connectivity only      name text (old)
-  patents    20 of 67    887 molecules   20 of 67    858 molecules   21 of 67    983 names
+  patents    20 of 67    884 molecules   20 of 67    855 molecules   21 of 67    983 names
   pubchem     7 of 67    837 molecules    7 of 67    829 molecules    7 of 67    839 names
   passage     0 of 67      6 molecules    0 of 67      6 molecules    0 of 67      8 names
   targeted    0 of 67      5 molecules    0 of 67      5 molecules    0 of 67      5 names
   licensed    0 of 67     34 molecules    0 of 67     34 molecules    0 of 67     34 names
-  COMBINED   24 of 67   1708 molecules   24 of 67  1669 molecules   27 of 67  1819 names     <- v1.0
-  w/ licensed 25 of 67  1739 molecules   25 of 67  1699 molecules   27 of 67  1853 names     <- add-on, not v1.0
+  COMBINED   24 of 67   1705 molecules   24 of 67  1666 molecules   27 of 67  1819 names     <- v1.0
+  w/ licensed 25 of 67  1736 molecules   25 of 67  1696 molecules   27 of 67  1853 names     <- add-on, not v1.0
   next: tobacco 28 (needs 2) · sandalwood 28 (needs 2) · apple 26, anisic 26 (need 4) · grapefruit 22 (needs 8) · leather 21 (needs 9)
 verbatim invariant: clean · review queue: 0 PRODUCTIVE
 ```
@@ -150,6 +150,13 @@ corpus or `names.jsonl` changed.
 "undecided" rows were reworded in the paper as screened out by the model and left undecided, NOT rejected and not human-read (all 2,370
 were in the 09-24 screen: 2,287 screened out, 53 with no ontology descriptor, 30 repeats). v0.3 kept as `reports/openscent-paper-v0.3.tex`.
 Figures carried unchanged from v0.3 (not re-derived) are listed in the .tex header.
+
+**2026-10-19 (log — three spelling merges applied, v1.0 release export built, paper corrected; see the last entry):** Ivan approved the
+three spelling rewrites (S1-S3): v1.0 is now **1,705 molecules** (was 1,708; the block above is updated), 24 of 67 terms unchanged, 47
+name-keyed molecules (41 unresolved + 6 held). `release/v1.0/` (molecules, evidence, tags, README, manifest, checksums) is built by
+`pipeline/release_build.py`, which refuses to write unless it agrees with `status.py`; NOT tagged, "candidate". Paper v0.4 corrected: counts, and
+**database rows were rule-extracted, not human-decided** (the earlier "a human decided every accepted row" was wrong for them); contact
+address now openscent.data@gmail.com. Overleaf compile of v0.4 (first version): 4 pages. Nothing pushed.
 
 **Emails were READY (09-27):** preview live at https://vanpez.github.io/openscent/ (GitHub Pages,
 master /docs), linked in all three drafts, signed Ivan Pezzini. outreach/ and the shop lists
@@ -5968,3 +5975,55 @@ Ivan's Overleaf compile of v0.4 (page count there); Joe's surname, CRediT for M,
 mappings: measure which pay); the AUC analysis re-run on the 837 + patent structures (needs RDKit); whether to add the retailer coverage
 statistic; freeze v1.0 (week of 19 Oct); apply or drop the three spelling rewrites (previous entry); a reply to Joe (not drafted); Mike's
 reference MolNFT v2 contract.
+
+## 2026-10-19 (night) — three spelling merges applied; v1.0 release export built; paper corrected
+
+### 1. The three spelling rewrites (Ivan: "apply the three spelling rewrites first, show me the effect on the counts")
+
+Entries S1-S3 added to `corpus/structures/rewrites.json` (reason and confidence stored with each): `paramenth-3-en-2-one` -> `para-menth-3-en-2-one`
+(certain: hyphen only, the same sentence in US3686097A and US3560571A); `4-caronone` -> `4-caranone` (likely: US3560571A prints both, one
+letter differs, no drawing read); `Octahydrodimethylmethanonapthalenol` -> the structure of `Octahydro-9,9-dimethyl-1,6-methanonaphthalene-1-(2H)-ol`
+(probable: same patent, US3996169A, only the two sentences read). Backups `*.bak-20261019b` (gitignored). `structures.py` and `--merge`
+re-run: **only those three records of `names.jsonl` changed** (trust none -> rewritten, same InChIKey as the twin); names.jsonl now rewritten 165,
+none 41. Commit `a9a1d1d`.
+
+| status.py, v1.0 | before | after |
+|---|---|---|
+| COMBINED molecules (full InChIKey) | 1,708 | **1,705** |
+| connectivity only | 1,669 | 1,666 |
+| with the licensed add-on | 1,739 | 1,736 |
+| name-keyed molecules | 50 (44 + 6) | **47** (41 + 6) |
+| structure-keyed (mintable) | 1,658 | 1,658 |
+| terms at the bar | 24 | 24 |
+
+Per-tag effect: mint 81 -> 80, sweet 291 -> 290, herbal 64 -> 63 (the two certain/likely twins shared tags); no other tag changed. Near-bar terms did
+not move (tobacco 28, sandalwood 28, apple 26, anisic 26); the thinnest at-bar term is still aldehydic (32 on structure-keyed members); 22 terms on
+direct structures only and 136 hand-derived structures are unchanged. **Corrections:** the 10-19 night entry's 1,708 / 50 / 44 and the paper entry's
+"162 rewritten" are history; the live figures are the ones above. The previous entry's "Not applied" for these three is now applied.
+
+### 2. The v1.0 release export (`pipeline/release_build.py`, new; output `release/v1.0/`)
+
+Offline. Re-applies status.py's row rules (it imports its loaders), then RUNS status.py and refuses to write unless the molecule total and the
+at-bar list agree (they did: 1,705 and 24 of 67). Files: `molecules.tsv` (1,705), `evidence.tsv` (4,420 approved pairs with verbatim quote, source,
+scope and how it was decided), `tags.tsv` (67), `README.md` (definitions, limits), `manifest.json` (counts, status.py headline lines, SHA-256 of every
+input, git head), `SHA256SUMS`. Of the 1,705: 1,522 direct structures, 136 hand-derived, 47 without a structure (`mintable = no`). Evidence by source:
+HSDB 1,018 · CAMEO 401 · OSHA 191 · NIOSH 180 · patent sentence 2,605 · passage 16 · targeted 9; 455 mapped-to-nothing descriptor pairs skipped (the
+same 455 uses status.py reports). Checked: per-tag counts equal a scratch copy of status.py (0 mismatches), every descriptor and patent molecule span is
+a substring of its quote or antecedent (0 violations), no orphan evidence, checksums verify. The file is a CANDIDATE: not tagged, not yet the freeze.
+`how_decided` is explicit per row: patent rows human-approved; database rows rule-extracted (flagged ones triaged or approved), see the README.
+
+### 3. The paper (`reports/openscent-paper.tex`, v0.4), corrected
+
+- Counts: 1,708 -> 1,705, 50 -> 47, 44 -> 41, 162 -> 165 (abstract, Methods, Results, Limitations, Conclusion).
+- **A claim of mine was wrong and is fixed:** the v0.4 abstract said a human decided every accepted row. True for patent rows only; the 1,018 HSDB rows
+  and the CAMEO/OSHA/NIOSH rows were extracted by rule from the odour clause with each span checked against its quote, and only flagged rows
+  (negation cue, held record) were reviewed. Abstract and Methods now say so; the same wording was already in v0.3 for "every row".
+- Contact address: openscent.data@gmail.com. Test compile: 4 pages (last page 754 words). Ivan's Overleaf compile of the first v0.4 was also 4
+  pages (last page 707 words); the corrected zip was not yet compiled there at the time of writing.
+
+### Open
+
+Freeze v1.0 and tag it (Ivan's decision; the export is ready as a candidate); refresh the root README (still shows 09-05 figures); a browsable page for
+all molecules (needs PubChem properties/3D via Hetzner); Mike's reference MolNFT v2 contract (nothing since 09-30); a reply to Joe (not drafted); the
+53 approve-no-tag rows; the AUC analysis re-run (RDKit); whether to add the retailer coverage statistic; Joe's surname and CRediT for M. Rebuild
+`release/v1.0/` after any data commit so its manifest records a clean tree. Nothing pushed.
