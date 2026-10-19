@@ -92,6 +92,23 @@ def main() -> int:
                 score[fam_of[t]] += c * (0.6 if t in SB.GENERIC else 1)
         return score.most_common(1)[0][0] if score else len(SB.FAMILIES) - 1
 
+    c3 = {}
+    c3f = ROOT / "corpus" / "3d" / "conformers.json"
+    if c3f.exists():                                  # corpus_3d_fetch.py (Hetzner): PubChem's computed conformers
+        for ik, v in json.loads(c3f.read_text(encoding="utf-8")).items():
+            if v.get("cid") or v.get("c3d"):
+                c3[ik] = [v.get("cid"), v.get("c3d") or 0]
+    print(f"3D: {sum(1 for v in c3.values() if v[1])} conformers, {sum(1 for v in c3.values() if v[0])} PubChem CIDs", flush=True)
+    props = {}
+    pf = ROOT / "corpus" / "props" / "pubchem-props.json"      # corpus_props_fetch.py (Hetzner): PubChem-computed
+    if pf.exists():
+        props = json.loads(pf.read_text(encoding="utf-8"))
+    print(f"props: {len(props)} CIDs with formula / MW / XLogP3", flush=True)
+    def props_of(i):
+        r = M[i]
+        cid = (r["pubchem_cids"].split(";")[0] if r["pubchem_cids"] else "") or str((c3.get(r["inchikey"]) or [""])[0] or "")
+        v = props.get(cid) or {}
+        return [v.get("f") or "", v.get("mw"), v.get("xlogp")]
     strength = {"direct": 0, "hand-derived": 1, "none": 2}
     mol, evid = [], {}
     for i, r in enumerate(M):
@@ -108,18 +125,11 @@ def main() -> int:
                     [ti[t] for t in r["tags"].split(";") if t], int(r["n_evidence"]), int(r["n_documents"]),
                     strength[r["structure_strength"]], (r["pubchem_cids"].split(";") or [""])[0],
                     pos[i][0], pos[i][1], family(i), (2 if has_pat and has_db else 1 if has_db else 0),
-                    ";".join(r["structure_basis"].split(";")), " ".join(docs)[:300], ";".join(descs)[:200]])
+                    ";".join(r["structure_basis"].split(";")), " ".join(docs)[:300], ";".join(descs)[:200]] + props_of(i))
         evid[i] = [[ti[e["tag"]], e["descriptor_span"], e["molecule_span"], e["quote"], e["antecedent"],
                     code(sty, e["source_type"]), e["source_id"], ";".join((e["documents"] or "").split(";")[:6]),
                     e["source_url"], code(how, e["how_decided"])] for e in sorted(es, key=lambda e: (e["tag"], e["evidence_id"]))]
 
-    c3 = {}
-    c3f = ROOT / "corpus" / "3d" / "conformers.json"
-    if c3f.exists():                                  # corpus_3d_fetch.py (Hetzner): PubChem's computed conformers
-        for ik, v in json.loads(c3f.read_text(encoding="utf-8")).items():
-            if v.get("cid") or v.get("c3d"):
-                c3[ik] = [v.get("cid"), v.get("c3d") or 0]
-    print(f"3D: {sum(1 for v in c3.values() if v[1])} conformers, {sum(1 for v in c3.values() if v[0])} PubChem CIDs", flush=True)
     c = man["counts"]
     data = {"tags": [[r["tag"], int(r["molecules_v1_0"]), 1 if r["at_bar_30"] == "yes" else 0] for r in T],
             "fam": [[n, col] for n, col, _ in SB.FAMILIES], "m": mol, "sty": sty, "how": how,
@@ -182,11 +192,15 @@ h1 small{font:500 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;
 .active{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 0;min-height:4px}
 .panel{background:#fff;border:1px solid var(--line-strong);box-shadow:var(--shadow);margin-top:16px;border-top:3px solid var(--blue)}
 table{width:100%;border-collapse:collapse}
-th{font:500 10px var(--mono);text-transform:uppercase;letter-spacing:.09em;color:var(--mut);text-align:left;padding:10px 18px;border-bottom:1px solid var(--line-strong);background:#fbfcfd}
-td{font-size:13.5px;padding:10px 18px;border-top:1px solid var(--line);vertical-align:top}
+#v-table .panel{overflow-x:auto}
+th{font:500 10px var(--mono);text-transform:uppercase;letter-spacing:.09em;color:var(--mut);text-align:left;padding:10px 14px;border-bottom:1px solid var(--line-strong);background:#fbfcfd}
+td{font-size:13.5px;padding:10px 14px;border-top:1px solid var(--line);vertical-align:top}
 tr.row{cursor:pointer}tr.row:hover td{background:#f9fbfe}tr.row.open td{background:var(--blue-pale)}
 td.num,th.num{font-family:var(--mono);text-align:right;white-space:nowrap}
-.nm b{font-weight:600}.sub{color:var(--faint);font-size:11.5px;font-family:var(--mono);margin-top:1px;max-width:380px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+th.s{cursor:pointer;user-select:none}th.s:hover{color:var(--blue)}th.s.on{color:var(--blue-deep)}th.s i{font-style:normal;margin-left:4px;color:var(--blue)}
+td.fm{font-family:var(--mono);font-size:12px;white-space:nowrap}td.dash,.dash{color:var(--faint)}
+.fine{font-size:12px;color:var(--mut);padding:10px 18px 12px;border-top:1px solid var(--line)}
+.nm b{font-weight:600}.sub{color:var(--faint);font-size:11.5px;font-family:var(--mono);margin-top:1px;max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tag{display:inline-block;font:10px var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;margin:0 4px 4px 0;border:1px solid rgba(15,143,127,.4);color:var(--teal);background:rgba(15,143,127,.06);cursor:pointer}
 .tag:hover{background:rgba(15,143,127,.16);border-color:var(--teal)}.tag.on{background:var(--teal);color:#fff;border-color:var(--teal)}
 .st{font:10px var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border:1px solid var(--line-strong);color:var(--mut);white-space:nowrap}
@@ -217,7 +231,7 @@ td.num,th.num{font-family:var(--mono);text-align:right;white-space:nowrap}
 .tm .b u{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--amber)}.tm .c{font:12px var(--mono);text-align:right}
 footer{max-width:var(--page);margin:0 auto;padding:10px 28px 50px;color:var(--mut);font-size:12.5px}footer p{max-width:900px}
 @media(max-width:760px){.wrap,.topbar-in,footer{padding-left:16px;padding-right:16px}.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(3){border-left:0}.stat:nth-child(n+3){border-top:1px solid var(--line)}
- th.hide,td.hide{display:none}td,th{padding:9px 12px}.kv{grid-template-columns:1fr}.dtop{grid-template-columns:1fr}.tm{grid-template-columns:110px 1fr 46px}.bar{top:0;position:static}.count{margin-left:0}}
+ th.hide,td.hide{display:none}td,th{padding:9px 10px}.sub{max-width:38vw}.nm b{overflow-wrap:anywhere}.kv{grid-template-columns:1fr}.dtop{grid-template-columns:1fr}.tm{grid-template-columns:110px 1fr 46px}.bar{top:0;position:static}.count{margin-left:0}}
 </style></head><body>
 <header class="topbar"><div class="topbar-in">
  <div class="brand"><div class="glyph"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 9.2 13.8 11.7V16.7L9.5 19.2 5.2 16.7V11.7Z" stroke="#07111d" stroke-width="1.5"/><circle cx="9.5" cy="14.2" r="2.3" stroke="#245cff" stroke-width="1.3"/><path d="M13.8 11.7C15.9 10.6 14.7 8.4 16.7 7.2 18.7 6 17.7 3.8 19.9 2.8" stroke="#245cff" stroke-width="1.5"/></svg></div>
@@ -239,7 +253,7 @@ footer{max-width:var(--page);margin:0 auto;padding:10px 28px 50px;color:var(--mu
   <button class="btn" id="reset">Reset</button><span class="count" id="count"></span>
  </div>
  <div class="active" id="active"></div>
- <section id="v-table"><div class="panel"><table><thead><tr><th>Molecule</th><th>Odour tags</th><th class="num hide">Quotes</th><th class="hide">Structure</th></tr></thead><tbody id="tb"></tbody></table><button class="more" id="more" hidden></button><div class="empty" id="empty" hidden>No molecule matches these filters.</div></div></section>
+ <section id="v-table"><div class="panel"><table><thead><tr id="thr"><th class="s" data-s="label">Molecule<i></i></th><th>Odour tags</th><th class="s hide" data-s="formula">Formula<i></i></th><th class="s num hide" data-s="mw">MW<i></i></th><th class="s num hide" data-s="xlogp">XLogP3<i></i></th><th class="s num hide" data-s="ev">Quotes<i></i></th><th class="hide">Structure</th></tr></thead><tbody id="tb"></tbody></table><button class="more" id="more" hidden></button><div class="empty" id="empty" hidden>No molecule matches these filters.</div><div class="fine">Formula, MW and XLogP3 are values computed by PubChem (NCBI) and read from its record for the molecule; a dash means PubChem has no record for this exact structure, or no value. Click a column head to sort.</div></div></section>
  <section id="v-map" hidden><div class="panel"><div class="mapwrap" id="mw"><canvas id="cv"></canvas><div class="tip" id="tip"></div><div class="zoom"><button class="btn" id="zi" aria-label="Zoom in">+</button><button class="btn" id="zo" aria-label="Zoom out">−</button><button class="btn" id="zr" aria-label="Reset view">⌂</button></div></div>
   <div class="legend" id="legend"></div>
   <div class="note">Each dot is a molecule, placed by how its sources describe it (the pattern of odour tags; t-SNE). Molecules with the same pattern form a tight group; position inside a group means nothing. Drag to pan, scroll to zoom, click a dot to read its quotes. Colours are a display aid, not a classification. <b>Close on the map means described alike, not smelling alike.</b></div>
@@ -255,13 +269,13 @@ footer{max-width:var(--page);margin:0 auto;padding:10px 28px 50px;color:var(--mu
 const D=JSON.parse(document.getElementById('data').textContent);let EV=null;
 const ev=()=>EV||(EV=JSON.parse(document.getElementById('evid').textContent));
 const TAGS=D.tags,FAM=D.fam,M=D.m,C=D.counts;const C3=JSON.parse(document.getElementById('c3d').textContent);const HAS3=Object.keys(C3).length>0;
-const F={label:0,spell:1,smiles:2,ik:3,tags:4,nev:5,ndoc:6,str:7,cid:8,x:9,y:10,fam:11,src:12,basis:13,docs:14,descs:15};
+const F={label:0,spell:1,smiles:2,ik:3,tags:4,nev:5,ndoc:6,str:7,cid:8,x:9,y:10,fam:11,src:12,basis:13,docs:14,descs:15,formula:16,mw:17,xlogp:18};
 const STR=['direct','hand-derived','none'],STRL=['structure read directly','structure hand-derived','no structure'],STRC=['d','h','n'];
 const $=id=>document.getElementById(id);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fmt=n=>n.toLocaleString('en-US');
-const st={view:'table',q:'',tags:[],str:'',src:'',shown:80,open:-1,sel:-1,fams:new Set()};
-const H=M.map(m=>(m[F.label]+' '+m[F.spell]+' '+m[F.ik]+' '+m[F.tags].map(t=>TAGS[t][0]).join(' ')+' '+m[F.descs]+' '+m[F.docs]).toLowerCase());
+const st={view:'table',q:'',tags:[],str:'',src:'',shown:80,open:-1,sel:-1,fams:new Set(),sk:'ev',sd:-1};
+const H=M.map(m=>(m[F.label]+' '+m[F.spell]+' '+m[F.ik]+' '+m[F.tags].map(t=>TAGS[t][0]).join(' ')+' '+m[F.descs]+' '+m[F.docs]+' '+m[F.formula]).toLowerCase());
 const order=M.map((_,i)=>i).sort((a,b)=>M[b][F.nev]-M[a][F.nev]||M[a][F.label].localeCompare(M[b][F.label]));
 function match(i){const m=M[i];
  if(st.tags.length&&!st.tags.every(t=>m[F.tags].includes(t)))return false;
@@ -269,10 +283,15 @@ function match(i){const m=M[i];
  if(st.src!==''&&String(m[F.src])!==st.src)return false;
  if(st.q&&!st.q.split(/\s+/).every(w=>H[i].includes(w)))return false;return true}
 let hits=[];
-function refilter(){hits=order.filter(match);$('count').textContent=fmt(hits.length)+' of '+fmt(M.length)+' molecules';
+function sortVal(i){const m=M[i];return st.sk==='label'?m[F.label].toLowerCase():st.sk==='formula'?m[F.formula]:st.sk==='mw'?m[F.mw]:st.sk==='xlogp'?m[F.xlogp]:m[F.nev]}
+function sortHits(){if(st.sk==='ev'&&st.sd===-1)return;const d=st.sd;hits.sort((a,b)=>{const x=sortVal(a),y=sortVal(b),nx=x===null||x===''||x===undefined,ny=y===null||y===''||y===undefined;
+ if(nx||ny)return nx&&ny?0:nx?1:-1;return (x<y?-1:x>y?1:0)*d||M[b][F.nev]-M[a][F.nev]})}
+function heads(){document.querySelectorAll('#thr th.s').forEach(t=>{const on=t.dataset.s===st.sk;t.classList.toggle('on',on);t.querySelector('i').textContent=on?(st.sd===1?'▲':'▼'):''})}
+function refilter(){hits=order.filter(match);sortHits();heads();$('count').textContent=fmt(hits.length)+' of '+fmt(M.length)+' molecules';
  const a=$('active');a.innerHTML=st.tags.map(t=>'<span class="tag on" data-t="'+t+'">'+esc(TAGS[t][0])+' ✕</span>').join('');
  $('ftag').value=st.tags.length===1?String(st.tags[0]):'';}
 function chips(m){return m[F.tags].map(t=>'<span class="tag'+(st.tags.includes(t)?' on':'')+'" data-t="'+t+'">'+esc(TAGS[t][0])+'</span>').join('')}
+function fmtF(f){return esc(f).replace(/(\d+)/g,'<sub>$1</sub>')}
 function strb(m){const k=m[F.str];return '<span class="st '+STRC[k]+'">'+(k===0?'direct':k===1?'hand-derived':'no structure')+'</span>'}
 function hl(q,d,mo){const R=[];const add=(s,c)=>{if(!s)return;const k=q.indexOf(s);if(k<0)return;if(R.some(r=>k<r[1]&&k+s.length>r[0]))return;R.push([k,k+s.length,c])};
  add(d,'d');add(mo,'m');R.sort((a,b)=>a[0]-b[0]);let o='',p=0;for(const r of R){o+=esc(q.slice(p,r[0]))+'<mark class="'+r[2]+'">'+esc(q.slice(r[0],r[1]))+'</mark>';p=r[1]}return o+esc(q.slice(p))}
@@ -287,6 +306,7 @@ function detail(i){const m=M[i],E=ev()[i]||[],c3=C3[m[F.ik]],cid=m[F.cid]||(c3&&
  if(m[F.ik])h+='<dt>InChIKey</dt><dd>'+esc(m[F.ik])+'</dd>';
  if(m[F.smiles])h+='<dt>SMILES</dt><dd>'+esc(m[F.smiles])+'</dd>';
  h+='<dt>Structure</dt><dd class="t">'+STRL[m[F.str]]+(m[F.basis]?' ('+esc(m[F.basis].replace(/;/g,', '))+')':'')+(m[F.str]===1?' — derived by a hand-authorised reading, see corpus/structures/rewrites.json':'')+(m[F.str]===2?' — counted by its name text alone':'')+'</dd>';
+ if(m[F.formula])h+='<dt>Formula</dt><dd class="t">'+fmtF(m[F.formula])+'</dd><dt>Mol. weight</dt><dd class="t">'+m[F.mw].toFixed(2)+' g/mol</dd><dt>XLogP3</dt><dd class="t">'+(m[F.xlogp]===null?'<span class="dash">not available</span>':m[F.xlogp])+'</dd>';
  h+='<dt>Spellings in sources</dt><dd class="t">'+esc(m[F.spell])+'</dd>';
  h+='<dt>Documents</dt><dd class="t">'+m[F.ndoc]+' · '+E.length+' quote'+(E.length===1?'':'s')+(pc?' · <a href="'+esc(pc)+'" target="_blank" rel="noopener">PubChem ↗</a>':'')+'</dd></dl></div>'+v3dBox(i)+'</div>';
  const by={};E.forEach(e=>{(by[e[0]]=by[e[0]]||[]).push(e)});
@@ -295,8 +315,8 @@ function detail(i){const m=M[i],E=ev()[i]||[],c3=C3[m[F.ik]],cid=m[F.cid]||(c3&&
  return h+'</div>'}
 function renderTable(){const tb=$('tb');const rows=hits.slice(0,st.shown);let h='';
  for(const i of rows){const m=M[i],sub=m[F.spell]&&m[F.spell]!==m[F.label]?m[F.spell]:'';
-  h+='<tr class="row'+(st.open===i?' open':'')+'" data-i="'+i+'"><td class="nm"><b>'+esc(m[F.label])+'</b>'+(sub?'<div class="sub">'+esc(sub)+'</div>':'')+'</td><td>'+chips(m)+'</td><td class="num hide">'+m[F.nev]+'</td><td class="hide">'+strb(m)+'</td></tr>';
-  if(st.open===i)h+='<tr><td colspan="4" style="padding:0">'+detail(i)+'</td></tr>'}
+  h+='<tr class="row'+(st.open===i?' open':'')+'" data-i="'+i+'"><td class="nm"><b>'+esc(m[F.label])+'</b>'+(sub?'<div class="sub">'+esc(sub)+'</div>':'')+'</td><td>'+chips(m)+'</td><td class="fm hide'+(m[F.formula]?'':' dash')+'">'+(m[F.formula]?fmtF(m[F.formula]):'—')+'</td><td class="num hide'+(m[F.mw]===null?' dash':'')+'">'+(m[F.mw]===null?'—':m[F.mw].toFixed(2))+'</td><td class="num hide'+(m[F.xlogp]===null?' dash':'')+'">'+(m[F.xlogp]===null?'—':m[F.xlogp])+'</td><td class="num hide">'+m[F.nev]+'</td><td class="hide">'+strb(m)+'</td></tr>';
+  if(st.open===i)h+='<tr><td colspan="7" style="padding:0">'+detail(i)+'</td></tr>'}
  tb.innerHTML=h;after(tb);$('empty').hidden=hits.length>0;const mo=$('more');mo.hidden=hits.length<=st.shown;mo.textContent='Show '+Math.min(80,hits.length-st.shown)+' more of '+fmt(hits.length-st.shown)+' remaining'}
 /* built-in 3D viewer: no library, no network. Ball-and-stick, depth-sorted, CPK-style colours (same as the preview). */
 const EC={1:["#f4f6f8",.22],6:["#3c4652",.34],7:["#2f5bea",.34],8:["#d6453d",.34],9:["#5fbf8a",.3],15:["#e08a2b",.42],16:["#e2b32b",.42],17:["#1f9e5a",.4],35:["#a1401d",.44],53:["#7a3fa0",.48]};
@@ -356,6 +376,7 @@ function setView(v){st.view=v;document.querySelectorAll('#tabs button').forEach(
  if(v==='map')renderMap();if(v==='table')renderTable();if(v==='terms')renderTerms()}
 function update(){st.shown=80;refilter();if(st.view==='table')renderTable();if(st.view==='map')renderMap()}
 function toggleTag(t){const k=st.tags.indexOf(t);k>=0?st.tags.splice(k,1):st.tags.push(t);update()}
+$('thr').addEventListener('click',e=>{const t=e.target.closest('th.s');if(!t)return;const k=t.dataset.s;if(st.sk===k)st.sd=-st.sd;else{st.sk=k;st.sd=(k==='label'||k==='formula')?1:-1}update()});
 $('tabs').addEventListener('click',e=>{const b=e.target.closest('button');if(b)setView(b.dataset.v)});
 $('q').addEventListener('input',e=>{st.q=e.target.value.trim().toLowerCase();update()});
 $('ftag').innerHTML='<option value="">any odour term</option>'+TAGS.map((t,i)=>'<option value="'+i+'">'+esc(t[0])+' ('+t[1]+')</option>').join('');

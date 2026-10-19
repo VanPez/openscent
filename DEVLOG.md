@@ -158,6 +158,12 @@ name-keyed molecules (41 unresolved + 6 held). `release/v1.0/` (molecules, evide
 **database rows were rule-extracted, not human-decided** (the earlier "a human decided every accepted row" was wrong for them); contact
 address now openscent.data@gmail.com. Overleaf compile of v0.4 (first version): 4 pages. Nothing pushed.
 
+**2026-10-19 (log — the full-corpus page, see the last entry):** `docs/corpus.html` (built by `pipeline/corpus_page_build.py` from `release/v1.0`, one file, no
+network calls) lists **all 1,705 molecules**: searchable table with every quote and its odour word highlighted, Formula / MW / XLogP3 columns (sortable),
+a scent map, a per-term view and a rotating 3D conformer for 1,534 of the 1,658 structures. NOT linked from `preview.html` or `index.html`, so not
+public even after a push except by its URL. Commits `a01a28d`, `bf7eece` are local (not pushed); the property columns and `corpus/props/` were
+uncommitted when written. The Hetzner staging folder was deleted on Ivan's instruction.
+
 **Emails were READY (09-27):** preview live at https://vanpez.github.io/openscent/ (GitHub Pages,
 master /docs), linked in all three drafts, signed Ivan Pezzini. outreach/ and the shop lists
 (corpus/hekserij, corpus/olfatorium) are now LOCAL ONLY (gitignored; still in git history).
@@ -6027,3 +6033,50 @@ Freeze v1.0 and tag it (Ivan's decision; the export is ready as a candidate); re
 all molecules (needs PubChem properties/3D via Hetzner); Mike's reference MolNFT v2 contract (nothing since 09-30); a reply to Joe (not drafted); the
 53 approve-no-tag rows; the AUC analysis re-run (RDKit); whether to add the retailer coverage statistic; Joe's surname and CRediT for M. Rebuild
 `release/v1.0/` after any data commit so its manifest records a clean tree. Nothing pushed.
+
+## 2026-10-19 (night, later) — the browsable page for all molecules: table, scent map, terms, 3D, formula / MW / XLogP3
+
+Ivan: freezing and tagging are independent of a browsable page, but he wanted to see the whole corpus and said it would help the freeze decision. The page
+reads ONLY `release/v1.0` (plus two PubChem-computed side files below), so it cannot drift from `status.py`.
+
+### The page (`pipeline/corpus_page_build.py` -> `docs/corpus.html`, 2.9 MB, GenesisL1 family look, no external requests)
+
+- **Table:** search (name, InChIKey, patent number, odour word, formula), filters (term, structure strength, source), sortable columns (Molecule, Formula, MW,
+  XLogP3, Quotes), and per molecule every quote with the odour word and the molecule span highlighted in place, source links (Google Patents, database record),
+  `how_decided` per row. **Terms:** the 67 vocabulary terms with the 30-molecule bar marked; click filters the table. **Scent map:** 1,705 dots placed by
+  t-SNE on sqrt tag counts (687 distinct tag profiles; seeded, same method as the preview's map), molecules with an identical profile spread on a spiral so every
+  one is visible; position inside a group means nothing; colour = display family. The page says "close on the map means described alike, not smelling alike".
+- **Honesty box on the page:** candidate, not frozen; 136 hand-derived structures and 47 molecules without a structure are marked; database rows were
+  extracted by rule, patent rows each approved by a person.
+- **Ivan's feedback applied:** the two nav links (208-material preview, GitHub) are now outlined buttons (he had not realised they were links); one
+  "candidate" label instead of two.
+- **Checked** in the browser pane at desktop and phone width (no sideways scroll; table fits its panel), console clean; filters match `status.py`
+  (tobacco 28); the JavaScript passes `node --check`.
+
+### 3D (`pipeline/corpus_3d_todo.py` + `corpus_3d_fetch.py`, run on Hetzner; data `corpus/3d/conformers.json`)
+
+PubChem's computed conformers, stored as the preview stores them, embedded in the page (no network). 837 molecules carry a CID in the release; the other 821
+were looked up by FULL InChIKey in batches of 50 (exact matches only; a stereo-flat structure whose isomers are in PubChem gets none rather than a guess):
+789 found, 32 not. Result: **1,534 of 1,658 structures have a conformer** (direct 1,415 of 1,522; hand-derived 119 of 136); 92 compounds are in PubChem
+without a 3D record; 32 have no exact PubChem record. Integrity: for all 1,534 the heavy-atom count of the conformer equals the one in the release SMILES,
+no bond index errors. A 3+3 smoke test ran first.
+
+### Formula, MW, XLogP3 (`pipeline/corpus_props_fetch.py`, Hetzner; data `corpus/props/pubchem-props.json`)
+
+**Left out of the first build by my scoping, and noticed by Ivan:** `release/v1.0` does not carry PubChem properties and I did not flag the gap. Fetched in 17
+batches of 100 CIDs: formula and molecular weight for all 1,626 CIDs, XLogP3 for 1,535 (PubChem gives none for the rest; shown as a dash). Checked: the
+formula equals the element counts of the conformer for all 1,534. These are PubChem-computed values (NCBI, public domain); the page says so. Molecules with no
+PubChem record show dashes.
+
+### Hetzner
+
+Staging folder `/opt/openscent/stage-3d-20261019` deleted on Ivan's instruction, after local and remote SHA-256 of `conformers.json` and `props.json` matched
+(local copies: `corpus/3d/conformers.json` committed in `bf7eece`, `corpus/props/pubchem-props.json`). Nothing else on the server was touched.
+
+### Corrections and open
+
+- The previous entry's open item "a browsable page for all molecules (needs PubChem properties/3D via Hetzner)" is done, locally.
+- `release/v1.0` does not include the formula / MW / XLogP3 or the conformers (they are page inputs, not release files); whether they should join the release is open.
+- Patent-side labels are verbatim spellings, so some are OCR-damaged (the first row reads "3-endo-methyl 3 exo(4' methyl 5 hydroxy- 1O pentyl)norcamphor");
+  a cleaner label policy is open. No 2D structure drawing yet (3D only; 2D would need a vendored library or RDKit).
+- Not linked from the public pages; not pushed. The freeze / tag decision, README refresh at the repo root, Mike's contract, a reply to Joe are unchanged.
