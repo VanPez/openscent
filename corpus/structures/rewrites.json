@@ -977,6 +977,27 @@
    "raw": "4-acetyl-3,3,8,8-tetramethyl-ashydrindacene",
    "reading": "1-(3,3,8,8-tetramethyl-1,2,3,6,7,8-hexahydro-as-indacen-4-yl)ethan-1-one",
    "why": "same compound as H2a (OCR: the hyphen of 'as-hydrindacene' was lost at a line break); same reasoning. Approved by Ivan 2026-10-19"
+  },
+  {
+   "id": "S1",
+   "strength": "S",
+   "raw": "paramenth-3-en-2-one",
+   "reading": "para-menth-3-en-2-one",
+   "why": "same compound as the already-resolved 'para-menth-3-en-2-one': the hyphen after 'para' is missing in US3686097A, whose sentence is word for word the one US3560571A prints with the hyphen ('The odour of para-menth-3-en-2-one was characterized as a minty note reminiscent of carvone with a sweet cresol background'); both rows carry mint and sweet. Spelling merge, certain. Approved by Ivan 2026-10-19"
+  },
+  {
+   "id": "S2",
+   "strength": "M",
+   "raw": "4-caronone",
+   "reading": "4-caranone",
+   "why": "spelling variant of '4-caranone': US3560571A prints '4-caronone ... herbal note reminiscent of sage, calamus and carvone' and, in a later sentence, 'The odor of 4-caranone was characterized as a herbal note reminiscent of sage, calamus and carvone', i.e. the same compound and the same odour in one patent. Likely, not certain (one letter differs and no structure drawing was read); the one to revisit if a structure is ever questioned. Approved by Ivan 2026-10-19"
+  },
+  {
+   "id": "S3",
+   "strength": "M",
+   "raw": "Octahydrodimethylmethanonapthalenol",
+   "reading": "9,9-dimethyloctahydro-1H-1,6-methanonaphthalen-1-ol",
+   "why": "contraction of 'Octahydro-9,9-dimethyl-1,6-methanonaphthalene-1-(2H)-ol', the compound US3996169A is about (its sentence compares it with patchouli alcohol; the full name appears in the same patent). Reading = the OPSIN-parsed reading of that full name (already in rewrites.json). Probable: only the two sentences were read, not the whole patent. Approved by Ivan 2026-10-19"
   }
  ]
 }
