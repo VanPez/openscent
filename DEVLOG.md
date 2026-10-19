@@ -6,22 +6,22 @@
 
 ## RESUME HERE — state as of 2026-09-26 (end of day), amended through 2026-10-19
 
-**READ THIS FIRST. The 09-24 blocks below it are superseded.** Live figures (status.py, re-run 2026-10-19 WITH the licensed layer counted — `--no-licensed` gives the patent-side figures; the 09-26
+**READ THIS FIRST. The 09-24 blocks below it are superseded.** Live figures (status.py, re-run 2026-10-19: COMBINED = v1.0, the CC0 corpus only; the licensed layer is an add-on row; the 09-26
 figures this block used to show — 27 of 67, 1,829 molecules — are now the by-name-text count):
 
 ```
 4,676 review rows · 1,136 approve · 1,168 reject · 2 skip · 2,370 undecided
 retired    30 approved patent rows (exclusions.jsonl: quoted copyrighted reference works)
-licensed   136 approved descriptor-word rows (licensed-rows.jsonl; Olfatorium, CC BY 4.0, with permission) — COUNTED
+licensed   136 approved descriptor-word rows (licensed/olfatorium-rows.jsonl; Olfatorium, CC BY 4.0) — NOT in COMBINED
            BY STRUCTURE (headline)    connectivity only      name text (old)
   patents    20 of 67    889 molecules   20 of 67    860 molecules   21 of 67    983 names
   pubchem     7 of 67    837 molecules    7 of 67    829 molecules    7 of 67    839 names
   passage     0 of 67      6 molecules    0 of 67      6 molecules    0 of 67      8 names
   targeted    0 of 67      5 molecules    0 of 67      5 molecules    0 of 67      5 names
   licensed    0 of 67     34 molecules    0 of 67     34 molecules    0 of 67     34 names
-  w/o licensed 24 of 67  1710 molecules   24 of 67  1671 molecules   27 of 67  1819 names
-  COMBINED   25 of 67   1741 molecules   25 of 67  1701 molecules   27 of 67  1853 names
-  next: sandalwood 29 (needs 1) · apple 27 (needs 3) · anisic 26 (needs 4) · grapefruit 23 (needs 7) · leather 22 (needs 8)
+  COMBINED   24 of 67   1710 molecules   24 of 67  1671 molecules   27 of 67  1819 names     <- v1.0
+  w/ licensed 25 of 67  1741 molecules   25 of 67  1701 molecules   27 of 67  1853 names     <- add-on, not v1.0
+  next: tobacco 29 (needs 1) · sandalwood 29 (needs 1) · apple 26, anisic 26 (need 4) · grapefruit 22 (needs 8) · leather 21 (needs 9)
 verbatim invariant: clean · review queue: 0 PRODUCTIVE
 ```
 
@@ -124,17 +124,18 @@ credited (the attribution = CC BY 4.0 route). Ivan sent a one-line confirmation 
 themselves, credit + link, separate labelled layer, name and role); **the owner of Olfatorium answered "Sí" the same day —
 grant CONFIRMED (10-13).** **Decision (Ivan, 10-13):
 licensed words COUNT toward the tag totals** — a separate, labelled layer with its own `status.py` line, included in the
-combined count, same ontology mapping and review. The shop's descriptions were deliberately NOT kept on 09-26 (name + CAS
+combined count, same ontology mapping and review. **[Headline superseded 10-19 evening: v1.0 excludes the layer.]** The shop's descriptions were deliberately NOT kept on 09-26 (name + CAS
 only), so they are re-fetched from its public API now that the grant is confirmed (see the last entry). The freeze plan is
 unchanged (week of 19 Oct); whether v1.0 waits for this layer is OPEN.
 
-**2026-10-19 (log — the Olfatorium layer is built, counted and shown with credit; see the last entry):** the shop's words
-were fetched from its public API and proposed against REVIEW-RULES; **Ivan approved all proposed lines and rejected the 8
-doubtful ones.** `corpus/rows/licensed-rows.jsonl`: 144 rows (136 approve, 8 reject), words only, no shop sentences.
-`status.py` has a "licensed" source and a "w/o licensed" row; `--no-licensed` reproduces the 10-09 figures. **COMBINED is now
-25 of 67 tags and 1,741 molecules by structure (24 and 1,710 without the layer): tobacco crossed the bar.** The preview
-(`docs/preview.html`) was rebuilt LOCALLY with a credited "Licensed descriptors" section and corrected page text; NOT pushed.
-Whether v1.0 waits for this layer is OPEN. Nothing committed.
+**2026-10-19 (log — the Olfatorium layer is built and shown with credit, but is NOT in the freeze; see the last entries):** the
+shop's words were fetched from its public API and proposed against REVIEW-RULES; Ivan approved all proposed lines and rejected
+the 8 doubtful ones: `licensed/olfatorium-rows.jsonl`, 144 rows (136 approve, 8 reject), words only, no shop sentences (moved out
+of `corpus/` the same evening: the README licenses `corpus/` as CC0 and this file is CC BY 4.0). **Decision (Ivan, 10-19,
+evening): v1.0 is the CC0 corpus only; the licensed layer is a later, separate layer (v1.1).** `status.py` now defaults to the
+v1.0 figures (COMBINED: 24 of 67 tags, 1,710 molecules by structure) with the layer as an add-on row ("w/ licensed": 25 and
+1,741; tobacco is the tag that would cross); `--with-licensed` counts it into COMBINED, `--no-licensed` ignores it. The preview
+leads with the v1.0 figures. De Hekserij declined for now (last entry). Committed and pushed 10-19.
 
 **Emails were READY (09-27):** preview live at https://vanpez.github.io/openscent/ (GitHub Pages,
 master /docs), linked in all three drafts, signed Ivan Pezzini. outreach/ and the shop lists
@@ -5801,3 +5802,39 @@ Uncommitted: `DEVLOG.md` (the 10-12, 10-13 and 10-19 entries), `pipeline/status.
 - **Corrections to the entry above.** Its "Uncommitted" and "committing and pushing" items are done. Still open: whether v1.0
   waits for the layer; the layer's label; the on-chain credit per token; the follow-up replies; tobacco and sandalwood name
   rewrites; a reply to Joe; freezing v1.0 (week of 19 Oct); converter scope; JDK + RDKit; Mike's reference MolNFT v2 contract.
+
+### Later 10-19 (evening) — v1.0 excludes the licensed layer; the layer moved out of `corpus/`; De Hekserij declined for now
+
+- **Decision (Ivan): the licensed layer stays out of the freeze, "so it remains cleaner".** v1.0 is the CC0 corpus (US patents and
+  US-government data); the layer follows later as its own layer (v1.1); the MolNFT tokens carry CC0 only. This restores the 09-26
+  plan ("a separate, labelled v1.1 layer, never mixed in") and supersedes the 10-13 decision that licensed words count toward the
+  tag totals, for the headline. The reasoning given before the decision: a token whose licence field says CC0 cannot cleanly
+  hold CC BY words that need credit, and licences are one-way.
+- **A defect found and fixed.** The README licenses `corpus/` as CC0 while the layer (CC BY 4.0) had been committed under
+  `corpus/rows/` (public since the earlier commit). It now lives at `licensed/olfatorium-rows.jsonl`, outside `corpus/`, with
+  `licensed/README.md` (licence, credit line, what a row contains and does not, the rules). The root README lists three licences
+  and says the layer is not part of the corpus, v1.0 or the tokens. The old path still shows in that earlier commit. The four
+  scripts were re-pointed. Verified: the layer file byte-identical after the move; `status.py` figures identical in every mode;
+  the preview rebuilds identically; all 685 CIDs still cached.
+- **`status.py`: the default is the v1.0 figures.** COMBINED = 24 of 67 tags and 1,710 molecules by structure, identical to the
+  10-09 baseline (checked by diff, apart from the two layer lines); an add-on row "w/ licensed" shows 25 of 67 and 1,741;
+  `--with-licensed` counts the layer into COMBINED (identical to the previous default); `--no-licensed` ignores it (identical to
+  the 10-09 output). Tobacco is back at 29 (needs 1); within reach: sandalwood 29, apple 26, anisic 26, grapefruit 22, leather 21.
+- **Preview.** The header tiles lead with the v1.0 figures (1,710 molecules; 24 of 67 tags) and show the licensed layer in
+  brackets (1,741; 25). Licensed tags stay visible in the column (blue), searchable and filterable.
+- **De Hekserij (10-19):** preferably not for their current descriptors (they are not always convinced of them); a review
+  project on scent descriptors starts later this year or in 2027, the descriptors will be renewed, and they would like to help with
+  that set. Treated as a no for now. Nothing of theirs is in the layer, the rows or the preview (their list was only ever name,
+  CAS and INCI). A short thank-you reply was drafted for Ivan (not confirmed sent). Revisit when their renewed set exists; do not
+  re-ask before. Olfatorium (yes) is the only grant; IFF and dsm-firmenich could not be contacted for the follow-up, and no other
+  answers are known.
+- **The headline lever for v1.0:** 24 of 67. Tobacco and sandalwood are each one compound short; the held names
+  (cyclohomocitral enol propionate; 4-acetyl-3,3,8,8-tetramethyl-as-hydrindacene, obsolete ring nomenclature) would close both by
+  hand rewrite on Ivan's OK, the existing route, giving 26 if both structures hold. Proposals not prepared yet; there is no OPSIN
+  on this Mac (no Java).
+- **Corrections to the entries above.** The 10-19 entry's "COMBINED is now 25 of 67 ... tobacco crossed" and "whether v1.0 waits
+  for the layer is open" are superseded: v1.0 excludes the layer. "The on-chain credit per token" is moot for v1.0 (tokens are
+  CC0) and returns with the layer.
+- **Open.** Freeze v1.0 (week of 19 Oct), after the tobacco and sandalwood decisions; a reply to Joe (not drafted); the layer's
+  label (rename?) and its later form; De Hekserij revisit (their renewed set, 2026-27); JDK + RDKit; Mike's reference MolNFT v2
+  contract; the converter's scope, home and licence.
