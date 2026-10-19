@@ -14,14 +14,14 @@ figures this block used to show — 27 of 67, 1,829 molecules — are now the by
 retired    30 approved patent rows (exclusions.jsonl: quoted copyrighted reference works)
 licensed   136 approved descriptor-word rows (licensed/olfatorium-rows.jsonl; Olfatorium, CC BY 4.0) — NOT in COMBINED
            BY STRUCTURE (headline)    connectivity only      name text (old)
-  patents    20 of 67    889 molecules   20 of 67    860 molecules   21 of 67    983 names
+  patents    20 of 67    887 molecules   20 of 67    858 molecules   21 of 67    983 names
   pubchem     7 of 67    837 molecules    7 of 67    829 molecules    7 of 67    839 names
   passage     0 of 67      6 molecules    0 of 67      6 molecules    0 of 67      8 names
   targeted    0 of 67      5 molecules    0 of 67      5 molecules    0 of 67      5 names
   licensed    0 of 67     34 molecules    0 of 67     34 molecules    0 of 67     34 names
-  COMBINED   24 of 67   1710 molecules   24 of 67  1671 molecules   27 of 67  1819 names     <- v1.0
-  w/ licensed 25 of 67  1741 molecules   25 of 67  1701 molecules   27 of 67  1853 names     <- add-on, not v1.0
-  next: tobacco 29 (needs 1) · sandalwood 29 (needs 1) · apple 26, anisic 26 (need 4) · grapefruit 22 (needs 8) · leather 21 (needs 9)
+  COMBINED   24 of 67   1708 molecules   24 of 67  1669 molecules   27 of 67  1819 names     <- v1.0
+  w/ licensed 25 of 67  1739 molecules   25 of 67  1699 molecules   27 of 67  1853 names     <- add-on, not v1.0
+  next: tobacco 28 (needs 2) · sandalwood 28 (needs 2) · apple 26, anisic 26 (need 4) · grapefruit 22 (needs 8) · leather 21 (needs 9)
 verbatim invariant: clean · review queue: 0 PRODUCTIVE
 ```
 
@@ -133,9 +133,9 @@ shop's words were fetched from its public API and proposed against REVIEW-RULES;
 the 8 doubtful ones: `licensed/olfatorium-rows.jsonl`, 144 rows (136 approve, 8 reject), words only, no shop sentences (moved out
 of `corpus/` the same evening: the README licenses `corpus/` as CC0 and this file is CC BY 4.0). **Decision (Ivan, 10-19,
 evening): v1.0 is the CC0 corpus only; the licensed layer is a later, separate layer (v1.1).** `status.py` now defaults to the
-v1.0 figures (COMBINED: 24 of 67 tags, 1,710 molecules by structure) with the layer as an add-on row ("w/ licensed": 25 and
-1,741; tobacco is the tag that would cross); `--with-licensed` counts it into COMBINED, `--no-licensed` ignores it. The preview
-leads with the v1.0 figures. De Hekserij declined for now (last entry). Committed and pushed 10-19.
+v1.0 figures (COMBINED: 24 of 67 tags, 1,708 molecules by structure; 1,710 before the night rewrites below) with the layer as an add-on row ("w/ licensed": 25 and
+1,739; tobacco is the tag that would cross); `--with-licensed` counts it into COMBINED, `--no-licensed` ignores it. The preview
+leads with the v1.0 figures. De Hekserij declined for now. **Later that night: Java was found (it IS installed, keg-only), the two held names (tobacco, sandalwood) were resolved on Ivan's approval, and the headline did NOT rise: tobacco and sandalwood are at 28 and each need 2, not 1 (last entry).** Committed and pushed 10-19.
 
 **Emails were READY (09-27):** preview live at https://vanpez.github.io/openscent/ (GitHub Pages,
 master /docs), linked in all three drafts, signed Ivan Pezzini. outreach/ and the shop lists
@@ -5838,3 +5838,44 @@ Uncommitted: `DEVLOG.md` (the 10-12, 10-13 and 10-19 entries), `pipeline/status.
 - **Open.** Freeze v1.0 (week of 19 Oct), after the tobacco and sandalwood decisions; a reply to Joe (not drafted); the layer's
   label (rename?) and its later form; De Hekserij revisit (their renewed set, 2026-27); JDK + RDKit; Mike's reference MolNFT v2
   contract; the converter's scope, home and licence.
+
+### Later 10-19 (night) — Java found; the two held names resolved; the headline did not rise
+
+- **Java IS installed.** Ivan pointed out it should be. Homebrew's `openjdk@21` (21.0.12) is at `/opt/homebrew/opt/openjdk@21/bin/java`:
+  keg-only, so not on PATH and not registered with `java_home`, which is why `java -version` reports "Unable to locate a Java
+  Runtime". `structures.py` (`find_java()`) already looks at that exact path, which is how OPSIN ran on 10-03. OPSIN 2.9.0 works
+  (smoke test: aspirin's name gives the right InChIKey). RDKit is separate and still not installed in the default python.
+- **The two held names, resolved on Ivan's approval ("approve both").** The readings and their evidence are in the local-only
+  `outreach/hold-names-readings-2026-10-19.md`; they are Claude's derivations, checked with OPSIN and, for the facts, PubChem on
+  Hetzner. Summary:
+  - **Tobacco: "(trans) beta-cyclohomocitral enol propionate"** -> `[(E)-2-(2,6,6-trimethylcyclohex-1-en-1-yl)ethenyl] propanoate`.
+    The earlier hold was a line in one table of US4049682A calling beta-cyclohomocitral a carboxaldehyde. PubChem defines it as the
+    acetaldehyde (CID 61124; beta-cyclocitral, the carbaldehyde, is CID 9895); US4000090A's own invention statement says
+    "2,2,6-trimethyl-1-cyclohexen-1-ylacetaldehyde enol esters (or beta-cyclohomocitral enol esters)"; the patents' cis/trans enol esters
+    exist only for an acetaldehyde; "trans" is read as E. The enol acetate of the same acetaldehyde is in PubChem (CID 5314044).
+  - **Sandalwood: "4-acetyl-3,3,8,8-tetramethyl-as-hydrindacene"** (and the OCR spelling "ashydrindacene") ->
+    `1-(3,3,8,8-tetramethyl-1,2,3,6,7,8-hexahydro-as-indacen-4-yl)ethan-1-one`. "as-hydrindacene" is the obsolete name of
+    1,2,3,6,7,8-hexahydro-as-indacene (PubChem CID 136846; OPSIN cannot parse the old name). The earlier worry (the literal reading
+    puts the acetyl next to a gem-dimethyl while the prior art is the 1,1,6,6 isomer) was checked: under as-indacene numbering
+    4-acetyl-1,1,6,6 (US 3,244,751) and 5-acetyl-3,3,8,8 (US 3,347,946) are the SAME molecule (identical InChIKey), so the old
+    patents agree with each other; the held name is the OTHER regioisomer, and US4209543A separates the crystalline prior-art isomer
+    from the "liquid 4-acetyl-3,3,8,8" compound. Medium-high confidence: the structure drawings are not in the patent text and
+    PubChem holds neither acetyl isomer.
+  - Four entries (H1a, H1b, H2a, H2b) added to `corpus/structures/rewrites.json` (backups `*.bak-20261019`, gitignored);
+    `structures.py` and `structures.py --merge` re-run. names.jsonl: rewritten 158 -> 162, unresolved 48 -> 44.
+- **The headline did NOT rise.** v1.0 COMBINED: 24 of 67 tags (unchanged); molecules 1,710 -> 1,708; tobacco 29 -> 28 and sandalwood
+  29 -> 28, each now needing 2. With the licensed add-on: 25 of 67 and 1,739. Cause (confirmed by checking the four spellings):
+  `status.py` keys an UNRESOLVED name by its own text, so each of the two spellings of a compound counted as its own molecule;
+  resolving them gives both the same structure and each pair collapses to one. The "needs 1" figures were overstated by one each;
+  the honest figure was 28 (the 10-03 forecast in this log had it right).
+- **The preview was rebuilt** (1,708 molecules; 24 of 67).
+- **Corrections to the entries above.** (1) "No Java" / "OPSIN cannot run on the Mac now" (10-09 evening entry and the "JDK + RDKit
+  install" items in several Open lists) is wrong: Java is installed (see above); only RDKit is missing. (2) The 10-19 evening entry's
+  "closing both would give 26 if both structures hold" and "tobacco and sandalwood are each one compound short" are wrong: they were
+  forecast by arithmetic from "needs 1" without checking how unresolved names are counted; the result is 28 and 28 (need 2 each).
+  Reaching them from other molecules would need two more each. (3) The RESUME figures "tobacco 29 (needs 1) · sandalwood 29 (needs 1)"
+  printed by `status.py` on 10-09 to 10-19 were overstated by one each for the same reason.
+- **Open.** How many of the 44 still-unresolved names are spelling duplicates of one compound, and so how much the headline is
+  inflated by name-keyed leftovers, i.e. the true MINTABLE headline (not computed); freeze v1.0 (week of 19 Oct); a reply to Joe
+  (not drafted); the layer's label and its later form; De Hekserij revisit (their renewed set, 2026-27); RDKit; Mike's reference
+  MolNFT v2 contract; the converter's scope, home and licence.
