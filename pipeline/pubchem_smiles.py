@@ -51,6 +51,7 @@ import json, pathlib, random, sys, time, importlib.util
 HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parent
 ROWS = ROOT / "corpus" / "rows" / "pubchem-rows.jsonl"
+LICENSED = ROOT / "corpus" / "rows" / "licensed-rows.jsonl"   # optional; approved rows add their CIDs
 CACHE = ROOT / "corpus" / "raw-pubchem" / "smiles.json"
 BATCH = 100
 # PROPERTY NAMES CHANGED AND THE OLD ONE FAILS SILENTLY.
@@ -108,6 +109,17 @@ def live_cids() -> list[int]:
         if c and c not in seen:
             seen.add(c)
             out.append(c)
+    # The licensed layer (Olfatorium, 2026-10-19): approved rows only, same CID -> structure route.
+    if LICENSED.exists():
+        for line in LICENSED.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line:
+                continue
+            r = json.loads(line)
+            c = r.get("molecule_cid")
+            if r.get("review_decision") == "approve" and c and c not in seen:
+                seen.add(c)
+                out.append(c)
     return out
 
 

@@ -32,10 +32,18 @@ def _load(name):
 
 def status_figures():
     out = subprocess.run([sys.executable, str(ROOT / "pipeline" / "status.py")], capture_output=True, text=True).stdout
-    m = re.search(r"COMBINED\s+(\d+) of (\d+) at the bar\s+(\d+) molecules", out)
+    # by-structure headline (status.py since 2026-10-03): "COMBINED   25 of 67   1741 molecules ..."
+    m = re.search(r"^COMBINED\s+(\d+) of (\d+)\s+(\d+) molecules", out, re.M)
+    if not m:   # the old name-text format, printed only when structures/names.jsonl is missing
+        m = re.search(r"COMBINED\s+(\d+) of (\d+) at the bar\s+(\d+) molecules", out)
     if not m:
         sys.exit("could not read the COMBINED line from status.py — refusing to invent figures")
-    return {"tags_at_bar": int(m[1]), "tags": int(m[2]), "molecules": int(m[3])}
+    fig = {"tags_at_bar": int(m[1]), "tags": int(m[2]), "molecules": int(m[3])}
+    # the same totals WITHOUT the licensed layer (2026-10-19): shown beside the headline, never hidden
+    w = re.search(r"^w/o licensed\s+(\d+) of (\d+)\s+(\d+) molecules", out, re.M)
+    if w:
+        fig.update(tags_at_bar0=int(w[1]), molecules0=int(w[3]))
+    return fig
 
 
 def evidence_pools(st, surf, variants):
@@ -224,6 +232,24 @@ def build():
             names[cid] += g.shop_variants(r["name"]) + ([r["inci"]] if r.get("inci") else [])
             names[cid] += [s for s in cache["syn"].get(cid, []) if s.lower() not in bad]
 
+    # Licensed layer (2026-10-19): descriptor WORDS used with a rights holder's written permission
+    # (Olfatorium, CC BY 4.0). Shown only in their own credited section, never as patent evidence.
+    lic_by_cid = collections.defaultdict(lambda: collections.defaultdict(list))
+    lic_src = collections.defaultdict(list)
+    lf = ROOT / "corpus" / "rows" / "licensed-rows.jsonl"
+    if lf.exists():
+        for line in lf.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            lr = json.loads(line)
+            if lr.get("review_decision") != "approve":
+                continue
+            c_ = str(lr["molecule_cid"])
+            if lr["span"] not in lic_by_cid[c_][lr["tag"]]:
+                lic_by_cid[c_][lr["tag"]].append(lr["span"])
+            if lr["source_url"] not in lic_src[c_]:
+                lic_src[c_].append(lr["source_url"])
+
     cf = ROOT / "corpus" / "catalog" / "conformers.json"      # catalog.py --fetch-3d (Hetzner)
     conf = json.loads(cf.read_text(encoding="utf-8")) if cf.exists() else {}
     mats, n_ev, missing = [], 0, []
@@ -253,11 +279,17 @@ def build():
             "spec": spec_fields(r),
             "described": described, "note": r["status_note"],
             "tags": [t for t, _ in tagc.most_common()], "ev": found, "c3d": conf.get(cid) if conf else False,   # False = not fetched yet, None = PubChem has none
+            "lic": ({"tags": [[t, ws] for t, ws in sorted(lic_by_cid[cid].items())], "src": lic_src[cid],
+                     "by": "Olfatorium", "url": "https://olfatorium.com/", "licence": "CC BY 4.0"}
+                    if cid in lic_by_cid else None),
         })
     if missing:
         sys.exit(f"described in the catalogue but no evidence found for: {missing} — matching drifted from gaps.py")
+    lost = sorted(set(lic_by_cid) - {m["cid"] for m in mats})
+    if lost:
+        sys.exit(f"licensed rows for CIDs that are not in the catalogue: {lost} — they would silently disappear from the page")
     n_desc = sum(m["described"] for m in mats)
-    data = {"fig": fig, "n": len(mats), "n_desc": n_desc, "n_ev": n_ev,
+    data = {"fig": fig, "n": len(mats), "n_desc": n_desc, "n_ev": n_ev, "n_lic": sum(1 for m in mats if m["lic"]),
             "built": datetime.date.today().isoformat(), "mats": mats, "map": scent_map(mats)}
     page = TEMPLATE.replace("/*__SPEC__*/null", json.dumps(SPEC)).replace("/*__DATA__*/null", json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"))
     OUT.parent.mkdir(exist_ok=True)
@@ -276,15 +308,17 @@ TEMPLATE = r"""<!DOCTYPE html>
   public-domain properties and every piece of OpenScent evidence behind its odour tags, quoted verbatim.
   DATA: embedded below, built by pipeline/site_build.py from the corpus files and status.py. No network
   calls; links go out to Google Patents (US patents) and PubChem / NOAA CAMEO (government sources).
-  RULE: every odour word shown is a verbatim substring of the quoted source (highlighted in place).
+  RULE: every odour word shown in the evidence is a verbatim substring of the quoted source (highlighted in place).
+  LICENSED LAYER (2026-10-19): descriptor words used with a rights holder's written permission (Olfatorium, CC BY 4.0)
+  appear only in their own credited section, with a link to the source page; they are not patent evidence.
   DESIGN: GenesisL1 family (THEME.md). Single file, system fonts, no external assets.
   LOGO: aromatic ring with scent rising (2026-09-26), inline here and in docs/logo.svg.
 -->
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OpenScent — Materials Preview</title>
-<meta name="description" content="OpenScent: an open (CC0) odour corpus by GenesisL1. Common perfumery materials with every odour word quoted verbatim from US patents and US-government data, plus identifiers, measured properties, EU allergen status and 3D structures.">
+<meta name="description" content="OpenScent: an open (CC0) odour corpus by GenesisL1. Common perfumery materials with odour words quoted verbatim from US patents and US-government data, plus identifiers, measured properties, EU allergen status and 3D structures. A separate, credited layer shows descriptor words used with permission.">
 <meta property="og:title" content="OpenScent — what common perfumery materials smell like, and who said so">
-<meta property="og:description" content="Open odour corpus: every descriptor traceable to a public-domain source. A GenesisL1 project.">
+<meta property="og:description" content="Open odour corpus: every descriptor traceable to a named source. A GenesisL1 project.">
 <meta property="og:type" content="website"><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cg%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M9.5%209.2%20L13.8%2011.7%20L13.8%2016.7%20L9.5%2019.2%20L5.2%2016.7%20L5.2%2011.7%20Z%22%20stroke%3D%22%2307111d%22%20stroke-width%3D%221.5%22/%3E%3Ccircle%20cx%3D%229.5%22%20cy%3D%2214.2%22%20r%3D%222.3%22%20stroke%3D%22%23245cff%22%20stroke-width%3D%221.3%22/%3E%3Cpath%20d%3D%22M13.8%2011.7%20C15.9%2010.6%2014.7%208.4%2016.7%207.2%20C18.7%206%2017.7%203.8%2019.9%202.8%22%20stroke%3D%22%23245cff%22%20stroke-width%3D%221.5%22/%3E%3Cpath%20d%3D%22M16.9%2013.2%20C18.5%2012.4%2017.7%2010.8%2019.3%209.9%20C20.7%209.1%2020.2%207.7%2021.6%207%22%20stroke%3D%22%23245cff%22%20stroke-width%3D%221.1%22%20opacity%3D%22.5%22/%3E%3C/g%3E%3C/svg%3E"><style>
 :root{--paper:#f5f7f9;--card:#fff;--ink:#07111d;--mut:#687383;--faint:#718196;--line:#dce4ee;--line-strong:rgba(29,52,78,.3);
  --blue:#245cff;--blue-deep:#1647d9;--blue-pale:#eef3ff;--amber:#9a6a14;--amber-pale:#fdf6e9;--teal:#0f8f7f;--red:#bc4b47;
@@ -301,6 +335,9 @@ a{color:var(--blue)}
 .badge{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border:1px solid var(--line-strong);color:var(--mut);background:#fff;white-space:nowrap}
 .badge.proto{color:var(--amber);border-color:rgba(154,106,20,.45);background:var(--amber-pale)}
 .badge.ok{color:var(--teal);border-color:rgba(15,143,127,.45);background:rgba(15,143,127,.07)}
+.badge.lic{color:var(--blue-deep);border-color:rgba(36,92,255,.4);background:var(--blue-pale)}
+.licbox{border:1px solid var(--line);border-left:3px solid var(--blue);background:#fff;padding:12px 14px;margin-bottom:12px}
+.licw div{margin:4px 0}.lw{font-size:13.5px;color:#1d2a38}.licn{font-size:12px;color:var(--mut);margin-top:8px;line-height:1.5}
 .wrap{max-width:var(--page);margin:0 auto;padding:0 28px 64px}.hero{margin:26px 0}
 .lab{display:flex;align-items:center;gap:10px;color:var(--mut);font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.14em}
 .dash{width:18px;height:2px;background:var(--blue)}h1{font-size:34px;letter-spacing:-.02em;margin:10px 0 6px;font-weight:700;line-height:1.15}
@@ -328,6 +365,9 @@ td.num{font-family:var(--mono);text-align:right;white-space:nowrap}th.num{text-a
 .detail td{background:#fbfcfd;padding:18px}
 .tag.click{cursor:pointer}.tag.click:hover{background:rgba(15,143,127,.16);border-color:var(--teal)}
 .tag.on{background:var(--teal);color:#fff;border-color:var(--teal)}
+.tag.lic{border-color:rgba(36,92,255,.4);color:var(--blue-deep);background:var(--blue-pale)}.tag.lic:hover{background:rgba(36,92,255,.14);border-color:var(--blue)}
+.tag.lic.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+.tagkey{font-size:12px;color:var(--mut);margin:0 0 8px}
 .src{font:9.5px var(--mono);letter-spacing:.06em;color:var(--faint);border:1px solid var(--line);padding:0 4px;margin-left:4px;white-space:nowrap}
 .allerg{border:1px solid rgba(154,106,20,.45);background:var(--amber-pale);color:#5b430f;font-size:12.5px;padding:8px 10px;margin-bottom:10px}
 .allerg span{font:10.5px var(--mono);color:var(--amber)}
@@ -385,17 +425,20 @@ footer{border-top:1px solid var(--line);margin-top:36px;padding-top:16px;color:v
  <section class="hero">
   <div class="lab"><span class="dash"></span>CC0 odour corpus · a GenesisL1 project · preview</div>
   <h1>What common perfumery materials smell like, and who said so</h1>
-  <p class="sub">Every odour word here is quoted, word for word, from a public-domain source: a US patent or a US-government
-   database. Click a material to see the sentences behind its tags. Materials with no public-domain description are
-   listed too, because the gap is part of the result.</p>
+  <p class="sub">Every odour word in the evidence is quoted, word for word, from a public-domain source: a US patent or a
+   US-government database. Click a material to see the sentences behind its tags. Materials with no public-domain
+   description are listed too, because the gap is part of the result. Where a rights holder has given written permission,
+   its descriptor words appear in a separate, credited section.</p>
  </section>
  <div class="stats" id="stats"></div>
  <div class="note"><b>This preview</b> shows the 208 commercial perfumery materials used as a reference list, not the whole
   corpus. The corpus itself ships as CC0 data files (molecule → tag rows, each with its source quote and location).
-  Descriptors from manufacturers or retailers are <b>not</b> used; if a rights holder releases theirs, they appear in a
-  separate, labelled slot. <b>On-chain:</b> OpenScent is a GenesisL1 project. Once frozen, the corpus will also be
+  Descriptors from manufacturers or retailers are <b>not</b> used unless the rights holder has given written permission
+  (so far: Olfatorium, under CC BY 4.0); those words appear in a separate, labelled, credited section and are counted
+  apart from the patent-derived figures. <b>On-chain:</b> OpenScent is a GenesisL1 project. Once frozen, the corpus will also be
   published on the GenesisL1 blockchain as MolNFTs, one token per molecule carrying its odour tags and the quotes behind
   them, so it stays permanently citable and reusable by other applications.</div>
+ <p class="tagkey" id="tagkey"></p>
  <div class="bar">
   <input id="q" type="search" placeholder="Search name, trade name, CAS, formula, tag…" autocomplete="off">
   <div class="seg" id="seg"><button data-f="all" class="on">All</button><button data-f="desc">Described</button><button data-f="none">No public description</button></div>
@@ -403,7 +446,7 @@ footer{border-top:1px solid var(--line);margin-top:36px;padding-top:16px;color:v
   <span class="count" id="count"></span>
  </div>
  <div class="panel" id="matpanel"><div class="scroll"><table>
-  <thead><tr><th style="width:26%">Material</th><th>Formula</th><th class="num">MW</th><th class="num">XLogP3</th><th style="width:34%">Odour tags (from evidence)</th><th class="num">Quotes</th><th>Status</th></tr></thead>
+  <thead><tr><th style="width:26%">Material</th><th>Formula</th><th class="num">MW</th><th class="num">XLogP3</th><th style="width:34%">Odour tags (from evidence &amp; licensing)</th><th class="num">Quotes</th><th>Status</th></tr></thead>
   <tbody id="tb"></tbody></table></div></div>
  <section id="mapview" style="display:none">
   <div class="note"><b>How to read it.</b> Each dot is one of the preview materials that has odour evidence, placed only from
@@ -423,13 +466,16 @@ const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&
 const fmt=n=>Number(n).toLocaleString("en-US");
 $("#topbadge").textContent=`Preview · ${D.n} materials`;
 $("#stats").innerHTML=[
- ["Molecules in the corpus",fmt(D.fig.molecules)],
- ["Tags at the 30-molecule bar",`${D.fig.tags_at_bar} <small>/ ${D.fig.tags}</small>`],
+ ["Molecules in the corpus",fmt(D.fig.molecules)+(D.fig.molecules0!==undefined&&D.fig.molecules0!==D.fig.molecules?` <small>(${fmt(D.fig.molecules0)} without licensed words)</small>`:"")],
+ ["Tags at the 30-molecule bar",`${D.fig.tags_at_bar} <small>/ ${D.fig.tags}</small>`+(D.fig.tags_at_bar0!==undefined&&D.fig.tags_at_bar0!==D.fig.tags_at_bar?` <small>(${D.fig.tags_at_bar0} without licensed words)</small>`:"")],
  ["Materials in this preview",D.n],
- ["With a public-domain description",`${D.n_desc} <small>/ ${D.n}</small>`]
+ ["With a public-domain description",`${D.n_desc} <small>/ ${D.n}</small>`],
+ ...(D.n_lic?[["With licensed words (CC BY 4.0)",`${D.n_lic} <small>/ ${D.n}</small>`]]:[])
 ].map(([k,v])=>`<div class="stat"><div class="k">${k}</div><div class="v">${v}</div></div>`).join("");
-const tags=[...new Set(D.mats.flatMap(m=>m.tags))].sort();
+const licTags=m=>m.lic?m.lic.tags.map(x=>x[0]):[];            // tags that come from licensed words
+const tags=[...new Set(D.mats.flatMap(m=>[...m.tags,...licTags(m)]))].sort();
 $("#tag").innerHTML+=tags.map(t=>`<option>${esc(t)}</option>`).join("");
+if(D.n_lic)$("#tagkey").innerHTML=`Tag colours: <span class="tag">green</span> quoted patent or government evidence · <span class="tag lic">blue</span> a licensed descriptor word (CC BY 4.0, credited in the details). Both can be searched and filtered.`;
 // highlight verbatim spans: descriptors as <mark>, the molecule span underlined
 function hl(q,descs,mol){
  const spans=[];const lower=q.toLowerCase();
@@ -463,32 +509,36 @@ function detail(m){
  <dl>${SPEC.map(([k,l])=>m.spec[k]?row(l,m.spec[k].map(([v,s])=>`${esc(v)} <span class="src">${esc(s)}</span>`).join("<br>")):"").join("")}
   ${Object.keys(m.spec).length?"":`<dt>Measured</dt><dd class="est">none in a US-government source</dd>`}
  </dl></div>`;
+ const lic=m.lic?`<p class="h3" style="margin-top:16px">Licensed descriptors</p><div class="licbox">
+   <div class="evh"><span class="badge lic">Licensed · ${esc(m.lic.licence)}</span><a href="${esc(m.lic.url)}" target="_blank" rel="noopener">${esc(m.lic.by)}</a>${m.lic.src.map(u=>`<a href="${esc(u)}" target="_blank" rel="noopener">source page ↗</a>`).join(" ")}</div>
+   <div class="licw">${m.lic.tags.map(([t,ws])=>`<div><span class="tag">${esc(t)}</span> <span class="lw">${[...new Set(ws)].map(esc).join(", ")}</span></div>`).join("")}</div>
+   <div class="licn">Words as written on the source page (Spanish), mapped to the corpus tag by a person. Used with the written permission of ${esc(m.lic.by)}'s owner under ${esc(m.lic.licence)}. Credit: <a href="${esc(m.lic.url)}" target="_blank" rel="noopener">${esc(m.lic.by)}</a>. Tags from licensed words are drawn in blue; tags from quoted patent and government evidence in green.</div></div>`:"";
  let ev;
  if(!m.ev.length){
   ev=`<p class="h3">Evidence</p><div class="empty"><b>No odour description in any public-domain source we hold.</b> ${esc(m.note)}.
-   Its descriptions exist in manufacturer and retailer literature, which OpenScent does not copy.</div>
-   <div class="slot"><b>Licensed descriptors</b>Empty. If the rights holder releases its short descriptor words under CC0 or CC BY 4.0,
-   they appear here, credited to the licensor and kept apart from the patent-derived tags.</div>`;
+   Its descriptions exist in manufacturer and retailer literature, which OpenScent does not copy${m.lic?", except the descriptor words a rights holder has permitted (below)":""}.</div>
+   ${m.lic?"":`<div class="slot"><b>Licensed descriptors</b>Empty. If the rights holder releases its short descriptor words under CC0 or CC BY 4.0,
+   they appear here, credited to the licensor and kept apart from the patent-derived tags.</div>`}`;
  }else{
   ev=`<p class="h3">Evidence · ${m.ev.length} quote${m.ev.length>1?"s":""}</p>`+m.ev.map(e=>`<div class="ev ${e.kind==="passage"?"passage":""}">
    <div class="evh"><span class="badge">${KIND[e.kind]||e.kind}</span>${srcLink(e)}${e.tags.map(x=>tagChip(x)).join("")}</div>
    ${e.kind==="passage"?`<div class="ante">↳ antecedent: “${hl(e.ante,[],e.mol)}”</div>`:""}
    <div class="q">“${hl(e.quote,e.descs,e.kind==="passage"?e.anaphor:e.mol)}”</div></div>`).join("");
  }
- return `<tr class="detail"><td colspan="7"><div class="dgrid">${id}<div>${ev}</div></div></td></tr>`;
+ return `<tr class="detail"><td colspan="7"><div class="dgrid">${id}<div>${ev}${lic}</div></div></td></tr>`;
 }
 let filt="all",open=null;
 function render(){
  const q=$("#q").value.trim().toLowerCase(),t=$("#tag").value;
- const rows=D.mats.filter(m=>(filt==="all"||(filt==="desc")===m.described)&&(!t||m.tags.includes(t))&&
-  (!q||[m.name,m.title,m.trade,m.cas,m.formula,m.iupac,m.tags.join(" ")].join(" ").toLowerCase().includes(q)));
+ const rows=D.mats.filter(m=>(filt==="all"||(filt==="desc")===m.described)&&(!t||m.tags.includes(t)||licTags(m).includes(t))&&
+  (!q||[m.name,m.title,m.trade,m.cas,m.formula,m.iupac,m.tags.join(" "),licTags(m).join(" "),m.lic?m.lic.tags.flatMap(x=>x[1]).join(" "):""].join(" ").toLowerCase().includes(q)));
  $("#count").textContent=`${rows.length} of ${D.n}`;
  $("#tb").innerHTML=rows.map(m=>`<tr class="row${open===m.cid?" open":""}" data-cid="${m.cid}">
   <td class="nm"><b>${esc(m.name)}</b>${m.allergen?'<span class="al" title="EU fragrance allergen (labelling)">allergen</span>':""}<small>${esc(m.trade&&m.trade!==m.name?m.trade:m.title)}</small></td>
   <td class="fx" style="font-family:var(--mono);font-size:12.5px">${esc(m.formula)}</td><td class="num" data-l="MW">${esc(m.mw)}</td><td class="num" data-l="XLogP3">${esc(m.xlogp)}</td>
-  <td>${m.tags.map(x=>tagChip(x)).join("")||'<span style="color:var(--faint)">—</span>'}</td>
+  <td>${m.tags.map(x=>tagChip(x)).join("")+licTags(m).filter(x=>!m.tags.includes(x)).map(x=>tagChip(x,true)).join("")||'<span style="color:var(--faint)">—</span>'}</td>
   <td class="num qn" data-l="Quotes">${m.ev.length||"—"}</td>
-  <td class="st">${m.described?'<span class="badge ok">Described</span>':'<span class="badge proto">No public description</span>'}</td></tr>
+  <td class="st">${m.described?'<span class="badge ok">Described</span>':(m.lic?'':'<span class="badge proto">No public description</span>')}${m.lic?'<span class="badge lic" title="Descriptor words used with the rights holder\'s permission, CC BY 4.0">Licensed words</span>':""}</td></tr>
   ${open===m.cid?detail(m):""}`).join("")||`<tr><td colspan="7" style="text-align:center;color:var(--mut);padding:24px">No materials match.</td></tr>`;
  const cv=document.getElementById("v3d"),om=D.mats.find(m=>m.cid===open);
  if(cv&&om&&om.c3d)mol3d(cv,om.c3d);
@@ -532,7 +582,7 @@ function mol3d(cv,c){
  cv.addEventListener("wheel",e=>{e.preventDefault();zoom=Math.max(.5,Math.min(3,zoom*Math.exp(-e.deltaY*.0015)));},{passive:false});
 }
 // clicking a tag filters the list to materials carrying it; clicking the active tag clears it
-function tagChip(x){return `<span class="tag click${x===$("#tag").value?" on":""}" data-tag="${esc(x)}" title="Show materials tagged ${esc(x)}">${esc(x)}</span>`;}
+function tagChip(x,lic){return `<span class="tag click${lic?" lic":""}${x===$("#tag").value?" on":""}" data-tag="${esc(x)}" title="Show materials tagged ${esc(x)}${lic?" · from a licensed descriptor word (CC BY 4.0), credited in the material's details":""}">${esc(x)}</span>`;}
 function setTag(x){$("#tag").value=$("#tag").value===x?"":x;open=null;render();
  const p=$("#matpanel");if(p&&p.scrollIntoView)p.scrollIntoView({block:"start",behavior:"smooth"});}
 $("#tb").addEventListener("click",e=>{const tg=e.target.closest(".tag[data-tag]");if(tg){setTag(tg.dataset.tag);return;}
@@ -540,13 +590,15 @@ $("#tb").addEventListener("click",e=>{const tg=e.target.closest(".tag[data-tag]"
 $("#q").addEventListener("input",render);$("#tag").addEventListener("change",render);
 $("#seg").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;filt=b.dataset.f;
  document.querySelectorAll("#seg button").forEach(x=>x.classList.toggle("on",x===b));render();});
-$("#foot").innerHTML=`<b>Licence.</b> OpenScent corpus data: CC0 1.0. Odour evidence is quoted from US patents (not subject to copyright)
+$("#foot").innerHTML=`<b>Licence.</b> OpenScent corpus data: CC0 1.0. <b>Licensed layer:</b> descriptor words from
+ <a href="https://olfatorium.com/" target="_blank" rel="noopener">Olfatorium</a>, used with the written permission of its owner under
+ CC BY 4.0 and credited on each entry; they are not part of the CC0 data. Odour evidence is quoted from US patents (not subject to copyright)
  and US-government databases (HSDB via PubChem, NOAA CAMEO, OSHA, NIOSH). Patents that quote copyrighted reference books are excluded.
  Identity and computed properties: PubChem (NCBI); EC and FEMA numbers as listed there. Measured properties only from
  US-government sources (HSDB, NOAA CAMEO, OSHA, NIOSH, DOE PAC), each value shown with its source. EU allergen status:
  Regulation (EC) 1223/2009 Annex III and Regulation (EU) 2023/1545 (EUR-Lex); later bans are not tracked.<br>
  <b>Method.</b> Extract, never generate: every tag rests on a verbatim quote reviewed by a person, and every odour word shown is
- highlighted where it sits in that quote.<br>
+ highlighted where it sits in that quote. The licensed layer shows only the word, with a link to the page it comes from.<br>
  <b>GenesisL1.</b> OpenScent is a <a href="https://genesisl1.com" target="_blank" rel="noopener">GenesisL1</a> project.
  Planned: the frozen corpus published on-chain as MolNFTs; this page will then read it from the chain.<br>
  <b>Trademarks.</b> Trade names (Iso E Super®, Cashmeran®, Hedione®, Helional® and others) belong to their owners, including IFF,

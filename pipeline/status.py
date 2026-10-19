@@ -91,6 +91,7 @@ PHYSDESC = ROOT / "corpus" / "rows" / "pubchem-physdesc-rows.jsonl"
 PASSAGE = ROOT / "corpus" / "rows" / "passage-rows.jsonl"   # passage scope, adopted 2026-09-24
 EXCLUSIONS = ROOT / "corpus" / "rows" / "exclusions.jsonl"  # retired approved rows, 2026-09-26
 TARGETED = ROOT / "corpus" / "rows" / "targeted-rows.jsonl"  # sentence rows found by gap search, 2026-09-26
+LICENSED = ROOT / "corpus" / "rows" / "licensed-rows.jsonl"  # descriptor words used WITH PERMISSION (Olfatorium, CC BY 4.0), 2026-10-19
 STRUCT = ROOT / "corpus" / "structures" / "names.jsonl"          # structures.py --merge (2026-10-03)
 STRUCT_PC = ROOT / "corpus" / "structures" / "pubchem-names.json"  # Hetzner stage 2: also holds CID InChIKeys
 SMILES_CACHE = ROOT / "corpus" / "raw-pubchem" / "smiles.json"
@@ -307,8 +308,37 @@ def main() -> int:
                 if tag and mol:
                     targeted[tag].add(norm(mol))
 
+    # Licensed rows (olfatorium_candidates.py --write-layer, 2026-10-19): descriptor WORDS a source
+    # allowed us to use under CC BY 4.0 — a separate, labelled layer, never mixed into the patent
+    # rows. Ivan decided 2026-10-13 that these COUNT toward the tags; --no-licensed gives the
+    # figures without them. Identified by PubChem CID like the pubchem source (the molecule name is
+    # the shop's trade name, not a systematic one). Counted only once approved; the tag must be one
+    # of the 67 or it is reported as a violation.
+    licensed = collections.defaultdict(set)
+    lic2cid = collections.defaultdict(set)
+    l_held = l_rows = 0
+    no_licensed = "--no-licensed" in sys.argv
+    if LICENSED.exists() and not no_licensed:
+        vocab_tags = set(surf.values())
+        for r in jsonl(LICENSED):
+            if r.get("review_decision") != "approve":
+                l_held += r.get("review_decision") is None
+                continue
+            l_rows += 1
+            t, m = (r.get("tag") or "").strip(), norm(r.get("molecule_name") or "")
+            if t not in vocab_tags:
+                violations.append((r.get("source_url"), f"tag {t!r} is not one of the {N_TAGS}"))
+                continue
+            if not (r.get("span") and r.get("source_url") and r.get("licence") and r.get("attribution")):
+                violations.append((r.get("source_url"), "licensed row without span/source/licence/attribution"))
+                continue
+            if t and m:
+                licensed[t].add(m)
+                if r.get("molecule_cid"):
+                    lic2cid[m].add(r["molecule_cid"])
+
     combined = collections.defaultdict(set)         # NAME TEXT — the pre-2026-10-03 definition
-    for d in (patents, pubchem, passage, targeted):
+    for d in (patents, pubchem, passage, targeted, licensed):
         for t, s in d.items():
             combined[t].update(s)
 
@@ -320,8 +350,9 @@ def main() -> int:
         stale = len({m for d in (patents, passage, targeted) for s_ in d.values() for m in s_} - known)
 
         def ik_of(name, source):
-            if source == "pubchem":
-                iks = {pc_ik[c] for c in name2cid.get(name, ()) if c in pc_ik}
+            if source in ("pubchem", "licensed"):
+                cids = (name2cid if source == "pubchem" else lic2cid).get(name, ())
+                iks = {pc_ik[c] for c in cids if c in pc_ik}
                 return min(iks) if iks else None
             return pat_ik.get(name)
 
@@ -335,16 +366,28 @@ def main() -> int:
 
         def views(level):
             v = {"patents": remap(patents, "patent", level), "pubchem": remap(pubchem, "pubchem", level),
-                 "passage": remap(passage, "patent", level), "targeted": remap(targeted, "patent", level)}
+                 "passage": remap(passage, "patent", level), "targeted": remap(targeted, "patent", level),
+                 "licensed": remap(licensed, "licensed", level)}
             c = collections.defaultdict(set)
             for d in v.values():
                 for t, s_ in d.items():
                     c[t].update(s_)
+            # the same total WITHOUT the licensed layer, so the patent-side figure is always beside it
+            c0 = collections.defaultdict(set)
+            for k, d in v.items():
+                if k != "licensed":
+                    for t, s_ in d.items():
+                        c0[t].update(s_)
             v["COMBINED"] = c
+            v["w/o licensed"] = c0
             return v
         full, flat = views("full"), views("flat")
+        combined_no_lic = collections.defaultdict(set)
+        for d in (patents, pubchem, passage, targeted):
+            for t, s_ in d.items():
+                combined_no_lic[t].update(s_)
         name_view = {"patents": patents, "pubchem": pubchem, "passage": passage, "targeted": targeted,
-                     "COMBINED": combined}
+                     "licensed": licensed, "COMBINED": combined, "w/o licensed": combined_no_lic}
     else:
         full = flat = None
 
@@ -369,6 +412,13 @@ def main() -> int:
         print(f"held        {p_held} passage rows awaiting Ivan's decision (not counted)")
     if t_held:
         print(f"held        {t_held} targeted rows awaiting Ivan's decision (not counted)")
+    if l_rows:
+        print(f"licensed    {l_rows} approved descriptor-word rows (corpus/rows/licensed-rows.jsonl, CC BY 4.0 with "
+              "permission): COUNTED in COMBINED; 'w/o licensed' is the figure without them")
+    if l_held:
+        print(f"held        {l_held} licensed rows awaiting Ivan's decision (not counted)")
+    if no_licensed:
+        print("scope       LICENSED LAYER LEFT OUT (--no-licensed)")
     print()
     if not full:
         print(f"!! {STRUCT.relative_to(ROOT)} missing — the headline below is NAME TEXT, the old and weaker definition.")
@@ -382,8 +432,10 @@ def main() -> int:
     else:
         print(f"{'':<10}{'BY STRUCTURE (headline)':<30}{'connectivity only':<26}{'name text (old)'}")
         print(f"{'':<10}{'full InChIKey, stereo kept':<30}{'enantiomers merged':<26}{'one spelling = one name'}")
-        for name in ("patents", "pubchem", "passage", "targeted", "COMBINED"):
+        for name in ("patents", "pubchem", "passage", "targeted", "licensed", "w/o licensed", "COMBINED"):
             if name == "passage" and sentence_scope:
+                continue
+            if name in ("licensed", "w/o licensed") and not l_rows:
                 continue
             cells = []
             for v, unit in ((full, "molecules"), (flat, "molecules"), (name_view, "names")):
