@@ -4,21 +4,24 @@
 
 ---
 
-## RESUME HERE — state as of 2026-09-26 (end of day), amended through 2026-10-09
+## RESUME HERE — state as of 2026-09-26 (end of day), amended through 2026-10-19
 
-**READ THIS FIRST. The 09-24 blocks below it are superseded.** Live figures (status.py, re-run 2026-10-09; the 09-26
+**READ THIS FIRST. The 09-24 blocks below it are superseded.** Live figures (status.py, re-run 2026-10-19 WITH the licensed layer counted — `--no-licensed` gives the patent-side figures; the 09-26
 figures this block used to show — 27 of 67, 1,829 molecules — are now the by-name-text count):
 
 ```
 4,676 review rows · 1,136 approve · 1,168 reject · 2 skip · 2,370 undecided
 retired    30 approved patent rows (exclusions.jsonl: quoted copyrighted reference works)
+licensed   136 approved descriptor-word rows (licensed-rows.jsonl; Olfatorium, CC BY 4.0, with permission) — COUNTED
            BY STRUCTURE (headline)    connectivity only      name text (old)
   patents    20 of 67    889 molecules   20 of 67    860 molecules   21 of 67    983 names
   pubchem     7 of 67    837 molecules    7 of 67    829 molecules    7 of 67    839 names
   passage     0 of 67      6 molecules    0 of 67      6 molecules    0 of 67      8 names
   targeted    0 of 67      5 molecules    0 of 67      5 molecules    0 of 67      5 names
-  COMBINED   24 of 67  1,710 molecules   24 of 67  1,671 molecules   27 of 67  1,819 names
-  next: tobacco 29 (needs 1) · sandalwood 29 (needs 1) · apple 26, anisic 26 (need 4) · grapefruit 22 (needs 8)
+  licensed    0 of 67     34 molecules    0 of 67     34 molecules    0 of 67     34 names
+  w/o licensed 24 of 67  1710 molecules   24 of 67  1671 molecules   27 of 67  1819 names
+  COMBINED   25 of 67   1741 molecules   25 of 67  1701 molecules   27 of 67  1853 names
+  next: sandalwood 29 (needs 1) · apple 27 (needs 3) · anisic 26 (needs 4) · grapefruit 23 (needs 7) · leather 22 (needs 8)
 verbatim invariant: clean · review queue: 0 PRODUCTIVE
 ```
 
@@ -108,6 +111,30 @@ and mint OpenScent first, keep any converter OUT of OpenScent (separate repo, Op
 Joe and run a read-only scratch benchmark meanwhile. Message to Joe NOT drafted yet. Next step unchanged: follow-up
 emails ~10-12, then freeze. **Rule (Ivan, 10-09): this repo is public — private chat content stays out of every tracked
 file** (details of the Joe thread: local-only `outreach/joe-thread-20261009.md`; see the last entry).
+
+**2026-10-12 (log — follow-up round sent, see the last entry):** four of six follow-ups sent (Symrise via its contact form,
+because the 09-28 email had bounced and never arrived; Givaudan; De Hekserij; Olfatorium). IFF (form broken) and
+dsm-firmenich (form refuses personal addresses) NOT sent. **v1.0 stays unfrozen until the ANSWERS are in: answers window to
+Mon 10-19, freeze planned for the week of 19 Oct — and if nothing has come back by then, it freezes as it stands.** Settle
+BEFORE any reply arrives: whether licensed descriptors count toward the 67 tags. This supersedes "follow up ~10-12, then
+freeze" above.
+
+**2026-10-13 (log — Olfatorium said yes, see the last entry):** Olfatorium answered the 10-12 follow-up: yes, if they are
+credited (the attribution = CC BY 4.0 route). Ivan sent a one-line confirmation (licence, scope = descriptions they wrote
+themselves, credit + link, separate labelled layer, name and role); **the owner of Olfatorium answered "Sí" the same day —
+grant CONFIRMED (10-13).** **Decision (Ivan, 10-13):
+licensed words COUNT toward the tag totals** — a separate, labelled layer with its own `status.py` line, included in the
+combined count, same ontology mapping and review. The shop's descriptions were deliberately NOT kept on 09-26 (name + CAS
+only), so they are re-fetched from its public API now that the grant is confirmed (see the last entry). The freeze plan is
+unchanged (week of 19 Oct); whether v1.0 waits for this layer is OPEN.
+
+**2026-10-19 (log — the Olfatorium layer is built, counted and shown with credit; see the last entry):** the shop's words
+were fetched from its public API and proposed against REVIEW-RULES; **Ivan approved all proposed lines and rejected the 8
+doubtful ones.** `corpus/rows/licensed-rows.jsonl`: 144 rows (136 approve, 8 reject), words only, no shop sentences.
+`status.py` has a "licensed" source and a "w/o licensed" row; `--no-licensed` reproduces the 10-09 figures. **COMBINED is now
+25 of 67 tags and 1,741 molecules by structure (24 and 1,710 without the layer): tobacco crossed the bar.** The preview
+(`docs/preview.html`) was rebuilt LOCALLY with a credited "Licensed descriptors" section and corrected page text; NOT pushed.
+Whether v1.0 waits for this layer is OPEN. Nothing committed.
 
 **Emails were READY (09-27):** preview live at https://vanpez.github.io/openscent/ (GitHub Pages,
 master /docs), linked in all three drafts, signed Ivan Pezzini. outreach/ and the shop lists
@@ -5593,3 +5620,184 @@ committed. A local-only backup branch exists (not pushed); the incident record i
 **Open.** Unchanged: follow-up emails ~10-12; freeze v1.0 after them; the converter's scope, home and licence; reply to Joe
 (not drafted); JDK + RDKit install before any OPSIN or Openclatura run; Mike's reference MolNFT v2 contract. Uncommitted:
 `DEVLOG.md` (this entry and one RESUME sentence).
+
+---
+
+## 2026-10-12 — follow-up round sent; the freeze waits for the answers, planned for the week of 19 Oct
+
+No pipeline or corpus change; `status.py` was not re-run, so the figures in the RESUME block are still the 10-09 ones.
+
+**Follow-up round (the single follow-up planned 09-28), sent 10-12 from openscent.data@gmail.com.**
+- **Symrise: the 09-28 email never arrived.** It bounced within seconds (`550 5.4.1 Recipient address rejected: Access
+  denied`, Microsoft 365) and the bounce sat unnoticed in the openscent.data inbox for two weeks. Sent 10-12 as a first
+  contact through symrise.com/contact, "Send to: Aroma Molecules" (1,000-character limit; the 7 materials).
+- **Givaudan, De Hekserij, Olfatorium:** follow-ups sent 10-12 (Givaudan through the same chatbot route with the 395-character
+  short version; the two shops in English and Spanish).
+- **IFF: NOT sent** — its form is broken. **dsm-firmenich: NOT sent** — its form now refuses personal addresses ("business
+  email address" required). Either would need another channel or a business-domain address; little is expected from the
+  manufacturers anyway.
+- Outcomes are in the local-only `outreach/permission-emails.md`. "Follow up once": no second round is planned.
+
+**Decision (Ivan, 10-12): the freeze waits for the ANSWERS, not for the sending.** Sending settles nothing: a "yes" could add
+licensed descriptors (a separate, labelled layer, never mixed in) and so change what v1.0 contains. Answers window to
+Mon 10-19; **freeze planned for the week of 19 Oct; if nothing has come back, v1.0 freezes as it stands.** Check the inbox
+AND spam of openscent.data@gmail.com in that week (the bounce was missed once).
+
+**To settle during the wait, before any reply arrives:**
+1. Whether licensed descriptors would count toward any of the 67 tags (still NOT decided; settle it before an answer, not
+   after, so a "yes" cannot bend the rule).
+2. Tobacco and sandalwood: each is one compound short, and those compounds are among the 48 unresolved names — a
+   hand-rewrite decision for Ivan (the existing route), independent of any reply.
+3. A short reply to Joe, questions only (not drafted).
+
+**Corrections to the entries above.** "Heard from none of the six" (10-09 entries) was half-true: the Symrise request never
+arrived, and the other five had been accepted for delivery, unanswered, by 10-12. The RESUME line "follow up once
+~10-12" is done.
+
+**Open.** Replies to the follow-ups; the three items above; freeze v1.0 (week of 19 Oct); the converter's scope, home and
+licence; JDK + RDKit install before any OPSIN or Openclatura run; the 48 names without a structure; Joe's 16 AI-assisted OKs
+still unconfirmed by a human; A3's 1-ene reading; Mike's reference MolNFT v2 contract; M's "openscent block" (10-08).
+Uncommitted: `DEVLOG.md` (this entry and the RESUME paragraph).
+
+---
+
+## 2026-10-13 — Olfatorium said yes (with credit); what it covers; licensed words count toward the tags
+
+No pipeline or corpus change; nothing fetched from the shop; `status.py` was not re-run (RESUME figures are still 10-09).
+
+**The reply.** Olfatorium answered the 10-12 follow-up: yes, the words may be included if they are credited (screenshot kept
+local-only in `outreach/`, outcome in `outreach/permission-emails.md`). Complete as received, and thin as a grant: no licence
+named, no sender name or role, scope (descriptions they wrote themselves) not restated. It answers a message that offered
+CC0 or CC BY 4.0 with credit, so it reads as the attribution route. **Ivan sent a one-line confirmation on 10-13**: CC BY 4.0,
+their own descriptions only, credited with a link on every entry, separate labelled layer (also on-chain), plus a request for
+name and role. **No answer to that yet — the grant is not final until it arrives.**
+
+**What it could be worth (computed 10-13 from `corpus/olfatorium/olfatorium-gaps.tsv`).** 185 shop rows: 45 gap (single
+compounds with no descriptor in the corpus) · 46 already in the corpus · 92 not single compounds (essential oils, absolutes,
+resins) · 2 unresolved. Some gap rows are dilution variants of one molecule, so 45 is an upper bound on rows, not a yield.
+
+**The descriptions are NOT stored anywhere.** 09-26 (§1) scraped the shop's WooCommerce Store API but kept name + CAS only,
+on purpose (all rights reserved; its synthetics page says some descriptions are third-party). `cas.tsv` has our own notes,
+no description text; no page cache; no scraper in `pipeline/` (the fetch was ad hoc). They must be re-fetched from the
+public API **only after the "sí"**; write a proper, rate-limited script then. **Yield risk:** the "not ours" warning sits on
+the synthetics page, i.e. the aroma-chemical category, and the API does not say which texts are theirs. Plan: fetch the 45
+gap rows first, show Ivan every word before anything enters the layer, and ask them which they wrote if their answer does
+not say.
+
+**Decision (Ivan, 10-13): licensed words count toward the tag totals.** The layer stays separate and labelled (provenance
+class, source and licence on every entry, never mixed into the patent-extracted rows) but is included in the combined
+count; it goes through the same ontology mapping and Ivan's review. Consequence for `status.py`: a "licensed" line and a
+combined figure that includes it, still showing the patent-only figure beside it. Not built.
+
+**Terminology.** "Licensed" in the provenance label (`licensed by X`) means only that the source gave written permission under
+stated conditions (here: credit = CC BY 4.0). It is not a paid licence or a signed contract. The label can be renamed (for
+example `by permission of X`) before anything is built; not decided.
+
+**Open.** Their answer to the confirmation; whether v1.0 waits for this layer or ships extracted-only with the layer as a
+follow-up release (not decided); the three waiting items from 10-12 (tobacco and sandalwood rewrites; a reply to Joe;
+the other follow-up replies, window to Mon 10-19); freeze v1.0 (week of 19 Oct); converter scope; JDK + RDKit install;
+Mike's reference MolNFT v2 contract. Uncommitted: `DEVLOG.md` (the 10-12 and 10-13 entries and RESUME paragraphs).
+
+---
+
+## 2026-10-13 (later) — the Olfatorium grant is confirmed by the owner
+
+No corpus change yet. Ivan's confirmation went out in the morning (CC BY 4.0, only descriptions Olfatorium wrote
+themselves, credited with a link on every entry, separate labelled layer, also on-chain, plus a request for name and
+role). **The owner of Olfatorium answered "Sí" the same day and gave their name and role** (kept in the local-only
+`outreach/permission-emails.md`, with screenshots of both replies). That closes the open point of the earlier 10-13
+entry: the grant is explicit about the licence, the credit and the scope.
+
+**What it covers, exactly:** the short descriptor words from descriptions Olfatorium wrote themselves — not text they took
+from other sources (their synthetics page says some descriptions are third-party). The API does not mark which is which,
+so every word is shown to Ivan before it enters the layer; anything that looks copied (manufacturer boilerplate, reference-
+work wording) is flagged and not taken without Ivan's OK. Nothing else about the shop's content is licensed to us.
+
+**Next, same day:** fetch the shop's descriptions through its public WooCommerce Store API (polite rate, identifying user
+agent), starting with the 45 "gap" rows; raw responses stay local-only; report the words first, build nothing in the
+corpus until Ivan has read them.
+
+**Open.** As in the previous entry, minus the grant: whether v1.0 waits for the layer; the layer's provenance label;
+tobacco and sandalwood; a reply to Joe; the other follow-up replies (window to Mon 10-19); freeze v1.0 (week of 19 Oct).
+Uncommitted: `DEVLOG.md` (the 10-12 and 10-13 entries and RESUME paragraphs).
+
+---
+
+## 2026-10-19 — the Olfatorium layer: fetched, proposed, approved, counted, shown with credit
+
+Follows the 10-13 entries (grant confirmed by the shop's owner; Ivan's decision that licensed words count toward the tags).
+
+**Fetch (`pipeline/olfatorium_fetch.py`, new).** The shop's public WooCommerce Store API: 212 products now (185 on 09-26), 3 pages
+plus one probe, 2.5 s apart, a user agent naming the project and its contact. Raw JSON and `descriptions.tsv` stay local-only
+(`corpus/olfatorium/` is gitignored). The 45 "gap" rows (single compounds with no descriptor in the corpus) all matched by CAS
+(the 12 that first looked unmatched were multi-CAS entries written with " / "). **Mixed authorship:** some pages carry English
+manufacturer text, and in four cases the Spanish is a translation of it. Excluded whole: Cashmeran, Helional, Evernyl,
+Undecavertol (translations), Cassifix, Sagecete, Tuberolide (English supplier text only); Timbersilk (same CAS and text as
+Iso E Super); Woodarom (only blend statements). Correction to the 10-13 note: Koavone does have text (in the short description).
+
+**Candidates (`pipeline/olfatorium_candidates.py`, new).** Every span is a verbatim substring of one Spanish sentence (the script
+stops if not); tags are proposals into the existing 67; REVIEW-RULES applied unchanged: no blend effects or uses ("combina bien
+con ...", "realza"), no intensity or judgement words, no substances named as comparisons (nitroalmizcle, cetona de almizcle,
+cetonas de la rosa), no negations or comparatives. 144 lines: 136 proposed, 8 "doubt". 34 molecules with at least one proposed
+tag, 113 distinct (molecule, tag) pairs, 47 of the 67 tags used. The 8 doubtful lines: C-12 Lauric (aldehydic), C-12 MNA
+(ambergris), Koavone (aldehydic at high levels), Mayol (fresh, floral: 2 lines), Norlimbanol and Trimofix ("amanerada", probably
+a typo for "amaderada": 2 lines), Sandalmysore (sandalwood, only a strength comparison with natural sandalwood).
+
+**Decision (Ivan, 10-19): all proposed lines approved; the 8 doubtful ones rejected.**
+
+**The layer (`corpus/rows/licensed-rows.jsonl`, new, untracked).** 144 rows (136 approve, 8 reject, so they are not re-proposed).
+Words only: the grant covers "las palabras descriptivas breves", not the shop's sentences, so each row holds the word, the tag,
+CID and CAS, the product link, a locator (field, offsets, sentence hash) and the licence and credit fields. Checked: no full
+sentence appears in the file (longest span 17 characters) and all 144 rows re-verify against the local page text. The Spanish
+-> tag mapping lives per row (with a note), not in `ontology/odor_terms.tsv`. The provenance label is still `licensed`
+(renaming it, e.g. "by permission of ...", is open).
+
+**Structures.** The caches had no InChIKey for 33 of the 34 CIDs. Fetched on Hetzner (PubChem rule) with the existing
+`pubchem_smiles.py`, now extended additively to include the CIDs of approved licensed rows: one request, 34 CIDs, all with an
+InChIKey; merged into `corpus/raw-pubchem/smiles.json` (backup `smiles.json.bak-20261019`; no existing entry changed). The
+staging folder on Hetzner (`/opt/openscent/stage-licensed-20261019`) was removed afterwards on Ivan's OK; nothing else there was
+touched.
+
+**`status.py`.** New "licensed" source (approved rows only; the tag must be one of the 67 and the row must carry span, source,
+licence and credit or it is a violation), a "w/o licensed" row, and `--no-licensed`, which reproduces the 10-09 output exactly
+(checked by diff). **Computed:** COMBINED by structure 24 -> 25 of 67 tags and 1,710 -> 1,741 molecules (34 licensed molecules, 3
+share a structure with ones already held); **tobacco crossed the bar** (two molecules, Safranal/Safraleine and Trimofix, each
+with an explicit "tabaco" in the shop's text). Within reach now: sandalwood 29 (needs 1; no licensed candidate), apple 27,
+anisic 26, grapefruit 23, leather 22. Name-text count unchanged at 27 of 67. 42 tags below the bar (was 43).
+
+**The preview (`pipeline/site_build.py`, `docs/preview.html`).** `catalog.py` re-run: no change (208 compounds, 94 described, 114
+without a description). `site_build.py`: a credited "Licensed descriptors" section per material (licence badge, link to the
+shop and to the source page, the words with their tags, a plain statement of the permission), a "Licensed words" badge in the
+list, header tiles showing both totals, and corrected page text (the old text said every odour word is quoted from a
+public-domain source and that retailer descriptors are not used). Also fixed: `status_figures()` could not read the by-structure
+COMBINED line (format changed 10-03; the page had not been built since 09-27). **Rebuilt locally, checked in the browser pane;
+NOT pushed, so the public page still shows the 09-27 build.** The rebuild brings in everything since 09-27, not only this layer.
+
+**Open.** Whether v1.0 waits for this layer (not decided); the layer's label; committing and pushing (the new scripts, the
+layer, `status.py`, `pubchem_smiles.py`, `smiles.json`, the rebuilt preview and this log); the MolNFT / on-chain side must carry
+the same credit and licence per token (not designed); the other follow-up replies (window to Mon 10-19); tobacco's crossing
+rests on two molecules, so any later change to those rows moves the headline; tobacco and sandalwood name rewrites; a reply to
+Joe; freeze v1.0 (week of 19 Oct); converter scope; JDK + RDKit; Mike's reference MolNFT v2 contract.
+Uncommitted: `DEVLOG.md` (the 10-12, 10-13 and 10-19 entries), `pipeline/status.py`, `pipeline/pubchem_smiles.py`,
+`pipeline/site_build.py`, `corpus/raw-pubchem/smiles.json`, `docs/preview.html`, and new `pipeline/olfatorium_fetch.py`,
+`pipeline/olfatorium_candidates.py`, `corpus/rows/licensed-rows.jsonl`.
+
+### Later 10-19 — licensed tags in the column, filter and search; locator phrases kept local; committed and pushed
+
+- **The column.** Ivan: licensed tags missing from the "Odour tags" column made them look absent and unsearchable. Changed in
+  `site_build.py`: the column is now "Odour tags (from evidence & licensing)"; licensed tags are blue chips beside the green
+  quoted-evidence chips, with a colour key above the table; the tag dropdown and chip clicks include them (the tobacco filter
+  shows Safraleine and Trimofix); the search box matches licensed tags and the Spanish words ("nueces" finds Acetylpyrazine). The
+  credited section stays in each material's details. The scent map still uses only the patent-derived tags. The tags already
+  are the translation of the words (Ivan approved each mapping into the 67-tag vocabulary); no further translation layer.
+  Checked in the browser pane. Ivan: "much better like this".
+- **Locator phrases.** The short pieces of the shop's sentences used to find each sentence were moved out of the tracked script
+  into the local-only `corpus/olfatorium/proposals.py` (the grant covers descriptor words, not sentences).
+  `licensed-rows.jsonl` is byte-identical after the change. A scan of every tracked or public file (the layer, the scripts, the
+  rebuilt page) for the shop's sentences, for any 8-word run of its text and for the locator phrases found none.
+- **Commits.** Two commits on `master`, pushed on Ivan's OK: code and data (the new scripts, the layer, `status.py`,
+  `pubchem_smiles.py`, `site_build.py`, `smiles.json`, the rebuilt `docs/preview.html`), then this log. The public preview now
+  shows the licensed layer. Not committed: `openscent-paper-v0.3-preview.pdf` (untracked, unrelated).
+- **Corrections to the entry above.** Its "Uncommitted" and "committing and pushing" items are done. Still open: whether v1.0
+  waits for the layer; the layer's label; the on-chain credit per token; the follow-up replies; tobacco and sandalwood name
+  rewrites; a reply to Joe; freezing v1.0 (week of 19 Oct); converter scope; JDK + RDKit; Mike's reference MolNFT v2 contract.
