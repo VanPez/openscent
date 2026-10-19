@@ -113,6 +113,13 @@ def main() -> int:
                     code(sty, e["source_type"]), e["source_id"], ";".join((e["documents"] or "").split(";")[:6]),
                     e["source_url"], code(how, e["how_decided"])] for e in sorted(es, key=lambda e: (e["tag"], e["evidence_id"]))]
 
+    c3 = {}
+    c3f = ROOT / "corpus" / "3d" / "conformers.json"
+    if c3f.exists():                                  # corpus_3d_fetch.py (Hetzner): PubChem's computed conformers
+        for ik, v in json.loads(c3f.read_text(encoding="utf-8")).items():
+            if v.get("cid") or v.get("c3d"):
+                c3[ik] = [v.get("cid"), v.get("c3d") or 0]
+    print(f"3D: {sum(1 for v in c3.values() if v[1])} conformers, {sum(1 for v in c3.values() if v[0])} PubChem CIDs", flush=True)
     c = man["counts"]
     data = {"tags": [[r["tag"], int(r["molecules_v1_0"]), 1 if r["at_bar_30"] == "yes" else 0] for r in T],
             "fam": [[n, col] for n, col, _ in SB.FAMILIES], "m": mol, "sty": sty, "how": how,
@@ -124,7 +131,7 @@ def main() -> int:
     def js(o):
         return json.dumps(o, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/").replace("<!--", "<\\!--")
 
-    page = TEMPLATE.replace("/*DATA*/", js(data)).replace("/*EVID*/", js(evid))
+    page = TEMPLATE.replace("/*DATA*/", js(data)).replace("/*EVID*/", js(evid)).replace("/*C3D*/", js(c3))
     OUT.write_text(page, encoding="utf-8")
     print(f"wrote {OUT.relative_to(ROOT)}  ({OUT.stat().st_size/1e6:.2f} MB)")
     return 0
@@ -146,7 +153,9 @@ a{color:var(--blue)}
 .topbar-in{max-width:var(--page);margin:0 auto;padding:10px 28px;min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:12px}.glyph{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#fff;border:1px solid var(--line-strong)}
 .wordmark b{display:block;font-size:17px;letter-spacing:-.01em}.wordmark span{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--mut);text-transform:uppercase}
-.nav{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:13px}.nav a{text-decoration:none}.nav a:hover{text-decoration:underline}
+.nav{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.nav a.nl{font:500 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--blue-deep);background:#fff;border:1px solid var(--blue);padding:9px 14px;border-radius:9px;white-space:nowrap}
+.nav a.nl:hover,.nav a.nl:focus-visible{background:var(--blue);color:#fff;outline:none}
 .badge{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border:1px solid var(--line-strong);color:var(--mut);background:#fff;white-space:nowrap}
 .badge.amber{border-color:rgba(154,106,20,.5);color:var(--amber);background:var(--amber-pale)}
 .wrap{max-width:var(--page);margin:0 auto;padding:0 28px 60px}
@@ -189,6 +198,10 @@ td.num,th.num{font-family:var(--mono);text-align:right;white-space:nowrap}
 .kv{display:grid;grid-template-columns:130px 1fr;gap:4px 14px;font-size:12.5px;margin:8px 0 12px}.kv dt{color:var(--mut);font-family:var(--mono);font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;padding-top:2px}
 .kv dd{margin:0;font-family:var(--mono);font-size:12px;word-break:break-all}.kv dd.t{font-family:var(--sans);word-break:normal}
 .evh{font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin:14px 0 6px}
+.dtop{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:18px;align-items:start}
+.v3d{background:#fff;border:1px solid var(--line-strong);height:260px;margin:12px 0 4px;touch-action:none;cursor:grab}.v3d canvas{width:100%;height:100%;display:block}
+.v3d.none{display:grid;place-items:center;cursor:default;font:11px var(--mono);color:var(--faint);letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:0 14px}
+.hint{font:10.5px var(--mono);color:var(--faint);letter-spacing:.04em}
 .ev{background:#fff;border:1px solid var(--line);border-left:3px solid var(--teal);padding:9px 14px;margin-bottom:8px;font-size:13.5px}
 .ev .ant{color:var(--faint);font-size:12.5px;margin-bottom:4px}
 .ev mark.d{background:rgba(15,143,127,.2);color:inherit;padding:0 2px;border-bottom:2px solid var(--teal)}.ev mark.m{background:rgba(36,92,255,.14);color:inherit;padding:0 2px;border-bottom:2px solid var(--blue)}
@@ -204,12 +217,12 @@ td.num,th.num{font-family:var(--mono);text-align:right;white-space:nowrap}
 .tm .b u{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--amber)}.tm .c{font:12px var(--mono);text-align:right}
 footer{max-width:var(--page);margin:0 auto;padding:10px 28px 50px;color:var(--mut);font-size:12.5px}footer p{max-width:900px}
 @media(max-width:760px){.wrap,.topbar-in,footer{padding-left:16px;padding-right:16px}.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(3){border-left:0}.stat:nth-child(n+3){border-top:1px solid var(--line)}
- th.hide,td.hide{display:none}td,th{padding:9px 12px}.kv{grid-template-columns:1fr}.tm{grid-template-columns:110px 1fr 46px}.bar{top:0;position:static}.count{margin-left:0}}
+ th.hide,td.hide{display:none}td,th{padding:9px 12px}.kv{grid-template-columns:1fr}.dtop{grid-template-columns:1fr}.tm{grid-template-columns:110px 1fr 46px}.bar{top:0;position:static}.count{margin-left:0}}
 </style></head><body>
 <header class="topbar"><div class="topbar-in">
  <div class="brand"><div class="glyph"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 9.2 13.8 11.7V16.7L9.5 19.2 5.2 16.7V11.7Z" stroke="#07111d" stroke-width="1.5"/><circle cx="9.5" cy="14.2" r="2.3" stroke="#245cff" stroke-width="1.3"/><path d="M13.8 11.7C15.9 10.6 14.7 8.4 16.7 7.2 18.7 6 17.7 3.8 19.9 2.8" stroke="#245cff" stroke-width="1.5"/></svg></div>
  <div class="wordmark"><b>OpenScent</b><span>A GenesisL1 project</span></div></div>
- <nav class="nav"><a href="preview.html">208-material preview</a><a href="https://github.com/VanPez/openscent">GitHub</a><span class="badge amber">v1.0 candidate</span></nav>
+ <nav class="nav"><a class="nl" href="preview.html">208-material preview <span aria-hidden="true">→</span></a><a class="nl" href="https://github.com/VanPez/openscent" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a></nav>
 </div></header>
 <main class="wrap">
  <div class="lab">The corpus</div>
@@ -236,11 +249,12 @@ footer{max-width:var(--page);margin:0 auto;padding:10px 28px 50px;color:var(--mu
 <footer><p id="foot"></p><p>CC0 1.0 for the data; code Apache-2.0. A molecule appearing here says nothing about live patent claims covering it. Odour words describe what the sources say about smell; they are not claims about health or effects. Rows set aside by the model screen were not read by a human, so absence here is a recall limit, not a judgement.</p></footer>
 <script id="data" type="application/json">/*DATA*/</script>
 <script id="evid" type="application/json">/*EVID*/</script>
+<script id="c3d" type="application/json">/*C3D*/</script>
 <script>
 (function(){'use strict';
 const D=JSON.parse(document.getElementById('data').textContent);let EV=null;
 const ev=()=>EV||(EV=JSON.parse(document.getElementById('evid').textContent));
-const TAGS=D.tags,FAM=D.fam,M=D.m,C=D.counts;
+const TAGS=D.tags,FAM=D.fam,M=D.m,C=D.counts;const C3=JSON.parse(document.getElementById('c3d').textContent);const HAS3=Object.keys(C3).length>0;
 const F={label:0,spell:1,smiles:2,ik:3,tags:4,nev:5,ndoc:6,str:7,cid:8,x:9,y:10,fam:11,src:12,basis:13,docs:14,descs:15};
 const STR=['direct','hand-derived','none'],STRL=['structure read directly','structure hand-derived','no structure'],STRC=['d','h','n'];
 const $=id=>document.getElementById(id);
@@ -264,14 +278,17 @@ function hl(q,d,mo){const R=[];const add=(s,c)=>{if(!s)return;const k=q.indexOf(
  add(d,'d');add(mo,'m');R.sort((a,b)=>a[0]-b[0]);let o='',p=0;for(const r of R){o+=esc(q.slice(p,r[0]))+'<mark class="'+r[2]+'">'+esc(q.slice(r[0],r[1]))+'</mark>';p=r[1]}return o+esc(q.slice(p))}
 function srcLink(e){const id=e[6];if(/^US\d/.test(id))return '<a href="https://patents.google.com/patent/'+encodeURIComponent(id)+'" target="_blank" rel="noopener">'+esc(id)+'</a>';
  return e[8]?'<a href="'+esc(e[8])+'" target="_blank" rel="noopener">'+esc(id||'source')+'</a>':esc(id)}
-function detail(i){const m=M[i],E=ev()[i]||[];
- const pc=m[F.cid]?'https://pubchem.ncbi.nlm.nih.gov/compound/'+m[F.cid]:(m[F.ik]?'https://pubchem.ncbi.nlm.nih.gov/#query='+m[F.ik]:'');
- let h='<div class="detail"><h3>'+esc(m[F.label])+'</h3><dl class="kv">';
+function v3dBox(i){const m=M[i],c3=C3[m[F.ik]];if(m[F.str]===2)return '';
+ if(c3&&c3[1])return '<div class="v3dwrap"><div class="v3d"><canvas class="v3dc" data-i="'+i+'"></canvas></div><div class="hint">Drag to rotate · scroll to zoom · PubChem computed conformer (CID '+c3[0]+')</div></div>';
+ return '<div class="v3dwrap"><div class="v3d none">'+(!HAS3?'3D not built into this page yet':c3&&c3[0]?'PubChem has no 3D conformer for this compound':'No PubChem record for this exact structure')+'</div></div>'}
+function detail(i){const m=M[i],E=ev()[i]||[],c3=C3[m[F.ik]],cid=m[F.cid]||(c3&&c3[0])||'';
+ const pc=cid?'https://pubchem.ncbi.nlm.nih.gov/compound/'+cid:(m[F.ik]?'https://pubchem.ncbi.nlm.nih.gov/#query='+m[F.ik]:'');
+ let h='<div class="detail"><h3>'+esc(m[F.label])+'</h3><div class="dtop"><div><dl class="kv">';
  if(m[F.ik])h+='<dt>InChIKey</dt><dd>'+esc(m[F.ik])+'</dd>';
  if(m[F.smiles])h+='<dt>SMILES</dt><dd>'+esc(m[F.smiles])+'</dd>';
  h+='<dt>Structure</dt><dd class="t">'+STRL[m[F.str]]+(m[F.basis]?' ('+esc(m[F.basis].replace(/;/g,', '))+')':'')+(m[F.str]===1?' — derived by a hand-authorised reading, see corpus/structures/rewrites.json':'')+(m[F.str]===2?' — counted by its name text alone':'')+'</dd>';
  h+='<dt>Spellings in sources</dt><dd class="t">'+esc(m[F.spell])+'</dd>';
- h+='<dt>Documents</dt><dd class="t">'+m[F.ndoc]+' · '+E.length+' quote'+(E.length===1?'':'s')+(pc?' · <a href="'+esc(pc)+'" target="_blank" rel="noopener">PubChem ↗</a>':'')+'</dd></dl>';
+ h+='<dt>Documents</dt><dd class="t">'+m[F.ndoc]+' · '+E.length+' quote'+(E.length===1?'':'s')+(pc?' · <a href="'+esc(pc)+'" target="_blank" rel="noopener">PubChem ↗</a>':'')+'</dd></dl></div>'+v3dBox(i)+'</div>';
  const by={};E.forEach(e=>{(by[e[0]]=by[e[0]]||[]).push(e)});
  Object.keys(by).forEach(t=>{h+='<div class="evh">'+esc(TAGS[t][0])+' · '+by[t].length+'</div>';
   by[t].forEach(e=>{h+='<div class="ev">'+(e[4]?'<div class="ant">Preceding sentence: '+esc(e[4])+'</div>':'')+'“'+hl(e[3],e[1],e[2])+'”<div class="meta">'+srcLink(e)+(e[7]&&e[7].indexOf(';')>=0?'also in '+esc(e[7].split(';').slice(1,4).join(', '))+' · ':'')+esc(D.sty[e[5]])+' · '+esc(D.how[e[9]])+'</div></div>'})});
@@ -280,7 +297,31 @@ function renderTable(){const tb=$('tb');const rows=hits.slice(0,st.shown);let h=
  for(const i of rows){const m=M[i],sub=m[F.spell]&&m[F.spell]!==m[F.label]?m[F.spell]:'';
   h+='<tr class="row'+(st.open===i?' open':'')+'" data-i="'+i+'"><td class="nm"><b>'+esc(m[F.label])+'</b>'+(sub?'<div class="sub">'+esc(sub)+'</div>':'')+'</td><td>'+chips(m)+'</td><td class="num hide">'+m[F.nev]+'</td><td class="hide">'+strb(m)+'</td></tr>';
   if(st.open===i)h+='<tr><td colspan="4" style="padding:0">'+detail(i)+'</td></tr>'}
- tb.innerHTML=h;$('empty').hidden=hits.length>0;const mo=$('more');mo.hidden=hits.length<=st.shown;mo.textContent='Show '+Math.min(80,hits.length-st.shown)+' more of '+fmt(hits.length-st.shown)+' remaining'}
+ tb.innerHTML=h;after(tb);$('empty').hidden=hits.length>0;const mo=$('more');mo.hidden=hits.length<=st.shown;mo.textContent='Show '+Math.min(80,hits.length-st.shown)+' more of '+fmt(hits.length-st.shown)+' remaining'}
+/* built-in 3D viewer: no library, no network. Ball-and-stick, depth-sorted, CPK-style colours (same as the preview). */
+const EC={1:["#f4f6f8",.22],6:["#3c4652",.34],7:["#2f5bea",.34],8:["#d6453d",.34],9:["#5fbf8a",.3],15:["#e08a2b",.42],16:["#e2b32b",.42],17:["#1f9e5a",.4],35:["#a1401d",.44],53:["#7a3fa0",.48]};
+const shade=(h,f)=>"#"+[1,3,5].map(i=>Math.round(parseInt(h.slice(i,i+2),16)*f).toString(16).padStart(2,"0")).join("");
+function mol3d(cv,c){const ctx=cv.getContext("2d"),dpr=window.devicePixelRatio||1,W=cv.clientWidth,H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.scale(dpr,dpr);
+ const n=c.xyz.length,cen=[0,1,2].map(k=>c.xyz.reduce((s,p)=>s+p[k],0)/n),P=c.xyz.map(p=>p.map((v,k)=>v-cen[k]));
+ const R=Math.max(...P.map(p=>Math.hypot(p[0],p[1],p[2])))+.9;let yaw=.6,pitch=-.35,zoom=1,auto=true,drag=null;
+ function draw(){ctx.clearRect(0,0,W,H);const s=Math.min(W,H)/(2*R)*zoom,cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);
+  const T=P.map(([x,y,z])=>{const x1=x*cy+z*sy,z1=-x*sy+z*cy;return [W/2+x1*s,H/2-(y*cp-z1*sp)*s,y*sp+z1*cp]});
+  const items=c.b.map(([a,b,o])=>({z:(T[a][2]+T[b][2])/2-.05,a,b,o}));T.forEach((p,i)=>items.push({z:p[2],i}));items.sort((u,v)=>u.z-v.z);
+  for(const it of items){if(it.i===undefined){const A=T[it.a],B=T[it.b],dx=B[0]-A[0],dy=B[1]-A[1],L=Math.hypot(dx,dy)||1,nx=-dy/L,ny=dx/L;
+    const offs=it.o===2?[-2.4,2.4]:it.o===3?[-3.6,0,3.6]:[0];const ca=(EC[c.el[it.a]]||["#b36bd6"])[0],cb=(EC[c.el[it.b]]||["#b36bd6"])[0];
+    for(const o of offs){const ax=A[0]+nx*o,ay=A[1]+ny*o,bx=B[0]+nx*o,by=B[1]+ny*o,mx=(ax+bx)/2,my=(ay+by)/2;
+     ctx.lineCap="round";ctx.lineWidth=offs.length>1?2.6:4.2;ctx.strokeStyle="rgba(7,17,29,.35)";ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(bx,by);ctx.stroke();ctx.lineWidth-=1.6;
+     ctx.strokeStyle=shade(ca==="#f4f6f8"?"#c9d0d8":ca,1);ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(mx,my);ctx.stroke();
+     ctx.strokeStyle=shade(cb==="#f4f6f8"?"#c9d0d8":cb,1);ctx.beginPath();ctx.moveTo(mx,my);ctx.lineTo(bx,by);ctx.stroke()}
+   }else{const [x,y]=T[it.i],[col,r]=EC[c.el[it.i]]||["#b36bd6",.38],rad=Math.max(2,r*s*.9);
+    const g=ctx.createRadialGradient(x-rad*.35,y-rad*.4,rad*.08,x,y,rad);g.addColorStop(0,"#ffffff");g.addColorStop(.3,col);g.addColorStop(1,shade(col,.55));
+    ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,rad,0,7);ctx.fill();ctx.lineWidth=.6;ctx.strokeStyle="rgba(7,17,29,.3)";ctx.stroke()}}}
+ (function frame(){if(!cv.isConnected)return;if(cv.offsetParent!==null){if(auto)yaw+=.005;draw()}requestAnimationFrame(frame)})();
+ cv.addEventListener("pointerdown",e=>{drag=[e.clientX,e.clientY];auto=false;cv.setPointerCapture(e.pointerId);cv.parentNode.style.cursor="grabbing"});
+ cv.addEventListener("pointermove",e=>{if(!drag)return;yaw+=(e.clientX-drag[0])*.01;pitch=Math.max(-1.5,Math.min(1.5,pitch+(e.clientY-drag[1])*.01));drag=[e.clientX,e.clientY]});
+ cv.addEventListener("pointerup",()=>{drag=null;cv.parentNode.style.cursor="grab"});
+ cv.addEventListener("wheel",e=>{e.preventDefault();zoom=Math.max(.5,Math.min(3,zoom*Math.exp(-e.deltaY*.0015)))},{passive:false})}
+function after(el){el.querySelectorAll('canvas.v3dc').forEach(c=>{if(c.offsetParent!==null&&!c.dataset.on){c.dataset.on=1;const v=C3[M[+c.dataset.i][F.ik]];if(v&&v[1])mol3d(c,v[1])}})}
 /* ---------------- map */
 const cv=$('cv'),cx=cv.getContext('2d');let W=800,Hh=520,dpr=1,V={k:1,tx:0,ty:0},hov=-1,hitset=new Set();
 const PAD=24,sx=x=>PAD+x*(W-2*PAD)*V.k+V.tx,sy=y=>PAD+y*(Hh-2*PAD)*V.k+V.ty;
@@ -294,14 +335,14 @@ function draw(){cx.clearRect(0,0,W,Hh);const r=Math.min(7,2.2*Math.sqrt(V.k));
 function nearest(px,py){let b=-1,bd=100;for(let i=0;i<M.length;i++){if(!vis(i))continue;const dx=sx(M[i][F.x])-px,dy=sy(M[i][F.y])-py,d=dx*dx+dy*dy;if(d<bd){bd=d;b=i}}return b}
 function renderMap(){fit();hitset=new Set(hits);draw();
  $('legend').innerHTML=FAM.map((f,k)=>'<span class="lg'+(st.fams.size&&!st.fams.has(k)?' off':'')+'" data-f="'+k+'"><i style="background:'+f[1]+'"></i>'+esc(f[0])+'</span>').join('');
- $('mapdetail').innerHTML=st.sel>=0?detail(st.sel):'<div class="note" style="padding-top:6px">Click a dot to read the quotes behind it.</div>'}
+ $('mapdetail').innerHTML=st.sel>=0?detail(st.sel):'<div class="note" style="padding-top:6px">Click a dot to read the quotes behind it.</div>';after($('mapdetail'))}
 let drag=null;
 cv.addEventListener('pointerdown',e=>{cv.setPointerCapture(e.pointerId);drag={x:e.clientX,y:e.clientY,tx:V.tx,ty:V.ty,moved:false};cv.classList.add('drag')});
 cv.addEventListener('pointermove',e=>{const r=cv.getBoundingClientRect(),px=e.clientX-r.left,py=e.clientY-r.top;
  if(drag){const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(Math.abs(dx)+Math.abs(dy)>4)drag.moved=true;if(drag.moved){V.tx=drag.tx+dx;V.ty=drag.ty+dy;draw()}return}
  const n=nearest(px,py),tip=$('tip');if(n!==hov){hov=n;draw()}
  if(n>=0){tip.style.display='block';tip.style.left=Math.min(px+14,W-200)+'px';tip.style.top=(py+14)+'px';tip.textContent=M[n][F.label]+' · '+M[n][F.tags].map(t=>TAGS[t][0]).join(', ')}else tip.style.display='none'});
-cv.addEventListener('pointerup',e=>{const was=drag;drag=null;cv.classList.remove('drag');if(was&&!was.moved){const r=cv.getBoundingClientRect(),n=nearest(e.clientX-r.left,e.clientY-r.top);st.sel=n;draw();$('mapdetail').innerHTML=n>=0?detail(n):'';if(n>=0)$('mapdetail').scrollIntoView({behavior:'smooth',block:'nearest'})}});
+cv.addEventListener('pointerup',e=>{const was=drag;drag=null;cv.classList.remove('drag');if(was&&!was.moved){const r=cv.getBoundingClientRect(),n=nearest(e.clientX-r.left,e.clientY-r.top);st.sel=n;draw();$('mapdetail').innerHTML=n>=0?detail(n):'';after($('mapdetail'));if(n>=0)$('mapdetail').scrollIntoView({behavior:'smooth',block:'nearest'})}});
 cv.addEventListener('pointerleave',()=>{$('tip').style.display='none';if(hov!==-1){hov=-1;draw()}});
 function zoomAt(f,px,py){const k=Math.max(1,Math.min(40,V.k*f)),r=k/V.k;V.tx=px-(px-V.tx)*r+PAD*(r-1);V.ty=py-(py-V.ty)*r+PAD*(r-1);V.k=k;if(k===1){V.tx=0;V.ty=0}draw()}
 cv.addEventListener('wheel',e=>{e.preventDefault();const r=cv.getBoundingClientRect();zoomAt(e.deltaY<0?1.25:.8,e.clientX-r.left,e.clientY-r.top)},{passive:false});
