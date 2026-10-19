@@ -3,7 +3,7 @@
 % openscent-paper-v0.3.tex, v0.2 as openscent-paper-v0.2.tex).
 % Set THIS file as the main document in Overleaf (not template.tex).
 %
-% FIGURES. Re-derived on 2026-10-19 from pipeline/status.py and the row files:
+% FIGURES. Re-derived on 2026-10-19 (after the three spelling rewrites S1-S3) from pipeline/status.py and the row files:
 %   rows, decisions, retired rows, source counts, molecule counts by structure,
 %   terms at the bar, near-bar terms, name-resolution classes, 130 surface forms.
 % CARRIED UNCHANGED from v0.3 (one-time measurements, NOT re-derived on 2026-10-19):
@@ -33,7 +33,7 @@
 \GenesisDate{\today}
 \GenesisAuthors{Ivan Pezzini}                       % TODO authorship — see notes
 \GenesisAffiliations{Independent researcher. Project proposed by Mikhail Fedorov, GenesisL1.}
-\GenesisCorrespondence{veryveryarte@gmail.com}
+\GenesisCorrespondence{openscent.data@gmail.com}
 \GenesisIdentifier{}
 \GenesisRepository{https://github.com/VanPez/openscent}
 \GenesisFields{Cheminformatics; scientific data; olfaction}
@@ -65,13 +65,14 @@
       patent documents and 1{,}790 records for 837 compounds from United States
       government databases (HSDB, CAMEO Chemicals, OSHA, NIOSH) read through PubChem.
       Every molecule name and descriptor was a literal substring of its source
-      sentence, re-asserted on every run, and a human decided every accepted row.
-      Molecules were identified by structure, not by name text. A term was admitted to
+      sentence, re-asserted on every run. A human decided every accepted patent row;
+      database rows were extracted by rule from the odour clause, and rows the rules
+      flagged were reviewed before counting. Molecules were identified by structure, not by name text. A term was admitted to
       the vocabulary only if attested in at least twenty distinct documents.
     }
     \AbstractResults{
-      The corpus contained 1{,}708 distinct molecules across a 67-term vocabulary; 24
-      terms reached the threshold of 30 molecules, and all 24 still do when the 50
+      The corpus contained 1{,}705 distinct molecules across a 67-term vocabulary; 24
+      terms reached the threshold of 30 molecules, and all 24 still do when the 47
       molecules without a resolved structure are removed. Counting name spellings
       instead would have given 27 terms and 1{,}819 names. A 648-compound subset
       supported prediction of odour labels (cross-validated AUC 0.93 for \emph{fatty},
@@ -151,8 +152,11 @@ descriptors fell on terms already past threshold and the two terms the sample wa
 to serve, \emph{sandalwood} and \emph{animalic}, did not occur. Target coverage is now
 measured beside yield.
 
-\textbf{Adjudicated review.} A human decided every accepted row against written rules;
-automated proposals were advisory and automatic rejection was disabled. Blind proposal
+\textbf{Adjudicated review.} A human decided every accepted patent row against written
+rules; automated proposals were advisory and automatic rejection was disabled. Database
+rows were not decided one by one: they were extracted by rule from the odour clause, each
+span checked against the stored quote, and rows the rules flagged (a negation cue, a held
+record) were reviewed before counting. Blind proposal
 accuracy, measured by withholding proposals on 30 rows, was 67\,\%, with errors skewed
 towards rejecting valid rows. The rules were written after a blind evaluation disagreed
 on 14 of 98 rows, which proved to be two unwritten conventions applied in opposite
@@ -184,9 +188,9 @@ becomes a category.
 A molecule is a distinct structure, not a spelling. Patent-side names were resolved to
 structures offline with OPSIN and by PubChem name lookup. Of 995 distinct names, 683
 parsed as extracted, 69 resolved through PubChem, 15 were read without stereochemistry,
-16 were OCR repairs confirmed by a second spelling or by the patent text, and 162 were hand-authorised
+16 were OCR repairs confirmed by a second spelling or by the patent text, and 165 were hand-authorised
 rewrites, each stored with its reason (OCR slips, obsolete ring nomenclature,
-``X of Y'' phrases); 44 have no definite structure and 6 are held for checking. Two
+``X of Y'' phrases); 41 have no definite structure and 6 are held for checking. Two
 names merge only when the structure is trusted, so an unconfirmed structure never makes
 two molecules one. The identity is the full InChIKey with stereochemistry retained;
 database rows are identified through their compound identifier. The corpus span itself
@@ -215,13 +219,13 @@ were decided by hand (1{,}136 accepted, 1{,}168 rejected, 2 deferred). The other
 were left undecided, not rejected: the model screen read all of them and screened out
 2{,}287, set aside 53 whose descriptor word has no entry in the vocabulary table, and 30
 are repeats from the same document; no human has read them. With the database records, 8 accepted passage rows and 5 accepted rows found
-by targeted search, the corpus holds 1{,}708 distinct molecules, 1{,}658 of them with a
+by targeted search, the corpus holds 1{,}705 distinct molecules, 1{,}658 of them with a
 resolved structure.
 
 Twenty-four of the 67 terms reach the threshold of 30 molecules: \emph{acid, aldehydic,
 amber, animalic, aromatic, camphoraceous, citrus, earthy, fatty, floral, fresh, fruity,
 green, herbal, lily, mint, musk, musty, powdery, pungent, rose, spicy, sweet} and
-\emph{woody}. All 24 remain at the bar when the 50 molecules without a resolved structure
+\emph{woody}. All 24 remain at the bar when the 47 molecules without a resolved structure
 are removed; the thinnest, \emph{aldehydic}, has 32 on resolved structures. Nearest below
 are \emph{sandalwood} and \emph{tobacco} (28 each; 27 for sandalwood on resolved
 structures), \emph{apple} and \emph{anisic} (26 each). The design target was 60--100
@@ -239,7 +243,7 @@ rate of the screen near 6\,\% (rule of three, 95\,\%): the screened-out rows are
 exhausted, only unproductive.
 
 Counting by name text instead of structure gave 27 terms and 1{,}819 names, against 24
-and 1{,}708. \emph{Apple} shows the difference: 34 names but 26 structures, mostly OCR
+and 1{,}705. \emph{Apple} shows the difference: 34 names but 26 structures, mostly OCR
 spellings of one compound. A count is only as good as its definition of one molecule.
 
 \subsection{Structural signal}
@@ -331,7 +335,7 @@ read them, but the terms nearest threshold are bounded by the rules as
 described and the screen's miss rate is bounded near 6\,\%. One of the 24,
 \emph{aldehydic}, depends on a surface-form mapping admitted after its count was known.
 Counting only structures read directly from the name or from PubChem, and not those
-rewritten or repaired by hand, would give 22 terms. Fifty molecules (44 names with no
+rewritten or repaired by hand, would give 22 terms. Forty-seven molecules (41 names with no
 definite structure and 6 held for checking) are identified by name text alone. The
 structural analysis covers 648 compounds and predates the structures resolved for patent
 names and the 186 compounds added from CAMEO, OSHA and NIOSH; it has not been re-run.
@@ -350,7 +354,7 @@ for its stated purpose.
 % =============================================================================
 \section{Conclusion}
 
-A structure--odour corpus of 1{,}708 molecules, 24 of 67 vocabulary terms at the bar, was
+A structure--odour corpus of 1{,}705 molecules, 24 of 67 vocabulary terms at the bar, was
 assembled entirely from public-domain sources and released without restriction, and its
 labels carry structure-dependent signal. For the terms nearest threshold the shortfall is
 a result about the sources rather than about effort: the rows that could carry them have
