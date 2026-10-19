@@ -35,7 +35,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "corpus" / "olfatorium"
-LAYER = ROOT / "corpus" / "rows" / "licensed-rows.jsonl"
+LAYER = ROOT / "licensed" / "olfatorium-rows.jsonl"   # OUTSIDE corpus/: CC BY 4.0, not part of the CC0 corpus or v1.0
 DECISION = "Ivan 2026-10-19: all proposed lines approved, 'doubt' lines rejected"
 
 # The public row carries the WORD, the tag and where to find it -- NOT the shop's sentence. The grant
@@ -131,7 +131,7 @@ def layer_row(r):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--write-layer", action="store_true", help="write corpus/rows/licensed-rows.jsonl")
+    ap.add_argument("--write-layer", action="store_true", help="write licensed/olfatorium-rows.jsonl")
     args = ap.parse_args()
     prods = list(csv.DictReader(open(OUT / "descriptions.tsv", encoding="utf-8"), delimiter="\t"))
     gaps = [r for r in csv.DictReader(open(OUT / "olfatorium-gaps.tsv", encoding="utf-8"), delimiter="\t")

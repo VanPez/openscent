@@ -91,7 +91,7 @@ PHYSDESC = ROOT / "corpus" / "rows" / "pubchem-physdesc-rows.jsonl"
 PASSAGE = ROOT / "corpus" / "rows" / "passage-rows.jsonl"   # passage scope, adopted 2026-09-24
 EXCLUSIONS = ROOT / "corpus" / "rows" / "exclusions.jsonl"  # retired approved rows, 2026-09-26
 TARGETED = ROOT / "corpus" / "rows" / "targeted-rows.jsonl"  # sentence rows found by gap search, 2026-09-26
-LICENSED = ROOT / "corpus" / "rows" / "licensed-rows.jsonl"  # descriptor words used WITH PERMISSION (Olfatorium, CC BY 4.0), 2026-10-19
+LICENSED = ROOT / "licensed" / "olfatorium-rows.jsonl"  # descriptor words used WITH PERMISSION (Olfatorium, CC BY 4.0), 2026-10-19; OUTSIDE corpus/ and NOT part of v1.0 (Ivan, 10-19)
 STRUCT = ROOT / "corpus" / "structures" / "names.jsonl"          # structures.py --merge (2026-10-03)
 STRUCT_PC = ROOT / "corpus" / "structures" / "pubchem-names.json"  # Hetzner stage 2: also holds CID InChIKeys
 SMILES_CACHE = ROOT / "corpus" / "raw-pubchem" / "smiles.json"
@@ -310,14 +310,17 @@ def main() -> int:
 
     # Licensed rows (olfatorium_candidates.py --write-layer, 2026-10-19): descriptor WORDS a source
     # allowed us to use under CC BY 4.0 — a separate, labelled layer, never mixed into the patent
-    # rows. Ivan decided 2026-10-13 that these COUNT toward the tags; --no-licensed gives the
-    # figures without them. Identified by PubChem CID like the pubchem source (the molecule name is
-    # the shop's trade name, not a systematic one). Counted only once approved; the tag must be one
-    # of the 67 or it is reported as a violation.
+    # rows. POLICY (Ivan, 2026-10-19): v1.0 is the CC0 corpus only, so COMBINED — the headline —
+    # EXCLUDES this layer by default; the 'w/ licensed' row shows the add-on, --with-licensed counts
+    # the layer into COMBINED, --no-licensed ignores the layer entirely. (2026-10-13 had counted it
+    # in; the freeze decision supersedes that for the headline.) Identified by PubChem CID like the
+    # pubchem source (the molecule name is the shop's trade name, not a systematic one). Only
+    # approved rows; the tag must be one of the 67 or it is reported as a violation.
     licensed = collections.defaultdict(set)
     lic2cid = collections.defaultdict(set)
     l_held = l_rows = 0
     no_licensed = "--no-licensed" in sys.argv
+    with_licensed = "--with-licensed" in sys.argv
     if LICENSED.exists() and not no_licensed:
         vocab_tags = set(surf.values())
         for r in jsonl(LICENSED):
@@ -338,7 +341,7 @@ def main() -> int:
                     lic2cid[m].add(r["molecule_cid"])
 
     combined = collections.defaultdict(set)         # NAME TEXT — the pre-2026-10-03 definition
-    for d in (patents, pubchem, passage, targeted, licensed):
+    for d in (patents, pubchem, passage, targeted) + ((licensed,) if with_licensed else ()):
         for t, s in d.items():
             combined[t].update(s)
 
@@ -372,22 +375,28 @@ def main() -> int:
             for d in v.values():
                 for t, s_ in d.items():
                     c[t].update(s_)
-            # the same total WITHOUT the licensed layer, so the patent-side figure is always beside it
+            # c = everything; c0 = the v1.0 total WITHOUT the licensed layer
             c0 = collections.defaultdict(set)
             for k, d in v.items():
                 if k != "licensed":
                     for t, s_ in d.items():
                         c0[t].update(s_)
-            v["COMBINED"] = c
-            v["w/o licensed"] = c0
+            v["COMBINED"] = c if with_licensed else c0       # the headline: v1.0 unless --with-licensed
+            v["w/ licensed"] = c                              # the add-on row
+            v["w/o licensed"] = c0                            # shown only under --with-licensed
             return v
         full, flat = views("full"), views("flat")
         combined_no_lic = collections.defaultdict(set)
+        combined_with_lic = collections.defaultdict(set)
         for d in (patents, pubchem, passage, targeted):
             for t, s_ in d.items():
                 combined_no_lic[t].update(s_)
+                combined_with_lic[t].update(s_)
+        for t, s_ in licensed.items():
+            combined_with_lic[t].update(s_)
         name_view = {"patents": patents, "pubchem": pubchem, "passage": passage, "targeted": targeted,
-                     "licensed": licensed, "COMBINED": combined, "w/o licensed": combined_no_lic}
+                     "licensed": licensed, "COMBINED": combined, "w/o licensed": combined_no_lic,
+                     "w/ licensed": combined_with_lic}
     else:
         full = flat = None
 
@@ -413,8 +422,10 @@ def main() -> int:
     if t_held:
         print(f"held        {t_held} targeted rows awaiting Ivan's decision (not counted)")
     if l_rows:
-        print(f"licensed    {l_rows} approved descriptor-word rows (corpus/rows/licensed-rows.jsonl, CC BY 4.0 with "
-              "permission): COUNTED in COMBINED; 'w/o licensed' is the figure without them")
+        print(f"licensed    {l_rows} approved descriptor-word rows (licensed/olfatorium-rows.jsonl, CC BY 4.0 with "
+              "permission): " + ("COUNTED in COMBINED (--with-licensed); 'w/o licensed' is the v1.0 figure"
+                                 if with_licensed else
+                                 "NOT in COMBINED — v1.0 is the CC0 corpus only (Ivan, 10-19); 'w/ licensed' shows the add-on"))
     if l_held:
         print(f"held        {l_held} licensed rows awaiting Ivan's decision (not counted)")
     if no_licensed:
@@ -432,10 +443,14 @@ def main() -> int:
     else:
         print(f"{'':<10}{'BY STRUCTURE (headline)':<30}{'connectivity only':<26}{'name text (old)'}")
         print(f"{'':<10}{'full InChIKey, stereo kept':<30}{'enantiomers merged':<26}{'one spelling = one name'}")
-        for name in ("patents", "pubchem", "passage", "targeted", "licensed", "w/o licensed", "COMBINED"):
+        order = ["patents", "pubchem", "passage", "targeted"]
+        if l_rows:
+            order += ["licensed"] + (["w/o licensed"] if with_licensed else [])
+        order.append("COMBINED")
+        if l_rows and not with_licensed:
+            order.append("w/ licensed")
+        for name in order:
             if name == "passage" and sentence_scope:
-                continue
-            if name in ("licensed", "w/o licensed") and not l_rows:
                 continue
             cells = []
             for v, unit in ((full, "molecules"), (flat, "molecules"), (name_view, "names")):

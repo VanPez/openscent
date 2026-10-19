@@ -175,12 +175,17 @@ The harvest host is referred to as `$OPENSCENT_HOST` throughout; set it in your 
 
 ## Licence
 
-Two licences, split by what the file is:
+Three licences, split by what the file is:
 
 | | Licence | Covers |
 |---|---|---|
-| **Data** | [CC0 1.0](LICENSE) | `corpus/`, `ontology/`, and every dataset derived from them |
+| **Data** | [CC0 1.0](LICENSE) | `corpus/`, `ontology/`, and every dataset derived from them (not `licensed/`) |
 | **Code** | [Apache-2.0](LICENSE-CODE) | `pipeline/` and all other source |
+| **Licensed layer** | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), with the rights holder's written permission | `licensed/` only |
+
+**The licensed layer is not part of the corpus.** `licensed/` holds descriptor words used with a rights holder's written
+permission (so far: Olfatorium), credited on every row. It sits outside `corpus/` on purpose: the CC0 corpus, the v1.0
+release and the MolNFT tokens contain none of it. See [licensed/README.md](licensed/README.md).
 
 CC0 on the data is the whole point — no non-commercial clause, no share-alike, nothing
 that blocks a commercial or tradeable derivative. Apache-2.0 on the code because CC0

@@ -51,7 +51,7 @@ import json, pathlib, random, sys, time, importlib.util
 HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parent
 ROWS = ROOT / "corpus" / "rows" / "pubchem-rows.jsonl"
-LICENSED = ROOT / "corpus" / "rows" / "licensed-rows.jsonl"   # optional; approved rows add their CIDs
+LICENSED = ROOT / "licensed" / "olfatorium-rows.jsonl"   # optional; approved rows add their CIDs (CC BY layer, outside corpus/)
 CACHE = ROOT / "corpus" / "raw-pubchem" / "smiles.json"
 BATCH = 100
 # PROPERTY NAMES CHANGED AND THE OLD ONE FAILS SILENTLY.

@@ -39,10 +39,10 @@ def status_figures():
     if not m:
         sys.exit("could not read the COMBINED line from status.py — refusing to invent figures")
     fig = {"tags_at_bar": int(m[1]), "tags": int(m[2]), "molecules": int(m[3])}
-    # the same totals WITHOUT the licensed layer (2026-10-19): shown beside the headline, never hidden
-    w = re.search(r"^w/o licensed\s+(\d+) of (\d+)\s+(\d+) molecules", out, re.M)
+    # COMBINED is the v1.0 figure (the CC0 corpus only; Ivan, 2026-10-19). The licensed layer is an add-on row:
+    w = re.search(r"^w/ licensed\s+(\d+) of (\d+)\s+(\d+) molecules", out, re.M)
     if w:
-        fig.update(tags_at_bar0=int(w[1]), molecules0=int(w[3]))
+        fig.update(tags_at_bar_lic=int(w[1]), molecules_lic=int(w[3]))
     return fig
 
 
@@ -236,7 +236,7 @@ def build():
     # (Olfatorium, CC BY 4.0). Shown only in their own credited section, never as patent evidence.
     lic_by_cid = collections.defaultdict(lambda: collections.defaultdict(list))
     lic_src = collections.defaultdict(list)
-    lf = ROOT / "corpus" / "rows" / "licensed-rows.jsonl"
+    lf = ROOT / "licensed" / "olfatorium-rows.jsonl"
     if lf.exists():
         for line in lf.read_text(encoding="utf-8").splitlines():
             if not line.strip():
@@ -466,8 +466,8 @@ const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&
 const fmt=n=>Number(n).toLocaleString("en-US");
 $("#topbadge").textContent=`Preview · ${D.n} materials`;
 $("#stats").innerHTML=[
- ["Molecules in the corpus",fmt(D.fig.molecules)+(D.fig.molecules0!==undefined&&D.fig.molecules0!==D.fig.molecules?` <small>(${fmt(D.fig.molecules0)} without licensed words)</small>`:"")],
- ["Tags at the 30-molecule bar",`${D.fig.tags_at_bar} <small>/ ${D.fig.tags}</small>`+(D.fig.tags_at_bar0!==undefined&&D.fig.tags_at_bar0!==D.fig.tags_at_bar?` <small>(${D.fig.tags_at_bar0} without licensed words)</small>`:"")],
+ ["Molecules in the corpus",fmt(D.fig.molecules)+(D.fig.molecules_lic!==undefined&&D.fig.molecules_lic!==D.fig.molecules?` <small>(${fmt(D.fig.molecules_lic)} with the licensed layer)</small>`:"")],
+ ["Tags at the 30-molecule bar",`${D.fig.tags_at_bar} <small>/ ${D.fig.tags}</small>`+(D.fig.tags_at_bar_lic!==undefined&&D.fig.tags_at_bar_lic!==D.fig.tags_at_bar?` <small>(${D.fig.tags_at_bar_lic} with the licensed layer)</small>`:"")],
  ["Materials in this preview",D.n],
  ["With a public-domain description",`${D.n_desc} <small>/ ${D.n}</small>`],
  ...(D.n_lic?[["With licensed words (CC BY 4.0)",`${D.n_lic} <small>/ ${D.n}</small>`]]:[])
