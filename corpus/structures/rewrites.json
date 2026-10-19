@@ -949,6 +949,34 @@
    "raw": "torreyal",
    "reading": "9-(furan-3-yl)-2,6-dimethylnona-2,6-dienal",
    "why": "US3654309A names it in its own Example 14: '9-(3-furyl)-2,6-dimethyl-2,6-nonadienal (torreyal)'; E/Z not stated (flat). Approved by Ivan 2026-10-03 (the four proposals after the corpus-wide definition search)"
+  },
+  {
+   "id": "H1a",
+   "strength": "S",
+   "raw": "\"trans\" beta-cyclohomocitral enol propionate",
+   "reading": "[(E)-2-(2,6,6-trimethylcyclohex-1-en-1-yl)ethenyl] propanoate",
+   "why": "beta-cyclohomocitral is the acetaldehyde 2-(2,6,6-trimethylcyclohex-1-en-1-yl)acetaldehyde (PubChem CID 61124; US4000090A: '2,2,6-trimethyl-1-cyclohexen-1-ylacetaldehyde enol esters (or beta-cyclohomocitral enol esters)'; the patents' cis/trans enol esters exist only for an acetaldehyde and are made from beta-ionone). The carboxaldehyde gloss in one table of US4049682A is the outlier. 'trans' = E. Claude's derivation, OPSIN-parsed. Approved by Ivan 2026-10-19 (readings note hold-names-readings-2026-10-19.md)"
+  },
+  {
+   "id": "H1b",
+   "strength": "S",
+   "raw": "trans beta-cyclohomocitral enol propionate",
+   "reading": "[(E)-2-(2,6,6-trimethylcyclohex-1-en-1-yl)ethenyl] propanoate",
+   "why": "same compound as H1a (the quotation marks are the only difference in the span); same reasoning. Approved by Ivan 2026-10-19"
+  },
+  {
+   "id": "H2a",
+   "strength": "M",
+   "raw": "4-acetyl-3,3,8,8-tetramethyl-as-hydrindacene",
+   "reading": "1-(3,3,8,8-tetramethyl-1,2,3,6,7,8-hexahydro-as-indacen-4-yl)ethan-1-one",
+   "why": "as-hydrindacene is the obsolete name of 1,2,3,6,7,8-hexahydro-as-indacene (PubChem CID 136846); locants kept as printed. Under as-indacene numbering 4-acetyl-1,1,6,6 (US 3,244,751) and 5-acetyl-3,3,8,8 (US 3,347,946) are the same molecule, so the numbering is consistent, and the held name is the other regioisomer; US4209543A distinguishes the crystalline prior-art isomer from the LIQUID 4-acetyl-3,3,8,8 compound. Claude's derivation, OPSIN-parsed; medium-high confidence, no external structure check (PubChem holds neither isomer). Approved by Ivan 2026-10-19"
+  },
+  {
+   "id": "H2b",
+   "strength": "M",
+   "raw": "4-acetyl-3,3,8,8-tetramethyl-ashydrindacene",
+   "reading": "1-(3,3,8,8-tetramethyl-1,2,3,6,7,8-hexahydro-as-indacen-4-yl)ethan-1-one",
+   "why": "same compound as H2a (OCR: the hyphen of 'as-hydrindacene' was lost at a line break); same reasoning. Approved by Ivan 2026-10-19"
   }
  ]
 }
