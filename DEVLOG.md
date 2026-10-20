@@ -181,6 +181,12 @@ see the next paragraph.]**
 answers; no date is set.** Replies belong in local notes (`outreach/`), not in this public log. `origin/master` = `1da1ad6`; untracked and local: `reports/scent-map-options/`,
 `openscent-paper-v0.3-preview.pdf`.
 
+**2026-10-20 (log — rewrite J1, one more molecule with a structure; see the last entry):** `acetaldehyde ethyl 6-dihydrolinalyl acetal` (US4424146A) now reads as
+3-(1-ethoxyethoxy)-3,7-dimethyloct-1-ene (PubChem CID 163400), from the patent's own synthesis; Joe checked the reading, Ivan approved. **`status.py` did not change**
+(1,705 molecules, 24 of 67: the name was already counted as its own unit). `release/v1.0`: 1,659 with a structure, 46 name-only (was 1,658 / 47); release and
+`corpus.html` rebuilt from a clean tree and pushed. The linalyl acetal row is unchanged (checked: an acetal, no C=O). The 46 name-only molecules are the page's
+"no structure" filter; Joe will look at them.
+
 **Emails were READY (09-27):** preview live at https://vanpez.github.io/openscent/ (GitHub Pages,
 master /docs), linked in all three drafts, signed Ivan Pezzini. outreach/ and the shop lists
 (corpus/hekserij, corpus/olfatorium) are now LOCAL ONLY (gitignored; still in git history).
@@ -6211,3 +6217,47 @@ Ivan wanted Joe and Mike to see the whole corpus before the freeze and asked whe
 - Open, unchanged: freeze and tag v1.0 (rebuild `release/v1.0` with `release_build.py --force` after any data commit); root README refresh (still the 09-05 figures); the options doc (still B and C);
   whether to link `corpus.html` from `preview.html` / `index.html`; Mike's reference MolNFT v2 contract; reply to Joe (not drafted); the 53 "approve-no-tag" rows;
   OCR-damaged verbatim labels; no 2D structure drawing.
+
+## 2026-10-20 (after the push) — rewrite J1: acetaldehyde ethyl 6-dihydrolinalyl acetal gets a structure
+
+### The linalyl acetal row: checked, unchanged
+
+The question was whether `acetaldehyde ethyl linalyl acetal` (v1.0, `ZJPKYCLAROITRY-UHFFFAOYSA-N`, `C(C)(C=C)(CCC=C(C)C)OC(C)OCC`) should carry a C=O because its
+name starts with "acetaldehyde". It should not. The name is IUPAC functional-class acetal nomenclature (Blue Book 2013, P-66.6.5.1.1: the aldehyde's name, the
+O-substituents in alphanumerical order, then "acetal"; the book's example is "propanal diethyl acetal" = 1,1-diethoxypropane, the substitutive name being the PIN).
+The acetaldehyde carbon is the CH(CH3) between the two oxygens; its C=O is gone. OPSIN reads `3-(1-ethoxyethoxy)-3,7-dimethylocta-1,6-diene` as the same InChIKey.
+No change.
+
+### J1 (Ivan: yes, after Joe's check)
+
+- `corpus/structures/rewrites.json` entry **J1**, strength S: `acetaldehyde ethyl 6-dihydrolinalyl acetal` -> `3-(1-ethoxyethoxy)-3,7-dimethyloct-1-ene`,
+  `C=CC(C)(CCCC(C)C)OC(C)OCC`, `IJOLRHXMJRNZNP-UHFFFAOYSA-N`. Held since 10-03 as unreadable nomenclature.
+- Evidence, all from US4424146A's text (the drawing, ##STR2##, is not in our copy): compound (II) is made from 6-dihydrolinalool and ethyl vinyl ether with a trace
+  of HCl, which gives the 1-ethoxyethyl acetal on the alcohol oxygen; it is compared with the linalyl (I), tetrahydrolinalyl (III) and dehydrolinalyl (IV) acetals, so
+  "6-dihydro" = only the 6,7 double bond saturated; it is called an intermediate to 5,9-dimethyl-4-decenal, which needs the vinyl group kept.
+- PubChem (on Hetzner, 10-20): "6,7-dihydrolinalool" = 3,7-dimethyloct-1-en-3-ol (CID 86748); the reading is CID 163400 (CAS 84029-93-6, EINECS 281-764-4), same
+  InChIKey as OPSIN. The patent's name is not among its 11 synonyms. No other patent on Hetzner mentions 6-dihydrolinalool.
+- Joe checked the 6,7-dihydro reading by hand. Backups `*.bak-20261020c` (gitignored).
+- `structures.py` and `--merge`: exactly one record changed in `names.jsonl` and in `names-opsin.jsonl` (unresolved -> rewritten). `names.jsonl`: rewritten 166, none 40.
+
+### Effect
+
+- `status.py`: output identical before and after (COMBINED 1,705 molecules, 1,666 by connectivity, 24 of 67). The name was already counted as its own unit, and
+  its InChIKey matches no other molecule, so nothing merged. (In the session I first said it would add a molecule; it does not.)
+- `release/v1.0`: 1,659 with a structure (was 1,658), 1,620 by connectivity (1,619), 137 hand-derived (136), 46 name-only (47). `molecules.tsv`: one row re-keyed
+  from `name:` to the InChIKey; `evidence.tsv`: its 6 rows re-keyed; `tags.tsv` unchanged. Built with `--out` into a scratch folder from a clean tree at `cfa70a1`
+  (manifest: 0 tracked files modified) and copied in; `SHA256SUMS` verify.
+- `docs/corpus.html` rebuilt: 46 "no structure" in its data, the acetal shows its SMILES; the page JavaScript passes `node --check`. The new molecule has no 3D
+  conformer or PubChem properties on the page yet (`corpus_3d_fetch.py` / `corpus_props_fetch.py` run on Hetzner; CID 163400 exists).
+
+### The 46 name-only molecules
+
+40 unresolved names and 6 held PUBCHEM-CHECK names. The page's Structure filter, "no structure", lists them with their quotes and patent links, which is what Joe
+will work from. A grouped list with the reason each is open exists locally (`outreach/joe-names-without-structure-2026-10-20.md`); Ivan judged the page enough.
+
+### Git and open
+
+- Commits: `ccb6ff5` (the evening entry), `cfa70a1` (J1 data), `6a39a60` (release and page), and the one carrying this entry. Pushed with Ivan's OK ("log commit push").
+- Open, unchanged: freeze and tag v1.0; root README refresh (still the 09-05 figures); the options doc (still B and C); whether to link `corpus.html` from
+  `preview.html` / `index.html`; Mike's reference MolNFT v2 contract; the 53 "approve-no-tag" rows; OCR-damaged verbatim labels; no 2D structure drawing.
+  New: 3D and properties for CID 163400. Closed: the reply to Joe.
