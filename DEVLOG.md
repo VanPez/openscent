@@ -164,6 +164,11 @@ a scent map, a per-term view and a rotating 3D conformer for 1,534 of the 1,658 
 public even after a push except by its URL. Commits `a01a28d`, `bf7eece` are local (not pushed); the property columns and `corpus/props/` were
 uncommitted when written. The Hetzner staging folder was deleted on Ivan's instruction.
 
+**2026-10-20 (log — scent-map options, a weight map and a term map on the page; see the last entry):** four ways to draw the 1,705 molecules were rendered
+(`reports/scent-map-options/`, untracked) and Ivan chose: **A (profile map) stays the main view, D (term map) becomes a view, and the second view mixes
+molecular weight into A**. `docs/corpus.html` now has **Table · Scent map · Weight map · Term map** (commit `50f1e03`, local, not pushed). The Weight map places
+dots by weight (lightest left, heaviest right) in family rows, with a blend slider back to the scent-map layout, a band slider and a Sweep.
+
 **Emails were READY (09-27):** preview live at https://vanpez.github.io/openscent/ (GitHub Pages,
 master /docs), linked in all three drafts, signed Ivan Pezzini. outreach/ and the shop lists
 (corpus/hekserij, corpus/olfatorium) are now LOCAL ONLY (gitignored; still in git history).
@@ -6080,3 +6085,53 @@ Staging folder `/opt/openscent/stage-3d-20261019` deleted on Ivan's instruction,
 - Patent-side labels are verbatim spellings, so some are OCR-damaged (the first row reads "3-endo-methyl 3 exo(4' methyl 5 hydroxy- 1O pentyl)norcamphor");
   a cleaner label policy is open. No 2D structure drawing yet (3D only; 2D would need a vendored library or RDKit).
 - Not linked from the public pages; not pushed. The freeze / tag decision, README refresh at the repo root, Mike's contract, a reply to Joe are unchanged.
+
+## 2026-10-20 — four ways to draw the molecules; a weight map and a term map on the corpus page
+
+Ivan remembered there were several ways to depict the scent map and asked for a quick doc with images of three or four of them for the 1,705 molecules.
+
+### The options (static PNGs; `reports/scent-map-options/scentmap_figs.py`, untracked)
+
+Deterministic, reading only `release/v1.0` and the positions and families already embedded in `docs/corpus.html`. A = the profile map as on the page (t-SNE of
+odour-term profiles; 687 distinct profiles). B = a scent wheel: family sectors as wide as their molecule count, rings = number of terms a molecule carries
+(1 term 878, 2 terms 398, 3 terms 232, 4+ 197 molecules). C = family bubbles. D = a term map: the 67 terms placed by the molecules they share; `coffee` shares a
+molecule with no other term. Family sizes by the page's assignment: Green & herbal 328, Sharp & other 301, Woody & earthy 226, Sweet & gourmand 179, Floral 171,
+Fruity 156, Amber & musk 139, Fresh & aldehydic 90, Citrus 68, Spicy & warm 47. A first pass that recomputed the primary family differed from the page's on 118
+molecules (tie-breaks between equal scores); all four pictures use the page's assignment so the colours agree. The options were written up in a private Claude
+doc (not linked here); it still describes B and C and was not updated for what follows.
+
+### Ivan's decisions
+
+"I like D very much, I want this as third view. Keep A as the main view, and for the second view a different one: molecular weight mixed in with A, so that we
+can see from lightest to heaviest." Later: the pale-yellow end of the weight colours was hard to see; and then "place the dots according to their weight, mix it
+with the scent map, not the same map with different colours" (he liked the sweep and the bands).
+
+### On the page (`pipeline/corpus_page_build.py` -> `docs/corpus.html`, 2.98 MB, still one file with no network calls)
+
+- **Term map** (4th tab): 67 nodes, 110 lines (t-SNE on each term's 0/1 vector over the molecules, seed 20261020; strongest co-occurrences drawn; labels placed
+  greedily so they avoid each other and the dots). Dot area = molecules carrying the term; a dark ring = the 24 terms at the bar. Clicking a term lists its
+  molecules in the Table (tobacco: 28). The old bar list sits below it.
+- **Weight map** (3rd tab), first version: A's layout coloured by PubChem-computed molecular weight, a histogram with two handles (weight band), Sweep. The band also
+  filters the Table (removable chip). Palette changed from yellow-to-purple to cyan-blue-purple-plum.
+- **Weight map, current:** dots placed by weight. x = log molecular weight (17.0 to 885 g/mol; 1,626 of the 1,705 molecules have one), y = family rows in wheel order, each
+  row as tall as its molecule count, dots spread inside the row so every molecule is visible; the 79 molecules without a weight wait in a column at the far right.
+  A **blend slider** morphs every dot between the scent-map layout and the weight ladder (the dots glide there when the tab opens); a toggle colours by weight or by
+  family; the band shows as a shaded, dashed column on the ladder; clicking a dot opens its quotes and 3D. The page says that weight is one number per molecule, not a
+  volatility measure, and says nothing about perfumery note position (the paper's finding that the sources give no note tiers stands).
+- **Header (Ivan's feedback, same day):** the tabs moved into the header bar as pills, like the preview's; the link to the 208-material preview was removed
+  as superfluous; "A GenesisL1 project ↗" (genesisl1.com) was added, like the preview, with a GitHub text link beside it (hidden on phones, where the
+  header is two compact rows). The filter bar's sticky offset now follows the header's real height.
+- **Dark mode (Ivan: "add dark mode on the page"):** colours are now tokens, with a dark set (the palette of THEME.md section 6's dev-tool dark: `#0b0e14` / `#141925`);
+  the maps, ladder, histogram, term map and 3D viewer read the theme (weight ramp becomes cyan to pink on dark; carbon atoms are lighter). It follows the visitor's
+  system setting by default, a round toggle in the header overrides it, and the choice is saved in the browser (`localStorage`, wrapped in try/catch). **A departure from
+  `THEME.md` section 6**, which says public family pages should be light and the dark palette is for developer tools: Ivan asked for it; to make light the default,
+  change the dark tokens' media query in `corpus_page_build.py` to apply only under `[data-theme=dark]`.
+- Checked in the browser pane at desktop and phone width (no sideways scroll, console clean); the page JavaScript passes `node --check`.
+- Commit `50f1e03` holds the Term map, the Weight map (including the ladder) and the palette. Local, **not pushed**.
+
+### Corrections and open
+
+- The 10-19 entries describe the page's tabs as Table / Scent map / Terms; they are now Table / Scent map / Weight map / Term map.
+- Open: update the options doc (B and C are not on the page); whether to commit `reports/scent-map-options/`; the page is not linked from `preview.html` or
+  `index.html`; patent-side labels are verbatim, so some are OCR-damaged; the ladder's rows are the display family grouping, an aid and not the vocabulary; push (it would put
+  `corpus.html` live by URL only); the freeze / tag decision, root README refresh, Mike's contract, a reply to Joe. This entry is not committed.
