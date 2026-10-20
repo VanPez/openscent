@@ -998,6 +998,13 @@
    "raw": "Octahydrodimethylmethanonapthalenol",
    "reading": "9,9-dimethyloctahydro-1H-1,6-methanonaphthalen-1-ol",
    "why": "contraction of 'Octahydro-9,9-dimethyl-1,6-methanonaphthalene-1-(2H)-ol', the compound US3996169A is about (its sentence compares it with patchouli alcohol; the full name appears in the same patent). Reading = the OPSIN-parsed reading of that full name (already in rewrites.json). Probable: only the two sentences were read, not the whole patent. Approved by Ivan 2026-10-19"
+  },
+  {
+   "id": "J1",
+   "strength": "S",
+   "raw": "acetaldehyde ethyl 6-dihydrolinalyl acetal",
+   "reading": "3-(1-ethoxyethoxy)-3,7-dimethyloct-1-ene",
+   "why": "functional-class acetal name (IUPAC 2013 P-66.6.5.1.1: aldehyde, O-substituents, 'acetal'); the 6-dihydrolinalyl part is read from US4424146A itself: it makes compound (II) from 6-dihydrolinalool and ethyl vinyl ether with a trace of HCl (gives the 1-ethoxyethyl acetal on the alcohol O), compares it with the linalyl (I), tetrahydrolinalyl (III) and dehydrolinalyl (IV) acetals (so '6-dihydro' = only the 6,7 double bond saturated), and calls it an intermediate to 5,9-dimethyl-4-decenal (needs the vinyl group kept). PubChem (on Hetzner, 2026-10-20): 6,7-dihydrolinalool = 3,7-dimethyloct-1-en-3-ol (CID 86748); the reading is CID 163400 (CAS 84029-93-6), same InChIKey as OPSIN; the patent name is not among its synonyms. The patent's drawing (STR2) is not in our text. Checked by Joe 2026-10-20. Approved by Ivan 2026-10-20"
   }
  ]
 }
