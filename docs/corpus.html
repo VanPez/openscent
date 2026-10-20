@@ -157,7 +157,7 @@ const root=document.documentElement,TH={mode:'light',dark:false,ink:'#07111d',bl
 function refreshTheme(){const dark=root.dataset.theme==='dark'||(!root.dataset.theme&&window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches);TH.dark=dark;TH.mode=dark?'dark':'light';const cs=getComputedStyle(root),g=n=>cs.getPropertyValue(n).trim();
  TH.ink=g('--ink');TH.blue=g('--blue');TH.mut=g('--mut');TH.dim=g('--dim');TH.nowt=g('--nowt');TH.stripe=g('--stripe');TH.grid=g('--grid');TH.band=g('--band');TH.bandLine=g('--bandline');TH.bond=g('--bond');EC=dark?EC_D:EC_L;
  const b=$('themebtn');b.textContent=dark?'☀':'☾';b.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');if(typeof draw==='function'&&cx)draw();if(st.view==='mw'&&typeof wtHist==='function')wtHist()}
-const st={view:'table',q:'',tags:[],str:'',src:'',shown:80,open:-1,sel:-1,fams:new Set(),sk:'ev',sd:-1,cmode:'fam',wcol:'mw',mt:0,mix:1,mwlo:null,mwhi:null};
+const st={view:'table',q:'',tags:[],str:'',src:'',shown:80,open:-1,sel:-1,fams:new Set(),sk:'label',sd:1,cmode:'fam',wcol:'mw',mt:0,mix:1,mwlo:null,mwhi:null};
 const H=M.map(m=>(m[F.label]+' '+m[F.spell]+' '+m[F.ik]+' '+m[F.tags].map(t=>TAGS[t][0]).join(' ')+' '+m[F.descs]+' '+m[F.docs]+' '+m[F.formula]).toLowerCase());
 const order=M.map((_,i)=>i).sort((a,b)=>M[b][F.nev]-M[a][F.nev]||M[a][F.label].localeCompare(M[b][F.label]));
 function match(i){const m=M[i];
@@ -167,7 +167,8 @@ function match(i){const m=M[i];
  if(st.mwlo!==null||st.mwhi!==null){const v=m[F.mw];if(v===null||(st.mwlo!==null&&v<st.mwlo-1e-9)||(st.mwhi!==null&&v>st.mwhi+1e-9))return false}
  if(st.q&&!st.q.split(/\s+/).every(w=>H[i].includes(w)))return false;return true}
 let hits=[];
-function sortVal(i){const m=M[i];return st.sk==='label'?m[F.label].toLowerCase():st.sk==='formula'?m[F.formula]:st.sk==='mw'?m[F.mw]:st.sk==='xlogp'?m[F.xlogp]:m[F.nev]}
+function labkey(l){l=l.toLowerCase();let i=l.search(/\p{L}{3}/u);if(i<0)i=Math.max(0,l.search(/\p{L}/u));return l.slice(i)+'\u0000'+l}
+function sortVal(i){const m=M[i];return st.sk==='label'?labkey(m[F.label]):st.sk==='formula'?m[F.formula]:st.sk==='mw'?m[F.mw]:st.sk==='xlogp'?m[F.xlogp]:m[F.nev]}
 function sortHits(){if(st.sk==='ev'&&st.sd===-1)return;const d=st.sd;hits.sort((a,b)=>{const x=sortVal(a),y=sortVal(b),nx=x===null||x===''||x===undefined,ny=y===null||y===''||y===undefined;
  if(nx||ny)return nx&&ny?0:nx?1:-1;return (x<y?-1:x>y?1:0)*d||M[b][F.nev]-M[a][F.nev]})}
 function heads(){document.querySelectorAll('#thr th.s').forEach(t=>{const on=t.dataset.s===st.sk;t.classList.toggle('on',on);t.querySelector('i').textContent=on?(st.sd===1?'▲':'▼'):''})}

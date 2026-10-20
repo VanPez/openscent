@@ -4,7 +4,7 @@
 
 ---
 
-## RESUME HERE — state as of 2026-09-26 (end of day), amended through 2026-10-19
+## RESUME HERE — state as of 2026-09-26 (end of day), amended through 2026-10-20
 
 **READ THIS FIRST. The 09-24 blocks below it are superseded.** Live figures (status.py, re-run 2026-10-19: COMBINED = v1.0, the CC0 corpus only; the licensed layer is an add-on row; the 09-26
 figures this block used to show — 27 of 67, 1,829 molecules — are now the by-name-text count):
@@ -168,6 +168,12 @@ uncommitted when written. The Hetzner staging folder was deleted on Ivan's instr
 (`reports/scent-map-options/`, untracked) and Ivan chose: **A (profile map) stays the main view, D (term map) becomes a view, and the second view mixes
 molecular weight into A**. `docs/corpus.html` now has **Table · Scent map · Weight map · Term map** (commit `50f1e03`, local, not pushed). The Weight map places
 dots by weight (lightest left, heaviest right) in family rows, with a blend slider back to the scent-map layout, a band slider and a Sweep.
+
+**2026-10-20 (log — the table now opens A to Z, see the last entry):** Ivan asked how the table is ordered on first open (it was by number of quotes, most first,
+so the OCR-damaged norcamphor label came first) and chose alphabetical. `docs/corpus.html` now opens sorted by name, each name filed under its first run of three
+or more letters (locants and short prefixes skipped); the Molecule header uses the same rule and Quotes is one click away. Data, `release/v1.0` and the figures
+above are unchanged (a rebuild of the release into a scratch folder was byte-identical for the three TSVs). **Git: 6 local commits are unpushed** (`a01a28d`, `bf7eece`,
+`07c26cf`, `50f1e03`, `69da073` and the one carrying this entry); origin is still at `8c3655b`.
 
 **Emails were READY (09-27):** preview live at https://vanpez.github.io/openscent/ (GitHub Pages,
 master /docs), linked in all three drafts, signed Ivan Pezzini. outreach/ and the shop lists
@@ -6135,3 +6141,36 @@ with the scent map, not the same map with different colours" (he liked the sweep
 - Open: update the options doc (B and C are not on the page); whether to commit `reports/scent-map-options/`; the page is not linked from `preview.html` or
   `index.html`; patent-side labels are verbatim, so some are OCR-damaged; the ladder's rows are the display family grouping, an aid and not the vocabulary; push (it would put
   `corpus.html` live by URL only); the freeze / tag decision, root README refresh, Mike's contract, a reply to Joe. This entry is not committed.
+
+## 2026-10-20 (later) — the corpus table opens alphabetically
+
+Session start: read the RESUME block and the two latest entries, re-ran `status.py` (1,705 molecules by structure, 24 of 67 terms at the bar, verbatim invariant clean,
+0 productive in the review queue) and rebuilt `release/v1.0` into a scratch folder with `release_build.py --out`: `molecules.tsv`, `tags.tsv` and `evidence.tsv` are
+byte-identical to the committed ones, so the release is current. Nothing in the data or the release changed this session.
+
+### The question: what order does the page open in?
+
+Ivan asked. The answer from the code (`corpus_page_build.py`): the Table opened sorted by the Quotes column, most first, ties by label, showing the first 80 rows
+with a "more" button. Computed from `release/v1.0/molecules.tsv`: the top rows were the norcamphor with the OCR-damaged label (36 quotes, 5 documents), 2,3,6-trimethyl-2-cyclohexen-1-one
+(21 quotes, 1 document), Linalool (17), 2-(2,4,5-trimethylcyclohex-2-en-1-yl)acetaldehyde (16) and Linalyl Acetate (16). Quote count takes 16 distinct values and 630 of
+the 1,705 molecules have exactly one quote, so past the first few hundred rows the order was effectively alphabetical anyway.
+
+### The change (Ivan: alphabetical)
+
+- Default sort is now the Molecule column, A to Z (`sk:'label', sd:1`).
+- A plain string sort would have put the 810 labels (of 1,705) that start with a digit, bracket or quote ahead of every name that starts with a letter. The sort key (`labkey`) therefore files each name under its
+  **first run of three or more letters**, so "2-ethyl-…" sorts under e and locants such as "2,3a,4,5-" (which contain a letter) and short prefixes ("o-", "dl-", "(R)-") are skipped; ties break on the full
+  lowercase label. Stereo words of three letters or more ("trans", "cis", "exo") are not skipped, so "trans-2-hexenal" files under t.
+- The Molecule header sorts by the same key, so clicking it does not reshuffle the list; Quotes (most first) is one click away and gives the old order.
+- Checked in the browser pane: with all 1,705 rows shown the order has 0 inversions under the key; first rows Acequinocyl, Acetal, Acetaldehyde; last row "(R)-ziza-6(13)-en-12-yl acetate";
+  Quotes click shows the norcamphor, the trimethylcyclohexenone, Linalool; console clean; the page JavaScript passes `node --check`. Preview and local server stopped.
+- Files: `pipeline/corpus_page_build.py`, `docs/corpus.html` (rebuilt, 2.98 MB, still one file with no network calls).
+
+### Corrections and open
+
+- The 10-20 entry above ends "This entry is not committed"; it was committed in `69da073`.
+- Git: 6 local commits are unpushed (`a01a28d`, `bf7eece`, `07c26cf`, `50f1e03`, `69da073` and the one carrying this entry); origin is at `8c3655b`. Untracked, not committed:
+  `reports/scent-map-options/`, `openscent-paper-v0.3-preview.pdf`.
+- Open, unchanged: freeze and tag v1.0 (rebuild `release/v1.0` after any data commit with `release_build.py --force`); root README refresh (still the 09-05 figures); the options doc (still
+  describes B and C); whether to link `corpus.html` from `preview.html` / `index.html`, and whether to push; Mike's reference MolNFT v2 contract; a reply to Joe; the 53 "approve-no-tag" rows;
+  OCR-damaged verbatim labels (the first row on the quotes order made this visible); no 2D structure drawing.
