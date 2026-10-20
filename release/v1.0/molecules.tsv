@@ -474,6 +474,7 @@ IICQEFGGOQLDQB-UHFFFAOYSA-N	IICQEFGGOQLDQB-UHFFFAOYSA-N	IICQEFGGOQLDQB	3-n-butyl
 IIDFEIDMIKSJSV-UHFFFAOYSA-N	IIDFEIDMIKSJSV-UHFFFAOYSA-N	IIDFEIDMIKSJSV	Aspon	CCCOP(=S)(OCCC)OP(=S)(OCCC)OCCC	pubchem-cid	direct	yes	aromatic	1	1	1	hsdb	ASPON	18609	
 IITCWRFYJWUUPC-UHFFFAOYSA-N	IITCWRFYJWUUPC-UHFFFAOYSA-N	IITCWRFYJWUUPC	Dipropyl isocinchomeronate	CCCOC(=O)C1=CN=C(C=C1)C(=O)OCCC	pubchem-cid	direct	yes	aromatic	1	1	1	hsdb	Dipropyl isocinchomeronate	8693	
 IJGPBNZUYIVZKT-UHFFFAOYSA-N	IJGPBNZUYIVZKT-UHFFFAOYSA-N	IJGPBNZUYIVZKT	6-methyl-3-propylheptan-2-ol	CC(CCC(C(C)O)CCC)C	opsin-verbatim	direct	yes	aromatic;earthy;green	3	4	1	patent-sentence	6-methyl-3-propylheptan-2-ol		
+IJOLRHXMJRNZNP-UHFFFAOYSA-N	IJOLRHXMJRNZNP-UHFFFAOYSA-N	IJOLRHXMJRNZNP	acetaldehyde ethyl 6-dihydrolinalyl acetal	C(C)OC(C)OC(C=C)(CCCC(C)C)C	rewritten	hand-derived	yes	floral;fresh;fruity;green;herbal;sweet	6	6	1	patent-sentence	acetaldehyde ethyl 6-dihydrolinalyl acetal		
 IJOOHPMOJXWVHK-UHFFFAOYSA-N	IJOOHPMOJXWVHK-UHFFFAOYSA-N	IJOOHPMOJXWVHK	Chlorotrimethylsilane	C[Si](C)(C)Cl	pubchem-cid	direct	yes	acid;pungent	2	2	2	cameo;hsdb	TRIMETHYLCHLOROSILANE	6397	
 IKHGUXGNUITLKF-UHFFFAOYSA-N	IKHGUXGNUITLKF-UHFFFAOYSA-N	IKHGUXGNUITLKF	Acetaldehyde	CC=O	pubchem-cid	direct	yes	fruity;pungent	2	9	4	cameo;hsdb;niosh;osha	ACETALDEHYDE	177	
 IKMOIWCIAKRKNS-FEMYNARTSA-N	IKMOIWCIAKRKNS-FEMYNARTSA-N	IKMOIWCIAKRKNS	(2S)-2-((4,4,8-trimethyltricyclo[6.3.1.0 2,5 ]dodecan-1-yl)oxy)propan-1-ol	CC1(CC2C3(CCCC(CCC12)(C3)C)O[C@H](CO)C)C	opsin-verbatim	direct	yes	amber	1	1	1	patent-sentence	(2S)-2-((4,4,8-trimethyltricyclo[6.3.1.0 2,5 ]dodecan-1-yl)oxy)propan-1-ol		
@@ -1677,7 +1678,6 @@ name:6,7,8-decene-1ol			6,7,8-Decene-1ol			none	no	aldehydic;floral;green;rose;w
 name:8-drimanol			8-drimanol			none	no	amber;soft;woody	3	11	3	patent-sentence	8-drimanol		no definite structure (unresolved); counted by name text
 name:8-oxoethyl epicamphene hydrate			8-oxoethyl epicamphene hydrate			none	no	camphoraceous;sweet	2	2	1	patent-sentence	8-oxoethyl epicamphene hydrate		no definite structure (unresolved); counted by name text
 name:9-nordrimanol			9-nordrimanol			none	no	amber	1	1	1	patent-sentence	9-nordrimanol		no definite structure (unresolved); counted by name text
-name:acetaldehyde ethyl 6-dihydrolinalyl acetal			acetaldehyde ethyl 6-dihydrolinalyl acetal			none	no	floral;fresh;fruity;green;herbal;sweet	6	6	1	patent-sentence	acetaldehyde ethyl 6-dihydrolinalyl acetal		no definite structure (unresolved); counted by name text
 name:alpha-ionylideneethane			alpha-ionylideneethane			none	no	floral;violet;woody	3	3	1	patent-sentence	alpha-ionylideneethane		no definite structure (unresolved); counted by name text
 name:cineole			Cineole			none	no	camphoraceous;mint	2	2	2	patent-sentence	Cineole		no definite structure (held: PUBCHEM-CHECK); counted by name text
 name:cyclohexal			cyclohexal			none	no	lily	1	1	1	patent-sentence	cyclohexal		no definite structure (unresolved); counted by name text

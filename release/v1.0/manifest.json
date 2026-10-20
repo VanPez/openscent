@@ -1,16 +1,16 @@
 {
  "version": "1.0-candidate",
- "built_at_utc": "2026-10-19T15:57:48+00:00",
- "git_head": "bc1ed769dd3218c11c904b9a30c5ee7781911172",
+ "built_at_utc": "2026-10-20T11:42:25+00:00",
+ "git_head": "cfa70a1190bdd81e6a6efe8baa07568778e0cc91",
  "tracked_files_modified_at_build": 0,
  "scope": "CC0 corpus only; the licensed layer, retired rows, rejected and undecided rows are not included",
  "counts": {
   "molecules": 1705,
-  "molecules_with_structure": 1658,
-  "molecules_connectivity_only": 1619,
+  "molecules_with_structure": 1659,
+  "molecules_connectivity_only": 1620,
   "structure_direct": 1522,
-  "structure_hand_derived": 136,
-  "molecules_name_only": 47,
+  "structure_hand_derived": 137,
+  "molecules_name_only": 46,
   "evidence_rows": 4420,
   "evidence_by_source_type": {
    "cameo": 401,
@@ -62,10 +62,10 @@
   "corpus/rows/passage-rows.jsonl": "3159c027fa8b3a895ceed2d87aa8de622ac17c318335a58a0148bced1c1fa6d8",
   "corpus/rows/targeted-rows.jsonl": "a218707306212eb2a588666ad35d83e308c8401bee775ad45adf825a9e6c731f",
   "corpus/rows/exclusions.jsonl": "030a058082e3554f479ae41af54e63f138e202187c0dc7a37d4bca8b5d989483",
-  "corpus/structures/names.jsonl": "ac9c470384975f39f700964d56358e1930148775b451c92884d7ec6a6039d9da",
+  "corpus/structures/names.jsonl": "aa855cba25c6bb18acd8314b6d3abd590654f7626584ca7cff5f5dd36db6f1e4",
   "corpus/structures/pubchem-names.json": "0d237141f728bc30baa4b595686abc447b4980830715489e05c2cccb1ea28156",
   "corpus/raw-pubchem/smiles.json": "a12ef512cf1e82d9d4e6edeeb6fed1486eefe07459d7490f9c18a50d8697afbf",
-  "corpus/structures/rewrites.json": "2d224bd2df1f5dd07488f0f6280589bc5188904226947cb9da583ee1bf3701ad",
+  "corpus/structures/rewrites.json": "3fcf97e5e7cdf75e2840f59d4be9efa70e30f89c7f634fe343809aae75510310",
   "ontology/odor_terms.tsv": "584956deaf19b12f4fd0a1a2b2dee2e9a7d0a0d14d29b1a9c062607cf7d1403b"
  }
 }
