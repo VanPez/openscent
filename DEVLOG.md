@@ -172,8 +172,14 @@ dots by weight (lightest left, heaviest right) in family rows, with a blend slid
 **2026-10-20 (log — the table now opens A to Z, see the last entry):** Ivan asked how the table is ordered on first open (it was by number of quotes, most first,
 so the OCR-damaged norcamphor label came first) and chose alphabetical. `docs/corpus.html` now opens sorted by name, each name filed under its first run of three
 or more letters (locants and short prefixes skipped); the Molecule header uses the same rule and Quotes is one click away. Data, `release/v1.0` and the figures
-above are unchanged (a rebuild of the release into a scratch folder was byte-identical for the three TSVs). **Git: 6 local commits are unpushed** (`a01a28d`, `bf7eece`,
-`07c26cf`, `50f1e03`, `69da073` and the one carrying this entry); origin is still at `8c3655b`.
+above are unchanged (a rebuild of the release into a scratch folder was byte-identical for the three TSVs). Committed as `1da1ad6`. **[Superseded the same day: pushed,
+see the next paragraph.]**
+
+**2026-10-20 (log — pushed; sent to Joe and Mike for a last input before the freeze; see the last entry):** Ivan's decision, after I checked what a push would publish.
+`master` is pushed (`8c3655b..1da1ad6`, 6 commits, 9 files): **`docs/corpus.html` is live at https://vanpez.github.io/openscent/corpus.html**, by URL only (still not linked from
+`preview.html` or `index.html`). Ivan then sent each of Joe and Mike a one-line message with the link, asking for last input before the freeze. **The freeze waits for their
+answers; no date is set.** Replies belong in local notes (`outreach/`), not in this public log. `origin/master` = `1da1ad6`; untracked and local: `reports/scent-map-options/`,
+`openscent-paper-v0.3-preview.pdf`.
 
 **Emails were READY (09-27):** preview live at https://vanpez.github.io/openscent/ (GitHub Pages,
 master /docs), linked in all three drafts, signed Ivan Pezzini. outreach/ and the shop lists
@@ -6174,3 +6180,34 @@ the 1,705 molecules have exactly one quote, so past the first few hundred rows t
 - Open, unchanged: freeze and tag v1.0 (rebuild `release/v1.0` after any data commit with `release_build.py --force`); root README refresh (still the 09-05 figures); the options doc (still
   describes B and C); whether to link `corpus.html` from `preview.html` / `index.html`, and whether to push; Mike's reference MolNFT v2 contract; a reply to Joe; the 53 "approve-no-tag" rows;
   OCR-damaged verbatim labels (the first row on the quotes order made this visible); no 2D structure drawing.
+
+## 2026-10-20 (evening) — the corpus page is public by URL; Joe and Mike asked for last input before the freeze
+
+Ivan wanted Joe and Mike to see the whole corpus before the freeze and asked whether to push; I advised yes, listed what a push publishes, and he said push.
+
+### What I checked before pushing
+
+- Repo `VanPez/openscent` is public. `git diff --stat origin/master..HEAD`: 9 files (`DEVLOG.md`, `docs/corpus.html`, `pipeline/corpus_page_build.py`, `corpus_3d_fetch.py`, `corpus_3d_todo.py`,
+  `corpus_props_fetch.py`, and the data files `corpus/3d/conformers.json`, `corpus/3d/todo.json`, `corpus/props/pubchem-props.json`).
+- No email addresses in `corpus.html` (the `@` matches are SMILES and CSS); no `outreach/`, `.env`, `config.json`, zip or PDF is tracked. The unpushed DEVLOG lines mention Joe and Mike only
+  as open tasks, with no chat content.
+
+### Push
+
+- `git push origin master`: `8c3655b..1da1ad6` (6 commits). Ivan's explicit OK for this push only.
+- GitHub Pages (master `/docs`) returned 404 for about 30 s, then 200. The live page carries the alphabetical default (`sk:'label',sd:1`).
+  **https://vanpez.github.io/openscent/corpus.html** — still not linked from `preview.html` or `index.html`, so reachable by URL only.
+
+### Joe and Mike
+
+- Ivan sent each a short message with the link (I drafted both: the v1.0 candidate, a freeze is coming, any last input; Mike's draft also named the MolNFT v2 step). The sent wording is his own and not recorded here.
+- The freeze and tag wait for their answers. **No date is set for a reply**; Ivan decides when to stop waiting. Replies go in local notes (`outreach/`, gitignored), not in this public log.
+- Context: on 09-30 Mike asked to keep molecular topics out of the group for now (GL1F Crypto focus); nothing has been heard from him on the reference MolNFT v2 contract since.
+
+### State and open
+
+- `origin/master` = local `master` = `1da1ad6`. Untracked, local only: `reports/scent-map-options/`, `openscent-paper-v0.3-preview.pdf`. This entry and the RESUME edit are not committed.
+- No data, release or `status.py` figure changed today; the last `status.py` run (10-20) is 1,705 molecules by structure, 24 of 67 terms at the bar.
+- Open, unchanged: freeze and tag v1.0 (rebuild `release/v1.0` with `release_build.py --force` after any data commit); root README refresh (still the 09-05 figures); the options doc (still B and C);
+  whether to link `corpus.html` from `preview.html` / `index.html`; Mike's reference MolNFT v2 contract; reply to Joe (not drafted); the 53 "approve-no-tag" rows;
+  OCR-damaged verbatim labels; no 2D structure drawing.
