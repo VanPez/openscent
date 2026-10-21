@@ -195,6 +195,8 @@ and two names OPSIN had read as two molecules each got a structure (X1, X2; `str
 parse). Then Joe's list of proposed structures was checked row by row against the patent texts, OPSIN and PubChem: 25 applied as rewrites J2-J26 (22 strong,
 3 medium: lanceol, terranol, Muscenone); in four rows the patent text gave a different structure from the proposal. **Headline: 1,695 molecules, still 24 of 67;
 name-only 46 -> 17.** Release and `corpus.html` rebuilt from a clean tree and pushed. Next unchanged: freeze and tag v1.0; the paper still quotes 1,705.
+Later 10-21: PubChem 3D conformers and properties for the 26 new structures fetched on Hetzner, page rebuilt and pushed (`bf0cdca`): 1,560 of the 1,678
+structures now have a 3D model.
 
 **Emails were READY (09-27):** preview live at https://vanpez.github.io/openscent/ (GitHub Pages,
 master /docs), linked in all three drafts, signed Ivan Pezzini. outreach/ and the shop lists
@@ -6333,3 +6335,17 @@ a reading went in only with a witness, and each `rewrites.json` entry (J2-J26) n
 - Unchanged: freeze and tag v1.0; root README refresh (still the 09-05 figures); the options doc (still B and C); whether to link `corpus.html` from
   `preview.html` / `index.html`; Mike's reference MolNFT v2 contract; the 53 "approve-no-tag" rows; OCR-damaged verbatim labels; no 2D structure drawing.
 - Git: `409d397`, `ad6f25b`, `73c65fb` and the commit carrying this entry; pushed with Ivan's OK ("log rebuild & push").
+
+## 2026-10-21 (later) — 3D conformers and properties for the new structures
+
+- `pipeline/corpus_3d_todo.py`: 1,678 molecules with a structure (833 carry a CID in the release, 845 do not) -> `corpus/3d/todo.json`.
+- On Hetzner (staging folder `/tmp/os3d`, removed afterwards): `corpus_3d_fetch.py` resumed from the committed `conformers.json`. 26 InChIKeys were new; all
+  26 matched a PubChem record by full InChIKey (the script accepts nothing else) and all 26 have a PubChem 3D conformer. `corpus_props_fetch.py`: 1,652 CIDs,
+  formula and MW for all, XLogP3 for 1,561.
+- Release molecules with a structure: 1,678; with a PubChem CID 1,647; with a 3D conformer 1,560 (was 1,534 of 1,658 on 10-19). Spot checks against the
+  10-21 structure checks: the ziza acetate CID 117779850, the camphor dihydropyrazine CID 14137296, the 4,6,6 isobutyrate CID 17896984, the valerolactone
+  CID 68440004; alpha-ionylideneethane matched its (1E,3Z) record, CID 21578591.
+- `conformers.json` and `pubchem-props.json` keep entries for molecules that left the release (harmless: the page reads only release molecules).
+- `docs/corpus.html` rebuilt (3.01 MB), page JavaScript passes `node --check`. Commit `bf0cdca`, pushed with Ivan's OK ("Push"); the live page serves it.
+- Open, unchanged: the paper (v0.4 quotes 1,705); freeze and tag v1.0; root README refresh; the options doc; linking `corpus.html` from the public pages;
+  Mike's reference MolNFT v2 contract; the 53 "approve-no-tag" rows; OCR-damaged verbatim labels; no 2D structure drawing. This entry is not committed.
