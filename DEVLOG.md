@@ -6400,3 +6400,19 @@ questions for the contract.
   README refresh; the options doc; linking `corpus.html` from the public pages; the 53 "approve-no-tag" rows; OCR-damaged verbatim labels.
 - Git: the card commit and the commit carrying this entry, pushed with Ivan's OK ("yes log commit push").
 
+
+## 2026-10-21 (night) — corpus page bug: a weight band left behind by the sweep
+
+Ivan reported the Table looking frozen after visiting the maps: 5 of 1,695 molecules, a chip "MW 529–885 g/mol", and "Show -75 more of -75 remaining".
+
+- **Cause 1:** the Weight map's "Sweep light -> heavy" sets a moving weight band. Switching tabs stopped the sweep but kept its current band as a filter, so
+  the Table showed only that window. Both chips Ivan saw are exact sweep windows (46.1–77.0 g/mol is lo 252 / hi 382 of the 0–1000 log scale; 529–885
+  is the sweep's last window). Merely opening the Weight map and scrolling does not set a band (checked in the browser pane).
+- **Cause 2:** `.more{display:block}` overrode the browser's `[hidden]` rule, so the "show more" button stayed visible with a negative count whenever all
+  rows were already shown.
+- **Fix** (`pipeline/corpus_page_build.py`): leaving the Weight map clears the band (it is a lens of that map); a finished sweep returns to all weights;
+  a global `[hidden]{display:none!important}`.
+- **Checked in the browser pane** (local server, cache-busted reload, steps scripted): mid-sweep on the Weight map the band is active; switching to the Table
+  mid-sweep gives no chip and 1,695 of 1,695 molecules with "Show 80 more of 1,615 remaining"; after a full sweep, no chip; a 9-result search hides the
+  button; console clean; page JavaScript passes `node --check`.
+- No data changed. Pushed with Ivan's OK ("yes do it"). GitHub Pages may serve the old page for a few minutes (cache).
