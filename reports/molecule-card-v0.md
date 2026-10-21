@@ -6,7 +6,7 @@ measured on `release/v1.0` on 2026-10-21: 1,695 molecules, 1,678 with a structur
 ## The rule
 
 Store only facts that cannot be recomputed (**static**). Everything that can be derived from them is **computed**, by the
-contract or in the user's browser (Mike's principle: write the formula, compute the mass).
+contract or in the user's browser (for example the molecular mass, from the formula).
 
 The root static field is the **structure (SMILES)**, not the formula: a formula does not identify a molecule (C10H18O is
 linalool, geraniol, alpha-terpineol and 1,8-cineole alike), while the formula, mass, InChIKey and the rest all follow from

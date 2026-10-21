@@ -6361,8 +6361,8 @@ a reading went in only with a witness, and each `rewrites.json` entry (J2-J26) n
 ### Why
 
 Mike asked for a molecule card designed web2 first, before the MolNFT v2 contract: fields of two kinds, **static** (the facts written on chain) and
-**computed** (derived by the contract or in the user's browser), on the principle "write the formula, compute the mass". Ivan sent him the draft below with
-the questions for the contract.
+**computed** (derived by the contract or in the user's browser): store only what the rest can be computed from. Ivan sent him the draft below with the
+questions for the contract.
 
 ### The schema: `reports/molecule-card-v0.md` (new)
 
