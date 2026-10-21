@@ -60,6 +60,7 @@ td.fm{font-family:var(--mono);font-size:12px;white-space:nowrap}td.dash,.dash{co
 .tag:hover{background:rgba(15,143,127,.16);border-color:var(--teal)}.tag.on{background:var(--teal);color:var(--on);border-color:var(--teal)}
 .st{font:10px var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border:1px solid var(--line-strong);color:var(--mut);white-space:nowrap}
 .st.d{border-color:rgba(15,143,127,.4);color:var(--teal)}.st.h{border-color:rgba(154,106,20,.5);color:var(--amber);background:var(--amber-pale)}.st.n{border-color:rgba(188,75,71,.5);color:var(--red)}
+[hidden]{display:none!important}
 .more{display:block;width:100%;padding:14px;border:0;border-top:1px solid var(--line);background:var(--card2);font:500 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--blue);cursor:pointer}.more:hover{background:var(--blue-pale)}
 .empty{padding:40px 18px;text-align:center;color:var(--mut)}
 .detail{padding:6px 18px 18px;background:var(--blue-pale);border-top:1px solid var(--line)}
@@ -353,7 +354,7 @@ function wtSet(lo,hi){lo=Math.max(0,Math.min(1000,lo));hi=Math.max(lo,Math.min(1
 let sw=null;function wtStop(){if(sw){clearInterval(sw);sw=null}$('wtplay').textContent='▶ Sweep light → heavy'}
 $('wtlo').oninput=()=>{wtStop();const [lo,hi]=wtBand();wtSet(Math.min(lo,hi),hi)};$('wthi').oninput=()=>{wtStop();const [lo,hi]=wtBand();wtSet(lo,Math.max(lo,hi))};
 $('wtclear').onclick=()=>{wtStop();wtSet(0,1000)};
-$('wtplay').onclick=()=>{if(sw){wtStop();return}const w=130;let lo=0;$('wtplay').textContent='⏸ Stop';wtSet(0,w);sw=setInterval(()=>{lo+=7;if(lo+w>=1000){wtSet(1000-w,1000);wtStop();return}wtSet(lo,lo+w)},70)};
+$('wtplay').onclick=()=>{if(sw){wtStop();return}const w=130;let lo=0;$('wtplay').textContent='⏸ Stop';wtSet(0,w);sw=setInterval(()=>{lo+=7;if(lo+w>=1000){wtStop();wtSet(0,1000);return}wtSet(lo,lo+w)},70)};  /* a finished sweep returns to all weights */
 /* ---------------- term map */
 function renderTermMap(){const T=D.tm;let h='';T.e.forEach(e=>{const a=T.p[e[0]],b=T.p[e[1]];h+='<line x1="'+a[0]+'" y1="'+a[1]+'" x2="'+b[0]+'" y2="'+b[1]+'" stroke="#8795a6" stroke-opacity=".34" stroke-width="'+(.5+9*e[2]).toFixed(2)+'" stroke-linecap="round"/>'});
  TAGS.forEach((t,i)=>{const p=T.p[i];h+='<g class="tn" data-t="'+i+'"><circle cx="'+p[0]+'" cy="'+p[1]+'" r="'+T.r[i]+'" fill="'+FAM[T.f[i]][1]+'" fill-opacity=".9" class="'+(t[2]?'ring':'')+'" stroke="none" stroke-width="'+(t[2]?2.2:0)+'"/><title>'+esc(t[0])+' · '+t[1]+' molecules'+(t[2]?' · at the bar':'')+' · click to list them</title></g>'});
@@ -364,7 +365,9 @@ function renderTerms(){renderTermMap();renderBars()}
 /* ---------------- terms */
 function renderBars(){const mx=Math.max(...TAGS.map(t=>t[1]));$('terms').innerHTML=TAGS.map((t,i)=>'<div class="tm" data-t="'+i+'"><span class="n">'+esc(t[0])+'</span><span class="b"><i class="'+(t[2]?'':'low')+'" style="width:'+Math.max(1,t[1]/mx*100)+'%"></i><u style="left:'+30/mx*100+'%"></u></span><span class="c">'+t[1]+'</span></div>').join('')}
 /* ---------------- wiring */
-function setView(v){st.view=v;st.cmode=v==='mw'?st.wcol:'fam';tweenStop();st.mt=0;if(v!=='mw')wtStop();document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));
+function setView(v){st.view=v;st.cmode=v==='mw'?st.wcol:'fam';tweenStop();st.mt=0;
+ /* the weight band and its sweep are a lens of the Weight map: leaving the map clears them, so no band filters another view unseen */
+ if(v!=='mw'){wtStop();if(st.mwlo!==null||st.mwhi!==null){st.mwlo=st.mwhi=null;$('wtlo').value=0;$('wthi').value=1000;st.shown=80;refilter()}}document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));
  const sec={table:'v-table',map:'v-map',mw:'v-map',terms:'v-terms'};['v-table','v-map','v-terms'].forEach(x=>$(x).hidden=x!==sec[v]);$('bar').style.display=v==='terms'?'none':'flex';$('active').style.display=v==='terms'?'none':'flex';
  if(v==='map'||v==='mw')renderMap();if(v==='mw')tweenTo(st.mix);if(v==='table')renderTable();if(v==='terms')renderTerms()}
 function update(){st.shown=80;refilter();if(st.view==='table')renderTable();if(st.view==='map'||st.view==='mw')renderMap()}
