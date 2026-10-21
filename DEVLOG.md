@@ -198,6 +198,12 @@ name-only 46 -> 17.** Release and `corpus.html` rebuilt from a clean tree and pu
 Later 10-21: PubChem 3D conformers and properties for the 26 new structures fetched on Hetzner, page rebuilt and pushed (`bf0cdca`): 1,560 of the 1,678
 structures now have a 3D model.
 
+**2026-10-21 (log — the molecule card, v0; see the last entry):** Mike asked for a molecule card designed web2 first, with two kinds of field: static
+(written on chain) and computed (by the contract or the user's browser). Draft schema: `reports/molecule-card-v0.md` (corpus-level and molecule-level stored
+fields, computed fields, sizes, open questions for the contract); Ivan sent it to Mike. The corpus page now shows that card for every molecule, the formula,
+mass and odour tags computed in the browser (checked against PubChem and the release). **No data changed; 1,695 molecules, 24 of 67.** Waiting on Mike's
+answers to the contract questions.
+
 **Emails were READY (09-27):** preview live at https://vanpez.github.io/openscent/ (GitHub Pages,
 master /docs), linked in all three drafts, signed Ivan Pezzini. outreach/ and the shop lists
 (corpus/hekserij, corpus/olfatorium) are now LOCAL ONLY (gitignored; still in git history).
@@ -6349,3 +6355,48 @@ a reading went in only with a witness, and each `rewrites.json` entry (J2-J26) n
 - `docs/corpus.html` rebuilt (3.01 MB), page JavaScript passes `node --check`. Commit `bf0cdca`, pushed with Ivan's OK ("Push"); the live page serves it.
 - Open, unchanged: the paper (v0.4 quotes 1,705); freeze and tag v1.0; root README refresh; the options doc; linking `corpus.html` from the public pages;
   Mike's reference MolNFT v2 contract; the 53 "approve-no-tag" rows; OCR-damaged verbatim labels; no 2D structure drawing. This entry is not committed.
+
+## 2026-10-21 (evening) — the molecule card, v0: schema draft and a card on the corpus page
+
+### Why
+
+Mike asked for a molecule card designed web2 first, before the MolNFT v2 contract: fields of two kinds, **static** (the facts written on chain) and
+**computed** (derived by the contract or in the user's browser), on the principle "write the formula, compute the mass". Ivan sent him the draft below with
+the questions for the contract.
+
+### The schema: `reports/molecule-card-v0.md` (new)
+
+- Three levels: corpus-level stored once (release, licence CC0, the descriptor -> tag table, the tag list, a source registry, optionally a shared sentence
+  store), molecule-level stored per token (structure, names as printed, structure provenance, evidence, PubChem CID as a link), computed (formula, mass,
+  InChIKey, logP, 2D and 3D, odour tags, counts, tags at the bar, scent-map position).
+- The root stored field is the SMILES, not the formula: a formula does not identify a molecule (C10H18O is linalool, geraniol, alpha-terpineol and
+  1,8-cineole alike). The description is the verbatim sentences only (extract, never generate). The 17 name-only molecules get no token.
+- Sizes measured on `release/v1.0`: SMILES 38 kB for 1,678 molecules; names 45 kB, other spellings 51 kB; 2,353 distinct sentences 318 kB behind 4,399
+  evidence rows; spans and tags 179 kB; the tag table 7.8 kB. About 0.6 MB of static text, most of it sentences that several molecules share.
+- Open questions for the contract: per-token storage or a shared sentence store; whether to store the InChIKey anyway to refuse duplicates; which
+  computations go in the contract; field limits and cost per byte; corrections after minting (immutable, versioned or a new token); licence and citation
+  format.
+
+### The card on the corpus page (`pipeline/corpus_page_build.py`, `docs/corpus.html`)
+
+- Each molecule's detail panel is now the card: a **Stored** block (structure, names, provenance, evidence count, PubChem link), a **Computed** block, and the
+  evidence below it labelled as stored. Every computed line says where it was computed.
+- In the browser, with no library (the page stays one file with no network calls): the formula and mass from the SMILES (a small parser: organic subset
+  with implicit hydrogens, bracket atoms with H count, charge and isotope, branches, ring closures, bond symbols, multi-part salts, aromatic lowercase;
+  IUPAC 2007 atomic weights, Ge and Se updated), and the odour tags from the descriptor words with `ontology/odor_terms.tsv` (130 surface forms).
+- Checked in node against the release before it went on the page: the same formula as PubChem for all 1,647 molecules with a PubChem record; the mass
+  within PubChem's own precision for 1,643 (the other 4 are PubChem's one-decimal rounding); the tag table reproduces all 4,399 evidence tags. No
+  structure fails to parse. The first run caught a parser bug (a stereo atom such as `[C@@H]` lost its hydrogen), fixed before anything was built.
+- Still computed elsewhere, and labelled so: the InChIKey (the release build), XLogP3 and the 3D model (PubChem).
+- Checked in the browser pane (local server, stopped afterwards): Ethylvanillin (the schema's example: formula and mass equal PubChem's), a salt
+  (Sodium Diacetate: the formula sums the parts), Terpineol (name-only: "no token", tags still computed), the two rewritten structures X1 and J24; console
+  clean; page JavaScript passes `node --check`.
+- The tag table is read from `ontology/`, not from `release/v1.0`: as corpus-level stored data it should join the release at the freeze.
+
+### State and open
+
+- No data, release or `status.py` figure changed: 1,695 molecules, 1,678 with a structure, 24 of 67.
+- Open: Mike's answers on the contract; the tag table into the release at the freeze; the paper (v0.4 still quotes 1,705); freeze and tag v1.0; root
+  README refresh; the options doc; linking `corpus.html` from the public pages; the 53 "approve-no-tag" rows; OCR-damaged verbatim labels.
+- Git: the card commit and the commit carrying this entry, pushed with Ivan's OK ("yes log commit push").
+
