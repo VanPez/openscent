@@ -28,10 +28,15 @@ never blended:
                   `repairs`. Checked against other spellings of the same molecule (see below)
     rewrite       a hand-authorised rewrite (REWRITE below): Ivan said how the span is to be read
                   (an "X of Y" phrase written out, an OCR slip repaired, a trade name pinned to a
-                  structure). The span in the corpus stays verbatim; the rewrite and its reason live here
+                  structure). The span in the corpus stays verbatim; the rewrite and its reason live here.
+                  It outranks every mechanical tier, the verbatim parse included (2026-10-21)
     stereo_dropped  OPSIN could not read the stereo (alpha/beta locants) — structure is FLAT.
                   A less specific claim than the name, never a different one
     unresolved    OPSIN cannot read it: trivial/trade names -> stage 2 (PubChem, on Hetzner)
+
+A mechanical tier never accepts a DISCONNECTED parse (SMILES with "."): a name stands for one molecule, so "A.B"
+is a misreading (2026-10-21: "Camphor-2,3-dihydropyrazine" -> camphor + a pyrazine). Such names are refused and
+listed in the report; a rewrite is the way to give them a structure.
 
 The repairs are normalisation of extracted text, not invention (REVIEW-RULES: "OPSIN will not
 parse the phrase, so linkage has to rewrite it ... that is normalisation of extracted text").
@@ -339,14 +344,20 @@ def run() -> None:
     for r in raws:
         rec[r] = {"raw": r, "tier": "unresolved", "attempt": None, "repairs": [], "smiles": None, "inchikey": None}
 
+    disconnected = {}                            # raw -> the two-or-more-molecule SMILES a mechanical tier refused
+
     def settle(todo, make, tier, **kw):
         res = resolve_batch(java, [make(r)[0] for r in todo], **kw)
         left = []
         for r in todo:
             s, used = make(r)
-            if s in res:
+            # A name stands for ONE molecule. A disconnected parse ("A.B") is a misreading, not a structure
+            # (2026-10-21: "Camphor-2,3-dihydropyrazine" came out as camphor + a pyrazine): refuse it, report it.
+            if s in res and "." not in res[s][0]:
                 rec[r].update(tier=tier, attempt=s, repairs=used, smiles=res[s][0], inchikey=res[s][1])
             else:
+                if s in res:
+                    disconnected[r] = res[s][0]
                 left.append(r)
         return left
 
@@ -354,12 +365,12 @@ def run() -> None:
     fmt = lambda r: repair(" ".join(r.split()), FORMATTING)
     ocr = lambda r: repair(" ".join(r.split()), FORMATTING + OCR)
 
-    left = settle(sorted(raws), collapse, "verbatim")
-    print(f"  verbatim        {len(raws) - len(left):>5}")
-    # A hand-authorised rewrite outranks the mechanical repairs: hold those names back from the formatting and OCR
-    # passes, or an OCR reading that is valid but wrong would win (A5, 2026-10-03: "Z-" read as a stereodescriptor).
-    held = [r for r in left if " ".join(r.lower().split()) in REWRITE]
-    left = [r for r in left if r not in held]
+    # A hand-authorised rewrite outranks every mechanical tier: hold those names back from all of them, or a reading
+    # that parses but is wrong would win — an OCR repair (A5, 2026-10-03: "Z-" read as a stereodescriptor) or even the
+    # verbatim parse (2026-10-21: two spans OPSIN read as two molecules each).
+    held = [r for r in sorted(raws) if " ".join(r.lower().split()) in REWRITE]
+    left = settle([r for r in sorted(raws) if r not in held], collapse, "verbatim")
+    print(f"  verbatim        {len(raws) - len(held) - len(left):>5}")
     n = len(left); left = settle(left, fmt, "formatting"); print(f"  formatting      {n - len(left):>5}")
     n = len(left); left = settle(left, ocr, "ocr"); print(f"  ocr             {n - len(left):>5}")
     left += held
@@ -379,6 +390,10 @@ def run() -> None:
     print(f"  rewrite         {n - len(left):>5}")
     n = len(left); left = settle(left, ocr, "stereo_dropped", drop_stereo=True); print(f"  stereo_dropped  {n - len(left):>5}")
     print(f"  unresolved      {len(left):>5}   (stage 2: PubChem name lookup, on Hetzner)")
+    refused = {r: s for r, s in disconnected.items() if rec[r]["tier"] == "unresolved"}
+    print(f"  (of those, refused as two or more molecules: {len(refused)})")
+    for r, s in sorted(refused.items()):
+        print(f"      {r!r} -> {s}")
 
     # one record per KEY. A key can have several spellings; the best tier wins, disagreement is flagged.
     order = ["verbatim", "formatting", "ocr", "rewrite", "stereo_dropped", "unresolved"]

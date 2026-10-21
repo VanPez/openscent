@@ -1005,6 +1005,20 @@
    "raw": "acetaldehyde ethyl 6-dihydrolinalyl acetal",
    "reading": "3-(1-ethoxyethoxy)-3,7-dimethyloct-1-ene",
    "why": "functional-class acetal name (IUPAC 2013 P-66.6.5.1.1: aldehyde, O-substituents, 'acetal'); the 6-dihydrolinalyl part is read from US4424146A itself: it makes compound (II) from 6-dihydrolinalool and ethyl vinyl ether with a trace of HCl (gives the 1-ethoxyethyl acetal on the alcohol O), compares it with the linalyl (I), tetrahydrolinalyl (III) and dehydrolinalyl (IV) acetals (so '6-dihydro' = only the 6,7 double bond saturated), and calls it an intermediate to 5,9-dimethyl-4-decenal (needs the vinyl group kept). PubChem (on Hetzner, 2026-10-20): 6,7-dihydrolinalool = 3,7-dimethyloct-1-en-3-ol (CID 86748); the reading is CID 163400 (CAS 84029-93-6), same InChIKey as OPSIN; the patent name is not among its synonyms. The patent's drawing (STR2) is not in our text. Checked by Joe 2026-10-20. Approved by Ivan 2026-10-20"
+  },
+  {
+   "id": "X1",
+   "strength": "S",
+   "raw": "Camphor-2,3-dihydropyrazine",
+   "reading": "1,11,11-trimethyl-3,6-diazatricyclo[6.2.1.0^{2,7}]undeca-2,6-diene",
+   "why": "OPSIN read the span as two molecules (camphor + 2,3-dihydropyrazine). US3954794A makes the compound by condensing camphorquinone with an alpha-diamine; this one is formula I with R1 = R2 = H (ethylenediamine): the dihydropyrazine fused to the bornane at C2-C3, C12H18N2. PubChem CID 14137296 has the same InChIKey (VWJUQEIQVYRBDM). Flat: the patent's [alpha]D +9.4 shows one enantiomer, but the name does not say which. Approved by Ivan 2026-10-21"
+  },
+  {
+   "id": "X2",
+   "strength": "S",
+   "raw": "2 hydroxy-4-isopropenyl-1-methylbicyclo[3.1.0] hexane acetate",
+   "reading": "1-methyl-4-(prop-1-en-2-yl)bicyclo[3.1.0]hexan-2-yl acetate",
+   "why": "OPSIN read the span as two molecules (the 2-ol + acetic acid). US3510510A gets it, beside 3(10)-caren-4-ol acetate, by dehydrating trans-3,4-caranediol 4-acetate, so it is C12H18O2: the acetate ESTER of the 2-hydroxy compound. PubChem CID 14056221 has the same InChIKey (DVVDCRPFKOVVKO). Approved by Ivan 2026-10-21"
   }
  ]
 }
