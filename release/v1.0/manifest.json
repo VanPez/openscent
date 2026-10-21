@@ -1,24 +1,24 @@
 {
  "version": "1.0-candidate",
- "built_at_utc": "2026-10-20T11:42:25+00:00",
- "git_head": "cfa70a1190bdd81e6a6efe8baa07568778e0cc91",
+ "built_at_utc": "2026-10-21T09:43:13+00:00",
+ "git_head": "ad6f25bb39785c69068f34a51cc376db003fe792",
  "tracked_files_modified_at_build": 0,
  "scope": "CC0 corpus only; the licensed layer, retired rows, rejected and undecided rows are not included",
  "counts": {
-  "molecules": 1705,
-  "molecules_with_structure": 1659,
-  "molecules_connectivity_only": 1620,
-  "structure_direct": 1522,
-  "structure_hand_derived": 137,
-  "molecules_name_only": 46,
-  "evidence_rows": 4420,
+  "molecules": 1695,
+  "molecules_with_structure": 1678,
+  "molecules_connectivity_only": 1639,
+  "structure_direct": 1517,
+  "structure_hand_derived": 161,
+  "molecules_name_only": 17,
+  "evidence_rows": 4399,
   "evidence_by_source_type": {
-   "cameo": 401,
-   "hsdb": 1018,
-   "niosh": 180,
-   "osha": 191,
+   "cameo": 399,
+   "hsdb": 1015,
+   "niosh": 179,
+   "osha": 190,
    "patent-passage": 16,
-   "patent-sentence": 2605,
+   "patent-sentence": 2591,
    "patent-targeted": 9
   },
   "terms_at_bar": 24,
@@ -52,20 +52,20 @@
   "woody"
  ],
  "status_py_headline": {
-  "COMBINED": "COMBINED   24 of 67   1705 molecules",
+  "COMBINED": "COMBINED   24 of 67   1695 molecules",
   "at_the_bar": "AT THE BAR (24):\n  acid, aldehydic, amber, animalic, aromatic, camphoraceous, citrus, earthy, fatty, floral, fresh, fruity, green, herbal, lily, mint, musk, musty, powdery, pungent, rose, spicy, sweet, woody"
  },
  "inputs_sha256": {
-  "corpus/rows/review.jsonl": "25b7a649e623ee31250bf5a15ef3d15dbeaea281c9dbd63fcbd7cdef2248c383",
-  "corpus/rows/pubchem-rows.jsonl": "306f5309d29b278d258b035605a818dfc209f1c8fa07b4be6b1dd77c7e81b63c",
-  "corpus/rows/pubchem-physdesc-rows.jsonl": "ca8b35fffe06c51239ec7fa14d45e7e86e5aead05763c99ccf4b285b1e6d0cd9",
+  "corpus/rows/review.jsonl": "a05d9c74b0279e13441720bdc7fe1da2301839d983e1ec54ec3ba2a989f139a9",
+  "corpus/rows/pubchem-rows.jsonl": "dda2396e161c6628c8730a57e59d716be7cec625ad451a2f4e1cbf0d4ce92648",
+  "corpus/rows/pubchem-physdesc-rows.jsonl": "18a44a34897ef0035e61c33c02e2d10eb02925033aefad70d7cdb30600c94ed8",
   "corpus/rows/passage-rows.jsonl": "3159c027fa8b3a895ceed2d87aa8de622ac17c318335a58a0148bced1c1fa6d8",
   "corpus/rows/targeted-rows.jsonl": "a218707306212eb2a588666ad35d83e308c8401bee775ad45adf825a9e6c731f",
   "corpus/rows/exclusions.jsonl": "030a058082e3554f479ae41af54e63f138e202187c0dc7a37d4bca8b5d989483",
-  "corpus/structures/names.jsonl": "aa855cba25c6bb18acd8314b6d3abd590654f7626584ca7cff5f5dd36db6f1e4",
+  "corpus/structures/names.jsonl": "fcc049437e87fa2b9cae7c430233c149ee0d63c59d4f677e05b67c3a5194fbf1",
   "corpus/structures/pubchem-names.json": "0d237141f728bc30baa4b595686abc447b4980830715489e05c2cccb1ea28156",
   "corpus/raw-pubchem/smiles.json": "a12ef512cf1e82d9d4e6edeeb6fed1486eefe07459d7490f9c18a50d8697afbf",
-  "corpus/structures/rewrites.json": "3fcf97e5e7cdf75e2840f59d4be9efa70e30f89c7f634fe343809aae75510310",
+  "corpus/structures/rewrites.json": "ca201690063e92f04e4fdd96fe557cb7afaca5054c3d465e8de19bb409d8ec0d",
   "ontology/odor_terms.tsv": "584956deaf19b12f4fd0a1a2b2dee2e9a7d0a0d14d29b1a9c062607cf7d1403b"
  }
 }

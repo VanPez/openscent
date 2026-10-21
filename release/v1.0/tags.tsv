@@ -1,28 +1,28 @@
 tag	molecules_v1_0	at_bar_30	surface_forms
-pungent	300	yes	pungent
+pungent	299	yes	pungent
 sweet	290	yes	sweet
 fruity	268	yes	dried fruit;fruit;fruits;fruity
-floral	245	yes	apple blossom;floral;flower;flowers;flowery;orange blossom
-green	226	yes	grassy;green;leafy
-aromatic	189	yes	aromatic
+floral	244	yes	apple blossom;floral;flower;flowers;flowery;orange blossom
+green	225	yes	grassy;green;leafy
+aromatic	187	yes	aromatic
 woody	181	yes	wood;woody
 fresh	97	yes	fresh;freshness;refreshing
-musk	84	yes	musk;musk-like;musklike;musks;musky
+musk	83	yes	musk;musk-like;musklike;musks;musky
 spicy	83	yes	peppery;spice;spicey;spicy
 mint	80	yes	menthol;mint;minty;peppermint
-rose	71	yes	rose;rose-like;roses;rosey;rosy
-citrus	70	yes	citrus;citrus-like;citrusy
-lily	64	yes	lily;lily of the valley;lily of valley;lily-of-the-valley;lily-of-the-valley-like;muguet
+rose	70	yes	rose;rose-like;roses;rosey;rosy
+citrus	69	yes	citrus;citrus-like;citrusy
 herbal	63	yes	herb;herbaceous;herbal;herby
-camphoraceous	62	yes	camphery;camphor;camphoraceous
+lily	62	yes	lily;lily of the valley;lily of valley;lily-of-the-valley;lily-of-the-valley-like;muguet
+camphoraceous	61	yes	camphery;camphor;camphoraceous
 earthy	58	yes	earthy;rooty
 fatty	55	yes	fatty
-musty	47	yes	musty
+musty	46	yes	musty
 amber	44	yes	amber;ambery
 powdery	41	yes	dusty;powder;powdery
 acid	36	yes	acid
 animalic	34	yes	animal;animalic;animalistic
-aldehydic	33	yes	aldehyde;aldehydic
+aldehydic	32	yes	aldehyde;aldehydic
 sandalwood	28	no	sandal;sandalwood
 tobacco	28	no	tobacco;tobaccos
 anisic	26	no	anis;anise;aniseed;anisic
@@ -52,8 +52,8 @@ patchouli	12	no	patchouli
 pear	12	no	pear
 violet	12	no	violet
 clean	11	no	clean
-waxy	11	no	waxy
 lemon	10	no	lemon;lemony
+waxy	10	no	waxy
 peach	9	no	peach
 soft	9	no	soft
 vanilla	9	no	vanilla
