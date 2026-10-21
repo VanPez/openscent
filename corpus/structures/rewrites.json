@@ -1019,6 +1019,181 @@
    "raw": "2 hydroxy-4-isopropenyl-1-methylbicyclo[3.1.0] hexane acetate",
    "reading": "1-methyl-4-(prop-1-en-2-yl)bicyclo[3.1.0]hexan-2-yl acetate",
    "why": "OPSIN read the span as two molecules (the 2-ol + acetic acid). US3510510A gets it, beside 3(10)-caren-4-ol acetate, by dehydrating trans-3,4-caranediol 4-acetate, so it is C12H18O2: the acetate ESTER of the 2-hydroxy compound. PubChem CID 14056221 has the same InChIKey (DVVDCRPFKOVVKO). Approved by Ivan 2026-10-21"
+  },
+  {
+   "id": "J2",
+   "strength": "S",
+   "raw": "alpha-ionylideneethane",
+   "reading": "1,5,5-trimethyl-6-[(1E,3Z)-3-methylpenta-1,3-dien-1-yl]cyclohex-1-ene",
+   "why": "US20240352490A1 defines it: 'E,Z alpha-ionylideneethane=1,5,5-trimethyl-6-[(1E,3Z)-3-methyl-penta-1,3-dienyl]cyclohexene'. Proposed by Joe (flat); the patent's double-bond geometry kept. Approved by Ivan 2026-10-21"
+  },
+  {
+   "id": "J3",
+   "strength": "S",
+   "raw": "Cineole",
+   "reading": "1,3,3-trimethyl-2-oxabicyclo[2.2.2]octane",
+   "why": "the row's own sentence: 'Cineole, including 1.8-Cineole or Eucalyptol ... the main component in oil of eucalyptus' -> 1,8-cineole (PubChem CID 2758). Approved by Ivan 2026-10-21"
+  },
+  {
+   "id": "J4",
+   "strength": "S",
+   "raw": "8-drimanol",
+   "reading": "1,2,5,5,8a-pentamethyldecahydronaphthalen-2-ol",
+   "why": "standard drimane name: OH and methyl on C8 of the drimane decalin; flat: the patents' stereo is in a drawing (1a) not in our text. PubChem CID 15241251. Proposed by Joe. Approved by Ivan 2026-10-21"
+  },
+  {
+   "id": "J5",
+   "strength": "S",
+   "raw": "4-ethyl 6,6,9,9-tetramethyl 6,7,8,9-tetrahydro a-naphthindan-3- one",
+   "reading": "4-ethyl-6,6,9,9-tetramethyl-1,2,7,8-tetrahydrocyclopenta[a]naphthalen-3-one",
+   "why": "obsolete fused-ring name (naphthindanone / hydrindacenone, US2815381A / US2815382A); the modern name keeps every locant; the same compound is NCI record NSC-19555 (CID 227654) in PubChem; the patent's synthesis fits. Proposed by Joe. Approved by Ivan 2026-10-21"
+  },
+  {
+   "id": "J6",
+   "strength": "S",
+   "raw": "4,6,6,7,7,8,8-heptamethyl as-hydrindacen-3-one",
+   "reading": "4,6,6,7,7,8,8-heptamethyl-1,2-dihydro-as-indacen-3-one",
+   "why": "obsolete fused-ring name (naphthindanone / hydrindacenone, US2815381A / US2815382A); the modern name keeps every locant; the same compound is NCI record NSC-19553 (CID 227653) in PubChem; the patent's synthesis fits. Proposed by Joe. Approved by Ivan 2026-10-21"
+  },
+  {
+   "id": "J7",
+   "strength": "S",
+   "raw": "4-isopropyl 6,6,9,9-tetramethyl 6,7,8,9-tetrahydro a-naphthindan-3- one",
+   "reading": "6,6,9,9-tetramethyl-4-(propan-2-yl)-1,2,7,8-tetrahydrocyclopenta[a]naphthalen-3-one",
+   "why": "obsolete fused-ring name (naphthindanone / hydrindacenone, US2815381A / US2815382A); the modern name keeps every locant; the same compound is NCI record NSC-19556 (CID 227655) in PubChem; the patent's synthesis fits. Proposed by Joe. Approved by Ivan 2026-10-21"
+  },
+  {
+   "id": "J8",
+   "strength": "M",
+   "raw": "lanceol",
+   "reading": "2-methyl-6-(4-methylcyclohex-3-en-1-yl)hepta-2,6-dien-1-ol",
+   "why": "not printed in our text: US3658925A makes lanceol from metalated limonene, which fits 2-methyl-6-(4-methylcyclohex-3-en-1-yl)hepta-2,6-dien-1-ol (flat; PubChem CID 529890, no 'lanceol' synonym). Proposed by Joe; probable, not certain. Approved by Ivan 2026-10-21"
+  },
+  {
+   "id": "J9",
+   "strength": "S",
+   "raw": "Methoxyelgenol",
+   "reading": "7-methoxy-3,7-dimethyloctan-2-ol",
+   "why": "PubChem lists 'Methoxyelgenol' as a synonym of CID 162053 (7-methoxy-3,7-dimethyloctan-2-ol); US3963648A makes it by Raney-nickel hydrogenation, IR 3500 (OH) and 1090 (ether). Not methoxyeugenol (a phenol), which one proposal suggested. Approved by Ivan 2026-10-21"
+  },
+  {
+   "id": "J10",
+   "strength": "S",
+   "raw": "5-methyl-6-pentyl-tetrahydro-alpha-pyrone (4-methyl-5-decanolide)",
+   "reading": "5-methyl-6-pentyloxan-2-one",
+   "why": "the span's two names are one compound: 4-methyl-5-decanolide = 5-methyl-6-pentyltetrahydropyran-2-one (PubChem CID 19793794). Proposed by Joe. Approved by Ivan 2026-10-21"
+  },
+  {
+   "id": "J11",
+   "strength": "S",
+   "raw": "α-methyl-γ-ethyl-γ-methyl-γ-1-propenyl-δ-valerolactone",
+   "reading": "4-ethyl-3,5-dimethyl-5-(prop-1-en-1-yl)oxan-2-one",
+   "why": "'gamma-ethyl' in the sentence is a slip: US20060258559A1 Example 4 makes formula (II) as 'alpha-methyl-beta-ethyl-gamma-methyl-gamma-1-propenyl-delta-valerolactone' from propanal, MS 196 (M+). PubChem CID 68440004. Approved by Ivan 2026-10-21"
+  },
+  {
+   "id": "J12",
+   "strength": "S",
+   "raw": "Nojigiku alcohol",
+   "reading": "2,2-dimethyl-3-methylidenebicyclo[2.2.1]heptan-5-ol",
+   "why": "US4510025A defines it: '2,2-Dimethyl-3-methylenebicyclo[2.2.1]heptan-5-ol ... known as nojigiku alcohol' (flat; PubChem CID 526611). Approved by Ivan 2026-10-21"
+  },
+  {
+   "id": "J13",
+   "strength": "S",
+   "raw": "4,6,6,8,8-pentamethyl as-hydrindacen-3-one",
+   "reading": "4,6,6,8,8-pentamethyl-2,7-dihydro-1H-as-indacen-3-one",
+   "why": "obsolete fused-ring name (naphthindanone / hydrindacenone, US2815381A / US2815382A); the modern name keeps every locant; the same compound is NCI record NSC-19543 (CID 227644) in PubChem; the patent's synthesis fits. Proposed by Joe. Approved by Ivan 2026-10-21"
+  },
+  {
+   "id": "J14",
+   "strength": "S",
+   "raw": "(1R,3S,5R,7R,8R,10S,13R)-5,7,9,9,9,13-pentamethyl-5-propyl-4,6-dioxatetracyclo[6.5.1.0 1,10 .0 3,7 ]tetradecane",
+   "reading": "(1R,3S,5R,7R,8R,10S,13R)-5,7,9,9,13-pentamethyl-5-propyl-4,6-dioxatetracyclo[6.5.1.0^{1,10}.0^{3,7}]tetradecane",
+   "why": "'5,7,9,9,9,13' is a slip (six locants for pentamethyl, three methyls on C9): the same sentence prints the 5S epimer as 5,7,9,9,13. PubChem CID 68031391. Proposed by Joe. Approved by Ivan 2026-10-21"
+  },
+  {
+   "id": "J15",
+   "strength": "S",
+   "raw": "pinoacetaldehyde",
+   "reading": "3-(6,6-dimethylbicyclo[3.1.1]hept-2-en-2-yl)propanal",
+   "why": "US3716498A defines it: '6,6-dimethyl bicyclo[3.1.1]hept-2-ene-2-propanal (hereinafter referred to as pinoacetaldehyde)' (PubChem CID 118111). Approved by Ivan 2026-10-21"
+  },
+  {
+   "id": "J16",
+   "strength": "S",
+   "raw": "5,5,8 ,8-tetramethyl 5,6,7,8-tetrahydro fi-naphthind'an-l-one",
+   "reading": "5,5,8,8-tetramethyl-1,2,6,7-tetrahydrocyclopenta[b]naphthalen-3-one",
+   "why": "obsolete fused-ring name (naphthindanone / hydrindacenone, US2815381A / US2815382A); the modern name keeps every locant; the same compound is NCI record CAS 102296-82-2 (CID 23286588) in PubChem; the patent's synthesis fits. Proposed by Joe. Approved by Ivan 2026-10-21"
+  },
+  {
+   "id": "J17",
+   "strength": "S",
+   "raw": "4,6,6,9-tetramethyl 6,7,8,9-tetrahydro u-naphthindan-3-one",
+   "reading": "4,6,6,9-tetramethyl-2,7,8,9-tetrahydro-1H-cyclopenta[a]naphthalen-3-one",
+   "why": "obsolete fused-ring name (naphthindanone / hydrindacenone, US2815381A / US2815382A); the modern name keeps every locant; the same compound is NCI record NSC-19544 (CID 227645) in PubChem; the patent's synthesis fits. Proposed by Joe. Approved by Ivan 2026-10-21"
+  },
+  {
+   "id": "J18",
+   "strength": "S",
+   "raw": "(S)-1-(2,2,6-6-Tetramethyl-1-cyclohexyloxy)-2-butanol",
+   "reading": "(2S)-1-[(2,2,6,6-tetramethylcyclohexyl)oxy]butan-2-ol",
+   "why": "'2,2,6-6' is '2,2,6,6' (tetramethyl needs four locants); the (S) is kept. PubChem CID 71418061. Proposed by Joe. Approved by Ivan 2026-10-21"
+  },
+  {
+   "id": "J19",
+   "strength": "S",
+   "raw": "(4,4,6-trimethyl-1,3-cyclohexadien-1-yl)methyl isobutyrate",
+   "reading": "(4,6,6-trimethylcyclohexa-1,3-dien-1-yl)methyl 2-methylpropanoate",
+   "why": "'4,4,6' is a slip (C4 of a 1,3-diene cannot carry two methyls): US6177400B1 Example 3 makes 4,6,6-trimethyl-1,3-cyclohexadiene-1-methanol, the alcohol Example 6 esterifies, and the patent contrasts its 4,6,6 compounds with the 2,6,6 prior art; Example 6 NMR (ring CH2 singlet, 2.0 ppm) fits. PubChem CID 17896984. Approved by Ivan 2026-10-21"
+  },
+  {
+   "id": "J20",
+   "strength": "S",
+   "raw": "(R)-ziza-6(13)-en-12-yl acetate",
+   "reading": "(3R,3aR,6R,8aR)-7,7-dimethyl-8-methylideneoctahydro-1H-3a,6-methanoazulen-3-yl acetate",
+   "why": "US20160280630A1 names it '(3R)-epimer of octahydro-7,7-dimethyl-8-methylene-1H-3a,6-methanoazulene-3-yl acetate', made by reducing khusimone and acetylating 12-nor-ziza-6(13)-en-2beta-ol: C16H24O2, not khusimyl acetate (C17), which one proposal suggested. PubChem CID 117779850. Approved by Ivan 2026-10-21"
+  },
+  {
+   "id": "J21",
+   "strength": "S",
+   "raw": "cyclohexal",
+   "reading": "4-(4-hydroxy-4-methylpentyl)cyclohex-3-ene-1-carbaldehyde",
+   "why": "US10315976B2 defines it: '4(4-hydroxy-4-methylpentyl) 3-cyclohexene carboxaldehyde, otherwise known as cyclohexal (Lyral)' (PubChem CID 91604; the 4-isomer, as named). Approved by Ivan 2026-10-21"
+  },
+  {
+   "id": "J22",
+   "strength": "S",
+   "raw": "huminol",
+   "reading": "8-ethyl-1,5-dimethylbicyclo[3.2.1]octan-8-ol",
+   "why": "US20220125983A1's own table: 'Huminol 8-ethyl-1,5-dimethylbicyclo[3.2.1]octan-8-ol' (PubChem CID 163418, CAS 84681-92-5). Approved by Ivan 2026-10-21"
+  },
+  {
+   "id": "J23",
+   "strength": "S",
+   "raw": "Hydroxysinensal",
+   "reading": "10-hydroxy-2,6,10-trimethyldodeca-2,6,11-trienal",
+   "why": "US3915901A's title: '2,6,10-trimethyl-10-hydroxy-dodeca-2,6,11-trien-1-al' (flat; PubChem CID 71363283). Approved by Ivan 2026-10-21"
+  },
+  {
+   "id": "J24",
+   "strength": "S",
+   "raw": "Spicatone",
+   "reading": "2-methyl-5-(prop-1-en-2-yl)cyclohex-3-en-1-one",
+   "why": "US2918495A: 'spicatone, 5,8(9)-p-menthadiene-2-one' (PubChem CID 12469687). Approved by Ivan 2026-10-21"
+  },
+  {
+   "id": "J25",
+   "strength": "M",
+   "raw": "terranol",
+   "reading": "1,1,5,5-tetramethyloctahydro-8aH-2,4a-methanonaphthalen-8a-ol",
+   "why": "trade name (Symrise): PubChem lists 'Terranol' as a synonym of CID 534931 (CAS 88644-30-8); the patent only names it. Probable, not certain. Approved by Ivan 2026-10-21"
+  },
+  {
+   "id": "J26",
+   "strength": "M",
+   "raw": "Muscenone",
+   "reading": "3-methylcyclopentadec-5-en-1-one",
+   "why": "trade name (Firmenich): 3-methylcyclopentadec-5-en-1-one, flat; the patent says the ingredient comes as several stereoisomers, so the sentence's odour may be that of a mix. Probable, not certain. Approved by Ivan 2026-10-21"
   }
  ]
 }

@@ -13,22 +13,6 @@
 "name": "(-)-thujone"
 },
 {
-"key": "(1r,3s,5r,7r,8r,10s,13r)-5,7,9,9,9,13-pentamethyl-5-propyl-4,6-dioxatetracyclo[6.5.1.0 1,10 .0 3,7 ]tetradecane",
-"name": "(1R,3S,5R,7R,8R,10S,13R)-5,7,9,9,9,13-pentamethyl-5-propyl-4,6-dioxatetracyclo[6.5.1.0 1,10 .0 3,7]tetradecane"
-},
-{
-"key": "(4,4,6-trimethyl-1,3-cyclohexadien-1-yl)methyl isobutyrate",
-"name": "(4,4,6-trimethyl-1,3-cyclohexadien-1-yl)methyl isobutyrate"
-},
-{
-"key": "(r)-ziza-6(13)-en-12-yl acetate",
-"name": "(R)-ziza-6(13)-en-12-yl acetate"
-},
-{
-"key": "(s)-1-(2,2,6-6-tetramethyl-1-cyclohexyloxy)-2-butanol",
-"name": "(S)-1-(2,2,6-6-Tetramethyl-1-cyclohexyloxy)-2-butanol"
-},
-{
 "key": "1-menthol",
 "name": "1-menthol"
 },
@@ -53,48 +37,16 @@
 "name": "4,5-decamethyleneoxazole"
 },
 {
-"key": "4,6,6,7,7,8,8-heptamethyl as-hydrindacen-3-one",
-"name": "4,6,6,7,7,8,8-heptamethyl as-hydrindacen-3-one"
-},
-{
-"key": "4,6,6,8,8-pentamethyl as-hydrindacen-3-one",
-"name": "4,6,6,8,8-pentamethyl as-hydrindacen-3-one"
-},
-{
-"key": "4,6,6,9-tetramethyl 6,7,8,9-tetrahydro u-naphthindan-3-one",
-"name": "4,6,6,9-tetramethyl 6,7,8,9-tetrahydro u-naphthindan-3-one"
-},
-{
 "key": "4-aceto-6,8a-ethano-1,1,6-trimethyl-1,2,3,5,6,7,8,8a-octahydronaphthalene",
 "name": "4-aceto-6,8a-ethano-1,1,6-trimethyl-1,2,3,5,6,7,8,8a-octahydronaphthalene"
-},
-{
-"key": "4-ethyl 6,6,9,9-tetramethyl 6,7,8,9-tetrahydro a-naphthindan-3- one",
-"name": "4-ethyl 6,6,9,9-tetramethyl 6,7,8,9-tetrahydro a-naphthindan-3-one"
 },
 {
 "key": "4-hydroxy-2-nonenoic acid lactone",
 "name": "4-hydroxy-2-nonenoic acid lactone"
 },
 {
-"key": "4-isopropyl 6,6,9,9-tetramethyl 6,7,8,9-tetrahydro a-naphthindan-3- one",
-"name": "4-isopropyl 6,6,9,9-tetramethyl 6,7,8,9-tetrahydro a-naphthindan-3-one"
-},
-{
-"key": "5,5,8 ,8-tetramethyl 5,6,7,8-tetrahydro fi-naphthind'an-l-one",
-"name": "5,5,8,8-tetramethyl 5,6,7,8-tetrahydro fi-naphthind'an-l-one"
-},
-{
-"key": "5-methyl-6-pentyl-tetrahydro-alpha-pyrone (4-methyl-5-decanolide)",
-"name": "5-methyl-6-pentyl-tetrahydro-alpha-pyrone (4-methyl-5-decanolide)"
-},
-{
 "key": "6-n-pentyl-alpha-pyrone",
 "name": "6-n-pentyl-alpha-pyrone"
-},
-{
-"key": "8-drimanol",
-"name": "8-drimanol"
 },
 {
 "key": "8-oxoethyl epicamphene hydrate",
@@ -107,10 +59,6 @@
 {
 "key": "alpha-damascone",
 "name": "alpha-damascone"
-},
-{
-"key": "alpha-ionylideneethane",
-"name": "alpha-ionylideneethane"
 },
 {
 "key": "ambrettolide",
@@ -161,10 +109,6 @@
 "name": "cedryl acetate"
 },
 {
-"key": "cineole",
-"name": "Cineole"
-},
-{
 "key": "cis-rose oxide",
 "name": "cis-rose oxide"
 },
@@ -187,10 +131,6 @@
 {
 "key": "cyclamen aldehyde",
 "name": "cyclamen aldehyde"
-},
-{
-"key": "cyclohexal",
-"name": "cyclohexal"
 },
 {
 "key": "d-menthol",
@@ -261,16 +201,8 @@
 "name": "hexahydro-1,5,5-trimethyl-2H-2,4-a-methanonaphthalene-1(5H)-one"
 },
 {
-"key": "huminol",
-"name": "huminol"
-},
-{
 "key": "humulene",
 "name": "Humulene"
-},
-{
-"key": "hydroxysinensal",
-"name": "Hydroxysinensal"
 },
 {
 "key": "isodamascone",
@@ -297,10 +229,6 @@
 "name": "L-Menthol"
 },
 {
-"key": "lanceol",
-"name": "lanceol"
-},
-{
 "key": "lilial",
 "name": "Lilial"
 },
@@ -315,10 +243,6 @@
 {
 "key": "menthone",
 "name": "Menthone"
-},
-{
-"key": "methoxyelgenol",
-"name": "Methoxyelgenol"
 },
 {
 "key": "methyl cedryl ether",
@@ -341,20 +265,12 @@
 "name": "methyl jasmonate"
 },
 {
-"key": "muscenone",
-"name": "Muscenone"
-},
-{
 "key": "muscone",
 "name": "muscone"
 },
 {
 "key": "myrcene",
 "name": "Myrcene"
-},
-{
-"key": "nojigiku alcohol",
-"name": "Nojigiku alcohol"
 },
 {
 "key": "nortetrapatchoulol",
@@ -371,10 +287,6 @@
 {
 "key": "petal",
 "name": "petal"
-},
-{
-"key": "pinoacetaldehyde",
-"name": "pinoacetaldehyde"
 },
 {
 "key": "pulegone",
@@ -401,20 +313,12 @@
 "name": "S-ethenyl-epi-camphene hydrate"
 },
 {
-"key": "spicatone",
-"name": "Spicatone"
-},
-{
 "key": "tamariscol",
 "name": "Tamariscol"
 },
 {
 "key": "terpineol",
 "name": "Terpineol"
-},
-{
-"key": "terranol",
-"name": "terranol"
 },
 {
 "key": "tetrahydrolinalyl acetate",
@@ -439,10 +343,6 @@
 {
 "key": "violet nitrile",
 "name": "Violet nitrile"
-},
-{
-"key": "α-methyl-γ-ethyl-γ-methyl-γ-1-propenyl-δ-valerolactone",
-"name": "α-methyl-γ-ethyl-γ-methyl-γ-1-propenyl-δ-valerolactone"
 }
 ],
 "check": [
