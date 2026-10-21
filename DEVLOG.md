@@ -4,25 +4,27 @@
 
 ---
 
-## RESUME HERE — state as of 2026-09-26 (end of day), amended through 2026-10-20
+## RESUME HERE — state as of 2026-09-26 (end of day), amended through 2026-10-21
 
-**READ THIS FIRST. The 09-24 blocks below it are superseded.** Live figures (status.py, re-run 2026-10-19: COMBINED = v1.0, the CC0 corpus only; the licensed layer is an add-on row; the 09-26
-figures this block used to show — 27 of 67, 1,829 molecules — are now the by-name-text count):
+**READ THIS FIRST. The 09-24 blocks below it are superseded.** Live figures (status.py, re-run 2026-10-21 after the mixture fixes and rewrites J2-J26: COMBINED = v1.0,
+the CC0 corpus only; the licensed layer is an add-on row; the 09-26 figures this block used to show — 27 of 67, 1,829 molecules — are now the by-name-text count):
 
 ```
-4,676 review rows · 1,136 approve · 1,168 reject · 2 skip · 2,370 undecided
+4,676 review rows · 1,129 approve · 1,175 reject · 2 skip · 2,370 undecided
+excluded    9 pubchem rows retired (3 mixture, 3 attribution, 3 provenance)
 retired    30 approved patent rows (exclusions.jsonl: quoted copyrighted reference works)
 licensed   136 approved descriptor-word rows (licensed/olfatorium-rows.jsonl; Olfatorium, CC BY 4.0) — NOT in COMBINED
            BY STRUCTURE (headline)    connectivity only      name text (old)
-  patents    20 of 67    884 molecules   20 of 67    855 molecules   21 of 67    983 names
-  pubchem     7 of 67    837 molecules    7 of 67    829 molecules    7 of 67    839 names
+  patents    20 of 67    879 molecules   20 of 67    850 molecules   21 of 67    980 names
+  pubchem     7 of 67    833 molecules    7 of 67    825 molecules    7 of 67    835 names
   passage     0 of 67      6 molecules    0 of 67      6 molecules    0 of 67      8 names
   targeted    0 of 67      5 molecules    0 of 67      5 molecules    0 of 67      5 names
   licensed    0 of 67     34 molecules    0 of 67     34 molecules    0 of 67     34 names
-  COMBINED   24 of 67   1705 molecules   24 of 67  1666 molecules   27 of 67  1819 names     <- v1.0
-  w/ licensed 25 of 67  1736 molecules   25 of 67  1696 molecules   27 of 67  1853 names     <- add-on, not v1.0
+  COMBINED   24 of 67   1695 molecules   24 of 67  1656 molecules   27 of 67  1812 names     <- v1.0
+  w/ licensed 25 of 67  1726 molecules   25 of 67  1686 molecules   27 of 67  1846 names     <- add-on, not v1.0
   next: tobacco 28 (needs 2) · sandalwood 28 (needs 2) · apple 26, anisic 26 (need 4) · grapefruit 22 (needs 8) · leather 21 (needs 9)
 verbatim invariant: clean · review queue: 0 PRODUCTIVE
+release/v1.0: 1,695 molecules, 1,678 with a structure, 17 name-only, 4,399 quotes (built at ad6f25b, clean tree)
 ```
 
 **NOTHING IS STAGED.** All 6 proposals of 09-26 decided; all 5 targeted rows decided.
@@ -186,6 +188,13 @@ answers; no date is set.** Replies belong in local notes (`outreach/`), not in t
 (1,705 molecules, 24 of 67: the name was already counted as its own unit). `release/v1.0`: 1,659 with a structure, 46 name-only (was 1,658 / 47); release and
 `corpus.html` rebuilt from a clean tree and pushed. The linalyl acetal row is unchanged (checked: an acetal, no C=O). The 46 name-only molecules are the page's
 "no structure" filter; Joe will look at them.
+
+**2026-10-21 (log — mixtures out, 25 more structures; see the last entry):** the mixture rule had gaps: three patent mixtures written "(E,Z)-7,8-", "4(3)-",
+"6,7,8-" were still approved (now rejected; each patent calls it a mixture), four government-data records were mixtures (retired), a fused two-name span is split,
+and two names OPSIN had read as two molecules each got a structure (X1, X2; `structures.py` now refuses disconnected parses and lets a rewrite outrank the verbatim
+parse). Then Joe's list of proposed structures was checked row by row against the patent texts, OPSIN and PubChem: 25 applied as rewrites J2-J26 (22 strong,
+3 medium: lanceol, terranol, Muscenone); in four rows the patent text gave a different structure from the proposal. **Headline: 1,695 molecules, still 24 of 67;
+name-only 46 -> 17.** Release and `corpus.html` rebuilt from a clean tree and pushed. Next unchanged: freeze and tag v1.0; the paper still quotes 1,705.
 
 **Emails were READY (09-27):** preview live at https://vanpez.github.io/openscent/ (GitHub Pages,
 master /docs), linked in all three drafts, signed Ivan Pezzini. outreach/ and the shop lists
@@ -6261,3 +6270,66 @@ will work from. A grouped list with the reason each is open exists locally (`out
 - Open, unchanged: freeze and tag v1.0; root README refresh (still the 09-05 figures); the options doc (still B and C); whether to link `corpus.html` from
   `preview.html` / `index.html`; Mike's reference MolNFT v2 contract; the 53 "approve-no-tag" rows; OCR-damaged verbatim labels; no 2D structure drawing.
   New: 3D and properties for CID 163400. Closed: the reply to Joe.
+
+## 2026-10-21 — mixtures taken out, 25 more structures from Joe's proposals, release rebuilt
+
+### 1. Mixtures left in v1.0 (Ivan: "apply"; review.html confirmed closed)
+
+The mixture rule (REVIEW-RULES: if the odour is attributed to a mixture, there is no row) was applied on 10-03 only to names the flagger caught ("E/Z",
+"A or B"). A check of v1.0 for multi-part structures and mixture wording found the rest. Each change was measured on a scratch copy of the repo first (the
+real pipeline: `structures.py`, `--todo`, `--merge`, `status.py`, `release_build.py --out`); a control run with no edits reproduced the release exactly.
+
+| # | what | done |
+|---|---|---|
+| A1-A3 | `(E,Z)-7,8-cyclohexadecenone` (US20050137120A1: "Mixture of (E,Z)-7- and (E,Z)-8-Cyclohexadecen-1-one"), `4(3)-(4-hydroxy-4-methylpentyl)-3-cyclohexene-1-carbonitrile` (US20140349901A1: the name "denotes a mixture of both isomers"), `6,7,8-Decene-1ol` (US20130165532A1: "Mixture of 6-Decene-1-ol, 7-Decene-1-ol, and 8-Decene-1-ol") | 7 review rows rejected (10-03 convention: old values in `review_note`) |
+| B | `4-cyclopentyl-2-methyl-2-butanol, 3-cyclopentyl-1,1-dimethylpropyl acetate`: one span fusing two of the three compounds its sentence describes | split into the two names (not a mixture) |
+| C1-C4 | Xylidine (six isomers in one record), Nitroanilines, Dowtherm A (biphenyl + diphenyl ether; its NIOSH row was already rejected 09-24), the dichloropropane-dichloropropene mixture | 3 pubchem rows `excluded` (category "mixture"), 4 Physical Description rows rejected |
+| X1, X2 | `Camphor-2,3-dihydropyrazine` (US3954794A) and `2 hydroxy-4-isopropenyl-1-methylbicyclo[3.1.0] hexane acetate` (US3510510A): OPSIN read each as TWO molecules (camphor + a pyrazine; the alcohol + acetic acid), trusted as "read directly" | rewrites to the single compounds the patents make (PubChem CIDs 14137296, 14056221) |
+
+- `pipeline/apply_mixture_decisions.py` (new): report-only by default, `--write` takes timestamped backups; rows found by content, each file written in
+  its own JSON style (proven on an untouched row first).
+- `pipeline/structures.py`: a rewrite now outranks every mechanical tier, the verbatim parse included (checked: no earlier rewrite affected); a mechanical
+  tier refuses a disconnected parse (SMILES with ".") and the report lists it (this run: 0; X1 and X2 were the only two).
+- `structures.py --merge` raises a KeyError if `--todo` is not re-run after rows leave the approved set; `--todo` was re-run (the work list went from 263
+  to 111 names: names resolved since 10-03 dropped off).
+- Effect: 1,705 -> 1,698 molecules, 24 of 67 unchanged; aldehydic 33 -> 32 (still at the bar), aromatic 189 -> 187, citrus 70 -> 69, floral 245 -> 244,
+  green 226 -> 225, lily 64 -> 63, musk 84 -> 83, musty 47 -> 46, pungent 300 -> 299, rose 71 -> 70, waxy 11 -> 10. Commit `409d397`.
+- The other 40 multi-part structures in v1.0 are salts or metal compounds (one substance each) and stay. Not checked: generic names whose product is an
+  isomer mix (Terpineol) and racemates; the rule applies when the source says "mixture".
+
+### 2. Structures for the name-only molecules (Ivan: "apply all")
+
+Joe sent proposed structures for the name-only molecules. Every proposal was checked against the patent text (on Hetzner), OPSIN and PubChem (via Hetzner);
+a reading went in only with a witness, and each `rewrites.json` entry (J2-J26) names its witness and credits Joe where the structure was his.
+
+- **22 strong:** the patent defines the name in words (alpha-ionylideneethane, Nojigiku alcohol, pinoacetaldehyde, cyclohexal, huminol, Hydroxysinensal,
+  spicatone); the same sentence or patent prints the right spelling (the tetracyclic acetal's "9,9,9" is the 5S epimer's "9,9,13" in the same sentence; the
+  valerolactone is "alpha-methyl-beta-ethyl-..." in the patent's Example 4, MS 196; the cyclohexadienyl isobutyrate is 4,6,6 per Examples 3 and 6 and their
+  NMR); the six obsolete naphthindanone / hydrindacenone musk names map locant for locant onto NCI records NSC-19543 to 19556 and CAS 102296-82-2; a PubChem
+  synonym plus consistent patent data (Methoxyelgenol = 7-methoxy-3,7-dimethyloctan-2-ol); the row's own sentence (Cineole: "including 1.8-Cineole or
+  Eucalyptol"); a plain typo (2,2,6-6 -> 2,2,6,6); a standard skeleton name (8-drimanol, flat); and the pyrone, whose two names are one compound.
+- **3 medium** (Ivan accepted; marked "probable, not certain"): lanceol, terranol, Muscenone.
+- **In four rows the patent text gave a different structure from the proposal**, and the patent's was used: Methoxyelgenol (not methoxyeugenol, a phenol),
+  the ziza acetate (US20160280630A1 makes the C16 ring acetate from khusimone, not C17 khusimyl acetate), the valerolactone (beta-ethyl, not a moved
+  propenyl), the isobutyrate (4,6,6, not the 2,6,6 prior art the patent contrasts itself with).
+- **Held:** Terpineol (the sentence does not say which), 3,7-caryophyllane epoxide (no structure yet); 15 other names have no proposal.
+- **Corrections to earlier entries:** the 10-03 readings note called `5-methyl-6-pentyl-tetrahydro-alpha-pyrone (4-methyl-5-decanolide)` inconsistent; it is
+  not (two numberings of one compound). The doubt about pinoacetaldehyde (propanal vs a 2-carbon chain) is closed by the patents' own definition.
+- Effect: 1,698 -> 1,695 molecules (three merges into molecules already present: Cineole -> 1,8-cineole, cyclohexal -> the Lyral record, Muscenone ->
+  3-methylcyclopentadec-5-en-1-one); name-only 42 -> 17; 24 of 67 unchanged; camphoraceous 62 -> 61, lily 63 -> 62. `names.jsonl`: exactly 25 records changed
+  (20 none -> rewritten, 5 PUBCHEM-CHECK -> rewritten). Commit `ad6f25b`.
+
+### 3. Release and page
+
+- `release/v1.0` built with `--out` into a scratch folder from a clean tree at `ad6f25b` (manifest: 0 tracked files modified) and copied in; `SHA256SUMS`
+  verify; `molecules.tsv`, `evidence.tsv`, `tags.tsv` are byte-identical to the simulated release. 1,695 molecules, 1,678 with a structure (1,639 by
+  connectivity), 161 hand-derived, 17 name-only, 4,399 quotes, 24 of 67.
+- `docs/corpus.html` rebuilt: 1,695 molecules, 17 "no structure"; the page JavaScript passes `node --check`. Commit `73c65fb`.
+
+### Open
+
+- The paper (v0.4) still quotes 1,705 molecules and the old name-only counts.
+- 3D conformers and PubChem properties for the new structures (`corpus_3d_fetch.py` / `corpus_props_fetch.py` on Hetzner).
+- Unchanged: freeze and tag v1.0; root README refresh (still the 09-05 figures); the options doc (still B and C); whether to link `corpus.html` from
+  `preview.html` / `index.html`; Mike's reference MolNFT v2 contract; the 53 "approve-no-tag" rows; OCR-damaged verbatim labels; no 2D structure drawing.
+- Git: `409d397`, `ad6f25b`, `73c65fb` and the commit carrying this entry; pushed with Ivan's OK ("log rebuild & push").
