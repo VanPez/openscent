@@ -173,6 +173,15 @@ def main() -> int:
     tags = [r["tag"] for r in T]
     ti = {t: i for i, t in enumerate(tags)}
     mi = {r["molecule_id"]: i for i, r in enumerate(M)}
+    # The descriptor -> tag table (corpus-level static field A3 of reports/molecule-card-v0.md): the card recomputes each
+    # molecule's tags from its descriptor words with it, in the browser. Not part of release/v1.0 yet, so read from ontology/.
+    surf = {}
+    for line in (ROOT / "ontology" / "odor_terms.tsv").read_text(encoding="utf-8").splitlines():
+        if line.startswith("#") or "\t" not in line:
+            continue
+        form, tag = (x.strip() for x in line.split("\t")[:2])
+        if tag in ti:
+            surf[form.lower()] = ti[tag]
 
     ev_by = collections.defaultdict(list)
     for e in E:
@@ -267,6 +276,7 @@ def main() -> int:
             "counts": {"molecules": c["molecules"], "with_structure": c["molecules_with_structure"],
                        "name_only": c["molecules_name_only"], "hand": c["structure_hand_derived"],
                        "evidence": c["evidence_rows"], "at_bar": c["terms_at_bar"], "terms": c["terms_total"]},
+            "surf": surf,
             "built": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d"), "head": (man.get("git_head") or "")[:7]}
 
     def js(o):
@@ -347,6 +357,10 @@ td.fm{font-family:var(--mono);font-size:12px;white-space:nowrap}td.dash,.dash{co
 .kv{display:grid;grid-template-columns:130px 1fr;gap:4px 14px;font-size:12.5px;margin:8px 0 12px}.kv dt{color:var(--mut);font-family:var(--mono);font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;padding-top:2px}
 .kv dd{margin:0;font-family:var(--mono);font-size:12px;word-break:break-all}.kv dd.t{font-family:var(--sans);word-break:normal}
 .evh{font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin:14px 0 6px}
+.csh{font:500 10.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin:12px 0 0;padding-bottom:4px;border-bottom:1px solid var(--line)}
+.csh b{color:var(--teal);font-weight:600}.csh span{text-transform:none;letter-spacing:0;color:var(--faint)}
+.src{display:block;font:10px var(--mono);color:var(--faint);letter-spacing:.03em;margin-top:1px;word-break:normal}
+.ok{color:var(--teal)}.warn{color:var(--amber,#b7791f)}
 .dtop{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:18px;align-items:start}
 .v3d{background:var(--card);border:1px solid var(--line-strong);height:260px;margin:12px 0 4px;touch-action:none;cursor:grab}.v3d canvas{width:100%;height:100%;display:block}
 .v3d.none{display:grid;place-items:center;cursor:default;font:11px var(--mono);color:var(--faint);letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:0 14px}
@@ -465,15 +479,76 @@ function srcLink(e){const id=e[6];if(/^US\d/.test(id))return '<a href="https://p
 function v3dBox(i){const m=M[i],c3=C3[m[F.ik]];if(m[F.str]===2)return '';
  if(c3&&c3[1])return '<div class="v3dwrap"><div class="v3d"><canvas class="v3dc" data-i="'+i+'"></canvas></div><div class="hint">Drag to rotate · scroll to zoom · PubChem computed conformer (CID '+c3[0]+')</div></div>';
  return '<div class="v3dwrap"><div class="v3d none">'+(!HAS3?'3D not built into this page yet':c3&&c3[0]?'PubChem has no 3D conformer for this compound':'No PubChem record for this exact structure')+'</div></div>'}
+/* Molecule card v0 (reports/molecule-card-v0.md): computed fields in the browser.
+   SMILES -> molecular formula (Hill order) and average molecular mass. No library. Standard atomic weights (IUPAC 2007,
+   the set PubChem's computed weights match). Handles the organic subset with implicit hydrogens, bracket atoms (H count,
+   charge, isotope ignored for mass), branches, ring closures (incl. %nn), bond symbols, '.' components, aromatic lowercase. */
+const AW={H:1.00794,He:4.002602,Li:6.941,Be:9.012182,B:10.811,C:12.0107,N:14.0067,O:15.9994,F:18.9984032,Ne:20.1797,Na:22.98976928,
+Mg:24.305,Al:26.9815386,Si:28.0855,P:30.973762,S:32.065,Cl:35.453,Ar:39.948,K:39.0983,Ca:40.078,Sc:44.955912,Ti:47.867,V:50.9415,
+Cr:51.9961,Mn:54.938045,Fe:55.845,Co:58.933195,Ni:58.6934,Cu:63.546,Zn:65.38,Ga:69.723,Ge:72.630,As:74.9216,Se:78.971,Br:79.904,
+Kr:83.798,Rb:85.4678,Sr:87.62,Y:88.90585,Zr:91.224,Nb:92.90638,Mo:95.96,Ru:101.07,Rh:102.9055,Pd:106.42,Ag:107.8682,Cd:112.411,
+In:114.818,Sn:118.71,Sb:121.76,Te:127.6,I:126.90447,Xe:131.293,Cs:132.9054519,Ba:137.327,La:138.90547,Ce:140.116,Nd:144.242,
+W:183.84,Re:186.207,Os:190.23,Ir:192.217,Pt:195.084,Au:196.966569,Hg:200.59,Tl:204.3833,Pb:207.2,Bi:208.9804,U:238.02891};
+const ISO={'2H':2.0141017778,'3H':3.0160492777,'13C':13.0033548378,'14C':14.0032419894,'15N':15.0001088982,'17O':16.999131757,'18O':17.9991596129};
+const ORGV={B:[3],C:[4],N:[3,5],O:[2],P:[3,5],S:[2,4,6],F:[1],Cl:[1],Br:[1],I:[1]};
+function smiChem(s){
+ const A=[],stack=[],ring={};let prev=-1,bond=0,i=0,charge=0;
+ const link=(a,b,o)=>{A[a].v+=o;A[b].v+=o};
+ while(i<s.length){const ch=s[i];
+  if(ch==='('){stack.push(prev);i++;continue}
+  if(ch===')'){prev=stack.pop();i++;continue}
+  if(ch==='.'){prev=-1;bond=0;i++;continue}
+  if('-=#$:/\\'.indexOf(ch)>=0){bond=ch==='='?2:ch==='#'?3:ch==='$'?4:ch===':'?1.5:(ch==='-'?1:bond||0);if(ch==='/'||ch==='\\')bond=bond||0;i++;continue}
+  if(/[0-9%]/.test(ch)){let n;if(ch==='%'){n=s.substr(i+1,2);i+=3}else{n=ch;i++}
+   if(ring[n]){const r=ring[n],o=bond||r.b||(A[prev].ar&&A[r.a].ar?1.5:1);link(prev,r.a,o);delete ring[n]}else ring[n]={a:prev,b:bond};bond=0;continue}
+  let a;
+  if(ch==='['){const j=s.indexOf(']',i);if(j<0)return null;const t=s.slice(i+1,j);i=j+1;
+   const m=t.match(/^(\d*)([A-Z][a-z]?|se|as|[bcnops]|\*)(@(?:@|TH[12]|AL[12]|SP[123]|TB\d{1,2}|OH\d{1,2})?)?(H\d*)?([+-]+\d*)?(:\d+)?$/);if(!m)return null;
+   let el=m[2],ar=false;if(/^[a-z]/.test(el)){ar=true;el=el[0].toUpperCase()+el.slice(1)}
+   const h=m[4]?(m[4].length>1?+m[4].slice(1):1):0;
+   if(m[5]){const sg=m[5][0]==='+'?1:-1,rest=m[5].slice(1);charge+=sg*(/^\d+$/.test(rest)?+rest:m[5].length)}
+   a={el,br:true,h,v:0,ar,iso:m[1]?m[1]+el:''}}
+  else{const two=s.substr(i,2);let el;
+   if(two==='Cl'||two==='Br'){el=two;i+=2}else if(/[BCNOPSFI]/.test(ch)){el=ch;i++}
+   else if(/[bcnops]/.test(ch)){el=ch.toUpperCase();i++;a={el,br:false,v:0,ar:true}}
+   else return null;
+   a=a||{el,br:false,v:0,ar:false}}
+  A.push(a);const k=A.length-1;
+  if(prev>=0)link(prev,k,bond||(A[prev].ar&&a.ar?1.5:1));bond=0;prev=k}
+ if(Object.keys(ring).length)return null;
+ const cnt={};let dm=0;const add=(e,n)=>{if(n)cnt[e]=(cnt[e]||0)+n};
+ for(const a of A){if(!(a.el in AW))return null;add(a.el,1);if(a.iso&&ISO[a.iso])dm+=ISO[a.iso]-AW[a.el];
+  if(a.br){add('H',a.h);continue}
+  const vs=ORGV[a.el];if(!vs)continue;let v=a.ar?Math.floor(a.v)+1:Math.round(a.v);
+  const val=vs.find(x=>x>=v);if(val!==undefined)add('H',val-v)}
+ const keys=Object.keys(cnt);const hill=('C' in cnt)?['C','H'].filter(e=>e in cnt).concat(keys.filter(e=>e!=='C'&&e!=='H').sort()):keys.sort();
+ const f=hill.map(e=>e+(cnt[e]>1?cnt[e]:'')).join('')+(charge?(charge>0?'+':'-')+(Math.abs(charge)>1?Math.abs(charge):''):'');
+ const mw=keys.reduce((s,e)=>s+AW[e]*cnt[e],0)+dm;
+ return {f,mw}}
+/* Checked 2026-10-21 against PubChem: the same formula for all 1,647 v1.0 molecules with a PubChem record; mass within PubChem's own precision for 1,643 (the other 4 are one-decimal rounding). */
+function cardTags(E){const out={};for(const e of E){const w=(e[1]||'').toLowerCase(),t=D.surf[w];if(t===undefined)continue;const a=out[t]=out[t]||[];if(a.indexOf(w)<0)a.push(w)}return out}
+
 function detail(i){const m=M[i],E=ev()[i]||[],c3=C3[m[F.ik]],cid=m[F.cid]||(c3&&c3[0])||'';
  const pc=cid?'https://pubchem.ncbi.nlm.nih.gov/compound/'+cid:(m[F.ik]?'https://pubchem.ncbi.nlm.nih.gov/#query='+m[F.ik]:'');
- let h='<div class="detail"><h3>'+esc(m[F.label])+'</h3><div class="dtop"><div><dl class="kv">';
- if(m[F.ik])h+='<dt>InChIKey</dt><dd>'+esc(m[F.ik])+'</dd>';
- if(m[F.smiles])h+='<dt>SMILES</dt><dd>'+esc(m[F.smiles])+'</dd>';
- h+='<dt>Structure</dt><dd class="t">'+STRL[m[F.str]]+(m[F.basis]?' ('+esc(m[F.basis].replace(/;/g,', '))+')':'')+(m[F.str]===1?' — derived by a hand-authorised reading, see corpus/structures/rewrites.json':'')+(m[F.str]===2?' — counted by its name text alone':'')+'</dd>';
- if(m[F.formula])h+='<dt>Formula</dt><dd class="t">'+fmtF(m[F.formula])+'</dd><dt>Mol. weight</dt><dd class="t">'+m[F.mw].toFixed(2)+' g/mol</dd><dt>XLogP3</dt><dd class="t">'+(m[F.xlogp]===null?'<span class="dash">not available</span>':m[F.xlogp])+'</dd>';
- h+='<dt>Spellings in sources</dt><dd class="t">'+esc(m[F.spell])+'</dd>';
- h+='<dt>Documents</dt><dd class="t">'+m[F.ndoc]+' · '+E.length+' quote'+(E.length===1?'':'s')+(pc?' · <a href="'+esc(pc)+'" target="_blank" rel="noopener">PubChem ↗</a>':'')+'</dd></dl></div>'+v3dBox(i)+'</div>';
+ const ch=m[F.smiles]?smiChem(m[F.smiles]):null,ct=cardTags(E),ctk=Object.keys(ct).map(Number);
+ const same=ctk.length===m[F.tags].length&&ctk.every(t=>m[F.tags].includes(t)),pl=(n,w)=>n+' '+w+(n===1?'':'s');
+ let h='<div class="detail"><h3>'+esc(m[F.label])+'</h3><div class="dtop"><div>';
+ h+='<div class="csh"><b>Stored</b> · static fields <span>— what a token would carry (molecule card v0, a draft)</span></div><dl class="kv">';
+ h+='<dt>Structure</dt><dd>'+(m[F.smiles]?esc(m[F.smiles])+'<span class="src">SMILES</span>':'<span class="dash t">none: known by its name only, so no token</span>')+'</dd>';
+ h+='<dt>Names</dt><dd class="t">'+esc(m[F.label])+(m[F.spell]&&m[F.spell]!==m[F.label]?'<span class="src">as printed in the sources: '+esc(m[F.spell])+'</span>':'')+'</dd>';
+ h+='<dt>Provenance</dt><dd class="t">'+STRL[m[F.str]]+(m[F.basis]?' ('+esc(m[F.basis].replace(/;/g,', '))+')':'')+(m[F.str]===1?'<span class="src">a hand-authorised reading; its reason is in corpus/structures/rewrites.json</span>':'')+(m[F.str]===2?'<span class="src">counted by its name text alone</span>':'')+'</dd>';
+ h+='<dt>Evidence</dt><dd class="t">'+pl(E.length,'verbatim quote')+', below, each with its source</dd>';
+ if(pc)h+='<dt>Links</dt><dd class="t"><a href="'+esc(pc)+'" target="_blank" rel="noopener">PubChem'+(cid?' '+esc(String(cid)):'')+' ↗</a></dd>';
+ h+='</dl><div class="csh"><b>Computed</b> · derived fields <span>— never stored; recomputed from the stored ones</span></div><dl class="kv">';
+ if(ch){h+='<dt>Formula</dt><dd class="t">'+fmtF(ch.f)+'<span class="src">in your browser, from the SMILES'+(m[F.formula]?(m[F.formula]===ch.f?' · <span class="ok">same as PubChem</span>':' · <span class="warn">PubChem gives '+esc(m[F.formula])+'</span>'):'')+'</span></dd>';
+  h+='<dt>Mol. mass</dt><dd class="t">'+ch.mw.toFixed(2)+' g/mol<span class="src">in your browser, from the formula'+(m[F.mw]!==null&&m[F.mw]!==undefined&&m[F.mw]!==''?' · PubChem gives '+m[F.mw]:'')+'</span></dd>'}
+ else if(m[F.smiles])h+='<dt>Formula</dt><dd class="t"><span class="dash">this SMILES is beyond the small parser</span></dd>';
+ if(m[F.ik])h+='<dt>InChIKey</dt><dd>'+esc(m[F.ik])+'<span class="src">from the structure, by the release build (not in your browser yet)</span></dd>';
+ h+='<dt>Odour tags</dt><dd class="t">'+(ctk.length?ctk.map(t=>esc(TAGS[t][0])+' <span class="dash">← '+esc(ct[t].join(', '))+'</span>').join(' · '):'<span class="dash">none</span>')+'<span class="src">in your browser, from the descriptor words and the tag table (ontology/odor_terms.tsv)'+(same?'':' · <span class="warn">differs from the release</span>')+'</span></dd>';
+ h+='<dt>Counts</dt><dd class="t">'+pl(E.length,'quote')+' · '+pl(m[F.ndoc],'document')+' · '+pl(ctk.length,'tag')+'</dd>';
+ if(m[F.formula])h+='<dt>XLogP3</dt><dd class="t">'+(m[F.xlogp]===null?'<span class="dash">not available</span>':m[F.xlogp])+'<span class="src">computed by PubChem, not recomputed here</span></dd>';
+ h+='</dl></div>'+v3dBox(i)+'</div>';
+ h+='<div class="csh"><b>Stored</b> · evidence <span>— the verbatim sentences, grouped by the tag their words map to</span></div>';
  const by={};E.forEach(e=>{(by[e[0]]=by[e[0]]||[]).push(e)});
  Object.keys(by).forEach(t=>{h+='<div class="evh">'+esc(TAGS[t][0])+' · '+by[t].length+'</div>';
   by[t].forEach(e=>{h+='<div class="ev">'+(e[4]?'<div class="ant">Preceding sentence: '+esc(e[4])+'</div>':'')+'“'+hl(e[3],e[1],e[2])+'”<div class="meta">'+srcLink(e)+(e[7]&&e[7].indexOf(';')>=0?'also in '+esc(e[7].split(';').slice(1,4).join(', '))+' · ':'')+esc(D.sty[e[5]])+' · '+esc(D.how[e[9]])+'</div></div>'})});
