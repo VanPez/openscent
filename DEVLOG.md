@@ -4,27 +4,28 @@
 
 ---
 
-## RESUME HERE — state as of 2026-09-26 (end of day), amended through 2026-10-21
+## RESUME HERE — state as of 2026-09-26 (end of day), amended through 2026-10-29
 
-**READ THIS FIRST. The 09-24 blocks below it are superseded.** Live figures (status.py, re-run 2026-10-21 after the mixture fixes and rewrites J2-J26: COMBINED = v1.0,
-the CC0 corpus only; the licensed layer is an add-on row; the 09-26 figures this block used to show — 27 of 67, 1,829 molecules — are now the by-name-text count):
+**READ THIS FIRST. The 09-24 blocks below it are superseded.** Live figures (status.py, re-run 2026-10-29 after rewrites J27-J38, the row fixes and the
+missed Arctander retirements: COMBINED = v1.0, the CC0 corpus only; the licensed layer is an add-on row; the 09-26 figures this block used to show — 27 of 67,
+1,829 molecules — are now the by-name-text count):
 
 ```
-4,676 review rows · 1,129 approve · 1,175 reject · 2 skip · 2,370 undecided
+4,676 review rows · 1,123 approve · 1,181 reject · 2 skip · 2,370 undecided
 excluded    9 pubchem rows retired (3 mixture, 3 attribution, 3 provenance)
-retired    30 approved patent rows (exclusions.jsonl: quoted copyrighted reference works)
+retired    42 approved patent rows (exclusions.jsonl: quoted copyrighted reference works)
 licensed   136 approved descriptor-word rows (licensed/olfatorium-rows.jsonl; Olfatorium, CC BY 4.0) — NOT in COMBINED
            BY STRUCTURE (headline)    connectivity only      name text (old)
-  patents    20 of 67    879 molecules   20 of 67    850 molecules   21 of 67    980 names
+  patents    20 of 67    866 molecules   20 of 67    837 molecules   21 of 67    966 names
   pubchem     7 of 67    833 molecules    7 of 67    825 molecules    7 of 67    835 names
   passage     0 of 67      6 molecules    0 of 67      6 molecules    0 of 67      8 names
   targeted    0 of 67      5 molecules    0 of 67      5 molecules    0 of 67      5 names
   licensed    0 of 67     34 molecules    0 of 67     34 molecules    0 of 67     34 names
-  COMBINED   24 of 67   1695 molecules   24 of 67  1656 molecules   27 of 67  1812 names     <- v1.0
-  w/ licensed 25 of 67  1726 molecules   25 of 67  1686 molecules   27 of 67  1846 names     <- add-on, not v1.0
-  next: tobacco 28 (needs 2) · sandalwood 28 (needs 2) · apple 26, anisic 26 (need 4) · grapefruit 22 (needs 8) · leather 21 (needs 9)
+  COMBINED   24 of 67   1682 molecules   24 of 67  1643 molecules   27 of 67  1798 names     <- v1.0
+  w/ licensed 25 of 67  1713 molecules   25 of 67  1673 molecules   27 of 67  1832 names     <- add-on, not v1.0
+  next: tobacco 28 (needs 2) · sandalwood 28 (needs 2) · apple 26, anisic 26 (need 4) · grapefruit 22 (needs 8) · chlorine 21 (needs 9) · leather 20 (needs 10)
 verbatim invariant: clean · review queue: 0 PRODUCTIVE
-release/v1.0: 1,695 molecules, 1,678 with a structure, 17 name-only, 4,399 quotes (built at ad6f25b, clean tree)
+release/v1.0: 1,682 molecules, 1,680 with a structure, 2 name-only, 4,345 quotes (built at 690075d, clean tree)
 ```
 
 **NOTHING IS STAGED.** All 6 proposals of 09-26 decided; all 5 targeted rows decided.
@@ -203,6 +204,17 @@ structures now have a 3D model.
 fields, computed fields, sizes, open questions for the contract); Ivan sent it to Mike. The corpus page now shows that card for every molecule, the formula,
 mass and odour tags computed in the browser (checked against PubChem and the release). **No data changed; 1,695 molecules, 24 of 67.** Waiting on Mike's
 answers to the contract questions.
+Later the same night: a weight band left behind by the Weight map's sweep was filtering the Table unseen; fixed and pushed (`8ec7926`). Decision: the
+phone table stays minimal (molecule and tags only; the rest in each card).
+
+**2026-10-29 (log — Joe's v3 structures, an attribution check, missed Arctander quotes; see the last entry):** Joe's v3 workbook was checked row by row
+(patent text on Hetzner, OPSIN, RDKit, PubChem via Hetzner) and Ivan applied everything proposed ("apply all"): **12 more structures** (rewrites J27-J36 strong,
+J37-J38 medium; for the two epicamphene hydrates the patents' own IUPAC names were used, not the proposal), **15 row fixes** (6 rejects: three counterfactual
+"instead of" rows, a mixture, "aromatic hydrocarbons", the l-isomer anaphor; 8 descriptors dropped; "petal" removed as a molecule) and **12 Arctander quotes
+retired** that the 09-26 exclusion missed (the splitter cut at "No." and left "Arctander" in the sentence before). New, read-only: `pipeline/attribution_check.py`.
+**Headline: 1,682 molecules, still 24 of 67; name-only 17 -> 2 (9-nordrimanol held for the 1985 paper's drawing; Terpineol held as before).** Release and
+`corpus.html` rebuilt (commits `690075d`, `2840379`). Open: whether Bauer/Garbe/Surburg (*Common Fragrance and Flavor Materials*) joins the quoted-works list
+(3 rows); the paper still quotes 1,705; freeze and tag v1.0.
 
 **Emails were READY (09-27):** preview live at https://vanpez.github.io/openscent/ (GitHub Pages,
 master /docs), linked in all three drafts, signed Ivan Pezzini. outreach/ and the shop lists
@@ -6416,3 +6428,103 @@ Ivan reported the Table looking frozen after visiting the maps: 5 of 1,695 molec
   mid-sweep gives no chip and 1,695 of 1,695 molecules with "Show 80 more of 1,615 remaining"; after a full sweep, no chip; a 9-result search hides the
   button; console clean; page JavaScript passes `node --check`.
 - No data changed. Pushed with Ivan's OK ("yes do it"). GitHub Pages may serve the old page for a few minutes (cache).
+
+## 2026-10-21 (night, later) — decision: the phone table stays minimal
+
+- Below 760 px the corpus table shows only Molecule and Odour tags; Formula, MW, XLogP3, Quotes and Structure are hidden (`th.hide, td.hide`), so the table
+  fits a phone without sideways scrolling. This was in the code since the page was built but never recorded as a decision.
+- Ivan considered the preview page's phone layout (a grey line under each name: formula · MW · XLogP3 · quotes) and chose to keep the corpus table as it is:
+  less cluttered. On a phone the values stay one tap away in each molecule's card; the hidden columns cannot be sorted there.
+- No code or data changed. This entry is not committed.
+
+## 2026-10-29 — Joe's v3 structures checked (J27-J38), an attribution check, missed Arctander quotes retired; release rebuilt
+
+Joe sent a third version of his structure workbook (47 names; 30 of them were settled on 10-21) and pointed out that, reading the source passages, the
+odour words of one molecule sometimes sit on another. Everything below was proposed first (local notes in `outreach/`), simulated on a scratch copy with the
+real pipeline (apply -> `structures.py` -> `--todo` -> `--merge` -> `status.py` -> `release_build.py --out`), and applied after Ivan's "apply all". The live
+run reproduced the simulation exactly (status.py output and the three release TSVs byte-identical).
+
+### 1. Structures for the name-only molecules (rewrites J27-J38, `rewrites.json`)
+
+The 17 name-only molecules of v1.0 were the workbook's open rows. Each proposal was checked against the patent text on Hetzner, OPSIN (Joe's name and the
+patent's own name, where it has one), RDKit (same graph?) and PubChem via Hetzner. All flat unless stated.
+
+| id | name | reading | witness |
+|---|---|---|---|
+| J27 S | dehydrorhodinol | (5E)-3,7-dimethylocta-5,7-dien-1-ol | US3455997A itself: "the trans alcohol (VI) (dehydrorhodinol)", VI = trans-3,7-dimethyl-5,7-octadien-1-ol; CID 12920428 |
+| J28 S | Epoxytamariscol | 2-(3,3-dimethyloxiran-2-yl)-3,7-dimethyloctahydro-1H-inden-2-ol | US4659509A defines it in words; OPSIN gives the same InChIKey for its name |
+| J29 S | ethyl tat-methyl, a-(…-ylidene) acetate | ethyl 2-(octahydro-5H-4,7-methanoinden-5-ylidene)propanoate | US3557188A lists the same ester cleanly ("ethyl a methyl, … acetate") |
+| J30 S | trans isomer of l-acetoxy-Lsec-butyl-L ethynylcyclohexane | 2-(butan-2-yl)-1-ethynylcyclohexyl acetate | the patent's compound list: "1-Acetoxy-2-sec-butyl-1-ethynylcyclohexane (trans)"; CID 161936 |
+| J31 S | 8-oxoethyl epicamphene hydrate | 3-(3-hydroxy-2,3-dimethylbicyclo[2.2.1]heptan-2-yl)propanal | US3679756A's own IUPAC name (claims, Example C); CID 130025287 |
+| J32 S | S-ethenyl-epi-camphene hydrate | 2,3-dimethyl-3-(prop-2-en-1-yl)bicyclo[2.2.1]heptan-2-ol | "S" = OCR "8"; US3662008A's own IUPAC name (claims, Example C) |
+| J33 S | nortetrapatchoulol | 10,11,11-trimethyltetracyclo[5.3.1.0^2,4.0^5,10]undecan-1-ol | the sentence cites US 3,991,123, which prints this name (MS 206); CID 54403738 carries it |
+| J34 S | Dihydronorpatchoulinol | 2,2,8-trimethyltricyclo[5.3.1.0^3,8]undecan-3-ol | US3996169A Example XVI: Na cyclization of a named chloropropyl ketone, MS 208; CID 54256436 |
+| J35 S | patchoulione | octahydro-1,4,9,9-tetramethyl-3a,7-methanoazulen-5(4H)-one | US3748284A states it (after Büchi 1961; that skeleton was later disputed, noted in the reason); CID 12314005 |
+| J36 S | 3-methoxy-4-homoisotwistane | 3-methoxytricyclo[5.3.1.0^3,8]undecane | US4169958A: "4-homoisotwistane (tricyclo[5.3.1.0 3,8]undecane)"; C3 is a bridgehead, as its chemistry needs |
+| J37 M | 3,7-Caryophyllane epoxide | 4,8-epoxy-4,8,11,11-tetramethylbicyclo[7.2.0]undecane | US3978089A's "3,7-epoxy" mapped onto bicyclo[7.2.0] (Claude's numbering argument); PubChem "4,8-β-epoxycaryophyllene" |
+| J38 M | hexahydro-1,5,5-trimethyl-2H-2,4-a-methanonaphthalene-1(5H)-one | 3,5,5-trimethyl isomer | printed name impossible (OPSIN: unphysical valency); 2,5,5 is the same patents' Example VIII; CAS 77923-83-2 sits in one block with the 5,5 and 2,5,5 compounds |
+
+- **Where the patent text and the proposal differed, the patent's was used:** for both epicamphene hydrates the proposal put the side chain on the carbinol
+  carbon (C2); the patents' names put it on C3.
+- **Held:** 9-nordrimanol (the patent gives only "four methyl groups", citing Ohloff, Croat. Chem. Acta 58, 491 (1985); PubChem files the proposed
+  structure as "11-nor-driman-8-ol", a different nor-locant) and Terpineol (nothing new; the sentence never says which).
+- **Not given a structure:** dihydrocyclol (its sentence relays Arctander, see 3), l-isomer and petal (see 2).
+
+### 2. Row fixes (`review.jsonl`; the 10-03 convention: old values in `review_note`)
+
+- **petal** — the row's molecules were ["3,7-dimethyloctan-1-ol", "petal"]; "petal" is from "rose petal-like". Removed; the alcohol keeps its rose.
+- **l-isomer** — "the l-isomer" is an anaphor (the 10-03 veto stands); it is l-menthol, which v1.0 already has with mint and fresh. Rejected.
+- **Glued sentence (Joe's example)** — US3852219A: "...than body and strength. l-Acetoxy-2-sec-butyl-..." was one "sentence" (OCR "l" for "1" hid the
+  boundary), so the trans acetate carried freshness and minty from a cologne with 5% of the trans alcohol. Both dropped; woody stays.
+- **Found by the new check (4) and, for the mixture row, by the Arctander search (3):** 5 more rejects — US10100267B1 ×2 and US10472591B2 (counterfactual "instead of the invention's compound ... the composition
+  acquired ..." with the descriptors negated: "less floral/green", "devoid of"), US3993604A trans-4-isopropenyl-cyclohexylmethanol ("certain aromatic
+  hydrocarbons", a class compared, not a smell), US20100130397A1 "a mixture of cis- and trans-1-methyl-3-(2-methylpropyl)cyclohexan-1-ol" (mixture rule);
+  7 descriptors dropped — blend words (floral from "this floral essential oil composition", woody from "this woody ... perfume formulation", Rose from "in a
+  Rose perfume"), "oily" from "This oily material" (×2), "clean" from "not clean", "rosy" from "more natural than rosy alcohols".
+
+### 3. Arctander quotes the 09-26 exclusion missed (`exclusions.jsonl` +12)
+
+`exclude_quotes.py` looks for "Arctander" inside the sentence. Where the splitter cut at "No.", "Monograph No." or "number", the name sits in the sentence before
+("Actander compound No. | 942 is dihydrocyclol ..."). A search of the 400, then 1,500 characters before every approved row (21, then 47 hits; each read) found
+12 sentences relaying Arctander: dihydrocyclol (No. 942), 2-chloro-4,6-dinitro-1,3-dimethyl-5-tert-butylbenzene (No. 608), isopiperitenone ×2 (Monograph 2629),
+iso-pulegone ×4 (Monograph 2770), n-hexyl tiglate (No. 1682), p-tert-butylcyclohexanol (number 433), 4-ethylcyclohexanol (number 1201), p-methylacetophenone
+("cf. S. Arctander ... or K. Bauer ..."). Each new record carries a `note` saying where the work is named. Kept after reading: the patents' own words next to an
+Arctander citation (US3931250A, US6319889B1) and findings of papers or other patents (US4173584A, US20100130397A1's WO 98/47842 rows, US10035972B2).
+**Not applied, Ivan to decide:** 3 rows of US20080064625A1 relay Bauer, Garbe, Surburg, *Common Fragrance and Flavor Materials* (Wiley-VCH), which is not on
+the 09-26 list (`apply_joe_v3_decisions.py --bauer` would retire them).
+
+### 4. `pipeline/attribution_check.py` (new, read-only)
+
+Flags approved sentence rows whose descriptors may belong to something else: GLUED (a descriptor in a segment of the sentence without the molecule), NEGATED,
+COUNTERFACT, COMPOSITION, PHYSICAL, CLASS, and the low-priority NEARER (a descriptor closer to another named molecule). Before the fixes: 1,099 rows, 109
+flagged, 35 by a check other than NEARER; read by hand, 12 of the 35 were wrong (section 2). A sample of 25 NEARER-only rows had none the other checks had
+missed ("X is A, whereas Y is B" sentences were split correctly). After the fixes: 1,081 rows, 97 flagged, 24 other than NEARER (read before; correct). The
+glued-sentence error itself is rare (1 found); not measured: errors these checks cannot see.
+
+For Joe, a local file (`outreach/`, not published): every v1.0 molecule with each quote and up to two sentences of the patent text on each side (2,613 of
+2,616 patent quotes located), plus the check flags.
+
+### 5. Effect
+
+- status.py: approvals 1,129 -> 1,123; retired 30 -> 42; **COMBINED 24 of 67 (unchanged), 1,695 -> 1,682 molecules** (connectivity 1,656 -> 1,643);
+  leather 21 -> 20 (p-tert-butylcyclohexanol's "leathery" was Arctander No. 433); chlorine now ahead of leather in "within reach".
+- 13 molecules left: petal, l-isomer, dihydrocyclol; the compounds of the 3 counterfactual rows and of the mixture row; and 6 whose only evidence was an
+  Arctander quote (the dinitro musk, iso-pulegone, isopiperitenone, n-hexyl tiglate, 4-ethylcyclohexanol, p-methylacetophenone).
+- Tag counts that moved, all still on the same side of the bar: aldehydic 32 -> 31, floral 244 -> 238, green 225 -> 222, lily 62 -> 59, mint 80 -> 76,
+  rose 70 -> 67, sweet 290 -> 286, woody 181 -> 177, and 1-2 each for aromatic, citrus, fresh, herbal, musk, powdery, pungent; below the bar
+  clean, dry, nutty, peach -1 each, oily -2.
+
+### 6. Release, 3D, page
+
+- `release/v1.0` built with `--out` from a clean tree at `690075d` (manifest: 0 tracked files modified; the uncommitted 10-21 DEVLOG lines were stashed for
+  the build and restored byte-identical); `SHA256SUMS` verify. **1,682 molecules, 1,680 with a structure (172 hand-derived), 2 name-only, 4,345 quotes.**
+- On Hetzner (staging `/tmp/os3d`, removed): 9 of the 12 new structures match a PubChem record by full InChIKey (none for J29, J32, J36), 7 have a 3D
+  conformer (not epoxytamariscol, nortetrapatchoulol); PubChem formulas match the expected ones. 1,557 of the 1,680 structures have a 3D model.
+- `docs/corpus.html` rebuilt (3.01 MB); page JavaScript passes `node --check`.
+
+### Open
+
+- The paper (v0.4) still quotes 1,705. Freeze and tag v1.0. Bauer/Garbe/Surburg (section 3). 9-nordrimanol needs the 1985 drawing.
+- Earlier entries unchanged: root README refresh; linking `corpus.html` from the public pages; Mike's reference MolNFT v2 contract; the 53 "approve-no-tag"
+  rows; OCR-damaged verbatim labels; no 2D structure drawing.
+- Git: `690075d` (data, scripts), `2840379` (release, 3D, page) and the commit carrying this entry and the 10-21 night lines; not pushed.
