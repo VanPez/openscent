@@ -2,7 +2,8 @@
 
 **Status: a draft for the MolNFT v2 contract. Nothing is minted.** v1 applies Mike's review of v0 (2026-10-22). Every figure was
 measured on `release/v1.0` as rebuilt on 2026-10-29: 1,682 molecules, **1,680 with a structure = 1,680 tokens**, 4,341 evidence
-rows on those tokens. v0 is kept as `reports/molecule-card-v0.md`.
+rows on those tokens. v0 is kept as `reports/molecule-card-v0.md`. The same card for one token as plain JSON, field title and
+content only: `reports/molecule-card-v1-example.json` (Ethylvanillin), built by `pipeline/card_json.py`.
 
 ## What changed from v0
 
