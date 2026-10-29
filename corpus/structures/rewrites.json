@@ -1194,6 +1194,90 @@
    "raw": "Muscenone",
    "reading": "3-methylcyclopentadec-5-en-1-one",
    "why": "trade name (Firmenich): 3-methylcyclopentadec-5-en-1-one, flat; the patent says the ingredient comes as several stereoisomers, so the sentence's odour may be that of a mix. Probable, not certain. Approved by Ivan 2026-10-21"
+  },
+  {
+   "id": "J27",
+   "strength": "S",
+   "raw": "dehydrorhodinol",
+   "reading": "(5E)-3,7-dimethylocta-5,7-dien-1-ol",
+   "why": "US3455997A defines it: 'the trans alcohol (VI) (dehydrorhodinol)', and Example 6 names VI 'trans-3,7-dimethyl-5,7-octadien-1-ol' (hydrogenation gives 3,7-dimethyloctan-1-ol). PubChem CID 12920428 (same InChIKey). Proposed by Joe. C3 left flat. Approved by Ivan 2026-10-29"
+  },
+  {
+   "id": "J28",
+   "strength": "S",
+   "raw": "Epoxytamariscol",
+   "reading": "2-(3,3-dimethyloxiran-2-yl)-3,7-dimethyloctahydro-1H-inden-2-ol",
+   "why": "US4659509A defines it: '3,7-dimethyl-2-(2-methyl-1,2-epoxypropyl)hexahydroindan-2-ol (hereinafter referred to as epoxytamariscol)'; OPSIN gives the same InChIKey for the patent's name and this one; PubChem CID 20206814 (connectivity). Proposed by Joe. Flat. Approved by Ivan 2026-10-29"
+  },
+  {
+   "id": "J29",
+   "strength": "S",
+   "raw": "ethyl tat-methyl, a-(2,3,3a,4,5,6,7,7a-octahydro-4,7-methanoinden 5 -ylidene) acetate",
+   "reading": "ethyl 2-(octahydro-5H-4,7-methanoinden-5-ylidene)propanoate",
+   "why": "OCR of 'ethyl alpha-methyl, alpha-(...-ylidene) acetate': US3557188A lists the same ester cleanly ('ethyl a methyl, 0c (2,3,3a,4,5,6,7,7a-octahydro-4,7-methanoinden-5-ylidene) acetate') and its precursor 'ethyl a-methyl, a-(5-hydroxy-...-5-yl) acetate'. No PubChem record. Proposed by Joe (his workbook SMILES; the SMILES in his Telegram note has a cyclobutane and is not this compound). Flat. Approved by Ivan 2026-10-29"
+  },
+  {
+   "id": "J30",
+   "strength": "S",
+   "raw": "trans isomer of l-acetoxy-Lsec-butyl-L ethynylcyclohexane",
+   "reading": "2-(butan-2-yl)-1-ethynylcyclohexyl acetate",
+   "why": "OCR of '1-acetoxy-2-sec-butyl-1-ethynylcyclohexane'; US3852219A's own compound list prints '1-Acetoxy-2-sec-butyl-1-ethynylcyclohexane (trans)'. PubChem CID 161936. Proposed by Joe. Flat: the patent does not say which C1 group 'trans' refers to. Approved by Ivan 2026-10-29"
+  },
+  {
+   "id": "J31",
+   "strength": "S",
+   "raw": "8-oxoethyl epicamphene hydrate",
+   "reading": "3-(3-hydroxy-2,3-dimethylbicyclo[2.2.1]heptan-2-yl)propanal",
+   "why": "US3679756A names the Step (2) product 'exo-2-endo-3-dimethyl-endo-2-hydroxy-exo-3-(3'-oxopropyl)bicyclo[2.2.1]heptane' (claims and Example C); PubChem CID 130025287. Joe's proposal put the side chain on the carbinol carbon (C2) — the patent puts it on C3. Flat: the patent's exo/endo are not encoded (OPSIN cannot read them). Approved by Ivan 2026-10-29"
+  },
+  {
+   "id": "J32",
+   "strength": "S",
+   "raw": "S-ethenyl-epi-camphene hydrate",
+   "reading": "2,3-dimethyl-3-(prop-2-en-1-yl)bicyclo[2.2.1]heptan-2-ol",
+   "why": "'S' is OCR for '8' (the patent also prints '8-ethenyl-epi-camphene hydrate'); US3662008A names the Step (2) product 'exo-2-methyl-endo-3-methyl-endo-2-hydroxy-exo-3-(1'-prop-2'-enyl)bicyclo[2.2.1]heptane' (claims and Example C). No PubChem record. Joe's proposal put the allyl group on C2 — the patent puts it on C3. Flat: exo/endo not encoded. Approved by Ivan 2026-10-29"
+  },
+  {
+   "id": "J33",
+   "strength": "S",
+   "raw": "nortetrapatchoulol",
+   "reading": "10,11,11-trimethyltetracyclo[5.3.1.0^{2,4}.0^{5,10}]undecan-1-ol",
+   "why": "US20130287707A1 says US 3,991,123 describes nortetrapatchoulol, a tetracyclic norsesquiterpene alcohol with a three-membered ring, warm, sweet, woody and camphor-like; US3991123A's C14 alcohol is '10,11,11-trimethyl-tetracyclo-(5.3.1.0 2,4.0 5,10)undecan-1-ol' (MS 206; 'warm, woody, sweet and camphoraceous'). PubChem CID 54403738 carries that name (CAS 62731-84-4). Proposed by Joe. Flat. Approved by Ivan 2026-10-29"
+  },
+  {
+   "id": "J34",
+   "strength": "S",
+   "raw": "Dihydronorpatchoulinol",
+   "reading": "2,2,8-trimethyltricyclo[5.3.1.0^{3,8}]undecan-3-ol",
+   "why": "US3996169A Example XVI makes it by sodium cyclization of 1,3,3-trimethyl-6-(3-chloropropyl)bicyclo[2.2.2]octan-2-one (the chain closes on the ketone carbon): MS 208 (C14H24O), three methyl singlets. That product is this name (Claude's derivation; same graph as Joe's proposal, which came from another route). PubChem CID 54256436. Flat. Approved by Ivan 2026-10-29"
+  },
+  {
+   "id": "J35",
+   "strength": "S",
+   "raw": "patchoulione",
+   "reading": "octahydro-1,4,9,9-tetramethyl-3a,7-methanoazulen-5(4H)-one",
+   "why": "US3748284A: 'Buchi et al., 83 J.A.C.S. 927 (1961), shows ... patchoulione which is stated to be octahydro-1,4,9,9-tetramethyl-3a,7-methanoazulen-5(4H)-one' (US3991123A says the same). PubChem CID 12314005 (CAS 5986-56-1). The structure is the one the patent states, from the 1961 paper; Joe notes the 1961 patchouli skeleton was later disputed. Flat. Approved by Ivan 2026-10-29"
+  },
+  {
+   "id": "J36",
+   "strength": "S",
+   "raw": "3-methoxy-4-homoisotwistane",
+   "reading": "3-methoxytricyclo[5.3.1.0^{3,8}]undecane",
+   "why": "US4169958A defines the parent: '4-homoisotwistane (tricyclo[5.3.1.0 3,8]undecane)'; C3 is a bridgehead, as the patent's chemistry needs (3-halogeno-4-homoisotwistane + alcohol, no base: bridgehead solvolysis). Assumes the trivial name's locant follows the von Baeyer numbering. No PubChem record. Proposed by Joe. Approved by Ivan 2026-10-29"
+  },
+  {
+   "id": "J37",
+   "strength": "M",
+   "raw": "3,7-Caryophyllane epoxide",
+   "reading": "4,8-epoxy-4,8,11,11-tetramethylbicyclo[7.2.0]undecane",
+   "why": "US3978089A makes it by cyclizing caryophyll-6-en-3-ol 'with the formation of a 3,7-epoxy group'; in the patent's numbering (6,7 = the ring double bond of caryophyllene, 3 = the exocyclic one) that is an ether between the two methyl-bearing carbons, C4 and C8 of bicyclo[7.2.0]undecane. PubChem has the connectivity as '4,8-beta-epoxycaryophyllene' (CID 91749887). Claude's numbering argument; proposed by Joe. Probable, not certain. Flat. Approved by Ivan 2026-10-29"
+  },
+  {
+   "id": "J38",
+   "strength": "M",
+   "raw": "hexahydro-1,5,5-trimethyl-2H-2,4-a-methanonaphthalene-1(5H)-one",
+   "reading": "3,5,5-trimethyl-3,4,6,7,8,8a-hexahydro-2H-2,4a-methanonaphthalen-1(5H)-one",
+   "why": "the printed name is impossible (a methyl and the ketone on C1; OPSIN: 'unphysical valency'). The same patents name 5,5-dimethyl and 2,5,5-trimethyl homologues; CAS registered 5,5-dimethyl (77923-74-1), 2,5,5-trimethyl (77923-82-1) and 3,5,5-trimethyl (77923-83-2) in one block of numbers, which fits the 3,5,5 isomer being this patent's third compound (not proof). PubChem CID 44154114. Proposed by Joe (his 2,5,5 alternative is the patents' Example VIII compound, so not this one). Probable, not certain. Flat. Approved by Ivan 2026-10-29"
   }
  ]
 }
