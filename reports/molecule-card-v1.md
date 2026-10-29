@@ -13,6 +13,7 @@ content only: `reports/molecule-card-v1-example.json` (Ethylvanillin), built by 
 | 2 | the scent is the main information and must be stored on chain | odour tags were *computed* from the descriptor words and the tag table | **scent stored** on the token (B6): the tags with the words that gave them |
 | 3 | XLogP3 is fetched, not computed | listed as computed | **stored** (B7), PubChem's value |
 | 4 | the 3D conformer is fetched, not computed | "computed in the browser, or a link to PubChem" | **stored** (B8), PubChem's conformer |
+| 5 | (2026-10-29) scent as a plain list | first v1 draft: each tag with the words that gave it | **tags only** (B6); the words are in B4, and the tag check (C8') shows which word gave which tag |
 
 Points 3 and 4 correct a real mistake in v0: a value fetched from PubChem cannot be recomputed by the contract or the browser
 (XLogP3 is NCBI's own algorithm; PubChem's conformer is one specific computed geometry), so by v0's own rule it is static.
@@ -42,7 +43,7 @@ source. The root static field is still the structure (SMILES).
 | B2 | names | the name as printed, and its other spellings | Ethylvanillin · ethyl vanillin · ETHYL VANILLIN |
 | B3 | structure provenance | read from the name / PubChem record / hand-derived reading, and its strength | read directly + PubChem record · direct |
 | B4 | evidence | per item: the verbatim sentence, the molecule as printed, the descriptor word(s), the source id, the scope, how it was decided | 4 items |
-| **B6** | **scent** | the odour tags (indexes into A4) and, for each, the descriptor words that produced it, as of the release in A1 | sweet ← sweet · vanilla ← vanilla |
+| **B6** | **scent** | the odour tags (indexes into A4), as of the release in A1; the words that gave them are in B4 | sweet · vanilla |
 | **B7** | **XLogP3** | PubChem's value (NCBI XLogP3), or null when PubChem has none | 1.6 |
 | **B8** | **3D conformer** | PubChem's computed conformer: element numbers, coordinates, bonds; null when PubChem has none | 22 atoms |
 | B5 | external ids | PubChem CID (the source of B7 and B8) | 8467 |
@@ -56,7 +57,7 @@ source. The root static field is still the structure (SMILES).
 | C3 | InChI / InChIKey | B1 | browser (RDKit.js) — see question 2 |
 | C4 | connectivity key | C3 | either |
 | C6 | 2D drawing | B1 | browser |
-| C8' | tag check | B4 words × A3 | recomputes B6 as a check (the page does: it reproduces every stored tag) |
+| C8' | tag check | B4 words × A3 | recomputes B6 as a check and shows which word gave which tag (the page does: it reproduces every stored tag) |
 | C9 | counts | B4 | either |
 | C10 | tags at the bar | B6 over all tokens | contract or browser |
 | C11 | scent-map position | B6 over the release (t-SNE) | off-chain, once per release |

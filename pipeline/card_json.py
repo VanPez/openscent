@@ -32,12 +32,8 @@ def load():
 def card(r, es, c3, props):
     v3 = c3.get(r["inchikey"]) or {}
     cid = int(r["pubchem_cids"].split(";")[0]) if r["pubchem_cids"] else v3.get("cid")
-    scent = {t: [] for t in r["tags"].split(";") if t}
     texts = {}
     for e in es:
-        w = e["descriptor_span"].lower()
-        if w not in scent.setdefault(e["tag"], []):
-            scent[e["tag"]].append(w)
         k = (e["quote"], e["source_id"])
         t = texts.setdefault(k, {"Text": e["quote"], "Molecule": [], "Odour words": [],
                                  "Source": e["source_url"] or e["source_id"]})
@@ -52,7 +48,7 @@ def card(r, es, c3, props):
         "Structure name": r["label"],
         "Other names": [s for s in r["name_spellings"].split(" | ") if s],
         "Structure": r["smiles"],
-        "Scent": scent,
+        "Scent": [t for t in r["tags"].split(";") if t],
         "Text description": list(texts.values()),
         "XLogP3": (props.get(str(cid)) or {}).get("xlogp") if cid else None,
         "3D conformer": {"Atoms": x["el"], "Coordinates": x["xyz"], "Bonds": x["b"]} if x else None,

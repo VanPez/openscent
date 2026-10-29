@@ -2,10 +2,7 @@
   "Structure name": "Ethylvanillin",
   "Other names": ["ethyl vanillin", "ETHYL VANILLIN"],
   "Structure": "CCOC1=C(C=CC(=C1)C=O)O",
-  "Scent": {
-    "sweet": ["sweet"],
-    "vanilla": ["vanilla"]
-  },
+  "Scent": ["sweet", "vanilla"],
   "Text description": [
     {
       "Text": "However, it has now been found that the incorporation of ethyl vanillin or vanillin in a melamine formaldehyde slurry produces a microcapsule that allows ethyl vanillin or vanillin to deposit on cloth, via a wash off product, to provide the vanilla sweet note at the dry stage of fabric.",
