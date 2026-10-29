@@ -188,9 +188,9 @@ function hl(q,d,mo){const R=[];const add=(s,c)=>{if(!s)return;const k=q.indexOf(
 function srcLink(e){const id=e[6];if(/^US\d/.test(id))return '<a href="https://patents.google.com/patent/'+encodeURIComponent(id)+'" target="_blank" rel="noopener">'+esc(id)+'</a>';
  return e[8]?'<a href="'+esc(e[8])+'" target="_blank" rel="noopener">'+esc(id||'source')+'</a>':esc(id)}
 function v3dBox(i){const m=M[i],c3=C3[m[F.ik]];if(m[F.str]===2)return '';
- if(c3&&c3[1])return '<div class="v3dwrap"><div class="v3d"><canvas class="v3dc" data-i="'+i+'"></canvas></div><div class="hint">Drag to rotate · scroll to zoom · PubChem computed conformer (CID '+c3[0]+')</div></div>';
+ if(c3&&c3[1])return '<div class="v3dwrap"><div class="v3d"><canvas class="v3dc" data-i="'+i+'"></canvas></div><div class="hint">Drag to rotate · scroll to zoom · Stored: PubChem’s computed conformer (CID '+c3[0]+')</div></div>';
  return '<div class="v3dwrap"><div class="v3d none">'+(!HAS3?'3D not built into this page yet':c3&&c3[0]?'PubChem has no 3D conformer for this compound':'No PubChem record for this exact structure')+'</div></div>'}
-/* Molecule card v0 (reports/molecule-card-v0.md): computed fields in the browser.
+/* Molecule card v1 (reports/molecule-card-v1.md): computed fields in the browser.
    SMILES -> molecular formula (Hill order) and average molecular mass. No library. Standard atomic weights (IUPAC 2007,
    the set PubChem's computed weights match). Handles the organic subset with implicit hydrogens, bracket atoms (H count,
    charge, isotope ignored for mass), branches, ring closures (incl. %nn), bond symbols, '.' components, aromatic lowercase. */
@@ -244,20 +244,22 @@ function detail(i){const m=M[i],E=ev()[i]||[],c3=C3[m[F.ik]],cid=m[F.cid]||(c3&&
  const ch=m[F.smiles]?smiChem(m[F.smiles]):null,ct=cardTags(E),ctk=Object.keys(ct).map(Number);
  const same=ctk.length===m[F.tags].length&&ctk.every(t=>m[F.tags].includes(t)),pl=(n,w)=>n+' '+w+(n===1?'':'s');
  let h='<div class="detail"><h3>'+esc(m[F.label])+'</h3><div class="dtop"><div>';
- h+='<div class="csh"><b>Stored</b> · static fields <span>— what a token would carry (molecule card v0, a draft)</span></div><dl class="kv">';
+ h+='<div class="csh"><b>Stored</b> · static fields <span>— what a token would carry (molecule card v1, a draft)</span></div><dl class="kv">';
  h+='<dt>Structure</dt><dd>'+(m[F.smiles]?esc(m[F.smiles])+'<span class="src">SMILES</span>':'<span class="dash t">none: known by its name only, so no token</span>')+'</dd>';
  h+='<dt>Names</dt><dd class="t">'+esc(m[F.label])+(m[F.spell]&&m[F.spell]!==m[F.label]?'<span class="src">as printed in the sources: '+esc(m[F.spell])+'</span>':'')+'</dd>';
  h+='<dt>Provenance</dt><dd class="t">'+STRL[m[F.str]]+(m[F.basis]?' ('+esc(m[F.basis].replace(/;/g,', '))+')':'')+(m[F.str]===1?'<span class="src">a hand-authorised reading; its reason is in corpus/structures/rewrites.json</span>':'')+(m[F.str]===2?'<span class="src">counted by its name text alone</span>':'')+'</dd>';
  h+='<dt>Evidence</dt><dd class="t">'+pl(E.length,'verbatim quote')+', below, each with its source</dd>';
+ h+='<dt>Scent</dt><dd class="t">'+(m[F.tags].length?m[F.tags].map(t=>esc(TAGS[t][0])+(ct[t]?' <span class="dash">← '+esc(ct[t].join(', '))+'</span>':'')).join(' · '):'<span class="dash">none</span>')+'<span class="src">the odour tags of this release, each with the words in the quotes that gave it</span></dd>';
+ if(m[F.smiles]){h+='<dt>XLogP3</dt><dd class="t">'+(m[F.xlogp]===null||m[F.xlogp]===undefined?'<span class="dash">none: PubChem has no value for this structure</span>':m[F.xlogp])+'<span class="src">PubChem’s value (computed by NCBI); stored, because it cannot be recomputed here</span></dd>';
+  h+='<dt>3D conformer</dt><dd class="t">'+(c3&&c3[1]?'PubChem conformer, '+c3[1].el.length+' atoms':'<span class="dash">'+(c3&&c3[0]?'none: PubChem has no 3D conformer':'none: no PubChem record for this exact structure')+'</span>')+'<span class="src">fetched from PubChem, so stored; shown with this card</span></dd>'}
  if(pc)h+='<dt>Links</dt><dd class="t"><a href="'+esc(pc)+'" target="_blank" rel="noopener">PubChem'+(cid?' '+esc(String(cid)):'')+' ↗</a></dd>';
  h+='</dl><div class="csh"><b>Computed</b> · derived fields <span>— never stored; recomputed from the stored ones</span></div><dl class="kv">';
  if(ch){h+='<dt>Formula</dt><dd class="t">'+fmtF(ch.f)+'<span class="src">in your browser, from the SMILES'+(m[F.formula]?(m[F.formula]===ch.f?' · <span class="ok">same as PubChem</span>':' · <span class="warn">PubChem gives '+esc(m[F.formula])+'</span>'):'')+'</span></dd>';
   h+='<dt>Mol. mass</dt><dd class="t">'+ch.mw.toFixed(2)+' g/mol<span class="src">in your browser, from the formula'+(m[F.mw]!==null&&m[F.mw]!==undefined&&m[F.mw]!==''?' · PubChem gives '+m[F.mw]:'')+'</span></dd>'}
  else if(m[F.smiles])h+='<dt>Formula</dt><dd class="t"><span class="dash">this SMILES is beyond the small parser</span></dd>';
  if(m[F.ik])h+='<dt>InChIKey</dt><dd>'+esc(m[F.ik])+'<span class="src">from the structure, by the release build (not in your browser yet)</span></dd>';
- h+='<dt>Odour tags</dt><dd class="t">'+(ctk.length?ctk.map(t=>esc(TAGS[t][0])+' <span class="dash">← '+esc(ct[t].join(', '))+'</span>').join(' · '):'<span class="dash">none</span>')+'<span class="src">in your browser, from the descriptor words and the tag table (ontology/odor_terms.tsv)'+(same?'':' · <span class="warn">differs from the release</span>')+'</span></dd>';
- h+='<dt>Counts</dt><dd class="t">'+pl(E.length,'quote')+' · '+pl(m[F.ndoc],'document')+' · '+pl(ctk.length,'tag')+'</dd>';
- if(m[F.formula])h+='<dt>XLogP3</dt><dd class="t">'+(m[F.xlogp]===null?'<span class="dash">not available</span>':m[F.xlogp])+'<span class="src">computed by PubChem, not recomputed here</span></dd>';
+ h+='<dt>Tag check</dt><dd class="t">'+(same?'<span class="ok">the stored tags are reproduced</span>':'<span class="warn">differs from the stored tags</span>')+'<span class="src">recomputed in your browser from the descriptor words and the tag table (ontology/odor_terms.tsv)</span></dd>';
+ h+='<dt>Counts</dt><dd class="t">'+pl(E.length,'quote')+' · '+pl(m[F.ndoc],'document')+' · '+pl(m[F.tags].length,'tag')+'</dd>';
  h+='</dl></div>'+v3dBox(i)+'</div>';
  h+='<div class="csh"><b>Stored</b> · evidence <span>— the verbatim sentences, grouped by the tag their words map to</span></div>';
  const by={};E.forEach(e=>{(by[e[0]]=by[e[0]]||[]).push(e)});
