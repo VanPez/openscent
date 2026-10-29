@@ -1,79 +1,15 @@
 {
   "Structure name": "Ethylvanillin",
-  "Other names": ["ethyl vanillin", "ETHYL VANILLIN"],
-  "Structure": "CCOC1=C(C=CC(=C1)C=O)O",
-  "Scent": ["sweet", "vanilla"],
-  "Text description": [
-    {
-      "Text": "However, it has now been found that the incorporation of ethyl vanillin or vanillin in a melamine formaldehyde slurry produces a microcapsule that allows ethyl vanillin or vanillin to deposit on cloth, via a wash off product, to provide the vanilla sweet note at the dry stage of fabric.",
-      "Molecule": "ethyl vanillin",
-      "Odour words": ["sweet", "vanilla"],
-      "Source": "US20150267144A1"
-    },
-    {
-      "Text": "Finer and more intense vanilla",
-      "Molecule": "ETHYL VANILLIN",
-      "Odour words": ["vanilla"],
-      "Source": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/945"
-    },
-    {
-      "Text": "Ethyl vanillin appears as colorless crystals. More intense vanilla odor and taste than vanillin. (NTP, 1992)",
-      "Molecule": "ETHYL VANILLIN",
-      "Odour words": ["vanilla"],
-      "Source": "https://cameochemicals.noaa.gov/chemical/20398"
-    }
-  ],
+  "SMILES": "CCOC1=C(C=CC(=C1)C=O)O",
+  "Scent": "sweet, vanilla",
   "XLogP3": 1.6,
-  "3D conformer": {
-    "Atoms": [8, 8, 8, 6, 6, 6, 6, 6, 6, 6, 6, 6, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    "Coordinates": [
-      [1.819, 0.495, 0.563],
-      [1.693, -2.242, 0.102],
-      [-2.981, 2.081, 0.093],
-      [0.628, -0.106, 0.286],
-      [-0.534, 0.664, 0.235],
-      [0.565, -1.48, 0.055],
-      [-1.759, 0.06, -0.048],
-      [2.254, 1.516, -0.333],
-      [-0.66, -2.084, -0.228],
-      [-1.822, -1.315, -0.279],
-      [3.767, 1.549, -0.346],
-      [-2.97, 0.862, -0.102],
-      [-0.478, 1.733, 0.426],
-      [1.889, 1.328, -1.35],
-      [1.863, 2.481, 0.01],
-      [-0.723, -3.154, -0.411],
-      [-2.769, -1.8, -0.501],
-      [4.136, 2.331, -1.016],
-      [4.157, 1.734, 0.661],
-      [4.17, 0.585, -0.671],
-      [-3.908, 0.328, -0.332],
-      [1.458, -3.168, -0.083]
-    ],
-    "Bonds": [
-      [0, 3, 1],
-      [0, 7, 1],
-      [1, 5, 1],
-      [1, 21, 1],
-      [2, 11, 2],
-      [3, 4, 1],
-      [3, 5, 2],
-      [4, 6, 2],
-      [4, 12, 1],
-      [5, 8, 1],
-      [6, 9, 1],
-      [6, 11, 1],
-      [7, 10, 1],
-      [7, 13, 1],
-      [7, 14, 1],
-      [8, 9, 2],
-      [8, 15, 1],
-      [9, 16, 1],
-      [10, 17, 1],
-      [10, 18, 1],
-      [10, 19, 1],
-      [11, 20, 1]
-    ]
-  },
-  "PubChem CID": 8467
+  "PubChem CID": 8467,
+  "Text 1": "However, it has now been found that the incorporation of ethyl vanillin or vanillin in a melamine formaldehyde slurry produces a microcapsule that allows ethyl vanillin or vanillin to deposit on cloth, via a wash off product, to provide the vanilla sweet note at the dry stage of fabric.",
+  "Source 1": "US20150267144A1",
+  "Text 2": "Finer and more intense vanilla",
+  "Source 2": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/945",
+  "Text 3": "Ethyl vanillin appears as colorless crystals. More intense vanilla odor and taste than vanillin. (NTP, 1992)",
+  "Source 3": "https://cameochemicals.noaa.gov/chemical/20398",
+  "3D atoms": "O 1.819 0.495 0.563; O 1.693 -2.242 0.102; O -2.981 2.081 0.093; C 0.628 -0.106 0.286; C -0.534 0.664 0.235; C 0.565 -1.48 0.055; C -1.759 0.06 -0.048; C 2.254 1.516 -0.333; C -0.66 -2.084 -0.228; C -1.822 -1.315 -0.279; C 3.767 1.549 -0.346; C -2.97 0.862 -0.102; H -0.478 1.733 0.426; H 1.889 1.328 -1.35; H 1.863 2.481 0.01; H -0.723 -3.154 -0.411; H -2.769 -1.8 -0.501; H 4.136 2.331 -1.016; H 4.157 1.734 0.661; H 4.17 0.585 -0.671; H -3.908 0.328 -0.332; H 1.458 -3.168 -0.083",
+  "3D bonds": "1-4 1; 1-8 1; 2-6 1; 2-22 1; 3-12 2; 4-5 1; 4-6 2; 5-7 2; 5-13 1; 6-9 1; 7-10 1; 7-12 1; 8-11 1; 8-14 1; 8-15 1; 9-10 2; 9-16 1; 10-17 1; 11-18 1; 11-19 1; 11-20 1; 12-21 1"
 }

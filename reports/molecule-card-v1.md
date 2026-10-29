@@ -2,18 +2,19 @@
 
 **Status: a draft for the MolNFT v2 contract. Nothing is minted.** v1 applies Mike's review of v0 (2026-10-22). Every figure was
 measured on `release/v1.0` as rebuilt on 2026-10-29: 1,682 molecules, **1,680 with a structure = 1,680 tokens**, 4,341 evidence
-rows on those tokens. v0 is kept as `reports/molecule-card-v0.md`. The same card for one token as plain JSON, field title and
-content only: `reports/molecule-card-v1-example.json` (Ethylvanillin), built by `pipeline/card_json.py`.
+rows on those tokens. v0 is kept as `reports/molecule-card-v0.md`. The same card for one token as flat JSON, one key and one
+value: `reports/molecule-card-v1-example.json` (Ethylvanillin), built by `pipeline/card_json.py`.
 
 ## What changed from v0
 
 | # | Mike's point | v0 | v1 |
 |---|---|---|---|
 | 1 | one NFT per molecule | open question: per-token storage or a shared sentence store | **one token per molecule**; each token carries its own sentences; the shared store (v0 A6) is dropped |
-| 2 | the scent is the main information and must be stored on chain | odour tags were *computed* from the descriptor words and the tag table | **scent stored** on the token (B6): the tags with the words that gave them |
+| 2 | the scent is the main information and must be stored on chain | odour tags were *computed* from the descriptor words and the tag table | **scent stored** on the token (B6) |
 | 3 | XLogP3 is fetched, not computed | listed as computed | **stored** (B7), PubChem's value |
 | 4 | the 3D conformer is fetched, not computed | "computed in the browser, or a link to PubChem" | **stored** (B8), PubChem's conformer |
 | 5 | (2026-10-29) scent as a plain list | first v1 draft: each tag with the words that gave it | **tags only** (B6); the words are in B4, and the tag check (C8') shows which word gave which tag |
+| 6 | (2026-10-29) a flat card: one key, one value, no hierarchy | nested JSON | the example is flat: Text 1 … Text n, each with Source 1 … n (at most 7 per token); 3D as two strings, atoms and bonds; B2 and, per quote, the molecule as printed and the odour words are left out (question 8) |
 
 Points 3 and 4 correct a real mistake in v0: a value fetched from PubChem cannot be recomputed by the contract or the browser
 (XLogP3 is NCBI's own algorithm; PubChem's conformer is one specific computed geometry), so by v0's own rule it is static.
@@ -89,6 +90,8 @@ atoms of 28); dropping them would make the field smaller but the geometry would 
    immutable, versioned, or superseded by a new token? The same for B6 if the tag table changes in a later release.
 6. Format of the licence field and the citation.
 7. The 120 tokens without XLogP3 and the 123 without a 3D conformer: store null explicitly, or omit the field?
+8. The flat card leaves out B2 (other spellings) and, for each quote, the molecule as printed and the odour words; they stay in the
+   release (`molecules.tsv`, `evidence.tsv`). On the token as well, or only in the release?
 
 ## Not on the card (unchanged)
 
