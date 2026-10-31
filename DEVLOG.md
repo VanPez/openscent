@@ -216,6 +216,12 @@ retired** that the 09-26 exclusion missed (the splitter cut at "No." and left "A
 `corpus.html` rebuilt (commits `690075d`, `2840379`). Open: whether Bauer/Garbe/Surburg (*Common Fragrance and Flavor Materials*) joins the quoted-works list
 (3 rows); the paper still quotes 1,705; freeze and tag v1.0.
 
+**2026-10-29, later (log — molecule card v1 and a flat JSON card; see the last entry):** Mike's review of card v0 is applied in
+`reports/molecule-card-v1.md`: one token per molecule (1,680), the scent stored, and XLogP3 and PubChem's 3D conformer stored (fetched, so not
+computable). Then, at Mike's request, one token's card as flat JSON, one key and one value: `reports/molecule-card-v1-example.json` (Ethylvanillin);
+any token with `pipeline/card_json.py` (`--all` for every one). **No corpus data changed (status.py: 1,682 molecules, 24 of 67).** Minting waits
+for Mike's contract and mint script; Ivan runs them. Open: card questions 2-8, for Mike. The card commits are pushed (up to `0256e5a`).
+
 **Emails were READY (09-27):** preview live at https://vanpez.github.io/openscent/ (GitHub Pages,
 master /docs), linked in all three drafts, signed Ivan Pezzini. outreach/ and the shop lists
 (corpus/hekserij, corpus/olfatorium) are now LOCAL ONLY (gitignored; still in git history).
@@ -6528,3 +6534,40 @@ For Joe, a local file (`outreach/`, not published): every v1.0 molecule with eac
 - Earlier entries unchanged: root README refresh; linking `corpus.html` from the public pages; Mike's reference MolNFT v2 contract; the 53 "approve-no-tag"
   rows; OCR-damaged verbatim labels; no 2D structure drawing.
 - Git: `690075d` (data, scripts), `2840379` (release, 3D, page) and the commit carrying this entry and the 10-21 night lines; not pushed.
+
+## 2026-10-29 (later) — molecule card v1 after Mike's review, and the card as flat JSON
+
+Mike reviewed card v0 (10-22), then three JSON versions of v1 on 10-29. Each step was committed and pushed. No corpus data changed: status.py re-run,
+COMBINED 24 of 67, 1,682 molecules, verbatim invariant clean.
+
+### 1. Card v1 (`reports/molecule-card-v1.md`, `3e72057`)
+
+Mike's points on v0: one NFT per molecule; the scent is the main information and must be stored on chain; XLogP3 and the 3D conformer come from
+PubChem, not from a calculation, so they must be stored too (v0 had listed them as computed, against its own rule). v1: one token per molecule
+(1,680), each carrying its own sentences (v0's shared sentence store dropped); scent stored (B6); XLogP3 (B7) and PubChem's conformer (B8) stored,
+with sizes measured per field. The corpus page's card follows: Stored gained Scent, XLogP3 and 3D conformer; the computed "Tag check" recomputes the
+stored tags from the quotes' words and the tag table.
+
+### 2. The card as JSON (`pipeline/card_json.py`, `reports/molecule-card-v1-example.json`, Ethylvanillin)
+
+- `89a5475`: field title and content only, no explanations.
+- `0436b97`: Scent as a plain list of tags, not each tag with the words that gave it. The words stay in the quotes; the page's Tag check now shows
+  which word gave which tag (card v1, change 5).
+- `0256e5a`: flat, one key and one value, no hierarchy (change 6). Keys: Structure name, SMILES, Scent ("sweet, vanilla"), XLogP3, PubChem CID,
+  Text 1 / Source 1 ... Text n / Source n, 3D atoms ("O 1.819 0.495 0.563; ..."), 3D bonds ("1-4 1; ...", atoms counted from 1).
+
+Checked over every token (`--all`): 1,680 cards, every value flat; 1,560 with XLogP3, 1,557 with a 3D conformer, 3,237 molecule-tag pairs, as in
+the card; 2,650 distinct quotes, at most 7 on one token; the 3D strings convert back to PubChem's elements, coordinates and bonds exactly, on all
+1,557. Size as compact JSON: median 1,240 bytes a card, largest 3,249, 2.04 MB in all. Left off the flat card (card question 8): the other
+spellings (B2) and, per quote, the molecule as printed and the odour words; they stay in `molecules.tsv` and `evidence.tsv`.
+
+### 3. Minting
+
+Mike provides the MolNFT v2 contract and the mint script; Ivan runs them. Nothing is minted before that.
+
+### Open
+
+- Card questions 2-8 for Mike: InChIKey on the token, encoding, size limits and cost, corrections after minting, licence field, null or omitted
+  values, and what stays off the flat card.
+- From the earlier 10-29 entry, unchanged: the paper quotes 1,705; freeze and tag v1.0; Bauer/Garbe/Surburg (3 rows); 9-nordrimanol. Its commits,
+  listed there as not pushed, were pushed the same day.
