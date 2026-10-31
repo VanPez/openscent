@@ -1,7 +1,7 @@
 {
  "version": "1.0-candidate",
- "built_at_utc": "2026-10-29T11:57:59+00:00",
- "git_head": "690075d2b2d1d3c79ddb7ce09c2de1e2f0955b22",
+ "built_at_utc": "2026-10-31T12:41:17+00:00",
+ "git_head": "cc5e5443f736a13f0ea6ddf43f34bb44ec770770",
  "tracked_files_modified_at_build": 0,
  "scope": "CC0 corpus only; the licensed layer, retired rows, rejected and undecided rows are not included",
  "counts": {

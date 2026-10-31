@@ -54,7 +54,7 @@ name and every descriptor in `evidence.tsv` is a verbatim substring of its `quot
 - The review queue was screened by a model after batch adjudication; rows it screened out were **left undecided, not
   rejected, and have not been read by a human**. Their absence is a recall limit, not a judgement.
 - CC0 waives copyright, not patents: a molecule appearing here says nothing about live patent claims.
-- Not in this release: the separately licensed Olfatorium descriptor layer (`licensed/`), 30 retired patent rows that
+- Not in this release: the separately licensed Olfatorium descriptor layer (`licensed/`), 42 retired patent rows that
   relayed copyrighted reference works, and every rejected or undecided row.
 
 Source code: Apache-2.0, https://github.com/VanPez/openscent
