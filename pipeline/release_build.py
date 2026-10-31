@@ -11,7 +11,7 @@ write anything unless the molecule total and the list of terms at the bar are id
 release cannot drift from the one counter the project quotes.
 
 WHAT IS IN v1.0 (Ivan, 2026-10-19): the CC0 corpus only. NOT in it: the Olfatorium layer
-(licensed/, CC BY 4.0 with permission), the 30 retired quoted-reference rows, anything
+(licensed/, CC BY 4.0 with permission), the retired quoted-reference rows (counted in the README), anything
 undecided or rejected.
 
 Files written to the output directory
@@ -38,7 +38,9 @@ S = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(S)
 
 N_TAGS, BAR = S.N_TAGS, S.BAR
-PATENT_LICENCE = "US patent document (government work)"
+# US patents are not government works; USPTO: "the text and drawings of a patent are typically not subject to
+# copyright restrictions" (limited exceptions: 37 CFR 1.71(d)-(e), 1.84(s)). Checked 2026-10-31.
+PATENT_LICENCE = "https://www.uspto.gov/terms-use-uspto-websites"
 
 # structures.py trust class -> (basis code, direct?)  "direct" = read from the name or the PubChem record as
 # extracted; hand-derived = a rewrite / OCR repair / stereo-free reading (see README, 'Structures').
@@ -93,11 +95,13 @@ def main() -> int:
         ev.append(kw)
 
     # ---- patent sentence rows (review.jsonl), approved and not retired
+    retired = 0
     for r in S.jsonl(S.REVIEW):
         if r.get("decision") != "approve":
             continue
         sent = r.get("sentence") or ""
         if (r.get("source_id"), " ".join(sent.split())) in exkeys:
+            retired += 1
             continue
         mols = [m.strip() for m in (r.get("molecules") or []) if m.strip()]
         for d in (r.get("tags") or r.get("descriptors") or []):
@@ -307,7 +311,7 @@ def main() -> int:
     (out / "README.md").write_text(README.format(
         molecules=len(mrows), with_structure=n_ik, name_only=n_none, direct=n_direct, hand=n_hand, conn=n_conn,
         evidence=len(erows), at_bar=len(at_bar), n_tags=N_TAGS, bar=BAR, at_bar_list=", ".join(at_bar),
-        types="; ".join(f"{k} {v}" for k, v in sorted(by_type.items()))), encoding="utf-8")
+        types="; ".join(f"{k} {v}" for k, v in sorted(by_type.items())), retired=retired), encoding="utf-8")
 
     inputs = {}
     for p in (S.REVIEW, S.PUBCHEM, S.PHYSDESC, S.PASSAGE, S.TARGETED, S.EXCLUSIONS, S.STRUCT, S.STRUCT_PC, S.SMILES_CACHE,
@@ -321,7 +325,12 @@ def main() -> int:
         except Exception:
             return None
     head = git("rev-parse", "HEAD")
-    dirty = git("status", "--porcelain", "--untracked-files=no")
+    # the files this build just wrote are not inputs: leave the output folder out of the clean-tree count
+    try:
+        outspec = [f":(exclude){out.resolve().relative_to(ROOT)}"]
+    except ValueError:
+        outspec = []
+    dirty = git("status", "--porcelain", "--untracked-files=no", "--", ".", *outspec)
     manifest = {"version": "1.0-candidate", "built_at_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"),
                 "git_head": head, "tracked_files_modified_at_build": (len(dirty.splitlines()) if dirty is not None else None),
                 "scope": "CC0 corpus only; the licensed layer, retired rows, rejected and undecided rows are not included",
@@ -392,7 +401,7 @@ name and every descriptor in `evidence.tsv` is a verbatim substring of its `quot
 - The review queue was screened by a model after batch adjudication; rows it screened out were **left undecided, not
   rejected, and have not been read by a human**. Their absence is a recall limit, not a judgement.
 - CC0 waives copyright, not patents: a molecule appearing here says nothing about live patent claims.
-- Not in this release: the separately licensed Olfatorium descriptor layer (`licensed/`), 30 retired patent rows that
+- Not in this release: the separately licensed Olfatorium descriptor layer (`licensed/`), {retired} retired patent rows that
   relayed copyrighted reference works, and every rejected or undecided row.
 
 Source code: Apache-2.0, https://github.com/VanPez/openscent
