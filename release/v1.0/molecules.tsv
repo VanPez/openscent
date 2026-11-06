@@ -1191,6 +1191,7 @@ SIPHWXREAZVVNS-UHFFFAOYSA-N	SIPHWXREAZVVNS-UHFFFAOYSA-N	SIPHWXREAZVVNS	Cyclohexy
 SIYBPTIIYPOCTE-UHFFFAOYSA-N	SIYBPTIIYPOCTE-UHFFFAOYSA-N	SIYBPTIIYPOCTE	4,8,11-dodecatrienal	C(CCC=CCCC=CCC=C)=O	opsin-verbatim	direct	yes	citrus;clean;marine	3	5	1	patent-sentence	4,8,11-dodecatrienal		
 SJDDHMSVZMBJPH-YQFWSFKMSA-N	SJDDHMSVZMBJPH-YQFWSFKMSA-N	SJDDHMSVZMBJPH	caryophyllene acetate	CC(=O)O[C@]12CCC[C@](C1)(CC[C@@H]3[C@@H]2CC3(C)C)C	pubchem-name	direct	yes	fruity;green;woody	3	6	2	patent-sentence	caryophyllene acetate		
 SJIJUZDFGIVLBU-WVATUKLVSA-N	SJIJUZDFGIVLBU-WVATUKLVSA-N	SJIJUZDFGIVLBU	(4aRS,6RS,7RS,8aSR)-5,5,6,7,8,8-hexamethylhexahydro-4a,8a-epoxynaphthalen-1(2H)-one	CC1([C@]23CCCC([C@@]2(C([C@@H]([C@H]1C)C)(C)C)O3)=O)C	opsin-verbatim	direct	yes	aromatic;musk;sweet	3	4	1	patent-sentence	(4aRS,6RS,7RS,8aSR)-5,5,6,7,8,8-hexamethylhexahydro-4a,8a-epoxynaphthalen-1(2H)-one		
+SJRWAGBQZRSZEQ-UHFFFAOYSA-N	SJRWAGBQZRSZEQ-UHFFFAOYSA-N	SJRWAGBQZRSZEQ	9-nordrimanol	CC1(CC2(CCCC(C2CC1)(C)C)C)O	rewritten	hand-derived	yes	amber	1	1	1	patent-sentence	9-nordrimanol		
 SJUJCVROCZFHBZ-UHFFFAOYSA-N	SJUJCVROCZFHBZ-UHFFFAOYSA-N	SJUJCVROCZFHBZ	4-methylphenyl-2-methoxyethyl ether	CC1=CC=C(C=C1)C(COCC(C1=CC=C(C=C1)C)OC)OC	opsin-verbatim	direct	yes	green	1	1	1	patent-sentence	4-methylphenyl-2-methoxyethyl ether		
 SJWFXCIHNDVPSH-UHFFFAOYSA-N	SJWFXCIHNDVPSH-UHFFFAOYSA-N	SJWFXCIHNDVPSH	2-Octanol	CCCCCCC(C)O	pubchem-cid	direct	yes	aromatic	1	1	1	hsdb	2-OCTANOL	20083	
 SKDHHIUENRGTHK-UHFFFAOYSA-N	SKDHHIUENRGTHK-UHFFFAOYSA-N	SKDHHIUENRGTHK	4-Nitrobenzoyl chloride	C1=CC(=CC=C1C(=O)Cl)[N+](=O)[O-]	pubchem-cid	direct	yes	pungent	1	1	1	cameo	P-NITROBENZOYL CHLORIDE	8502	
@@ -1679,5 +1680,4 @@ ZYBUNRWVRJAZOA-UHFFFAOYSA-N	ZYBUNRWVRJAZOA-UHFFFAOYSA-N	ZYBUNRWVRJAZOA	3-(2,3-di
 ZYEMGPIYFIJGTP-UHFFFAOYSA-N	ZYEMGPIYFIJGTP-UHFFFAOYSA-N	ZYEMGPIYFIJGTP	Methyleugenol	COC1=C(C=C(C=C1)CC=C)OC	pubchem-cid	direct	yes	earthy;herbal;spicy	3	4	2	cameo;hsdb	METHYLEUGENOL	7127	
 ZYGHJZDHTFUPRJ-UHFFFAOYSA-N	ZYGHJZDHTFUPRJ-UHFFFAOYSA-N	ZYGHJZDHTFUPRJ	Coumarin	C1=CC=C2C(=C1)C=CC(=O)O2	opsin-verbatim;pubchem-cid	direct	yes	hay;vanilla	2	4	3	cameo;hsdb;patent-sentence	COUMARIN | coumarin	323	
 ZZYSLNWGKKDOML-UHFFFAOYSA-N	ZZYSLNWGKKDOML-UHFFFAOYSA-N	ZZYSLNWGKKDOML	Tebufenpyrad	CCC1=NN(C(=C1Cl)C(=O)NCC2=CC=C(C=C2)C(C)(C)C)C	pubchem-cid	direct	yes	aromatic	1	1	1	hsdb	TEBUFENPYRAD	86354	
-name:9-nordrimanol			9-nordrimanol			none	no	amber	1	1	1	patent-sentence	9-nordrimanol		no definite structure (unresolved); counted by name text
 name:terpineol			Terpineol			none	no	citrus;lime;sweet	3	3	2	patent-sentence	Terpineol		no definite structure (held: PUBCHEM-CHECK); counted by name text
