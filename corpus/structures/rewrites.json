@@ -1278,6 +1278,13 @@
    "raw": "hexahydro-1,5,5-trimethyl-2H-2,4-a-methanonaphthalene-1(5H)-one",
    "reading": "3,5,5-trimethyl-3,4,6,7,8,8a-hexahydro-2H-2,4a-methanonaphthalen-1(5H)-one",
    "why": "the printed name is impossible (a methyl and the ketone on C1; OPSIN: 'unphysical valency'). The same patents name 5,5-dimethyl and 2,5,5-trimethyl homologues; CAS registered 5,5-dimethyl (77923-74-1), 2,5,5-trimethyl (77923-82-1) and 3,5,5-trimethyl (77923-83-2) in one block of numbers, which fits the 3,5,5 isomer being this patent's third compound (not proof). PubChem CID 44154114. Proposed by Joe (his 2,5,5 alternative is the patents' Example VIII compound, so not this one). Probable, not certain. Flat. Approved by Ivan 2026-10-29"
+  },
+  {
+   "id": "J39",
+   "strength": "S",
+   "raw": "9-nordrimanol",
+   "reading": "2,5,5,8a-tetramethyldecahydronaphthalen-2-ol",
+   "why": "the sentence reports Ohloff's work ('Ohloff et al. have reported'): Ohloff & Giersch, Croat. Chem. Acta 58, 491 (1985), Scheme 2, compound 34 (R = R' = H), which the paper calls '9-nordrimanol' (p. 493: 'outstanding amber-like odor'). In that name 'nor' means C9 carries no substituent: OH and methyl on C8, four methyls, as the sentence says. Two earlier readings did not fit: 8-drimanol (five methyls) and the 1-ol (OH on C9). The paper draws it as (2R,4aS,8aR); Claude rebuilt the drawing in RDKit and it gives the same InChIKey as Joe's SMILES (SJRWAGBQZRSZEQ-IACUBPJLSA-N). Flat: the patent sentence gives no stereo. Found by Joe in the paper. Approved by Ivan 2026-11-06"
   }
  ]
 }
